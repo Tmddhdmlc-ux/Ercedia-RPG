@@ -311,7 +311,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W1-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W1-01",
       "region_id": "W1"
@@ -333,7 +333,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W1-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W1-02",
       "region_id": "W1"
@@ -355,7 +355,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W2-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W2-01",
       "region_id": "W2"
@@ -377,7 +377,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W2-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W2-02",
       "region_id": "W2"
@@ -399,7 +399,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W3-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W3-01",
       "region_id": "W3"
@@ -421,7 +421,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W3-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W3-02",
       "region_id": "W3"
@@ -443,7 +443,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W4-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W4-01",
       "region_id": "W4"
@@ -465,7 +465,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W4-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W4-02",
       "region_id": "W4"
@@ -487,7 +487,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W5-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W5-01",
       "region_id": "W5"
@@ -509,7 +509,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-W5-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-W5-02",
       "region_id": "W5"
@@ -531,7 +531,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E1-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E1-01",
       "region_id": "E1"
@@ -553,7 +553,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E1-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E1-02",
       "region_id": "E1"
@@ -575,7 +575,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E2-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E2-01",
       "region_id": "E2"
@@ -597,7 +597,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E2-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E2-02",
       "region_id": "E2"
@@ -619,7 +619,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E3-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E3-01",
       "region_id": "E3"
@@ -641,7 +641,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E3-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E3-02",
       "region_id": "E3"
@@ -663,7 +663,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E4-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E4-01",
       "region_id": "E4"
@@ -685,7 +685,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-E4-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-E4-02",
       "region_id": "E4"
@@ -707,7 +707,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S1-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S1-01",
       "region_id": "S1"
@@ -729,7 +729,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S1-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S1-02",
       "region_id": "S1"
@@ -751,7 +751,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S2-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S2-01",
       "region_id": "S2"
@@ -773,7 +773,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S2-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S2-02",
       "region_id": "S2"
@@ -795,7 +795,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S3-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S3-01",
       "region_id": "S3"
@@ -817,7 +817,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S3-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S3-02",
       "region_id": "S3"
@@ -839,7 +839,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S4-01/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S4-01",
       "region_id": "S4"
@@ -861,7 +861,7 @@
       "category": "facility_interior",
       "path": "assets/backgrounds/facilities/FAC-S4-02/interior.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "facility_id": "FAC-S4-02",
       "region_id": "S4"

@@ -57,7 +57,7 @@
   ],
   "pending_ids": [],
   "failures": [],
-  "commit_sha": null,
+  "commit_sha": "559446a1c7d9789196c83acd0ad9b4e346387b1a",
   "visual_verified": true,
   "visual_method": "Final generated scenes inspected individually and PNG integrity checked."
 }
