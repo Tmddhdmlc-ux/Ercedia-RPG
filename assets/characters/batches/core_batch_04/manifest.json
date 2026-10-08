@@ -1,0 +1,585 @@
+{
+  "schema_version": 1,
+  "batch": "core_batch_04",
+  "roster_version": "core-cast-38-canonical-design",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-CORE-031",
+      "name": "베라 칼트하임",
+      "affiliation": "흑정찰 균열기사단",
+      "appearance": "- **기사단장:** **베라 칼트하임** (여 38, 백금색 짧은 머리·진청 눈·한쪽 볼에 화상). **경지:** 하이퍼 나이트.",
+      "rank": "하이퍼 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-031/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            63,
+            85,
+            961,
+            1451
+          ],
+          "margins_ltrb": [
+            63,
+            85,
+            63,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9af9129940b64f01ce93040127121f2eaee69c6ed14abbc9472dcb7aca561263"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-031/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "1887e96fc42c799ebfc21a86dee2e3cae4c0bfaf25e9b004266b252713c2aaeb"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-032",
+      "name": "알렉시아 바레트",
+      "affiliation": "백파도 친위기사단",
+      "appearance": "- **기사단장:** **알렉시아 바레트** (여 40, 검푸른 단발·호박색 눈·갈색 피부·긴 코 흉터). **경지:** 마스터 나이트.",
+      "rank": "마스터 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-032/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            87,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            87,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ed5cde71b32d798cae0966b459cec87644aefd533e5df2d07d248a70f1f7ea0b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-032/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            48,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            48,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "0b1e689f910b1e1bac19980f050ddd0ede24c9c2b5e7fa82b8167c62a15dda35"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-033",
+      "name": "루카 마리노",
+      "affiliation": "해풍수호 기사단",
+      "appearance": "- **기사단장:** **루카 마리노** (남 35, 모래빛 웨이브 머리·녹청 눈·구릿빛 팔·짧은 수염). **경지:** 하이퍼 나이트.",
+      "rank": "하이퍼 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-033/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            95,
+            85,
+            928,
+            1451
+          ],
+          "margins_ltrb": [
+            95,
+            85,
+            96,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "d67172fb93af809a3abec823d12a6f03177a22655da9c82723311d8a5045d951"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-033/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            15,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            15,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "020cb84d7896769ee4cc574f355090ed44853d87325c1f107e87b8e78c2ff3b6"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-034",
+      "name": "오르델 비안",
+      "affiliation": "칠원기록탑",
+      "appearance": "- **탑주:** 오르델 비안 (남 61, 흰 짧은 곱슬머리·회청 눈·갈색 로브). **경지:** 6서클.",
+      "rank": "6서클 마법사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-034/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            108,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            108,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "360e771c61ba2512590f5f1677e1e12b9dbf5cde8757279802b1f0843360c609"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-034/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "34cff48f0a98ff328231f0e1d86af2f5bc5e4c22a19811237dbe981ae6ec87c6"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "affiliation": "청동뇌명탑",
+      "appearance": "- **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클.",
+      "rank": "7서클 마법사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-035/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            88,
+            85,
+            936,
+            1451
+          ],
+          "margins_ltrb": [
+            88,
+            85,
+            88,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "38c3662bfeed0e14c81f0a3acd0e8663ec72dd0acca240f19d58ced86e4a73c1"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-035/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "66037adf221051599061e9483c14d2b38ccc0208faa5143fc8aeb13aecc3e72e"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-036",
+      "name": "마레나 에르노",
+      "affiliation": "청류융합탑",
+      "appearance": "- **탑주:** 마레나 에르노 (여 44, 남청색 포니테일·녹회색 눈·백청 망토). **경지:** 6서클.",
+      "rank": "6서클 마법사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-036/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            67,
+            85,
+            956,
+            1451
+          ],
+          "margins_ltrb": [
+            67,
+            85,
+            68,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ed0d02763e2037cb1785502eb0fee2225183dd09e1d2fde07ab61dfca95ae053"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-036/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "1f3d18c0a1245051070fc85a959883d40ae4f7d829f9bfda32abe8bd003ab179"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-037",
+      "name": "세드릭 바일",
+      "affiliation": "황혼음영탑",
+      "appearance": "- **탑주:** 세드릭 바일 (남 52, 흑발에 은빛 가르마·서늘한 자안·회색 장포). **경지:** 6서클.",
+      "rank": "6서클 마법사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-037/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            76,
+            85,
+            948,
+            1451
+          ],
+          "margins_ltrb": [
+            76,
+            85,
+            76,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "91be2bd96b8c398b7e7ebcbca8ba92952968598b8c2afd0ad4f1a21c096e2452"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-037/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            50,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            50,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "8961015b8b1d7f06cb5f1513be767c9772d22888beb2be9c8847ff6772b4bb39"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-038",
+      "name": "테레사 가른",
+      "affiliation": "회색초석탑",
+      "appearance": "- **탑주:** 테레사 가른 (여 57, 붉은 회갈색 짧은 머리·검은 눈·두꺼운 작업복). **경지:** 6서클.",
+      "rank": "6서클 마법사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-038/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            66,
+            85,
+            957,
+            1451
+          ],
+          "margins_ltrb": [
+            66,
+            85,
+            67,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6a0c2531a4ed455ee3cbdf18b8b94e97a44df36741293069f1f8f4427e413b22"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-038/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            8,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            8,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "2a13c12a8e4948768417f06a686236fb9d31087cf83412a1ccabcb72bd76797c"
+        }
+      }
+    }
+  ]
+}
