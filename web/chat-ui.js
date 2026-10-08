@@ -51,6 +51,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
       const scene=parseScene(source);
       if(state.seenScenes.includes(scene.scene_id))return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
       if(scene.player)state.player={...scene.player,...(state.chosenName?{name:state.chosenName}:{})};
