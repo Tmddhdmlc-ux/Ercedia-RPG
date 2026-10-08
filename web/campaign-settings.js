@@ -2,7 +2,7 @@ import {normalizeNPCProfile} from './npc-profile.js';
 const REPO='Tmddhdmlc-ux/Ercedia-RPG';
 const excluded=new Set(['AGENTS.md','README.md','IMAGE_ASSET_MANIFEST.md']);
 export function isCampaignSetting(path){
-  return /^[A-Z][A-Z0-9_]*\.md$/.test(path)&&!excluded.has(path)||/^(characters|equipment|items|locations|quests)\/[A-Za-z0-9_-]+\.(json|md)$/.test(path)||['assets/events/annual_events.json','assets/maps/world/map_locations.json','assets/maps/world/faction_locations.json'].includes(path);
+  return /^[A-Z][A-Z0-9_]*\.md$/.test(path)&&!excluded.has(path)||/^(characters|equipment|items|locations|quests)\/[A-Za-z0-9_-]+\.(json|md)$/.test(path)||['assets/events/annual_events.json','assets/maps/world/map_locations.json','assets/maps/world/faction_locations.json','tampermonkey/BATTLE_SCHEMA.md','tampermonkey/QUEST_SCHEMA.md'].includes(path);
 }
 export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=()=>{}}={}){
   async function read(url,json=false){
@@ -31,6 +31,10 @@ export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=
 export function campaignSettingsPrompt(snapshot){
   const ordered=['BOOTSTRAP.md',...snapshot.paths.filter(p=>p!=='BOOTSTRAP.md')];
   return `새 캠페인 GitHub 설정 원문 전체입니다. 저장소 ${REPO}, 고정 커밋 ${snapshot.sha}, ${ordered.length}개 게임 설정 파일을 UI가 실제로 읽었습니다. 이 채팅의 GM은 아래 문서와 데이터를 읽고 세계관, 인물, 능력치, 성장, 전투, 장비, 기술서, 던전, 전리품, 관계 규칙을 적용하세요. 전문 문서와 최신 승인 설정을 우선하고, 시안은 승인 설정으로 확정하지 마세요. *_SECRET.md 및 BOOTSTRAP의 내부 설정은 GM 판단 전용이며 일반 대사, NPC 지식, 선택지, 지도, 도감, 정보창에 누설하지 마세요. UI 소스/이미지 바이너리는 세계관 원문에 포함하지 않았습니다. 코드나 README의 과거 구현 상태를 게임 규칙으로 취급하지 마세요. 저장 상태의 주인공 이름·선택한 시작 위치·패시브·현재 자원은 이번 캠페인의 시작 상태입니다. 설정을 읽은 뒤 별도 요약문이나 확인 인사 대신 앞서 요청한 ercedia_scene JSON 하나로 첫 장면을 출력하세요.\n\n${ordered.map(path=>`<<<GITHUB_SETTING ${path}>>>\n${snapshot.files[path]}\n<<<END_GITHUB_SETTING>>>`).join('\n\n')}`;
+}
+export function legacyCampaignPrompt(snapshot){
+  const paths=['BOOTSTRAP.md','WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md',...snapshot.paths.filter(p=>!['BOOTSTRAP.md','WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md'].includes(p))];
+  return `이 채팅에서 새 캠페인을 시작합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n${paths.map(p=>`https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/${p}`).join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
 }
 export function campaignNPCStates(snapshot,knownIds){
   const read=path=>JSON.parse(snapshot.files[path]||'{}');

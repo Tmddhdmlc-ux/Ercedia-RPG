@@ -6,6 +6,7 @@ export function normalizeInventory(raw){
   if(!Array.isArray(raw))return [];
   return raw.slice(0,capacity).filter(v=>v&&typeof v==='object').map(v=>({
     name:text(v.name,60)||'이름 미정',description:text(v.description,1000),
+    ...(typeof v.id==='string'&&/^[A-Za-z0-9_-]{1,100}$/.test(v.id)?{id:v.id}:{}),
     category:Object.hasOwn(categories,v.category)&&v.category!=='all'?v.category:'misc',
     quantity:typeof v.quantity==='number'&&Number.isFinite(v.quantity)?Math.max(1,Math.min(999999,Math.floor(v.quantity))):1,
     effect:text(v.effect,300),

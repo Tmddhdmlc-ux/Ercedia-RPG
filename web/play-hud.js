@@ -5,8 +5,15 @@ export function mountPlayHUD(state,{persist}){
   function render(){
     const player=state.player;
     $('hud-player').textContent=player.name||'이름 미정';
+    $('hud-level').textContent=`Lv.${number(player.level)}`;
     $('hud-hp').textContent=`${number(player.hp)} / ${number(player.maxHp)}`;
     $('hud-mp').textContent=`${number(player.mp)} / ${number(player.maxMp)}`;
+    $('hud-xp').textContent=`${number(player.xp)} / ${number(player.requiredXp)}`;
+    for(const [key,current,max] of [['hp',player.hp,player.maxHp],['mp',player.mp,player.maxMp],['xp',player.xp,player.requiredXp]]){
+      const bar=$('hud-'+key+'-bar'),known=Number.isFinite(current)&&Number.isFinite(max)&&max>0;
+      bar.max=known?max:1;bar.value=known?Math.max(0,Math.min(max,current)):0;bar.dataset.unknown=String(!known);
+      bar.setAttribute('aria-valuetext',known?`${number(current)} / ${number(max)}`:'미정');
+    }
     $('hud-location').textContent=locationLabel(state.scene?.location||state.gameState.place||'솔브린 마을');
     const size=state.uiPreferences?.textSize||'normal';game.dataset.textSize=size;$('text-size').value=size;
     $('portrait-hint').hidden=!state.character||!!state.uiPreferences?.portraitHintDismissed;

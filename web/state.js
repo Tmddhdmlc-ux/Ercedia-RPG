@@ -1,4 +1,5 @@
 import {normalizeScene} from './scene.js';
+import {normalizeQuestLog} from './quest-model.js';
 import {normalizeInventory} from './inventory.js';
 import {mapData} from './map-data.js';
 import {newPlayer,normalizePlayer} from './player.js';
@@ -17,7 +18,7 @@ const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFi
 export function normalize(raw) {
   const s=defaults();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return s;
-  for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory']})) if (choices.includes(raw[key])) s[key]=raw[key];
+  for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory','quests']})) if (choices.includes(raw[key])) s[key]=raw[key];
   for (const k of outfitKeys) { const l=raw.layouts?.[k]; if (l) s.layouts[k]={scale:num(l.scale,50,400,260),x:num(l.x,0,100,50),y:num(l.y,-350,200,-120)}; }
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
@@ -37,6 +38,10 @@ export function normalize(raw) {
     if(['normal','large','largest'].includes(raw.uiPreferences.textSize))s.uiPreferences.textSize=raw.uiPreferences.textSize;
     if(typeof raw.uiPreferences.portraitHintDismissed==='boolean')s.uiPreferences.portraitHintDismissed=raw.uiPreferences.portraitHintDismissed;
   }
+  if(Object.hasOwn(raw,'quest_log'))s.quest_log=normalizeQuestLog(raw.quest_log);
+  if(Array.isArray(raw.quest_event_ids))s.quest_event_ids=[...new Set(raw.quest_event_ids.filter(v=>typeof v==='string'&&v.length<=200))].slice(0,10000);
+  if(Number.isInteger(raw.currency)&&raw.currency>=0)s.currency=raw.currency;
+  if(raw.relationships&&typeof raw.relationships==='object'&&!Array.isArray(raw.relationships)){s.relationships={};for(const [id,r] of Object.entries(raw.relationships).slice(0,160)){if(!r||!Number.isFinite(r.affection))continue;s.relationships[id]={affection:Math.max(-100,Math.min(100,r.affection)),flags:Array.isArray(r.flags)?r.flags.filter(v=>typeof v==='string').slice(-100):[],interaction_history:Array.isArray(r.interaction_history)?r.interaction_history.filter(v=>typeof v==='string').slice(-100):[],last_interaction_day:typeof r.last_interaction_day==='string'?r.last_interaction_day:null};}}
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
   s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);
@@ -48,7 +53,7 @@ export function normalize(raw) {
   if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
   if(Object.hasOwn(raw,'mapFaction'))s.mapFaction=null;
   if(Array.isArray(raw.battleApplied))s.battleApplied=raw.battleApplied.filter(id=>typeof id==='string'&&id.length<=100).slice(-100);
-  if(raw.battlePlayback){try{const b=raw.battlePlayback,scene=normalizeScene(b.scene);if(!scene.battle)throw Error('battle absent');s.battlePlayback={scene,index:num(b.index,0,scene.battle.events.length,0),speed:[.5,1,2].includes(b.speed)?b.speed:1,paused:b.paused===true,done:b.done===true,replay:b.replay===true};}catch{}}
+  if(raw.battlePlayback){try{const b=raw.battlePlayback,scene=normalizeScene(b.scene);if(!scene.battle)throw Error('battle absent');s.battlePlayback={scene,index:num(b.index,0,scene.battle.events.length,0),speed:[.5,1,2].includes(b.speed)?b.speed:1,paused:b.paused===true,done:b.done===true,replay:b.replay===true,...(typeof b.manual==='boolean'?{manual:b.manual}:{})};}catch{}}
   const faction=factionLocations.find(p=>p.id===raw.mapFaction);
   if(faction&&faction.region===s.mapView&&faction.anchor_id===s.region)s.mapFaction=faction.id;
   return s;

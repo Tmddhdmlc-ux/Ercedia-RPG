@@ -1,0 +1,11 @@
+export function uiHarness(){
+  const ids=new Map(),docEvents=new EventTarget(),winEvents=new EventTarget(),messages=[],callbacks=new Map();let next=0,focus=null;
+  const node=()=>({hidden:false,disabled:false,value:'',textContent:'',dataset:{},style:{},children:[],parentElement:{hidden:false,dataset:{}},classList:{toggle(){},add(){},remove(){}},setAttribute(k,v){this[k]=v;},getAttribute(k){return this[k]??null;},removeAttribute(k){delete this[k];},append(...children){this.children.push(...children);},replaceChildren(...children){this.children=children;},addEventListener(k,fn){this[k]=fn;},focus(){focus=this;},closest(){return null;},animate(){return {play(){},pause(){},cancel(){}};}});
+  const game=node();game.dataset.title='closed';const get=id=>{if(!ids.has(id))ids.set(id,node());return ids.get(id);};
+  const globals=['document','window','parent','matchMedia','requestAnimationFrame','cancelAnimationFrame','setTimeout','clearTimeout','Image'];const old=new Map(globals.map(k=>[k,globalThis[k]]));
+  globalThis.document={getElementById:get,querySelector:()=>game,createElement:node,addEventListener:(...a)=>docEvents.addEventListener(...a),body:{classList:{add(){}}},get activeElement(){return focus;}};
+  globalThis.window={__ERCEDIA_CONFIG__:{token:'fixture',conversation:'test'},addEventListener:(...a)=>winEvents.addEventListener(...a)};
+  globalThis.parent={postMessage:v=>messages.push(v)};globalThis.matchMedia=()=>({matches:true});globalThis.Image=function(){return node();};
+  globalThis.requestAnimationFrame=fn=>{callbacks.set(++next,fn);return next;};globalThis.cancelAnimationFrame=id=>callbacks.delete(id);globalThis.setTimeout=()=>1;globalThis.clearTimeout=()=>{};
+  return {get,game,messages,clock(now){const pending=[...callbacks.values()];callbacks.clear();for(const fn of pending)fn(now);},key(key,target={closest(){return null;}},options={}){const e=new Event('keydown',{cancelable:true});Object.assign(e,{key,targetElement:target,...options});Object.defineProperty(e,'target',{value:target});docEvents.dispatchEvent(e);return e;},reply(type,payload){const e=new Event('message');Object.assign(e,{data:{channel:'ercedia',token:'fixture',conversation:'test',type,payload},source:globalThis.parent});winEvents.dispatchEvent(e);},close(){for(const [k,v] of old)if(v===undefined)delete globalThis[k];else globalThis[k]=v;}};
+}
