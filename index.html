@@ -27,16 +27,17 @@
         <div class="mapinfo"><div><span class="eyebrow">SELECTED REGION</span><h2 id="region-title"></h2><p id="region-description"></p></div><button id="return">대화로 복귀 ↗</button></div>
       </section>
       <section id="status-panel" class="player-panel" aria-label="주인공 상태창" hidden>
+        <div class="player-content">
         <div class="player-heading"><div><span class="eyebrow">PLAYER STATUS</span><h2 id="player-name">주인공</h2><p id="player-job">직업 미정</p></div><div class="level-badge"><span>LEVEL</span><strong id="player-level">—</strong></div></div>
         <div class="resource"><div><b>체력 <small>HP</small></b><span id="hp-text">— / —</span></div><progress id="hp-bar" value="0" max="100" aria-label="체력"></progress></div>
         <div class="resource mana"><div><b>마나 <small>MP</small></b><span id="mp-text">— / —</span></div><progress id="mp-bar" value="0" max="100" aria-label="마나"></progress></div>
         <div class="resource experience"><div><b>경험치 <small>EXP</small></b><span id="xp-text">— / —</span></div><progress id="xp-bar" value="0" max="100" aria-label="경험치"></progress><p id="xp-remaining">필요 경험치 미입력</p></div>
         <div class="attributes"><div><span>근력 <small>STR</small></span><strong id="strength-text">—</strong></div><div><span>민첩 <small>DEX</small></span><strong id="dexterity-text">—</strong></div><div><span>지능 <small>INT</small></span><strong id="intelligence-text">—</strong></div></div>
         <details class="player-editor"><summary>주인공 정보 편집</summary><p>현재 주인공 정보는 미정입니다. 입력한 값은 이 브라우저의 플레이 기록으로 저장됩니다.</p><div id="player-fields" class="player-fields"></div></details>
-        <div class="skill-heading"><div><span class="eyebrow">SKILLS</span><h3>사용 가능 스킬 <span id="skill-count">0</span></h3></div><button id="add-skill">+ 스킬 등록</button></div>
-        <p id="skills-empty" class="skills-empty">등록된 스킬이 없습니다. 스킬명·설명·데미지 공식을 입력해 등록하세요.</p>
+        <div class="skill-heading"><h3>사용 가능 스킬 <span id="skill-count">0</span></h3></div>
+        <p id="skills-empty" class="skills-empty">사용 가능한 스킬이 없습니다.</p>
         <div id="skill-list" class="skill-list"></div>
-        <p class="formula-guide">공식 변수: 근력(STR), 민첩(DEX), 지능(INT), 레벨(LV)<br>예: STR × 1.5 + LV × 2 · 입력한 능력치로 공식 값을 계산합니다.</p>
+        </div>
         <div class="player-actions"><button id="save-player" class="primary">주인공 정보 저장</button><span id="player-save-status" role="status">편집 후 저장해주세요.</span></div>
       </section>
       <div class="game-foot"><span>✧ 에르세디아 RPG</span><span>AI 대화 미연결</span></div>
