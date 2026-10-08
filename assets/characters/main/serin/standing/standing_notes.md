@@ -18,3 +18,28 @@
 
 - 잠옷: https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/standing/drafts/nightwear.png
 - 평상복: https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/standing/drafts/casual.png
+## 복장 비율 보정본 — 2026-10-08
+
+사용자의 명시적 허용에 따라 일반 이미지 처리로 PNG 파일 자체의 크기·위치를 정렬했다. 화면 CSS만 조정한 결과가 아니다. 표정 9종 제작은 사용자 요청으로 잠시 중지했으며 아직 생성하지 않았다.
+
+### 현재 사용할 파일
+
+- 갑옷 기준: `base.png` (기존 파일이 없어 신규 생성; 첨부 갑옷 원본 및 반신 원화는 보존)
+- 잠옷: `outfits/nightwear/base.png`
+- 평상복: `outfits/casual/base.png`
+
+세 파일은 모두 1024 × 1536 RGBA PNG이며, 알파 0–255를 확인했다. 원본의 미세한 비인물 알파 잔여값을 제거하고 투명 픽셀의 RGB도 0으로 정리했다. 이전 미리보기의 빛 번짐 판정은 투명 픽셀의 RGB까지 보이는 미리보기에 영향을 받았으며 실제 배경 합성에서는 같은 현상이 나타나지 않았다.
+
+갑옷을 기준으로 머리 특징점을 정렬했다. 잠옷 머리 배율 약 87.9%, 평상복 약 90.6%; 정합 특징점의 중앙 오차는 각각 약 0.78px, 0.57px다. 머리 영역을 고정하고 목 아래 몸체의 세로 길이를 연속 보정해 발 하단을 y=1404px에 맞췄다. 머리 상단은 갑옷·잠옷 y=193px, 평상복 y=194px로 1px 차이다. 모든 방향에 최소 8.53% 안전 여백이 있다. 상세 변환과 검수 수치는 `outfit_alignment.json`에 기록했다.
+
+복장별 옷의 폭·길이와 발 모양은 디자인 차이로 보존했다. 얼굴 그림 자체는 각각 생성된 결과이므로 같은 크기·위치로 정렬되었어도 픽셀 단위로 동일하지 않다. 공통 얼굴 표정 레이어 제작 시 이 보정본을 기준으로 얼굴 패치와 가림 마스크를 고정해야 한다.
+
+`prototypes/serin_outfit_alignment.html`에서 같은 이미지 요소 크기와 앵커로 갑옷·잠옷·평상복 전환을 확인했다. UI 크기 보정 없이 세 파일을 동일 크기로 표시하며 마을 배경과 실제 합성했다.
+
+### 보정본 CDN 주소
+
+- 갑옷: https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/standing/base.png
+- 잠옷: https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/standing/outfits/nightwear/base.png
+- 평상복: https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/standing/outfits/casual/base.png
+
+`drafts/` 파일들은 이전 생성 원본 보관용이며 화면용으로 사용하지 않는다.

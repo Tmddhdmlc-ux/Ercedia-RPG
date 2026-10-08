@@ -49,7 +49,7 @@
 - 특별한 포즈(발검, 전투, 피격)는 표정 세트가 아닌 별도 이벤트/액션 자산으로 분리한다.
 
 ## 6. 파일 구조
-아래는 정식 자산의 목표 구조다. 현재 세린은 기준 초상화와 standing/drafts/의 복장 초안만 등록되어 있으며 정식 standing/base.png와 표정 세트는 미등록이다. 초안의 투명도·정렬 한계는 [standing_notes.md](assets/characters/main/serin/standing/standing_notes.md)를 확인한다.
+아래는 정식 자산의 목표 구조다. 현재 세린은 사용자 선택 전신을 정리한 standing/base.png와 PNG 자체 비율을 보정한 outfits/nightwear/base.png, outfits/casual/base.png를 등록했다. 표정 9종 제작은 사용자 요청으로 중지 상태이며 기본형 외 표정은 미등록이다. 변환·앵커·검증 기록은 [standing_notes.md](assets/characters/main/serin/standing/standing_notes.md)와 outfit_alignment.json을 확인한다. standing/drafts/는 이전 생성 원본 보관용이다.
 
 ```text
 assets/
