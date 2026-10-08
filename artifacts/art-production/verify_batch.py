@@ -13,8 +13,10 @@ for id in batch['target_ids']:
     if row['group']=='locations':
         with Image.open(ROOT/row['path']) as im:
             im.load()
-            assert im.format=='PNG' and im.mode=='RGB' and im.width>=1536 and im.height>=1024
-            checks={'size':list(im.size),'mode':'RGB','sha256':sha(ROOT/row['path'])}
+            expected_mode = 'RGBA' if id == 'IMG-SHARED-11' else 'RGB'
+            assert im.format=='PNG' and im.mode==expected_mode and im.width>=1536 and im.height>=1024
+            if expected_mode == 'RGBA': assert im.getchannel('A').getextrema()[0] == 0
+            checks={'size':list(im.size),'mode':expected_mode,'sha256':sha(ROOT/row['path'])}
     else:
         checks=validate(ROOT/row['path'])
     assert checks==row['file_checks'],id

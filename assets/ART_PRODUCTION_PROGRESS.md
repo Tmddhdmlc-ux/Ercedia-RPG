@@ -9,9 +9,9 @@
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 40 | 40 |
-| 장소 | 237 | 261 |
+| 장소 | 261 | 261 |
 
-총 검수 완료: **647/671**.
+총 검수 완료: **671/671**.
 
 ## 목록과 재개 기준
 
@@ -149,7 +149,7 @@
 ### locations-final-batch-07
 
 - 대상/완료 ID: IMG-FACTION-MC01, IMG-FACTION-MC02, IMG-FACTION-TR01, IMG-FACTION-TR02, IMG-FACTION-TR03, IMG-FACTION-TR04, IMG-FACTION-TR05, IMG-FACTION-RS01, IMG-FACTION-RS02, IMG-FACTION-RS03, IMG-FACTION-CV01, IMG-FACTION-CV02, IMG-SHARED-01, IMG-SHARED-02, IMG-SHARED-03, IMG-SHARED-04, IMG-SHARED-05, IMG-SHARED-06, IMG-SHARED-07, IMG-SHARED-08, IMG-SHARED-09, IMG-SHARED-10, IMG-SHARED-11, IMG-SHARED-12
-- 미완료 ID: IMG-FACTION-MC01, IMG-FACTION-MC02, IMG-FACTION-TR01, IMG-FACTION-TR02, IMG-FACTION-TR03, IMG-FACTION-TR04, IMG-FACTION-TR05, IMG-FACTION-RS01, IMG-FACTION-RS02, IMG-FACTION-RS03, IMG-FACTION-CV01, IMG-FACTION-CV02, IMG-SHARED-01, IMG-SHARED-02, IMG-SHARED-03, IMG-SHARED-04, IMG-SHARED-05, IMG-SHARED-06, IMG-SHARED-07, IMG-SHARED-08, IMG-SHARED-09, IMG-SHARED-10, IMG-SHARED-11, IMG-SHARED-12
+- 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-final-batch-07.json](art-production/locations-final-batch-07.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
@@ -224,7 +224,7 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-p2-batch-06.json](art-production/locations-p2-batch-06.json) 및 전체 자산 목록 참조.
-- 이미지 업로드 커밋: `업로드 전`
+- 이미지 업로드 커밋: `0b5b14e4f231a36cf961ade7b39618a9760df61d`
 
 ### materials-batch-01
 

@@ -1,0 +1,8 @@
+{
+  "id": "IMG-SHARED-06",
+  "path": "assets/backgrounds/shared/06.png",
+  "batch": "locations-final-batch-07.json",
+  "canon_source": "UI_RULES.md shared background slots; ART_PRODUCTION_INSTRUCTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures. GENERIC quiet medieval TRAVEL CAMPSITE in forest clearing at dusk. Two plain undyed canvas tents upper-left/back, small stone-ring low campfire left margin, folded bedrolls and unmarked packs near tents, dark trees and soft blue evening sky. Wide clear center-right earth clearing, warm fire reflected gently, no military headquarters or faction flags. No people, animals, monsters, weapons floating, writing or emblems.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-98884965-d58b-467b-bbf1-81cb0aee97da.png"
+}

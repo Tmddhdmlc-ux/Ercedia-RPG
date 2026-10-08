@@ -2887,7 +2887,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/MC01.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "MC01",
       "region_anchor": "W4",
@@ -2900,7 +2900,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/MC02.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "MC02",
       "region_anchor": "S3",
@@ -2913,7 +2913,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/TR01.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "TR01",
       "region_anchor": "S1",
@@ -2926,7 +2926,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/TR02.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "TR02",
       "region_anchor": "S4",
@@ -2939,7 +2939,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/TR03.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "TR03",
       "region_anchor": "W5",
@@ -2952,7 +2952,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/TR04.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "TR04",
       "region_anchor": "E4",
@@ -2965,7 +2965,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/TR05.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "TR05",
       "region_anchor": "W5",
@@ -2978,7 +2978,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/RS01.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "RS01",
       "region_anchor": "W3",
@@ -2991,7 +2991,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/RS02.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "RS02",
       "region_anchor": "E2",
@@ -3004,7 +3004,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/RS03.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "RS03",
       "region_anchor": "S3",
@@ -3017,7 +3017,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/CV01.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "CV01",
       "region_anchor": "W3",
@@ -3030,7 +3030,7 @@
       "category": "faction_location",
       "path": "assets/backgrounds/factions/CV02.png",
       "priority": "P2",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "assets/maps/world/faction_locations.json",
       "faction_id": "CV02",
       "region_anchor": "S2",
@@ -3043,7 +3043,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/01.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3052,7 +3052,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/02.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3061,7 +3061,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/03.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3070,7 +3070,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/04.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3079,7 +3079,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/05.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3088,7 +3088,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/06.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3097,7 +3097,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/07.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3106,7 +3106,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/08.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3115,7 +3115,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/09.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3124,7 +3124,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/10.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3133,7 +3133,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/11.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     },
     {
@@ -3142,7 +3142,7 @@
       "category": "shared_background",
       "path": "assets/backgrounds/shared/12.png",
       "priority": "P3",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "UI_RULES.md"
     }
   ]

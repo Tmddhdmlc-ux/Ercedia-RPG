@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-TR01",
+  "path": "assets/backgrounds/factions/TR01.png",
+  "batch": "locations-final-batch-07.json",
+  "canon_source": "assets/maps/world/faction_locations.json#TR01; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Golden Sail Merchant Federation MAIN ASSOCIATION canonical S1 southwest harbor trading house. Refined sizable pale sandstone merchant hall upper-left with blue slate roof, open shaded trade arcade with plain wooden counters, closed unmarked cargo crates and barrels at rear-edge, modest bronze scales on rear counter. Calm busy-looking but EMPTY port architecture and moored wooden merchant ships with plain sails distant left, gentle warm sea daylight. More commercial and formal than guild office. Broad DRY clear stone center-right forecourt for VN character, hall above dialogue quarter. No gold sail crest or coins insignia, readable ledgers, signs, people, beasts, bodies, flags, treasure piles or new lore.",
+  "reference": "assets/backgrounds/regions/S1/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-7786b5c6-61a3-4ebc-ac6e-0e753aff0698.png"
+}

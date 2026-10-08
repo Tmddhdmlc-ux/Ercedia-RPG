@@ -11,6 +11,7 @@ parser.add_argument('--id')
 parser.add_argument('--template')
 parser.add_argument('--batch', default='samples-batch-01.json')
 parser.add_argument('--background', action='store_true')
+parser.add_argument('--overlay', action='store_true')
 args = parser.parse_args()
 target = ROOT / args.path
 target.parent.mkdir(parents=True, exist_ok=True)
@@ -19,8 +20,13 @@ if target.exists():
 source = Image.open(args.source)
 if args.background:
     assert source.width >= 1536 and source.height >= 1024
-    source.convert('RGB').save(target)
-    checks = {'size': list(source.size), 'mode': 'RGB', 'sha256': sha(target)}
+    if args.overlay:
+        assert args.id == 'IMG-SHARED-11' and source.mode == 'RGBA'
+        assert source.getchannel('A').getextrema()[0] == 0
+        source.save(target)
+    else:
+        source.convert('RGB').save(target)
+    checks = {'size': list(source.size), 'mode': 'RGBA' if args.overlay else 'RGB', 'sha256': sha(target)}
 else:
     assert source.mode == 'RGBA' and source.getchannel('A').getextrema()[0] == 0 and source.getchannel('A').getextrema()[1] >= 240
     fitted(source).save(target)

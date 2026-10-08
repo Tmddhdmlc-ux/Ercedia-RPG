@@ -1,0 +1,9 @@
+{
+  "id": "IMG-SHARED-11",
+  "path": "assets/backgrounds/shared/11.png",
+  "batch": "locations-final-batch-07.json",
+  "canon_source": "UI_RULES.md shared background slots; ART_PRODUCTION_INSTRUCTIONS.md",
+  "overlay": true,
+  "prompt": "Ercedia RPG combat transition OVERLAY PNG on TRUE TRANSPARENT background, landscape 1536x1024 or larger. High-quality hand-drawn 2D anime soft cel-painted restrained cool charcoal-blue smoke wisps and thin dynamic wind streaks only along outer left and right edges and upper corners, a few softly lit silver-blue curved strokes, gentle atmospheric movement, NOT a border or rectangular frame. Keep entire central 65 percent and bottom central quarter fully transparent and unobstructed for existing scene and character UI. Background entirely transparent, no landscape, characters, creatures, weapons, items, text, words, symbols, logos, signatures, watermark, emblems, explosions or bright flash. This is a subtle scene transition overlay, not an item rarity frame, not a complete opaque background. No checkerboard baked into pixels.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-18af6e28-0347-40cb-8771-bfd5263e68eb.png"
+}

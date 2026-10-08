@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-MC02",
+  "path": "assets/backgrounds/factions/MC02.png",
+  "batch": "locations-final-batch-07.json",
+  "canon_source": "assets/maps/world/faction_locations.json#MC02; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW White Sail Maritime Escort Cooperative canonical S3 Aquaren CIVILIAN CONVOY PIER, not royal knights. Empty modest pale stone dockside cooperative office upper-left with simple blue-gray roof and timber veranda, moored ordinary wooden escort sailing ship rear-left with plain white sails, rope coils and plain closed supply crates at edges, practical boarding plank and mooring posts. Clear blue bay, warm soft coastal daylight, workmanlike civilian facility not palace. Broad DRY stable clear stone center-right foreground for VN character, office/ship above dialogue quarter. No guards, sailors, people, animals, bodies, beasts, royal emblems, skull flags, text, shipnames, treasure or modern naval technology.",
+  "reference": "assets/backgrounds/regions/S3/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5d03ef15-fa41-4bdc-b425-c45be67b9792.png"
+}

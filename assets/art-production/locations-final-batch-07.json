@@ -25,8 +25,7 @@
     "IMG-SHARED-11",
     "IMG-SHARED-12"
   ],
-  "completed_ids": [],
-  "pending_ids": [
+  "completed_ids": [
     "IMG-FACTION-MC01",
     "IMG-FACTION-MC02",
     "IMG-FACTION-TR01",
@@ -52,6 +51,9 @@
     "IMG-SHARED-11",
     "IMG-SHARED-12"
   ],
+  "pending_ids": [],
   "failures": [],
-  "commit_sha": null
+  "commit_sha": null,
+  "visual_verified": true,
+  "visual_method": "Final generated scenes inspected individually and PNG integrity checked."
 }
