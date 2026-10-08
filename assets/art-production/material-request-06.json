@@ -1,0 +1,7 @@
+{
+  "monster_number": 6,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: one broad stone-gray eagle flight feather with a strong ivory quill, smooth layered barbs and slightly darker tip, diagonal presentation. RIGHT: one thick hooked golden horn-claw from the same giant gorge eagle, weathered horn surface with muted ochre sheen, a dry dark root, no flesh. Canon giant gorge eagle has stone-colored wings and gold horn-claws. Do not add jewels, runes or magical effects. Keep ALL tips well inside canvas; wide safe margins.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-e240f447-d0bf-4243-ab23-11a73a7cab8b.png",
+  "source_path": "assets/items/templates/materials/source-06.png",
+  "source_sha256": "70f8568d588115a6ae8bbdd15b00da017e11190bbda793bea7eaf547f2967ae8"
+}

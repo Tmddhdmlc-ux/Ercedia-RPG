@@ -1,0 +1,7 @@
+{
+  "monster_number": 5,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a cluster of three stout crimson-red lizard dorsal spines, jagged tapered bony points emerging from a small dark charcoal dry base, dull ember-red cracks in the material, no free flame. RIGHT: a small overlapping fan of four heat-stone lizard scales, red-brown slate surfaces and subdued warm orange seams, thick mineral-like texture. Canon ember awl-lizard has crimson dorsal spines; these are harvested crafting materials, not jewelry or whole reptiles. Distinguish tall pointed spines from flat shield-shaped scales.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-823227d7-513b-4113-8843-1992d3d0d6e1.png",
+  "source_path": "assets/items/templates/materials/source-05.png",
+  "source_sha256": "42f997ede95107f697dc63cd7f79b044d2c1b26f96dad1b3457cba02ec36440c"
+}

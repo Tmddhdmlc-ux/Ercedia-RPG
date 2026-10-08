@@ -1,0 +1,7 @@
+{
+  "monster_number": 9,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a compact tuft of thick curled mountain-goat wool, blue-white fibers with subtle dark blue roots, a few pale cyan strands inside the wool, no external lightning or aura. RIGHT: a broken piece of ridged dark blue-black goat horn, strongly curved, with narrow blue-white natural conductive veins embedded along the ridges, clean dry broken cross-section. Canon blue-electric mountain goat has blue-black horns and blue-white current-like fur. Physical wool and horn fragment only, no extra invented symbols or jewelry.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-638e25c4-92db-45e5-b38d-5713ea01f1d9.png",
+  "source_path": "assets/items/templates/materials/source-09.png",
+  "source_sha256": "f8bb0266006be7115dd196177bac09892d4a4bf6dcaef236d344f02cdad7be38"
+}

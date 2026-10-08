@@ -1,0 +1,7 @@
+{
+  "monster_number": 4,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a curled long charcoal-black rat tail segment, leathery ringed texture, natural tapered end, clean dry root, bent in a loose S. RIGHT: a small tied bundle of long fine dark burgundy-red rat whiskers, curved wiry bristles, simple beige twine binding. Canon granary shadow rat has a black long tail and dark red whiskers. Keep the tail much thicker than the separate whisker bundle.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-02f0c94c-554d-4f1d-bd4d-951de06e5e54.png",
+  "source_path": "assets/items/templates/materials/source-04.png",
+  "source_sha256": "1277fb3c62f65e158c42a77ac2d6f508b5fe4140a981b899833ad06ecd524fd0"
+}
