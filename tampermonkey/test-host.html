@@ -1,0 +1,25 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><title>에르세디아 · ChatGPT DOM 모의 연결 시험</title>
+<style>body{background:#eee;color:#222;font:14px/1.7 system-ui;padding:20px}main{max-width:650px}#prompt-textarea{min-height:100px;border:1px solid #aaa;padding:12px}pre{white-space:pre-wrap}button{padding:8px}</style>
+<main><h1>ChatGPT DOM 모의 연결 시험</h1><p>이 페이지는 실제 ChatGPT가 아닙니다. 응답을 생성하지 않으며, 고정 화면과 전송·수신 연결을 시험하기 위한 별도 테스트 페이지입니다.</p><div id="messages"></div><div id="prompt-textarea" contenteditable="true" role="textbox" aria-label="모의 ChatGPT 입력"></div><button data-testid="send-button">모의 전송</button><p id="sent-count">전송 0회</p></main>
+<script>
+window.GM_getValue=(key,fallback)=>JSON.parse(localStorage.getItem(key)||'null')??fallback;
+window.GM_setValue=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
+window.GM_addElement=(parent,tag,attrs)=>{const el=document.createElement(tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,k==='srcdoc'?v.replace(/https:\/\/raw\.githubusercontent\.com\/Tmddhdmlc-ux\/Ercedia-RPG\/[a-f0-9]{40}\//g,location.origin+'/'):v);parent.append(el);return el;};
+window.GM_registerMenuCommand=()=>{};
+window.mockRelease=0;window.mockNetworkFailure=false;
+window.GM_xmlhttpRequest=async options=>{
+  try{
+    if(window.mockNetworkFailure)throw Error('모의 네트워크 실패');
+    const sha=(mockRelease%2?'b':'a').repeat(40);
+    if(options.url.includes('api.github.com'))return options.onload({status:200,responseText:JSON.stringify({sha}),finalUrl:options.url});
+    let html=await (await fetch('/integration/game.html')).text();
+    if(options.url.includes('/'+ 'b'.repeat(40) +'/'))html=html.replace('</head>','<style>.dialog{border-top-color:#8bd3df}</style></head>').replace('<nav class="tabs"','<span id="mock-new-feature" hidden>새 기능 시험</span><nav class="tabs"');
+    if(mockRelease===2)html=html.replace('/*__ERCEDIA_BOOTSTRAP__*/','throw Error("의도적 새 UI 실패");/*__ERCEDIA_BOOTSTRAP__*/');
+    const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(html)))].map(v=>v.toString(16).padStart(2,'0')).join('');
+    const responseText=options.url.endsWith('game.html')?html:JSON.stringify({version:mockRelease%2?'1.1.1':'1.1.0',bridgeVersion:1,stateVersion:1,sceneSchemaVersion:1,entry:'integration/game.html',sha256:hash});
+    options.onload({status:200,responseText,finalUrl:options.url});
+  }catch{options.onerror();}
+};
+window.mockSent=[];document.querySelector('[data-testid="send-button"]').onclick=()=>{mockSent.push(document.getElementById('prompt-textarea').textContent);document.getElementById('prompt-textarea').textContent='';document.getElementById('sent-count').textContent=`전송 ${mockSent.length}회`;};
+window.mockResponse=(scene)=>{const el=document.createElement('article');el.dataset.messageAuthorRole='assistant';const pre=document.createElement('pre'),code=document.createElement('code');code.textContent=typeof scene==='string'?scene:JSON.stringify(scene);pre.append(code);el.append(pre);document.getElementById('messages').append(el);};
+</script><script src="ercedia-rpg.user.js"></script></html>

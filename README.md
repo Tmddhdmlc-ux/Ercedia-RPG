@@ -1,5 +1,7 @@
 # 에르세디아 RPG 웹 UI
 
+ChatGPT 웹페이지 내부의 고정 게임 화면과 GitHub UI 업데이트는 [Tampermonkey 설치·사용 안내](tampermonkey/README.md)를 참고하세요. 런처와 게임 UI는 분리되어 일반 UI 패치 때 재설치가 필요하지 않습니다. 실제 ChatGPT 자동 연결과 v1.1 전체 업데이트 동작은 사용자 확인 대기 상태입니다. 로컬 수동 게임 화면은 `http://localhost:4173/?game=1`입니다.
+
 기존 `prototypes/low_lag_vn_v03.html`의 대화를 기반으로 한 독립 실행형 비주얼 노벨 UI입니다. 세계지도는 등록된 메인 표시용 `assets/maps/world/world_main.png`를 사용합니다. AI API 연결은 없습니다.
 
 ## 실행

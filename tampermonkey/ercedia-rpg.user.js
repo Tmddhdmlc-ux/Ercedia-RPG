@@ -1,0 +1,161 @@
+// ==UserScript==
+// @name         에르세디아 RPG · 고정 런처
+// @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
+// @version      1.1.0
+// @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
+// @match        https://chatgpt.com/*
+// @match        https://chat.openai.com/*
+// @run-at       document-idle
+// @noframes
+// @grant        GM_getValue
+// @grant        GM_setValue
+// @grant        GM_addElement
+// @grant        GM_xmlhttpRequest
+// @grant        GM_registerMenuCommand
+// @connect      api.github.com
+// @connect      raw.githubusercontent.com
+// ==/UserScript==
+(()=>{
+  'use strict';
+  if(document.getElementById('ercedia-game-root'))return;
+  const REPO='Tmddhdmlc-ux/Ercedia-RPG',CACHE='ercedia.launcher.releases.v1';
+  const root=document.createElement('div');root.id='ercedia-game-root';
+  const shadow=root.attachShadow({mode:'open'}),style=document.createElement('style');
+  style.textContent=`:host{position:fixed;inset:12px;z-index:2147483600;color:#e9eded;font:12px/1.6 system-ui;display:block}*{box-sizing:border-box}[hidden]{display:none!important}.window{height:100%;display:flex;flex-direction:column;background:#101920;border:1px solid #d6b77c66;border-radius:10px;overflow:hidden;box-shadow:0 12px 60px #0008}.toolbar{display:flex;gap:7px;align-items:center;padding:8px 12px;border-bottom:1px solid #ffffff22;flex-shrink:0;flex-wrap:wrap}.toolbar strong{color:#d6b77c;margin-right:auto}button{font:inherit;border:1px solid #ffffff33;background:#22323e;color:#e9eded;border-radius:5px;padding:5px 9px;cursor:pointer}button:disabled{opacity:.4;cursor:default}label{display:flex;align-items:center;gap:5px;font-size:11px}.status{font-size:10px;color:#b7c8d1;width:100%;overflow-wrap:anywhere}iframe{flex:1;min-height:0;width:100%;border:0;background:#101920}.launcher{position:fixed;bottom:20px;right:20px}iframe.stage-frame{position:absolute;left:-20000px;top:0;width:1000px;height:1100px;visibility:hidden}:host([data-mode=debug]){left:auto;width:min(670px,52vw);inset-block:12px;right:12px}:host([data-mode=closed]){inset:auto;bottom:20px;right:20px}.debug-info{font-size:10px;padding:7px 12px;background:#132330;color:#9db2bf}.loading{padding:30px;color:#d6b77c}@media(max-width:700px){:host{inset:4px}:host([data-mode=debug]){width:95vw;right:4px;inset-block:4px}}`;
+  const win=document.createElement('section');win.className='window';
+  const toolbar=document.createElement('div');toolbar.className='toolbar';
+  function button(text,id){const el=document.createElement('button');el.textContent=text;el.id=id;toolbar.append(el);return el;}
+  const title=document.createElement('strong');title.textContent='에르세디아 RPG';toolbar.append(title);
+  const version=document.createElement('span');version.id='ui-version';toolbar.append(version);
+  const mode=button('디버그 모드','launcher-mode'),check=button('최신 버전 확인','check-update'),update=button('업데이트 적용','apply-update'),rollback=button('이전 버전 복구','rollback-update');update.hidden=true;rollback.disabled=true;
+  const label=document.createElement('label'),auto=document.createElement('input');auto.type='checkbox';label.append(auto,'자동 연결 시험');toolbar.append(label);
+  const close=button('게임 종료','close-game'),status=document.createElement('div');status.className='status';status.setAttribute('role','status');toolbar.append(status);
+  const info=document.createElement('div');info.className='debug-info';info.textContent='자동 연결은 실험 기능입니다. 실패하면 요청 복사 → ChatGPT 직접 전송 → 응답 JSON 수동 적용을 사용하세요.';info.hidden=true;
+  const loading=document.createElement('p');loading.className='loading';loading.textContent='저장된 UI 또는 GitHub 최신 UI를 불러오는 중…';
+  const stage=document.createElement('div');stage.className='stage';
+  const launcher=document.createElement('button');launcher.className='launcher';launcher.textContent='✧ 에르세디아 열기';launcher.hidden=true;
+  shadow.append(style,win,stage,launcher);win.append(toolbar,info,loading);document.documentElement.append(root);root.dataset.mode='game';
+  let conversation=conversationId(),lastURL=location.href,active=null,prepared=null,previous=null,candidate=null,latestState=null,pending=null,checking=false,switching=false,lastCheck=0,latestFingerprint='',lastApplied='',scanTimer=null,routeTimer=null;
+  const waiters=new Map();
+  function conversationId(){return location.pathname.match(/\/c\/([^/]+)/)?.[1]||`draft:${location.pathname}`;}
+  const storageKey=()=>`ercedia.tm.v1:${conversation}`;
+  function read(key,fallback=null){try{return GM_getValue(key,fallback);}catch{return fallback;}}
+  function write(key,value){GM_setValue(key,value);}
+  function post(record,type,payload,requestId){record?.frame.contentWindow.postMessage({channel:'ercedia',token:record.token,conversation,type,payload,requestId},'*');}
+  function send(type,payload){post(active,type,payload);}
+  function tell(message){status.textContent=message;send('status',message);}
+  function setMode(value){root.dataset.mode=value;win.hidden=value==='closed';launcher.hidden=value!=='closed';info.hidden=value!=='debug';mode.textContent=value==='debug'?'게임 모드':'디버그 모드';if(value==='game'){checkLatest(false);scan();}}
+  mode.onclick=()=>setMode(root.dataset.mode==='debug'?'game':'debug');close.onclick=()=>setMode('closed');launcher.onclick=()=>setMode('game');
+  if(typeof GM_registerMenuCommand==='function')GM_registerMenuCommand('에르세디아 열기',()=>setMode('game'));
+  function request(url){
+    if(!/^https:\/\/(api\.github\.com\/repos\/Tmddhdmlc-ux\/Ercedia-RPG\/commits\/main|raw\.githubusercontent\.com\/Tmddhdmlc-ux\/Ercedia-RPG\/[a-f0-9]{40}\/integration\/(game\.html|update-manifest\.json))(?:\?|$)/.test(url))return Promise.reject(Error('허용되지 않은 배포 경로입니다.'));
+    return new Promise((resolve,reject)=>GM_xmlhttpRequest({method:'GET',url,timeout:20000,headers:{'Accept':'application/vnd.github+json'},onload:r=>{if(r.status!==200)return reject(Error(`GitHub 응답 ${r.status}`));if(r.finalUrl&&new URL(r.finalUrl).origin!==new URL(url).origin)return reject(Error('배포 요청이 다른 도메인으로 이동했습니다.'));resolve(r.responseText);},onerror:()=>reject(Error('네트워크 연결 실패')),ontimeout:()=>reject(Error('다운로드 시간 초과'))}));
+  }
+  async function verify(release){
+    if(!release||!/^[a-f0-9]{40}$/.test(release.sha)||release.manifest?.bridgeVersion!==1||release.manifest?.stateVersion!==1||release.manifest?.sceneSchemaVersion!==1||release.manifest?.entry!=='integration/game.html'||typeof release.html!=='string'||release.html.length>2000000)throw Error('지원하지 않는 UI 또는 저장 버전입니다.');
+    const hash=[...new Uint8Array(await crypto.subtle.digest('SHA-256',new TextEncoder().encode(release.html)))].map(v=>v.toString(16).padStart(2,'0')).join('');
+    if(hash!==release.manifest.sha256)throw Error('UI 파일의 검증값이 일치하지 않습니다.');return release;
+  }
+  function frameRequest(record,type,payload){
+    const requestId=crypto.randomUUID();return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{waiters.delete(requestId);reject(Error('상태 확인 시간 초과'));},10000);waiters.set(requestId,{record,resolve:value=>{clearTimeout(timer);resolve(value);}});post(record,type,payload,requestId);});
+  }
+  function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}';return JSON.stringify(value);}
+  function createFrame(release,saved){
+    const token=crypto.randomUUID(),config={token,conversation,saved,assetBase:`https://raw.githubusercontent.com/${REPO}/${release.sha}/`};
+    const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config).replaceAll('<','\\u003c')};window.__ERCEDIA_STORAGE__={getItem:()=>window.__ERCEDIA_CONFIG__.saved?JSON.stringify(window.__ERCEDIA_CONFIG__.saved):null,setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'save',payload:state},'*');}};`;
+    const html=release.html.replace('/*__ERCEDIA_BOOTSTRAP__*/',()=>bootstrap);
+    const record={release,token,frame:null,ready:false,health:null};
+    const promise=new Promise((resolve,reject)=>{record.resolve=resolve;record.reject=reject;record.timer=setTimeout(()=>reject(Error('새 UI 시작 또는 이미지 확인 시간 초과')),35000);});
+    candidate=record;record.frame=GM_addElement(win,'iframe',{class:'stage-frame',title:'에르세디아 게임 화면',sandbox:'allow-scripts',allow:'fullscreen; clipboard-write',srcdoc:html});
+    record.promise=promise;return record;
+  }
+  function ready(record){if(record.ready&&record.health!==null){clearTimeout(record.timer);record.health?record.resolve(record):record.reject(Error('새 UI 이미지 로드 실패 · 기존 UI를 유지합니다.'));}}
+  async function activate(release,initial=false){
+    if(switching)return;if(!initial&&(pending||generating()))return tell('대화 진행 중에는 업데이트할 수 없습니다. 응답 완료 또는 대기 해제 후 적용하세요.');
+    switching=true;update.disabled=true;rollback.disabled=true;
+    let record,old=active,route=conversation;
+    try{
+      let snapshot=latestState||read(storageKey());
+      if(old){const result=await frameRequest(old,'snapshot',null);if(result.pending||generating())throw Error('게임 행동을 기다리는 중입니다.');snapshot=result.state;write(`${storageKey()}:backup`,snapshot);}
+      tell(initial?'게임 UI를 시작하고 있습니다…':'새 UI를 별도 영역에서 검사하는 중… 현재 화면은 유지됩니다.');
+      record=createFrame(await verify(release),snapshot);await record.promise;
+      if(route!==conversation)throw Error('채팅이 전환되어 업데이트 적용을 취소했습니다.');
+      if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=fresh.state;}
+      const restored=await frameRequest(record,'restore',snapshot);
+      if(snapshot&&canonical(restored.state)!==canonical(snapshot))throw Error('상태 구조가 호환되지 않아 적용을 취소했습니다.');
+      // Cache before changing the visible frame; a storage error leaves the current UI intact.
+      write(CACHE,{current:release,previous:old?.release||previous});
+      write(storageKey(),restored.state);
+      active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
+      record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
+      version.textContent=`v${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      prepared=null;update.hidden=true;rollback.disabled=!previous;
+      tell(initial?'고정 UI 연결됨 · 자동 연결은 꺼져 있습니다.':'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
+    }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
+    finally{switching=false;update.disabled=false;rollback.disabled=!previous;}
+  }
+  async function checkLatest(force=false){
+    if(checking||switching||(!force&&Date.now()-lastCheck<600000))return;
+    checking=true;lastCheck=Date.now();check.disabled=true;
+    try{
+      const commit=JSON.parse(await request(`https://api.github.com/repos/${REPO}/commits/main?check=${Date.now()}`));
+      if(!/^[a-f0-9]{40}$/.test(commit.sha))throw Error('커밋 식별자가 올바르지 않습니다.');
+      if(commit.sha===active?.release.sha||commit.sha===prepared?.sha){if(force)tell('현재 확인된 최신 UI입니다.');return;}
+      const base=`https://raw.githubusercontent.com/${REPO}/${commit.sha}/integration/`;
+      const manifest=JSON.parse(await request(base+'update-manifest.json'));
+      if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force)tell('게임 UI 변경이 없습니다.');return;}
+      const release=await verify({sha:commit.sha,manifest,html:await request(base+'game.html')});
+      if(!active)return await activate(release,true);
+      prepared=release;update.hidden=false;tell(`새 UI 발견 · 현재 v${active.release.manifest.version} → v${manifest.version} (${commit.sha.slice(0,7)}). 진행 상태를 유지한 채 업데이트 적용을 누르세요.`);
+    }catch(error){tell(`업데이트 확인 실패 · ${error.message} · 기존 UI와 저장 상태를 유지합니다.`);if(!active)loading.textContent='GitHub 연결 실패 · 최신 버전 확인 버튼으로 다시 시도하세요.';}
+    finally{checking=false;check.disabled=false;}
+  }
+  check.onclick=()=>checkLatest(true);update.onclick=()=>prepared&&activate(prepared);rollback.onclick=()=>previous&&activate(previous);
+  const latest=()=>{const nodes=document.querySelectorAll('[data-message-author-role="assistant"]');return nodes[nodes.length-1];};
+  const generating=()=>!!document.querySelector('[data-testid="stop-button"],button[aria-label="Stop generating"],button[aria-label="응답 생성 중지"]');
+  function baseline(){latestFingerprint=latest()?.textContent||'';}
+  baseline();auto.onchange=()=>{baseline();tell(auto.checked?'자동 연결 시험 켜짐 · 공개 페이지의 입력·응답 요소만 사용합니다.':'수동 모드 · 요청 복사와 JSON 적용을 사용하세요.');};
+  async function deliver(payload){
+    pending=payload.requestId;baseline();
+    if(!auto.checked){setMode('debug');tell('수동 모드 · 요청 복사로 원본 ChatGPT에 전송하세요.');return;}
+    if(generating())return tell('ChatGPT가 응답 중입니다. 요청을 전송하지 않았습니다. 대기 해제 후 다시 시도하세요.');
+    const editor=document.querySelector('#prompt-textarea,textarea[data-testid="prompt-textarea"]');
+    if(!editor){setMode('debug');return tell('ChatGPT 입력창을 찾지 못했습니다. 요청 복사로 직접 전송하세요.');}
+    const existing=('value' in editor?editor.value:editor.textContent)||'';
+    if(existing.trim()){setMode('debug');return tell('작성 중인 원본 입력을 덮어쓰지 않았습니다. 요청 복사로 직접 전송하세요.');}
+    editor.focus();if('value' in editor){const setter=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;setter?setter.call(editor,payload.text):editor.value=payload.text;}else editor.textContent=payload.text;
+    editor.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:payload.text}));
+    await new Promise(resolve=>setTimeout(resolve,250));if(conversation!==conversationId()||pending!==payload.requestId)return;
+    const submit=document.querySelector('button[data-testid="send-button"],button[aria-label="Send prompt"],button[aria-label="프롬프트 보내기"]');
+    if(!submit||submit.disabled){setMode('debug');return tell('자동 전송 버튼을 사용할 수 없습니다. 원본 입력창에서 직접 전송하세요.');}
+    submit.click();tell('전송을 시도했습니다. 응답을 기다리는 중…');
+    setTimeout(()=>{if(pending===payload.requestId&&(('value' in editor?editor.value:editor.textContent)||'').trim()&&!generating())tell('전송 확인이 되지 않았습니다. 원본 입력창을 확인하세요. 자동 재전송은 하지 않습니다.');},1200);
+  }
+  function scan(){
+    if(!auto.checked||!active||generating())return;const node=latest();if(!node)return;const value=node.textContent||'';
+    if(value===latestFingerprint||value===lastApplied||!value.includes('ercedia_scene'))return;
+    latestFingerprint=value;const code=[...node.querySelectorAll('pre code')].find(block=>block.textContent.includes('ercedia_scene'));send('scene',code?.textContent||value);
+  }
+  new MutationObserver(()=>{if(auto.checked){clearTimeout(scanTimer);scanTimer=setTimeout(scan,1800);}}).observe(document.body,{childList:true,subtree:true,characterData:true});
+  window.addEventListener('message',event=>{
+    const data=event.data,record=[active,candidate].find(v=>v&&event.source===v.frame.contentWindow&&data?.token===v.token);
+    if(!record||data.channel!=='ercedia'||data.conversation!==conversation)return;
+    if(data.type==='ready'){if(data.payload.bridgeVersion!==1||data.payload.stateVersion!==1)return record.reject(Error('브리지 호환성 오류'));record.ready=true;ready(record);}
+    if(data.type==='health'){record.health=data.payload.ok;ready(record);}
+    if(data.payload?.requestId){const waiter=waiters.get(data.payload.requestId);if(waiter?.record===record){waiters.delete(data.payload.requestId);waiter.resolve(data.payload);}}
+    if(record!==active)return;
+    if(data.type==='save'){latestState=data.payload;try{write(storageKey(),latestState);}catch{send('save-error',null);}}
+    if(data.type==='action')deliver(data.payload).catch(()=>tell('입력 연결 실패 · 요청 복사로 직접 전송하세요.'));
+    if(data.type==='cancel')pending=null;
+    if(data.type==='applied'){pending=null;lastApplied=latestFingerprint;tell(`장면 적용 · ${data.payload.scene_id}`);}
+    if(data.type==='parse-error')tell(`응답 해석 오류 · ${data.payload.message} · JSON 수동 적용을 사용하세요.`);
+  });
+  setInterval(()=>{
+    if(location.href===lastURL)return;lastURL=location.href;const next=conversationId();if(next===conversation)return;
+    clearTimeout(scanTimer);clearTimeout(routeTimer);const wasDraft=conversation.startsWith('draft:')&&!!pending;
+    const saved=wasDraft?latestState:read(`ercedia.tm.v1:${next}`);conversation=next;pending=null;lastApplied='';latestState=saved;
+    if(wasDraft&&saved)try{write(storageKey(),saved);}catch{}baseline();send('restore',saved);tell('채팅 전환 · 저장 상태 복원 요청');routeTimer=setTimeout(baseline,1000);
+  },500);
+  setInterval(()=>checkLatest(false),600000);
+  (async()=>{const cache=read(CACHE);previous=cache?.previous||null;if(cache?.current)await activate(cache.current,true);if(!active&&cache?.previous)await activate(cache.previous,true);await checkLatest(true);})();
+})();

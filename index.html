@@ -12,7 +12,7 @@
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
-          <span class="location"><span>⌖</span> 써니 빌리지 <em>오후</em></span>
+          <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
           <span class="scene-tag">SERIN / 세린</span>
           <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
         </div>
@@ -44,6 +44,13 @@
         <div id="inventory-scroll" class="inventory-scroll"><div id="inventory-grid" class="inventory-grid" aria-label="아이템 슬롯"></div><p id="inventory-empty" class="inventory-empty"></p></div>
         <p id="inventory-note" class="inventory-note"></p>
         <div id="item-tooltip" class="item-tooltip" role="tooltip" hidden><span id="item-category"></span><h3 id="item-name"></h3><p id="item-description"></p><p id="item-effect"></p><small id="item-quantity"></small></div>
+      </section>
+      <section id="chat-runtime" class="chat-runtime" aria-label="게임 행동 및 ChatGPT 연결" hidden>
+        <div id="scene-choices" class="scene-choices"></div>
+        <form id="free-action-form"><label for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="2" placeholder="세린에게 질문하거나 자유롭게 행동하세요."></textarea><button id="send-action" type="submit" class="primary">보내기</button></div></form>
+        <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="cancel-wait" hidden>대기 해제</button></div>
+        <div id="action-copy-area" hidden><label for="action-copy">ChatGPT에 보낼 요청</label><textarea id="action-copy" rows="4" readonly></textarea><button id="copy-action">요청 복사</button></div>
+        <details class="manual-scene"><summary>응답 JSON 수동 적용</summary><label for="scene-json">ChatGPT의 JSON 응답 전체</label><textarea id="scene-json" rows="5" placeholder="JSON 또는 JSON 코드블록을 붙여넣으세요."></textarea><button id="apply-scene">장면 적용</button></details>
       </section>
       <div class="game-foot"><span>✧ 에르세디아 RPG</span><span>AI 대화 미연결</span></div>
     </article>

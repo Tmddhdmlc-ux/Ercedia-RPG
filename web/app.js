@@ -1,3 +1,5 @@
+import {createGameBridge} from '../integration/game-bridge.js';
+import {mountChatUI} from './chat-ui.js';
 import {mountInventory,normalizeInventory} from './inventory.js';
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
@@ -5,8 +7,8 @@ import {mapData} from './map-data.js';
 import {mountPlayer} from './player-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
-const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
-const MAP_CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
+const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
+const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
 const standing='assets/characters/main/serin/standing/';
 // Only approved, registered assets belong here. Drafts and absent expressions are excluded.
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
@@ -32,8 +34,10 @@ for(const p of [...mapData.regions,...mapData.locations]){
 const kindLabels={capital:'왕도',lordship:'영주령',port:'항구',fortress:'요새',mana_mine:'마나 광산',dungeon:'던전',beast_habitat:'마수 서식지',anomaly:'마나 이상·유적',island:'군도 탐험'};
 for(const view of mapViews){const button=document.createElement('button');button.dataset.mapView=view.id;button.textContent=view.label.replace(' (임시)','');$('map-regions').append(button);}
 for(const p of mapData.locations){const button=document.createElement('button');button.dataset.region=p.id;button.dataset.parentRegion=p.region;const title=document.createElement('b'),kind=document.createElement('span');title.textContent=`${p.id} · ${locationLabel(p)}`;kind.textContent=kindLabels[p.kind]||p.kind;button.append(title,kind);$('map-detail-list').append(button);}
+const embedded=!!window.__ERCEDIA_CONFIG__;
+let storage;
 let restored;
-try {restored=load(window.localStorage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
+try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
 $('save-status').textContent=restored.message;
 const images=new Map();
@@ -71,7 +75,7 @@ for(const expression of Object.keys(labels)){
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
-function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.'; }
+function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
@@ -101,8 +105,23 @@ function renderLayout(){
   faceLayer.style.setProperty('--face-top',`${fit.y/1536*100}%`);
   faceLayer.style.setProperty('--face-size',`${fit.size/1024*100}%`);
 }
-function renderDialogue(){const d=dialogues[state.index];$('speaker').textContent=d[0];$('emotion').textContent=d[1];$('line').textContent=d[2];$('count').textContent=`0${state.index+1} / 04`;$('previous').disabled=state.index===0;$('next').disabled=state.index===3;$('stage').setAttribute('aria-label',state.index===3?'마지막 대사':'장면을 눌러 다음 대사 보기');}
-function advance(delta){const next=Math.max(0,Math.min(3,state.index+delta));if(next===state.index)return;state.index=next;renderDialogue();dirty();}
+function renderDialogue(){
+  const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
+  const index=state.scene?state.sceneIndex:state.index,d=list[index];
+  $('speaker').textContent=d.speaker;$('emotion').textContent=labels[d.emotion]||d.emotion||'';$('line').textContent=d.text;
+  $('count').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
+  $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
+  if(state.scene){
+    const scene=state.scene;
+    $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
+    state.character=!!scene.npc;
+    if(scene.npc){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
+      for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
+    }
+    renderAppearance();
+  }
+}
+function advance(delta){const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
 function switchTo(page){inventoryUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
 function updateMapCamera(){
   const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
@@ -137,16 +156,19 @@ let frame=0;
 for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
 for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;renderAppearance();dirty();};
 $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
-function saveGame(){try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
+function saveGame(){try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
 $('save').onclick=saveGame;
-mountPlayer(state);
+const playerUI=mountPlayer(state);
 const inventoryUI=mountInventory(state);
 // A future game engine sends the complete current bag; UI previews never change it.
 window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-renderAppearance();renderDialogue();renderRegion();switchTo(state.page);
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);}
+const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded});
+window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
+renderAll();
 
 const game=document.querySelector('.game');
 let expandedInPage=false;

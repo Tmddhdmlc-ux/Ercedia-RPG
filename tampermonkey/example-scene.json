@@ -1,0 +1,17 @@
+{
+  "schema_version": 1,
+  "type": "ercedia_scene",
+  "scene_id": "ui_test_serin_001",
+  "location": "써니 빌리지",
+  "time": "오후",
+  "background_id": "sunny_village_day",
+  "npc": {"id": "serin", "outfit": "armor", "emotion": "smile", "speaker": "세린"},
+  "dialogue": [
+    {"speaker": "나레이션", "text": "UI 연결 확인용 장면입니다. 실제 게임 진행이나 정설 사건이 아닙니다."},
+    {"speaker": "세린", "emotion": "surprised", "text": "표정과 대사 전환을 확인해주세요."}
+  ],
+  "choices": [
+    {"id": "talk", "text": "세린에게 질문한다."},
+    {"id": "look", "text": "주변을 살펴본다."}
+  ]
+}

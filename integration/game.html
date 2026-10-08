@@ -1,0 +1,720 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111a21"><title>에르세디아 RPG · 써니 빌리지</title><style>
+:root{color-scheme:dark;--gold:#d6b77c;--muted:#8c999e;--line:#ffffff12;--surface:#18232b}*{box-sizing:border-box}body{margin:0;background:#101920;color:#e9eded;font:14px/1.6 "Malgun Gothic",system-ui,sans-serif}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{border:1px solid #ffffff23;border-radius:6px;padding:9px 14px;background:#202e37;color:#dce3e4;cursor:pointer}button:hover{background:#2c3b44;border-color:#d6b77c88}button:disabled{opacity:.3;cursor:default}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:4px}[hidden]{display:none!important}.shell{max-width:1220px;margin:auto;padding:0 36px}.masthead{height:92px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{color:inherit;text-decoration:none;display:flex;align-items:center;gap:14px}.sigil{font:45px Georgia;color:var(--gold)}.brand small{display:block;letter-spacing:5px;font:11px Georgia;color:var(--gold)}.brand strong{font-size:18px;font-weight:600}.build{font-size:11px;color:var(--muted)}.build i{display:inline-block;width:6px;height:6px;background:#87ae9a;border-radius:50%;margin-right:8px}.intro{display:flex;justify-content:space-between;align-items:center;padding:32px 0 26px}.eyebrow{font-size:9px;letter-spacing:2.3px;color:var(--gold)}h1{font-size:27px;font-weight:500;letter-spacing:-1.2px;margin:6px 0}p{margin:0}.intro p{font-size:12px;color:var(--muted)}.chapter{font:10px Georgia;letter-spacing:2px;color:var(--muted)}.chapter b{display:block;font-size:40px;font-weight:400;color:var(--gold);line-height:1.2}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}.game{border:1px solid #ffffff21;border-radius:10px;overflow:hidden;background:var(--surface)}.tabs{display:flex;align-items:center;height:58px;padding:0 20px;gap:24px;border-bottom:1px solid var(--line)}.tabs button{border:0;border-radius:0;background:none;padding:17px 0;color:var(--muted);height:100%}.tabs button.active{color:var(--gold);border-bottom:2px solid var(--gold)}.tabs button span{font:8px Georgia;letter-spacing:1px;margin-left:7px}.local-badge{margin-left:auto;font-size:10px;color:#839891}.stage{height:455px;position:relative;overflow:hidden;background:#354841;isolation:isolate;cursor:pointer}.background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.characters{position:absolute;inset:0;pointer-events:none}.person{position:absolute;height:410px;width:auto;max-width:none;object-fit:contain;transform-origin:center top;will-change:transform;visibility:hidden}.person.ready{visibility:visible}.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0a182b18 55%,#07121ad9)}.location{position:absolute;left:20px;top:18px;background:#12202cda;border:1px solid #ffffff22;border-radius:5px;padding:5px 12px;font-size:11px}.location>span{color:var(--gold);margin-right:7px}.location em{font-style:normal;color:#aebdbf;margin-left:14px}.scene-tag{position:absolute;right:18px;top:24px;font-size:9px;letter-spacing:2px;text-shadow:0 1px 4px #000}.dialog{position:absolute;left:20px;right:20px;bottom:18px;border:1px solid #d6b77c66;border-top:2px solid var(--gold);border-radius:4px;background:#101d29ed;padding:16px 22px 26px;min-height:134px}.dialog-heading{display:flex;align-items:center;gap:12px}.dialog b{font-size:17px;font-weight:500;color:#ebcb8e}.dialog-heading>span{font-size:10px;color:#9eadae}.dialog p{font-size:14px;line-height:1.8;margin-top:8px;word-break:keep-all}.tap-hint{position:absolute;bottom:7px;right:16px;font-size:9px;color:#95a3a7}.tap-hint>span{color:var(--gold);margin-left:10px}.story-controls{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 18px}.text-button{border:0;background:transparent;font-size:12px}.story-controls>span{font:11px Georgia;color:var(--gold);letter-spacing:3px}.game-foot{display:flex;justify-content:space-between;border-top:1px solid var(--line);font-size:10px;color:#86969f;padding:11px 22px}.settings{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}.settings-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.settings-head h2{font-size:22px;font-weight:500;margin:4px 0}.settings-head h2 small{font:italic 13px Georgia;color:var(--muted);margin-left:6px}.rank{font-size:9px;color:var(--gold);border:1px solid #d6b77c3d;border-radius:4px;padding:4px 7px}fieldset{padding:0;margin:0;border:0}legend,.section-heading{font-size:12px;display:flex;gap:9px;align-items:center;margin-bottom:10px}legend span,.section-heading span{font:8px Georgia;color:var(--muted);letter-spacing:1px}.outfits{display:flex;gap:6px}.outfits button{flex:1;padding:8px 4px;font-size:12px}.outfits .selected{color:var(--gold);border-color:var(--gold);background:#d6b77c0d}.expression-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px}select{font-size:11px;background:#101b24;border:1px solid #ffffff24;border-radius:5px;color:#d6dedf;padding:7px;max-width:180px}.notice{font-size:10px;color:#aab4b5;min-height:46px;margin-top:8px;line-height:1.65}.section-heading{padding-top:16px;border-top:1px solid var(--line)}.slider-field{margin-bottom:9px}.slider-field label{display:flex;justify-content:space-between;align-items:center;font-size:11px}.slider-field output{font:12px ui-monospace,monospace;color:var(--gold)}input[type=range]{width:100%;margin:9px 0 0;accent-color:var(--gold);height:15px;cursor:ew-resize}.range-ticks{display:flex;justify-content:space-between;color:#71818b;font-size:9px}.layer-toggles{display:flex;gap:20px;margin:16px 0;font-size:10px;color:#bec8ca}.layer-toggles label{display:flex;align-items:center;gap:5px}input[type=checkbox]{accent-color:var(--gold)}.save-actions{display:flex;gap:7px}.save-actions button{padding:9px 8px;font-size:11px;flex:1}.primary{background:var(--gold);border-color:var(--gold);color:#162028;font-weight:700}.primary:hover{background:#e7cb95}.save-status{font-size:10px;line-height:1.7;color:#a4b2b5;margin-top:10px;min-height:34px}.asset-details{font-size:11px;color:var(--muted);margin-top:20px}.asset-details summary{cursor:pointer}.asset-details li{margin:6px 0}.asset-details a{color:var(--gold)}.asset-details .error{color:#f3a99d}.footer{display:flex;justify-content:space-between;gap:20px;font-size:9px;color:#647681;border-top:1px solid var(--line);margin-top:24px;padding:20px 0}.footer i{color:var(--gold);margin:0 8px}.map{height:455px;background:#233e49;overflow:hidden}.map svg{width:100%;height:100%;display:block}.region{cursor:pointer;stroke:#c4b58d;stroke-width:2;transition:stroke-width .12s}.region.selected{stroke:#ffe3a3;stroke-width:5}.region:hover{filter:brightness(1.12)}.mapinfo{padding:18px 22px;display:flex;gap:20px;align-items:center;justify-content:space-between}.mapinfo h2{font-size:17px;font-weight:500;margin:5px 0}.mapinfo p{color:var(--muted);font-size:11px}.mapinfo button{white-space:nowrap;font-size:11px}.asset-alert{color:#f3a99d}
+@media(min-width:1400px){.shell{padding:0 20px}.intro{padding-top:44px;padding-bottom:32px}}
+@media(max-width:900px){.shell{padding:0 18px}.workspace{grid-template-columns:minmax(0,1fr)}.settings{display:block}.settings .notice{min-height:0;margin-bottom:18px}.settings-head{margin-bottom:12px}.slider-field{margin-top:12px}.footer{flex-wrap:wrap}.build{font-size:9px}}
+@media(max-width:480px){.shell{padding:0 10px}.masthead{height:72px}.brand strong{font-size:15px}.brand small{font-size:9px}.build{max-width:85px;text-align:right}.intro{padding:22px 6px}.intro h1{font-size:21px}.chapter{display:none}.tabs{padding:0 14px;gap:20px}.tabs button span{display:none}.dialog{left:10px;right:10px;padding:13px 15px 27px}.dialog p{font-size:13px}.scene-tag{display:none}.location{left:12px}.mapinfo{align-items:flex-start;flex-direction:column}.stage{height:455px}.footer{font-size:8px}}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.tabs #fullscreen{height:auto;flex-shrink:0;padding:6px 10px;border:1px solid #d6b77c66;border-radius:5px;color:var(--gold);font-size:11px}
+.face-layer{position:absolute;width:273.333333px;height:410px;transform-origin:center top;pointer-events:none;will-change:transform}
+.face-image{position:absolute;left:var(--face-left);top:var(--face-top);width:var(--face-size);height:auto;visibility:hidden}
+.face-image.ready{visibility:visible}
+.map{position:relative}
+.world-map-image{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}
+#map-points{position:absolute;inset:0;width:100%;height:100%;pointer-events:none}
+.map-hit{pointer-events:all;cursor:pointer;fill:transparent;stroke:transparent;stroke-width:3;vector-effect:non-scaling-stroke}
+.map-hit:hover,.map-hit:focus-visible{fill:#ffe3a31a;stroke:#ffe3a3;outline:none}
+.map-hit.selected{fill:#ffe3a322;stroke:#ffe3a3;stroke-width:4}
+.map-status{padding:8px 20px;font-size:10px;color:var(--muted);border-top:1px solid var(--line);flex-shrink:0}
+.tabs #fullscreen{margin-left:auto}
+.player-panel{padding:26px;min-height:455px;background:linear-gradient(145deg,#1b2933,#14212b)}
+.player-heading{display:flex;justify-content:space-between;align-items:center;padding-bottom:22px;border-bottom:1px solid var(--line);margin-bottom:22px}
+.player-heading h2{font-size:27px;font-weight:500;margin:5px 0}.player-heading p{font-size:12px;color:var(--muted)}
+.level-badge{text-align:center;min-width:70px;border-left:1px solid #d6b77c44;padding-left:20px}.level-badge span{font-size:9px;letter-spacing:2px;color:var(--gold)}.level-badge strong{display:block;font:36px Georgia;color:#ebcb8e;line-height:1.3}
+.resource{margin-bottom:16px}.resource>div{display:flex;justify-content:space-between;align-items:center;font-size:12px;margin-bottom:6px}.resource b{font-weight:500}.resource small{font-size:9px;color:var(--muted);margin-left:6px}.resource>div>span{font:12px ui-monospace,monospace;color:#c7d2d6}
+.resource progress{appearance:none;width:100%;height:7px;display:block;border:0;border-radius:4px;overflow:hidden;background:#0e1923;accent-color:#cb8c83}.resource progress::-webkit-progress-bar{background:#0e1923;border-radius:4px}.resource progress::-webkit-progress-value{background:#cb8c83;border-radius:4px}.resource progress::-moz-progress-bar{background:#cb8c83;border-radius:4px}
+.mana progress{accent-color:#80afd2}.mana progress::-webkit-progress-value{background:#80afd2}.mana progress::-moz-progress-bar{background:#80afd2}.experience progress{accent-color:var(--gold)}.experience progress::-webkit-progress-value{background:var(--gold)}.experience progress::-moz-progress-bar{background:var(--gold)}.resource progress.unset{opacity:.4}.experience p{font-size:10px;color:var(--muted);margin-top:6px}
+.attributes{display:grid;grid-template-columns:repeat(3,1fr);gap:12px;margin:24px 0}.attributes>div{padding:14px;text-align:center;background:#ffffff03;border:1px solid #d6b77c22;border-radius:6px}.attributes span{display:block;font-size:12px}.attributes small{font-size:9px;margin-left:5px;color:var(--muted)}.attributes strong{font:25px Georgia;color:var(--gold);display:block;margin-top:6px}
+.player-editor{padding:12px 0;border-block:1px solid var(--line);font-size:12px}.player-editor summary,.skill-editor summary{cursor:pointer;color:#becbcc}.player-editor>p{color:var(--muted);font-size:11px;margin:12px 0}.player-fields{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:12px}.player-fields label,.skill-editor>label{display:block;color:#9aadb5;font-size:11px}.player-panel input:not([type=checkbox]),.player-panel textarea{display:block;width:100%;padding:8px 10px;margin-top:5px;background:#0f1b24;border:1px solid #ffffff24;border-radius:5px;color:#e4ebed;min-width:0}.player-panel textarea{resize:vertical;min-height:75px;font:12px/1.7 inherit}.player-panel input::placeholder{color:#627680}
+.skill-heading{display:flex;justify-content:space-between;align-items:center;gap:12px;margin:26px 0 14px}.skill-heading h3{font-size:17px;font-weight:500;margin:2px 0}.skill-heading h3 span{font:14px Georgia;color:var(--gold);margin-left:8px}.skill-heading button{font-size:11px}.skills-empty{font-size:12px;color:var(--muted);padding:24px 18px;border:1px dashed #ffffff24;border-radius:6px;text-align:center}.skill-list{display:grid;gap:12px}.skill-card{border:1px solid #d6b77c28;background:#14202a;border-radius:7px;padding:16px}.skill-card-heading{display:flex;justify-content:space-between;align-items:center;gap:12px}.skill-card h4{margin:0;font-size:15px;font-weight:500;overflow-wrap:anywhere}.skill-card-heading>span{font-size:9px;color:#a8c5b5;border:1px solid #a8c5b544;border-radius:4px;padding:3px 6px;white-space:nowrap}.skill-description{color:#a5b4bd;font-size:12px;line-height:1.8;margin:10px 0;white-space:pre-wrap;overflow-wrap:anywhere}.skill-formula{display:block;font:12px/1.7 ui-monospace,monospace;padding:8px 10px;color:#e2c48e;background:#0d1922;border-radius:4px;white-space:pre-wrap;overflow-wrap:anywhere}.damage-preview{font-size:11px;color:var(--gold);margin-top:8px}.formula-error{color:#e4b0a7}.skill-card.unavailable{opacity:.7}.skill-editor{margin-top:12px;font-size:11px;border-top:1px solid var(--line);padding-top:10px}.skill-editor>label{margin-top:10px}.skill-editor-actions{display:flex;justify-content:space-between;align-items:center;margin-top:12px;font-size:11px}.skill-editor-actions button{font-size:10px;color:#d5aa9d;padding:5px 10px}.formula-guide{font-size:10px;color:var(--muted);line-height:1.8;margin:16px 0}.player-actions{display:flex;align-items:center;gap:15px;padding-top:16px;border-top:1px solid var(--line)}.player-actions button{font-size:12px;white-space:nowrap}.player-actions>span{font-size:10px;color:var(--muted)}
+.game.is-expanded #status-panel{flex:1;min-height:0;overflow:auto;max-width:none}.game.is-expanded .player-panel>*{max-width:1000px;margin-left:auto;margin-right:auto}
+@media(max-width:600px){.player-panel{padding:18px}.player-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.attributes{gap:8px}.attributes>div{padding:12px 6px}.player-actions{align-items:flex-start;flex-direction:column}.tabs{gap:12px}.tabs button span{display:none}}
+@media(max-width:380px){.tabs{padding:0 10px;gap:8px}.tabs button{font-size:12px}.tabs #fullscreen{font-size:10px;padding:5px 6px}}
+.player-panel textarea{font:inherit;font-size:12px;line-height:1.7}
+.map-sheet{position:absolute;left:0;top:0;width:1536px;height:1024px;transform-origin:0 0;will-change:transform;transition:transform .18s ease-out}
+.map-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;border-bottom:1px solid var(--line);flex-shrink:0}.map-navigation>span{font-size:11px;color:var(--gold)}.map-navigation button{font-size:10px;padding:6px 10px}
+.map-regions{display:flex;gap:7px;padding:10px 16px;overflow-x:auto;flex-shrink:0;scrollbar-width:thin}.map-regions button{font-size:10px;padding:6px 9px;white-space:nowrap}.map-regions button.active{color:var(--gold);border-color:var(--gold);background:#d6b77c0d}
+.map-detail-label{pointer-events:none;text-anchor:middle;fill:#fff1ca;stroke:#142332;stroke-width:4;paint-order:stroke;font-size:18px;font-weight:bold}
+.map-detail-panel{padding:12px 18px;background:#15242e;border-top:1px solid var(--line);flex-shrink:0}.map-detail-heading{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:11px;color:var(--gold)}.map-detail-heading small{color:var(--muted)}
+.map-detail-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;max-height:155px;overflow-y:auto;scrollbar-width:thin}.map-detail-list button{text-align:left;padding:8px 10px;border-color:#ffffff18}.map-detail-list b{display:block;font-size:10px;font-weight:500}.map-detail-list span{font-size:9px;color:var(--muted)}.map-detail-list button.selected{border-color:var(--gold);background:#d6b77c14}
+@media(max-width:480px){.map-navigation{padding:8px 12px}.map-navigation>span{font-size:10px}.map-detail-panel{padding:10px 12px}.map-detail-list{max-height:140px}.map-detail-list b{font-size:9px}}
+.player-panel{height:509px;min-height:0;padding:18px;display:flex;flex-direction:column;gap:12px}
+.player-content{flex:1;min-height:0;overflow-y:auto;scrollbar-width:thin;width:100%}
+.player-heading{padding-bottom:10px;margin-bottom:12px}.player-heading h2{font-size:22px;margin:2px 0}.player-heading p{font-size:11px}.level-badge strong{font-size:28px}
+.resource{margin-bottom:10px}.resource>div{font-size:11px;margin-bottom:4px}.resource progress{height:5px}.experience p{font-size:9px;margin-top:4px}
+.attributes{margin:14px 0;gap:8px}.attributes>div{padding:8px}.attributes strong{font-size:21px;margin-top:3px}.attributes span{font-size:11px}
+.player-editor{padding:8px 0;font-size:11px}.player-fields{gap:8px}.player-panel input:not([type=checkbox]){padding:6px 8px}
+.skill-heading{margin:14px 0 8px}.skill-heading h3{font-size:14px}.skills-empty{padding:12px;font-size:11px}.skill-list{gap:8px}.skill-card{padding:10px 12px}.skill-card h4{font-size:13px}.skill-description{margin:6px 0;font-size:11px}.skill-formula{padding:5px 8px;font-size:11px}.damage-preview{margin-top:5px;font-size:10px}
+.player-actions{flex-shrink:0;flex-direction:row;align-items:center;padding-top:10px;gap:10px;width:100%}.player-actions button{font-size:11px;padding:7px 10px}.player-actions>span{font-size:9px}
+.game-expanded{overflow:hidden}
+.embedded-game .settings,.embedded-game .masthead,.embedded-game .intro,.embedded-game .footer{display:none}.embedded-game .workspace{display:block}.embedded-game .shell{max-width:1000px;padding:12px}.embedded-game .inventory-heading #inventory-preview{display:none}.embedded-game .asset-details{margin-top:8px}.embedded-game .game-foot>span:last-child{display:none}
+.chat-runtime{padding:14px 18px;border-top:1px solid var(--line);background:#12212c}.scene-choices{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin-bottom:10px}.scene-choices button{text-align:left;font-size:12px;overflow-wrap:anywhere}.free-action-row{display:flex;gap:8px;align-items:stretch}.chat-runtime label{font-size:11px;color:var(--muted);display:block;margin-bottom:5px}.chat-runtime textarea{width:100%;resize:vertical;background:#0b1721;color:#e9eded;border:1px solid #ffffff25;border-radius:5px;padding:9px;font:12px/1.6 inherit;min-width:0}.free-action-row textarea{flex:1}.free-action-row button{white-space:nowrap;font-size:12px}.connection-row{display:flex;gap:10px;align-items:center;margin-top:8px}.connection-row p{font-size:11px;color:var(--muted);flex:1}.connection-row button,.manual-scene button,#copy-action{font-size:11px;padding:6px 10px}.manual-scene{margin-top:10px;font-size:11px}.manual-scene summary{cursor:pointer;color:var(--gold);margin-bottom:8px}#action-copy-area{margin-top:10px}.game.is-expanded{overflow:auto}.game.is-expanded .chat-runtime{flex-shrink:0}.game.is-expanded .stage{min-height:300px}
+.inventory-panel{height:509px;position:relative;display:flex;flex-direction:column;padding:20px;background:linear-gradient(145deg,#20313b,#101c25);gap:14px;min-height:0}
+.inventory-heading{display:flex;align-items:center;gap:14px;padding-bottom:12px;border-bottom:1px solid #d6b77c33}.inventory-heading h2{margin:2px 0;font-size:22px;font-weight:500}.inventory-heading>span{margin-left:auto;font:12px ui-monospace,monospace;color:var(--gold)}.inventory-heading button{font-size:10px;padding:6px 9px}
+.inventory-categories{display:flex;gap:8px;flex-shrink:0}.inventory-categories button{font-size:11px;padding:6px 12px}.inventory-categories button[aria-pressed=true]{border-color:var(--gold);color:var(--gold);background:#d6b77c16}
+.inventory-scroll{overflow:auto;min-height:0;flex:1;scrollbar-width:thin;padding:5px}.inventory-grid{display:grid;grid-template-columns:repeat(8,minmax(0,1fr));gap:7px}.inventory-slot{position:relative;aspect-ratio:1;padding:0;min-width:0;border-radius:5px;border:1px solid #83949e33;background:linear-gradient(145deg,#0c1823,#1b2c38);box-shadow:inset 0 2px 5px #0005}.inventory-slot.occupied{border-color:#d6b77c66;background:radial-gradient(ellipse at center,#35515e,#142632)}.inventory-slot.occupied:hover,.inventory-slot.occupied:focus{border-color:var(--gold);background:#304856}.item-icon{font:30px Georgia;color:#ebcc91;text-shadow:0 2px 6px #000}.inventory-slot[data-kind=consumable] .item-icon{color:#a5d4ef}.inventory-slot[data-kind=material] .item-icon{color:#a9d0b3}.inventory-slot small{position:absolute;right:4px;bottom:2px;font:10px ui-monospace,monospace;text-shadow:0 1px 3px #000}.inventory-empty{text-align:center;color:var(--muted);font-size:12px;padding:18px 0}.inventory-note{font-size:10px;color:var(--muted);border-top:1px solid var(--line);padding-top:10px;flex-shrink:0}
+.item-tooltip{position:absolute;z-index:10;pointer-events:auto;width:260px;max-width:calc(100% - 16px);padding:16px;background:#0b1425f7;border:1px solid #d6b77ca0;border-radius:6px;box-shadow:0 8px 30px #0008;overflow-wrap:anywhere;max-height:calc(100% - 16px);overflow:auto}.item-tooltip>span{font-size:10px;color:var(--muted)}.item-tooltip h3{font-size:16px;color:#edcf94;margin:3px 0 10px}.item-tooltip p{font-size:12px;line-height:1.8;white-space:pre-wrap}.item-tooltip #item-effect{color:#9fc9ec;border-top:1px solid var(--line);margin-top:10px;padding-top:8px}.item-tooltip small{display:block;color:var(--muted);margin-top:12px;font-size:10px}
+.game.is-expanded #inventory-panel{flex:1;height:auto;min-height:0}.game.is-expanded .inventory-grid{max-width:850px;width:100%;margin-inline:auto}
+.tabs{gap:16px}.tabs button span{display:none}
+@media(max-width:600px){.inventory-panel{padding:14px}.inventory-grid{grid-template-columns:repeat(6,minmax(0,1fr));gap:6px}.inventory-heading{gap:8px}.tabs{gap:10px;padding-inline:12px}.tabs button{font-size:12px}.tabs #fullscreen{font-size:10px;padding:5px}.item-icon{font-size:26px}}
+@media(max-width:380px){.inventory-grid{grid-template-columns:repeat(4,minmax(0,1fr))}.tabs{gap:7px;padding-inline:8px}.tabs button{font-size:11px}.inventory-categories{gap:5px}.inventory-categories button{padding:5px 9px}}
+.game.is-expanded{position:fixed;inset:0;z-index:1000;width:100%;height:100%;height:100dvh;max-width:none;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--surface)}
+.game.is-expanded .tabs,.game.is-expanded .game-foot,.game.is-expanded .story-controls,.game.is-expanded .mapinfo{flex-shrink:0}
+.game.is-expanded #story,.game.is-expanded #map-panel{display:flex;flex:1;min-height:0;flex-direction:column}
+.game.is-expanded .stage,.game.is-expanded .map{flex:1;height:auto;min-height:0}
+.game.is-expanded .dialog{max-width:1000px;margin-inline:auto}
+@media(max-width:600px){.tabs{gap:12px}.tabs .local-badge{display:none}.tabs #fullscreen{margin-left:auto}.game.is-expanded .mapinfo{flex-direction:row;align-items:center;padding:10px 14px}.game.is-expanded .mapinfo .eyebrow{display:none}}
+</style></head>
+<body>
+<main class="shell">
+  <header class="masthead"><a class="brand" href="./" aria-label="에르세디아 RPG 시작 화면"><span class="sigil">✧</span><span><small>ERCEDIA</small><strong>에르세디아 RPG</strong></span></a><span class="build"><i></i> 비주얼 노벨 · UI 프리뷰</span></header>
+  <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>써니 빌리지에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
+  <div class="workspace">
+    <article class="game">
+      <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
+      <section id="story" aria-label="대화 화면">
+        <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
+          <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
+          <div id="characters" class="characters"></div><div class="shade"></div>
+          <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
+          <span class="scene-tag">SERIN / 세린</span>
+          <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
+        </div>
+        <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
+      </section>
+      <section id="map-panel" aria-label="세계지도 화면" hidden>
+        <div class="map-navigation"><span id="map-breadcrumb">세계지도</span><button id="map-overview" disabled>← 전체 지도</button></div>
+        <nav id="map-regions" class="map-regions" aria-label="확대할 지역 선택"></nav>
+        <div id="map-container" class="map"><div id="map-sheet" class="map-sheet"><img id="world-map-image" class="world-map-image" alt="에르세디아 세계지도 · 지리 검토용 시안" draggable="false"><svg id="map-points" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-label="지도 지역과 지점 선택"></svg></div></div>
+        <div id="map-detail-panel" class="map-detail-panel" hidden><div class="map-detail-heading"><span id="map-detail-title">세부 지점</span><small id="map-detail-count"></small></div><div id="map-detail-list" class="map-detail-list"></div></div>
+        <p id="map-status" class="map-status" role="status">지역명 또는 표식을 누르면 정보를 볼 수 있습니다. 지리와 국경은 검토용 시안입니다.</p>
+        <div class="mapinfo"><div><span class="eyebrow">SELECTED REGION</span><h2 id="region-title"></h2><p id="region-description"></p></div><button id="return">대화로 복귀 ↗</button></div>
+      </section>
+      <section id="status-panel" class="player-panel" aria-label="주인공 상태창" hidden>
+        <div class="player-content">
+        <div class="player-heading"><div><span class="eyebrow">PLAYER STATUS</span><h2 id="player-name">주인공</h2><p id="player-job">직업 미정</p></div><div class="level-badge"><span>LEVEL</span><strong id="player-level">—</strong></div></div>
+        <div class="resource"><div><b>체력 <small>HP</small></b><span id="hp-text">— / —</span></div><progress id="hp-bar" value="0" max="100" aria-label="체력"></progress></div>
+        <div class="resource mana"><div><b>마나 <small>MP</small></b><span id="mp-text">— / —</span></div><progress id="mp-bar" value="0" max="100" aria-label="마나"></progress></div>
+        <div class="resource experience"><div><b>경험치 <small>EXP</small></b><span id="xp-text">— / —</span></div><progress id="xp-bar" value="0" max="100" aria-label="경험치"></progress><p id="xp-remaining">경험치 정보 미정</p></div>
+        <div class="attributes"><div><span>근력 <small>STR</small></span><strong id="strength-text">—</strong></div><div><span>민첩 <small>DEX</small></span><strong id="dexterity-text">—</strong></div><div><span>지능 <small>INT</small></span><strong id="intelligence-text">—</strong></div></div>
+        <div class="skill-heading"><h3>사용 가능 스킬 <span id="skill-count">0</span></h3></div>
+        <p id="skills-empty" class="skills-empty">사용 가능한 스킬이 없습니다.</p>
+        <div id="skill-list" class="skill-list"></div>
+        </div>
+      </section>
+      <section id="inventory-panel" class="inventory-panel" aria-label="인벤토리" hidden>
+        <div class="inventory-heading"><div><span class="eyebrow">INVENTORY</span><h2>소지품</h2></div><span id="inventory-count"></span><button id="inventory-preview" aria-pressed="false">아이템 미리보기</button></div>
+        <nav id="inventory-categories" class="inventory-categories" aria-label="아이템 분류"></nav>
+        <div id="inventory-scroll" class="inventory-scroll"><div id="inventory-grid" class="inventory-grid" aria-label="아이템 슬롯"></div><p id="inventory-empty" class="inventory-empty"></p></div>
+        <p id="inventory-note" class="inventory-note"></p>
+        <div id="item-tooltip" class="item-tooltip" role="tooltip" hidden><span id="item-category"></span><h3 id="item-name"></h3><p id="item-description"></p><p id="item-effect"></p><small id="item-quantity"></small></div>
+      </section>
+      <section id="chat-runtime" class="chat-runtime" aria-label="게임 행동 및 ChatGPT 연결" hidden>
+        <div id="scene-choices" class="scene-choices"></div>
+        <form id="free-action-form"><label for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="2" placeholder="세린에게 질문하거나 자유롭게 행동하세요."></textarea><button id="send-action" type="submit" class="primary">보내기</button></div></form>
+        <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="cancel-wait" hidden>대기 해제</button></div>
+        <div id="action-copy-area" hidden><label for="action-copy">ChatGPT에 보낼 요청</label><textarea id="action-copy" rows="4" readonly></textarea><button id="copy-action">요청 복사</button></div>
+        <details class="manual-scene"><summary>응답 JSON 수동 적용</summary><label for="scene-json">ChatGPT의 JSON 응답 전체</label><textarea id="scene-json" rows="5" placeholder="JSON 또는 JSON 코드블록을 붙여넣으세요."></textarea><button id="apply-scene">장면 적용</button></details>
+      </section>
+      <div class="game-foot"><span>✧ 에르세디아 RPG</span><span>AI 대화 미연결</span></div>
+    </article>
+    <aside class="settings" aria-label="캐릭터 설정">
+      <div class="settings-head"><div><span class="eyebrow">CHARACTER STUDIO</span><h2>세린 <small>Serin</small></h2></div><span class="rank">베이직 나이트</span></div>
+      <fieldset><legend>복장 <span>OUTFIT</span></legend><div class="outfits"><button data-outfit="armor" aria-pressed="true" class="selected">갑옷</button><button data-outfit="casual" aria-pressed="false">평상복</button><button data-outfit="nightwear" aria-pressed="false">잠옷</button></div></fieldset>
+      <div class="expression-row"><label for="expression">표정</label><select id="expression"><option value="base">기본 · 등록됨</option value="smile">미소 · 등록됨</option><option value="angry">분노 · 등록됨</option><option value="surprised">놀람 · 등록됨</option><option value="sad">슬픔 · 등록됨</option><option value="embarrassed">부끄러움 · 등록됨</option><option value="afraid">두려움 · 등록됨</option><option value="annoyed">불쾌함 · 등록됨</option><option value="love">애정 · 등록됨</option></select></div>
+      <p id="expression-status" class="notice" role="status"></p>
+      <div class="section-heading">화면 배치 <span>POSITION</span></div>
+      <div class="slider-field"><label for="scale">확대 <output id="scale-value" for="scale">260%</output></label><input id="scale" type="range" min="50" max="400" step="1" value="260"><div class="range-ticks"><span>50%</span><span>400%</span></div></div>
+      <div class="slider-field"><label for="x">좌우 <output id="x-value" for="x">50%</output></label><input id="x" type="range" min="0" max="100" step="1" value="50"><div class="range-ticks"><span>왼쪽</span><span>오른쪽</span></div></div>
+      <div class="slider-field"><label for="y">상하 <output id="y-value" for="y">-120px</output></label><input id="y" type="range" min="-350" max="200" step="1" value="-120"><div class="range-ticks"><span>위</span><span>아래</span></div></div>
+      <div class="layer-toggles"><label><input id="show-background" type="checkbox" checked> 배경 표시</label><label><input id="show-character" type="checkbox" checked> 세린 표시</label></div>
+      <div class="save-actions"><button id="save" class="primary">설정 저장</button><button id="reset" title="현재 복장의 배치를 기본값으로 되돌리기">배치 초기화</button></div>
+      <p id="save-status" class="save-status" role="status">설정은 이 브라우저에 저장됩니다.</p>
+    </aside>
+  </div>
+  <details class="asset-details"><summary>이미지 로딩 상태와 원본</summary><ul id="asset-status"></ul><p>등록된 원본만 표시합니다. 얼굴 표정은 복장 위에 독립 레이어로 합성합니다.</p></details>
+  <footer class="footer"><span>ERCEDIA RPG <i> / </i> VISUAL NOVEL PROTOTYPE</span><span>지도 배치는 임시이며 정식 세계관이 아닙니다.</span></footer>
+</main>
+<script>/*__ERCEDIA_BOOTSTRAP__*/
+const module3=(()=>{
+const number=(v,min=0,max=999999)=>typeof v==='number'&&Number.isFinite(v)?Math.min(max,Math.max(min,Math.floor(v))):null;
+const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
+const newPlayer=()=>({name:'',job:'',level:null,hp:null,maxHp:null,mp:null,maxMp:null,xp:null,requiredXp:null,strength:null,dexterity:null,intelligence:null,skills:[]});
+function normalizePlayer(raw){
+  const p=newPlayer();if(!raw||typeof raw!=='object')return p;
+  p.name=text(raw.name,40);p.job=text(raw.job,60);
+  for(const k of ['level','hp','maxHp','mp','maxMp','xp','requiredXp','strength','dexterity','intelligence'])p[k]=number(raw[k],k==='level'?1:0);
+  for(const [current,max] of [['hp','maxHp'],['mp','maxMp']])if(p[current]!==null&&p[max]!==null)p[current]=Math.min(p[current],p[max]);
+  if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false}));
+  return p;
+}
+// Small arithmetic parser: user formulas never execute JavaScript.
+function damageFormula(formula,player){
+  if(!formula.trim())return {value:null,message:'데미지 공식 미입력'};
+  try{
+    if(formula.length>240)throw Error('공식은 240자까지 입력할 수 있습니다.');
+    const source=formula.replaceAll('근력','STR').replaceAll('민첩','DEX').replaceAll('지능','INT').replaceAll('레벨','LV').replaceAll('×','*').replaceAll('÷','/').replaceAll('−','-');
+    const tokens=[];const re=/\s*(?:(\d+(?:\.\d*)?|\.\d+)|([A-Za-z]+)|([()+\-*/]))/gy;
+    let pos=0;
+    while(pos<source.length){if(!source.slice(pos).trim())break;re.lastIndex=pos;const m=re.exec(source);if(!m)throw Error('숫자, 능력치와 + − × ÷ ( )만 사용할 수 있습니다.');tokens.push(m[1]??m[2]?.toUpperCase()??m[3]);pos=re.lastIndex;}
+    if(tokens.length>128)throw Error('공식이 너무 깁니다.');
+    const vars={STR:player.strength,DEX:player.dexterity,INT:player.intelligence,LV:player.level};let i=0;
+    const atom=()=>{const t=tokens[i++];if(t==='+'||t==='-'){const v=atom();return t==='-'?-v:v;}if(t==='('){const v=expression();if(tokens[i++]!==')')throw Error('괄호를 확인하세요.');return v;}if(t&&Object.hasOwn(vars,t)){if(vars[t]===null||!Number.isFinite(vars[t]))throw Error(`${t} 능력치를 먼저 입력하세요.`);return vars[t];}if(t&&/^(?:\d+(?:\.\d*)?|\.\d+)$/.test(t))return Number(t);throw Error('공식 형식을 확인하세요.');};
+    const product=()=>{let v=atom();while(tokens[i]==='*'||tokens[i]==='/'){const op=tokens[i++];const r=atom();if(op==='/'&&r===0)throw Error('0으로 나눌 수 없습니다.');v=op==='*'?v*r:v/r;}return v;};
+    const expression=()=>{let v=product();while(tokens[i]==='+'||tokens[i]==='-'){const op=tokens[i++];const r=product();v=op==='+'?v+r:v-r;}return v;};
+    const value=expression();if(i!==tokens.length)throw Error('공식 형식을 확인하세요.');if(!Number.isFinite(value))throw Error('계산 가능한 범위를 벗어났습니다.');
+    return {value:Math.round(value*100)/100,message:''};
+  }catch(error){return {value:null,message:error.message};}
+}
+
+return {newPlayer,normalizePlayer,damageFormula};})();
+const module4=(()=>{
+const categories={all:'전체',equipment:'장비',consumable:'소비',material:'재료',misc:'기타'};
+const capacity=32;
+const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
+function normalizeInventory(raw){
+  if(!Array.isArray(raw))return [];
+  return raw.slice(0,capacity).filter(v=>v&&typeof v==='object').map(v=>({
+    name:text(v.name,60)||'이름 미정',description:text(v.description,1000),
+    category:Object.hasOwn(categories,v.category)&&v.category!=='all'?v.category:'misc',
+    quantity:typeof v.quantity==='number'&&Number.isFinite(v.quantity)?Math.max(1,Math.min(999999,Math.floor(v.quantity))):1,
+    effect:text(v.effect,300)
+  }));
+}
+// These examples only appear in preview mode; they are never granted or saved.
+const samples=normalizeInventory([
+  {name:'장비 예시',category:'equipment',description:'아이템 설명이 표시되는 위치를 확인하기 위한 예시입니다.',effect:'장비 효과가 이곳에 표시됩니다.'},
+  {name:'소비 아이템 예시',category:'consumable',quantity:5,description:'커서를 올리거나 슬롯을 누르면 상세 정보를 확인할 수 있습니다.',effect:'사용 효과가 이곳에 표시됩니다.'},
+  {name:'재료 예시',category:'material',quantity:12,description:'제작 재료의 설명과 보유 수량을 확인할 수 있습니다.'}
+]);
+function mountInventory(state){
+  const $=id=>document.getElementById(id),panel=$('inventory-panel'),tip=$('item-tooltip');
+  const symbols={equipment:'⚔',consumable:'◈',material:'◇',misc:'✦'};
+  let filter='all',preview=false,shown=[];
+  const slots=[];
+  function hide(){tip.hidden=true;for(const slot of slots)slot.removeAttribute('aria-describedby');}
+  function show(index){
+    const item=shown[index];if(!item)return hide();
+    hide();$('item-name').textContent=item.name;$('item-category').textContent=categories[item.category];
+    $('item-description').textContent=item.description||'설명 미정';$('item-effect').textContent=item.effect;$('item-effect').hidden=!item.effect;
+    $('item-quantity').textContent=`보유 수량 ${item.quantity.toLocaleString('ko-KR')}`;
+    tip.hidden=false;slots[index].setAttribute('aria-describedby','item-tooltip');
+    const bounds=panel.getBoundingClientRect(),anchor=slots[index].getBoundingClientRect();
+    const left=Math.max(8,Math.min(anchor.left-bounds.left+anchor.width/2, panel.clientWidth-tip.offsetWidth-8));
+    const top=Math.max(8,Math.min(anchor.bottom-bounds.top+8,panel.clientHeight-tip.offsetHeight-8));
+    tip.style.left=`${left}px`;tip.style.top=`${top}px`;
+  }
+  for(let i=0;i<capacity;i++){
+    const slot=document.createElement('button');slot.className='inventory-slot';slot.type='button';
+    const icon=document.createElement('span'),count=document.createElement('small');icon.className='item-icon';slot.append(icon,count);
+    slot.addEventListener('pointerenter',()=>show(i));slot.addEventListener('pointerleave',event=>{if(!tip.contains(event.relatedTarget))hide();});
+    slot.addEventListener('focus',()=>show(i));slot.addEventListener('blur',hide);
+    slot.addEventListener('click',()=>show(i));slots.push(slot);$('inventory-grid').append(slot);
+  }
+  for(const [key,label] of Object.entries(categories)){
+    const button=document.createElement('button');button.textContent=label;button.type='button';button.dataset.category=key;
+    button.onclick=()=>{filter=key;render();};$('inventory-categories').append(button);
+  }
+  function render(){
+    hide();const items=preview?samples:state.inventory;
+    shown=items.filter(item=>filter==='all'||item.category===filter);
+    $('inventory-count').textContent=`${items.length} / ${capacity}`;
+    $('inventory-empty').hidden=shown.length>0;
+    $('inventory-empty').textContent=preview?'이 분류의 미리보기 아이템이 없습니다.':items.length?'이 분류에 보유한 아이템이 없습니다.':'아직 보유한 아이템이 없습니다.';
+    $('inventory-preview').textContent=preview?'미리보기 종료':'아이템 미리보기';$('inventory-preview').setAttribute('aria-pressed',String(preview));
+    $('inventory-note').textContent=preview?'설명 확인용 예시입니다. 실제 보유 아이템이나 저장 데이터에 포함되지 않습니다.':'슬롯에 커서를 올리거나 눌러 아이템 설명을 확인하세요.';
+    for(const button of $('inventory-categories').children)button.setAttribute('aria-pressed',String(button.dataset.category===filter));
+    slots.forEach((slot,i)=>{const item=shown[i];slot.classList.toggle('occupied',!!item);slot.dataset.kind=item?.category||'';slot.firstChild.textContent=item?symbols[item.category]:'';slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);});
+  }
+  tip.addEventListener('pointerleave',hide);
+  $('inventory-preview').onclick=()=>{preview=!preview;render();};
+  panel.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+  $('inventory-scroll').addEventListener('scroll',hide);window.addEventListener('resize',hide);
+  render();return {render,hide};
+}
+
+return {categories,capacity,normalizeInventory,mountInventory};})();
+const module2=(()=>{
+const {normalizePlayer}=module3;
+const {normalizeInventory}=module4;
+// Public bridge v1. UI classes and character coordinates are intentionally absent.
+function createGameBridge(state,{apply,restore,render,persist}){
+  return Object.freeze({
+    version:1,
+    updateScene:scene=>apply(typeof scene==='string'?scene:JSON.stringify(scene)),
+    updatePlayer:player=>{state.player=normalizePlayer(player);render();persist();},
+    updateInventory:items=>{state.inventory=normalizeInventory(items);render();persist();},
+    getGameState:()=>JSON.parse(JSON.stringify(state)),
+    restoreGameState:saved=>restore(saved)
+  });
+}
+
+return {createGameBridge};})();
+const module6=(()=>{
+const {normalizePlayer}=module3;
+const {normalizeInventory}=module4;
+const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
+const characterRegistry={serin:{outfits:['armor','casual','nightwear']}};
+function text(value,key,max=2000,required=true){
+  if(typeof value!=='string'||value.length>max||(required&&!value.trim()))throw Error(`${key} 형식을 확인하세요.`);
+  return value;
+}
+function emotion(value){if(!emotions.includes(value))throw Error('등록되지 않은 표정입니다.');return value;}
+function normalizeScene(raw){
+  if(!raw||typeof raw!=='object'||raw.schema_version!==1||raw.type!=='ercedia_scene')throw Error('ercedia_scene / schema_version 1 데이터가 필요합니다.');
+  const scene={schema_version:1,type:'ercedia_scene',scene_id:text(raw.scene_id,'scene_id',100),location:text(raw.location,'location',120),time:text(raw.time,'time',80),background_id:raw.background_id,npc:null,dialogue:[],choices:[]};
+  if(raw.background_id!=='sunny_village_day')throw Error('등록된 배경은 sunny_village_day입니다.');
+  if(raw.npc!==null){
+    const npc=raw.npc,config=characterRegistry[npc?.id];
+    if(!config||!config.outfits.includes(npc.outfit))throw Error('등록되지 않은 NPC 또는 복장입니다.');
+    scene.npc={id:npc.id,outfit:npc.outfit,emotion:emotion(npc.emotion),speaker:text(npc.speaker,'npc.speaker',60)};
+  }
+  if(!Array.isArray(raw.dialogue)||!raw.dialogue.length||raw.dialogue.length>60)throw Error('dialogue는 1~60개여야 합니다.');
+  scene.dialogue=raw.dialogue.map(line=>({speaker:text(line?.speaker,'speaker',60),text:text(line?.text,'text',4000),...(line.emotion!==undefined?{emotion:emotion(line.emotion)}:{})}));
+  if(!Array.isArray(raw.choices)||![0,2,3,4].includes(raw.choices.length))throw Error('choices는 0개 또는 2~4개여야 합니다.');
+  const ids=new Set();scene.choices=raw.choices.map(choice=>{const id=text(choice?.id,'choice.id',80);if(ids.has(id))throw Error('선택지 ID가 중복됐습니다.');ids.add(id);return {id,text:text(choice.text,'choice.text',400)};});
+  if(raw.reply_to!==undefined)scene.reply_to=text(raw.reply_to,'reply_to',100);
+  if(Object.hasOwn(raw,'player'))scene.player=normalizePlayer(raw.player);
+  if(Object.hasOwn(raw,'inventory')){if(!Array.isArray(raw.inventory)||raw.inventory.length>32)throw Error('inventory는 최대 32칸입니다.');scene.inventory=normalizeInventory(raw.inventory);}
+  if(raw.game_state!==undefined){
+    if(!raw.game_state||typeof raw.game_state!=='object')throw Error('game_state 형식을 확인하세요.');
+    const game={};for(const key of ['date','time','region','place'])if(raw.game_state[key]!==undefined)game[key]=text(raw.game_state[key],key,160,false);
+    for(const key of ['quests','relationships','events','recent_dialogue'])if(raw.game_state[key]!==undefined){const list=raw.game_state[key];if(!Array.isArray(list)||list.length>30)throw Error(`${key}는 최대 30개 문자열입니다.`);game[key]=list.map(v=>text(v,key,500,false));}
+    scene.game_state=game;
+  }
+  return scene;
+}
+function parseScene(source){
+  if(typeof source!=='string'||source.length>120000)throw Error('응답은 120KB 이하의 JSON이어야 합니다.');
+  const input=source.trim();
+  if(input.startsWith('{'))return normalizeScene(JSON.parse(input));
+  const blocks=[...input.matchAll(/```(?:json|ercedia)?\s*\n([\s\S]*?)```/g)];
+  for(const block of blocks){try{const raw=JSON.parse(block[1]);if(raw.type==='ercedia_scene')return normalizeScene(raw);}catch(error){if(block[1].includes('ercedia_scene'))throw error;}}
+  throw Error('완료된 ercedia_scene JSON 블록을 찾지 못했습니다.');
+}
+function contextSummary(state){
+  return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[]};
+}
+function actionPrompt(state,action,requestId){
+  return `에르세디아 RPG의 다음 턴을 진행해주세요. GitHub의 WORLD.md와 승인된 설정을 따르되, NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc={id:"serin",outfit:"armor|casual|nightwear",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+}
+
+return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
+const module8=(()=>{
+// Source: assets/maps/world/map_locations.json; all geography remains provisional.
+const mapData = {"regions":[{"id":"northwest","label":"북서 미개척 설산·빙하","x":0.21158854166666666,"y":0.166015625,"provisional":true},{"id":"northcenter","label":"북중 미개척 원시림","x":0.4752604166666667,"y":0.16796875,"provisional":true},{"id":"northeast","label":"북동 미개척 마나 이상지대","x":0.751953125,"y":0.17578125,"provisional":true},{"id":"west","label":"서부 왕국 (임시)","x":0.22135416666666666,"y":0.3955078125,"provisional":true},{"id":"east","label":"동부 왕국 (임시)","x":0.7552083333333334,"y":0.419921875,"provisional":true},{"id":"south","label":"남부 왕국 (임시)","x":0.5208333333333334,"y":0.7177734375,"provisional":true},{"id":"disputed","label":"중앙 분쟁지","x":0.5045572916666666,"y":0.474609375,"provisional":true}],"locations":[{"id":"W1","label":"west 영주령 후보 1","kind":"lordship","region":"west","x":0.18945312,"y":0.31152344,"provisional":true},{"id":"W2","label":"west 영주령 후보 2","kind":"lordship","region":"west","x":0.32291667,"y":0.38867188,"provisional":true},{"id":"W3","label":"west 영주령 후보 3","kind":"lordship","region":"west","x":0.24283854,"y":0.4765625,"provisional":true},{"id":"W4","label":"west 영주령 후보 4","kind":"lordship","region":"west","x":0.32291667,"y":0.55175781,"provisional":true},{"id":"W5","label":"west 영주령 후보 5","kind":"lordship","region":"west","x":0.3984375,"y":0.62109375,"provisional":true},{"id":"E1","label":"east 영주령 후보 1","kind":"lordship","region":"east","x":0.74414062,"y":0.34570312,"provisional":true},{"id":"E2","label":"east 영주령 후보 2","kind":"lordship","region":"east","x":0.66080729,"y":0.40527344,"provisional":true},{"id":"E3","label":"east 영주령 후보 3","kind":"lordship","region":"east","x":0.66666667,"y":0.48828125,"provisional":true},{"id":"E4","label":"east 영주령 후보 4","kind":"lordship","region":"east","x":0.69010417,"y":0.56445312,"provisional":true},{"id":"S1","label":"south 영주령 후보 1","kind":"lordship","region":"south","x":0.37109375,"y":0.73730469,"provisional":true},{"id":"S2","label":"south 영주령 후보 2","kind":"lordship","region":"south","x":0.47851562,"y":0.63476562,"provisional":true},{"id":"S3","label":"south 영주령 후보 3","kind":"lordship","region":"south","x":0.56901042,"y":0.69824219,"provisional":true},{"id":"S4","label":"south 영주령 후보 4","kind":"lordship","region":"south","x":0.53320312,"y":0.80371094,"provisional":true},{"id":"CW","label":"서부 왕도 후보","kind":"capital","region":"west","x":0.28776042,"y":0.34277344,"provisional":true},{"id":"CE","label":"동부 왕도 후보","kind":"capital","region":"east","x":0.72265625,"y":0.4296875,"provisional":true},{"id":"CS","label":"남부 왕도 후보","kind":"capital","region":"south","x":0.50520833,"y":0.75097656,"provisional":true},{"id":"F1","label":"중앙 요새 후보","kind":"fortress","region":"disputed","x":0.50585938,"y":0.47753906,"provisional":true},{"id":"M1","label":"접경 마나 광산 후보","kind":"mana_mine","region":"disputed","x":0.59505208,"y":0.43847656,"provisional":true},{"id":"P1","label":"남서 항구 후보","kind":"port","region":"south","x":0.30794271,"y":0.69433594,"provisional":true},{"id":"P2","label":"남동 항구 후보","kind":"port","region":"south","x":0.63867188,"y":0.60742188,"provisional":true},{"id":"D1","label":"고대 던전 후보","kind":"dungeon","region":"northwest","x":0.2890625,"y":0.15820312,"provisional":true},{"id":"B1","label":"마수 서식 후보","kind":"beast_habitat","region":"northcenter","x":0.47526042,"y":0.21875,"provisional":true},{"id":"A1","label":"마나 이상·유적 후보","kind":"anomaly","region":"northeast","x":0.76171875,"y":0.15722656,"provisional":true},{"id":"I1","label":"군도 탐험 후보","kind":"island","region":"archipelago","x":0.85026042,"y":0.66894531,"provisional":true}]};
+
+return {mapData};})();
+const module9=(()=>{
+const {mapData}=module8;
+const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
+function regionFrame(id){
+  if(id==='world')return {x:0,y:0,width:1,height:1};
+  const points=mapData.locations.filter(p=>p.region===id);
+  const region=mapData.regions.find(r=>r.id===id);
+  if(region)points.push(region);
+  if(!points.length)return regionFrame('world');
+  const minX=Math.min(...points.map(p=>p.x)),maxX=Math.max(...points.map(p=>p.x));
+  const minY=Math.min(...points.map(p=>p.y)),maxY=Math.max(...points.map(p=>p.y));
+  // Viewing padding only; these rectangles never define political borders.
+  const width=Math.max(.34,maxX-minX+.14),height=Math.max(.32,maxY-minY+.14);
+  return {x:Math.max(0,Math.min(1-width,(minX+maxX-width)/2)),y:Math.max(0,Math.min(1-height,(minY+maxY-height)/2)),width,height};
+}
+function cameraTransform(frame,viewportWidth,viewportHeight){
+  const scale=Math.min(viewportWidth/(frame.width*1536),viewportHeight/(frame.height*1024));
+  const x=(viewportWidth-frame.width*1536*scale)/2-frame.x*1536*scale;
+  const y=(viewportHeight-frame.height*1024*scale)/2-frame.y*1024*scale;
+  return {scale,x,y};
+}
+function viewForSelection(id){
+  const point=mapData.locations.find(p=>p.id===id);
+  if(point)return point.region;
+  return mapViews.some(r=>r.id===id)?id:'world';
+}
+
+return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
+const module7=(()=>{
+const {normalizeScene}=module6;
+const {normalizeInventory}=module4;
+const {mapData}=module8;
+const {newPlayer,normalizePlayer}=module3;
+const {mapViews}=module9;
+const KEY = 'ercedia.vn.v04';
+const outfitKeys = ['armor', 'casual', 'nightwear'];
+const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
+const regionKeys = ['village','world','west','east','south','wild','ruins',...mapViews.map(r=>r.id),...mapData.locations.map(p=>p.id)];
+const defaultLayout = () => ({scale:260,x:50,y:-120});
+const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer(),inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
+const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;
+function normalize(raw) {
+  const s=defaults();
+  if (!raw || typeof raw !== 'object' || raw.version !== 1) return s;
+  for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory']})) if (choices.includes(raw[key])) s[key]=raw[key];
+  for (const k of outfitKeys) { const l=raw.layouts?.[k]; if (l) s.layouts[k]={scale:num(l.scale,50,400,260),x:num(l.x,0,100,50),y:num(l.y,-350,200,-120)}; }
+  for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
+  s.index=num(raw.index,0,3,0);
+  s.player=normalizePlayer(raw.player);
+  s.inventory=normalizeInventory(raw.inventory);
+  try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
+  s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);
+  s.seenScenes=Array.isArray(raw.seenScenes)?raw.seenScenes.filter(v=>typeof v==='string'&&v.length<=100).slice(-100):[];
+  if(raw.gameState&&typeof raw.gameState==='object'){
+    for(const k of ['date','time','region','place'])if(typeof raw.gameState[k]==='string')s.gameState[k]=raw.gameState[k].slice(0,160);
+    for(const k of ['quests','relationships','events','recent_dialogue'])if(Array.isArray(raw.gameState[k]))s.gameState[k]=raw.gameState[k].filter(v=>typeof v==='string').slice(-30).map(v=>v.slice(0,500));
+  }
+  if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
+  return s;
+}
+function load(storage) {
+  try { const data=storage.getItem(KEY); return {state:data ? normalize(JSON.parse(data)) : defaults(),message:data ? '저장된 설정을 불러왔습니다.' : '설정은 이 브라우저에 저장됩니다.'}; }
+  catch { return {state:defaults(),message:'저장값을 읽지 못해 기본 설정으로 시작합니다.'}; }
+}
+
+return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
+const module5=(()=>{
+const {parseScene,actionPrompt}=module6;
+const {normalize}=module7;
+function mountChatUI(state,{render,persist,storage,embedded}){
+  const $=id=>document.getElementById(id);
+  let pending=null,timer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
+  const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
+  const status=message=>{$('connection-status').textContent=message;};
+  function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
+  function controls(){
+    const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
+    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?.text||'';button.disabled=!!pending||!last;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
+    $('free-action').disabled=!!pending;$('send-action').disabled=!!pending;$('cancel-wait').hidden=!pending;
+  }
+  function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
+    clearTimeout(timer);pending=null;controls();status(message);notify('cancel',{});
+  }
+  function submit(action,choiceId=null){
+    if(pending||!action.trim())return;
+    if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
+    const requestId=crypto.randomUUID();pending={requestId,choiceId};
+    $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
+    controls();status(embedded?'ChatGPT 연결 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
+    notify('action',{text:$('action-copy').value,requestId});
+    timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
+  }
+  function apply(source){
+    try{
+      const scene=parseScene(source);
+      if(state.seenScenes.includes(scene.scene_id))return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');
+      if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      state.scene=scene;state.sceneIndex=0;
+      state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
+      if(scene.player)state.player=scene.player;
+      if(scene.inventory)state.inventory=scene.inventory;
+      if(scene.game_state)Object.assign(state.gameState,scene.game_state);
+      cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
+      render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+    }catch(error){status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});}
+  }
+  $('free-action-form').onsubmit=event=>{event.preventDefault();submit($('free-action').value);};
+  $('apply-scene').onclick=()=>apply($('scene-json').value);
+  $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
+  $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
+  function restore(saved){
+    cancel();Object.assign(state,normalize(saved));
+    window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
+    render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
+  }
+  window.addEventListener('message',event=>{
+    const data=event.data;
+    if(!embedded||event.source!==parent||data?.channel!=='ercedia'||data.token!==window.__ERCEDIA_CONFIG__.token)return;
+    if(data.type==='restore'){
+      cancel();conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;
+      restore(data.payload);notify('restored',{state:JSON.parse(JSON.stringify(state)),requestId:data.requestId});return;
+    }
+    if(data.conversation!==conversation)return;
+    if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending,requestId:data.requestId});
+    if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
+    if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);
+    if(data.type==='scene')apply(data.payload);
+    if(data.type==='status')status(data.payload);
+    if(data.type==='save-error')status('저장 실패 · 화면은 유지됩니다. JSON과 요청을 복사해 보관하세요.');
+    if(data.type==='interrupt')cancel(data.payload);
+  });
+  if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
+  else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
+  controls();return {controls,apply,restore,notify,conversation:()=>conversation};
+}
+
+return {mountChatUI};})();
+const module10=(()=>{
+// Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
+// Armor follows faces/manifest.json's source crop and render frame exactly.
+// Casual/nightwear use hair-aligned placement against their existing head artwork.
+// All 9 faces share the same mask and anchor, so each outfit uses one fit.
+const faceFit={
+  armor:{x:461.521739,y:261.521739,size:166.956522},
+  casual:{x:461,y:261,size:168},
+  nightwear:{x:461,y:261,size:168}
+};
+
+return {faceFit};})();
+const module11=(()=>{
+const {damageFormula}=module3;
+function mountPlayer(state){
+  const $=id=>document.getElementById(id);
+  const display=v=>v===null?'—':v.toLocaleString('ko-KR');
+  const skillViews=new Map();
+  function summary(){
+    const p=state.player;
+    $('player-name').textContent=p.name.trim()||'주인공';$('player-job').textContent=p.job.trim()||'직업 미정';$('player-level').textContent=display(p.level);
+    for(const [id,current,max] of [['hp','hp','maxHp'],['mp','mp','maxMp'],['xp','xp','requiredXp']]){
+      $(id+'-text').textContent=`${display(p[current])} / ${display(p[max])}`;
+      const bar=$(id+'-bar'),known=p[current]!==null&&p[max]!==null&&p[max]>0;
+      bar.max=known?p[max]:1;bar.value=known?Math.min(p[current],p[max]):0;bar.classList.toggle('unset',!known);
+      bar.setAttribute('aria-valuetext',known?`${p[current]} / ${p[max]}`:'정보 미정');
+    }
+    $('xp-remaining').textContent=p.requiredXp===null||p.xp===null?'경험치 정보 미정':`다음 레벨까지 ${display(Math.max(0,p.requiredXp-p.xp))} EXP`;
+    for(const k of ['strength','dexterity','intelligence'])$(k+'-text').textContent=display(p[k]);
+    for(const [skill,view] of skillViews)updateSkill(skill,view);
+  }
+  function skillCount(){const count=state.player.skills.filter(s=>s.enabled).length;$('skill-count').textContent=String(count);$('skills-empty').hidden=count>0;}
+  function updateSkill(skill,view){
+    view.title.textContent=skill.name.trim()||'스킬 이름 미입력';view.description.textContent=skill.description.trim()||'설명 미입력';view.formula.textContent=skill.formula.trim()||'데미지 공식 미입력';
+    view.badge.textContent=skill.enabled?'사용 가능':'사용 불가';view.card.classList.toggle('unavailable',!skill.enabled);
+    const result=damageFormula(skill.formula,state.player);view.damage.textContent=result.value===null?result.message:`공식 계산값 · ${result.value.toLocaleString('ko-KR')}`;view.damage.classList.toggle('formula-error',result.value===null&&!!skill.formula);
+  }
+  function appendSkill(skill){
+    const card=document.createElement('article');card.className='skill-card';
+    const heading=document.createElement('div');heading.className='skill-card-heading';
+    const title=document.createElement('h4'),badge=document.createElement('span');heading.append(title,badge);
+    const description=document.createElement('p');description.className='skill-description';
+    const formula=document.createElement('code');formula.className='skill-formula';
+    const damage=document.createElement('p');damage.className='damage-preview';
+    card.append(heading,description,formula,damage);$('skill-list').append(card);
+    const view={card,title,badge,description,formula,damage};skillViews.set(skill,view);updateSkill(skill,view);
+  }
+  function render(){
+    const current=new Set(state.player.skills.filter(s=>s.enabled));
+    for(const [skill,view] of skillViews)if(!current.has(skill)){view.card.remove();skillViews.delete(skill);}
+    for(const skill of current)if(!skillViews.has(skill))appendSkill(skill);
+    summary();skillCount();
+  }
+  render();return {render};
+}
+
+return {mountPlayer};})();
+const module1=(()=>{
+const {createGameBridge}=module2;
+const {mountChatUI}=module5;
+const {mountInventory,normalizeInventory}=module4;
+const {KEY,defaultLayout,load}=module7;
+const {faceFit}=module10;
+const {mapData}=module8;
+const {mountPlayer}=module11;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module9;
+const $=id=>document.getElementById(id);
+const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
+const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
+const standing='assets/characters/main/serin/standing/';
+// Only approved, registered assets belong here. Drafts and absent expressions are excluded.
+const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
+const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad:'슬픔',embarrassed:'부끄러움',afraid:'두려움',annoyed:'불쾌함',love:'애정'};
+const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
+const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
+for(const r of mapData.regions)regions[r.id]=[r.label,'지리 배치 시안 · 공식 국명·국경·지역 설정은 미확정입니다.'];
+regions.archipelago=['주변 군도','군도 탐험 지점의 검토용 시안입니다.'];
+const regionNames={west:'서부',east:'동부',south:'남부'};
+const locationLabel=p=>p.label.replace(/^(west|east|south)\b/,(_,id)=>regionNames[id]);
+for(const p of mapData.locations)regions[p.id]=[`${p.id} · ${locationLabel(p)}`,'등록된 지도 클릭 지점 후보입니다. 위치·지명·소속은 검토용 시안이며 실제 이동은 아직 연결되지 않았습니다.'];
+// Build the click overlay once. Its coordinate system and aspect ratio match the map image.
+const svgNS='http://www.w3.org/2000/svg';
+for(const p of [...mapData.regions,...mapData.locations]){
+  const node=document.createElementNS(svgNS,'circle');
+  node.setAttribute('cx',String(p.x*1536));node.setAttribute('cy',String(p.y*1024));
+  node.setAttribute('r',p.kind?'24':'40');node.setAttribute('class','map-hit');node.dataset.region=p.id;
+  const title=document.createElementNS(svgNS,'title');title.textContent=regions[p.id][0];node.append(title);$('map-points').append(node);
+  if(p.kind){
+    const label=document.createElementNS(svgNS,'text');label.setAttribute('x',String(p.x*1536));label.setAttribute('y',String(p.y*1024-32));label.setAttribute('class','map-detail-label');label.dataset.location=p.id;label.textContent=p.id;$('map-points').append(label);
+  }
+}
+const kindLabels={capital:'왕도',lordship:'영주령',port:'항구',fortress:'요새',mana_mine:'마나 광산',dungeon:'던전',beast_habitat:'마수 서식지',anomaly:'마나 이상·유적',island:'군도 탐험'};
+for(const view of mapViews){const button=document.createElement('button');button.dataset.mapView=view.id;button.textContent=view.label.replace(' (임시)','');$('map-regions').append(button);}
+for(const p of mapData.locations){const button=document.createElement('button');button.dataset.region=p.id;button.dataset.parentRegion=p.region;const title=document.createElement('b'),kind=document.createElement('span');title.textContent=`${p.id} · ${locationLabel(p)}`;kind.textContent=kindLabels[p.kind]||p.kind;button.append(title,kind);$('map-detail-list').append(button);}
+const embedded=!!window.__ERCEDIA_CONFIG__;
+let storage;
+let restored;
+try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
+const state=restored.state;
+$('save-status').textContent=restored.message;
+const images=new Map();
+const faces=new Map();
+const faceLayer=document.createElement('div');
+faceLayer.className='face-layer';faceLayer.hidden=true;
+function trackImage(img,path,label,cdn=CDN) {
+  const row=document.createElement('li');
+  const status=document.createElement('span');
+  const link=document.createElement('a');
+  link.href=cdn+path;link.target='_blank';link.rel='noopener';link.textContent='원본';
+  row.append(status,document.createTextNode(' · '),link);$('asset-status').append(row);
+  img.dataset.status='loading';status.textContent=label+' · 로딩 중';
+  img.addEventListener('load',()=>{img.dataset.status='ready';img.classList.add('ready');status.textContent=label+' · 정상 로드';if(img.id==='world-map-image')mapImageStatus(true);renderAppearance();});
+  img.addEventListener('error',()=>{img.dataset.status='error';img.classList.remove('ready');status.textContent=label+' · 로드 실패';row.classList.add('error');document.querySelector('.asset-details').open=true;if(img.id==='world-map-image')mapImageStatus(false);renderAppearance();});
+  img.src=cdn+path;
+}
+function mapImageStatus(loaded){
+  $('map-points').style.visibility=loaded?'visible':'hidden';
+  $('map-status').textContent=loaded?'지역을 눌러 확대하고 세부 지점을 선택하세요. 지리와 국경은 검토용 시안입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
+  $('map-status').classList.toggle('asset-alert',!loaded);
+}
+$('map-points').style.visibility='hidden';
+trackImage($('world-map-image'),'assets/maps/world/world_main.png','메인 세계지도',MAP_CDN);
+for (const [outfit,data] of Object.entries(outfits)) {
+  for (const [emotion,path] of Object.entries(data.expressions)) {
+    const img=new Image();img.alt=`세린 ${data.label} · ${labels[emotion]}`;img.className='person';img.draggable=false;img.hidden=true;
+    images.set(outfit+':'+emotion,img);$('characters').append(img);trackImage(img,path,img.alt);
+  }
+}
+$('characters').append(faceLayer);
+for(const expression of Object.keys(labels)){
+  const img=new Image();img.alt=`세린 공통 얼굴 · ${labels[expression]}`;img.className='face-image';img.draggable=false;img.hidden=true;
+  faces.set(expression,img);faceLayer.append(img);
+  trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
+}
+trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
+function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
+function renderAppearance(){
+  const key=state.outfit+':base';
+  for (const [id,img] of images) img.hidden=id!==key || !state.character;
+  $('background').hidden=!state.background;
+  const current=images.get(key);
+  const face=faces.get(state.expression);
+  faceLayer.hidden=!state.character || current.dataset.status!=='ready';
+  for(const [id,img] of faces)img.hidden=id!==state.expression;
+  const error=current.dataset.status==='error';
+  $('expression-status').textContent=error ? '캐릭터 이미지 로드 실패. 아래 원본 링크를 확인하세요.' : `${outfits[state.outfit].label} · ${labels[state.expression]} 표정. 복장을 바꿔도 표정이 유지됩니다.`;
+  if(current.dataset.status==='loading' || face.dataset.status==='loading') $('expression-status').textContent+=' 이미지 로딩 중…';
+  if(face.dataset.status==='error') $('expression-status').textContent=`${labels[state.expression]} 얼굴 로드 실패. 복장 원본의 기본 얼굴을 유지합니다.`;
+  if($('background').dataset.status==='error') $('expression-status').textContent+=' 배경 로드 실패.';
+  $('expression-status').classList.toggle('asset-alert',error || face.dataset.status==='error' || $('background').dataset.status==='error');
+  document.querySelectorAll('[data-outfit]').forEach(btn=>{const selected=btn.dataset.outfit===state.outfit;btn.classList.toggle('selected',selected);btn.setAttribute('aria-pressed',String(selected));});
+  $('expression').value=state.expression;
+  $('show-background').checked=state.background;$('show-character').checked=state.character;
+  renderLayout();
+}
+function renderLayout(){
+  const l=state.layouts[state.outfit];
+  for(const k of ['scale','x','y']) {$(k).value=l[k];$(k+'-value').textContent=l[k]+(k==='y'?'px':'%');}
+  for(const [key,img] of images) if(key.startsWith(state.outfit+':')) {img.style.left=l.x+'%';img.style.top=l.y+'px';img.style.transform=`translateX(-50%) scale(${l.scale/100})`;}
+  faceLayer.style.left=l.x+'%';faceLayer.style.top=l.y+'px';faceLayer.style.transform=`translateX(-50%) scale(${l.scale/100})`;
+  const fit=faceFit[state.outfit];
+  faceLayer.style.setProperty('--face-left',`${fit.x/1024*100}%`);
+  faceLayer.style.setProperty('--face-top',`${fit.y/1536*100}%`);
+  faceLayer.style.setProperty('--face-size',`${fit.size/1024*100}%`);
+}
+function renderDialogue(){
+  const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
+  const index=state.scene?state.sceneIndex:state.index,d=list[index];
+  $('speaker').textContent=d.speaker;$('emotion').textContent=labels[d.emotion]||d.emotion||'';$('line').textContent=d.text;
+  $('count').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
+  $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
+  if(state.scene){
+    const scene=state.scene;
+    $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
+    state.character=!!scene.npc;
+    if(scene.npc){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
+      for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
+    }
+    renderAppearance();
+  }
+}
+function advance(delta){const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
+function switchTo(page){inventoryUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
+function updateMapCamera(){
+  const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
+  const camera=cameraTransform(regionFrame(state.mapView),width,height);
+  $('map-sheet').style.transform=`translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`;
+}
+function renderMapView(){
+  const overview=state.mapView==='world',view=mapViews.find(r=>r.id===state.mapView);
+  $('map-breadcrumb').textContent=overview?'세계지도':`세계지도 › ${view.label}`;$('map-overview').disabled=overview;
+  $('map-detail-panel').hidden=overview;
+  const points=mapData.locations.filter(p=>p.region===state.mapView);
+  $('map-detail-title').textContent=view?`${view.label} · 세부 지점`:'세부 지점';$('map-detail-count').textContent=`${points.length}곳`;
+  document.querySelectorAll('[data-map-view]').forEach(el=>{el.classList.toggle('active',el.dataset.mapView===state.mapView);el.setAttribute('aria-pressed',String(el.dataset.mapView===state.mapView));});
+  document.querySelectorAll('[data-parent-region]').forEach(el=>{el.hidden=el.dataset.parentRegion!==state.mapView;});
+  document.querySelectorAll('.map-hit').forEach(el=>{const id=el.dataset.region;const visible=overview || mapData.locations.some(p=>p.id===id&&p.region===state.mapView);el.style.display=visible?'':'none';});
+  document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
+  updateMapCamera();
+}
+function renderRegion(){const r=regions[state.region];$('region-title').textContent=r[0];$('region-description').textContent=r[1];document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();}
+document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
+document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
+$('map-overview').onclick=()=>{state.mapView='world';state.region='world';renderRegion();dirty();};
+const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.observe($('map-container'));
+$('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
+$('inventory-tab').onclick=()=>{switchTo('inventory');dirty();};
+$('status-tab').onclick=()=>{switchTo('status');dirty();};
+$('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
+$('stage').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
+document.querySelectorAll('[data-outfit]').forEach(btn=>btn.onclick=()=>{state.outfit=btn.dataset.outfit;renderAppearance();dirty();});
+$('expression').onchange=e=>{state.expression=e.target.value;renderAppearance();dirty();};
+let frame=0;
+for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
+for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;renderAppearance();dirty();};
+$('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
+function saveGame(){try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
+$('save').onclick=saveGame;
+const playerUI=mountPlayer(state);
+const inventoryUI=mountInventory(state);
+// A future game engine sends the complete current bag; UI previews never change it.
+window.addEventListener('ercedia:inventory-update',event=>{
+  state.inventory=normalizeInventory(event.detail);inventoryUI.render();
+  saveGame();
+});
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);}
+const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded});
+window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
+renderAll();
+
+const game=document.querySelector('.game');
+let expandedInPage=false;
+function syncFullscreen(){
+  const active=document.fullscreenElement===game || expandedInPage;
+  game.classList.toggle('is-expanded',active);
+  document.body.classList.toggle('game-expanded',active);
+  $('fullscreen').textContent=active?'⛶ 전체화면 해제':'⛶ 전체화면';
+  $('fullscreen').setAttribute('aria-pressed',String(active));
+  $('fullscreen').title=active?'원래 화면으로 돌아가기 · Esc':'전체화면으로 보기 · Esc로 돌아가기';
+}
+$('fullscreen').onclick=async()=>{
+  if(document.fullscreenElement===game){
+    try{await document.exitFullscreen();}catch{ /* Keep the button in sync if exiting is denied. */ }
+  }else if(expandedInPage){
+    expandedInPage=false;
+  }else{
+    try{
+      if(!game.requestFullscreen || !document.fullscreenEnabled) throw Error('unsupported');
+      await game.requestFullscreen();
+    }catch{expandedInPage=true;}
+  }
+  syncFullscreen();
+  $('fullscreen').focus({preventScroll:true});
+};
+document.addEventListener('fullscreenchange',()=>{syncFullscreen();$('fullscreen').focus({preventScroll:true});});
+document.addEventListener('keydown',event=>{
+  if(event.key==='Escape' && expandedInPage){expandedInPage=false;syncFullscreen();$('fullscreen').focus({preventScroll:true});}
+});
+
+return {};})();
+const module0=(()=>{
+
+// Bundled entry: check all preloaded assets before a staged UI can replace the active UI.
+if(window.__ERCEDIA_CONFIG__){
+  const config=window.__ERCEDIA_CONFIG__;
+  Promise.all([...document.images].map(img=>new Promise(resolve=>{
+    if(img.dataset.status==='ready')return resolve(true);
+    if(img.dataset.status==='error')return resolve(false);
+    img.addEventListener('load',()=>resolve(true),{once:true});
+    img.addEventListener('error',()=>resolve(false),{once:true});
+    setTimeout(()=>resolve(false),25000);
+  }))).then(results=>parent.postMessage({channel:'ercedia',token:config.token,conversation:config.conversation,type:'health',payload:{ok:results.every(Boolean),bridgeVersion:1,stateVersion:1,failedAssets:[...document.images].filter(img=>!img.naturalWidth).map(img=>img.src)}},'*'));
+}
+
+return {};})();</script></body></html>

@@ -1,0 +1,38 @@
+name: Build game UI release
+on:
+  push:
+    branches: [main]
+    paths:
+      - 'index.html'
+      - 'web/**'
+      - 'assets/**'
+      - 'integration/*.js'
+      - 'integration/version.json'
+      - 'integration/assets.json'
+      - 'tampermonkey/build.mjs'
+  workflow_dispatch:
+permissions:
+  contents: write
+concurrency:
+  group: ercedia-ui-release
+  cancel-in-progress: false
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v6
+        with:
+          ref: main
+      - uses: actions/setup-node@v6
+        with:
+          node-version: '24'
+      - run: node tampermonkey/build.mjs
+      - name: Save generated UI release
+        run: |
+          git config user.name "github-actions[bot]"
+          git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
+          git add integration/game.html integration/update-manifest.json
+          if ! git diff --cached --quiet; then
+            git commit -m "build: update game UI release"
+            git push origin HEAD:main
+          fi
