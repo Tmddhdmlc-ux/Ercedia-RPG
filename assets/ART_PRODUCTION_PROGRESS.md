@@ -6,12 +6,12 @@
 
 | 분야 | 검수 완료 | 전체 슬롯 |
 |---|---:|---:|
-| 장비 | 200 | 300 |
+| 장비 | 225 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 1 | 40 |
 | 장소 | 1 | 261 |
 
-총 검수 완료: **272/671**.
+총 검수 완료: **297/671**.
 
 ## 목록과 재개 기준
 
@@ -112,6 +112,14 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [equipment-batch-08.json](art-production/equipment-batch-08.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `722df5c374bd9916d293048c909c2024a6644503`
+
+### equipment-batch-09
+
+- 대상/완료 ID: ER-EQ-201, ER-EQ-202, ER-EQ-203, ER-EQ-204, ER-EQ-205, ER-EQ-206, ER-EQ-207, ER-EQ-208, ER-EQ-209, ER-EQ-210, ER-EQ-211, ER-EQ-212, ER-EQ-213, ER-EQ-214, ER-EQ-215, ER-EQ-216, ER-EQ-217, ER-EQ-218, ER-EQ-219, ER-EQ-220, ER-EQ-221, ER-EQ-222, ER-EQ-223, ER-EQ-224, ER-EQ-225
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [equipment-batch-09.json](art-production/equipment-batch-09.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
 
 ### samples-batch-01

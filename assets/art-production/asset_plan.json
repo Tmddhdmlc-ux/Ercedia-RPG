@@ -5632,7 +5632,7 @@
         ],
         "sha256": "a88cb3be3b858350d3d5deeb5bdd8abc86ee4af54d4b10d6a9f10ca9d4a35bd4"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-177",
@@ -5664,7 +5664,7 @@
         ],
         "sha256": "60e24c6c9fe60cbdf13a5359eb1d65e1c53255e58ba89d78df0408abbf787eb1"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-178",
@@ -5696,7 +5696,7 @@
         ],
         "sha256": "c72a60d9cf495aa5a3ff5474dfcb29682c6a7ab525b78a3ed6a5009e0757759b"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-179",
@@ -5728,7 +5728,7 @@
         ],
         "sha256": "72d5b3f9c65d7408a5f21e4ae648066a310a257c545791551b7c463c6fd96bd7"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-180",
@@ -5760,7 +5760,7 @@
         ],
         "sha256": "66e19ec4be9c2d509d9315241aa6ab5e65692ac9f4704189e2dbfb15f7e4c5a4"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-181",
@@ -5792,7 +5792,7 @@
         ],
         "sha256": "9e8e0d1a581ad2d7ca7faa1d1557176fe9205073fbbb69a4728c512044382fb8"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-182",
@@ -5824,7 +5824,7 @@
         ],
         "sha256": "b04b4726a41dbbc0366a8a81fac9fc595d428a13c499c31daad5718ac210b017"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-183",
@@ -5856,7 +5856,7 @@
         ],
         "sha256": "042d6350006e4e453ad8bccc426c2b714745d6d646389a824b5952e1b9f3df97"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-184",
@@ -5888,7 +5888,7 @@
         ],
         "sha256": "f4a51c1a7f4d5cbf04fd54c5bb48586754e107161e008f88cfe349e19c140ba7"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-185",
@@ -5920,7 +5920,7 @@
         ],
         "sha256": "efebdd3b9ddd8ab9f2752122d807578c64c354c6fb7fe326e543265fe3a0fea4"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-186",
@@ -5952,7 +5952,7 @@
         ],
         "sha256": "a8506c7e2ba5d1c57b54010c823b73629f19351dbc5da0bbc649298001209bbb"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-187",
@@ -5984,7 +5984,7 @@
         ],
         "sha256": "6a3b5f2918baf09430e83704f7221236e7d39bd567267cea2377c27a8488bae3"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-188",
@@ -6016,7 +6016,7 @@
         ],
         "sha256": "e38479a9563cac467b07f855e2cb4d85bf275c1b70074f14c4c42bc95284ab6d"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-189",
@@ -6048,7 +6048,7 @@
         ],
         "sha256": "85b4bfcb819f820d455e53c94ec95b8faf14b1f9507542e8f750ae205ceb822d"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-190",
@@ -6080,7 +6080,7 @@
         ],
         "sha256": "6e592d34cb935dd77b8a02d5fb939abc7ae355a57c447843814a15634b5ea63e"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-191",
@@ -6112,7 +6112,7 @@
         ],
         "sha256": "c3603cd3003b2cb60fffe3cfb812b962abd09a9486e121f915f92e16dddfd422"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-192",
@@ -6144,7 +6144,7 @@
         ],
         "sha256": "d9a1b7a3354469701a2c9b88ee4fedea3307abe11340e1865eebaf18bf0293e4"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-193",
@@ -6176,7 +6176,7 @@
         ],
         "sha256": "d7db51733d982dd86e2c5f2ad502a0048320b8042b3ed8ac4b7101d4e1d5f02b"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-194",
@@ -6208,7 +6208,7 @@
         ],
         "sha256": "877f27ee31dceb3f744dea738e71321b9a1f19dcb1db6afb74b32ecc0b275da9"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-195",
@@ -6240,7 +6240,7 @@
         ],
         "sha256": "cf60349c5716d816963a88d6c0ba2523e0def5523adc26692c16ba78cec58124"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-196",
@@ -6272,7 +6272,7 @@
         ],
         "sha256": "04b4c58c52562347a31fd559772e34d8e1e3d115092b73623751c7ae4f4d27b8"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-197",
@@ -6304,7 +6304,7 @@
         ],
         "sha256": "13be1e9b41b48fa95efad6df8ce6e0898c04e86b63fe500debd5b411edf638f2"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-198",
@@ -6336,7 +6336,7 @@
         ],
         "sha256": "3fd1a17236664c6eaa6b1a00290ff717eed90715a0e55b84550db662cea8f934"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-199",
@@ -6368,7 +6368,7 @@
         ],
         "sha256": "03ba3a116bf84a30c5acc79d0a483793ac086df576a623270dde8016e7ad68b6"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-200",
@@ -6400,7 +6400,7 @@
         ],
         "sha256": "989e9e4c759c9ad077fc176a141c2a28a54b9ddda9ede91206ee6f6cedcfb127"
       },
-      "commit_sha": null
+      "commit_sha": "722df5c374bd9916d293048c909c2024a6644503"
     },
     {
       "id": "ER-EQ-201",
@@ -6411,10 +6411,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "47c45fd75d3c2025c90b73ee9fdad70722afdcd9476d4f287e7d20e061357d20"
+      },
       "commit_sha": null
     },
     {
@@ -6426,10 +6443,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "5229edb17bb5c8ef87527a58cec39ea1deec5704253af557283490241ecbdb70"
+      },
       "commit_sha": null
     },
     {
@@ -6441,10 +6475,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "c042fdf6d872d98d6d5543d8554955b7881ff6f08b583549b8d543821ec2fbe4"
+      },
       "commit_sha": null
     },
     {
@@ -6456,10 +6507,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "9255fb3f17fc28ca3c6a0bf824546e8d00de79580f94ed59e03affc6dbbffd14"
+      },
       "commit_sha": null
     },
     {
@@ -6471,10 +6539,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "8db24bd362e82b6b3db14c4ce4aefd384aa048900513d8d96d654397fdfbf4d6"
+      },
       "commit_sha": null
     },
     {
@@ -6486,10 +6571,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "ba27abe15963efdd2a30a3f46fd764f6e4a1c9057f531991f08b2024b7241d56"
+      },
       "commit_sha": null
     },
     {
@@ -6501,10 +6603,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "375b709c3e568cae76cd5f8b99b6989d7543894a911ffe85a59029cd890c6d6f"
+      },
       "commit_sha": null
     },
     {
@@ -6516,10 +6635,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "7fc06f166deeee2353ba9e396f0a9748c4a6b67cc68eab62a0626b45b94214a7"
+      },
       "commit_sha": null
     },
     {
@@ -6531,10 +6667,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "5a519d772d510d9c356727d156a19571c2e91717f67bcf5d8645a53fa034a129"
+      },
       "commit_sha": null
     },
     {
@@ -6546,10 +6699,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "cdd61e0a453ff08a00c7b8bcc30dc47c1ea5ef44baf5185ca99200c2d13068cc"
+      },
       "commit_sha": null
     },
     {
@@ -6561,10 +6731,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "31b4e229096cd68469b96c06abc74399062e769be635fa24431f9f90ac01383b"
+      },
       "commit_sha": null
     },
     {
@@ -6576,10 +6763,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "cf8bd20ea5cdb9348e68442a5b8264b9352bd163dbba922021d7c937c222dde8"
+      },
       "commit_sha": null
     },
     {
@@ -6591,10 +6795,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          45,
+          38,
+          467,
+          474
+        ],
+        "sha256": "8032e79d9e8b9f4a292363ea1160a95595000473251ab28b9968250ee4ba823d"
+      },
       "commit_sha": null
     },
     {
@@ -6606,10 +6827,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          45,
+          38,
+          467,
+          474
+        ],
+        "sha256": "524eeb4b2cbd7209402aa05b14e2e3dc3f4cee84ea0a4ac3e8a161dd090feee5"
+      },
       "commit_sha": null
     },
     {
@@ -6621,10 +6859,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "380cb45e7634af8569d086540c8399f360ed7eec255606ae8e6035a34c7253e0"
+      },
       "commit_sha": null
     },
     {
@@ -6636,10 +6891,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "efe94ce6b45d1185d02f28ba0a38385cf109b32608212c66d79833f4b1a38b83"
+      },
       "commit_sha": null
     },
     {
@@ -6651,10 +6923,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/leather_armor.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          67,
+          38,
+          444,
+          474
+        ],
+        "sha256": "065d5792551a73113743a0749eca8ef7e672525545b8ec795991fd0a6ce0de9e"
+      },
       "commit_sha": null
     },
     {
@@ -6666,10 +6955,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/light_plate.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          65,
+          49,
+          446,
+          463
+        ],
+        "sha256": "b70f169c98c2be6e6c51e60e8317cf5d4dad0316db71ba4f03a1b5208ba9d3fc"
+      },
       "commit_sha": null
     },
     {
@@ -6681,10 +6987,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/leather_armor.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          67,
+          38,
+          444,
+          474
+        ],
+        "sha256": "54a202289c2cf106ddfa4c57856687fa3ec17fc79f7cecf41589a1623ffc7f3f"
+      },
       "commit_sha": null
     },
     {
@@ -6696,10 +7019,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          39,
+          42,
+          473,
+          470
+        ],
+        "sha256": "a36ee50eba5e0cdc5b8af06dd650091aede6e1349da204d8f145e0dbe8b0c292"
+      },
       "commit_sha": null
     },
     {
@@ -6711,10 +7051,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/light_plate.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          65,
+          49,
+          446,
+          463
+        ],
+        "sha256": "93c5656ebf37d82fccdac63db5bccc2512ab2068ddc46769651517f82df33fe9"
+      },
       "commit_sha": null
     },
     {
@@ -6726,10 +7083,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          60,
+          43,
+          452,
+          469
+        ],
+        "sha256": "a27b524582df008348c7638a7ab372823a13fd0b299b69b00fea38b764ac52fa"
+      },
       "commit_sha": null
     },
     {
@@ -6741,10 +7115,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/robe.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          113,
+          38,
+          398,
+          474
+        ],
+        "sha256": "4d2dfd383ce4ddc8d0153fb908c6564dcdb4ac66e6defd9995699becd474d3e0"
+      },
       "commit_sha": null
     },
     {
@@ -6756,10 +7147,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          118,
+          47,
+          393,
+          464
+        ],
+        "sha256": "d0b298858d68727f488b5c35ea9beb913ca18c984189ff0fbd02ab243e8d92a4"
+      },
       "commit_sha": null
     },
     {
@@ -6771,10 +7179,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          60,
+          43,
+          452,
+          469
+        ],
+        "sha256": "2b63387821d56b028b3b21c2ddfcb688a251db214af4f4d6e6b3b4cc8c94f150"
+      },
       "commit_sha": null
     },
     {
