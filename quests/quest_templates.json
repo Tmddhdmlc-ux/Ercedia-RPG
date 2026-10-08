@@ -1,0 +1,312 @@
+{
+  "schema_version": 1,
+  "version": "quests-v1",
+  "creation_modes": [
+    "guild_board",
+    "personal_npc",
+    "dynamic_event"
+  ],
+  "quest_types": [
+    {
+      "id": "hunt",
+      "label": "마수 토벌",
+      "detail": "마수 서식지·위험도·토벌 증거"
+    },
+    {
+      "id": "escort",
+      "label": "호위",
+      "detail": "상단·주민·화물·이동 경로"
+    },
+    {
+      "id": "delivery",
+      "label": "운송",
+      "detail": "실제 소포·국경 통관·수령인"
+    },
+    {
+      "id": "gather",
+      "label": "채집",
+      "detail": "마수 재료·생태·자원 채집"
+    },
+    {
+      "id": "investigate",
+      "label": "조사",
+      "detail": "실종·도난·이상현상 조사"
+    },
+    {
+      "id": "dungeon",
+      "label": "던전 탐사",
+      "detail": "던전 진입·구역 목표·클리어"
+    },
+    {
+      "id": "repair",
+      "label": "복구·구호",
+      "detail": "시설 수리·피난민 지원"
+    },
+    {
+      "id": "diplomacy",
+      "label": "중재",
+      "detail": "NPC/세력 관계와 갈등 해결"
+    },
+    {
+      "id": "training",
+      "label": "훈련 지원",
+      "detail": "훈련소 실습·교관 보조"
+    }
+  ],
+  "quest_ranks": [
+    {
+      "id": "F",
+      "name": "견습",
+      "recommended_levels": [
+        1,
+        10
+      ]
+    },
+    {
+      "id": "E",
+      "name": "동패",
+      "recommended_levels": [
+        8,
+        25
+      ]
+    },
+    {
+      "id": "D",
+      "name": "은패",
+      "recommended_levels": [
+        20,
+        45
+      ]
+    },
+    {
+      "id": "C",
+      "name": "금패",
+      "recommended_levels": [
+        40,
+        70
+      ]
+    },
+    {
+      "id": "B",
+      "name": "흑패",
+      "recommended_levels": [
+        65,
+        100
+      ]
+    }
+  ],
+  "guild_board_regions": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "guild_rule": "길드 본부/지부와 별개로 각 영주령의 현지 게시·연락 창구를 둘 수 있다. 공식 본부/지부는 기존 FACTIONS.md만 따른다.",
+  "status_order": [
+    "offered",
+    "accepted",
+    "active",
+    "ready_to_report",
+    "completed",
+    "failed",
+    "expired",
+    "abandoned"
+  ],
+  "seed_templates": [
+    {
+      "id": "QT-W1-01",
+      "region_id": "W1",
+      "title": "노르발트 지역의 실종 수색",
+      "type": "investigate",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-W2-01",
+      "region_id": "W2",
+      "title": "발렌하르트 지역의 행상 호위",
+      "type": "escort",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-W3-01",
+      "region_id": "W3",
+      "title": "엘름베르크 지역의 마수 흔적 조사",
+      "type": "hunt",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-W4-01",
+      "region_id": "W4",
+      "title": "로젠펠트 지역의 물자 운반",
+      "type": "delivery",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-W5-01",
+      "region_id": "W5",
+      "title": "아르덴슈타인 지역의 던전 정찰",
+      "type": "dungeon",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-E1-01",
+      "region_id": "E1",
+      "title": "칼트하임 지역의 실종 수색",
+      "type": "investigate",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-E2-01",
+      "region_id": "E2",
+      "title": "아이젠크로네 지역의 행상 호위",
+      "type": "escort",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-E3-01",
+      "region_id": "E3",
+      "title": "베르크슈타인 지역의 마수 흔적 조사",
+      "type": "hunt",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-E4-01",
+      "region_id": "E4",
+      "title": "실베른 지역의 물자 운반",
+      "type": "delivery",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-S1-01",
+      "region_id": "S1",
+      "title": "벨마리나 지역의 던전 정찰",
+      "type": "dungeon",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-S2-01",
+      "region_id": "S2",
+      "title": "세르반 지역의 실종 수색",
+      "type": "investigate",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-S3-01",
+      "region_id": "S3",
+      "title": "아쿠아렌 지역의 행상 호위",
+      "type": "escort",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    },
+    {
+      "id": "QT-S4-01",
+      "region_id": "S4",
+      "title": "솔메리아 지역의 마수 흔적 조사",
+      "type": "hunt",
+      "issuer_type": "guild_board",
+      "objective_count": 1,
+      "objective_note": "월드 상황에 맞춰 구체적인 NPC/적/장소를 선택하고 실제 목표 ID를 할당",
+      "reward_rule": "위험·소요 시간·재정·협상에 따라 실제 보상 정함",
+      "expires_in_days": null
+    }
+  ],
+  "quest_instance_schema": {
+    "id": "string unique",
+    "template_id": "string or null",
+    "origin": "guild_board | personal_npc | dynamic_event",
+    "title": "string",
+    "summary": "string",
+    "issuer_npc_id": "string or null",
+    "issuer_faction_id": "string or null",
+    "region_id": "existing region ID",
+    "target_location_id": "existing mapped location/dungeon or null",
+    "type": "quest type",
+    "status": "quest status",
+    "rank": "quest rank or null",
+    "objectives": [
+      {
+        "id": "objective-id",
+        "description": "string",
+        "current": 0,
+        "target": 1,
+        "verification": "event evidence"
+      }
+    ],
+    "accepted_at": "calendar date or null",
+    "deadline_at": "calendar date or null",
+    "reward": {
+      "xp": 0,
+      "currency": 0,
+      "item_ids": [],
+      "materials": [],
+      "affection_effects": []
+    },
+    "claim_event_id": "idempotent reward transaction ID or null",
+    "visibility": "public | revealed | private",
+    "journal": []
+  },
+  "rules": [
+    "Only actual events can advance objectives; no automatic success from prose alone.",
+    "Quest reward and penalties are applied once using claim_event_id.",
+    "Failure, expiration and refusal do not necessarily block follow-up story.",
+    "NPC individual goals, affection and registration/duty can gate acceptance and requests.",
+    "Quest progress can be updated by action in existing world, dungeon, trade or combat systems.",
+    "Create quests on demand; seed templates are examples, not mandatory repeating scripts."
+  ]
+}
