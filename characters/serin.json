@@ -6,7 +6,7 @@
   "role": "npc",
   "gender": "여성",
   "age_status": "성인, 세부 나이 미확정",
-  "affiliation": "써니 빌리지 순찰",
+  "affiliation": "써니 빌리지 (순찰 활동; 정식 국가 소속 미확정)",
   "home_location": "써니 빌리지",
   "location_id": null,
   "location_note": "써니 빌리지의 세계지도 좌표 및 어느 영주령 소속인지는 아직 확정되지 않음",
@@ -60,5 +60,10 @@
     "status_speed_bonus": 0
   },
   "stat_status": "assigned_initial_balance_v1",
-  "notes": "수치 능력치는 초기 밸런스 값. 베이직 나이트 경지/외형/소속은 기존 공개 설정 유지. 깨달음 수치·자동 경지 승급·하이퍼 능력 없음."
+  "notes": "수치 능력치는 초기 밸런스 값. 베이직 나이트 경지/외형/소속은 기존 공개 설정 유지. 깨달음 수치·자동 경지 승급·하이퍼 능력 없음.",
+  "duty": "써니 빌리지 순찰·주민 보호",
+  "registration_status": "unverified",
+  "registered_kingdom": null,
+  "official_title_status": "unverified_pending_national_registration",
+  "rank_note": "베이직 나이트는 현재 관찰된 전투 경지; 정식 기사 칭호는 국가 등록 확인 후 사용"
 }
