@@ -1,5 +1,6 @@
 import {normalizePlayer} from './player.js';
 import {normalizeInventory} from './inventory.js';
+import {extractSceneJSON} from './response-json.js';
 export const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 export const characterRegistry={serin:{outfits:['armor','casual','nightwear']}};
 function text(value,key,max=2000,required=true){
@@ -34,6 +35,8 @@ export function normalizeScene(raw){
 export function parseScene(source){
   if(typeof source!=='string'||source.length>120000)throw Error('응답은 120KB 이하의 JSON이어야 합니다.');
   const input=source.trim();
+  const extracted=extractSceneJSON(input);
+  if(extracted)return normalizeScene(JSON.parse(extracted));
   if(input.startsWith('{'))return normalizeScene(JSON.parse(input));
   const blocks=[...input.matchAll(/```(?:json|ercedia)?\s*\n([\s\S]*?)```/g)];
   for(const block of blocks){try{const raw=JSON.parse(block[1]);if(raw.type==='ercedia_scene')return normalizeScene(raw);}catch(error){if(block[1].includes('ercedia_scene'))throw error;}}
@@ -43,5 +46,5 @@ export function contextSummary(state){
   return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[]};
 }
 export function actionPrompt(state,action,requestId){
-  return `에르세디아 RPG의 다음 턴을 진행해주세요. GitHub의 WORLD.md와 승인된 설정을 따르되, NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc={id:"serin",outfit:"armor|casual|nightwear",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }

@@ -8,7 +8,7 @@ function newRequestId(){
 }
 export function mountChatUI(state,{render,persist,storage,embedded}){
   const $=id=>document.getElementById(id);
-  let pending=null,timer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
+  let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
   const status=message=>{$('connection-status').textContent=message;};
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
@@ -18,7 +18,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     $('free-action').disabled=!!pending;$('send-action').disabled=!!pending;$('cancel-wait').hidden=!pending;
   }
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
-    clearTimeout(timer);pending=null;controls();status(message);notify('cancel',{});
+    clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
   }
   function submit(action,choiceId=null){
     if(pending||!action.trim())return;
@@ -28,6 +28,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
     controls();status(embedded?'ChatGPT 연결 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
     notify('action',{text:$('action-copy').value,requestId});
+    if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
   }
@@ -65,7 +66,12 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
       cancel();conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;
       restore(data.payload);notify('restored',{state:JSON.parse(JSON.stringify(state)),requestId:data.requestId});return;
     }
+    if(data.type==='conversation'){
+      conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
+    }
     if(data.conversation!==conversation)return;
+    if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
+    if(data.type==='action-error')cancel(data.payload);
     if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending,requestId:data.requestId});
     if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
     if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);

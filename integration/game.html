@@ -251,9 +251,28 @@ function createGameBridge(state,{apply,restore,render,persist}){
 }
 
 return {createGameBridge};})();
+const module7=(()=>{
+// Extract a completed scene object from rendered code or surrounding assistant prose.
+// Only JSON.parse is used. Strings, escaped quotes and braces inside dialogue are respected.
+function extractSceneJSON(source){
+  if(typeof source!=='string'||source.length>120000)return null;
+  let depth=0,start=-1,quoted=false,escape=false;
+  for(let i=0;i<source.length;i++){
+    const char=source[i];
+    if(depth===0){if(char==='{'){start=i;depth=1;quoted=false;escape=false;}continue;}
+    if(quoted){if(escape)escape=false;else if(char==='\\')escape=true;else if(char==='"')quoted=false;continue;}
+    if(char==='"')quoted=true;else if(char==='{')depth++;else if(char==='}'&&--depth===0){
+      const candidate=source.slice(start,i+1);try{if(JSON.parse(candidate)?.type==='ercedia_scene')return candidate;}catch{}
+    }
+  }
+  return null;
+}
+
+return {extractSceneJSON};})();
 const module6=(()=>{
 const {normalizePlayer}=module3;
 const {normalizeInventory}=module4;
+const {extractSceneJSON}=module7;
 const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 const characterRegistry={serin:{outfits:['armor','casual','nightwear']}};
 function text(value,key,max=2000,required=true){
@@ -288,6 +307,8 @@ function normalizeScene(raw){
 function parseScene(source){
   if(typeof source!=='string'||source.length>120000)throw Error('응답은 120KB 이하의 JSON이어야 합니다.');
   const input=source.trim();
+  const extracted=extractSceneJSON(input);
+  if(extracted)return normalizeScene(JSON.parse(extracted));
   if(input.startsWith('{'))return normalizeScene(JSON.parse(input));
   const blocks=[...input.matchAll(/```(?:json|ercedia)?\s*\n([\s\S]*?)```/g)];
   for(const block of blocks){try{const raw=JSON.parse(block[1]);if(raw.type==='ercedia_scene')return normalizeScene(raw);}catch(error){if(block[1].includes('ercedia_scene'))throw error;}}
@@ -297,17 +318,17 @@ function contextSummary(state){
   return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[]};
 }
 function actionPrompt(state,action,requestId){
-  return `에르세디아 RPG의 다음 턴을 진행해주세요. GitHub의 WORLD.md와 승인된 설정을 따르되, NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc={id:"serin",outfit:"armor|casual|nightwear",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
 
 return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
-const module8=(()=>{
+const module9=(()=>{
 // Generated mirror of assets/maps/world/map_locations.json.
 const mapData = {"regions":[{"id":"northwest","label":"북서 미개척 설산·빙하","x":0.21158854166666666,"y":0.166015625,"provisional":true},{"id":"northcenter","label":"북중 미개척 원시림","x":0.4752604166666667,"y":0.16796875,"provisional":true},{"id":"northeast","label":"북동 미개척 마나 이상지대","x":0.751953125,"y":0.17578125,"provisional":true},{"id":"west","label":"벨로아 왕국","x":0.22135416666666666,"y":0.3955078125,"provisional":true},{"id":"east","label":"드라켄 왕국","x":0.7552083333333334,"y":0.419921875,"provisional":true},{"id":"south","label":"루메린 왕국","x":0.5208333333333334,"y":0.7177734375,"provisional":true},{"id":"disputed","label":"중앙 분쟁지","x":0.5045572916666666,"y":0.474609375,"provisional":true}],"locations":[{"id":"W1","label":"노르발트 변경백령","kind":"lordship","region":"west","x":0.18945312,"y":0.31152344,"provisional":true,"kingdom":"벨로아","lord":"에드릭 노르발트","lore_id":"W1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W2","label":"발렌하르트 공작령","kind":"lordship","region":"west","x":0.32291667,"y":0.38867188,"provisional":true,"kingdom":"벨로아","lord":"카시안 발렌하르트","lore_id":"W2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W3","label":"엘름베르크 백작령","kind":"lordship","region":"west","x":0.24283854,"y":0.4765625,"provisional":true,"kingdom":"벨로아","lord":"마르타 엘름베르크","lore_id":"W3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W4","label":"로젠펠트 후작령","kind":"lordship","region":"west","x":0.32291667,"y":0.55175781,"provisional":true,"kingdom":"벨로아","lord":"율리안 로젠펠트","lore_id":"W4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W5","label":"아르덴슈타인 백작령","kind":"lordship","region":"west","x":0.3984375,"y":0.62109375,"provisional":true,"kingdom":"벨로아","lord":"비올레트 아르덴슈타인","lore_id":"W5","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E1","label":"칼트하임 변경백령","kind":"lordship","region":"east","x":0.74414062,"y":0.34570312,"provisional":true,"kingdom":"드라켄","lord":"하인리히 칼트하임","lore_id":"E1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E2","label":"아이젠크로네 공작령","kind":"lordship","region":"east","x":0.66080729,"y":0.40527344,"provisional":true,"kingdom":"드라켄","lord":"셀리아 아이젠크로네","lore_id":"E2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E3","label":"베르크슈타인 후작령","kind":"lordship","region":"east","x":0.66666667,"y":0.48828125,"provisional":true,"kingdom":"드라켄","lord":"발터 베르크슈타인","lore_id":"E3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E4","label":"실베른 백작령","kind":"lordship","region":"east","x":0.69010417,"y":0.56445312,"provisional":true,"kingdom":"드라켄","lord":"에밀 실베른","lore_id":"E4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S1","label":"벨마리나 후작령","kind":"lordship","region":"south","x":0.37109375,"y":0.73730469,"provisional":true,"kingdom":"루메린","lord":"도미니크 벨마리나","lore_id":"S1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S2","label":"세르반 공작령","kind":"lordship","region":"south","x":0.47851562,"y":0.63476562,"provisional":true,"kingdom":"루메린","lord":"이사벨 세르반","lore_id":"S2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S3","label":"아쿠아렌 백작령","kind":"lordship","region":"south","x":0.56901042,"y":0.69824219,"provisional":true,"kingdom":"루메린","lord":"티에라 아쿠아렌","lore_id":"S3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S4","label":"솔메리아 백작령","kind":"lordship","region":"south","x":0.53320312,"y":0.80371094,"provisional":true,"kingdom":"루메린","lord":"라파엘 솔메리아","lore_id":"S4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"CW","label":"벨로아 왕도 (도시명 미정)","kind":"capital","region":"west","x":0.28776042,"y":0.34277344,"provisional":true},{"id":"CE","label":"드라켄 왕도 (도시명 미정)","kind":"capital","region":"east","x":0.72265625,"y":0.4296875,"provisional":true},{"id":"CS","label":"루메린 왕도 (도시명 미정)","kind":"capital","region":"south","x":0.50520833,"y":0.75097656,"provisional":true},{"id":"F1","label":"중앙 요새 후보","kind":"fortress","region":"disputed","x":0.50585938,"y":0.47753906,"provisional":true},{"id":"M1","label":"접경 마나 광산 후보","kind":"mana_mine","region":"disputed","x":0.59505208,"y":0.43847656,"provisional":true},{"id":"P1","label":"남서 항구 후보","kind":"port","region":"south","x":0.30794271,"y":0.69433594,"provisional":true},{"id":"P2","label":"남동 항구 후보","kind":"port","region":"south","x":0.63867188,"y":0.60742188,"provisional":true},{"id":"D1","label":"고대 던전 후보","kind":"dungeon","region":"northwest","x":0.2890625,"y":0.15820312,"provisional":true},{"id":"B1","label":"마수 서식 후보","kind":"beast_habitat","region":"northcenter","x":0.47526042,"y":0.21875,"provisional":true},{"id":"A1","label":"마나 이상·유적 후보","kind":"anomaly","region":"northeast","x":0.76171875,"y":0.15722656,"provisional":true},{"id":"I1","label":"군도 탐험 후보","kind":"island","region":"archipelago","x":0.85026042,"y":0.66894531,"provisional":true}]};
 
 return {mapData};})();
-const module9=(()=>{
-const {mapData}=module8;
+const module10=(()=>{
+const {mapData}=module9;
 const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
 function regionFrame(id){
   if(id==='world')return {x:0,y:0,width:1,height:1};
@@ -334,12 +355,12 @@ function viewForSelection(id){
 }
 
 return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
-const module7=(()=>{
+const module8=(()=>{
 const {normalizeScene}=module6;
 const {normalizeInventory}=module4;
-const {mapData}=module8;
+const {mapData}=module9;
 const {newPlayer,normalizePlayer}=module3;
-const {mapViews}=module9;
+const {mapViews}=module10;
 const KEY = 'ercedia.vn.v04';
 const outfitKeys = ['armor', 'casual', 'nightwear'];
 const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -374,7 +395,7 @@ function load(storage) {
 return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
 const module5=(()=>{
 const {parseScene,actionPrompt}=module6;
-const {normalize}=module7;
+const {normalize}=module8;
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -383,7 +404,7 @@ function newRequestId(){
 }
 function mountChatUI(state,{render,persist,storage,embedded}){
   const $=id=>document.getElementById(id);
-  let pending=null,timer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
+  let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
   const status=message=>{$('connection-status').textContent=message;};
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
@@ -393,7 +414,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     $('free-action').disabled=!!pending;$('send-action').disabled=!!pending;$('cancel-wait').hidden=!pending;
   }
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
-    clearTimeout(timer);pending=null;controls();status(message);notify('cancel',{});
+    clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
   }
   function submit(action,choiceId=null){
     if(pending||!action.trim())return;
@@ -403,6 +424,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
     controls();status(embedded?'ChatGPT 연결 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
     notify('action',{text:$('action-copy').value,requestId});
+    if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
   }
@@ -440,7 +462,12 @@ function mountChatUI(state,{render,persist,storage,embedded}){
       cancel();conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;
       restore(data.payload);notify('restored',{state:JSON.parse(JSON.stringify(state)),requestId:data.requestId});return;
     }
+    if(data.type==='conversation'){
+      conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
+    }
     if(data.conversation!==conversation)return;
+    if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
+    if(data.type==='action-error')cancel(data.payload);
     if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending,requestId:data.requestId});
     if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
     if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);
@@ -455,7 +482,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
 }
 
 return {mountChatUI};})();
-const module10=(()=>{
+const module11=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
 // Casual/nightwear use hair-aligned placement against their existing head artwork.
@@ -467,7 +494,7 @@ const faceFit={
 };
 
 return {faceFit};})();
-const module11=(()=>{
+const module12=(()=>{
 const {damageFormula}=module3;
 function mountPlayer(state){
   const $=id=>document.getElementById(id);
@@ -516,11 +543,11 @@ const module1=(()=>{
 const {createGameBridge}=module2;
 const {mountChatUI}=module5;
 const {mountInventory,normalizeInventory}=module4;
-const {KEY,defaultLayout,load}=module7;
-const {faceFit}=module10;
-const {mapData}=module8;
-const {mountPlayer}=module11;
-const {mapViews,regionFrame,cameraTransform,viewForSelection}=module9;
+const {KEY,defaultLayout,load}=module8;
+const {faceFit}=module11;
+const {mapData}=module9;
+const {mountPlayer}=module12;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module10;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';

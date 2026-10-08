@@ -31,7 +31,8 @@ const assetHash=createHash('sha256');
 for(const asset of assets){if(!/^assets\/[a-zA-Z0-9_./-]+\.png$/.test(asset)||asset.includes('..'))throw Error('Invalid asset path');assetHash.update(asset);assetHash.update(await readFile(path.join(root,asset)));}
 await writeFile(path.join(root,'integration/update-manifest.json'),JSON.stringify({...version,assetDigest:assetHash.digest('hex'),entry:'integration/game.html',sha256:createHash('sha256').update(html).digest('hex')},null,2)+'\n');
 const template=await readFile(path.join(root,'tampermonkey/host.template.js'),'utf8');
-const script=template;
+const reader=(await readFile(path.join(root,'web/response-json.js'),'utf8')).replace(/export\s+(?=function)/g,'');
+const script=template.replace('/*__RESPONSE_READER__*/',()=>reader);
 await writeFile(path.join(root,'tampermonkey/ercedia-rpg.user.js'),script);
 await writeFile(path.join(root,'tampermonkey/ercedia-rpg.meta.js'),script.slice(0,script.indexOf('// ==/UserScript==')+'// ==/UserScript=='.length)+'\n');
 console.log(`Built game bundle and stable launcher (${Buffer.byteLength(script)} bytes)`);
