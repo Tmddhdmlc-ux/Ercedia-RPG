@@ -1,6 +1,6 @@
 import {normalizeRarity,applyItemRarity} from './item-rarity.js';
-import {catalogItem,itemCategory,itemDescription,itemDetails,itemIconURL} from './item-catalog.js';
-export const categories={all:'전체',equipment:'장비',book:'책',consumable:'소비',material:'재료',misc:'기타'};
+import {catalogItem,itemCategory,itemIconURL,itemDescription,itemDetails} from './item-catalog.js';
+export const categories={all:'전체',equipment:'장비',book:'기술서',consumable:'소비',material:'재료',misc:'기타'};
 export const capacity=32;
 const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
 export function normalizeInventory(raw){
@@ -24,25 +24,25 @@ const samples=normalizeInventory([
 export function mountInventory(state,{assetBase}={}){
   const $=id=>document.getElementById(id),panel=$('inventory-panel'),tip=$('item-tooltip');
   const symbols={equipment:'⚔',book:'▤',consumable:'◈',material:'◇',misc:'✦'};
-  let filter='all',preview=false,shown=[];
+  const catalog=item=>item?catalogItem(item.id):null;
+  let filter='all',preview=false,shown=[],selected=null;
   const slots=[];
-  function hide(){tip.hidden=true;for(const slot of slots)slot.removeAttribute('aria-describedby');}
+  function hide(){tip.hidden=true;selected=null;for(const slot of slots){slot.removeAttribute('aria-describedby');slot.setAttribute('aria-selected','false');}}
   function show(index){
     const item=shown[index];if(!item)return hide();
-    hide();$('item-name').textContent=item.name;$('item-category').textContent=[categories[item.category],item.rarity].filter(Boolean).join(' · ');
-    $('item-description').textContent=item.description||'설명 미정';$('item-effect').textContent=item.effect;$('item-effect').hidden=!item.effect;
+    hide();const data=catalog(item);$('item-name').textContent=item.name;$('item-category').textContent=[categories[item.category],item.rarity||data?.rarity].filter(Boolean).join(' · ');
+    $('item-description').textContent=item.description||(data?itemDescription(data):'')||'설명 미정';
+    const stats=data?.stats?Object.entries(data.stats).filter(([,v])=>v).map(([k,v])=>`${({strength:'근력',agility:'민첩',intelligence:'지능',constitution:'체질',mana:'마나',weapon_attack:'무기 공격력'})[k]||k} +${v}`).join(' · '):'';
+    const equipped=data?.slot&&state.engine?.instances?.some(i=>i.catalog_id===data.id&&i.instance_id===state.engine?.equipped?.[data.slot]);
+    const eligible=data?.slot?equipped?'장착 중':state.player.level<data.required_level?'장착 불가 · 레벨 부족':data.equip_class&&!['공용','all'].includes(data.equip_class)&&!state.player.job.includes(data.equip_class)?'장착 조건 · '+data.equip_class:'장착 요청 가능 · 아래 장비 메뉴에서 확인':data?.skill_id?'학습 조건은 아래 기술서 메뉴에서 확인':null;
+    $('item-effect').textContent=[item.effect,stats,data?.required_level?'필요 레벨 '+data.required_level:'',data?.equip_class||data?.required_class,eligible,(data?.potentials||[]).map(p=>p.name+' · '+p.description).join('\n')].filter(Boolean).join('\n');$('item-effect').hidden=!$('item-effect').textContent;
     $('item-quantity').textContent=`보유 수량 ${item.quantity.toLocaleString('ko-KR')}`;
-    tip.hidden=false;slots[index].setAttribute('aria-describedby','item-tooltip');
-    const bounds=panel.getBoundingClientRect(),anchor=slots[index].getBoundingClientRect();
-    const left=Math.max(8,Math.min(anchor.left-bounds.left+anchor.width/2, panel.clientWidth-tip.offsetWidth-8));
-    const top=Math.max(8,Math.min(anchor.bottom-bounds.top+8,panel.clientHeight-tip.offsetHeight-8));
-    tip.style.left=`${left}px`;tip.style.top=`${top}px`;
+    selected=index;tip.hidden=false;slots[index].setAttribute('aria-describedby','item-tooltip');slots[index].setAttribute('aria-selected','true');
   }
   for(let i=0;i<capacity;i++){
     const slot=document.createElement('button');slot.className='inventory-slot';slot.type='button';
-    const icon=document.createElement('span'),count=document.createElement('small'),image=document.createElement('img');icon.className='item-icon';image.className='registered-item-icon';image.loading='lazy';image.hidden=true;image.onerror=()=>{image.hidden=true;};slot.append(icon,image,count);
-    slot.addEventListener('pointerenter',()=>show(i));slot.addEventListener('pointerleave',event=>{if(!tip.contains(event.relatedTarget))hide();});
-    slot.addEventListener('focus',()=>show(i));slot.addEventListener('blur',hide);
+    const icon=document.createElement('span'),count=document.createElement('small');icon.className='item-icon';slot.append(icon,count);
+    slot.addEventListener('focus',()=>show(i));
     slot.addEventListener('click',()=>show(i));slots.push(slot);$('inventory-grid').append(slot);
   }
   for(const [key,label] of Object.entries(categories)){
@@ -50,19 +50,21 @@ export function mountInventory(state,{assetBase}={}){
     button.onclick=()=>{filter=key;render();};$('inventory-categories').append(button);
   }
   function render(){
-    hide();const items=preview?samples:state.inventory;
+    const previous=selected;hide();const items=preview?samples:state.inventory;
     shown=items.filter(item=>filter==='all'||item.category===filter);
     $('inventory-count').textContent=`${items.length} / ${capacity}`;
     $('inventory-empty').hidden=shown.length>0;
     $('inventory-empty').textContent=preview?'이 분류의 미리보기 아이템이 없습니다.':items.length?'이 분류에 보유한 아이템이 없습니다.':'아직 보유한 아이템이 없습니다.';
     $('inventory-preview').textContent=preview?'미리보기 종료':'아이템 미리보기';$('inventory-preview').setAttribute('aria-pressed',String(preview));
-    $('inventory-note').textContent=preview?'설명 확인용 예시입니다. 실제 보유 아이템이나 저장 데이터에 포함되지 않습니다.':'슬롯에 커서를 올리거나 눌러 아이템 설명을 확인하세요.';
+    $('inventory-note').textContent=preview?'설명 확인용 예시입니다. 실제 보유 아이템이나 저장 데이터에 포함되지 않습니다.':'아이템을 누르면 상세 정보를 확인합니다. 장착과 기술서 학습은 아래 장비 메뉴에서 진행합니다.';
     for(const button of $('inventory-categories').children)button.setAttribute('aria-pressed',String(button.dataset.category===filter));
-    slots.forEach((slot,i)=>{const item=shown[i],image=slot.children[1],url=itemIconURL(item,assetBase);image.hidden=!url;image.alt=item?.name||'';if(url&&image.getAttribute('src')!==url)image.src=url;slot.classList.toggle('occupied',!!item);applyItemRarity(slot,item);slot.dataset.kind=item?.category||'';slot.firstChild.textContent=item?symbols[item.category]:'';slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}${item.rarity?`, ${item.rarity}`:''}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);});
+    slots.forEach((slot,i)=>{const item=shown[i],data=catalog(item);slot.hidden=!item&&i>=Math.max(8,Math.ceil(shown.length/4)*4);slot.classList.toggle('occupied',!!item);applyItemRarity(slot,data||item);slot.dataset.kind=item?.category||'';
+      if(data?.icon_path){let img=slot.firstChild.querySelector('img');if(!img){img=document.createElement('img');img.alt='';img.loading='lazy';img.onerror=()=>{slot.firstChild.textContent=symbols[item.category]||'◇';};slot.firstChild.replaceChildren(img);}const url=itemIconURL(data,assetBase);if(img.getAttribute('src')!==url)img.src=url;}else slot.firstChild.textContent=item?symbols[item.category]:'';
+      slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}${item.rarity?`, ${item.rarity}`:''}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);
+    });
+    if(shown.length)show(previous!==null&&shown[previous]?previous:0);
   }
-  tip.addEventListener('pointerleave',hide);
   $('inventory-preview').onclick=()=>{preview=!preview;render();};
   panel.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
-  $('inventory-scroll').addEventListener('scroll',hide);window.addEventListener('resize',hide);
   render();return {render,hide};
 }

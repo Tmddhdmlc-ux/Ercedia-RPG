@@ -55,15 +55,15 @@ export function bookEligibility(state,id){
 }
 export function learnBook(state,id,proof){
   check(!bookEligibility(state,id),bookEligibility(state,id));check(typeof proof==='string'&&proof.trim().length>0,'GM의 학습·연습 확인이 필요합니다.');const b=engineData.books.find(b=>b.id===id),e=ensureEngine(state);if(e.learned.includes(id))return state;
-  check(state.player.skills.length<30,'기술 목록이 가득 찼습니다.');e.learned.push(id);state.player.skills.push({id:b.skill_id,name:b.skill_name,description:b.effect_summary,formula:b.category==='sword_manual'?`STR * 0.65 + DEX * 0.2 + ${10+b.physical_technique_bonus}`:'',enabled:true,mp_cost:b.base_mp_cost,spell_base_power:b.spell_base_power,technique_bonus:b.physical_technique_bonus,element:b.element,book_id:id});return state;
+  check(state.player.skills.length<70,'기술 목록이 가득 찼습니다.');e.learned.push(id);state.player.skills.push({id:b.skill_id,name:b.skill_name,description:b.effect_summary,formula:b.category==='sword_manual'?`STR * 0.65 + DEX * 0.2 + ${10+b.physical_technique_bonus}`:'',enabled:true,mp_cost:b.base_mp_cost,spell_base_power:b.spell_base_power,technique_bonus:b.physical_technique_bonus,element:b.element,book_id:id});return state;
 }
-export function usableSkills(state){return state.player.skills.filter(s=>s.enabled&&(s.mp_cost||0)<=state.player.mp&&(!s.book_id||!bookEligibility(state,s.book_id)));}
+export function usableSkills(state){return state.player.skills.filter(s=>s.enabled&&(s.mp_cost||0)<=state.player.mp&&(!s.book_id||state.engine?.learned.includes(s.book_id)));}
 export function awardXP(state,amount){check(Number.isSafeInteger(amount)&&amount>=0,'경험치 수치 오류');check(Number.isInteger(state.player.level)&&Number.isInteger(state.player.xp),'주인공 성장 정보가 미정입니다.');const growth=battleGrowth(state.player,amount);state.player={...state.player,...growth,hp:Math.min(growth.maxHp,state.player.hp+growth.hpIncrease)};delete state.player.hpIncrease;return state;}
 export function validateEngineEvents(raw){if(raw===undefined)return [];check(Array.isArray(raw)&&raw.length<=30,'engine_events는 최대 30개');return raw.map(event=>{check(event&&typeof event==='object'&&/^[A-Za-z0-9_-]{1,100}$/.test(event.event_id||''),'엔진 사건 ID 오류');check(typeof event.kind==='string'&&event.kind.length<50,'엔진 사건 종류 오류');check(typeof event.reason==='string'&&event.reason.trim().length>0&&event.reason.length<=1000,'엔진 판정 사유 필요');return copyEngine(event);});}
 export function applyEngineEvent(state,event){
   const e=ensureEngine(state);if(e.applied.includes(event.event_id))return false;check(e.applied.length<10000,'엔진 사건 기록 보존 한도 초과');
   if(event.kind==='xp')awardXP(state,event.amount);
-  else if(event.kind==='profession'){check(['검사','마법사'].includes(event.job),'직업 오류');state.player.job=event.job;e.registration={...(e.registration||{}),job:event.job,...(event.circle?{circle:event.circle}:{})};check(!event.circle||(Number.isInteger(event.circle)&&event.circle>=1&&event.circle<=10),'서클 확인 오류');}
+  else if(event.kind==='profession'){check(['검사','마법사'].includes(event.job),'직업 오류');state.player.job=event.job;e.registration={...(e.registration||{}),job:event.job,...(event.circle?{circle:event.circle}:{})};check(!event.circle||(Number.isInteger(event.circle)&&event.circle>=1&&event.circle<=9),'서클 확인 오류');}
   else if(event.kind==='learn_book')learnBook(state,event.catalog_id,event.reason);
   else throw Error('지원하지 않는 엔진 사건: '+event.kind);
   e.applied.push(event.event_id);return true;

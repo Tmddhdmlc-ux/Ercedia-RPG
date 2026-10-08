@@ -9,6 +9,9 @@ import {itemCatalog,catalogItem,lootCatalog} from '../web/item-catalog.js';
 export function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
+    getWorldEngine:()=>JSON.parse(JSON.stringify(state.world_engine||null)),
+    getParty:()=>[...(state.world_engine?.party||[])],
+    getDungeonProgress:()=>JSON.parse(JSON.stringify(state.world_engine?.dungeons||{})),
     getItemCatalog:()=>JSON.parse(JSON.stringify(itemCatalog)),
     getItem:id=>{const item=catalogItem(id);return item?JSON.parse(JSON.stringify(item)):null;},
     getLootTables:()=>JSON.parse(JSON.stringify(lootCatalog)),

@@ -5,6 +5,8 @@
 > 이 문서는 새 ChatGPT 대화에서 **같은 세계관/게임 운영 방식을 복원하기 위한 단일 진입점**이다. 2026-10-08 기준. 코드/문서 내용이 변경됐다면 항상 현재 main 최신 버전을 읽는다.
 > **중요: 이 저장소의 파일은 새 채팅에 자동 주입되지 않는다.** 사용자가 "에르세디아 RPG 시작"이라고 하면, 도구가 허용되는 한 해당 GitHub 저장소에서 이 문서를 실제로 읽고 아래 순서를 따른다. 접근이 안 되면 읽은 척하지 말고 링크/첨부를 요청한다.
 
+추가 세계 엔진 사건은 [tampermonkey/WORLD_ENGINE_SCHEMA.md](tampermonkey/WORLD_ENGINE_SCHEMA.md)를 따른다. 사용자 지정 13개 개발 순서와 기존 구현 판정은 [patches/README.md](patches/README.md)에 기록한다. 설정 데이터와 실제 실행 성공을 구분한다.
+
 ## A. 시작 시 읽는 순서
 전투 UI와 전투 장면 출력은 [BATTLE_SYSTEM.md](BATTLE_SYSTEM.md)를 함께 읽는다. 전투 수치는 COMBAT_GROWTH.md, 성장은 PROGRESSION.md, 마수 등급은 MONSTER_RANKS.md를 따른다. UI는 GM이 사전 판정한 전체 사건을 재생하며 추가 판정·재추첨을 하지 않는다.
 1. **BOOTSTRAP.md (현재 파일)**: 진행 방식, 세계관 요약, 정보 접근 등급, 금지사항.

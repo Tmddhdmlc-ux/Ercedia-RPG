@@ -8,6 +8,7 @@ import './catalog-build.mjs';
 import './character-art-build.mjs';
 import './quest-build.mjs';
 import './engine-build.mjs';
+import './world-build.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 // Small build-only linker for this repo's named-import ES modules. No eval or remote runtime imports.
 const modules=new Map(),output=[];

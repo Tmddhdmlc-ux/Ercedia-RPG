@@ -2,7 +2,7 @@ import {normalizeNPCProfile} from './npc-profile.js';
 const REPO='Tmddhdmlc-ux/Ercedia-RPG';
 const excluded=new Set(['AGENTS.md','README.md','IMAGE_ASSET_MANIFEST.md']);
 export function isCampaignSetting(path){
-  return /^[A-Z][A-Z0-9_]*\.md$/.test(path)&&!excluded.has(path)||/^(characters|equipment|items|locations|quests)\/[A-Za-z0-9_-]+\.(json|md)$/.test(path)||['assets/events/annual_events.json','assets/maps/world/map_locations.json','assets/maps/world/faction_locations.json','tampermonkey/BATTLE_SCHEMA.md','tampermonkey/QUEST_SCHEMA.md','tampermonkey/ENGINE_SCHEMA.md','tampermonkey/NPC_LIFE_SCHEMA.md'].includes(path);
+  return /^[A-Z][A-Z0-9_]*\.md$/.test(path)&&!excluded.has(path)||/^(characters|equipment|items|locations|quests)\/[A-Za-z0-9_-]+\.(json|md)$/.test(path)||['assets/events/annual_events.json','assets/maps/world/map_locations.json','assets/maps/world/faction_locations.json','tampermonkey/BATTLE_SCHEMA.md','tampermonkey/QUEST_SCHEMA.md','tampermonkey/ENGINE_SCHEMA.md','tampermonkey/NPC_LIFE_SCHEMA.md','tampermonkey/WORLD_ENGINE_SCHEMA.md'].includes(path);
 }
 export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=()=>{}}={}){
   async function read(url,json=false){

@@ -6,6 +6,7 @@ import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {campaignSettingsAttachment,legacyCampaignPrompt} from './campaign-settings.js';
 import {settleQuests} from './quest-model.js';
 import {planEngineScene} from './engine-model.js';
+import {planWorldScene} from './world-engine.js';
 import {planNPCLife} from './npc-life.js';
 let requestSequence=0;
 function newRequestId(){
@@ -86,21 +87,23 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   function apply(source,{commitBattle=false,fromHost=false,manual=false}={}){
     try{
       if(battleIsActive(state)&&!commitBattle)return status('전투 재생 중에는 후속 장면을 시작할 수 없습니다.');
-      const scene=parseScene(source);
+      let scene=parseScene(source);
       if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
       if(campaignSettings&&state.campaign_id&&scene.player){const fresh=state.player;for(const key of ['name','level','xp','strength','dexterity','intelligence','constitution','manaStat','hp','maxHp','mp','maxMp'])if(scene.player[key]!==fresh[key]){cancel('새 게임 첫 응답에 이전 주인공 수치가 섞여 있습니다. Lv1 초기 상태를 유지합니다. 현재 시작 위치와 주인공으로 다시 요청하세요.');return;}}
       if(manual)requireSettingsConfirmation=false;
       if(campaignSettings&&requireSettingsConfirmation&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length)){cancel('GPT의 설정 읽기 확인이 누락되거나 다른 버전입니다. 연결 도움에서 원본 응답을 수정해 적용하거나 다시 요청하세요.');return;}
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
+      const questBase=worldResult?{...state,currency:worldResult.currency}:state;
       if(scene.battle&&!commitBattle){
         if(state.battleApplied?.includes(scene.battle.battle_id))return status('이미 정산한 전투입니다. 다시보기로 관전하세요.');
-        if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)settleQuests(state,scene);
+        if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)settleQuests(questBase,scene);
         planEngineScene(state,scene,null);
         planNPCLife(state,scene,null);
         getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
-      const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)?settleQuests(state,scene):null;
+      const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)?settleQuests(questBase,scene):null;
       const engineResult=planEngineScene(state,scene,questResult);
       const lifeResult=planNPCLife(state,scene,questResult);
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
@@ -115,6 +118,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       }
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
+      if(worldResult)Object.assign(state,{world_engine:worldResult.world_engine,currency:worldResult.currency});
       if(questResult)Object.assign(state,questResult);
       if(engineResult)Object.assign(state,engineResult);
       if(lifeResult)Object.assign(state,lifeResult);

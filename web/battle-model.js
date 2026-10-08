@@ -20,26 +20,28 @@ function noEnlightenmentNumbers(value){
 function participant(raw){
   if(!raw||!['allied','enemy'].includes(raw.side)||!['player','npc','monster'].includes(raw.role))fail('참가자 소속/종류');
   const p={id:str(raw.id,'참가자 ID',80),name:str(raw.name,'이름',60),side:raw.side,role:raw.role,level:num(raw.level,'레벨',1,100),rank:str(raw.rank,'공개 경지',80),realm:raw.realm,stats:{},modifiers:{},skills:[],level_hp_bonus:num(raw.level_hp_bonus,'레벨 HP 기록'),hp:num(raw.hp,'HP'),maxHp:num(raw.maxHp,'최대 HP',1),mp:num(raw.mp,'MP'),maxMp:num(raw.maxMp,'최대 MP'),speed:num(raw.speed,'속도'),art:null};
+  if(raw.catalog_id!==undefined){if(p.role!=='monster'||findNPC(raw.catalog_id)?.role!=='monster')fail('등록 마수 개체 원본');p.catalog_id=raw.catalog_id;}
   if(!Object.hasOwn(battleRealms,p.realm))fail('기사 경지 코드');
   if(p.role==='monster'&&p.realm!=='none')fail('마수에 기사 배율 적용 금지');
-  if(p.role==='monster'&&(findNPC(p.id)?.creatureMultiplier!==undefined||raw.creature_multiplier!==undefined)){p.creature_multiplier=decimal(raw.creature_multiplier??findNPC(p.id)?.creatureMultiplier,'마수 배율',.01,10);if(findNPC(p.id))equal(p.creature_multiplier,findNPC(p.id).creatureMultiplier,'등록 마수 배율');}
+  if(p.role==='monster'&&(findNPC(p.catalog_id||p.id)?.creatureMultiplier!==undefined||raw.creature_multiplier!==undefined)){p.creature_multiplier=decimal(raw.creature_multiplier??findNPC(p.id)?.creatureMultiplier,'마수 배율',.01,10);if(findNPC(p.catalog_id||p.id))equal(p.creature_multiplier,findNPC(p.catalog_id||p.id).creatureMultiplier,'등록 마수 배율');}
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])p.stats[key]=num(raw.stats?.[key],key,1);
   for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.modifiers[key]=num(raw.modifiers?.[key]??0,key,-999999);
   const maximum=battleMaximums(p);equal(p.maxHp,maximum.hp,'최대 HP 공식');equal(p.maxMp,maximum.mp,'최대 MP 공식');equal(p.speed,battleSpeed(p),'행동 속도');
   if(p.hp>p.maxHp||p.mp>p.maxMp)fail('현재 자원이 최대값 초과');
   if(raw.potentials){p.potentials={};for(const [key,value]of Object.entries(raw.potentials))p.potentials[key]=num(value,'잠재능력',0,100);}
-  if(!Array.isArray(raw.skills)||raw.skills.length>30)fail('기술 목록');
+  if(!Array.isArray(raw.skills)||raw.skills.length>70)fail('기술 목록');
   const ids=new Set();p.skills=raw.skills.map(s=>{
     const skill={id:str(s.id,'기술 ID',80),name:str(s.name,'기술명',60),kind:s.kind,mp_cost:num(s.mp_cost,'기술 MP 비용')};
     if(ids.has(skill.id)||!['physical','magic','unique','defend'].includes(skill.kind))fail('기술 ID/종류');ids.add(skill.id);
+    if(skill.kind==='physical'&&s.technique_bonus!==undefined)skill.technique_bonus=num(s.technique_bonus,'검술 기술 보정');
     if(skill.kind==='magic'||skill.kind==='unique'){skill.power=num(s.power,'기술 기본 위력');skill.int_coefficient=decimal(s.int_coefficient,'INT');skill.mana_coefficient=decimal(s.mana_coefficient,'MANA');skill.basis=str(s.basis,'승인 기술/고유능력 근거',1000);}
     return skill;
   });
   if(raw.art!==null&&raw.art!==undefined){
-    if(p.role==='player'||raw.art.id!==p.id||!characterVisual(p.id,raw.art.outfit,raw.art.emotion)||(p.id==='serin'?!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion):raw.art.emotion!=='base'))fail('미등록/다른 인물 원화');
-    p.art={id:p.id,outfit:raw.art.outfit,emotion:raw.art.emotion};
+    if(p.role==='player'||raw.art.id!==(p.catalog_id||p.id)||!characterVisual(p.catalog_id||p.id,raw.art.outfit,raw.art.emotion)||(p.id==='serin'?!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion):raw.art.emotion!=='base'))fail('미등록/다른 인물 원화');
+    p.art={id:p.catalog_id||p.id,outfit:raw.art.outfit,emotion:raw.art.emotion};
   }
-  if(!p.art&&p.role!=='player')p.art=registeredNPCArt(p.id);
+  if(!p.art&&p.role!=='player')p.art=registeredNPCArt(p.catalog_id||p.id);
   return p;
 }
 export function normalizeBattle(raw){
@@ -73,7 +75,7 @@ export function normalizeBattle(raw){
       if(['attack','counter'].includes(e.kind)){
         if(skill&&skill.kind!=='physical')fail('물리 기술 종류');
         const roll=num(c.base_roll,'GM 평타 판정값',10,20);equal(c.realm_multiplier,battleRealms[actor.realm],'기사 피해 배율');
-        expected=Math.max(1,Math.floor((roll+Math.floor(.65*actor.stats.strength+.2*actor.stats.dexterity)+actor.modifiers.weapon_attack+actor.modifiers.technique_bonus)*c.realm_multiplier*(actor.creature_multiplier??1)*context-defense));
+        expected=Math.max(1,Math.floor((roll+Math.floor(.65*actor.stats.strength+.2*actor.stats.dexterity)+actor.modifiers.weapon_attack+actor.modifiers.technique_bonus+(skill?.technique_bonus||0))*c.realm_multiplier*(actor.creature_multiplier??1)*context-defense));
       }else{
         equal(c.realm_multiplier,1,'마법/고유능력에 기사 물리 배율 금지');
         expected=Math.max(1,Math.floor((skill.power+skill.int_coefficient*actor.stats.intelligence+skill.mana_coefficient*actor.stats.manaStat)*context-defense));
@@ -104,12 +106,12 @@ export function normalizeBattle(raw){
 export function battleFrame(battle,count){const resources=Object.fromEntries(battle.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}]));for(const e of battle.events.slice(0,count)){resources[e.actor]={hp:e.actor_hp_after,mp:e.actor_mp_after};resources[e.target]={hp:e.target_hp_after,mp:e.target_mp_after};}return resources;}
 export function validateBattleSettlement(scene,state){
   const b=scene.battle,p=b.participants.find(p=>p.role==='player'),current=state.player;
-  for(const actor of b.participants.filter(a=>a.role!=='player')){const saved=resolveNPC(state,actor.id,state.scene?.npc?.id===actor.id?state.scene.npc.profile||{}:{});if(saved&&saved.level!==null){for(const key of ['level','hp','maxHp','mp','maxMp','speed'])equal(actor[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(actor.stats[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);equal(actor.realm,saved.realm,'NPC 기사 경지');equal(actor.level_hp_bonus,saved.levelHpBonus,'NPC 레벨 HP 기록');}}
+  for(const actor of b.participants.filter(a=>a.role!=='player')){const saved=resolveNPC(actor.catalog_id?{...state,npcStates:{}}:state,actor.catalog_id||actor.id,state.scene?.npc?.id===actor.id?state.scene.npc.profile||{}:{});if(saved&&saved.level!==null){for(const key of ['level','hp','maxHp','mp','maxMp','speed'])equal(actor[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(actor.stats[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);equal(actor.realm,saved.realm,'NPC 기사 경지');equal(actor.level_hp_bonus,saved.levelHpBonus,'NPC 레벨 HP 기록');}}
   for(const key of ['level','hp','maxHp','mp','maxMp'])equal(p[key],current[key],'현재 주인공 '+key);
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(p.stats[key],current[key],'현재 능력치 '+key);
   equal(p.realm,current.realm??'none','현재 기사 경지');equal(p.level_hp_bonus,current.levelHpBonus??0,'현재 레벨 HP 기록');
   for(const skill of p.skills)if(!current.skills.some(s=>s.enabled&&s.name===skill.name))fail('현재 주인공 기술 목록');
-  if(state.engine){equal(JSON.stringify(p.potentials||{}),JSON.stringify(state.engine.bonuses.potentials||{}),'장착 잠재능력');for(const skill of p.skills){const learned=current.skills.find(s=>s.id===skill.id);if(learned?.book_id){equal(skill.mp_cost,learned.mp_cost,'기술서 MP 비용');if(skill.kind==='magic')equal(skill.power,learned.spell_base_power+(state.engine.bonuses.spell_power||0),'기술서·스태프 위력');}}}
+  if(state.engine){equal(JSON.stringify(p.potentials||{}),JSON.stringify(state.engine.bonuses.potentials||{}),'장착 잠재능력');for(const skill of p.skills){const learned=current.skills.find(s=>s.id===skill.id);if(learned?.book_id){equal(skill.mp_cost,learned.mp_cost,'기술서 MP 비용');if(skill.kind==='physical')equal(skill.technique_bonus||0,learned.technique_bonus||0,'검술서 위력');if(skill.kind==='magic')equal(skill.power,learned.spell_base_power+(state.engine.bonuses.spell_power||0),'기술서·스태프 위력');}}}
   if(!scene.player||!scene.inventory||!scene.game_state)fail('종료 player/inventory/game_state 전체 스냅샷 필요');
   const final=b.outcome.resources.find(r=>r.id===p.id),growth=battleGrowth(current,b.outcome.xp_gain);
   const restored=final.hp>0?Math.floor(current.maxHp*(p.potentials?.post_battle_hp_restore||0)/100):0;

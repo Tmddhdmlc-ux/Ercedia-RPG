@@ -9,6 +9,7 @@ import {normalizeIntroDraft,creationFields} from './intro-model.js';
 import {findNPC} from './npc-model.js';
 import {normalizeNPCProfile} from './npc-profile.js';
 import {normalizeEngine} from './engine-model.js';
+import {normalizeWorld} from './world-engine.js';
 import {normalizeLife} from './npc-life.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
@@ -26,6 +27,7 @@ export function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(raw.world_engine)s.world_engine=normalizeWorld(raw.world_engine,raw);
   if(typeof raw.campaign_id==='string'&&raw.campaign_id.length<=100)s.campaign_id=raw.campaign_id;
   if(raw.engine){const engine=normalizeEngine(raw.engine);if(engine)s.engine=engine;}
   if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,160)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
