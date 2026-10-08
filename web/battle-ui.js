@@ -83,7 +83,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
       const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('emotion').textContent='전투 중계';$('line').textContent=e.narration;}
     }
   }
-  function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.index++;save();eventStart();lastTime=0;}
+  function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}
   $('battle-next').onclick=next;
   $('battle-mode').onclick=()=>{if(!battleIsActive(state))return;const p=state.battlePlayback;p.manual=p.manual===false;if(!p.manual&&waiting){waiting=false;p.paused=false;for(const a of animations)a.play();}save();refresh();};
   $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
