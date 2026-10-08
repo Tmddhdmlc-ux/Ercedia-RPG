@@ -31,3 +31,12 @@
 - 놀람·당황: `https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/surprised.png`
 
 표시할 때는 저장소의 `PORTRAIT_RULES.md`를 먼저 읽고, AppBlock HTML의 `img src`에 위 URL을 직접 지정한다. 검색(query) 호출 및 로드 실패 시 다른 검색 이미지로 대체하는 것은 금지한다. 이번 등록의 로컬 육안 확인과 채팅 UI의 실제 표시 성공 여부는 구분한다.
+
+## 배경 제거 이미지 — 2026-10-08 등록
+
+- 파일: `base_transparent.png`
+- 용도: 시뮬레이션 채팅에서 마을 배경 위에 세린을 겹쳐 표시하는 투명 초상화.
+- 원본: `base.png`. 내장 이미지 편집 도구로 배경 제거 파생본을 생성했다.
+- 형식: PNG, 1086 × 1448, RGBA. 알파 채널의 실제 투명 영역을 확인했다.
+- 생성 지시: 마을·성·하늘 배경만 제거하고 얼굴, 표정, 금발, 푸른 눈, 갑옷, 망토, 자세와 구도를 유지하도록 요청했다.
+- 채팅 UI용 CDN 주소: `https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base_transparent.png`
