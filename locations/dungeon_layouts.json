@@ -1,0 +1,2237 @@
+{
+  "schema_version": 1,
+  "version": "dungeon-layouts-v1",
+  "count": 26,
+  "zone_count": 108,
+  "source": "locations/regional_dungeons_facilities.json",
+  "rules": {
+    "encounter": "precomputed_combat_replay",
+    "retreat": "allowed_before_unavoidable_encounter; world repercussions",
+    "hidden_rooms": "must_be_discovered_not_guaranteed",
+    "save": "persistent progress in per-run dungeon state",
+    "no_secrets": "no GM-exclusive lore leaked"
+  },
+  "dungeons": [
+    {
+      "id": "DUN-W1-01",
+      "name": "흰숨 동굴",
+      "region_id": "W1",
+      "danger_rank": "하급",
+      "level_range": [
+        6,
+        19
+      ],
+      "zones": [
+        {
+          "id": "DUN-W1-01-Z01",
+          "order": 1,
+          "name": "얼어붙은 비탈 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "서리갈기 늑대"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W1-01-Z02",
+          "order": 2,
+          "name": "하얀 숨결 통로 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "서리갈기 늑대"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W1-01-Z03",
+          "order": 3,
+          "name": "서리 송곳길 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "서리갈기 늑대"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '서리 송곳길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W1-01-Z01",
+      "boss_zone_id": "DUN-W1-01-Z03",
+      "monster_examples": [
+        "서리갈기 늑대"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W1-02",
+      "name": "설벽 밑 구혈",
+      "region_id": "W1",
+      "danger_rank": "중급",
+      "level_range": [
+        14,
+        19
+      ],
+      "zones": [
+        {
+          "id": "DUN-W1-02-Z01",
+          "order": 1,
+          "name": "얼어붙은 비탈 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "백각 설산사슴"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W1-02-Z02",
+          "order": 2,
+          "name": "하얀 숨결 통로 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "백각 설산사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W1-02-Z03",
+          "order": 3,
+          "name": "서리 송곳길 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "백각 설산사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '서리 송곳길'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W1-02-Z04",
+          "order": 4,
+          "name": "깊은 눈 웅덩이 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "백각 설산사슴"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '깊은 눈 웅덩이'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W1-02-Z01",
+      "boss_zone_id": "DUN-W1-02-Z04",
+      "monster_examples": [
+        "백각 설산사슴"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W2-01",
+      "name": "묵은 왕가 납골묘",
+      "region_id": "W2",
+      "danger_rank": "하급",
+      "level_range": [
+        13,
+        26
+      ],
+      "zones": [
+        {
+          "id": "DUN-W2-01-Z01",
+          "order": 1,
+          "name": "무너진 문장석 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W2-01-Z02",
+          "order": 2,
+          "name": "낡은 조문회랑 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W2-01-Z03",
+          "order": 3,
+          "name": "검은 묘지 경사로 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '검은 묘지 경사로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W2-01-Z01",
+      "boss_zone_id": "DUN-W2-01-Z03",
+      "monster_examples": [
+        "곡창 그림자쥐"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W2-02",
+      "name": "사자의 폐지하실",
+      "region_id": "W2",
+      "danger_rank": "상급",
+      "level_range": [
+        21,
+        31
+      ],
+      "zones": [
+        {
+          "id": "DUN-W2-02-Z01",
+          "order": 1,
+          "name": "무너진 문장석 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W2-02-Z02",
+          "order": 2,
+          "name": "낡은 조문회랑 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W2-02-Z03",
+          "order": 3,
+          "name": "검은 묘지 경사로 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '검은 묘지 경사로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W2-02-Z04",
+          "order": 4,
+          "name": "봉인된 비문실 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '봉인된 비문실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-W2-02-Z05",
+          "order": 5,
+          "name": "사자상 제단 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '사자상 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W2-02-Z01",
+      "boss_zone_id": "DUN-W2-02-Z05",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W3-01",
+      "name": "잿빛 곡창",
+      "region_id": "W3",
+      "danger_rank": "하급",
+      "level_range": [
+        1,
+        14
+      ],
+      "zones": [
+        {
+          "id": "DUN-W3-01-Z01",
+          "order": 1,
+          "name": "불탄 곡물 더미 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W3-01-Z02",
+          "order": 2,
+          "name": "뒤틀린 쥐굴 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W3-01-Z03",
+          "order": 3,
+          "name": "낡은 풍차 통로 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "곡창 그림자쥐"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '낡은 풍차 통로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W3-01-Z01",
+      "boss_zone_id": "DUN-W3-01-Z03",
+      "monster_examples": [
+        "곡창 그림자쥐"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W3-02",
+      "name": "이삭길 약탈굴",
+      "region_id": "W3",
+      "danger_rank": "중급",
+      "level_range": [
+        9,
+        15
+      ],
+      "zones": [
+        {
+          "id": "DUN-W3-02-Z01",
+          "order": 1,
+          "name": "불탄 곡물 더미 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W3-02-Z02",
+          "order": 2,
+          "name": "뒤틀린 쥐굴 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W3-02-Z03",
+          "order": 3,
+          "name": "낡은 풍차 통로 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '낡은 풍차 통로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W3-02-Z04",
+          "order": 4,
+          "name": "곡창 경비 초소 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '곡창 경비 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W3-02-Z01",
+      "boss_zone_id": "DUN-W3-02-Z04",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W4-01",
+      "name": "붉은 참호",
+      "region_id": "W4",
+      "danger_rank": "중급",
+      "level_range": [
+        22,
+        35
+      ],
+      "zones": [
+        {
+          "id": "DUN-W4-01-Z01",
+          "order": 1,
+          "name": "붉은 흙 입구 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W4-01-Z02",
+          "order": 2,
+          "name": "침수된 참호 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W4-01-Z03",
+          "order": 3,
+          "name": "망가진 창고 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W4-01-Z04",
+          "order": 4,
+          "name": "녹슨 전투 관측대 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '녹슨 전투 관측대'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W4-01-Z01",
+      "boss_zone_id": "DUN-W4-01-Z04",
+      "monster_examples": [
+        "잿불 송곳도마뱀"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W4-02",
+      "name": "전쟁 잔해 요새",
+      "region_id": "W4",
+      "danger_rank": "상급",
+      "level_range": [
+        30,
+        46
+      ],
+      "zones": [
+        {
+          "id": "DUN-W4-02-Z01",
+          "order": 1,
+          "name": "붉은 흙 입구 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W4-02-Z02",
+          "order": 2,
+          "name": "침수된 참호 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W4-02-Z03",
+          "order": 3,
+          "name": "망가진 창고 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W4-02-Z04",
+          "order": 4,
+          "name": "녹슨 전투 관측대 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '녹슨 전투 관측대'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-W4-02-Z05",
+          "order": 5,
+          "name": "성벽 마지막 방 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '성벽 마지막 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W4-02-Z01",
+      "boss_zone_id": "DUN-W4-02-Z05",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W5-01",
+      "name": "마차무덤",
+      "region_id": "W5",
+      "danger_rank": "하급",
+      "level_range": [
+        10,
+        23
+      ],
+      "zones": [
+        {
+          "id": "DUN-W5-01-Z01",
+          "order": 1,
+          "name": "뒤집힌 마차길 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W5-01-Z02",
+          "order": 2,
+          "name": "도난 화물 통로 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W5-01-Z03",
+          "order": 3,
+          "name": "깎인 바위 틈 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "철가죽 멧돼지"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '깎인 바위 틈'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W5-01-Z01",
+      "boss_zone_id": "DUN-W5-01-Z03",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-W5-02",
+      "name": "돌문 협곡길",
+      "region_id": "W5",
+      "danger_rank": "중급",
+      "level_range": [
+        18,
+        27
+      ],
+      "zones": [
+        {
+          "id": "DUN-W5-02-Z01",
+          "order": 1,
+          "name": "뒤집힌 마차길 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-W5-02-Z02",
+          "order": 2,
+          "name": "도난 화물 통로 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-W5-02-Z03",
+          "order": 3,
+          "name": "깎인 바위 틈 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '깎인 바위 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-W5-02-Z04",
+          "order": 4,
+          "name": "무너진 갈림길 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '무너진 갈림길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-W5-02-Z01",
+      "boss_zone_id": "DUN-W5-02-Z04",
+      "monster_examples": [
+        "뿔돌 협곡독수리"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E1-01",
+      "name": "회안개 초소",
+      "region_id": "E1",
+      "danger_rank": "중급",
+      "level_range": [
+        26,
+        39
+      ],
+      "zones": [
+        {
+          "id": "DUN-E1-01-Z01",
+          "order": 1,
+          "name": "회빛 서릿길 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "회안개 박쥐"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E1-01-Z02",
+          "order": 2,
+          "name": "무너진 감시 통로 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "회안개 박쥐"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E1-01-Z03",
+          "order": 3,
+          "name": "불규칙한 마나 균열 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "회안개 박쥐"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E1-01-Z04",
+          "order": 4,
+          "name": "버려진 초소 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "회안개 박쥐"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '버려진 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E1-01-Z01",
+      "boss_zone_id": "DUN-E1-01-Z04",
+      "monster_examples": [
+        "회안개 박쥐"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E1-02",
+      "name": "시린 균열 동굴",
+      "region_id": "E1",
+      "danger_rank": "엘리트",
+      "level_range": [
+        42,
+        62
+      ],
+      "zones": [
+        {
+          "id": "DUN-E1-02-Z01",
+          "order": 1,
+          "name": "회빛 서릿길 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E1-02-Z02",
+          "order": 2,
+          "name": "무너진 감시 통로 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E1-02-Z03",
+          "order": 3,
+          "name": "불규칙한 마나 균열 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E1-02-Z04",
+          "order": 4,
+          "name": "버려진 초소 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '버려진 초소'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-E1-02-Z05",
+          "order": 5,
+          "name": "깊은 동토 격리실 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '깊은 동토 격리실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        },
+        {
+          "id": "DUN-E1-02-Z06",
+          "order": 6,
+          "name": "반사광 폐쇄구역 · 안쪽",
+          "type": "hidden_optional",
+          "optional": true,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "discover_clue",
+          "reward_tags": [
+            "rare_material",
+            "manual_fragment_candidate"
+          ],
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '반사광 폐쇄구역'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E1-02-Z01",
+      "boss_zone_id": "DUN-E1-02-Z05",
+      "monster_examples": [
+        "청전기 산양"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E2-01",
+      "name": "청동 도체 회랑",
+      "region_id": "E2",
+      "danger_rank": "중급",
+      "level_range": [
+        20,
+        33
+      ],
+      "zones": [
+        {
+          "id": "DUN-E2-01-Z01",
+          "order": 1,
+          "name": "도체 장치 입구 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E2-01-Z02",
+          "order": 2,
+          "name": "잔류 전류 도랑 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E2-01-Z03",
+          "order": 3,
+          "name": "파손된 전원판 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E2-01-Z04",
+          "order": 4,
+          "name": "청동 제어실 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '청동 제어실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E2-01-Z01",
+      "boss_zone_id": "DUN-E2-01-Z04",
+      "monster_examples": [
+        "공명 수정거미"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E2-02",
+      "name": "폐전류 연구구역",
+      "region_id": "E2",
+      "danger_rank": "엘리트",
+      "level_range": [
+        48,
+        68
+      ],
+      "zones": [
+        {
+          "id": "DUN-E2-02-Z01",
+          "order": 1,
+          "name": "도체 장치 입구 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E2-02-Z02",
+          "order": 2,
+          "name": "잔류 전류 도랑 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E2-02-Z03",
+          "order": 3,
+          "name": "파손된 전원판 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E2-02-Z04",
+          "order": 4,
+          "name": "청동 제어실 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '청동 제어실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-E2-02-Z05",
+          "order": 5,
+          "name": "불안정한 동력핵 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '불안정한 동력핵'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        },
+        {
+          "id": "DUN-E2-02-Z06",
+          "order": 6,
+          "name": "암호화된 기록실 · 안쪽",
+          "type": "hidden_optional",
+          "optional": true,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "discover_clue",
+          "reward_tags": [
+            "rare_material",
+            "manual_fragment_candidate"
+          ],
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '암호화된 기록실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E2-02-Z01",
+      "boss_zone_id": "DUN-E2-02-Z05",
+      "monster_examples": [
+        "수정굴 광충"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E3-01",
+      "name": "붕락 수정 갱도",
+      "region_id": "E3",
+      "danger_rank": "중급",
+      "level_range": [
+        24,
+        37
+      ],
+      "zones": [
+        {
+          "id": "DUN-E3-01-Z01",
+          "order": 1,
+          "name": "갱도 안전 문 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E3-01-Z02",
+          "order": 2,
+          "name": "수정 부산물 길 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E3-01-Z03",
+          "order": 3,
+          "name": "무너진 채굴 틈 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E3-01-Z04",
+          "order": 4,
+          "name": "초석 방벽 진지 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "수정굴 광충"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '초석 방벽 진지'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E3-01-Z01",
+      "boss_zone_id": "DUN-E3-01-Z04",
+      "monster_examples": [
+        "수정굴 광충"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E3-02",
+      "name": "잿빛 방벽 지하층",
+      "region_id": "E3",
+      "danger_rank": "상급",
+      "level_range": [
+        34,
+        54
+      ],
+      "zones": [
+        {
+          "id": "DUN-E3-02-Z01",
+          "order": 1,
+          "name": "갱도 안전 문 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E3-02-Z02",
+          "order": 2,
+          "name": "수정 부산물 길 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E3-02-Z03",
+          "order": 3,
+          "name": "무너진 채굴 틈 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E3-02-Z04",
+          "order": 4,
+          "name": "초석 방벽 진지 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '초석 방벽 진지'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-E3-02-Z05",
+          "order": 5,
+          "name": "심층 수정 정맥 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "공명 수정거미"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '심층 수정 정맥'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E3-02-Z01",
+      "boss_zone_id": "DUN-E3-02-Z05",
+      "monster_examples": [
+        "공명 수정거미"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E4-01",
+      "name": "바람깎인 교량굴",
+      "region_id": "E4",
+      "danger_rank": "하급",
+      "level_range": [
+        8,
+        21
+      ],
+      "zones": [
+        {
+          "id": "DUN-E4-01-Z01",
+          "order": 1,
+          "name": "절벽 망루 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E4-01-Z02",
+          "order": 2,
+          "name": "기울어진 바람다리 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E4-01-Z03",
+          "order": 3,
+          "name": "산안개 분기점 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "뿔돌 협곡독수리"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '산안개 분기점'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E4-01-Z01",
+      "boss_zone_id": "DUN-E4-01-Z03",
+      "monster_examples": [
+        "뿔돌 협곡독수리"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-E4-02",
+      "name": "교량 아래 폐통로",
+      "region_id": "E4",
+      "danger_rank": "중급",
+      "level_range": [
+        16,
+        26
+      ],
+      "zones": [
+        {
+          "id": "DUN-E4-02-Z01",
+          "order": 1,
+          "name": "절벽 망루 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-E4-02-Z02",
+          "order": 2,
+          "name": "기울어진 바람다리 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-E4-02-Z03",
+          "order": 3,
+          "name": "산안개 분기점 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '산안개 분기점'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-E4-02-Z04",
+          "order": 4,
+          "name": "교량 아래 경비실 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "청전기 산양"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '교량 아래 경비실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-E4-02-Z01",
+      "boss_zone_id": "DUN-E4-02-Z04",
+      "monster_examples": [
+        "청전기 산양"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S1-01",
+      "name": "진주 수로굴",
+      "region_id": "S1",
+      "danger_rank": "하급",
+      "level_range": [
+        3,
+        16
+      ],
+      "zones": [
+        {
+          "id": "DUN-S1-01-Z01",
+          "order": 1,
+          "name": "잠긴 선착장 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "암초 부리게"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S1-01-Z02",
+          "order": 2,
+          "name": "진주 조개 통로 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "암초 부리게"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S1-01-Z03",
+          "order": 3,
+          "name": "해수 유입 방 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "암초 부리게"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '해수 유입 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S1-01-Z01",
+      "boss_zone_id": "DUN-S1-01-Z03",
+      "monster_examples": [
+        "암초 부리게"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S1-02",
+      "name": "유실 선박 화물창",
+      "region_id": "S1",
+      "danger_rank": "중급",
+      "level_range": [
+        11,
+        22
+      ],
+      "zones": [
+        {
+          "id": "DUN-S1-02-Z01",
+          "order": 1,
+          "name": "잠긴 선착장 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "은비늘 물갈퀴어"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S1-02-Z02",
+          "order": 2,
+          "name": "진주 조개 통로 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "은비늘 물갈퀴어"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S1-02-Z03",
+          "order": 3,
+          "name": "해수 유입 방 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "은비늘 물갈퀴어"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '해수 유입 방'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S1-02-Z04",
+          "order": 4,
+          "name": "그물 매듭 창고 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "은비늘 물갈퀴어"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '그물 매듭 창고'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S1-02-Z01",
+      "boss_zone_id": "DUN-S1-02-Z04",
+      "monster_examples": [
+        "은비늘 물갈퀴어"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S2-01",
+      "name": "세르반 잊힌 역참",
+      "region_id": "S2",
+      "danger_rank": "중급",
+      "level_range": [
+        17,
+        30
+      ],
+      "zones": [
+        {
+          "id": "DUN-S2-01-Z01",
+          "order": 1,
+          "name": "황금길 폐문 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "사막색 모래여우"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S2-01-Z02",
+          "order": 2,
+          "name": "말발굽 안뜰 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "사막색 모래여우"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S2-01-Z03",
+          "order": 3,
+          "name": "붕괴된 역참 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "사막색 모래여우"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S2-01-Z04",
+          "order": 4,
+          "name": "오래된 보급 막사 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "사막색 모래여우"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '오래된 보급 막사'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S2-01-Z01",
+      "boss_zone_id": "DUN-S2-01-Z04",
+      "monster_examples": [
+        "사막색 모래여우"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S2-02",
+      "name": "황금길 폐요새",
+      "region_id": "S2",
+      "danger_rank": "상급",
+      "level_range": [
+        29,
+        49
+      ],
+      "zones": [
+        {
+          "id": "DUN-S2-02-Z01",
+          "order": 1,
+          "name": "황금길 폐문 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S2-02-Z02",
+          "order": 2,
+          "name": "말발굽 안뜰 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S2-02-Z03",
+          "order": 3,
+          "name": "붕괴된 역참 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S2-02-Z04",
+          "order": 4,
+          "name": "오래된 보급 막사 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '오래된 보급 막사'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-S2-02-Z05",
+          "order": 5,
+          "name": "철문 지하방 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "잿불 송곳도마뱀"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '철문 지하방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S2-02-Z01",
+      "boss_zone_id": "DUN-S2-02-Z05",
+      "monster_examples": [
+        "잿불 송곳도마뱀"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S3-01",
+      "name": "암초 해적 소굴",
+      "region_id": "S3",
+      "danger_rank": "하급",
+      "level_range": [
+        14,
+        27
+      ],
+      "zones": [
+        {
+          "id": "DUN-S3-01-Z01",
+          "order": 1,
+          "name": "암초 수문 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "해풍 날개뱀"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S3-01-Z02",
+          "order": 2,
+          "name": "물비린내 해적 통로 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "해풍 날개뱀"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S3-01-Z03",
+          "order": 3,
+          "name": "밀물 함정굴 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "해풍 날개뱀"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '밀물 함정굴'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S3-01-Z01",
+      "boss_zone_id": "DUN-S3-01-Z03",
+      "monster_examples": [
+        "해풍 날개뱀"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S3-02",
+      "name": "심해 배수동굴",
+      "region_id": "S3",
+      "danger_rank": "상급",
+      "level_range": [
+        27,
+        47
+      ],
+      "zones": [
+        {
+          "id": "DUN-S3-02-Z01",
+          "order": 1,
+          "name": "암초 수문 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "흑진주 먹장어"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S3-02-Z02",
+          "order": 2,
+          "name": "물비린내 해적 통로 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "흑진주 먹장어"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S3-02-Z03",
+          "order": 3,
+          "name": "밀물 함정굴 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "흑진주 먹장어"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '밀물 함정굴'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S3-02-Z04",
+          "order": 4,
+          "name": "부서진 선박 갑판 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "흑진주 먹장어"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '부서진 선박 갑판'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-S3-02-Z05",
+          "order": 5,
+          "name": "해적 수장 선실 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "흑진주 먹장어"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '해적 수장 선실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S3-02-Z01",
+      "boss_zone_id": "DUN-S3-02-Z05",
+      "monster_examples": [
+        "흑진주 먹장어"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S4-01",
+      "name": "흑유리 지하금고",
+      "region_id": "S4",
+      "danger_rank": "중급",
+      "level_range": [
+        29,
+        42
+      ],
+      "zones": [
+        {
+          "id": "DUN-S4-01-Z01",
+          "order": 1,
+          "name": "검은 유리 문 · 바깥쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "밤등불 나방"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S4-01-Z02",
+          "order": 2,
+          "name": "거울 그림자 복도 · 바깥쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "밤등불 나방"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S4-01-Z03",
+          "order": 3,
+          "name": "금고 기계장치 · 바깥쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "밤등불 나방"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S4-01-Z04",
+          "order": 4,
+          "name": "금빛 계약 제단 · 바깥쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "밤등불 나방"
+          ],
+          "entry_rule": "clear_previous_required",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금빛 계약 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S4-01-Z01",
+      "boss_zone_id": "DUN-S4-01-Z04",
+      "monster_examples": [
+        "밤등불 나방"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    },
+    {
+      "id": "DUN-S4-02",
+      "name": "달그림자 폐예배당",
+      "region_id": "S4",
+      "danger_rank": "엘리트",
+      "level_range": [
+        46,
+        66
+      ],
+      "zones": [
+        {
+          "id": "DUN-S4-02-Z01",
+          "order": 1,
+          "name": "검은 유리 문 · 안쪽",
+          "type": "entrance",
+          "optional": false,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "dungeon_enter",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+        },
+        {
+          "id": "DUN-S4-02-Z02",
+          "order": 2,
+          "name": "거울 그림자 복도 · 안쪽",
+          "type": "combat",
+          "optional": false,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "material"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+        },
+        {
+          "id": "DUN-S4-02-Z03",
+          "order": 3,
+          "name": "금고 기계장치 · 안쪽",
+          "type": "event",
+          "optional": false,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+        },
+        {
+          "id": "DUN-S4-02-Z04",
+          "order": 4,
+          "name": "금빛 계약 제단 · 안쪽",
+          "type": "miniboss",
+          "optional": false,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "clue_or_resource"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금빛 계약 제단'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+        },
+        {
+          "id": "DUN-S4-02-Z05",
+          "order": 5,
+          "name": "잊힌 지하 예배실 · 안쪽",
+          "type": "boss",
+          "optional": false,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "clear_previous_or_resolve_event",
+          "reward_tags": [
+            "xp",
+            "regional_material",
+            "dungeon_clear_reward"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '잊힌 지하 예배실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+        },
+        {
+          "id": "DUN-S4-02-Z06",
+          "order": 6,
+          "name": "숨겨진 비밀 장부실 · 안쪽",
+          "type": "hidden_optional",
+          "optional": true,
+          "encounter_pool": [
+            "심연고리 사슴"
+          ],
+          "entry_rule": "discover_clue",
+          "reward_tags": [
+            "rare_material",
+            "manual_fragment_candidate"
+          ],
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '숨겨진 비밀 장부실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+        }
+      ],
+      "entrance_zone_id": "DUN-S4-02-Z01",
+      "boss_zone_id": "DUN-S4-02-Z05",
+      "monster_examples": [
+        "심연고리 사슴"
+      ],
+      "exit_policy": "retreat_to_region_with_consequences",
+      "respawn_policy": "no_immediate_instant_reset",
+      "map_coordinates_status": "not_fixed"
+    }
+  ]
+}
