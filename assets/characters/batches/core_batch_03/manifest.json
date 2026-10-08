@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "core_batch_03",
+  "roster_version": "core-cast-38-canonical-design",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-CORE-021",
+      "name": "카르민 테라",
+      "affiliation": "이그나르 교단",
+      "appearance": "- **현직 성녀:** **카르민 테라** (여 30, 붉은 짧은 머리·호박색 눈·구릿빛 근육·망치 장식).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-021/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            106,
+            85,
+            917,
+            1451
+          ],
+          "margins_ltrb": [
+            106,
+            85,
+            107,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "779f1d24100a292b7bb9bfb5fa8bd635fb9c99ae538f265a969ea5a883d0368a"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-021/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            7,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            7,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "e7c1641d0d26f517fa391c8f9332373788be949b66b371009d9ab044ca24d2b8"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-022",
+      "name": "이오나 베르",
+      "affiliation": "네레이아 교단",
+      "appearance": "- **현직 성녀:** **이오나 베르** (여 41, 짙은 파랑 긴 땋은 머리·청록 눈·진주 장식).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-022/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            79,
+            85,
+            944,
+            1451
+          ],
+          "margins_ltrb": [
+            79,
+            85,
+            80,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "dc30654cc1e077e987c16db4a347bf977fbf268119b438ed8d4dff162fbacb71"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-022/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "e87039dc8b6a946a9e338be37fd626a211d739f439ec970403a3dc06d5794ceb"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-023",
+      "name": "타빈 루오",
+      "affiliation": "실피레아 교단",
+      "appearance": "- **현직 성자:** **타빈 루오** (남 22, 옅은 백갈색 헝클어진 머리·녹안·여행자 망토).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-023/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            89,
+            85,
+            935,
+            1451
+          ],
+          "margins_ltrb": [
+            89,
+            85,
+            89,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "3e3aa1fb40092d62de3057e885babf085e89f3ed1db6b5d9a0f29c9ac44b81d2"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-023/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            2,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "124adb14c8a16555b47c1a136f4d7b846fb992afb37fc7b331cc9d1b8ed84058"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-024",
+      "name": "레이카스 룬",
+      "affiliation": "볼테리온 교단",
+      "appearance": "- **현직 성자:** **레이카스 룬** (남 28, 은자색 짧은 머리·청백 눈·고글과 남청 제복).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-024/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            103,
+            85,
+            921,
+            1451
+          ],
+          "margins_ltrb": [
+            103,
+            85,
+            103,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "7322bf5d3a8f57179ff8c556192faad028a8fa92715dc08b599dda10263f7c90"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-024/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            12,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            12,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "28a8ae06aa1fb7de06fe1d1cae47cb12dc71ff1b2708d297729c259d89424ddd"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-025",
+      "name": "에스텔 루나르",
+      "affiliation": "루미아 교단",
+      "appearance": "- **현직 성녀:** **에스텔 루나르** (여 26, 백금색 곧은 머리·황금 눈·흰금 성의).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-025/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            70,
+            85,
+            954,
+            1451
+          ],
+          "margins_ltrb": [
+            70,
+            85,
+            70,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a0c106513f16194ffb30db7b03a4887702ab1ac6ee6d6fd402ae8e29e67bbef1"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-025/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            8,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            8,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "c7ff40327209a7de5e92acec1a19c4f387cd5184e1f9168f4f0bb94359b27d86"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-026",
+      "name": "니엘 마크",
+      "affiliation": "녹테라 교단",
+      "appearance": "- **현직 성자:** **니엘 마크** (남 33, 흑자색 짧은 곱슬머리·은회색 눈·검은 장갑).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-026/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            135,
+            85,
+            888,
+            1451
+          ],
+          "margins_ltrb": [
+            135,
+            85,
+            136,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6f66718cb68ff835c48b6c9902f5726a61ade24cc027162cc72edec90215f3b8"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-026/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            23,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            23,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "04d11f97128f27a4aa23faea35c392c6c78e797a106f09cc36fcb9f8c0213486"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-027",
+      "name": "베니아 사르",
+      "affiliation": "카이로스 교단",
+      "appearance": "- **현직 성녀:** **베니아 사르** (여 46, 짧은 은갈색 머리·보라색 눈·회색-보라색 의복).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-027/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            86,
+            85,
+            938,
+            1451
+          ],
+          "margins_ltrb": [
+            86,
+            85,
+            86,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "d7a474f5581749a9bed1ad54bff5c42bca2e55990e52ce5896262e184b8d8516"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-027/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            44,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            44,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "d9e4738ea1bd2012435cc96bf7230fc7194d24e1efd44c561eaed522257124af"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-028",
+      "name": "로데릭 바란",
+      "affiliation": "청금사자 근위기사단",
+      "appearance": "- **기사단장:** **로데릭 바란** (남 46, 밤금색 짧은 머리·남색 눈·넓은 어깨·깊은 턱 흉터). **경지:** 마스터 나이트.",
+      "rank": "마스터 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-028/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            85,
+            85,
+            938,
+            1451
+          ],
+          "margins_ltrb": [
+            85,
+            85,
+            86,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "aff753d3e4fd1e95decfd613d55aa8f795b76de5a181cf8487b500c1f1b54a98"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-028/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            66,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            66,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3e1a9932a7664c17b7cf72a827385fa3ff29c0d3a4356cb67f542139f995d49c"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "affiliation": "적장미 선봉기사단",
+      "appearance": "- **기사단장:** **리네트 로젠펠트** (여 33, 붉은 갈색 긴 땋은 머리·회청 눈·흉터 난 오른손). **경지:** 하이퍼 나이트.",
+      "rank": "하이퍼 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-029/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            68,
+            85,
+            956,
+            1451
+          ],
+          "margins_ltrb": [
+            68,
+            85,
+            68,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "e44978513df1b5d101aa9e261b05d2c59d56cf28647eff8b4bddfe87f66bd3ea"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-029/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            69,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            69,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3dad46e5ecc4f2cccddf0ce544c5e5fbfd40b3963122bdc9dd2f39cac3f55842"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-030",
+      "name": "카르스 에델",
+      "affiliation": "청뢰성벽 기사단",
+      "appearance": "- **기사단장:** **카르스 에델** (남 42, 자색빛 흑발·얼음회안·가느다란 얼굴·청동 팔보호구). **경지:** 마스터 나이트.",
+      "rank": "마스터 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-030/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            95,
+            85,
+            928,
+            1451
+          ],
+          "margins_ltrb": [
+            95,
+            85,
+            96,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "d0c0ce0b0de92a96ecd60594e042a8634d663033114b7c3eecba4757c7c6a560"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-030/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            65,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            65,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "6b678ef8d944652578882688222058343b3cdae09c1acb32a89e74d18e15ad04"
+        }
+      }
+    }
+  ]
+}
