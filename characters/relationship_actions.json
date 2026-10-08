@@ -1,0 +1,248 @@
+{
+  "schema_version": 1,
+  "version": "relationships-v1",
+  "defaults": {
+    "affection": 0,
+    "trust": 20,
+    "familiarity": 0,
+    "flags": [],
+    "interaction_history": [],
+    "last_interaction_day": null
+  },
+  "limits": {
+    "affection": [
+      -100,
+      100
+    ],
+    "trust": [
+      0,
+      100
+    ],
+    "familiarity": [
+      0,
+      100
+    ]
+  },
+  "affection_levels": [
+    {
+      "id": "hostile",
+      "min": -100,
+      "max": -61,
+      "label": "적대"
+    },
+    {
+      "id": "dislike",
+      "min": -60,
+      "max": -21,
+      "label": "반감"
+    },
+    {
+      "id": "neutral",
+      "min": -20,
+      "max": 19,
+      "label": "중립"
+    },
+    {
+      "id": "warm",
+      "min": 20,
+      "max": 49,
+      "label": "호의"
+    },
+    {
+      "id": "close",
+      "min": 50,
+      "max": 79,
+      "label": "친밀"
+    },
+    {
+      "id": "bond",
+      "min": 80,
+      "max": 100,
+      "label": "깊은 유대"
+    }
+  ],
+  "actions": [
+    {
+      "id": "talk",
+      "label": "대화",
+      "min_affection": -100,
+      "min_trust": 0,
+      "requirements": [
+        "available_npc",
+        "safe_to_talk"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "trade",
+      "label": "거래",
+      "min_affection": -100,
+      "min_trust": 0,
+      "requirements": [
+        "merchant_or_willing_seller",
+        "stock",
+        "payment",
+        "legal_transaction"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "private_trade",
+      "label": "개인 거래",
+      "min_affection": 20,
+      "min_trust": 20,
+      "requirements": [
+        "npc_consents",
+        "item_owned",
+        "valid_terms"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "discount",
+      "label": "특별 거래",
+      "min_affection": 50,
+      "min_trust": 50,
+      "requirements": [
+        "merchant_role",
+        "stock",
+        "npc_consents"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "companion_short",
+      "label": "단기 동행",
+      "min_affection": 20,
+      "min_trust": 35,
+      "requirements": [
+        "npc_consents",
+        "compatible_goals",
+        "duty_available",
+        "risk_acceptable"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "companion_long",
+      "label": "장기 동행",
+      "min_affection": 50,
+      "min_trust": 65,
+      "requirements": [
+        "npc_consents",
+        "mutual_contract",
+        "duty_available",
+        "risk_acceptable"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "quest",
+      "label": "의뢰 확인",
+      "min_affection": 20,
+      "min_trust": 30,
+      "requirements": [
+        "real_quest_available",
+        "npc_willing"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "quest_private",
+      "label": "비공개 의뢰",
+      "min_affection": 50,
+      "min_trust": 60,
+      "requirements": [
+        "actual_private_quest",
+        "npc_willing",
+        "access_allowed"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "training_tip",
+      "label": "수련 조언",
+      "min_affection": 20,
+      "min_trust": 30,
+      "requirements": [
+        "qualified_teacher",
+        "teacher_willing",
+        "available_time"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "apprenticeship",
+      "label": "정식 사사",
+      "min_affection": 50,
+      "min_trust": 70,
+      "requirements": [
+        "qualified_teacher",
+        "teacher_willing",
+        "training_agreement",
+        "permission_if_required"
+      ],
+      "allows_free_text": true
+    },
+    {
+      "id": "request_help",
+      "label": "도움 요청",
+      "min_affection": -20,
+      "min_trust": 0,
+      "requirements": [
+        "npc_can_help",
+        "context_makes_sense"
+      ],
+      "allows_free_text": true
+    }
+  ],
+  "relationship_events": [
+    {
+      "id": "fulfilled_promise",
+      "affection_delta": 3,
+      "trust_delta": 8,
+      "description": "중요한 약속 이행",
+      "cooldown": "per_distinct_promise"
+    },
+    {
+      "id": "helped_in_danger",
+      "affection_delta": 8,
+      "trust_delta": 6,
+      "description": "실제 위험에서 도움",
+      "cooldown": "per_distinct_event"
+    },
+    {
+      "id": "polite_conversation",
+      "affection_delta": 1,
+      "trust_delta": 0,
+      "description": "진정성 있는 첫 교류",
+      "cooldown": "per_meaningful_conversation_not_repeatable_spam"
+    },
+    {
+      "id": "broken_promise",
+      "affection_delta": -6,
+      "trust_delta": -15,
+      "description": "중요 약속 파기",
+      "cooldown": "per_distinct_promise"
+    },
+    {
+      "id": "betrayal",
+      "affection_delta": -25,
+      "trust_delta": -35,
+      "description": "명백한 배신",
+      "cooldown": "per_distinct_event"
+    }
+  ],
+  "rules": [
+    "Affection and trust are not automatic acceptance; NPC goals and current circumstances govern each response.",
+    "No mandatory romance or consent inferred from affinity score.",
+    "No enlightenment progress or breakthroughs calculated from relationships.",
+    "Allow freeform requests even for locked action buttons, with grounded NPC reaction.",
+    "Quest/commerce/companion changes must use persistent state and apply once per event."
+  ],
+  "npc_ref_sources": [
+    "characters/npc_roster_100.json",
+    "characters/core_cast_stats_38.json",
+    "characters/serin.json"
+  ]
+}
