@@ -5,6 +5,7 @@ import {updateNPC,findNPC} from './npc-model.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {campaignSettingsAttachment,legacyCampaignPrompt} from './campaign-settings.js';
 import {settleQuests} from './quest-model.js';
+import {planEngineScene} from './engine-model.js';
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -91,9 +92,11 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(scene.battle&&!commitBattle){
         if(state.battleApplied?.includes(scene.battle.battle_id))return status('이미 정산한 전투입니다. 다시보기로 관전하세요.');
         if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)settleQuests(state,scene);
+        planEngineScene(state,scene,null);
         getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
       const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)?settleQuests(state,scene):null;
+      const engineResult=planEngineScene(state,scene,questResult);
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
       for(const [id,p] of Object.entries(scene.npc_updates||{}))updateNPC(state,id,p);
@@ -107,6 +110,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       if(questResult)Object.assign(state,questResult);
+      if(engineResult)Object.assign(state,engineResult);
       if(state.chosenName)state.player.name=state.chosenName;
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;

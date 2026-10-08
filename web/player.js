@@ -10,7 +10,7 @@ export function normalizePlayer(raw){
   if(Object.hasOwn(raw,'realm'))p.realm=['none','basic','expert','hyper','master'].includes(raw.realm)?raw.realm:'none';
   if(raw.battleModifiers&&typeof raw.battleModifiers==='object'){p.battleModifiers={};for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.battleModifiers[key]=number(raw.battleModifiers[key]??0,-999999);}
   for(const [current,max] of [['hp','maxHp'],['mp','maxMp']])if(p[current]!==null&&p[max]!==null)p[current]=Math.min(p[current],p[max]);
-  if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false}));
+  if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false,...(typeof s.id==='string'?{id:text(s.id,80)}:{}),...(typeof s.book_id==='string'?{book_id:text(s.book_id,80)}:{}),...Object.fromEntries(['mp_cost','spell_base_power','technique_bonus'].filter(k=>Number.isInteger(s[k])&&s[k]>=0).map(k=>[k,s[k]])),...(typeof s.element==='string'?{element:s.element}:s.element===null?{element:null}:{})}));
   return p;
 }
 // Small arithmetic parser: user formulas never execute JavaScript.

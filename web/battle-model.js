@@ -1,5 +1,6 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
 import {resolveNPC,findNPC} from './npc-model.js';
+import {potentialMP,potentialDamage} from './combat-potentials.js';
 export const battleRealms={none:1,basic:1,expert:1.25,hyper:1.65,master:2.2};
 export const battleKinds=['attack','dodge','defend','counter','magic','unique','defeat'];
 export const battleElements=['water','fire','wind','electric','dark','light'];
@@ -25,6 +26,7 @@ function participant(raw){
   for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.modifiers[key]=num(raw.modifiers?.[key]??0,key,-999999);
   const maximum=battleMaximums(p);equal(p.maxHp,maximum.hp,'최대 HP 공식');equal(p.maxMp,maximum.mp,'최대 MP 공식');equal(p.speed,battleSpeed(p),'행동 속도');
   if(p.hp>p.maxHp||p.mp>p.maxMp)fail('현재 자원이 최대값 초과');
+  if(raw.potentials){p.potentials={};for(const [key,value]of Object.entries(raw.potentials))p.potentials[key]=num(value,'잠재능력',0,100);}
   if(!Array.isArray(raw.skills)||raw.skills.length>30)fail('기술 목록');
   const ids=new Set();p.skills=raw.skills.map(s=>{
     const skill={id:str(s.id,'기술 ID',80),name:str(s.name,'기술명',60),kind:s.kind,mp_cost:num(s.mp_cost,'기술 MP 비용')};
@@ -46,14 +48,14 @@ export function normalizeBattle(raw){
   b.participants=raw.participants.map(participant);const byId=new Map(b.participants.map(p=>[p.id,p]));
   if(byId.size!==b.participants.length||b.participants.filter(p=>p.role==='player').length!==1||b.participants.find(p=>p.role==='player').side!=='allied'||!b.participants.some(p=>p.side==='enemy'))fail('참가자 중복/주인공/적 소속');
   if(!Array.isArray(raw.events)||!raw.events.length||raw.events.length>120)fail('사건 1~120개');
-  const live=Object.fromEntries(b.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}])),ids=new Set();
+  const live=Object.fromEntries(b.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}])),ids=new Set(),potentialUses={};
   b.events=raw.events.map((rawEvent,index)=>{
     const e={id:str(rawEvent.id,'사건 ID',80),actor:rawEvent.actor,target:rawEvent.target,kind:rawEvent.kind,result:rawEvent.result,skill_id:rawEvent.skill_id??null,damage:num(rawEvent.damage,'피해'),mp_cost:num(rawEvent.mp_cost,'MP 소비'),actor_hp_after:num(rawEvent.actor_hp_after,'행동자 HP'),actor_mp_after:num(rawEvent.actor_mp_after,'행동자 MP'),target_hp_after:num(rawEvent.target_hp_after,'대상 HP'),target_mp_after:num(rawEvent.target_mp_after,'대상 MP'),narration:str(rawEvent.narration,'전투 중계',1000),element:rawEvent.element??null};
     const actor=byId.get(e.actor),target=byId.get(e.target);if(!actor||!target||ids.has(e.id)||!battleKinds.includes(e.kind)||!['hit','dodge','block','critical','none'].includes(e.result))fail('사건 참조/종류');ids.add(e.id);
     if((live[e.actor].hp===0&&e.kind!=='defeat')||(live[e.target].hp===0&&e.kind!=='defeat'))fail('전투불능 인물의 추가 행동/타격');
     if(e.actor===e.target&&!['defend','defeat','dodge'].includes(e.kind))fail('자기 자신 공격');
     const skill=e.skill_id===null?null:actor.skills.find(s=>s.id===e.skill_id);
-    if(e.skill_id!==null&&!skill)fail('보유하지 않은 기술');equal(e.mp_cost,skill?.mp_cost??0,'기술 MP 소비');
+    if(e.skill_id!==null&&!skill)fail('보유하지 않은 기술');equal(e.mp_cost,potentialMP(actor,skill,potentialUses),'기술 MP 소비');
     if(['attack','counter'].includes(e.kind)&&skill&&skill.kind!=='physical')fail('물리 기술 종류');
     if(e.mp_cost>live[e.actor].mp)fail('MP 부족');
     if(e.kind==='magic'&&(skill?.kind!=='magic'||!battleElements.includes(e.element)))fail('마법 기술/원소');
@@ -75,6 +77,7 @@ export function normalizeBattle(raw){
         expected=Math.max(1,Math.floor((skill.power+skill.int_coefficient*actor.stats.intelligence+skill.mana_coefficient*actor.stats.manaStat)*context-defense));
       }
       if(e.result==='block'&&c.full_block===true){str(c.basis,'완전 방어 근거');expected=0;}
+      expected=potentialDamage(actor,target,e.kind,e.result,expected,potentialUses);
       equal(e.damage,Math.min(live[e.target].hp,expected),'피해 공식');e.calculation={...c};
     }
     const nextActor={hp:live[e.actor].hp,mp:live[e.actor].mp-e.mp_cost},nextTarget=e.actor===e.target?nextActor:{hp:live[e.target].hp-e.damage,mp:live[e.target].mp};
@@ -104,9 +107,11 @@ export function validateBattleSettlement(scene,state){
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(p.stats[key],current[key],'현재 능력치 '+key);
   equal(p.realm,current.realm??'none','현재 기사 경지');equal(p.level_hp_bonus,current.levelHpBonus??0,'현재 레벨 HP 기록');
   for(const skill of p.skills)if(!current.skills.some(s=>s.enabled&&s.name===skill.name))fail('현재 주인공 기술 목록');
+  if(state.engine){equal(JSON.stringify(p.potentials||{}),JSON.stringify(state.engine.bonuses.potentials||{}),'장착 잠재능력');for(const skill of p.skills){const learned=current.skills.find(s=>s.id===skill.id);if(learned?.book_id){equal(skill.mp_cost,learned.mp_cost,'기술서 MP 비용');if(skill.kind==='magic')equal(skill.power,learned.spell_base_power+(state.engine.bonuses.spell_power||0),'기술서·스태프 위력');}}}
   if(!scene.player||!scene.inventory||!scene.game_state)fail('종료 player/inventory/game_state 전체 스냅샷 필요');
   const final=b.outcome.resources.find(r=>r.id===p.id),growth=battleGrowth(current,b.outcome.xp_gain);
-  equal(scene.player.hp,Math.min(growth.maxHp,final.hp+growth.hpIncrease),'종료 주인공 HP/레벨 보너스');equal(scene.player.mp,final.mp,'종료 주인공 MP');
+  const restored=final.hp>0?Math.floor(current.maxHp*(p.potentials?.post_battle_hp_restore||0)/100):0;
+  equal(scene.player.hp,Math.min(growth.maxHp,final.hp+growth.hpIncrease+restored),'종료 주인공 HP/레벨 보너스');equal(scene.player.mp,final.mp,'종료 주인공 MP');
   for(const key of ['maxMp','strength','dexterity','intelligence','constitution','manaStat'])equal(scene.player[key],current[key],'무단 능력치 배분 금지 '+key);
   for(const key of ['level','maxHp','xp','requiredXp'])equal(scene.player[key],growth[key],'성장/보상 '+key);
   equal(scene.player.levelHpBonus??0,growth.levelHpBonus,'누적 레벨 HP');equal(scene.player.unspentStatPoints??0,growth.unspentStatPoints,'미사용 성장 포인트');equal(scene.player.realm??'none',current.realm??'none','전투 보상으로 자동 돌파 금지');
