@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_04",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-031",
+      "name": "리아 노엘",
+      "affiliation": "광휘대성당",
+      "appearance": "여38 백금 단발 금갈 눈 흰금 제의",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-031/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            102,
+            85,
+            921,
+            1451
+          ],
+          "margins_ltrb": [
+            102,
+            85,
+            103,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "320ef90b5ce8cbc2b42508a1a6ad38dde6ca398d4fa6d76de9978f6dfb5104ec"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-031/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "85b056d0ca14f3ef48f0fa58ef8b5e0ba91e2edbb4bcd31e913ab7e0aa145b58"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-032",
+      "name": "마레스 반",
+      "affiliation": "흑월의 성소",
+      "appearance": "남36 자주 흑수염 은색 눈 검은 망토",
+      "rank": "하급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-032/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            76,
+            85,
+            947,
+            1451
+          ],
+          "margins_ltrb": [
+            76,
+            85,
+            77,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9686a7771b9695373d4e4ed1cdfc444e2ccbd9ae58552596a1d41b789fd452da"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-032/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "6f120bd5510f778d841af98e2e7a6ee150ae313dc449f076624a01d0b71debca"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-033",
+      "name": "엘피 세이",
+      "affiliation": "인연의 직조회",
+      "appearance": "여45 은빛 곱슬 보라 눈 자주 문장띠",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-033/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            95,
+            85,
+            929,
+            1451
+          ],
+          "margins_ltrb": [
+            95,
+            85,
+            95,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "902c6dfb11a1205e3c6620291836ddd928c8044bc9859bdab641b6af16c784ea"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-033/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            16,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            16,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "962e5ce9fb64f41fcab6b5e0aa16cbbe602aa3a64c522b73f9e99561acbc39a7"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-034",
+      "name": "나룬 베일",
+      "affiliation": "대륙길잡이 길드",
+      "appearance": "남30 붉은 머리 청색 눈 여행 망토",
+      "rank": "은패",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-034/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            92,
+            85,
+            932,
+            1451
+          ],
+          "margins_ltrb": [
+            92,
+            85,
+            92,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "450a1dc706acc14e04144a201005bb790253cc50086554a112e400ebc7516ad8"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-034/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            8,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            8,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "bff68b7732c12e706b33858fb09cb172258506435805f8e841b80a97495cd632"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-035",
+      "name": "피아 로만",
+      "affiliation": "대륙길잡이 길드",
+      "appearance": "여22 검은 단발 갈색 눈 두꺼운 부츠",
+      "rank": "동패",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-035/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            72,
+            85,
+            952,
+            1451
+          ],
+          "margins_ltrb": [
+            72,
+            85,
+            72,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "8226d0defd18574938a44e05d6c2ff469c81333630a06c089586982652ec3311"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-035/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "ac7ccd0c6bb33b6faaaf542af986a6bb83c8c72c57431cfe0bd5296d51e39b06"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-036",
+      "name": "카린 돌트",
+      "affiliation": "대륙길잡이 길드",
+      "appearance": "여41 금발 녹색 눈 깃털 망토",
+      "rank": "금패",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-036/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            92,
+            85,
+            931,
+            1451
+          ],
+          "margins_ltrb": [
+            92,
+            85,
+            93,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ffad3273cd7681db665af7916ae9d313637d816f725a4e128bea8cba5237f3fe"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-036/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "9b28d6cde03f8a5bddd37c6fe25b398960c1e4ba97dacf6be944c4e500b9728a"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-037",
+      "name": "가이언 리오",
+      "affiliation": "대륙길잡이 길드",
+      "appearance": "남27 곱슬 흑발 청록 눈 흰 조끼",
+      "rank": "은패",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-037/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            96,
+            85,
+            928,
+            1451
+          ],
+          "margins_ltrb": [
+            96,
+            85,
+            96,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "5f3e920cbfc135ab1a91a45c9cb5846e73d6965b8c5892104b71c6ce10d2dcfd"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-037/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            1,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "c4878e30dd12547924a1595c8f6803a1bb4e8ca0f81bb42293dc82fff52b3a40"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-038",
+      "name": "바라크 몬",
+      "affiliation": "쇠갈퀴 용병단",
+      "appearance": "남34 큰 체격 회색 눈 쇠갑옷",
+      "rank": "숙련 용병",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-038/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            76,
+            85,
+            948,
+            1451
+          ],
+          "margins_ltrb": [
+            76,
+            85,
+            76,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "796bae4f399c1de58b76687dd1cadde73a7cba4d42ab621145fbc9f9e17031c7"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-038/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "6d0ec133846e5da8504af698892216332d9db76537b5bcb4e1e16e4b3dea3874"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-039",
+      "name": "델리카 포",
+      "affiliation": "쇠갈퀴 용병단",
+      "appearance": "여29 밤색 땋은머리 갈색 눈 의료가방",
+      "rank": "2서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-039/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            116,
+            85,
+            908,
+            1451
+          ],
+          "margins_ltrb": [
+            116,
+            85,
+            116,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "bb8bf2d2618089bfe54e29b6d04ffab8042a181a08f53d6b515b83db6b95c5bb"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-039/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            22,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            22,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "fb8387965a16b63565d94764a9b779e286038d55654b4befd9bb8809b7c236f6"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-040",
+      "name": "베렌 케이",
+      "affiliation": "백범선 해상호위조합",
+      "appearance": "남47 대머리 귀 흉터 청색 외투",
+      "rank": "숙련 선원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-040/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            121,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            121,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "22cc96b5a88300c6503ff1f0a8293b1529620c3130d1506deef6df3898c69157"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-040/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            19,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            19,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "12c08284b36cf668bd3b05539c9aa04f6775b844aadf98e00eb6483b6b763d3d"
+        }
+      }
+    }
+  ]
+}

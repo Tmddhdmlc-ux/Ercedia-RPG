@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_03",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "affiliation": "회색초석탑",
+      "appearance": "남46 회색 수염 검은 눈 두꺼운 회청 로브",
+      "rank": "4서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-021/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            69,
+            85,
+            955,
+            1451
+          ],
+          "margins_ltrb": [
+            69,
+            85,
+            69,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ae3f41b75179e846870c420f519b09d56df4379268de41c6ccc39141401e0d9f"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-021/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            51,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            51,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "c57aaae8c3ca9855f608a8d7c960e1de2c51b7a698b90f814c599d6d9b561e51"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-022",
+      "name": "에타 칼즈",
+      "affiliation": "회색초석탑",
+      "appearance": "여29 구리 갈발 녹색 눈 황동 렌즈",
+      "rank": "2서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-022/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            161,
+            85,
+            862,
+            1451
+          ],
+          "margins_ltrb": [
+            161,
+            85,
+            162,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "5535e2e4d10ed5a95f8531c7f8986693403bd254d56bacd33a73f1b471747522"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-022/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            47,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            47,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "4cf7e02e6b10896b4dd11e73a0c270448ba4af231a9ab6a51ca924c90b78f858"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-023",
+      "name": "레베카 노스",
+      "affiliation": "영시기록원",
+      "appearance": "여42 잿빛 땋은머리 갈색 눈 남청 기록복",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-023/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            85,
+            963,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            85,
+            61,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "99e99de35f5703f538521d484bf43d06837237e6bbb7b5916d8b1656b6c6c262"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-023/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "9dbb1366daf3cb39dad140a9f1e5f5d8ee00faac0dec6aea74b4ecb1573d4bd5"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-024",
+      "name": "단테 로에",
+      "affiliation": "천문의 길회",
+      "appearance": "남30 검은 단발 은청 눈 흰 여행복",
+      "rank": "하급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-024/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            77,
+            85,
+            947,
+            1451
+          ],
+          "margins_ltrb": [
+            77,
+            85,
+            77,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "c2080aa7047f6692bf0ea7890d90088be2a429b706752ae38548743b72dab05f"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-024/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "90a12a7b44d139b99ae7f8eb33b2de144183a8a7e9f4f24551d18a1be07f618b"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-025",
+      "name": "오리아 밈",
+      "affiliation": "새벽샘 성회",
+      "appearance": "여35 밤갈 포니테일 녹색 눈 초록 성의",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-025/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            85,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            85,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "216c328becf2ebca7ef0381b590ecd6768d790165814ee067d4c32f045baf162"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-025/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "af30cc991e5c6a91abb6511cb9b2a7e04b04f7cf0db6d64197b202502b7d58f7"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-026",
+      "name": "로한 베스크",
+      "affiliation": "종언의 안식원",
+      "appearance": "남53 삭발 은회 눈 검은 예복 은종",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-026/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            92,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            92,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "88ebb2508667bb635a249672f2e30cd71c31affb5963b022917bb5a15df14690"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-026/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            33,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            33,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "ee175afcb6e6dfb04e7481feadea0d75a232b88dd6f6b1ee685dcd5d0599ef4f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-027",
+      "name": "에린 델프",
+      "affiliation": "홍염의 화로단",
+      "appearance": "여24 붉은 단발 금갈 눈 화로 앞치마",
+      "rank": "하급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-027/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            62,
+            85,
+            961,
+            1451
+          ],
+          "margins_ltrb": [
+            62,
+            85,
+            63,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "27fd70e39ba728173c0416508efd1530d0dd48278df847677b805550f50cf5d1"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-027/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            20,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            20,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "b67af21176c9d4e61eafa5ea907fdb2eea984393c06df2859ca043f626eb1a37"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-028",
+      "name": "세브 루아",
+      "affiliation": "푸른 조수성당",
+      "appearance": "남34 흑청 웨이브 청록 눈 진주 브로치",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-028/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            235,
+            85,
+            788,
+            1451
+          ],
+          "margins_ltrb": [
+            235,
+            85,
+            236,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "5c2d7d91aad056eff87fbd9afe989b4418200b61a93fabf4939566881cb1bdbb"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-028/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            27,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            27,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "b4cde9402f6dafa8fa28e11813acb6c5d9142b869836d23dffb8d3c9c40967a9"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-029",
+      "name": "아델 핀",
+      "affiliation": "순풍의 순례단",
+      "appearance": "여21 은회 단발 녹색 눈 흰 망토",
+      "rank": "하급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-029/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            120,
+            85,
+            903,
+            1451
+          ],
+          "margins_ltrb": [
+            120,
+            85,
+            121,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "bd375f92b75f465d84dedee8da6339a7b02e13894bf333f1bf42cca08feeff8c"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-029/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            2,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            2,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "f9c77dc35eddbc8894751d5b382bb87bbda6e8bd20a4e308ac45db1391b34b83"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-030",
+      "name": "티온 바르",
+      "affiliation": "천뢰공학회",
+      "appearance": "남48 갈색 삭발 청회 눈 청동 안경",
+      "rank": "중급 사제",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-030/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            66,
+            85,
+            957,
+            1451
+          ],
+          "margins_ltrb": [
+            66,
+            85,
+            67,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "e04603ffb72a540e7ea6cad0cfee1cc2b945a7ec2d8b83eea6dd34022ab9dbdf"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-030/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            34,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            34,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "da94a04c2706d90840b599dd191772ea25b90e01a39c50d19e7bf15589766895"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,439 @@
+{
+  "schema_version": 1,
+  "batch": "batch_10",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-091",
+      "name": "해풍 날개뱀",
+      "affiliation": "연안 야생 마수",
+      "appearance": "청록 비늘 작은 지느러미날개 긴 뱀",
+      "rank": "중급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-091.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            55,
+            52,
+            969,
+            972
+          ],
+          "margins_ltrb": [
+            55,
+            52,
+            55,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "952cd10aaa36780452a94450bbb0edc69e0e46995337f02641ac810f12f20f99"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-092",
+      "name": "암초 부리게",
+      "affiliation": "항만 야생 마수",
+      "appearance": "산호빛 등갑 푸른 부리의 게",
+      "rank": "하급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-092.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            65,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            65,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "df99f2c69b49ae868d8a15b834fdfe9e59c00724f132f75dea6811f13947f028"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-093",
+      "name": "흑진주 먹장어",
+      "affiliation": "심해 야생 마수",
+      "appearance": "검은 광택 피부 백진주 이빨의 장어",
+      "rank": "상급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-093.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            52,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            52,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "42bef364ca07b83849d57dc7804dcbadb8e6459ad28b93ea2436c206bf332960"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-094",
+      "name": "은비늘 물갈퀴어",
+      "affiliation": "연안 야생 마수",
+      "appearance": "은청 비늘과 청록 지느러미의 수중어",
+      "rank": "하급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-094.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            56,
+            52,
+            968,
+            972
+          ],
+          "margins_ltrb": [
+            56,
+            52,
+            56,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "50a886494f7f3c1c7c38c54c5787212f039edd344790a56fc7e1805514ac6e20"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-095",
+      "name": "밤등불 나방",
+      "affiliation": "남부 야생 마수",
+      "appearance": "황금 등불무늬 검푸른 커다란 나방",
+      "rank": "하급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-095.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            52,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            52,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "8f8fa25311721e1a7ac98ae2e316f230a762279c8dcef72da9de2383df1dd660"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-096",
+      "name": "사막색 모래여우",
+      "affiliation": "남부 들판 야생 마수",
+      "appearance": "황토 털 네 꼬리 작은 여우",
+      "rank": "하급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-096.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            55,
+            52,
+            969,
+            972
+          ],
+          "margins_ltrb": [
+            55,
+            52,
+            55,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "17ce13d8d93c6662b2aa71c69b84f1945118a21fe752a5bb78025c2ad59aad41"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-097",
+      "name": "유령나무 산책자",
+      "affiliation": "북중 원시림",
+      "appearance": "움직이는 고목 몸통 녹빛 눈 깊은 뿌리다리",
+      "rank": "엘리트",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-097.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            52,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            52,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "492cf88fcccc3111ae832bf4049c299efe186781291166b9bc4b1a636848373d"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-098",
+      "name": "심연고리 사슴",
+      "affiliation": "북중 원시림",
+      "appearance": "검은 뿔고리 붉은 눈 이끼털의 사슴",
+      "rank": "상급",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-098.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            54,
+            52,
+            970,
+            972
+          ],
+          "margins_ltrb": [
+            54,
+            52,
+            54,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "8628e3ab6e4d322b05cec8596d8256f05434743a374188eae587e29a28b130b3"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-099",
+      "name": "푸른균열 사냥개",
+      "affiliation": "북동 마나 이상지대",
+      "appearance": "청백 균열무늬 검은 털 여섯발 사냥개",
+      "rank": "미스틱",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-099.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            62,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            62,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "1b8be8e7f8308689a54ffc52a9dab42fb7b11f74cf44784b5aae506f38385fb2"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-100",
+      "name": "고대석갑 파수충",
+      "affiliation": "북서 고대 던전",
+      "appearance": "고대 문자 돌갑각 금빛 촉각의 거대 곤충",
+      "rank": "엘리트",
+      "category": "마수",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "portrait": {
+          "path": "assets/characters/monsters/portraits/ER-NPC-100.png",
+          "size": [
+            1024,
+            1024
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            52,
+            59,
+            972,
+            972
+          ],
+          "margins_ltrb": [
+            52,
+            59,
+            52,
+            52
+          ],
+          "foot_anchor": [
+            512.0,
+            972
+          ],
+          "sha256": "7030d0c95455e2ca3006ff4c02a324e560b1dd54548795ecb7542f388734e6bd"
+        }
+      }
+    }
+  ]
+}
