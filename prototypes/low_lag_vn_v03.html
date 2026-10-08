@@ -1,0 +1,55 @@
+<!doctype html>
+<html lang="ko"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>Ercedia RPG — Low Lag VN UI v0.3</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#0f192c;color:#f3f6fc;font:14px system-ui,sans-serif}
+#game{max-width:720px;margin:14px auto;border:1px solid #516986;border-radius:14px;overflow:hidden;background:#14243c}
+header{padding:14px;font-weight:800;font-size:20px}.nav{display:flex;gap:6px;padding:9px}.nav button{flex:1}
+button{border:1px solid #637c9b;background:#274461;color:#fff;border-radius:8px;padding:10px;cursor:pointer}
+button.active{background:#e7cb8c;color:#1c2b40;font-weight:bold}button:disabled{opacity:.4}
+.panel{display:none}.panel.visible{display:block}.stage,.map{height:440px;position:relative;overflow:hidden}
+.stage{background:#718d86}.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.person{position:absolute;left:50%;bottom:95px;transform:translateX(-50%);height:330px;max-width:95%;object-fit:contain;filter:drop-shadow(0 8px 14px #0007)}
+.dialog{position:absolute;bottom:9px;left:9px;right:9px;border:1px solid #9baecb;border-radius:11px;background:#101c34ee;padding:15px;min-height:110px}
+.dialog b{color:#f6d391}.dialog p{margin:10px 0 0;line-height:1.7}
+.controls{display:flex;justify-content:space-between;align-items:center;padding:10px}
+.map{background:#39627b}.map svg{width:100%;height:100%}.region{cursor:pointer;stroke:#ead6ae;stroke-width:3}.region.selected{stroke:#fff4a5;stroke-width:6}
+.mapinfo{background:#192d47;padding:14px}.mapinfo p{color:#cbd9e8;font-size:13px}.loc{position:absolute;top:10px;left:10px;background:#15263bdd;padding:7px 10px;border-radius:7px;font-size:12px}
+</style></head><body><main id="game">
+<header>에르세디아 RPG <small style="font-size:11px;font-weight:400;color:#bbcee7">· 최적화 v0.3</small></header>
+<nav class="nav"><button class="active" id="story-tab">💬 대화</button><button id="map-tab">🗺️ 세계지도</button></nav>
+<section id="story" class="panel visible"><div class="stage" id="stage">
+<img class="bg" src="https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/locations/towns/sunny_village/town_day.png" alt="써니 빌리지">
+<img class="person" src="https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base_transparent.png" alt="세린">
+<span class="loc">📍 써니 빌리지 · 오후</span>
+<div class="dialog"><b id="speaker"></b><span id="emotion" style="float:right;font-size:11px;color:#afc5e4"></span><p id="line"></p></div>
+</div><div class="controls"><button id="previous">◀ 이전</button><span id="count"></span><button id="next">다음 ▶</button></div></section>
+<section id="map-panel" class="panel"><div class="map"><svg viewBox="0 0 600 440" aria-label="임시 세계지도">
+<rect width="600" height="440" fill="#39627b"/>
+<path class="region" data-region="wild" fill="#718e78" d="M106 90L168 29 268 43 332 75 411 65 470 123 427 174 335 169 274 184 203 164 146 179Z"/>
+<path class="region" data-region="west" fill="#bd9969" d="M90 158L148 177 205 163 274 182 286 265 245 321 178 349 101 309 48 248Z"/>
+<path class="region" data-region="east" fill="#8b9cc0" d="M337 173L430 179 476 131 529 192 544 267 480 326 393 303 326 266 284 210Z"/>
+<path class="region" data-region="south" fill="#ad7d80" d="M178 349L246 321 286 264 327 270 399 313 475 337 432 389 343 411 251 393 205 403Z"/>
+<path class="region" data-region="ruins" fill="#947eac" stroke-dasharray="6 5" d="M272 184L338 174 285 210 325 267 287 271 284 265Z"/>
+<g fill="#fff7dc" font-size="17" font-weight="bold" text-anchor="middle" stroke="#334344" stroke-width="3" paint-order="stroke">
+<text x="260" y="113">북부 마수림</text><text x="156" y="245">서부 왕국</text><text x="426" y="245">동부 왕국</text><text x="320" y="360">남부 왕국</text><text x="296" y="231" font-size="11">고대 유적</text></g>
+<g data-region="village" style="cursor:pointer"><circle cx="177" cy="288" r="17" fill="#f8d778" stroke="#fff5bb" stroke-width="3"/><text x="177" y="294" text-anchor="middle" font-size="20" fill="#263b41">⌂</text><text x="177" y="323" text-anchor="middle" font-size="12" fill="white" stroke="#263b41" stroke-width="3" paint-order="stroke">써니 빌리지</text></g>
+<text x="12" y="429" font-size="11" fill="#ecdfcb">※ 국가 배치 미확정 · UI 테스트</text></svg></div>
+<div class="mapinfo"><b id="region-title"></b><p id="region-description"></p><button id="return">↩ 대화로 복귀</button></div></section>
+</main><script>
+(()=>{
+const $=id=>document.getElementById(id);
+const dialogues=[["나레이션","장면 시작","마을 광장에서 순찰을 마친 세린과 마주쳤다."],["세린","미소","아, 여행자님! 오늘도 좋은 날씨네요."],["세린","호기심","저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?"],["세린","주의","아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다."]];
+const regions={village:["써니 빌리지","현재 세린과 대화하는 마을입니다."],west:["서부 왕국","임시 국가 배치. 영주령과 국명 미확정."],east:["동부 왕국","임시 국가 배치. 영주령과 국명 미확정."],south:["남부 왕국","임시 국가 배치. 영주령과 국명 미확정."],wild:["북부 마수림","마수 서식지의 임시 위치."],ruins:["고대 유적","미지의 던전 후보지."]};
+let index=0,selected="village";
+function switchTo(page){$("story").classList.toggle("visible",page==="story");$("map-panel").classList.toggle("visible",page==="map");$("story-tab").classList.toggle("active",page==="story");$("map-tab").classList.toggle("active",page==="map");}
+function renderDialogue(){const d=dialogues[index];$("speaker").textContent=d[0];$("emotion").textContent=d[1];$("line").textContent=d[2];$("count").textContent=(index+1)+" / "+dialogues.length;$("previous").disabled=index===0;$("next").disabled=index===dialogues.length-1;}
+function renderRegion(){const r=regions[selected];$("region-title").textContent=r[0];$("region-description").textContent=r[1];document.querySelectorAll(".region").forEach(el=>el.classList.toggle("selected",el.dataset.region===selected));}
+$("story-tab").onclick=()=>switchTo("story");$("map-tab").onclick=()=>switchTo("map");$("return").onclick=()=>switchTo("story");
+$("previous").onclick=()=>{index=Math.max(0,index-1);renderDialogue();};
+$("next").onclick=()=>{index=Math.min(dialogues.length-1,index+1);renderDialogue();};
+$("stage").onclick=()=>{if(index<dialogues.length-1){index++;renderDialogue();}};
+document.querySelectorAll("[data-region]").forEach(el=>el.onclick=()=>{selected=el.dataset.region;renderRegion();});
+renderDialogue();renderRegion();
+})();
+</script></body></html>
