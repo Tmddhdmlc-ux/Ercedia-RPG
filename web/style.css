@@ -30,6 +30,13 @@
 @media(max-width:600px){.player-panel{padding:18px}.player-fields{grid-template-columns:repeat(2,minmax(0,1fr))}.attributes{gap:8px}.attributes>div{padding:12px 6px}.player-actions{align-items:flex-start;flex-direction:column}.tabs{gap:12px}.tabs button span{display:none}}
 @media(max-width:380px){.tabs{padding:0 10px;gap:8px}.tabs button{font-size:12px}.tabs #fullscreen{font-size:10px;padding:5px 6px}}
 .player-panel textarea{font:inherit;font-size:12px;line-height:1.7}
+.map-sheet{position:absolute;left:0;top:0;width:1536px;height:1024px;transform-origin:0 0;will-change:transform;transition:transform .18s ease-out}
+.map-navigation{display:flex;align-items:center;justify-content:space-between;gap:12px;padding:10px 18px;border-bottom:1px solid var(--line);flex-shrink:0}.map-navigation>span{font-size:11px;color:var(--gold)}.map-navigation button{font-size:10px;padding:6px 10px}
+.map-regions{display:flex;gap:7px;padding:10px 16px;overflow-x:auto;flex-shrink:0;scrollbar-width:thin}.map-regions button{font-size:10px;padding:6px 9px;white-space:nowrap}.map-regions button.active{color:var(--gold);border-color:var(--gold);background:#d6b77c0d}
+.map-detail-label{pointer-events:none;text-anchor:middle;fill:#fff1ca;stroke:#142332;stroke-width:4;paint-order:stroke;font-size:18px;font-weight:bold}
+.map-detail-panel{padding:12px 18px;background:#15242e;border-top:1px solid var(--line);flex-shrink:0}.map-detail-heading{display:flex;justify-content:space-between;gap:12px;margin-bottom:8px;font-size:11px;color:var(--gold)}.map-detail-heading small{color:var(--muted)}
+.map-detail-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:7px;max-height:155px;overflow-y:auto;scrollbar-width:thin}.map-detail-list button{text-align:left;padding:8px 10px;border-color:#ffffff18}.map-detail-list b{display:block;font-size:10px;font-weight:500}.map-detail-list span{font-size:9px;color:var(--muted)}.map-detail-list button.selected{border-color:var(--gold);background:#d6b77c14}
+@media(max-width:480px){.map-navigation{padding:8px 12px}.map-navigation>span{font-size:10px}.map-detail-panel{padding:10px 12px}.map-detail-list{max-height:140px}.map-detail-list b{font-size:9px}}
 .game-expanded{overflow:hidden}
 .game.is-expanded{position:fixed;inset:0;z-index:1000;width:100%;height:100%;height:100dvh;max-width:none;border:0;border-radius:0;display:flex;flex-direction:column;background:var(--surface)}
 .game.is-expanded .tabs,.game.is-expanded .game-foot,.game.is-expanded .story-controls,.game.is-expanded .mapinfo{flex-shrink:0}

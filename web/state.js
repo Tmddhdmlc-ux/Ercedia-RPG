@@ -1,11 +1,12 @@
 import {mapData} from './map-data.js';
 import {newPlayer,normalizePlayer} from './player.js';
+import {mapViews} from './map-camera.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
-export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapData.regions.map(r=>r.id),...mapData.locations.map(p=>p.id)];
+export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapViews.map(r=>r.id),...mapData.locations.map(p=>p.id)];
 export const defaultLayout = () => ({scale:260,x:50,y:-120});
-export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',page:'story',player:newPlayer()});
+export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer()});
 const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;
 export function normalize(raw) {
   const s=defaults();
@@ -15,6 +16,7 @@ export function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
   return s;
 }
 export function load(storage) {

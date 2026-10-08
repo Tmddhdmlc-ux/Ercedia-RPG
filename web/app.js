@@ -2,6 +2,7 @@ import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
 import {mapData} from './map-data.js';
 import {mountPlayer} from './player-ui.js';
+import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
@@ -12,6 +13,7 @@ const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad
 const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
 const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
 for(const r of mapData.regions)regions[r.id]=[r.label,'지리 배치 시안 · 공식 국명·국경·지역 설정은 미확정입니다.'];
+regions.archipelago=['주변 군도','군도 탐험 지점의 검토용 시안입니다.'];
 const regionNames={west:'서부',east:'동부',south:'남부'};
 const locationLabel=p=>p.label.replace(/^(west|east|south)\b/,(_,id)=>regionNames[id]);
 for(const p of mapData.locations)regions[p.id]=[`${p.id} · ${locationLabel(p)}`,'등록된 지도 클릭 지점 후보입니다. 위치·지명·소속은 검토용 시안이며 실제 이동은 아직 연결되지 않았습니다.'];
@@ -22,7 +24,13 @@ for(const p of [...mapData.regions,...mapData.locations]){
   node.setAttribute('cx',String(p.x*1536));node.setAttribute('cy',String(p.y*1024));
   node.setAttribute('r',p.kind?'24':'40');node.setAttribute('class','map-hit');node.dataset.region=p.id;
   const title=document.createElementNS(svgNS,'title');title.textContent=regions[p.id][0];node.append(title);$('map-points').append(node);
+  if(p.kind){
+    const label=document.createElementNS(svgNS,'text');label.setAttribute('x',String(p.x*1536));label.setAttribute('y',String(p.y*1024-32));label.setAttribute('class','map-detail-label');label.dataset.location=p.id;label.textContent=p.id;$('map-points').append(label);
+  }
 }
+const kindLabels={capital:'왕도',lordship:'영주령',port:'항구',fortress:'요새',mana_mine:'마나 광산',dungeon:'던전',beast_habitat:'마수 서식지',anomaly:'마나 이상·유적',island:'군도 탐험'};
+for(const view of mapViews){const button=document.createElement('button');button.dataset.mapView=view.id;button.textContent=view.label.replace(' (임시)','');$('map-regions').append(button);}
+for(const p of mapData.locations){const button=document.createElement('button');button.dataset.region=p.id;button.dataset.parentRegion=p.region;const title=document.createElement('b'),kind=document.createElement('span');title.textContent=`${p.id} · ${locationLabel(p)}`;kind.textContent=kindLabels[p.kind]||p.kind;button.append(title,kind);$('map-detail-list').append(button);}
 let restored;
 try {restored=load(window.localStorage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
@@ -44,7 +52,7 @@ function trackImage(img,path,label,cdn=CDN) {
 }
 function mapImageStatus(loaded){
   $('map-points').style.visibility=loaded?'visible':'hidden';
-  $('map-status').textContent=loaded?'지역명 또는 표식을 누르면 정보를 볼 수 있습니다. 지리와 국경은 검토용 시안입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
+  $('map-status').textContent=loaded?'지역을 눌러 확대하고 세부 지점을 선택하세요. 지리와 국경은 검토용 시안입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
   $('map-status').classList.toggle('asset-alert',!loaded);
 }
 $('map-points').style.visibility='hidden';
@@ -94,9 +102,29 @@ function renderLayout(){
 }
 function renderDialogue(){const d=dialogues[state.index];$('speaker').textContent=d[0];$('emotion').textContent=d[1];$('line').textContent=d[2];$('count').textContent=`0${state.index+1} / 04`;$('previous').disabled=state.index===0;$('next').disabled=state.index===3;$('stage').setAttribute('aria-label',state.index===3?'마지막 대사':'장면을 눌러 다음 대사 보기');}
 function advance(delta){const next=Math.max(0,Math.min(3,state.index+delta));if(next===state.index)return;state.index=next;renderDialogue();dirty();}
-function switchTo(page){state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}}
-function renderRegion(){const r=regions[state.region];$('region-title').textContent=r[0];$('region-description').textContent=r[1];document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});}
-document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;renderRegion();dirty();};el.addEventListener('click',select);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
+function switchTo(page){state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
+function updateMapCamera(){
+  const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
+  const camera=cameraTransform(regionFrame(state.mapView),width,height);
+  $('map-sheet').style.transform=`translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`;
+}
+function renderMapView(){
+  const overview=state.mapView==='world',view=mapViews.find(r=>r.id===state.mapView);
+  $('map-breadcrumb').textContent=overview?'세계지도':`세계지도 › ${view.label}`;$('map-overview').disabled=overview;
+  $('map-detail-panel').hidden=overview;
+  const points=mapData.locations.filter(p=>p.region===state.mapView);
+  $('map-detail-title').textContent=view?`${view.label} · 세부 지점`:'세부 지점';$('map-detail-count').textContent=`${points.length}곳`;
+  document.querySelectorAll('[data-map-view]').forEach(el=>{el.classList.toggle('active',el.dataset.mapView===state.mapView);el.setAttribute('aria-pressed',String(el.dataset.mapView===state.mapView));});
+  document.querySelectorAll('[data-parent-region]').forEach(el=>{el.hidden=el.dataset.parentRegion!==state.mapView;});
+  document.querySelectorAll('.map-hit').forEach(el=>{const id=el.dataset.region;const visible=overview || mapData.locations.some(p=>p.id===id&&p.region===state.mapView);el.style.display=visible?'':'none';});
+  document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
+  updateMapCamera();
+}
+function renderRegion(){const r=regions[state.region];$('region-title').textContent=r[0];$('region-description').textContent=r[1];document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();}
+document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
+document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
+$('map-overview').onclick=()=>{state.mapView='world';state.region='world';renderRegion();dirty();};
+const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.observe($('map-container'));
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
 $('status-tab').onclick=()=>{switchTo('status');dirty();};
 $('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
