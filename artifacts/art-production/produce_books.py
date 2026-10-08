@@ -143,7 +143,7 @@ def progress():
               '- 생성형 이미지: 내장 imagegen. 책 표지색 변형·ID별 복제: 사용자 지시서에 따른 결정적 자동 처리.',
               '- 책의 여섯 원소 심볼은 선택 사항이며 이번 공통 템플릿에서는 마술서 공통 마법진을 사용한다.',
               '- 전리품 원본에 `rarity`가 없음. `monster_rank`나 `value_class`를 임의로 아이템 희귀도로 바꾸지 않는다.',
-              '- 실제 브라우저/VN 플레이·CDN 표시 검수는 미완료. 오프라인 합성 검수는 실제 플레이 성공으로 기록하지 않는다.', '',
+              '- 실제 VN 구성요소 샘플과 GitHub 원본 HTTP 참조를 최종 확인했다. 상세 범위·표시 제약은 [최종 검수](art-production/FINAL_QA.md) 참조. ChatGPT/Tampermonkey 20턴 플레이는 미검증.', '',
               '## 배치 기록', '']
     for path in sorted(ART.glob('*-batch-*.json')):
         batch = json.loads(path.read_text(encoding='utf-8'))

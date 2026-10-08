@@ -1,0 +1,98 @@
+{
+  "schema_version": 1,
+  "verified_slots": 671,
+  "group_counts": {
+    "equipment": 300,
+    "books": 70,
+    "materials": 40,
+    "locations": 261
+  },
+  "remote_main_commit": "c28f6a66eaf91b77755cdec0cbf97f95cb30c079",
+  "all_671_remote_git_blobs_match": true,
+  "all_image_commits_on_remote_main": true,
+  "all_png_files_decoded": true,
+  "all_410_icons_true_alpha_and_512_square": true,
+  "reuse_mappings_verified": 28,
+  "preexisting_art_changed_by_image_batches": false,
+  "representative_http_checks": [
+    {
+      "id": "ER-EQ-001",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/items/equipment/ER-EQ-001.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "BK-SWD-001",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/items/books/BK-SWD-001.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "MAT-001-1",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/items/materials/MAT-001-1.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-W1-OVERVIEW",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/regions/W1/overview.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-W1-HUB",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/regions/W1/hub.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-FAC-W1-01-EXTERIOR",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/facilities/FAC-W1-01/exterior.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-FAC-W1-01-INTERIOR",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/facilities/FAC-W1-01/interior.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-DUN-W1-01-ENTRANCE",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/dungeons/DUN-W1-01/entrance.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-DUN-W1-01-Z01",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/dungeons/DUN-W1-01/DUN-W1-01-Z01.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-FACTION-KN01",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/factions/KN01.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-SHARED-01",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/shared/01.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-SHARED-11",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/shared/11.png",
+      "status": 200,
+      "sha256_matches": true
+    },
+    {
+      "id": "IMG-SHARED-12",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/c28f6a66eaf91b77755cdec0cbf97f95cb30c079/assets/backgrounds/shared/12.png",
+      "status": 200,
+      "sha256_matches": true
+    }
+  ],
+  "ui_scope": "Actual VN component sample rendered locally; existing cover-fit crops the image vertically on wide stages. Full 261-scene automatic routing and ChatGPT/Tampermonkey play were not tested."
+}
