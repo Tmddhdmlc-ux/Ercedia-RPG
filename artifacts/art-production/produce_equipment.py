@@ -166,9 +166,12 @@ def variant(item,index):
             if key=='ring': center=(255,145)
             elif key=='necklace': center=(260,361)
             elif key=='talisman': center=(256,218)
-            elif key=='earrings': center=(256,240)
+            elif key=='earrings':
+                ornament(im,(233,326),width*.43,color)
+                ornament(im,(312,278),width*.43,color)
+                center=None
             else: center=(256,132)
-            ornament(im,center,width*.85,color)
+            if center is not None: ornament(im,center,width*.85,color)
     if tier==5 and family<36:
         # Second metal fitting adds a physical silhouette change at the pommel / staff tail.
         ornament(im,(93,419) if family<18 else (87,422),38,(197,159,82),-45)
@@ -184,7 +187,7 @@ def batch(start,count):
         target=ROOT/by_id[item['id']]['path']
         im,key=variant(item,index)
         target.parent.mkdir(parents=True,exist_ok=True)
-        if not target.exists(): im.save(target)
+        if not target.exists() or by_id[item['id']]['status']!='verified': im.save(target)
         checks=validate(target)
         row=by_id[item['id']]
         if row['status']!='verified':
