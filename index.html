@@ -1,0 +1,54 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111a21"><title>에르세디아 RPG · 써니 빌리지</title><link rel="stylesheet" href="web/style.css"><script type="module" src="web/app.js"></script></head>
+<body>
+<main class="shell">
+  <header class="masthead"><a class="brand" href="./" aria-label="에르세디아 RPG 시작 화면"><span class="sigil">✧</span><span><small>ERCEDIA</small><strong>에르세디아 RPG</strong></span></a><span class="build"><i></i> 비주얼 노벨 · UI 프리뷰</span></header>
+  <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>써니 빌리지에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
+  <div class="workspace">
+    <article class="game">
+      <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><span class="local-badge">로컬 시연</span><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
+      <section id="story" aria-label="대화 화면">
+        <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
+          <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
+          <div id="characters" class="characters"></div><div class="shade"></div>
+          <span class="location"><span>⌖</span> 써니 빌리지 <em>오후</em></span>
+          <span class="scene-tag">SERIN / 세린</span>
+          <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
+        </div>
+        <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
+      </section>
+      <section id="map-panel" aria-label="세계지도 화면" hidden>
+        <div id="map-container" class="map"><svg viewBox="0 0 600 440" aria-label="임시 세계지도">
+<rect width="600" height="440" fill="#39627b"/>
+<path class="region" data-region="wild" fill="#718e78" d="M106 90L168 29 268 43 332 75 411 65 470 123 427 174 335 169 274 184 203 164 146 179Z"/>
+<path class="region" data-region="west" fill="#bd9969" d="M90 158L148 177 205 163 274 182 286 265 245 321 178 349 101 309 48 248Z"/>
+<path class="region" data-region="east" fill="#8b9cc0" d="M337 173L430 179 476 131 529 192 544 267 480 326 393 303 326 266 284 210Z"/>
+<path class="region" data-region="south" fill="#ad7d80" d="M178 349L246 321 286 264 327 270 399 313 475 337 432 389 343 411 251 393 205 403Z"/>
+<path class="region" data-region="ruins" fill="#947eac" stroke-dasharray="6 5" d="M272 184L338 174 285 210 325 267 287 271 284 265Z"/>
+<g pointer-events="none" fill="#fff7dc" font-size="17" font-weight="bold" text-anchor="middle" stroke="#334344" stroke-width="3" paint-order="stroke">
+<text x="260" y="113">북부 마수림</text><text x="156" y="245">서부 왕국</text><text x="426" y="245">동부 왕국</text><text x="320" y="360">남부 왕국</text><text x="296" y="231" font-size="11">고대 유적</text></g>
+<g data-region="village" style="cursor:pointer"><circle cx="177" cy="288" r="17" fill="#f8d778" stroke="#fff5bb" stroke-width="3"/><text x="177" y="294" text-anchor="middle" font-size="20" fill="#263b41">⌂</text><text x="177" y="323" text-anchor="middle" font-size="12" fill="white" stroke="#263b41" stroke-width="3" paint-order="stroke">써니 빌리지</text></g>
+<text x="12" y="429" font-size="11" fill="#ecdfcb">※ 국가 배치 미확정 · UI 테스트</text></svg></div>
+        <div class="mapinfo"><div><span class="eyebrow">SELECTED REGION</span><h2 id="region-title"></h2><p id="region-description"></p></div><button id="return">대화로 복귀 ↗</button></div>
+      </section>
+      <div class="game-foot"><span>✧ 기존 시연 대사 4개</span><span>AI 대화 미연결</span></div>
+    </article>
+    <aside class="settings" aria-label="캐릭터 설정">
+      <div class="settings-head"><div><span class="eyebrow">CHARACTER STUDIO</span><h2>세린 <small>Serin</small></h2></div><span class="rank">베이직 나이트</span></div>
+      <fieldset><legend>복장 <span>OUTFIT</span></legend><div class="outfits"><button data-outfit="armor" aria-pressed="true" class="selected">갑옷</button><button data-outfit="casual" aria-pressed="false">평상복</button><button data-outfit="nightwear" aria-pressed="false">잠옷</button></div></fieldset>
+      <div class="expression-row"><label for="expression">표정</label><select id="expression"><option value="base">기본 · 등록됨</option value="smile">미소 · 미등록</option><option value="angry">분노 · 미등록</option><option value="surprised">놀람 · 미등록</option><option value="sad">슬픔 · 미등록</option><option value="embarrassed">부끄러움 · 미등록</option><option value="afraid">두려움 · 미등록</option><option value="annoyed">불쾌함 · 미등록</option><option value="love">애정 · 미등록</option></select></div>
+      <p id="expression-status" class="notice" role="status"></p>
+      <div class="section-heading">화면 배치 <span>POSITION</span></div>
+      <div class="slider-field"><label for="scale">확대 <output id="scale-value" for="scale">260%</output></label><input id="scale" type="range" min="50" max="400" step="1" value="260"><div class="range-ticks"><span>50%</span><span>400%</span></div></div>
+      <div class="slider-field"><label for="x">좌우 <output id="x-value" for="x">50%</output></label><input id="x" type="range" min="0" max="100" step="1" value="50"><div class="range-ticks"><span>왼쪽</span><span>오른쪽</span></div></div>
+      <div class="slider-field"><label for="y">상하 <output id="y-value" for="y">-120px</output></label><input id="y" type="range" min="-350" max="200" step="1" value="-120"><div class="range-ticks"><span>위</span><span>아래</span></div></div>
+      <div class="layer-toggles"><label><input id="show-background" type="checkbox" checked> 배경 표시</label><label><input id="show-character" type="checkbox" checked> 세린 표시</label></div>
+      <div class="save-actions"><button id="save" class="primary">설정 저장</button><button id="reset" title="현재 복장의 배치를 기본값으로 되돌리기">배치 초기화</button></div>
+      <p id="save-status" class="save-status" role="status">설정은 이 브라우저에 저장됩니다.</p>
+    </aside>
+  </div>
+  <details class="asset-details"><summary>이미지 로딩 상태와 원본</summary><ul id="asset-status"></ul><p>등록된 원본만 표시합니다. 미등록 표정은 기본형을 유지합니다.</p></details>
+  <footer class="footer"><span>ERCEDIA RPG <i> / </i> VISUAL NOVEL PROTOTYPE</span><span>지도 배치는 임시이며 정식 세계관이 아닙니다.</span></footer>
+</main>
+</body></html>
