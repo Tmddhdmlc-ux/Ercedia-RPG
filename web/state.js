@@ -8,7 +8,7 @@ export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapViews.map(r=>r.id),...mapData.locations.map(p=>p.id)];
 export const defaultLayout = () => ({scale:260,x:50,y:-120});
-export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer(),inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
+export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer(),chosenName:'',inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
 const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;
 export function normalize(raw) {
   const s=defaults();
@@ -18,6 +18,8 @@ export function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  s.chosenName=typeof raw.chosenName==='string'?raw.chosenName.trim().slice(0,40):'';
+  if(s.chosenName)s.player.name=s.chosenName;
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
   s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);

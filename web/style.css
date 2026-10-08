@@ -63,4 +63,8 @@
 .game.is-expanded #story,.game.is-expanded #map-panel{display:flex;flex:1;min-height:0;flex-direction:column}
 .game.is-expanded .stage,.game.is-expanded .map{flex:1;height:auto;min-height:0}
 .game.is-expanded .dialog{max-width:1000px;margin-inline:auto}
+.dialog p{font-size:18px;line-height:1.8;max-height:190px;overflow-y:auto;white-space:pre-wrap;overflow-wrap:anywhere}.dialog b{font-size:20px}.dialog-heading>span{font-size:12px}
+.chat-runtime textarea{font-family:inherit;font-size:16px;line-height:1.7}.scene-choices button,.free-action-row button{font-size:15px}.chat-runtime label{font-size:13px}.input-hint{margin-top:5px;font-size:11px;color:var(--muted)}
+.name-setup{padding:18px;margin-bottom:16px;border:1px solid #d6b77c66;border-radius:8px;background:#192b37}.name-setup h2{margin:0 0 6px;font-size:20px;font-weight:500;color:var(--gold)}.name-setup>p{font-size:13px;color:var(--muted);margin-bottom:12px}.name-setup input{flex:1;min-width:0;width:100%;border:1px solid #ffffff35;border-radius:5px;background:#0b1721;color:#e9eded;padding:10px;font-size:16px}.name-setup #name-error{color:#f3a99d;margin:8px 0 0}.name-setup .free-action-row{flex-wrap:wrap}
+@media(max-width:480px){.dialog p{font-size:17px}.dialog b{font-size:18px}.scene-choices{grid-template-columns:1fr}}
 @media(max-width:600px){.tabs{gap:12px}.tabs .local-badge{display:none}.tabs #fullscreen{margin-left:auto}.game.is-expanded .mapinfo{flex-direction:row;align-items:center;padding:10px 14px}.game.is-expanded .mapinfo .eyebrow{display:none}}
