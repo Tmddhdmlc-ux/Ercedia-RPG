@@ -9,10 +9,11 @@
 3. **KINGDOMS.md / LORDSHIPS.md**: 삼국의 이름·왕·전쟁·영주 13명·외형·경제·병력·충성·사건. 실제 영지의 세부 정보는 요약을 추측하지 말고 이 문서의 해당 항목을 읽는다.
 4. **GODS.md / DEMON_KINGS.md**: 신 11명의 이름·성격·외형·교단과 마왕 7명의 힘·점조직/은폐. `DEMON_KINGS.md` 내 마왕 **개별 이름·외형·세부 권능은 아직 사용자 최종 승인 전 디자인 시안**, 기본 7죄악과 봉인·현현 메커니즘은 확정.
 5. **LORE_SECRET.md / GODS_SECRET.md**: **AI 게임 마스터 전용 내부 설정**. 플레이어에게 설정 토론으로 명시적으로 요구받을 때만 메타 수준에서 설명한다. **일반 NPC·도감·상호작용·메뉴·선택지·지도 설명으로 절대 자동 누설하지 않는다.**
-6. **UI_RULES.md / PORTRAIT_RULES.md / STANDING_ART_RULES.md / CHARACTER_PIPELINE.md**: UI/캐릭터 이미지를 표시·수정할 때만 상세 열람.
-7. **tampermonkey/README.md / integration/version.json / integration/game-bridge.js / integration/update-manifest.json**: Tampermonkey 연동·업데이트/브리지 기술 작업 시에만 현재 버전을 읽어 확인.
-8. **assets/maps/world/map_locations.json / LORDSHIP_MAP_UPDATE.md**: 지도 좌표/ID/메인 표시용 마커를 조회할 때.
-9. **각 캐릭터 시트와 게임 저장 데이터**(해당 플레이가 이미 존재하는 경우). 새로운 대화에는 이전 세션의 세부 저장 데이터가 자동 들어오지 않는다. 사용자가 이어하기를 원하면 제공한 저장/사건 로그를 우선한다.
+6. **FACTIONS.md / FACTIONS_SECRET.md**: 삼국 기사단 6개, 마법탑 5개, 교단 성자·성녀 11명, 길드·상단·저항·중재 세력. 일반 플레이에서 비밀 토벌/마왕 영향망의 정체를 누설하지 않는다.
+7. **UI_RULES.md / PORTRAIT_RULES.md / STANDING_ART_RULES.md / CHARACTER_PIPELINE.md**: UI/캐릭터 이미지를 표시·수정할 때만 상세 열람.
+8. **tampermonkey/README.md / integration/version.json / integration/game-bridge.js / integration/update-manifest.json**: Tampermonkey 연동·업데이트/브리지 기술 작업 시에만 현재 버전을 읽어 확인.
+9. **assets/maps/world/map_locations.json / LORDSHIP_MAP_UPDATE.md**: 지도 좌표/ID/메인 표시용 마커를 조회할 때.
+10. **각 캐릭터 시트와 게임 저장 데이터**(해당 플레이가 이미 존재하는 경우). 새로운 대화에는 이전 세션의 세부 저장 데이터가 자동 들어오지 않는다. 사용자가 이어하기를 원하면 제공한 저장/사건 로그를 우선한다.
 
 ## B. 플레이 목표와 사용자의 선호
 - 장르: 중세 판타지 기반 **자유 서술형 AI RPG + 비주얼 노벨 게임 화면**. 플레이어는 기사/마법사/영주/평민 등 다양한 정체성으로 시작할 수 있다. 플레이어 주인공의 이름·배경·전력은 사용자 확정 전까지 임의 확정하지 않는다.
@@ -65,8 +66,14 @@
 
 ## H. 충돌 해결 우선순위
 1. 현 대화에서 사용자가 명시적으로 결정한 최신 사항.
-2. 전문 문서 `LORE_SECRET.md`, `GODS_SECRET.md`, `KINGDOMS.md`, `LORDSHIPS.md`, `GODS.md`, `DEMON_KINGS.md`, 그리고 UI/지도용 최신 소스.
+2. 전문 문서 `FACTIONS.md`, `FACTIONS_SECRET.md`, `LORE_SECRET.md`, `GODS_SECRET.md`, `KINGDOMS.md`, `LORDSHIPS.md`, `GODS.md`, `DEMON_KINGS.md`, 그리고 UI/지도용 최신 소스.
 3. 요약 문서 `WORLD.md` 및 본 BOOTSTRAP.
 4. 초기 프로토타입·초안·예시 (확정으로 오해하지 말 것).
 
 **확인 사항:** ChatGPT가 새 채팅에서 저장소 파일을 읽어야 완전한 세계관 복원이 가능하다. BOOTSTRAP을 만들었다고 새 채팅의 모델 지식이 자동 동기화되는 것은 아니다.
+
+## I. 신규 조직 캐논 갱신 (2026-10-08)
+- `FACTIONS.md`는 기사단 6, 연구 마법탑 5, 현직 성자·성녀 11명과 11교단 중심 성지, 모험가 길드·용병·해상호위, 상단·비공식 거래망, 각국 저항조직, 시민구호·중재·첩보 세력을 상세 기록한다. **인물 이름/외형/정치관계/역할은 이 문서가 우선**한다.
+- `FACTIONS_SECRET.md`는 장막평의회와 칠죄 영향권에 관한 GM 지식이다. 마왕은 공개 본부가 없고, 일반인은 대체로 존재를 모른다.
+- 성자/성녀는 귀족 지정이 아니라 그 세대의 권능 적합성이 가장 높은 인간이다. 왕실 직속 기사단 병력은 영주령 상비군과 분리, 영주 특수기사단은 기존 기사 수에 포함.
+- 거점은 영주령·왕도 **권역에 연결**했지만 **개별 건물 좌표는 아직 등록되지 않았다**. 사용자에게 정확한 지도 마커를 발명해서 보여주지 말 것.
