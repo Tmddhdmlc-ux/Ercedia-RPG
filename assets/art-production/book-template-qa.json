@@ -1,0 +1,218 @@
+{
+  "date": "2026-10-09",
+  "method": "Assistant inspected rendered 10-template contact sheet",
+  "contact_sheet": "assets/art-production/book-template-preview.png",
+  "verified_template_sha256": [
+    "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+    "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+    "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+    "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+    "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3",
+    "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+    "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+    "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+    "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5",
+    "6a5c5dae8fbd74fd715f6a778fe8a13bdcb825d2b7ca686f9fe71b1ac2f5a6ff"
+  ],
+  "checks": [
+    "2D style",
+    "sword versus magic-circle emblem readable",
+    "brown/green/blue/purple/gold covers",
+    "silver fittings and ivory page edges preserved",
+    "no text",
+    "no rarity frame",
+    "centered with safe alpha margins"
+  ],
+  "templates": [
+    {
+      "path": "assets/items/templates/books/spellbook-tier-1.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        115,
+        50,
+        463,
+        459
+      ],
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
+    },
+    {
+      "path": "assets/items/templates/books/spellbook-tier-2.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        115,
+        50,
+        463,
+        459
+      ],
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
+    },
+    {
+      "path": "assets/items/templates/books/spellbook-tier-3.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        115,
+        50,
+        463,
+        459
+      ],
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+    },
+    {
+      "path": "assets/items/templates/books/spellbook-tier-4.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        115,
+        50,
+        463,
+        459
+      ],
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+    },
+    {
+      "path": "assets/items/templates/books/spellbook-tier-5.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        115,
+        50,
+        463,
+        459
+      ],
+      "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
+    },
+    {
+      "path": "assets/items/templates/books/sword_manual-tier-1.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        101,
+        38,
+        465,
+        451
+      ],
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118"
+    },
+    {
+      "path": "assets/items/templates/books/sword_manual-tier-2.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        101,
+        38,
+        465,
+        451
+      ],
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8"
+    },
+    {
+      "path": "assets/items/templates/books/sword_manual-tier-3.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        101,
+        38,
+        465,
+        451
+      ],
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029"
+    },
+    {
+      "path": "assets/items/templates/books/sword_manual-tier-4.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        101,
+        38,
+        465,
+        451
+      ],
+      "sha256": "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5"
+    },
+    {
+      "path": "assets/items/templates/books/sword_manual-tier-5.png",
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        101,
+        38,
+        465,
+        451
+      ],
+      "sha256": "6a5c5dae8fbd74fd715f6a778fe8a13bdcb825d2b7ca686f9fe71b1ac2f5a6ff"
+    }
+  ]
+}
