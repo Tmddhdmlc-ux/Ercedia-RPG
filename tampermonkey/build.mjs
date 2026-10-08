@@ -2,6 +2,7 @@ import {readFile,writeFile} from 'node:fs/promises';
 import path from 'node:path';
 import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
+import './map-factions-build.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 // Small build-only linker for this repo's named-import ES modules. No eval or remote runtime imports.
 const modules=new Map(),output=[];

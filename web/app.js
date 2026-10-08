@@ -5,6 +5,7 @@ import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
 import {mapData} from './map-data.js';
 import {mapSelectionInfo} from './map-info.js';
+import {mountFactionMap,factionInfo} from './faction-map.js';
 import {mountPlayer} from './player-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
@@ -40,6 +41,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
+const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
 $('save-status').textContent=restored.message;
 const images=new Map();
 const faces=new Map();
@@ -123,8 +125,9 @@ function renderDialogue(){
   }
 }
 function advance(delta){const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
-function switchTo(page){inventoryUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
+function switchTo(page){inventoryUI.hide();factionUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
 function updateMapCamera(){
+  factionUI.hide();
   const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
   const camera=cameraTransform(regionFrame(state.mapView),width,height);
   $('map-sheet').style.transform=`translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`;
@@ -139,20 +142,21 @@ function renderMapView(){
   document.querySelectorAll('[data-parent-region]').forEach(el=>{el.hidden=el.dataset.parentRegion!==state.mapView;});
   document.querySelectorAll('.map-hit').forEach(el=>{const id=el.dataset.region;const visible=overview || mapData.locations.some(p=>p.id===id&&p.region===state.mapView);el.style.display=visible?'':'none';});
   document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
+  factionUI.render();
   updateMapCamera();
 }
 function renderRegion(){
-  const r=regions[state.region],info=mapSelectionInfo(state.region);
-  $('region-title').textContent=r[0];$('region-description').textContent=r[1];
+  const r=regions[state.region],info=factionInfo(state.mapFaction)||mapSelectionInfo(state.region);
+  $('region-title').textContent=info?.title||r[0];$('region-description').textContent=info?.description||r[1];
   const fields=$('region-fields');fields.replaceChildren();
   for(const [name,value] of info?.fields||[]){const term=document.createElement('dt'),detail=document.createElement('dd');term.textContent=name;detail.textContent=value;fields.append(term,detail);}
   fields.hidden=!info?.fields.length;
   $('region-note').textContent=info?.note||'';$('region-note').hidden=!info?.note;
   document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();
 }
-document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
-document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
-$('map-overview').onclick=()=>{state.mapView='world';state.region='world';renderRegion();dirty();};
+document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.mapFaction=null;state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
+document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapFaction=null;state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
+$('map-overview').onclick=()=>{state.mapFaction=null;state.mapView='world';state.region='world';renderRegion();dirty();};
 const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.observe($('map-container'));
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
 $('inventory-tab').onclick=()=>{switchTo('inventory');dirty();};

@@ -3,12 +3,13 @@ import {normalizeInventory} from './inventory.js';
 import {mapData} from './map-data.js';
 import {newPlayer,normalizePlayer} from './player.js';
 import {mapViews} from './map-camera.js';
+import {factionLocations} from './faction-data.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapViews.map(r=>r.id),...mapData.locations.map(p=>p.id)];
 export const defaultLayout = () => ({scale:260,x:50,y:-120});
-export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer(),chosenName:'',inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
+export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',mapFaction:null,page:'story',player:newPlayer(),chosenName:'',inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
 const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;
 export function normalize(raw) {
   const s=defaults();
@@ -29,6 +30,8 @@ export function normalize(raw) {
     for(const k of ['quests','relationships','events','recent_dialogue'])if(Array.isArray(raw.gameState[k]))s.gameState[k]=raw.gameState[k].filter(v=>typeof v==='string').slice(-30).map(v=>v.slice(0,500));
   }
   if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
+  const faction=factionLocations.find(p=>p.id===raw.mapFaction);
+  if(faction&&faction.region===s.mapView&&faction.anchor_id===s.region)s.mapFaction=faction.id;
   return s;
 }
 export function load(storage) {
