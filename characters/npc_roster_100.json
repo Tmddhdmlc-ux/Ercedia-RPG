@@ -1,6 +1,6 @@
 {
   "schema_version": 1,
-  "roster_version": "1.0",
+  "roster_version": "2.0-growth-rebalance",
   "character_count": 100,
   "existing_characters_excluded": true,
   "monster_rank_order": [
@@ -10,7 +10,7 @@
     "엘리트",
     "미스틱"
   ],
-  "rules": "Monster ranks are independent of knight and mage ranks. Stats are initial balancing figures, not final combat formula. One entry per species exemplar, not every individual wild creature.",
+  "rules": "Rebalanced using COMBAT_GROWTH.md. The level HP ledger cannot be recovered; approximate reconstruction is flagged per NPC. No historical XP/level claims.",
   "characters": [
     {
       "id": "ER-NPC-001",
@@ -23,20 +23,44 @@
       "rank_system": "knight",
       "appearance": "남32 검은 단발 진청 눈 은백 판금갑",
       "stats": {
-        "strength": 23,
-        "agility": 20,
-        "intelligence": 20,
-        "constitution": 25,
-        "mana": 15,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 41,
+        "agility": 38,
+        "intelligence": 17,
+        "constitution": 33,
+        "mana": 18,
+        "hp": 668,
+        "max_hp": 668,
+        "mp": 148,
+        "max_mp": 148
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 30,
+      "xp": 0,
+      "xp_to_next": 16431,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 115,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 46,
+        "base_attack_min": 44,
+        "base_attack_max": 54,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-002",
@@ -49,20 +73,44 @@
       "rank_system": "knight",
       "appearance": "여23 적갈 땋은머리 호박 눈 청색 휘장",
       "stats": {
-        "strength": 21,
-        "agility": 23,
-        "intelligence": 18,
-        "constitution": 21,
-        "mana": 13,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 31,
+        "agility": 31,
+        "intelligence": 13,
+        "constitution": 27,
+        "mana": 19,
+        "hp": 539,
+        "max_hp": 539,
+        "mp": 154,
+        "max_mp": 154
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 22,
+      "xp": 0,
+      "xp_to_next": 10318,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 76,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 37,
+        "base_attack_min": 36,
+        "base_attack_max": 46,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-003",
@@ -75,20 +123,44 @@
       "rank_system": "knight",
       "appearance": "남38 회갈 단발 왼눈 흉터 적색 견장",
       "stats": {
-        "strength": 29,
-        "agility": 25,
-        "intelligence": 22,
-        "constitution": 27,
-        "mana": 17,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 142,
-        "max_mp": 142
+        "strength": 59,
+        "agility": 53,
+        "intelligence": 21,
+        "constitution": 43,
+        "mana": 26,
+        "hp": 928,
+        "max_hp": 928,
+        "mp": 196,
+        "max_mp": 196
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 44,
+      "xp": 0,
+      "xp_to_next": 29186,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 221,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 64,
+        "base_attack_min": 58,
+        "base_attack_max": 68,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-004",
@@ -101,20 +173,44 @@
       "rank_system": "knight",
       "appearance": "여26 금갈 단발 녹색 눈 경량 판금",
       "stats": {
-        "strength": 20,
-        "agility": 19,
-        "intelligence": 20,
+        "strength": 22,
+        "agility": 21,
+        "intelligence": 12,
         "constitution": 23,
-        "mana": 15,
-        "hp": 330,
-        "max_hp": 330,
-        "mp": 130,
-        "max_mp": 130
+        "mana": 16,
+        "hp": 440,
+        "max_hp": 440,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 15,
+      "xp": 0,
+      "xp_to_next": 5809,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 44,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-005",
@@ -127,20 +223,44 @@
       "rank_system": "knight",
       "appearance": "남35 흑청 머리 회색 눈 청동 방패",
       "stats": {
-        "strength": 28,
-        "agility": 21,
-        "intelligence": 24,
-        "constitution": 29,
-        "mana": 19,
-        "hp": 390,
-        "max_hp": 390,
-        "mp": 154,
-        "max_mp": 154
+        "strength": 47,
+        "agility": 46,
+        "intelligence": 18,
+        "constitution": 36,
+        "mana": 22,
+        "hp": 741,
+        "max_hp": 741,
+        "mp": 172,
+        "max_mp": 172
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 32,
+      "xp": 0,
+      "xp_to_next": 18101,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 140,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 55,
+        "base_attack_min": 49,
+        "base_attack_max": 59,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-006",
@@ -153,20 +273,44 @@
       "rank_system": "knight",
       "appearance": "여25 은갈 단발 청회 눈 룬 철갑",
       "stats": {
-        "strength": 19,
-        "agility": 24,
-        "intelligence": 22,
-        "constitution": 25,
+        "strength": 35,
+        "agility": 36,
+        "intelligence": 15,
+        "constitution": 34,
         "mana": 17,
-        "hp": 350,
-        "max_hp": 350,
+        "hp": 649,
+        "max_hp": 649,
         "mp": 142,
         "max_mp": 142
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 29,
+      "xp": 0,
+      "xp_to_next": 15616,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 104,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 43,
+        "base_attack_min": 39,
+        "base_attack_max": 49,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-007",
@@ -179,20 +323,44 @@
       "rank_system": "knight",
       "appearance": "여39 검은 단발 올리브 피부 탐지 고글",
       "stats": {
-        "strength": 27,
-        "agility": 26,
-        "intelligence": 26,
-        "constitution": 31,
-        "mana": 21,
-        "hp": 410,
-        "max_hp": 410,
-        "mp": 166,
-        "max_mp": 166
+        "strength": 59,
+        "agility": 53,
+        "intelligence": 21,
+        "constitution": 47,
+        "mana": 23,
+        "hp": 974,
+        "max_hp": 974,
+        "mp": 178,
+        "max_mp": 178
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 46,
+      "xp": 0,
+      "xp_to_next": 31198,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 227,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 64,
+        "base_attack_min": 58,
+        "base_attack_max": 68,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-008",
@@ -205,20 +373,44 @@
       "rank_system": "knight",
       "appearance": "남21 잿빛 삭발 보라 눈 회흑 경갑",
       "stats": {
-        "strength": 18,
-        "agility": 20,
-        "intelligence": 24,
-        "constitution": 27,
-        "mana": 12,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 28,
+        "agility": 26,
+        "intelligence": 13,
+        "constitution": 23,
+        "mana": 13,
+        "hp": 483,
+        "max_hp": 483,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 22,
+      "xp": 0,
+      "xp_to_next": 10318,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 69,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 31,
+        "base_attack_min": 33,
+        "base_attack_max": 43,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-009",
@@ -231,20 +423,44 @@
       "rank_system": "knight",
       "appearance": "남44 청흑 곱슬 갈색 눈 흰청 갑옷",
       "stats": {
-        "strength": 26,
-        "agility": 22,
-        "intelligence": 28,
-        "constitution": 25,
-        "mana": 16,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 136,
-        "max_mp": 136
+        "strength": 47,
+        "agility": 47,
+        "intelligence": 18,
+        "constitution": 40,
+        "mana": 25,
+        "hp": 787,
+        "max_hp": 787,
+        "mp": 190,
+        "max_mp": 190
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 34,
+      "xp": 0,
+      "xp_to_next": 19825,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 146,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 56,
+        "base_attack_min": 49,
+        "base_attack_max": 59,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-010",
@@ -257,20 +473,44 @@
       "rank_system": "knight",
       "appearance": "여27 적갈 머리 녹청 눈 청백 제복",
       "stats": {
-        "strength": 24,
-        "agility": 16,
-        "intelligence": 26,
-        "constitution": 21,
-        "mana": 14,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 26,
+        "agility": 23,
+        "intelligence": 12,
+        "constitution": 19,
+        "mana": 17,
+        "hp": 417,
+        "max_hp": 417,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 15,
+      "xp": 0,
+      "xp_to_next": 5809,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 49,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 28,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-011",
@@ -283,20 +523,44 @@
       "rank_system": "knight",
       "appearance": "남36 적갈 단발 검은 눈 해군 가죽갑",
       "stats": {
-        "strength": 25,
-        "agility": 27,
-        "intelligence": 30,
-        "constitution": 27,
-        "mana": 18,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 148,
-        "max_mp": 148
+        "strength": 59,
+        "agility": 54,
+        "intelligence": 22,
+        "constitution": 50,
+        "mana": 26,
+        "hp": 1010,
+        "max_hp": 1010,
+        "mp": 196,
+        "max_mp": 196
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 48,
+      "xp": 0,
+      "xp_to_next": 33255,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 233,
+      "realm_awarded_bonuses": {
+        "strength": 6,
+        "agility": 5,
+        "intelligence": 2,
+        "constitution": 4,
+        "mana": 3
+      },
+      "realm_damage_multiplier": 1.25,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 65,
+        "base_attack_min": 59,
+        "base_attack_max": 69,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-012",
@@ -309,20 +573,44 @@
       "rank_system": "knight",
       "appearance": "여22 백금 포니테일 푸른 눈 해군 제복",
       "stats": {
-        "strength": 23,
-        "agility": 21,
-        "intelligence": 17,
-        "constitution": 23,
-        "mana": 16,
-        "hp": 330,
-        "max_hp": 330,
-        "mp": 136,
-        "max_mp": 136
+        "strength": 39,
+        "agility": 38,
+        "intelligence": 15,
+        "constitution": 30,
+        "mana": 18,
+        "hp": 632,
+        "max_hp": 632,
+        "mp": 148,
+        "max_mp": 148
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 29,
+      "xp": 0,
+      "xp_to_next": 15616,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 115,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 45,
+        "base_attack_min": 42,
+        "base_attack_max": 52,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-013",
@@ -335,20 +623,44 @@
       "rank_system": "mage",
       "appearance": "남31 밤갈 머리 은테 안경 갈색 로브",
       "stats": {
-        "strength": 29,
-        "agility": 27,
-        "intelligence": 24,
-        "constitution": 34,
-        "mana": 53,
-        "hp": 440,
-        "max_hp": 440,
-        "mp": 358,
-        "max_mp": 358
+        "strength": 14,
+        "agility": 19,
+        "intelligence": 53,
+        "constitution": 22,
+        "mana": 48,
+        "hp": 460,
+        "max_hp": 460,
+        "mp": 328,
+        "max_mp": 328
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 36,
+      "xp": 0,
+      "xp_to_next": 21600,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 98,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-014",
@@ -361,20 +673,44 @@
       "rank_system": "mage",
       "appearance": "여19 검은 곱슬 녹색 눈 학생 로브",
       "stats": {
-        "strength": 22,
-        "agility": 17,
-        "intelligence": 19,
-        "constitution": 25,
-        "mana": 32,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 232,
-        "max_mp": 232
+        "strength": 15,
+        "agility": 14,
+        "intelligence": 31,
+        "constitution": 16,
+        "mana": 28,
+        "hp": 359,
+        "max_hp": 359,
+        "mp": 208,
+        "max_mp": 208
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 19,
+      "xp": 0,
+      "xp_to_next": 8281,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 54,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 17,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-015",
@@ -387,20 +723,44 @@
       "rank_system": "mage",
       "appearance": "남37 자주빛 머리 번개 문신 금속 장갑",
       "stats": {
-        "strength": 33,
-        "agility": 36,
-        "intelligence": 29,
-        "constitution": 41,
-        "mana": 59,
-        "hp": 510,
-        "max_hp": 510,
-        "mp": 394,
-        "max_mp": 394
+        "strength": 14,
+        "agility": 17,
+        "intelligence": 69,
+        "constitution": 19,
+        "mana": 61,
+        "hp": 482,
+        "max_hp": 482,
+        "mp": 406,
+        "max_mp": 406
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 57,
+      "xp": 0,
+      "xp_to_next": 43034,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 150,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 19,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-016",
@@ -413,20 +773,44 @@
       "rank_system": "mage",
       "appearance": "여24 은청 숏컷 청록 눈 청동 소매",
       "stats": {
-        "strength": 26,
-        "agility": 26,
-        "intelligence": 24,
-        "constitution": 32,
-        "mana": 38,
-        "hp": 420,
-        "max_hp": 420,
-        "mp": 268,
-        "max_mp": 268
+        "strength": 15,
+        "agility": 18,
+        "intelligence": 43,
+        "constitution": 19,
+        "mana": 44,
+        "hp": 416,
+        "max_hp": 416,
+        "mp": 304,
+        "max_mp": 304
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 28,
+      "xp": 0,
+      "xp_to_next": 14816,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 81,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-017",
@@ -439,20 +823,44 @@
       "rank_system": "mage",
       "appearance": "여40 남청 머리 청색 눈 흰청 로브",
       "stats": {
-        "strength": 39,
-        "agility": 32,
-        "intelligence": 31,
-        "constitution": 35,
-        "mana": 61,
-        "hp": 450,
-        "max_hp": 450,
-        "mp": 406,
-        "max_mp": 406
+        "strength": 20,
+        "agility": 19,
+        "intelligence": 66,
+        "constitution": 20,
+        "mana": 64,
+        "hp": 522,
+        "max_hp": 522,
+        "mp": 424,
+        "max_mp": 424
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 55,
+      "xp": 0,
+      "xp_to_next": 40789,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 162,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-018",
@@ -465,20 +873,44 @@
       "rank_system": "mage",
       "appearance": "남28 모래 금발 초록 눈 바람 망토",
       "stats": {
-        "strength": 25,
-        "agility": 22,
-        "intelligence": 26,
-        "constitution": 26,
+        "strength": 13,
+        "agility": 14,
+        "intelligence": 41,
+        "constitution": 19,
         "mana": 40,
-        "hp": 360,
-        "max_hp": 360,
+        "hp": 404,
+        "max_hp": 404,
         "mp": 280,
         "max_mp": 280
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 26,
+      "xp": 0,
+      "xp_to_next": 13257,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 75,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-019",
@@ -491,20 +923,44 @@
       "rank_system": "mage",
       "appearance": "남33 백회 머리 이색 눈 회색 로브",
       "stats": {
-        "strength": 38,
-        "agility": 28,
-        "intelligence": 33,
-        "constitution": 37,
-        "mana": 63,
-        "hp": 470,
-        "max_hp": 470,
-        "mp": 418,
-        "max_mp": 418
+        "strength": 19,
+        "agility": 22,
+        "intelligence": 65,
+        "constitution": 21,
+        "mana": 61,
+        "hp": 523,
+        "max_hp": 523,
+        "mp": 406,
+        "max_mp": 406
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 53,
+      "xp": 0,
+      "xp_to_next": 38584,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 156,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-020",
@@ -517,20 +973,44 @@
       "rank_system": "mage",
       "appearance": "여23 보라 흑발 회색 눈 검은 베일",
       "stats": {
-        "strength": 24,
-        "agility": 27,
-        "intelligence": 28,
-        "constitution": 28,
-        "mana": 42,
-        "hp": 380,
-        "max_hp": 380,
-        "mp": 292,
-        "max_mp": 292
+        "strength": 14,
+        "agility": 19,
+        "intelligence": 53,
+        "constitution": 22,
+        "mana": 48,
+        "hp": 460,
+        "max_hp": 460,
+        "mp": 328,
+        "max_mp": 328
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 36,
+      "xp": 0,
+      "xp_to_next": 21600,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 98,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-021",
@@ -543,20 +1023,44 @@
       "rank_system": "mage",
       "appearance": "남46 회색 수염 검은 눈 두꺼운 회청 로브",
       "stats": {
-        "strength": 37,
-        "agility": 33,
-        "intelligence": 35,
-        "constitution": 39,
-        "mana": 65,
-        "hp": 490,
-        "max_hp": 490,
-        "mp": 430,
-        "max_mp": 430
+        "strength": 18,
+        "agility": 18,
+        "intelligence": 64,
+        "constitution": 22,
+        "mana": 58,
+        "hp": 524,
+        "max_hp": 524,
+        "mp": 388,
+        "max_mp": 388
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 51,
+      "xp": 0,
+      "xp_to_next": 36421,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 150,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 25,
+        "base_attack_max": 35,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-022",
@@ -569,20 +1073,44 @@
       "rank_system": "mage",
       "appearance": "여29 구리 갈발 녹색 눈 황동 렌즈",
       "stats": {
-        "strength": 23,
-        "agility": 23,
-        "intelligence": 30,
-        "constitution": 30,
-        "mana": 37,
-        "hp": 400,
-        "max_hp": 400,
-        "mp": 262,
-        "max_mp": 262
+        "strength": 12,
+        "agility": 14,
+        "intelligence": 51,
+        "constitution": 16,
+        "mana": 46,
+        "hp": 379,
+        "max_hp": 379,
+        "mp": 316,
+        "max_mp": 316
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 34,
+      "xp": 0,
+      "xp_to_next": 19825,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 83,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-023",
@@ -595,20 +1123,44 @@
       "rank_system": "social",
       "appearance": "여42 잿빛 땋은머리 갈색 눈 남청 기록복",
       "stats": {
-        "strength": 16,
-        "agility": 13,
-        "intelligence": 14,
-        "constitution": 21,
-        "mana": 10,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 100,
-        "max_mp": 100
+        "strength": 29,
+        "agility": 35,
+        "intelligence": 41,
+        "constitution": 32,
+        "mana": 32,
+        "hp": 637,
+        "max_hp": 637,
+        "mp": 232,
+        "max_mp": 232
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 38,
+      "xp": 0,
+      "xp_to_next": 23424,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 130,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 40,
+        "base_attack_min": 35,
+        "base_attack_max": 45,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-024",
@@ -621,20 +1173,44 @@
       "rank_system": "social",
       "appearance": "남30 검은 단발 은청 눈 흰 여행복",
       "stats": {
-        "strength": 19,
-        "agility": 20,
-        "intelligence": 15,
-        "constitution": 22,
-        "mana": 11,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 106,
-        "max_mp": 106
+        "strength": 16,
+        "agility": 14,
+        "intelligence": 11,
+        "constitution": 11,
+        "mana": 15,
+        "hp": 270,
+        "max_hp": 270,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 5,
+      "xp": 0,
+      "xp_to_next": 1118,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 12,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 17,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-025",
@@ -648,19 +1224,43 @@
       "appearance": "여35 밤갈 포니테일 녹색 눈 초록 성의",
       "stats": {
         "strength": 15,
-        "agility": 18,
-        "intelligence": 16,
-        "constitution": 15,
-        "mana": 12,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 112,
-        "max_mp": 112
+        "agility": 16,
+        "intelligence": 18,
+        "constitution": 19,
+        "mana": 17,
+        "hp": 368,
+        "max_hp": 368,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 12,
+      "xp": 0,
+      "xp_to_next": 4156,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 33,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 19,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-026",
@@ -673,20 +1273,44 @@
       "rank_system": "social",
       "appearance": "남53 삭발 은회 눈 검은 예복 은종",
       "stats": {
-        "strength": 18,
-        "agility": 16,
-        "intelligence": 17,
-        "constitution": 16,
-        "mana": 13,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 22,
+        "agility": 25,
+        "intelligence": 24,
+        "constitution": 20,
+        "mana": 19,
+        "hp": 424,
+        "max_hp": 424,
+        "mp": 154,
+        "max_mp": 154
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 19,
+      "xp": 0,
+      "xp_to_next": 8281,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 58,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 29,
+        "base_attack_min": 29,
+        "base_attack_max": 39,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-027",
@@ -699,20 +1323,44 @@
       "rank_system": "social",
       "appearance": "여24 붉은 단발 금갈 눈 화로 앞치마",
       "stats": {
-        "strength": 14,
-        "agility": 14,
-        "intelligence": 18,
-        "constitution": 17,
-        "mana": 14,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 21,
+        "agility": 27,
+        "intelligence": 30,
+        "constitution": 28,
+        "mana": 22,
+        "hp": 518,
+        "max_hp": 518,
+        "mp": 172,
+        "max_mp": 172
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 26,
+      "xp": 0,
+      "xp_to_next": 13257,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 75,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 31,
+        "base_attack_min": 29,
+        "base_attack_max": 39,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-028",
@@ -725,20 +1373,44 @@
       "rank_system": "social",
       "appearance": "남34 흑청 웨이브 청록 눈 진주 브로치",
       "stats": {
-        "strength": 17,
-        "agility": 12,
-        "intelligence": 19,
-        "constitution": 18,
-        "mana": 15,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 28,
+        "agility": 29,
+        "intelligence": 37,
+        "constitution": 28,
+        "mana": 24,
+        "hp": 576,
+        "max_hp": 576,
+        "mp": 184,
+        "max_mp": 184
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 33,
+      "xp": 0,
+      "xp_to_next": 18957,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 112,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 34,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-029",
@@ -751,20 +1423,44 @@
       "rank_system": "social",
       "appearance": "여21 은회 단발 녹색 눈 흰 망토",
       "stats": {
-        "strength": 13,
-        "agility": 19,
-        "intelligence": 20,
-        "constitution": 19,
-        "mana": 9,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 94,
-        "max_mp": 94
+        "strength": 27,
+        "agility": 31,
+        "intelligence": 43,
+        "constitution": 29,
+        "mana": 27,
+        "hp": 598,
+        "max_hp": 598,
+        "mp": 202,
+        "max_mp": 202
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 40,
+      "xp": 0,
+      "xp_to_next": 25298,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 127,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 36,
+        "base_attack_min": 33,
+        "base_attack_max": 43,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-030",
@@ -777,20 +1473,44 @@
       "rank_system": "social",
       "appearance": "남48 갈색 삭발 청회 눈 청동 안경",
       "stats": {
-        "strength": 16,
+        "strength": 14,
         "agility": 17,
-        "intelligence": 21,
-        "constitution": 20,
-        "mana": 10,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 100,
-        "max_mp": 100
+        "intelligence": 13,
+        "constitution": 15,
+        "mana": 17,
+        "hp": 310,
+        "max_hp": 310,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 7,
+      "xp": 0,
+      "xp_to_next": 1852,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 18,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 19,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-031",
@@ -803,20 +1523,44 @@
       "rank_system": "social",
       "appearance": "여38 백금 단발 금갈 눈 흰금 제의",
       "stats": {
-        "strength": 19,
-        "agility": 15,
-        "intelligence": 22,
-        "constitution": 21,
-        "mana": 11,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 106,
-        "max_mp": 106
+        "strength": 20,
+        "agility": 19,
+        "intelligence": 20,
+        "constitution": 16,
+        "mana": 19,
+        "hp": 359,
+        "max_hp": 359,
+        "mp": 154,
+        "max_mp": 154
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 14,
+      "xp": 0,
+      "xp_to_next": 5238,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 39,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-032",
@@ -829,20 +1573,44 @@
       "rank_system": "social",
       "appearance": "남36 자주 흑수염 은색 눈 검은 망토",
       "stats": {
-        "strength": 15,
-        "agility": 13,
-        "intelligence": 23,
-        "constitution": 22,
-        "mana": 12,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 20,
+        "agility": 21,
+        "intelligence": 25,
+        "constitution": 24,
+        "mana": 22,
+        "hp": 460,
+        "max_hp": 460,
+        "mp": 172,
+        "max_mp": 172
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 21,
+      "xp": 0,
+      "xp_to_next": 9623,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 60,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 37,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-033",
@@ -855,20 +1623,44 @@
       "rank_system": "social",
       "appearance": "여45 은빛 곱슬 보라 눈 자주 문장띠",
       "stats": {
-        "strength": 18,
-        "agility": 20,
-        "intelligence": 24,
-        "constitution": 15,
-        "mana": 13,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 26,
+        "agility": 30,
+        "intelligence": 32,
+        "constitution": 25,
+        "mana": 24,
+        "hp": 521,
+        "max_hp": 521,
+        "mp": 184,
+        "max_mp": 184
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 28,
+      "xp": 0,
+      "xp_to_next": 14816,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 93,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 35,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-034",
@@ -881,20 +1673,44 @@
       "rank_system": "social",
       "appearance": "남30 붉은 머리 청색 눈 여행 망토",
       "stats": {
-        "strength": 14,
-        "agility": 18,
-        "intelligence": 14,
-        "constitution": 16,
-        "mana": 14,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 26,
+        "agility": 33,
+        "intelligence": 38,
+        "constitution": 32,
+        "mana": 26,
+        "hp": 610,
+        "max_hp": 610,
+        "mp": 196,
+        "max_mp": 196
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 35,
+      "xp": 0,
+      "xp_to_next": 20706,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 112,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 38,
+        "base_attack_min": 33,
+        "base_attack_max": 43,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-035",
@@ -907,20 +1723,44 @@
       "rank_system": "social",
       "appearance": "여22 검은 단발 갈색 눈 두꺼운 부츠",
       "stats": {
-        "strength": 17,
-        "agility": 16,
-        "intelligence": 15,
-        "constitution": 17,
-        "mana": 15,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 32,
+        "agility": 35,
+        "intelligence": 44,
+        "constitution": 33,
+        "mana": 29,
+        "hp": 678,
+        "max_hp": 678,
+        "mp": 214,
+        "max_mp": 214
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 42,
+      "xp": 0,
+      "xp_to_next": 27219,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 152,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 41,
+        "base_attack_min": 37,
+        "base_attack_max": 47,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-036",
@@ -933,20 +1773,44 @@
       "rank_system": "social",
       "appearance": "여41 금발 녹색 눈 깃털 망토",
       "stats": {
-        "strength": 13,
-        "agility": 14,
-        "intelligence": 16,
-        "constitution": 18,
-        "mana": 9,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 94,
-        "max_mp": 94
+        "strength": 12,
+        "agility": 13,
+        "intelligence": 15,
+        "constitution": 12,
+        "mana": 12,
+        "hp": 276,
+        "max_hp": 276,
+        "mp": 112,
+        "max_mp": 112
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 9,
+      "xp": 0,
+      "xp_to_next": 2700,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 20,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-037",
@@ -959,20 +1823,44 @@
       "rank_system": "social",
       "appearance": "남27 곱슬 흑발 청록 눈 흰 조끼",
       "stats": {
-        "strength": 16,
-        "agility": 12,
-        "intelligence": 17,
-        "constitution": 19,
-        "mana": 10,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 100,
-        "max_mp": 100
+        "strength": 18,
+        "agility": 22,
+        "intelligence": 22,
+        "constitution": 20,
+        "mana": 21,
+        "hp": 399,
+        "max_hp": 399,
+        "mp": 166,
+        "max_mp": 166
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 16,
+      "xp": 0,
+      "xp_to_next": 6400,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 45,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-038",
@@ -985,20 +1873,44 @@
       "rank_system": "social",
       "appearance": "남34 큰 체격 회색 눈 쇠갑옷",
       "stats": {
-        "strength": 19,
-        "agility": 19,
-        "intelligence": 18,
-        "constitution": 20,
-        "mana": 11,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 106,
-        "max_mp": 106
+        "strength": 25,
+        "agility": 24,
+        "intelligence": 27,
+        "constitution": 21,
+        "mana": 24,
+        "hp": 461,
+        "max_hp": 461,
+        "mp": 184,
+        "max_mp": 184
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 23,
+      "xp": 0,
+      "xp_to_next": 11030,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 76,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 29,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-039",
@@ -1011,20 +1923,44 @@
       "rank_system": "mage",
       "appearance": "여29 밤색 땋은머리 갈색 눈 의료가방",
       "stats": {
-        "strength": 25,
-        "agility": 25,
-        "intelligence": 25,
-        "constitution": 31,
-        "mana": 40,
-        "hp": 410,
-        "max_hp": 410,
-        "mp": 280,
-        "max_mp": 280
+        "strength": 15,
+        "agility": 15,
+        "intelligence": 52,
+        "constitution": 21,
+        "mana": 50,
+        "hp": 457,
+        "max_hp": 457,
+        "mp": 340,
+        "max_mp": 340
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 35,
+      "xp": 0,
+      "xp_to_next": 20706,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 102,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 18,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-040",
@@ -1037,20 +1973,44 @@
       "rank_system": "social",
       "appearance": "남47 대머리 귀 흉터 청색 외투",
       "stats": {
-        "strength": 18,
-        "agility": 15,
-        "intelligence": 20,
-        "constitution": 22,
-        "mana": 13,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 30,
+        "agility": 36,
+        "intelligence": 40,
+        "constitution": 30,
+        "mana": 28,
+        "hp": 619,
+        "max_hp": 619,
+        "mp": 208,
+        "max_mp": 208
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 37,
+      "xp": 0,
+      "xp_to_next": 22506,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 129,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 42,
+        "base_attack_min": 36,
+        "base_attack_max": 46,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-041",
@@ -1063,20 +2023,44 @@
       "rank_system": "social",
       "appearance": "여26 검은 곱슬 금갈 눈 경갑",
       "stats": {
-        "strength": 14,
-        "agility": 13,
-        "intelligence": 21,
-        "constitution": 15,
-        "mana": 14,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 11,
+        "agility": 14,
+        "intelligence": 10,
+        "constitution": 16,
+        "mana": 11,
+        "hp": 301,
+        "max_hp": 301,
+        "mp": 106,
+        "max_mp": 106
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 4,
+      "xp": 0,
+      "xp_to_next": 800,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 8,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-042",
@@ -1090,19 +2074,43 @@
       "appearance": "남52 은빛 단발 파란 눈 금실 비단",
       "stats": {
         "strength": 17,
-        "agility": 20,
-        "intelligence": 22,
+        "agility": 16,
+        "intelligence": 17,
         "constitution": 16,
-        "mana": 15,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 130,
-        "max_mp": 130
+        "mana": 14,
+        "hp": 341,
+        "max_hp": 341,
+        "mp": 124,
+        "max_mp": 124
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 11,
+      "xp": 0,
+      "xp_to_next": 3648,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 30,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 19,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-043",
@@ -1115,20 +2123,44 @@
       "rank_system": "social",
       "appearance": "여33 붉은 땋은머리 갈색 눈 검은 정장",
       "stats": {
-        "strength": 13,
+        "strength": 17,
         "agility": 18,
         "intelligence": 23,
         "constitution": 17,
-        "mana": 9,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 94,
-        "max_mp": 94
+        "mana": 16,
+        "hp": 369,
+        "max_hp": 369,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 18,
+      "xp": 0,
+      "xp_to_next": 7636,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 48,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-044",
@@ -1141,20 +2173,44 @@
       "rank_system": "social",
       "appearance": "남40 검은 수염 녹색 눈 모직옷",
       "stats": {
-        "strength": 16,
-        "agility": 16,
-        "intelligence": 24,
-        "constitution": 18,
-        "mana": 10,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 100,
-        "max_mp": 100
+        "strength": 23,
+        "agility": 27,
+        "intelligence": 29,
+        "constitution": 25,
+        "mana": 26,
+        "hp": 497,
+        "max_hp": 497,
+        "mp": 196,
+        "max_mp": 196
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 25,
+      "xp": 0,
+      "xp_to_next": 12500,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 78,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 31,
+        "base_attack_min": 30,
+        "base_attack_max": 40,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-045",
@@ -1167,20 +2223,44 @@
       "rank_system": "social",
       "appearance": "남26 은갈 머리 회청 눈 녹색 목도리",
       "stats": {
-        "strength": 19,
-        "agility": 14,
-        "intelligence": 14,
-        "constitution": 19,
-        "mana": 11,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 106,
-        "max_mp": 106
+        "strength": 29,
+        "agility": 30,
+        "intelligence": 35,
+        "constitution": 26,
+        "mana": 28,
+        "hp": 559,
+        "max_hp": 559,
+        "mp": 208,
+        "max_mp": 208
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 32,
+      "xp": 0,
+      "xp_to_next": 18101,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 112,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 35,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-046",
@@ -1193,20 +2273,44 @@
       "rank_system": "social",
       "appearance": "여31 검은 땋은머리 갈색 눈 작업복",
       "stats": {
-        "strength": 15,
-        "agility": 12,
-        "intelligence": 15,
-        "constitution": 20,
-        "mana": 12,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 28,
+        "agility": 32,
+        "intelligence": 42,
+        "constitution": 34,
+        "mana": 30,
+        "hp": 655,
+        "max_hp": 655,
+        "mp": 220,
+        "max_mp": 220
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 39,
+      "xp": 0,
+      "xp_to_next": 24355,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 131,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 37,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-047",
@@ -1219,20 +2323,44 @@
       "rank_system": "social",
       "appearance": "남45 회갈 머리 갈색 눈 밀짚 모자",
       "stats": {
-        "strength": 18,
-        "agility": 19,
-        "intelligence": 16,
-        "constitution": 21,
+        "strength": 16,
+        "agility": 17,
+        "intelligence": 12,
+        "constitution": 13,
         "mana": 13,
-        "hp": 310,
-        "max_hp": 310,
+        "hp": 293,
+        "max_hp": 293,
         "mp": 118,
         "max_mp": 118
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 6,
+      "xp": 0,
+      "xp_to_next": 1469,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 15,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 20,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-048",
@@ -1245,20 +2373,44 @@
       "rank_system": "social",
       "appearance": "여34 진갈 머리 구릿빛 피부 황동 고글",
       "stats": {
-        "strength": 14,
-        "agility": 17,
-        "intelligence": 17,
-        "constitution": 22,
-        "mana": 14,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 15,
+        "agility": 19,
+        "intelligence": 19,
+        "constitution": 20,
+        "mana": 16,
+        "hp": 379,
+        "max_hp": 379,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 13,
+      "xp": 0,
+      "xp_to_next": 4687,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 34,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 22,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-049",
@@ -1271,20 +2423,44 @@
       "rank_system": "social",
       "appearance": "남42 검은 단발 푸른 눈 붉은 스카프",
       "stats": {
-        "strength": 17,
-        "agility": 15,
-        "intelligence": 18,
-        "constitution": 15,
-        "mana": 15,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 21,
+        "agility": 22,
+        "intelligence": 25,
+        "constitution": 21,
+        "mana": 18,
+        "hp": 432,
+        "max_hp": 432,
+        "mp": 148,
+        "max_mp": 148
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 20,
+      "xp": 0,
+      "xp_to_next": 8944,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 59,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 26,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-050",
@@ -1297,20 +2473,44 @@
       "rank_system": "social",
       "appearance": "여37 검정 곱슬 갈색 피부 청록 작업복",
       "stats": {
-        "strength": 13,
-        "agility": 13,
-        "intelligence": 19,
-        "constitution": 16,
-        "mana": 9,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 94,
-        "max_mp": 94
+        "strength": 21,
+        "agility": 24,
+        "intelligence": 31,
+        "constitution": 22,
+        "mana": 20,
+        "hp": 459,
+        "max_hp": 459,
+        "mp": 160,
+        "max_mp": 160
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 27,
+      "xp": 0,
+      "xp_to_next": 14029,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 76,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 28,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-051",
@@ -1323,20 +2523,44 @@
       "rank_system": "social",
       "appearance": "남50 은회 머리 청록 눈 앞치마",
       "stats": {
-        "strength": 16,
-        "agility": 20,
-        "intelligence": 20,
-        "constitution": 17,
-        "mana": 10,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 100,
-        "max_mp": 100
+        "strength": 27,
+        "agility": 33,
+        "intelligence": 37,
+        "constitution": 30,
+        "mana": 30,
+        "hp": 594,
+        "max_hp": 594,
+        "mp": 220,
+        "max_mp": 220
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 34,
+      "xp": 0,
+      "xp_to_next": 19825,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 113,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 38,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-052",
@@ -1349,20 +2573,44 @@
       "rank_system": "social",
       "appearance": "여28 흑발 녹색 눈 회백 성의",
       "stats": {
-        "strength": 19,
-        "agility": 18,
-        "intelligence": 21,
-        "constitution": 18,
-        "mana": 11,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 106,
-        "max_mp": 106
+        "strength": 33,
+        "agility": 35,
+        "intelligence": 44,
+        "constitution": 31,
+        "mana": 32,
+        "hp": 663,
+        "max_hp": 663,
+        "mp": 232,
+        "max_mp": 232
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 41,
+      "xp": 0,
+      "xp_to_next": 26252,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 154,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 41,
+        "base_attack_min": 38,
+        "base_attack_max": 48,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-053",
@@ -1375,20 +2623,44 @@
       "rank_system": "social",
       "appearance": "남49 긴 회발 갈색 눈 남색 코트",
       "stats": {
-        "strength": 15,
-        "agility": 16,
-        "intelligence": 22,
-        "constitution": 19,
-        "mana": 12,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 14,
+        "agility": 13,
+        "intelligence": 14,
+        "constitution": 17,
+        "mana": 15,
+        "hp": 333,
+        "max_hp": 333,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 8,
+      "xp": 0,
+      "xp_to_next": 2262,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 21,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-054",
@@ -1401,20 +2673,44 @@
       "rank_system": "social",
       "appearance": "여32 검은 웨이브 청회 눈 붉은 필기첩",
       "stats": {
-        "strength": 18,
-        "agility": 14,
-        "intelligence": 23,
-        "constitution": 20,
-        "mana": 13,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 20,
+        "agility": 22,
+        "intelligence": 20,
+        "constitution": 18,
+        "mana": 18,
+        "hp": 382,
+        "max_hp": 382,
+        "mp": 148,
+        "max_mp": 148
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 15,
+      "xp": 0,
+      "xp_to_next": 5809,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 42,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 26,
+        "base_attack_min": 27,
+        "base_attack_max": 37,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-055",
@@ -1427,20 +2723,44 @@
       "rank_system": "social",
       "appearance": "남36 백갈 단발 갈색 눈 보라 가방",
       "stats": {
-        "strength": 14,
-        "agility": 12,
-        "intelligence": 24,
-        "constitution": 21,
-        "mana": 14,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 19,
+        "agility": 25,
+        "intelligence": 27,
+        "constitution": 25,
+        "mana": 20,
+        "hp": 468,
+        "max_hp": 468,
+        "mp": 160,
+        "max_mp": 160
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 22,
+      "xp": 0,
+      "xp_to_next": 10318,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 61,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 28,
+        "base_attack_min": 27,
+        "base_attack_max": 37,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-056",
@@ -1453,20 +2773,44 @@
       "rank_system": "social",
       "appearance": "남43 금테 안경 백회 머리 청색 외투",
       "stats": {
-        "strength": 17,
-        "agility": 19,
-        "intelligence": 14,
-        "constitution": 22,
-        "mana": 15,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 26,
+        "agility": 27,
+        "intelligence": 33,
+        "constitution": 26,
+        "mana": 22,
+        "hp": 534,
+        "max_hp": 534,
+        "mp": 172,
+        "max_mp": 172
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 29,
+      "xp": 0,
+      "xp_to_next": 15616,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 96,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 32,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-057",
@@ -1479,20 +2823,44 @@
       "rank_system": "social",
       "appearance": "여38 밤갈 곱슬 황갈 눈 털망토",
       "stats": {
-        "strength": 13,
-        "agility": 17,
-        "intelligence": 15,
-        "constitution": 15,
-        "mana": 9,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 94,
-        "max_mp": 94
+        "strength": 25,
+        "agility": 29,
+        "intelligence": 39,
+        "constitution": 27,
+        "mana": 25,
+        "hp": 556,
+        "max_hp": 556,
+        "mp": 190,
+        "max_mp": 190
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 36,
+      "xp": 0,
+      "xp_to_next": 21600,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 111,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 34,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-058",
@@ -1505,20 +2873,44 @@
       "rank_system": "social",
       "appearance": "남29 금발 녹색 눈 장부가방",
       "stats": {
-        "strength": 16,
-        "agility": 15,
-        "intelligence": 16,
-        "constitution": 16,
-        "mana": 10,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 100,
-        "max_mp": 100
+        "strength": 31,
+        "agility": 38,
+        "intelligence": 46,
+        "constitution": 35,
+        "mana": 34,
+        "hp": 694,
+        "max_hp": 694,
+        "mp": 244,
+        "max_mp": 244
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 43,
+      "xp": 0,
+      "xp_to_next": 28196,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 151,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 44,
+        "base_attack_min": 37,
+        "base_attack_max": 47,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-059",
@@ -1532,19 +2924,43 @@
       "appearance": "여25 은갈 머리 갈색 눈 흰 조끼",
       "stats": {
         "strength": 19,
-        "agility": 13,
-        "intelligence": 17,
-        "constitution": 17,
-        "mana": 11,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 106,
-        "max_mp": 106
+        "agility": 16,
+        "intelligence": 16,
+        "constitution": 14,
+        "mana": 17,
+        "hp": 324,
+        "max_hp": 324,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 10,
+      "xp": 0,
+      "xp_to_next": 3162,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 27,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 19,
+        "base_attack_min": 25,
+        "base_attack_max": 35,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-060",
@@ -1557,20 +2973,44 @@
       "rank_system": "social",
       "appearance": "남41 흑갈 장발 녹색 눈 남청 제복",
       "stats": {
-        "strength": 15,
-        "agility": 20,
-        "intelligence": 18,
-        "constitution": 18,
-        "mana": 12,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 18,
+        "agility": 18,
+        "intelligence": 22,
+        "constitution": 22,
+        "mana": 20,
+        "hp": 422,
+        "max_hp": 422,
+        "mp": 160,
+        "max_mp": 160
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 17,
+      "xp": 0,
+      "xp_to_next": 7009,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 48,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 25,
+        "base_attack_max": 35,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-061",
@@ -1583,20 +3023,44 @@
       "rank_system": "social",
       "appearance": "남46 회색 단발 빙청 눈 남색 코트",
       "stats": {
-        "strength": 18,
-        "agility": 18,
-        "intelligence": 19,
-        "constitution": 19,
-        "mana": 13,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 24,
+        "agility": 28,
+        "intelligence": 29,
+        "constitution": 22,
+        "mana": 22,
+        "hp": 469,
+        "max_hp": 469,
+        "mp": 172,
+        "max_mp": 172
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 24,
+      "xp": 0,
+      "xp_to_next": 11757,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 77,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 32,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-062",
@@ -1609,20 +3073,44 @@
       "rank_system": "social",
       "appearance": "여27 갈색 단발 녹색 눈 푸른 가방",
       "stats": {
-        "strength": 18,
-        "agility": 13,
-        "intelligence": 15,
-        "constitution": 18,
-        "mana": 13,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 24,
+        "agility": 30,
+        "intelligence": 35,
+        "constitution": 30,
+        "mana": 24,
+        "hp": 568,
+        "max_hp": 568,
+        "mp": 184,
+        "max_mp": 184
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 31,
+      "xp": 0,
+      "xp_to_next": 17260,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 96,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 34,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-063",
@@ -1635,20 +3123,44 @@
       "rank_system": "social",
       "appearance": "남56 백발 검은 눈 두꺼운 장갑",
       "stats": {
-        "strength": 14,
-        "agility": 20,
-        "intelligence": 16,
-        "constitution": 19,
-        "mana": 14,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 30,
+        "agility": 32,
+        "intelligence": 41,
+        "constitution": 31,
+        "mana": 27,
+        "hp": 632,
+        "max_hp": 632,
+        "mp": 202,
+        "max_mp": 202
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 38,
+      "xp": 0,
+      "xp_to_next": 23424,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 132,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 38,
+        "base_attack_min": 35,
+        "base_attack_max": 45,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-064",
@@ -1661,20 +3173,44 @@
       "rank_system": "social",
       "appearance": "여33 검은 땋은머리 회색 눈 올리브 작업복",
       "stats": {
-        "strength": 17,
-        "agility": 18,
-        "intelligence": 17,
-        "constitution": 20,
-        "mana": 15,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 10,
+        "agility": 11,
+        "intelligence": 11,
+        "constitution": 10,
+        "mana": 10,
+        "hp": 238,
+        "max_hp": 238,
+        "mp": 100,
+        "max_mp": 100
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 5,
+      "xp": 0,
+      "xp_to_next": 1118,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 8,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 13,
+        "base_attack_min": 18,
+        "base_attack_max": 28,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-065",
@@ -1687,20 +3223,44 @@
       "rank_system": "social",
       "appearance": "남19 갈색 곱슬 녹색 눈 회색 후드",
       "stats": {
-        "strength": 13,
-        "agility": 16,
+        "strength": 16,
+        "agility": 20,
         "intelligence": 18,
-        "constitution": 21,
-        "mana": 9,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 94,
-        "max_mp": 94
+        "constitution": 18,
+        "mana": 19,
+        "hp": 361,
+        "max_hp": 361,
+        "mp": 154,
+        "max_mp": 154
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "neutral",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 12,
+      "xp": 0,
+      "xp_to_next": 4156,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 33,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-066",
@@ -1713,20 +3273,44 @@
       "rank_system": "human_role",
       "appearance": "남41 흉터난 코 검은 머리 갈색 갑옷",
       "stats": {
-        "strength": 21,
-        "agility": 18,
-        "intelligence": 22,
-        "constitution": 27,
-        "mana": 13,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 26,
+        "agility": 23,
+        "intelligence": 11,
+        "constitution": 16,
+        "mana": 15,
+        "hp": 380,
+        "max_hp": 380,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 13,
+      "xp": 0,
+      "xp_to_next": 4687,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 42,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 28,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-067",
@@ -1739,20 +3323,44 @@
       "rank_system": "human_role",
       "appearance": "남29 회갈 머리 금갈 눈 누더기 망토",
       "stats": {
-        "strength": 24,
-        "agility": 16,
-        "intelligence": 23,
-        "constitution": 20,
-        "mana": 14,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 30,
+        "agility": 27,
+        "intelligence": 13,
+        "constitution": 24,
+        "mana": 15,
+        "hp": 497,
+        "max_hp": 497,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 20,
+      "xp": 0,
+      "xp_to_next": 8944,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 67,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 33,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-068",
@@ -1765,20 +3373,44 @@
       "rank_system": "human_role",
       "appearance": "여32 흑발 뺨 흉터 검정 가죽갑",
       "stats": {
-        "strength": 20,
-        "agility": 23,
-        "intelligence": 24,
-        "constitution": 21,
-        "mana": 15,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 40,
+        "agility": 39,
+        "intelligence": 15,
+        "constitution": 26,
+        "mana": 14,
+        "hp": 588,
+        "max_hp": 588,
+        "mp": 124,
+        "max_mp": 124
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 27,
+      "xp": 0,
+      "xp_to_next": 14029,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 108,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 47,
+        "base_attack_min": 43,
+        "base_attack_max": 53,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-069",
@@ -1791,20 +3423,44 @@
       "rank_system": "human_role",
       "appearance": "남38 삭발 탁한 푸른 눈 파손 철갑",
       "stats": {
-        "strength": 23,
-        "agility": 21,
-        "intelligence": 25,
-        "constitution": 22,
-        "mana": 16,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 136,
-        "max_mp": 136
+        "strength": 43,
+        "agility": 45,
+        "intelligence": 16,
+        "constitution": 34,
+        "mana": 14,
+        "hp": 707,
+        "max_hp": 707,
+        "mp": 124,
+        "max_mp": 124
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 34,
+      "xp": 0,
+      "xp_to_next": 19825,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 138,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 53,
+        "base_attack_min": 46,
+        "base_attack_max": 56,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-070",
@@ -1817,20 +3473,44 @@
       "rank_system": "human_role",
       "appearance": "여35 자색 머리 은색 눈 푸른 후드",
       "stats": {
-        "strength": 19,
+        "strength": 22,
         "agility": 19,
-        "intelligence": 26,
-        "constitution": 23,
-        "mana": 17,
-        "hp": 330,
-        "max_hp": 330,
-        "mp": 142,
-        "max_mp": 142
+        "intelligence": 11,
+        "constitution": 17,
+        "mana": 11,
+        "hp": 368,
+        "max_hp": 368,
+        "mp": 106,
+        "max_mp": 106
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 11,
+      "xp": 0,
+      "xp_to_next": 3648,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 32,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-071",
@@ -1843,20 +3523,44 @@
       "rank_system": "human_role",
       "appearance": "남43 검은 수염 흰쪽 눈 붉은 허리띠",
       "stats": {
-        "strength": 22,
-        "agility": 17,
-        "intelligence": 27,
-        "constitution": 24,
-        "mana": 18,
-        "hp": 340,
-        "max_hp": 340,
-        "mp": 148,
-        "max_mp": 148
+        "strength": 26,
+        "agility": 25,
+        "intelligence": 12,
+        "constitution": 18,
+        "mana": 10,
+        "hp": 414,
+        "max_hp": 414,
+        "mp": 100,
+        "max_mp": 100
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 18,
+      "xp": 0,
+      "xp_to_next": 7636,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 56,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 30,
+        "base_attack_min": 31,
+        "base_attack_max": 41,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-072",
@@ -1869,20 +3573,44 @@
       "rank_system": "human_role",
       "appearance": "여24 잿빛 단발 갈색 눈 낡은 가죽조끼",
       "stats": {
-        "strength": 18,
-        "agility": 24,
-        "intelligence": 17,
-        "constitution": 25,
-        "mana": 12,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 36,
+        "agility": 37,
+        "intelligence": 14,
+        "constitution": 26,
+        "mana": 17,
+        "hp": 562,
+        "max_hp": 562,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 25,
+      "xp": 0,
+      "xp_to_next": 12500,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 94,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 44,
+        "base_attack_min": 40,
+        "base_attack_max": 50,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-073",
@@ -1895,20 +3623,44 @@
       "rank_system": "human_role",
       "appearance": "남47 회색 수염 검은 눈 광부 헬멧",
       "stats": {
-        "strength": 21,
-        "agility": 22,
-        "intelligence": 18,
-        "constitution": 26,
-        "mana": 13,
-        "hp": 360,
-        "max_hp": 360,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 46,
+        "agility": 41,
+        "intelligence": 16,
+        "constitution": 28,
+        "mana": 17,
+        "hp": 659,
+        "max_hp": 659,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 32,
+      "xp": 0,
+      "xp_to_next": 18101,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 141,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 50,
+        "base_attack_min": 48,
+        "base_attack_max": 58,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-074",
@@ -1921,20 +3673,44 @@
       "rank_system": "human_role",
       "appearance": "남21 적발 호박 눈 금속 도구띠",
       "stats": {
-        "strength": 24,
-        "agility": 20,
-        "intelligence": 19,
-        "constitution": 27,
-        "mana": 14,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 124,
-        "max_mp": 124
+        "strength": 18,
+        "agility": 17,
+        "intelligence": 10,
+        "constitution": 18,
+        "mana": 13,
+        "hp": 358,
+        "max_hp": 358,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 9,
+      "xp": 0,
+      "xp_to_next": 2700,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 24,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 20,
+        "base_attack_min": 25,
+        "base_attack_max": 35,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-075",
@@ -1947,20 +3723,44 @@
       "rank_system": "human_role",
       "appearance": "여34 금갈 장발 청록 눈 자주 예복",
       "stats": {
-        "strength": 20,
-        "agility": 18,
-        "intelligence": 20,
-        "constitution": 20,
-        "mana": 15,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 28,
+        "agility": 29,
+        "intelligence": 12,
+        "constitution": 19,
+        "mana": 13,
+        "hp": 427,
+        "max_hp": 427,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 16,
+      "xp": 0,
+      "xp_to_next": 6400,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 53,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 34,
+        "base_attack_min": 34,
+        "base_attack_max": 44,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-076",
@@ -1973,20 +3773,44 @@
       "rank_system": "human_role",
       "appearance": "남36 흑갈 머리 녹색 눈 녹슨 창",
       "stats": {
-        "strength": 23,
-        "agility": 16,
-        "intelligence": 21,
-        "constitution": 21,
-        "mana": 16,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 136,
-        "max_mp": 136
+        "strength": 32,
+        "agility": 33,
+        "intelligence": 14,
+        "constitution": 27,
+        "mana": 13,
+        "hp": 546,
+        "max_hp": 546,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 23,
+      "xp": 0,
+      "xp_to_next": 11030,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 80,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 39,
+        "base_attack_min": 37,
+        "base_attack_max": 47,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-077",
@@ -1999,20 +3823,44 @@
       "rank_system": "human_role",
       "appearance": "여28 백발 은안 모피 외투",
       "stats": {
-        "strength": 19,
-        "agility": 23,
-        "intelligence": 22,
-        "constitution": 22,
-        "mana": 17,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 142,
-        "max_mp": 142
+        "strength": 42,
+        "agility": 39,
+        "intelligence": 15,
+        "constitution": 28,
+        "mana": 13,
+        "hp": 629,
+        "max_hp": 629,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 30,
+      "xp": 0,
+      "xp_to_next": 16431,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 123,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 47,
+        "base_attack_min": 45,
+        "base_attack_max": 55,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-078",
@@ -2025,20 +3873,44 @@
       "rank_system": "human_role",
       "appearance": "남40 굵은 턱수염 흑안 황동 장비",
       "stats": {
-        "strength": 22,
-        "agility": 21,
-        "intelligence": 23,
-        "constitution": 23,
-        "mana": 18,
-        "hp": 330,
-        "max_hp": 330,
-        "mp": 148,
-        "max_mp": 148
+        "strength": 45,
+        "agility": 43,
+        "intelligence": 17,
+        "constitution": 30,
+        "mana": 13,
+        "hp": 687,
+        "max_hp": 687,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 37,
+      "xp": 0,
+      "xp_to_next": 22506,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 152,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 52,
+        "base_attack_min": 47,
+        "base_attack_max": 57,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-079",
@@ -2051,20 +3923,44 @@
       "rank_system": "human_role",
       "appearance": "남50 은발 녹안 화려한 반지",
       "stats": {
-        "strength": 18,
-        "agility": 19,
-        "intelligence": 24,
-        "constitution": 24,
-        "mana": 12,
-        "hp": 340,
-        "max_hp": 340,
-        "mp": 112,
-        "max_mp": 112
+        "strength": 24,
+        "agility": 26,
+        "intelligence": 11,
+        "constitution": 20,
+        "mana": 16,
+        "hp": 415,
+        "max_hp": 415,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 14,
+      "xp": 0,
+      "xp_to_next": 5238,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 43,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 30,
+        "base_attack_min": 30,
+        "base_attack_max": 40,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-080",
@@ -2077,20 +3973,44 @@
       "rank_system": "human_role",
       "appearance": "여31 검청 단발 회안 가짜 휘장",
       "stats": {
-        "strength": 21,
-        "agility": 17,
-        "intelligence": 25,
-        "constitution": 25,
-        "mana": 13,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 35,
+        "agility": 30,
+        "intelligence": 13,
+        "constitution": 21,
+        "mana": 16,
+        "hp": 495,
+        "max_hp": 495,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "hostile",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 21,
+      "xp": 0,
+      "xp_to_next": 9623,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 80,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": null,
+      "combat": {
+        "speed": 37,
+        "base_attack_min": 38,
+        "base_attack_max": 48,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-081",
@@ -2103,20 +4023,44 @@
       "rank_system": "monster",
       "appearance": "은회 갈기와 눈송이 털 푸른 눈 네발 늑대",
       "stats": {
-        "strength": 27,
-        "agility": 20,
-        "intelligence": 6,
+        "strength": 20,
+        "agility": 17,
+        "intelligence": 9,
         "constitution": 21,
-        "mana": 18,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 148,
-        "max_mp": 148
+        "mana": 15,
+        "hp": 379,
+        "max_hp": 379,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 4,
+      "xp": 0,
+      "xp_to_next": 800,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 9,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 26,
+        "base_attack_max": 36,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-082",
@@ -2129,20 +4073,44 @@
       "rank_system": "monster",
       "appearance": "하얀 거대 뿔과 푸른 맥동 문양 설산 사슴",
       "stats": {
-        "strength": 28,
-        "agility": 22,
-        "intelligence": 9,
-        "constitution": 27,
-        "mana": 26,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 196,
-        "max_mp": 196
+        "strength": 35,
+        "agility": 31,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 16,
+        "hp": 543,
+        "max_hp": 543,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 21,
+      "xp": 0,
+      "xp_to_next": 9623,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 78,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 38,
+        "base_attack_min": 38,
+        "base_attack_max": 48,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-083",
@@ -2155,20 +4123,44 @@
       "rank_system": "monster",
       "appearance": "먹색 판금 같은 등피 회색 엄니",
       "stats": {
-        "strength": 26,
-        "agility": 16,
-        "intelligence": 8,
-        "constitution": 15,
+        "strength": 22,
+        "agility": 22,
+        "intelligence": 10,
+        "constitution": 23,
         "mana": 12,
-        "hp": 250,
-        "max_hp": 250,
+        "hp": 418,
+        "max_hp": 418,
         "mp": 112,
         "max_mp": 112
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 8,
+      "xp": 0,
+      "xp_to_next": 2262,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 22,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 26,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-084",
@@ -2181,20 +4173,44 @@
       "rank_system": "monster",
       "appearance": "검은 긴 꼬리 붉은 수염 번뜩이는 쥐",
       "stats": {
-        "strength": 22,
-        "agility": 14,
-        "intelligence": 9,
-        "constitution": 16,
-        "mana": 13,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 23,
+        "agility": 18,
+        "intelligence": 10,
+        "constitution": 19,
+        "mana": 11,
+        "hp": 372,
+        "max_hp": 372,
+        "mp": 106,
+        "max_mp": 106
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 5,
+      "xp": 0,
+      "xp_to_next": 1118,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 13,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 22,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-085",
@@ -2207,20 +4223,44 @@
       "rank_system": "monster",
       "appearance": "진홍 등가시 황금 세로 동공 도마뱀",
       "stats": {
-        "strength": 30,
-        "agility": 16,
-        "intelligence": 7,
-        "constitution": 22,
-        "mana": 21,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 166,
-        "max_mp": 166
+        "strength": 34,
+        "agility": 27,
+        "intelligence": 12,
+        "constitution": 26,
+        "mana": 14,
+        "hp": 554,
+        "max_hp": 554,
+        "mp": 124,
+        "max_mp": 124
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 26,
+      "xp": 0,
+      "xp_to_next": 13257,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 92,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 33,
+        "base_attack_min": 37,
+        "base_attack_max": 47,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-086",
@@ -2233,20 +4273,44 @@
       "rank_system": "monster",
       "appearance": "돌빛 날개 금빛 뿔발톱의 거대 독수리",
       "stats": {
-        "strength": 26,
-        "agility": 23,
-        "intelligence": 8,
-        "constitution": 23,
-        "mana": 22,
-        "hp": 330,
-        "max_hp": 330,
-        "mp": 172,
-        "max_mp": 172
+        "strength": 30,
+        "agility": 28,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 19,
+        "hp": 506,
+        "max_hp": 506,
+        "mp": 154,
+        "max_mp": 154
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 17,
+      "xp": 0,
+      "xp_to_next": 7009,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 56,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 34,
+        "base_attack_min": 35,
+        "base_attack_max": 45,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-087",
@@ -2259,20 +4323,44 @@
       "rank_system": "monster",
       "appearance": "투명 수정 껍질 자줏빛 다리의 광충",
       "stats": {
-        "strength": 24,
-        "agility": 17,
-        "intelligence": 7,
-        "constitution": 19,
+        "strength": 26,
+        "agility": 20,
+        "intelligence": 10,
+        "constitution": 17,
         "mana": 16,
-        "hp": 290,
-        "max_hp": 290,
+        "hp": 366,
+        "max_hp": 366,
         "mp": 136,
         "max_mp": 136
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 6,
+      "xp": 0,
+      "xp_to_next": 1469,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 18,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 30,
+        "base_attack_max": 40,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-088",
@@ -2285,20 +4373,44 @@
       "rank_system": "monster",
       "appearance": "청보라 수정 등딱지 다리 여덟의 거미",
       "stats": {
-        "strength": 32,
-        "agility": 19,
-        "intelligence": 10,
-        "constitution": 25,
-        "mana": 24,
-        "hp": 350,
-        "max_hp": 350,
-        "mp": 184,
-        "max_mp": 184
+        "strength": 28,
+        "agility": 22,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 17,
+        "hp": 492,
+        "max_hp": 492,
+        "mp": 142,
+        "max_mp": 142
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 15,
+      "xp": 0,
+      "xp_to_next": 5809,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 48,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 27,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-089",
@@ -2311,20 +4423,44 @@
       "rank_system": "monster",
       "appearance": "청흑 뿔과 청백 전류 털의 산양",
       "stats": {
-        "strength": 28,
-        "agility": 17,
+        "strength": 36,
+        "agility": 31,
         "intelligence": 11,
-        "constitution": 26,
-        "mana": 25,
-        "hp": 360,
-        "max_hp": 360,
-        "mp": 190,
-        "max_mp": 190
+        "constitution": 27,
+        "mana": 16,
+        "hp": 561,
+        "max_hp": 561,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 22,
+      "xp": 0,
+      "xp_to_next": 10318,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 83,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 38,
+        "base_attack_min": 39,
+        "base_attack_max": 49,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-090",
@@ -2337,20 +4473,44 @@
       "rank_system": "monster",
       "appearance": "회색 반투명 막날개 흰 눈 박쥐",
       "stats": {
-        "strength": 26,
-        "agility": 20,
-        "intelligence": 5,
-        "constitution": 22,
-        "mana": 19,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 154,
-        "max_mp": 154
+        "strength": 21,
+        "agility": 21,
+        "intelligence": 9,
+        "constitution": 24,
+        "mana": 13,
+        "hp": 421,
+        "max_hp": 421,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 7,
+      "xp": 0,
+      "xp_to_next": 1852,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 18,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 27,
+        "base_attack_max": 37,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-091",
@@ -2363,20 +4523,44 @@
       "rank_system": "monster",
       "appearance": "청록 비늘 작은 지느러미날개 긴 뱀",
       "stats": {
-        "strength": 27,
-        "agility": 22,
-        "intelligence": 8,
-        "constitution": 20,
-        "mana": 19,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 154,
-        "max_mp": 154
+        "strength": 33,
+        "agility": 27,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 13,
+        "hp": 530,
+        "max_hp": 530,
+        "mp": 118,
+        "max_mp": 118
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 20,
+      "xp": 0,
+      "xp_to_next": 8944,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 71,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.25,
+      "combat": {
+        "speed": 33,
+        "base_attack_min": 36,
+        "base_attack_max": 46,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-092",
@@ -2389,20 +4573,44 @@
       "rank_system": "monster",
       "appearance": "산호빛 등갑 푸른 부리의 게",
       "stats": {
-        "strength": 25,
-        "agility": 16,
-        "intelligence": 7,
-        "constitution": 16,
-        "mana": 13,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 118,
-        "max_mp": 118
+        "strength": 23,
+        "agility": 19,
+        "intelligence": 10,
+        "constitution": 18,
+        "mana": 10,
+        "hp": 380,
+        "max_hp": 380,
+        "mp": 100,
+        "max_mp": 100
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 11,
+      "xp": 0,
+      "xp_to_next": 3648,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 31,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 28,
+        "base_attack_max": 38,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-093",
@@ -2415,20 +4623,44 @@
       "rank_system": "monster",
       "appearance": "검은 광택 피부 백진주 이빨의 장어",
       "stats": {
-        "strength": 31,
-        "agility": 22,
+        "strength": 42,
+        "agility": 37,
         "intelligence": 12,
-        "constitution": 27,
-        "mana": 28,
-        "hp": 370,
-        "max_hp": 370,
-        "mp": 208,
-        "max_mp": 208
+        "constitution": 34,
+        "mana": 21,
+        "hp": 704,
+        "max_hp": 704,
+        "mp": 166,
+        "max_mp": 166
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 34,
+      "xp": 0,
+      "xp_to_next": 19825,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 138,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.55,
+      "combat": {
+        "speed": 45,
+        "base_attack_min": 44,
+        "base_attack_max": 54,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-094",
@@ -2441,20 +4673,44 @@
       "rank_system": "monster",
       "appearance": "은청 비늘과 청록 지느러미의 수중어",
       "stats": {
-        "strength": 24,
-        "agility": 12,
-        "intelligence": 9,
-        "constitution": 18,
-        "mana": 15,
-        "hp": 280,
-        "max_hp": 280,
-        "mp": 130,
-        "max_mp": 130
+        "strength": 25,
+        "agility": 18,
+        "intelligence": 10,
+        "constitution": 17,
+        "mana": 16,
+        "hp": 359,
+        "max_hp": 359,
+        "mp": 136,
+        "max_mp": 136
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 5,
+      "xp": 0,
+      "xp_to_next": 1118,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 14,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 23,
+        "base_attack_min": 29,
+        "base_attack_max": 39,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-095",
@@ -2467,20 +4723,44 @@
       "rank_system": "monster",
       "appearance": "황금 등불무늬 검푸른 커다란 나방",
       "stats": {
-        "strength": 27,
-        "agility": 19,
-        "intelligence": 5,
-        "constitution": 19,
-        "mana": 16,
-        "hp": 290,
-        "max_hp": 290,
-        "mp": 136,
-        "max_mp": 136
+        "strength": 25,
+        "agility": 21,
+        "intelligence": 9,
+        "constitution": 24,
+        "mana": 15,
+        "hp": 452,
+        "max_hp": 452,
+        "mp": 130,
+        "max_mp": 130
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 12,
+      "xp": 0,
+      "xp_to_next": 4156,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 37,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 26,
+        "base_attack_min": 30,
+        "base_attack_max": 40,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-096",
@@ -2493,20 +4773,44 @@
       "rank_system": "monster",
       "appearance": "황토 털 네 꼬리 작은 여우",
       "stats": {
-        "strength": 23,
-        "agility": 17,
-        "intelligence": 6,
-        "constitution": 20,
-        "mana": 17,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 142,
-        "max_mp": 142
+        "strength": 27,
+        "agility": 24,
+        "intelligence": 9,
+        "constitution": 19,
+        "mana": 14,
+        "hp": 399,
+        "max_hp": 399,
+        "mp": 124,
+        "max_mp": 124
       },
       "personality_seed": "온화하지만 비밀이 있음",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 9,
+      "xp": 0,
+      "xp_to_next": 2700,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 28,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1,
+      "combat": {
+        "speed": 29,
+        "base_attack_min": 32,
+        "base_attack_max": 42,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-097",
@@ -2519,20 +4823,44 @@
       "rank_system": "monster",
       "appearance": "움직이는 고목 몸통 녹빛 눈 깊은 뿌리다리",
       "stats": {
-        "strength": 41,
-        "agility": 27,
-        "intelligence": 13,
-        "constitution": 36,
-        "mana": 39,
-        "hp": 460,
-        "max_hp": 460,
-        "mp": 274,
-        "max_mp": 274
+        "strength": 59,
+        "agility": 50,
+        "intelligence": 15,
+        "constitution": 51,
+        "mana": 21,
+        "hp": 1086,
+        "max_hp": 1086,
+        "mp": 166,
+        "max_mp": 166
       },
       "personality_seed": "자존심이 강하고 경쟁적",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 62,
+      "xp": 0,
+      "xp_to_next": 48818,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 299,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.95,
+      "combat": {
+        "speed": 61,
+        "base_attack_min": 58,
+        "base_attack_max": 68,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-098",
@@ -2545,20 +4873,44 @@
       "rank_system": "monster",
       "appearance": "검은 뿔고리 붉은 눈 이끼털의 사슴",
       "stats": {
-        "strength": 32,
-        "agility": 21,
-        "intelligence": 12,
-        "constitution": 32,
-        "mana": 33,
-        "hp": 420,
-        "max_hp": 420,
-        "mp": 238,
-        "max_mp": 238
+        "strength": 52,
+        "agility": 41,
+        "intelligence": 14,
+        "constitution": 41,
+        "mana": 18,
+        "hp": 891,
+        "max_hp": 891,
+        "mp": 148,
+        "max_mp": 148
       },
       "personality_seed": "실용적이고 계산이 빠름",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 49,
+      "xp": 0,
+      "xp_to_next": 34300,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 225,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.55,
+      "combat": {
+        "speed": 51,
+        "base_attack_min": 52,
+        "base_attack_max": 62,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-099",
@@ -2571,20 +4923,44 @@
       "rank_system": "monster",
       "appearance": "청백 균열무늬 검은 털 여섯발 사냥개",
       "stats": {
-        "strength": 45,
-        "agility": 36,
+        "strength": 68,
+        "agility": 55,
         "intelligence": 17,
-        "constitution": 35,
-        "mana": 40,
-        "hp": 450,
-        "max_hp": 450,
-        "mp": 280,
-        "max_mp": 280
+        "constitution": 52,
+        "mana": 20,
+        "hp": 1222,
+        "max_hp": 1222,
+        "mp": 160,
+        "max_mp": 160
       },
       "personality_seed": "관찰력이 좋고 조용함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 76,
+      "xp": 0,
+      "xp_to_next": 66255,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 398,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 2.45,
+      "combat": {
+        "speed": 68,
+        "base_attack_min": 65,
+        "base_attack_max": 75,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     },
     {
       "id": "ER-NPC-100",
@@ -2597,20 +4973,50 @@
       "rank_system": "monster",
       "appearance": "고대 문자 돌갑각 금빛 촉각의 거대 곤충",
       "stats": {
-        "strength": 36,
-        "agility": 30,
-        "intelligence": 11,
-        "constitution": 31,
-        "mana": 34,
-        "hp": 410,
-        "max_hp": 410,
-        "mp": 244,
-        "max_mp": 244
+        "strength": 62,
+        "agility": 52,
+        "intelligence": 15,
+        "constitution": 49,
+        "mana": 24,
+        "hp": 1095,
+        "max_hp": 1095,
+        "mp": 184,
+        "max_mp": 184
       },
       "personality_seed": "신중하고 책임감이 강함",
       "default_relation": "wild",
       "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
+      "stat_status": "rebalanced_v2_provisional",
+      "level": 63,
+      "xp": 0,
+      "xp_to_next": 50004,
+      "unspent_stat_points": 0,
+      "level_hp_bonus": 319,
+      "realm_awarded_bonuses": {
+        "strength": 0,
+        "agility": 0,
+        "intelligence": 0,
+        "constitution": 0,
+        "mana": 0
+      },
+      "realm_damage_multiplier": 1,
+      "creature_damage_multiplier": 1.95,
+      "combat": {
+        "speed": 64,
+        "base_attack_min": 60,
+        "base_attack_max": 70,
+        "weapon_attack": 0,
+        "technique_bonus": 0,
+        "equipment_hp_bonus": 0,
+        "status_hp_bonus": 0
+      },
+      "level_hp_bonus_method": "reconstructed_approximation"
     }
+  ],
+  "rebalance_notes": [
+    "Core lore names, appearance, affiliation, rank and location unchanged.",
+    "Numeric levels, allocations, monster damage and HP are provisional gameplay initialization.",
+    "Enlightenment ranks never unlock from numeric stats or level.",
+    "Unspecified equipment, techniques and temporary effects default to zero."
   ]
 }
