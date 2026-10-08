@@ -1,0 +1,270 @@
+{
+  "schema_version": 1,
+  "version": "wartime-borders-v1",
+  "kingdoms": [
+    "벨로아",
+    "드라켄",
+    "루메린"
+  ],
+  "map_geometry_status": "political borders not finalized; checkpoints are conceptual route nodes anchored to regions, not exact coordinates",
+  "reputation": {
+    "scope": "per_kingdom",
+    "min": -100,
+    "max": 100,
+    "default_home": 10,
+    "default_foreign": 0,
+    "bands": [
+      {
+        "min": -100,
+        "max": -61,
+        "label": "국가 수배",
+        "access": "arrest_if_identified"
+      },
+      {
+        "min": -60,
+        "max": -21,
+        "label": "적대 인물",
+        "access": "entry_denied"
+      },
+      {
+        "min": -20,
+        "max": 19,
+        "label": "무명 외국인",
+        "access": "screening_and_sponsor"
+      },
+      {
+        "min": 20,
+        "max": 49,
+        "label": "알려진 협력자",
+        "access": "conditional_pass"
+      },
+      {
+        "min": 50,
+        "max": 79,
+        "label": "공로자",
+        "access": "priority_pass"
+      },
+      {
+        "min": 80,
+        "max": 100,
+        "label": "국빈급 인사",
+        "access": "special_diplomatic_access"
+      }
+    ],
+    "changes": "GM decides reputation on verified quests, war service, rescue, crime and witnessed reputation; no automatic reputation farming by small talk",
+    "not_affection": "Separate from NPC affection: approval or disapproval by government and society, not personal friendship."
+  },
+  "entry_rules": {
+    "home_reentry": "identity check unless wanted or military lockdown",
+    "foreign_entry": {
+      "reputation_below_minus20": "denied; wanted status may lead to arrest",
+      "reputation_minus20_to19": "permit plus vetted purpose and local sponsor or strong commercial writ; scrutiny",
+      "reputation_20_to49": "permit and ordinary security screening",
+      "reputation_50_to79": "permit streamlined but war closures may stop entry",
+      "reputation_80_plus": "special escort or diplomatic access; sovereign military zones still restricted"
+    },
+    "npc_affection_override": "affection 50+ with registered influential local sponsor may substitute sponsor requirement, not override criminal wanted status or closure",
+    "permit": {
+      "issued_by": "destination kingdom border office, diplomatic mission, licensed trader or authorized military command",
+      "types": [
+        "visitor",
+        "merchant",
+        "guild_contract",
+        "diplomatic",
+        "military_safe_conduct"
+      ],
+      "temporary": true,
+      "expires": true,
+      "may_be_revoked": true
+    },
+    "security_check": [
+      "passport_or_identity",
+      "origin_kingdom",
+      "reputation",
+      "permit",
+      "purpose",
+      "escort_or_sponsor",
+      "war_alert",
+      "contraband",
+      "military_service"
+    ],
+    "no_guaranteed_success": "Reputation alone never forces border opening."
+  },
+  "checkpoints": [
+    {
+      "id": "BORDER-WE-01",
+      "name": "회색 협곡 서동 검문관",
+      "kingdoms": [
+        "벨로아",
+        "드라켄"
+      ],
+      "region_anchors": [
+        "W4",
+        "E3"
+      ],
+      "state": "heavily_contested",
+      "route_type": "fortified_pass"
+    },
+    {
+      "id": "BORDER-WS-01",
+      "name": "서남 상단 관문",
+      "kingdoms": [
+        "벨로아",
+        "루메린"
+      ],
+      "region_anchors": [
+        "W5",
+        "S2"
+      ],
+      "state": "regulated_trade",
+      "route_type": "merchant_road"
+    },
+    {
+      "id": "BORDER-ES-01",
+      "name": "동남 교량 검문소",
+      "kingdoms": [
+        "드라켄",
+        "루메린"
+      ],
+      "region_anchors": [
+        "E4",
+        "S2"
+      ],
+      "state": "restricted_transit",
+      "route_type": "bridge_and_caravan"
+    }
+  ],
+  "actions": [
+    {
+      "id": "domestic_travel",
+      "label": "자국 이동",
+      "min_rep": -60,
+      "need": [
+        "not_wanted",
+        "local_access"
+      ]
+    },
+    {
+      "id": "border_request",
+      "label": "국경 통행 신청",
+      "min_rep": -20,
+      "need": [
+        "entry_writ_or_sponsor",
+        "checkpoint_open"
+      ]
+    },
+    {
+      "id": "foreign_trade",
+      "label": "타국 일반 거래",
+      "min_rep": 0,
+      "need": [
+        "legal_entry",
+        "merchant_permission_if_needed"
+      ]
+    },
+    {
+      "id": "foreign_guild_quest",
+      "label": "타국 길드 의뢰",
+      "min_rep": 20,
+      "need": [
+        "legal_entry",
+        "guild_recognition"
+      ]
+    },
+    {
+      "id": "border_escort",
+      "label": "전시 호송 허가",
+      "min_rep": 30,
+      "need": [
+        "military_or_guild_contract",
+        "route_open"
+      ]
+    },
+    {
+      "id": "foreign_spellbook",
+      "label": "드라켄 마법서 거래",
+      "min_rep": 20,
+      "need": [
+        "legal_entry",
+        "arcane_registration_or_school_permission"
+      ]
+    },
+    {
+      "id": "foreign_noble_audience",
+      "label": "타국 영주 접견 신청",
+      "min_rep": 50,
+      "need": [
+        "invitation",
+        "court_approval"
+      ]
+    },
+    {
+      "id": "restricted_archive",
+      "label": "고위 국가기관 출입",
+      "min_rep": 80,
+      "need": [
+        "explicit_official_permit",
+        "institution_access"
+      ]
+    },
+    {
+      "id": "military_zone",
+      "label": "군사 통제구역 출입",
+      "min_rep": 80,
+      "need": [
+        "mission_specific_command_authorization"
+      ]
+    }
+  ],
+  "events": [
+    {
+      "id": "inspection",
+      "label": "검문",
+      "when": "border_crossing",
+      "outcomes": [
+        "pass",
+        "secondary_screening",
+        "delay",
+        "denied",
+        "arrest_if_warrant"
+      ]
+    },
+    {
+      "id": "lockdown",
+      "label": "전선 폐쇄",
+      "when": "war_escalation",
+      "outcomes": [
+        "route_closed",
+        "detour",
+        "humanitarian_corridor_exception"
+      ]
+    },
+    {
+      "id": "smuggling",
+      "label": "밀입국 시도",
+      "when": "player_choice",
+      "outcomes": [
+        "escape",
+        "detected",
+        "confiscation",
+        "pursuit",
+        "wanted_flag"
+      ]
+    }
+  ],
+  "save_fields": [
+    "kingdom_reputation",
+    "national_origin",
+    "entry_permits",
+    "wanted_flags",
+    "border_crossing_history",
+    "active_border_route"
+  ],
+  "rules": [
+    "A player's origin kingdom is selected in character creation; other country reputations start at 0.",
+    "Personal NPC affection and kingdom reputation are distinct values.",
+    "Never assign exact checkpoint x/y or national border polygons until geography art is approved.",
+    "Each border crossing depends on war conditions and NPC responses; no automatic immunity.",
+    "Entry restriction never forces one deterministic outcome; legal travel, detours and risk routes remain possibilities."
+  ]
+}
