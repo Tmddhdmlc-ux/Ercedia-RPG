@@ -1,7 +1,7 @@
 # 에르세디아 RPG — 비주얼 노벨 스탠딩 아트 제작 규칙 v1.0
 
 > 상태: 공식 제작 규칙. 주인공·NPC에 공통 적용하며 첫 검증 대상은 **베이직 나이트 세린**.
-> 연관 문서: [WORLD.md](WORLD.md), [PORTRAIT_RULES.md](PORTRAIT_RULES.md), [UI_RULES.md](UI_RULES.md).
+> 연관 문서: [WORLD.md](WORLD.md), [PORTRAIT_RULES.md](PORTRAIT_RULES.md), [UI_RULES.md](UI_RULES.md), [CHARACTER_PIPELINE.md](CHARACTER_PIPELINE.md), [캐릭터 시트 템플릿](templates/CHARACTER_SHEET_TEMPLATE.md).
 
 ## 1. 제작 목적
 - 캐릭터를 마을·성·던전 등 **독립 배경 이미지 위에 투명 PNG로 합성**하는 비주얼 노벨 스탠딩 자산을 만든다.
@@ -25,15 +25,19 @@
 - 전투 포즈나 검을 길게 뻗는 장면은 별도 캔버스와 전용 구도를 허용하되, 항상 무기 끝까지 보이게 한다.
 
 ## 4. 세린 — 기준 디자인 잠금
+이 절의 외형과 세린 전용 검수 항목은 세린에만 적용한다. 다른 캐릭터는 같은 제작 절차를 따르되 해당 시트의 고유한 얼굴·외형을 유지한다.
+
 ### 참조 원화 (변경 금지)
-- 저장소 경로: `assets/characters/main/serin/base.png`
+- 저장소 경로: `assets/characters/main/serin/base_transparent.png`
 - 역할: 베이직 나이트, 성인 여성 기사.
 - 필수 외형: **금발 포니테일, 푸른 눈, 은백색 갑옷, 금색 장식, 남색 망토, 검은 장갑**.
 - 원본의 얼굴형, 눈매, 머리 묶음 위치, 갑옷 문양·실루엣을 **최대한 동일하게 유지**한다.
 - 출신 국가, 소속 기사단, 공식 문장 등 아직 정해지지 않은 설정을 임의 확정하지 않는다.
-- 기준 이미지는 디자인 참고용. 새로 만들어진 스탠딩의 얼굴이 달라지면 수정하고, 승인 전 기존 `base.png`를 덮어쓰지 않는다.
+- 기준 이미지는 디자인 참고용. 새로 만들어진 스탠딩의 얼굴이 달라지면 수정하고, 승인 전 기존 `base_transparent.png`를 덮어쓰지 않는다.
 
 ## 5. 스탠딩 표정 관리
+신규 전체 제작은 [제작 파이프라인](CHARACTER_PIPELINE.md)의 base, smile, angry, surprised, sad, embarrassed, afraid, annoyed, love 총 9종을 기본으로 한다. 아래 목록과 파일 구조는 초기 예시이며 serious, determined는 선택 확장이다. love는 자연스러운 애정을 표현하고 과장된 하트눈을 넣지 않는다.
+
 - `base.png`: 기본/평온
 - `smile.png`: 미소
 - `angry.png`: 분노
@@ -45,13 +49,14 @@
 - 특별한 포즈(발검, 전투, 피격)는 표정 세트가 아닌 별도 이벤트/액션 자산으로 분리한다.
 
 ## 6. 파일 구조
+아래는 정식 자산의 목표 구조다. 현재 세린은 기준 초상화와 standing/drafts/의 복장 초안만 등록되어 있으며 정식 standing/base.png와 표정 세트는 미등록이다. 초안의 투명도·정렬 한계는 [standing_notes.md](assets/characters/main/serin/standing/standing_notes.md)를 확인한다.
+
 ```text
 assets/
   characters/
     main/
       serin/
-        base.png                  # 기존 기준 초상화: 덮어쓰기 금지
-        base_transparent.png      # 기존 반신 투명화 버전: 전신 대체 불가
+        base_transparent.png      # 현재 기준 반신 초상화: 덮어쓰기 금지, 전신 대체 불가
         notes.md
         standing/
           base.png                # 신규 전신 RGBA PNG
@@ -83,12 +88,12 @@ assets/
 8. GitHub 업로드 및 CDN 링크에서 이미지가 실제 로딩되는가?
 
 ## 9. 세린 첫 제작 작업 순서
-1. 기존 `serin/base.png`와 `notes.md`, 본 문서를 읽는다.
+1. 기존 `serin/base_transparent.png`와 `notes.md`, 본 문서를 읽는다.
 2. 기존 얼굴·갑옷을 유지하면서 **전신 스탠딩 기본형 1장** 제작한다.
 3. 전신 잘림 및 투명 PNG를 검증한다.
-4. `standing/base.png`에 **신규 파일로** 업로드한다. 기존 원본 파일들은 보존한다.
+4. 사용자 승인 후 `standing/base.png`에 **신규 파일로** 업로드한다. 승인 전 초안은 별도 경로에 보관하고 기존 원본 파일들은 보존한다.
 5. 업로드 파일과 커밋 URL, 이미지 크기, 투명도 검수 결과를 보고한다.
 6. 사용자가 기본형을 승인한 뒤에만 동일 구도로 추가 표정을 제작한다.
 
 ## 10. Work 제작 지시 핵심
-> GitHub 저장소 Tmddhdmlc-ux/Ercedia-RPG의 WORLD.md, PORTRAIT_RULES.md, UI_RULES.md, STANDING_ART_RULES.md와 assets/characters/main/serin/base.png를 읽어라. 세린의 기존 얼굴과 갑옷을 유지한 카툰풍 **전신 스탠딩 RGBA 투명 PNG 한 장**을 제작하라. 발끝·검·망토까지 자르지 말고 사방 최소 5% 안전 여백을 확보하라. 기존 원본을 수정하거나 덮어쓰지 않고 assets/characters/main/serin/standing/base.png에 올려라. 실제 알파 투명도, 외형 일관성, CDN 로딩을 확인해 보고하라. **기본형 승인 전에는 표정 세트 전체를 생성하지 말 것.**
+> GitHub 저장소 Tmddhdmlc-ux/Ercedia-RPG의 WORLD.md, PORTRAIT_RULES.md, UI_RULES.md, STANDING_ART_RULES.md와 assets/characters/main/serin/base_transparent.png를 읽어라. 세린의 기존 얼굴과 갑옷을 유지한 카툰풍 **전신 스탠딩 RGBA 투명 PNG 한 장**을 제작하라. 발끝·검·망토까지 자르지 말고 사방 최소 5% 안전 여백을 확보하라. 기존 원본을 수정하거나 덮어쓰지 말고, 사용자 승인 후 assets/characters/main/serin/standing/base.png에 올려라. 실제 알파 투명도, 외형 일관성, CDN 로딩을 확인해 보고하라. **기본형 승인 전에는 표정 세트 전체를 생성하지 말 것.**

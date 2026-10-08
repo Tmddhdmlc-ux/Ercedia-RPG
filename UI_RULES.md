@@ -25,7 +25,7 @@
 - 세린의 투명 PNG는 등록 완료. 이 파일을 사용한 실제 UI 합성 및 새 투명 표정 전환은 별도 검증한다.
 
 ## 장기 대화와 새 채팅
-- 새 채팅에서 이어갈 때 저장소의 `WORLD.md`, `PORTRAIT_RULES.md`, `UI_RULES.md`를 우선 읽는다.
+- 새 채팅에서 이어갈 때 저장소의 `WORLD.md`, `PORTRAIT_RULES.md`, `UI_RULES.md`를 우선 읽는다. 캐릭터 제작·표정 연동은 [CHARACTER_PIPELINE.md](CHARACTER_PIPELINE.md), [STANDING_ART_RULES.md](STANDING_ART_RULES.md)와 해당 캐릭터 시트도 읽는다.
 - GitHub에 규칙을 저장했다고 새 채팅에 자동으로 강제되는 것은 아니다. 시작 시 파일을 참조해 적용한다.
 
 ## 작업 분담

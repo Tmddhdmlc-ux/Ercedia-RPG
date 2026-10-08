@@ -48,6 +48,8 @@ assets/
 캐릭터 식별자는 영문 소문자 snake_case로 사용한다. 예: `serin`.
 
 ## 4. 표정·상태 이름
+신규 주요 캐릭터 전체 제작의 기본 세트는 [CHARACTER_PIPELINE.md](CHARACTER_PIPELINE.md)에 따라 base, smile, angry, surprised, sad, embarrassed, afraid, annoyed, love 총 9종이다. 아래 기존 목록의 serious, injured 등은 선택 확장으로 유지한다. love는 과장된 하트눈 없이 자연스러운 애정을 표현한다. 위 폴더 구조는 기존 예시이며 신규 기본 9종의 전체 경로는 파이프라인을 따른다.
+
 - `base.png` 기본 무표정
 - `smile.png` 미소
 - `angry.png` 분노
@@ -68,7 +70,7 @@ assets/
 - 초상화 파일 이름과 해당 캐릭터의 ID
 
 ## 6. 중요도별 이미지 운영
-- 메인: 승인된 base + 필요에 따라 표정 5~8종.
+- 메인: 신규 전체 제작은 승인된 base를 포함한 기본 9종. 실제 생성은 기준 원본 승인 후 단계적으로 진행하며, 부분 제작 요청은 지정 범위를 따른다.
 - 주요 조연: 우선 base, 등장에 맞춰 필수 표정 추가.
 - 단역: base 중심, 재등장 시 확장.
 - 본편에서 중요한 역할인지 여부는 실제 전개에 따라 바뀔 수 있다.
@@ -79,7 +81,7 @@ assets/
 - 배경 변형이 기존 건물·도로 배치를 임의로 뒤바꾸지 않도록 검수한다.
 
 ## 8. 신규 캐릭터 제작 및 검수
-1. 캐릭터의 이름과 최소 외형·직업을 지정한다.
+1. [캐릭터 시트 템플릿](templates/CHARACTER_SHEET_TEMPLATE.md)을 작성하고 [제작 파이프라인](CHARACTER_PIPELINE.md)을 따른다. 이름·외형·직업과 고정 디자인을 먼저 지정한다.
 2. 카툰풍 기준 원화 **1장** 생성.
 3. 사용자가 검토하여 `base.png` 확정.
 4. 해당 원화에 기반해 `smile`·`angry`·`surprised` 등 2~3종 변형 시험.
