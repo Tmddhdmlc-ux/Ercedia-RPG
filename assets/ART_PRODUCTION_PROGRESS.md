@@ -160,7 +160,7 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [materials-batch-02.json](art-production/materials-batch-02.json) 및 전체 자산 목록 참조.
-- 이미지 업로드 커밋: `업로드 전`
+- 이미지 업로드 커밋: `809f985f2c70b64b87915065346e7eb74d9f35fd`
 
 ### samples-batch-01
 

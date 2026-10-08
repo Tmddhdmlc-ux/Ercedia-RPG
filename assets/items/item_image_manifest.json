@@ -1,0 +1,4128 @@
+{
+  "schema_version": 1,
+  "count": 410,
+  "count_by_group": {
+    "equipment": 300,
+    "books": 70,
+    "materials": 40
+  },
+  "rules": {
+    "format": "PNG",
+    "size": [
+      512,
+      512
+    ],
+    "background": "true_alpha",
+    "rarity_frame_in_png": false,
+    "rarity_ui_colors": {
+      "하급": "#FFFFFF",
+      "중급": "#26B75A",
+      "고급": "#3489FF",
+      "유니크": "#A35CF0",
+      "에픽": "#E64444"
+    },
+    "material_rarity": "Not defined in canonical loot catalog; do not infer from monster_rank or quality."
+  },
+  "assets": [
+    {
+      "id": "ER-EQ-001",
+      "name": "수습의 낡은 철검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-001.png",
+      "rarity": "하급",
+      "sha256": "7389dc8893105fc68d717dc0dfbc8bdca0f3575a8d288092834af42dabb71238",
+      "status": "created_visual_verified",
+      "template": "straight_sword"
+    },
+    {
+      "id": "ER-EQ-002",
+      "name": "빛바랜 푸른강 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-002.png",
+      "rarity": "하급",
+      "sha256": "23aa9b5e952557c44d9d6329ad3fb84694c33111dd26f1370a51bde67a572e53",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-003",
+      "name": "소박한 매의 송곳검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-003.png",
+      "rarity": "하급",
+      "sha256": "50b8c911211fc7ab79878e07b9bcb48cb8835bc12f780da9228e00fbfb95cd11",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-004",
+      "name": "수습의 참나무 손잡이검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-004.png",
+      "rarity": "하급",
+      "sha256": "bed051f6fc1536be758c80573b31d126010515c6bd14ab238ff7419df44c21b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-005",
+      "name": "빛바랜 새벽 순찰검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-005.png",
+      "rarity": "하급",
+      "sha256": "33b352214a91426be220b5c990ca69a1be24543e56a95d49ad9c05193bab2a0f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-006",
+      "name": "소박한 장미 문양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-006.png",
+      "rarity": "하급",
+      "sha256": "2215002b9c3ec519c788b6ffe3f83ccc92683a69ad3890198d25348867499418",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-007",
+      "name": "수습의 흑요석 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-007.png",
+      "rarity": "하급",
+      "sha256": "63a0562c7de0846f6080467e200689951d85fbb5e9a90b09e7f829e05f837d18",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-008",
+      "name": "빛바랜 회색 협곡검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-008.png",
+      "rarity": "하급",
+      "sha256": "b199952b43f316b7751992bfbe3082e721de01593b30123c33e05e8e14853f5f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-009",
+      "name": "소박한 바람결 세검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-009.png",
+      "rarity": "하급",
+      "sha256": "643db3444d260da36725c749675c3eb90ef1802a25944cfee787e569aca98d61",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-010",
+      "name": "수습의 왕도 의장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-010.png",
+      "rarity": "하급",
+      "sha256": "f22c1361513ada68e0955b63412430370c7a55379509e1174c4bb58764096af7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-011",
+      "name": "빛바랜 강변 호위검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-011.png",
+      "rarity": "하급",
+      "sha256": "05963a6b5a910b4dc763d33eff8cd73200d55810e428c23a9f9c71a8599ded53",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-012",
+      "name": "소박한 철산 대검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-012.png",
+      "rarity": "하급",
+      "sha256": "f43223acd3e0417ffbfc21d98a2720a1076bb1dc09a9398e6d61182af6ed287c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-013",
+      "name": "수습의 서리끝 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-013.png",
+      "rarity": "하급",
+      "sha256": "5aad28266eb3b1748ef9b0d2005d0d292c33f3a31f7b6361e011436329be3e2f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-014",
+      "name": "빛바랜 붉은 석양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-014.png",
+      "rarity": "하급",
+      "sha256": "4c936b3c51222fbb9b1a71c457026e7b9b6386d9108b6af0d4a05b931cdd634c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-015",
+      "name": "소박한 은빛 장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-015.png",
+      "rarity": "하급",
+      "sha256": "4f9005bc4e26172433e3e13301574bc2540388ce4fdc34f0ff0238cdfd24fc78",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-016",
+      "name": "수습의 돌개바람 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-016.png",
+      "rarity": "하급",
+      "sha256": "86c0a585a8f7a7e2d93fd1b30e6bbfa0ea11a7e945ac1a9bf5c0b85557c67324",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-017",
+      "name": "빛바랜 갈매기 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-017.png",
+      "rarity": "하급",
+      "sha256": "ace983cbede245f673e2f231c1445182497e820eaaf7bfe3d0a6b82c1a2b30e4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-018",
+      "name": "소박한 동토 파수검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-018.png",
+      "rarity": "하급",
+      "sha256": "5dd6c00662b953d2ba92401c9ec3643220adb7377fd951eb0f32d906c1f895f1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-019",
+      "name": "수습의 버드나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-019.png",
+      "rarity": "하급",
+      "sha256": "9ad8fae22795e84a7487fc02ba59311ecef3b7868be7805061f675162dba1d87",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-020",
+      "name": "빛바랜 구리 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-020.png",
+      "rarity": "하급",
+      "sha256": "57742ffadc49b994759ab7de6d050a670343a58193ad701813976c1c258cf3e7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-021",
+      "name": "소박한 강물의 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-021.png",
+      "rarity": "하급",
+      "sha256": "312a8be6ea017d293182cb8b7a4d63faef6497694a4e4dc8a15d93a1c0af3168",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-022",
+      "name": "수습의 꽃잎 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-022.png",
+      "rarity": "하급",
+      "sha256": "78b2bb6b8b2f13885cd03ba0381860ac1f96a3aff5ab9fefbed04edf3e811cd1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-023",
+      "name": "빛바랜 유리 심봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-023.png",
+      "rarity": "하급",
+      "sha256": "a25a7b81e8eff033856093d4e47679e3f89e9668403355dd7273ace58d9720b6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-024",
+      "name": "소박한 밤하늘 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-024.png",
+      "rarity": "하급",
+      "sha256": "7cffaa4d99bba7d5322d89c88a0376f0d4c778e6c949dfed9dc6812b834b0dd4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-025",
+      "name": "수습의 가시나무 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-025.png",
+      "rarity": "하급",
+      "sha256": "b19b2fed57386240be9b6ca0eff1db617d62a08b0d5998ad96b79c109c04dde8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-026",
+      "name": "빛바랜 수정 고리봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-026.png",
+      "rarity": "하급",
+      "sha256": "7f0cb6a6d28f1686f0bda2169f7027e429afc73c125c0a70d0802a85ad013023",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-027",
+      "name": "소박한 안개 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-027.png",
+      "rarity": "하급",
+      "sha256": "05d329adabc3ef789cf2306ff86539334eeb7be24c264db7b09ca101df41f78a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-028",
+      "name": "수습의 호박 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-028.png",
+      "rarity": "하급",
+      "sha256": "0b576f66cfd4100b5d223b49b623344299ff8fe0c921b69e201f6e5cc3a202e7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-029",
+      "name": "빛바랜 별무늬 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-029.png",
+      "rarity": "하급",
+      "sha256": "563e946f68bb20977cc83b4db7987a5b23695e0e713b4897d2362c5bf58f9aa0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-030",
+      "name": "소박한 청동 술사봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-030.png",
+      "rarity": "하급",
+      "sha256": "c2806d2d9e402eae8abcf83dbad17018aca7ec9806358b1f7fb8800bc74c5bb1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-031",
+      "name": "수습의 이슬 방울봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-031.png",
+      "rarity": "하급",
+      "sha256": "4f07a75fa76922e117a138b953d494174bfc054cff5c18673c4463f1e3d8d67c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-032",
+      "name": "빛바랜 서리나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-032.png",
+      "rarity": "하급",
+      "sha256": "5813040cfbcd9b400937d6e7b16be810044a18b613e7b4fd48901ea821a4e65b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-033",
+      "name": "소박한 소용돌이 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-033.png",
+      "rarity": "하급",
+      "sha256": "d5564b64e8bc373a69cb830226f2d754c6045e1de70c2ac66ead37a70e517554",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-034",
+      "name": "수습의 먹구름 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-034.png",
+      "rarity": "하급",
+      "sha256": "3c0c1f6b3183d86f49be556d8a9c4db4e60b0c7bdada235024bb385095382d9c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-035",
+      "name": "빛바랜 은실 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-035.png",
+      "rarity": "하급",
+      "sha256": "15f15635d7c9aa8ecc0e3f1c4b2e8670083c626cf88ac056975fbf04a1aff43a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-036",
+      "name": "소박한 고요한 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-036.png",
+      "rarity": "하급",
+      "sha256": "e352b13a77aaa31338a39014b9c63bff6a11c7474bd7a24ff8e3a2f87d4769c1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-037",
+      "name": "수습의 여행자 가죽옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-037.png",
+      "rarity": "하급",
+      "sha256": "870307090238eacb267f55c0f3d1815c464e73667b3e5996ad24d0977fc11548",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-038",
+      "name": "빛바랜 수습 기사 갑옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-038.png",
+      "rarity": "하급",
+      "sha256": "3c8aaa4feaf3389110abdbc51ffd5041e7b8f41bd4d452e86827962e68e54a0d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-039",
+      "name": "소박한 삼나무 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-039.png",
+      "rarity": "하급",
+      "sha256": "9afe71d4e436855d0ceb6829bafc3ea290ba138c7a117a418bb02bf377eb0dfa",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-040",
+      "name": "수습의 근위병 철갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-040.png",
+      "rarity": "하급",
+      "sha256": "d810f21b8e437a4d05d51b330495526b12e8cb631f0a82abeaa0f99004975871",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-041",
+      "name": "빛바랜 협곡 경장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-041.png",
+      "rarity": "하급",
+      "sha256": "110c0c2ab437c065479bbe624c69ee30da6a185010619cef6adc8691efe5ecd4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-042",
+      "name": "소박한 대륙 모험복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-042.png",
+      "rarity": "하급",
+      "sha256": "a58b434f960b699a03ed53a04d09a631a20e965c272060df19aa6f24a4b434ff",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-043",
+      "name": "수습의 마법학도 로브",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-043.png",
+      "rarity": "하급",
+      "sha256": "3f2ffc013dbcfbca88223ac1c9b438b5853bf5673c9851b9b9a16d9b17a4db12",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/robe.png"
+    },
+    {
+      "id": "ER-EQ-044",
+      "name": "빛바랜 청류 술사복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-044.png",
+      "rarity": "하급",
+      "sha256": "f694e378e0b319a9b1f4631136b29741e802447be267b52a38b886b36ae08c2f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png"
+    },
+    {
+      "id": "ER-EQ-045",
+      "name": "소박한 항해자 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-045.png",
+      "rarity": "하급",
+      "sha256": "00723bc7b1a05d15ab1411a0a65f1a1e834e4c8ea64f594408065c281b2c867a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-046",
+      "name": "수습의 변경 감시복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-046.png",
+      "rarity": "하급",
+      "sha256": "83256b63b6b9d550651a62c69ab454bdeed3f3688309324a6b976cb634b23a91",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-047",
+      "name": "빛바랜 황동 장식갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-047.png",
+      "rarity": "하급",
+      "sha256": "753ab1c840442ccf892c23776c2d6989f6c890845725fa5cc2c3698c9ed7e5b4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-048",
+      "name": "소박한 은빛 수호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-048.png",
+      "rarity": "하급",
+      "sha256": "383bdc13cb8dc94fa93347f008026cf8750f45f16e4fb56e5bc252fa2b3007e7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-049",
+      "name": "수습의 철제 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-049.png",
+      "rarity": "하급",
+      "sha256": "1b282dfe5055b3838ba4b55d614189904bc415cd92eed4c9283dae8407dff0ed",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-050",
+      "name": "빛바랜 달빛 목걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-050.png",
+      "rarity": "하급",
+      "sha256": "e4e1d279c16472a1fe353f5c2e2d97558b6246c4a579dfb9290dbe706784ae3c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/necklace.png"
+    },
+    {
+      "id": "ER-EQ-051",
+      "name": "소박한 호박 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-051.png",
+      "rarity": "하급",
+      "sha256": "4b4e7bca978b0ba066079c6f33937408db35d2492469329d576e73ae2ab97ab6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-052",
+      "name": "수습의 여행자의 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-052.png",
+      "rarity": "하급",
+      "sha256": "d9d2d06f7136e42ef4a91e51e870f65ade555ee5c501e52fe641e6de305f9d38",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-053",
+      "name": "빛바랜 호위 인장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-053.png",
+      "rarity": "하급",
+      "sha256": "dfdb5cd2d2a1f864a4ad6e8695129b6fe4711054c9aef142c9a6b76d53ce650c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-054",
+      "name": "소박한 파도 유리반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-054.png",
+      "rarity": "하급",
+      "sha256": "61cc87339f551ae3226ddccd07862d43b75abe4360f14ba9f912db662499daf0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-055",
+      "name": "수습의 은방울 귀걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-055.png",
+      "rarity": "하급",
+      "sha256": "b54a5f1c65b0c18eaa24d904c31d9b82a67ac8b37aef66faa748711c8ce2d89d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/earrings.png"
+    },
+    {
+      "id": "ER-EQ-056",
+      "name": "빛바랜 마나 수정고리",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-056.png",
+      "rarity": "하급",
+      "sha256": "f332a0cdfad527bec73a0d08238d696b948d58f415b59540dafe6cc42188f3f1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-057",
+      "name": "소박한 별가루 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-057.png",
+      "rarity": "하급",
+      "sha256": "7ca43e4a68c0460bfe20f71d702dce6f8389081fd5cab2d19d38a24496556d3e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-058",
+      "name": "수습의 매듭 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-058.png",
+      "rarity": "하급",
+      "sha256": "d9d2d06f7136e42ef4a91e51e870f65ade555ee5c501e52fe641e6de305f9d38",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-059",
+      "name": "빛바랜 황금 나침반 장식",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-059.png",
+      "rarity": "하급",
+      "sha256": "2068f00396cf7178dbbbfc6933d570ffea0c1c98ef52eaed7360131440baef97",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-060",
+      "name": "소박한 고요한 흑석 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-060.png",
+      "rarity": "하급",
+      "sha256": "525a29aaefd0d0b5a0be0b7d4c2b6ce8749e743545ef0a917ffbff54e582e258",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-061",
+      "name": "견고한 낡은 철검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-061.png",
+      "rarity": "중급",
+      "sha256": "8e60ad33f15326d57736c377a7931a100b8235e551630f58498c3e2c8cbde3d4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-062",
+      "name": "정제된 푸른강 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-062.png",
+      "rarity": "중급",
+      "sha256": "9bd2d1a75d292fb796da425027c8557f0fc46800f2286802df0e3f81ac2766d7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-063",
+      "name": "연마된 매의 송곳검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-063.png",
+      "rarity": "중급",
+      "sha256": "746fce0f72d8b61add8da88e5d352638eecefc480af149f30ca450cf6b41d727",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-064",
+      "name": "견고한 참나무 손잡이검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-064.png",
+      "rarity": "중급",
+      "sha256": "dff32950621a17a4e996381818a5c2e75f4ce0404c8ebd8d261d83fecc2800ea",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-065",
+      "name": "정제된 새벽 순찰검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-065.png",
+      "rarity": "중급",
+      "sha256": "026e25e3f6172ffb76caf3daf26d998a1f103702d26916bbc546b03a11b7c9d3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-066",
+      "name": "연마된 장미 문양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-066.png",
+      "rarity": "중급",
+      "sha256": "12a91ef4854eae1dd5d2ec70002483b797b7f7542b0b57321506ee6ef6459791",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-067",
+      "name": "견고한 흑요석 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-067.png",
+      "rarity": "중급",
+      "sha256": "357a45cc14f2769bdceaec315b9ea803c6d0b455c5edc54073f35cc99c7c583a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-068",
+      "name": "정제된 회색 협곡검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-068.png",
+      "rarity": "중급",
+      "sha256": "9f89b783b393429175f12cc878cd1789469e411340d25d6e776490b8ce571752",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-069",
+      "name": "연마된 바람결 세검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-069.png",
+      "rarity": "중급",
+      "sha256": "07e11857ade1c623bf657ed0cf817ee3fe4f64b4c9f8a94417452ac4c0170920",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-070",
+      "name": "견고한 왕도 의장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-070.png",
+      "rarity": "중급",
+      "sha256": "f510394a1dde7fa733c578a48f17963b293b86266cc0a61ca2f9b4639ba5c7c0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-071",
+      "name": "정제된 강변 호위검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-071.png",
+      "rarity": "중급",
+      "sha256": "82cd40ed8f0e647300c2a594ef2bf7d6f2829f5c8c10a65e549c7de4af3dbb52",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-072",
+      "name": "연마된 철산 대검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-072.png",
+      "rarity": "중급",
+      "sha256": "d990fde3bf45014a2c1f9b20b9ccbf9cf317d1804d2569b8477da924489bf3ba",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-073",
+      "name": "견고한 서리끝 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-073.png",
+      "rarity": "중급",
+      "sha256": "fb8c5a0a2aabb9a9947b41eed60da6e400a9d977a3f0f3284caa33515f9a5899",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-074",
+      "name": "정제된 붉은 석양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-074.png",
+      "rarity": "중급",
+      "sha256": "907d713b171d738ea0669a21233bd2ca21e170038afc9b2905381ccf73c6c326",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-075",
+      "name": "연마된 은빛 장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-075.png",
+      "rarity": "중급",
+      "sha256": "1ec092f3337bf01245d28533072dfe4058fb9f670b3548fd266f768e016b626b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-076",
+      "name": "견고한 돌개바람 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-076.png",
+      "rarity": "중급",
+      "sha256": "3ab23647dac2ce4e40fff60c63f2c2d67a0d039484c64685a5a1b1bb30ec922d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-077",
+      "name": "정제된 갈매기 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-077.png",
+      "rarity": "중급",
+      "sha256": "748ca75d573b0a42015cb68a3e21a37798d9fc2cf514b6b84eac90160d72a4d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-078",
+      "name": "연마된 동토 파수검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-078.png",
+      "rarity": "중급",
+      "sha256": "cdb4c6abe846b7120c3a67236d4997ddc815032218bfa00cb90fc0b9d33662a7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-079",
+      "name": "견고한 버드나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-079.png",
+      "rarity": "중급",
+      "sha256": "2dce726f65f1c1a88977341167f723cea6a5fa06950bda33ee3d1d7e21541050",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-080",
+      "name": "정제된 구리 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-080.png",
+      "rarity": "중급",
+      "sha256": "c39294686ba140aa2e063cfe751f3693c6e3032941e0d87e023aeaec74895b7f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-081",
+      "name": "연마된 강물의 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-081.png",
+      "rarity": "중급",
+      "sha256": "c6d4bc8bb314886ad708a94018fae4fb35eca3dfefee1ae2d0f0a81ba229c9bb",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-082",
+      "name": "견고한 꽃잎 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-082.png",
+      "rarity": "중급",
+      "sha256": "40b04b9fbe13af4934c1243b32f53e92d46198a70176bf638d2ef0d04a96cf2b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-083",
+      "name": "정제된 유리 심봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-083.png",
+      "rarity": "중급",
+      "sha256": "fb7061a035ac01c5314359c2606938704f6b1979ba3f73e20e9d7c97462543c9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-084",
+      "name": "연마된 밤하늘 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-084.png",
+      "rarity": "중급",
+      "sha256": "bf55703003282e51c5c7e274e5873939098eafc9dc0ff7593091213dafb13df6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-085",
+      "name": "견고한 가시나무 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-085.png",
+      "rarity": "중급",
+      "sha256": "b07f6f0aa5474c6d9a16a6a53631864c515c636dc272697d777cebb1c446d565",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-086",
+      "name": "정제된 수정 고리봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-086.png",
+      "rarity": "중급",
+      "sha256": "016abf8a69945860486c78aa844b5e628e594e49fd0fac06cc217824ba2db931",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-087",
+      "name": "연마된 안개 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-087.png",
+      "rarity": "중급",
+      "sha256": "1679972e9b246fffdd0c76abfa3961f5d23dd0fce619e7ecf4d2b9aa6f88ca6c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-088",
+      "name": "견고한 호박 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-088.png",
+      "rarity": "중급",
+      "sha256": "9c4920d10edc23b349936c5b5d7799236fa546132c58ae90ebbaa70c563e1f31",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-089",
+      "name": "정제된 별무늬 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-089.png",
+      "rarity": "중급",
+      "sha256": "f9d0bbaa9a5d66268c8bdfce39bba5e8faf8d879ea92ad0f6906429bba98424c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-090",
+      "name": "연마된 청동 술사봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-090.png",
+      "rarity": "중급",
+      "sha256": "56d1b12d804dc9f3ae09db323d5e1a490f39d0b57ee8bbcd8ef1378035f0a2e0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-091",
+      "name": "견고한 이슬 방울봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-091.png",
+      "rarity": "중급",
+      "sha256": "0e4c989d60650be11b841c11e134c7711ec3d3c0655c08bec1b999ebce5165db",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-092",
+      "name": "정제된 서리나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-092.png",
+      "rarity": "중급",
+      "sha256": "1a5348c51d984f8bd5db4012533ba42a3bb974dc6031b20ef3009d9d96df35c6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-093",
+      "name": "연마된 소용돌이 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-093.png",
+      "rarity": "중급",
+      "sha256": "2fea1325010e91c73f80bd933e2b33b25e81b7d1c81749a2bc76ea69a1963ad8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-094",
+      "name": "견고한 먹구름 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-094.png",
+      "rarity": "중급",
+      "sha256": "7ddbc3f839a1a6d733cb81cbf6829fb763aaa79c21baf5946f59083851eddc5f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-095",
+      "name": "정제된 은실 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-095.png",
+      "rarity": "중급",
+      "sha256": "c2703bd1416d2aa8b913139ba2548e574d17bfd45526c3999a00c4f9925d4123",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-096",
+      "name": "연마된 고요한 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-096.png",
+      "rarity": "중급",
+      "sha256": "b8f36a7c41f9d62c05f91c60b58122628235e20c98a8132df1bf3d7f089644ba",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-097",
+      "name": "견고한 여행자 가죽옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-097.png",
+      "rarity": "중급",
+      "sha256": "efafdcb96a73fab9b149a4d9c36f74c529c8482fc8c861ad87f000f33ac37450",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-098",
+      "name": "정제된 수습 기사 갑옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-098.png",
+      "rarity": "중급",
+      "sha256": "e42fbb8c3df97dcc33318b58cc2c48720ddd030a7e824295b5f531b75a7ba92c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-099",
+      "name": "연마된 삼나무 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-099.png",
+      "rarity": "중급",
+      "sha256": "8e85f38eee22fecf7effd82c883f040a879ec868c7eccc94884c25950ed64784",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-100",
+      "name": "견고한 근위병 철갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-100.png",
+      "rarity": "중급",
+      "sha256": "938decb4a0662825341897c7f29fcbbf89889263fb27ba048a449190af8fc07e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-101",
+      "name": "정제된 협곡 경장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-101.png",
+      "rarity": "중급",
+      "sha256": "c18843c2e8845368b250ecf029de7a7921807ece4c446a375bea5ffe6db43f59",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-102",
+      "name": "연마된 대륙 모험복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-102.png",
+      "rarity": "중급",
+      "sha256": "9b3482aea3e0d8020a14b23d026061376ce244889bd98667a1907e753ce9f33a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-103",
+      "name": "견고한 마법학도 로브",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-103.png",
+      "rarity": "중급",
+      "sha256": "7df53bd1e0f25e44fd8154a7f3cc3e8e3e4334c76f294283e5f51362890cab94",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/robe.png"
+    },
+    {
+      "id": "ER-EQ-104",
+      "name": "정제된 청류 술사복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-104.png",
+      "rarity": "중급",
+      "sha256": "39f868d42960ffb319335966f4c6cc67c1b96c4e83ec3a158f00aab6229e84cb",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png"
+    },
+    {
+      "id": "ER-EQ-105",
+      "name": "연마된 항해자 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-105.png",
+      "rarity": "중급",
+      "sha256": "c0350a3fb2c43de128003d7272d741d019588d85618a68fe5ab93cc3ba0d71b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-106",
+      "name": "견고한 변경 감시복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-106.png",
+      "rarity": "중급",
+      "sha256": "e3bcbca20070ab2261f95f04a280181e2ff6b49449beb19408c735b8222d2ee5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-107",
+      "name": "정제된 황동 장식갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-107.png",
+      "rarity": "중급",
+      "sha256": "a3c877ecf8ff83927fd9f4b78b4a776e4b2a38cf0e8ae49d0df715a3694d5977",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-108",
+      "name": "연마된 은빛 수호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-108.png",
+      "rarity": "중급",
+      "sha256": "829e368bc383089cbaa9b424b7b1748ea4710bf7b85321128f698e10fe375833",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-109",
+      "name": "견고한 철제 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-109.png",
+      "rarity": "중급",
+      "sha256": "17f21d99f29098864327cbeab1527dfa8a66fd0ce16929bbc27cf2286bcc06c2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-110",
+      "name": "정제된 달빛 목걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-110.png",
+      "rarity": "중급",
+      "sha256": "818b18787c71f7ee7ad4510af40968b6721c4e42a464b104bc937d4c7f056116",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/necklace.png"
+    },
+    {
+      "id": "ER-EQ-111",
+      "name": "연마된 호박 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-111.png",
+      "rarity": "중급",
+      "sha256": "3766c05e898fef950796ce708d5656a712cc3a189cc7c74a6a0fc468b3f3a708",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-112",
+      "name": "견고한 여행자의 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-112.png",
+      "rarity": "중급",
+      "sha256": "3748516743a091d6ac4630b610f34b7fac6e6322462f8a7aa5e3488f5615433c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-113",
+      "name": "정제된 호위 인장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-113.png",
+      "rarity": "중급",
+      "sha256": "2c6f6170a80cdb28f43c028e8659942b09137e0f98aef1e5d2a7ce7e35a4fa1f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-114",
+      "name": "연마된 파도 유리반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-114.png",
+      "rarity": "중급",
+      "sha256": "5cad18e01f0c6344e469a1cd4bc5fa9ece6e07e8de2745b31b9b32084b47ff7c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-115",
+      "name": "견고한 은방울 귀걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-115.png",
+      "rarity": "중급",
+      "sha256": "37ca6995618f13bc38b9a0bcf896248f91d9f1fb71c935f35f3d5196ab38efe4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/earrings.png"
+    },
+    {
+      "id": "ER-EQ-116",
+      "name": "정제된 마나 수정고리",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-116.png",
+      "rarity": "중급",
+      "sha256": "d7cc9f7fe344f7490c55fe4016231c787e9801a1883e3835c1643cecb9662d84",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-117",
+      "name": "연마된 별가루 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-117.png",
+      "rarity": "중급",
+      "sha256": "e648ddcb5f8c5fd0694112d27e40ed4671be3521a3a43743ea79f2d7fa2fa5e5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-118",
+      "name": "견고한 매듭 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-118.png",
+      "rarity": "중급",
+      "sha256": "3748516743a091d6ac4630b610f34b7fac6e6322462f8a7aa5e3488f5615433c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-119",
+      "name": "정제된 황금 나침반 장식",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-119.png",
+      "rarity": "중급",
+      "sha256": "e6926943306d580f358dec04795d227895d44ac041aaeeafa706a5f6c33861c3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-120",
+      "name": "연마된 고요한 흑석 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-120.png",
+      "rarity": "중급",
+      "sha256": "cea551940be0b94475689a1eda14f1f8f12fec81143894ef93a2db91ad0e3ad4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-121",
+      "name": "명장의 낡은 철검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-121.png",
+      "rarity": "고급",
+      "sha256": "1a606c4db2b34aa06af76cece2e1b9e361bbb60e869e117142b4291258029fb1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-122",
+      "name": "빛나는 푸른강 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-122.png",
+      "rarity": "고급",
+      "sha256": "962bfe061b9c0d6fe6404cca4d60aa24bbeeba5f6e1c918bd0b703ce9b4a01ac",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-123",
+      "name": "정교한 매의 송곳검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-123.png",
+      "rarity": "고급",
+      "sha256": "bf8cb7556547e64d22951f9ca9b0fc7f3ee87a142480fa4ab15bf3fd0634ce34",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-124",
+      "name": "명장의 참나무 손잡이검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-124.png",
+      "rarity": "고급",
+      "sha256": "74a360f242f1382e3b71e418cfa3e25746bf762c920af14450bda96d845f3956",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-125",
+      "name": "빛나는 새벽 순찰검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-125.png",
+      "rarity": "고급",
+      "sha256": "fc3e09cb73005b159222cc8c1e49ff646284cc09c7f87da27318d89babdaebf4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-126",
+      "name": "정교한 장미 문양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-126.png",
+      "rarity": "고급",
+      "sha256": "07d026893b03596766c33c4558fd91a40e4a3de286984bb0629f3ba0a7f94b1f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-127",
+      "name": "명장의 흑요석 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-127.png",
+      "rarity": "고급",
+      "sha256": "5008c431e6dc3216c8f18efb01438e6e374e6eb81afa59b2a5f80825578784e4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-128",
+      "name": "빛나는 회색 협곡검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-128.png",
+      "rarity": "고급",
+      "sha256": "7a703c117ddb67f8c7241e6dae8fb7208154a37952afe82e248d43b9ca40e37c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-129",
+      "name": "정교한 바람결 세검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-129.png",
+      "rarity": "고급",
+      "sha256": "217714ab4d9b26b5dc7f727a505d77306dd0e0a176fabb8fb15003677da9822b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-130",
+      "name": "명장의 왕도 의장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-130.png",
+      "rarity": "고급",
+      "sha256": "95421f61974ccc29a61294e03b2455079cc58dea8a95b351f15485cf797619f8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-131",
+      "name": "빛나는 강변 호위검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-131.png",
+      "rarity": "고급",
+      "sha256": "d22fc4332f813b129ba5d5db18f541820449808cd4e8cd747dc58bf8bbef7100",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-132",
+      "name": "정교한 철산 대검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-132.png",
+      "rarity": "고급",
+      "sha256": "e92ab49b8a805c376ae2154eab62e998a884acab54bf55fa4d0493f68691fc19",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-133",
+      "name": "명장의 서리끝 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-133.png",
+      "rarity": "고급",
+      "sha256": "9a2e01d974aeb970c2e8e8f8ddfd21dc2546e114f7850dcf0fa570dd321f5ff2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-134",
+      "name": "빛나는 붉은 석양검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-134.png",
+      "rarity": "고급",
+      "sha256": "c8d6ed9deb0e468b6289f62056dad0e56c35db18c8b036904b6cb0f4dc9209c2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-135",
+      "name": "정교한 은빛 장검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-135.png",
+      "rarity": "고급",
+      "sha256": "f1b32052e9ca75a825f288705df0321bbc32f5beac0305517ada1013783fb9ed",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-136",
+      "name": "명장의 돌개바람 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-136.png",
+      "rarity": "고급",
+      "sha256": "b8a81d2f910e8853c5a8e173bf7cbfa7f37c3a9975e03b309c1fa5136be6b93f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-137",
+      "name": "빛나는 갈매기 검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-137.png",
+      "rarity": "고급",
+      "sha256": "9046fd46903ad16d74d86cf3210ad12266b5a4b48b84648e95689a3946aef949",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-138",
+      "name": "정교한 동토 파수검",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-138.png",
+      "rarity": "고급",
+      "sha256": "ca76fea32122cfa00d2d6db3f67bf8d47be469406cbae8dabe64fc8571169f99",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-139",
+      "name": "명장의 버드나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-139.png",
+      "rarity": "고급",
+      "sha256": "c1847123a047f1e0c38176e78a0871a36e392d1b4ffca32281275a752f5c5f52",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-140",
+      "name": "빛나는 구리 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-140.png",
+      "rarity": "고급",
+      "sha256": "01ad3c69f5aa4a038b6d20e065af5578aa6abb1393b6b342a8b19e54782a7fed",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-141",
+      "name": "정교한 강물의 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-141.png",
+      "rarity": "고급",
+      "sha256": "77aa10353d250e1865d2545c4060bc278ecd78790d34b486f692ec7c8160caee",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-142",
+      "name": "명장의 꽃잎 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-142.png",
+      "rarity": "고급",
+      "sha256": "d88cbac69fe502e0df869bc408609642d11fbf42af32e8eb6dd007d146dcaf19",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-143",
+      "name": "빛나는 유리 심봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-143.png",
+      "rarity": "고급",
+      "sha256": "8bf25a1bd4b8ad1f751657ac1ac8a9fd20ed755d24258353221d5e57a0129b0d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-144",
+      "name": "정교한 밤하늘 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-144.png",
+      "rarity": "고급",
+      "sha256": "7c6ee9bb91bfba9d04bb1bc92222b7960a302bd4a84282b86891d3f132f53e11",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-145",
+      "name": "명장의 가시나무 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-145.png",
+      "rarity": "고급",
+      "sha256": "c55057675a975eb51849536e8735f96987b11686fcdbee4f9847b3ad39975686",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-146",
+      "name": "빛나는 수정 고리봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-146.png",
+      "rarity": "고급",
+      "sha256": "437d320245850dfa3cf41e89900fe4222ddb1cfe7c8a027c2554468ba2077f23",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-147",
+      "name": "정교한 안개 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-147.png",
+      "rarity": "고급",
+      "sha256": "83e314184efed961fb79cf9de671944a56307cb30e233644f49aae339fbe2304",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-148",
+      "name": "명장의 호박 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-148.png",
+      "rarity": "고급",
+      "sha256": "b17abe20f28362837f22fb86b639d80cf85ab91e690965e05eccbb12bf98b140",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-149",
+      "name": "빛나는 별무늬 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-149.png",
+      "rarity": "고급",
+      "sha256": "540fa609182b46e8b1f6f9a2e664b89812b61fd17be54595da45bbfa14998ab1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-150",
+      "name": "정교한 청동 술사봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-150.png",
+      "rarity": "고급",
+      "sha256": "504b207bb54d474a8ffa828757436bc2230b5875e069b60337f08305fbc1bf08",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-151",
+      "name": "명장의 이슬 방울봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-151.png",
+      "rarity": "고급",
+      "sha256": "a0f2995ca6b38458eca09a756e3a9bcbb993e5330f22ce2246def6361f1b1753",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-152",
+      "name": "빛나는 서리나무 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-152.png",
+      "rarity": "고급",
+      "sha256": "e7e775ff7349899e59db804eaa06fc706a9cab3f13c73bc0ea16c2ed7fa00b0b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-153",
+      "name": "정교한 소용돌이 봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-153.png",
+      "rarity": "고급",
+      "sha256": "e3219f7a2632264b34ab425718b8bd000c3fe01ee42d61bd703a93b132641520",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-154",
+      "name": "명장의 먹구름 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-154.png",
+      "rarity": "고급",
+      "sha256": "42d87de0556566c9767279f55a0eb07b5ba86c3fe7cfb9918c91e42d0c51a8fc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-155",
+      "name": "빛나는 은실 지팡이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-155.png",
+      "rarity": "고급",
+      "sha256": "bb23c640426d726f1c48093108dcd0a486169af9769cbecc8a5b2889b6efe4c2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-156",
+      "name": "정교한 고요한 마도봉",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-156.png",
+      "rarity": "고급",
+      "sha256": "50ede29b364ae9626cc0a73d73bceb3f8ed89c4ec812c9e0462f161d04acb4f8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-157",
+      "name": "명장의 여행자 가죽옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-157.png",
+      "rarity": "고급",
+      "sha256": "b1a951f8059a4e49fd5d3b25c8de2828630e239f3bc27fbaf91485549dd47ee3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-158",
+      "name": "빛나는 수습 기사 갑옷",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-158.png",
+      "rarity": "고급",
+      "sha256": "beb291f5d837ea58cdd24ca7f156d299edd0383a85fb1085da9b5e3c9f8c6d46",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-159",
+      "name": "정교한 삼나무 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-159.png",
+      "rarity": "고급",
+      "sha256": "8c020cb430cc820caf08f9cc923fa00b04c6feb72e5dccd52aa70bbd2658954b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-160",
+      "name": "명장의 근위병 철갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-160.png",
+      "rarity": "고급",
+      "sha256": "9e8f5da69933509eb9ec2a7b588fb95e3f8a5f91464074e5f5bbf2af23435082",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-161",
+      "name": "빛나는 협곡 경장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-161.png",
+      "rarity": "고급",
+      "sha256": "a2ca453131c2d48d83d323a703d65bcd49cbf71d003a59dc6bcf16a77d3a6c48",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-162",
+      "name": "정교한 대륙 모험복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-162.png",
+      "rarity": "고급",
+      "sha256": "b743e5110dbdfedd1a1e557eceddc7d3ad5d29238abcbacf3193ea8c5ea32a0a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-163",
+      "name": "명장의 마법학도 로브",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-163.png",
+      "rarity": "고급",
+      "sha256": "4b80b6b455ff50c9ca7111a74f65504f9d28b58e5909ef3c2a996c179c408da0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/robe.png"
+    },
+    {
+      "id": "ER-EQ-164",
+      "name": "빛나는 청류 술사복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-164.png",
+      "rarity": "고급",
+      "sha256": "e07b941e5c44bc66dc833ba06512984ab6166a314b84ee88835d87df409c78d3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png"
+    },
+    {
+      "id": "ER-EQ-165",
+      "name": "정교한 항해자 방호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-165.png",
+      "rarity": "고급",
+      "sha256": "da160990471cee8a412e279cd3098e2b1e64b0403f4baf11426804b8cdf41697",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-166",
+      "name": "명장의 변경 감시복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-166.png",
+      "rarity": "고급",
+      "sha256": "2713920879b22f265efd120a77666cec53f922931362d5915278a0741583f398",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-167",
+      "name": "빛나는 황동 장식갑",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-167.png",
+      "rarity": "고급",
+      "sha256": "039c79a29b36662c145feedd945acd54a85d0edbd7e85d58d7ad02471403e97d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-168",
+      "name": "정교한 은빛 수호복",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-168.png",
+      "rarity": "고급",
+      "sha256": "136e65ac4a65808b79a1c816d64932bdea9670bf1d8003357233cee4dc6b9036",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-169",
+      "name": "명장의 철제 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-169.png",
+      "rarity": "고급",
+      "sha256": "a546435789bbb54bcec7ed5d70a60c7f3ca078d86168894d9d0015b8e4ec8356",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-170",
+      "name": "빛나는 달빛 목걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-170.png",
+      "rarity": "고급",
+      "sha256": "caeb1d898986945d1c1309f0ff583ab3f5ee57c89ba8e4f84b0eefa64035e8a6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/necklace.png"
+    },
+    {
+      "id": "ER-EQ-171",
+      "name": "정교한 호박 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-171.png",
+      "rarity": "고급",
+      "sha256": "0d53372465154354fcc9da6f342b05ecd16bc04200ca4b0e8ae03e1abc494676",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-172",
+      "name": "명장의 여행자의 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-172.png",
+      "rarity": "고급",
+      "sha256": "c72a60d9cf495aa5a3ff5474dfcb29682c6a7ab525b78a3ed6a5009e0757759b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-173",
+      "name": "빛나는 호위 인장",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-173.png",
+      "rarity": "고급",
+      "sha256": "e167c528ce8c7ff05f5ca952b15be2712e51edddb9d124ca479f9c4a7528c493",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-174",
+      "name": "정교한 파도 유리반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-174.png",
+      "rarity": "고급",
+      "sha256": "09b5c91656f8103ec877d6fb36d613b80263ab6801f3b4af06b23dcf79321c9d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-175",
+      "name": "명장의 은방울 귀걸이",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-175.png",
+      "rarity": "고급",
+      "sha256": "6008bf9d83240691e437d43fa2830d38f94cc322919da09f74001876cd102ea1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/earrings.png"
+    },
+    {
+      "id": "ER-EQ-176",
+      "name": "빛나는 마나 수정고리",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-176.png",
+      "rarity": "고급",
+      "sha256": "a88cb3be3b858350d3d5deeb5bdd8abc86ee4af54d4b10d6a9f10ca9d4a35bd4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-177",
+      "name": "정교한 별가루 펜던트",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-177.png",
+      "rarity": "고급",
+      "sha256": "60e24c6c9fe60cbdf13a5359eb1d65e1c53255e58ba89d78df0408abbf787eb1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-178",
+      "name": "명장의 매듭 부적",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-178.png",
+      "rarity": "고급",
+      "sha256": "c72a60d9cf495aa5a3ff5474dfcb29682c6a7ab525b78a3ed6a5009e0757759b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-179",
+      "name": "빛나는 황금 나침반 장식",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-179.png",
+      "rarity": "고급",
+      "sha256": "72d5b3f9c65d7408a5f21e4ae648066a310a257c545791551b7c463c6fd96bd7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-180",
+      "name": "정교한 고요한 흑석 반지",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-180.png",
+      "rarity": "고급",
+      "sha256": "66e19ec4be9c2d509d9315241aa6ab5e65692ac9f4704189e2dbfb15f7e4c5a4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-181",
+      "name": "비전의 낡은 철검 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-181.png",
+      "rarity": "유니크",
+      "sha256": "9e8e0d1a581ad2d7ca7faa1d1557176fe9205073fbbb69a4728c512044382fb8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-182",
+      "name": "유산의 푸른강 검 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-182.png",
+      "rarity": "유니크",
+      "sha256": "b04b4726a41dbbc0366a8a81fac9fc595d428a13c499c31daad5718ac210b017",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-183",
+      "name": "각성한 매의 송곳검 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-183.png",
+      "rarity": "유니크",
+      "sha256": "042d6350006e4e453ad8bccc426c2b714745d6d646389a824b5952e1b9f3df97",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-184",
+      "name": "비전의 참나무 손잡이검 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-184.png",
+      "rarity": "유니크",
+      "sha256": "f4a51c1a7f4d5cbf04fd54c5bb48586754e107161e008f88cfe349e19c140ba7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-185",
+      "name": "유산의 새벽 순찰검 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-185.png",
+      "rarity": "유니크",
+      "sha256": "efebdd3b9ddd8ab9f2752122d807578c64c354c6fb7fe326e543265fe3a0fea4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-186",
+      "name": "각성한 장미 문양검 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-186.png",
+      "rarity": "유니크",
+      "sha256": "a8506c7e2ba5d1c57b54010c823b73629f19351dbc5da0bbc649298001209bbb",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-187",
+      "name": "비전의 흑요석 검 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-187.png",
+      "rarity": "유니크",
+      "sha256": "6a3b5f2918baf09430e83704f7221236e7d39bd567267cea2377c27a8488bae3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-188",
+      "name": "유산의 회색 협곡검 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-188.png",
+      "rarity": "유니크",
+      "sha256": "e38479a9563cac467b07f855e2cb4d85bf275c1b70074f14c4c42bc95284ab6d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-189",
+      "name": "각성한 바람결 세검 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-189.png",
+      "rarity": "유니크",
+      "sha256": "85b4bfcb819f820d455e53c94ec95b8faf14b1f9507542e8f750ae205ceb822d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-190",
+      "name": "비전의 왕도 의장검 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-190.png",
+      "rarity": "유니크",
+      "sha256": "6e592d34cb935dd77b8a02d5fb939abc7ae355a57c447843814a15634b5ea63e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-191",
+      "name": "유산의 강변 호위검 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-191.png",
+      "rarity": "유니크",
+      "sha256": "c3603cd3003b2cb60fffe3cfb812b962abd09a9486e121f915f92e16dddfd422",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-192",
+      "name": "각성한 철산 대검 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-192.png",
+      "rarity": "유니크",
+      "sha256": "d9a1b7a3354469701a2c9b88ee4fedea3307abe11340e1865eebaf18bf0293e4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-193",
+      "name": "비전의 서리끝 검 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-193.png",
+      "rarity": "유니크",
+      "sha256": "d7db51733d982dd86e2c5f2ad502a0048320b8042b3ed8ac4b7101d4e1d5f02b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-194",
+      "name": "유산의 붉은 석양검 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-194.png",
+      "rarity": "유니크",
+      "sha256": "877f27ee31dceb3f744dea738e71321b9a1f19dcb1db6afb74b32ecc0b275da9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-195",
+      "name": "각성한 은빛 장검 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-195.png",
+      "rarity": "유니크",
+      "sha256": "cf60349c5716d816963a88d6c0ba2523e0def5523adc26692c16ba78cec58124",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-196",
+      "name": "비전의 돌개바람 검 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-196.png",
+      "rarity": "유니크",
+      "sha256": "04b4c58c52562347a31fd559772e34d8e1e3d115092b73623751c7ae4f4d27b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-197",
+      "name": "유산의 갈매기 검 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-197.png",
+      "rarity": "유니크",
+      "sha256": "13be1e9b41b48fa95efad6df8ce6e0898c04e86b63fe500debd5b411edf638f2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-198",
+      "name": "각성한 동토 파수검 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-198.png",
+      "rarity": "유니크",
+      "sha256": "3fd1a17236664c6eaa6b1a00290ff717eed90715a0e55b84550db662cea8f934",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-199",
+      "name": "비전의 버드나무 지팡이 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-199.png",
+      "rarity": "유니크",
+      "sha256": "03ba3a116bf84a30c5acc79d0a483793ac086df576a623270dde8016e7ad68b6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-200",
+      "name": "유산의 구리 마도봉 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-200.png",
+      "rarity": "유니크",
+      "sha256": "989e9e4c759c9ad077fc176a141c2a28a54b9ddda9ede91206ee6f6cedcfb127",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-201",
+      "name": "각성한 강물의 지팡이 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-201.png",
+      "rarity": "유니크",
+      "sha256": "47c45fd75d3c2025c90b73ee9fdad70722afdcd9476d4f287e7d20e061357d20",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-202",
+      "name": "비전의 꽃잎 마도봉 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-202.png",
+      "rarity": "유니크",
+      "sha256": "5229edb17bb5c8ef87527a58cec39ea1deec5704253af557283490241ecbdb70",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-203",
+      "name": "유산의 유리 심봉 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-203.png",
+      "rarity": "유니크",
+      "sha256": "c042fdf6d872d98d6d5543d8554955b7881ff6f08b583549b8d543821ec2fbe4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-204",
+      "name": "각성한 밤하늘 지팡이 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-204.png",
+      "rarity": "유니크",
+      "sha256": "9255fb3f17fc28ca3c6a0bf824546e8d00de79580f94ed59e03affc6dbbffd14",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-205",
+      "name": "비전의 가시나무 봉 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-205.png",
+      "rarity": "유니크",
+      "sha256": "8db24bd362e82b6b3db14c4ce4aefd384aa048900513d8d96d654397fdfbf4d6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-206",
+      "name": "유산의 수정 고리봉 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-206.png",
+      "rarity": "유니크",
+      "sha256": "ba27abe15963efdd2a30a3f46fd764f6e4a1c9057f531991f08b2024b7241d56",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-207",
+      "name": "각성한 안개 마도봉 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-207.png",
+      "rarity": "유니크",
+      "sha256": "375b709c3e568cae76cd5f8b99b6989d7543894a911ffe85a59029cd890c6d6f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-208",
+      "name": "비전의 호박 마도봉 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-208.png",
+      "rarity": "유니크",
+      "sha256": "7fc06f166deeee2353ba9e396f0a9748c4a6b67cc68eab62a0626b45b94214a7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-209",
+      "name": "유산의 별무늬 지팡이 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-209.png",
+      "rarity": "유니크",
+      "sha256": "5a519d772d510d9c356727d156a19571c2e91717f67bcf5d8645a53fa034a129",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-210",
+      "name": "각성한 청동 술사봉 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-210.png",
+      "rarity": "유니크",
+      "sha256": "cdd61e0a453ff08a00c7b8bcc30dc47c1ea5ef44baf5185ca99200c2d13068cc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-211",
+      "name": "비전의 이슬 방울봉 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-211.png",
+      "rarity": "유니크",
+      "sha256": "31b4e229096cd68469b96c06abc74399062e769be635fa24431f9f90ac01383b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-212",
+      "name": "유산의 서리나무 지팡이 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-212.png",
+      "rarity": "유니크",
+      "sha256": "cf8bd20ea5cdb9348e68442a5b8264b9352bd163dbba922021d7c937c222dde8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-213",
+      "name": "각성한 소용돌이 봉 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-213.png",
+      "rarity": "유니크",
+      "sha256": "8032e79d9e8b9f4a292363ea1160a95595000473251ab28b9968250ee4ba823d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-214",
+      "name": "비전의 먹구름 마도봉 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-214.png",
+      "rarity": "유니크",
+      "sha256": "524eeb4b2cbd7209402aa05b14e2e3dc3f4cee84ea0a4ac3e8a161dd090feee5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-215",
+      "name": "유산의 은실 지팡이 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-215.png",
+      "rarity": "유니크",
+      "sha256": "380cb45e7634af8569d086540c8399f360ed7eec255606ae8e6035a34c7253e0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-216",
+      "name": "각성한 고요한 마도봉 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-216.png",
+      "rarity": "유니크",
+      "sha256": "efe94ce6b45d1185d02f28ba0a38385cf109b32608212c66d79833f4b1a38b83",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-217",
+      "name": "비전의 여행자 가죽옷 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-217.png",
+      "rarity": "유니크",
+      "sha256": "065d5792551a73113743a0749eca8ef7e672525545b8ec795991fd0a6ce0de9e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-218",
+      "name": "유산의 수습 기사 갑옷 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-218.png",
+      "rarity": "유니크",
+      "sha256": "b70f169c98c2be6e6c51e60e8317cf5d4dad0316db71ba4f03a1b5208ba9d3fc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-219",
+      "name": "각성한 삼나무 방호복 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-219.png",
+      "rarity": "유니크",
+      "sha256": "54a202289c2cf106ddfa4c57856687fa3ec17fc79f7cecf41589a1623ffc7f3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-220",
+      "name": "비전의 근위병 철갑 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-220.png",
+      "rarity": "유니크",
+      "sha256": "a36ee50eba5e0cdc5b8af06dd650091aede6e1349da204d8f145e0dbe8b0c292",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-221",
+      "name": "유산의 협곡 경장 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-221.png",
+      "rarity": "유니크",
+      "sha256": "93c5656ebf37d82fccdac63db5bccc2512ab2068ddc46769651517f82df33fe9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-222",
+      "name": "각성한 대륙 모험복 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-222.png",
+      "rarity": "유니크",
+      "sha256": "a27b524582df008348c7638a7ab372823a13fd0b299b69b00fea38b764ac52fa",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-223",
+      "name": "비전의 마법학도 로브 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-223.png",
+      "rarity": "유니크",
+      "sha256": "4d2dfd383ce4ddc8d0153fb908c6564dcdb4ac66e6defd9995699becd474d3e0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/robe.png"
+    },
+    {
+      "id": "ER-EQ-224",
+      "name": "유산의 청류 술사복 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-224.png",
+      "rarity": "유니크",
+      "sha256": "d0b298858d68727f488b5c35ea9beb913ca18c984189ff0fbd02ab243e8d92a4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png"
+    },
+    {
+      "id": "ER-EQ-225",
+      "name": "각성한 항해자 방호복 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-225.png",
+      "rarity": "유니크",
+      "sha256": "2b63387821d56b028b3b21c2ddfcb688a251db214af4f4d6e6b3b4cc8c94f150",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-226",
+      "name": "비전의 변경 감시복 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-226.png",
+      "rarity": "유니크",
+      "sha256": "80dc9cf06a8d8828f63f24afe7321839492bd3e80696b4688dc0aa336a6995f9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-227",
+      "name": "유산의 황동 장식갑 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-227.png",
+      "rarity": "유니크",
+      "sha256": "655d050d4632d00ef7ed600c8fbb0d927b29c951f02f190a677a6669008a3110",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-228",
+      "name": "각성한 은빛 수호복 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-228.png",
+      "rarity": "유니크",
+      "sha256": "e56a471a743a7affb36b9cc39cc87f6863922243375c353e4818102b1e7a279a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-229",
+      "name": "비전의 철제 반지 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-229.png",
+      "rarity": "유니크",
+      "sha256": "6a1e3189bb4aff64d47fb50af18038e21309354068a2ee91ce122e59d1019228",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-230",
+      "name": "유산의 달빛 목걸이 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-230.png",
+      "rarity": "유니크",
+      "sha256": "a685a5085998a3ded699ced5ee43eda6934eab905f74e0fabaa04861f6c6da54",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/necklace.png"
+    },
+    {
+      "id": "ER-EQ-231",
+      "name": "각성한 호박 펜던트 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-231.png",
+      "rarity": "유니크",
+      "sha256": "0610cedf0dde3ed709c58c4aa081cf3eec89dec54c9714923064aa4ecab72bf0",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-232",
+      "name": "비전의 여행자의 부적 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-232.png",
+      "rarity": "유니크",
+      "sha256": "0ea714cbef3caf3da7956500fb2a18238961fd89617a1bcc4a70033670492b3a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-233",
+      "name": "유산의 호위 인장 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-233.png",
+      "rarity": "유니크",
+      "sha256": "a45d77f710c8a90d5bd74c73277d6aef89763e5c87fb99b6a4d0a1256aeca8dd",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-234",
+      "name": "각성한 파도 유리반지 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-234.png",
+      "rarity": "유니크",
+      "sha256": "652a55a5ee7c37cc1811f0242fd4aef69619cd59744874fbe939ae0b447960d4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-235",
+      "name": "비전의 은방울 귀걸이 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-235.png",
+      "rarity": "유니크",
+      "sha256": "11954765c42658c2617c3ff9fe81195b4e29e7d1bca0574df050989e1253df80",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/earrings.png"
+    },
+    {
+      "id": "ER-EQ-236",
+      "name": "유산의 마나 수정고리 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-236.png",
+      "rarity": "유니크",
+      "sha256": "c9b9592b56aa7154698887a63ee133ba6a49d00d89b005bbac4dab13d7ed57d3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-237",
+      "name": "각성한 별가루 펜던트 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-237.png",
+      "rarity": "유니크",
+      "sha256": "1d18a5abd30f42e44f7915ddc34830b76a0d7a5c8f42f434c763f69ae5549097",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-238",
+      "name": "비전의 매듭 부적 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-238.png",
+      "rarity": "유니크",
+      "sha256": "0ea714cbef3caf3da7956500fb2a18238961fd89617a1bcc4a70033670492b3a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-239",
+      "name": "유산의 황금 나침반 장식 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-239.png",
+      "rarity": "유니크",
+      "sha256": "2d75b1daa2545b72a04106b5781fe575397f61224aaae414326de047a22cf7d8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-240",
+      "name": "각성한 고요한 흑석 반지 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-240.png",
+      "rarity": "유니크",
+      "sha256": "b02fc2170659cf3d9bd7236f04755de32273a948ab199cd1479aefcd3f274acd",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-241",
+      "name": "전설의 낡은 철검 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-241.png",
+      "rarity": "에픽",
+      "sha256": "586fe7a2daa7d1a76da06bb539127e212c18bfc3e75238fa7423408caacf638e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-242",
+      "name": "영원의 푸른강 검 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-242.png",
+      "rarity": "에픽",
+      "sha256": "dceb4ef9511ef60199214658cdd74a17345f6757ccb3c0c75e8e0a25ada02f92",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-243",
+      "name": "천상의 매의 송곳검 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-243.png",
+      "rarity": "에픽",
+      "sha256": "0cc06230790b674ae59913bfdca80837695b1a6d9720ac1c7ed74e75a7c2ee14",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-244",
+      "name": "전설의 참나무 손잡이검 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-244.png",
+      "rarity": "에픽",
+      "sha256": "99e093d2daeda16166afea8946d0ce145a8d1032590a9c12d636853c8405f41f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-245",
+      "name": "영원의 새벽 순찰검 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-245.png",
+      "rarity": "에픽",
+      "sha256": "a014c421da905473aab978f1fa672fbe70f02b366958ced574191500b5e39856",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-246",
+      "name": "천상의 장미 문양검 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-246.png",
+      "rarity": "에픽",
+      "sha256": "24886755e84af55e886ed4b4bbe7e65e400fb31e8e45bcfc74d389216a6ea7c8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-247",
+      "name": "전설의 흑요석 검 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-247.png",
+      "rarity": "에픽",
+      "sha256": "83d36683ca4b6d86bd765481010ace48295a52e4f47a62abb8541d3cde49a77b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-248",
+      "name": "영원의 회색 협곡검 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-248.png",
+      "rarity": "에픽",
+      "sha256": "95691cf6f8af30e40938e33dd232bdb04bd0b2c8225448ab5e4cb0952c77a4fc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-249",
+      "name": "천상의 바람결 세검 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-249.png",
+      "rarity": "에픽",
+      "sha256": "f98c27666367c5c9ea6176ab42ebff9adba90e57d57a29464a95050d602ebfc6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/rapier.png"
+    },
+    {
+      "id": "ER-EQ-250",
+      "name": "전설의 왕도 의장검 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-250.png",
+      "rarity": "에픽",
+      "sha256": "a2e1cbf218f3a893bc1acac90f72a4023a4ad4330bc05f42cb001b0756c2f870",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png"
+    },
+    {
+      "id": "ER-EQ-251",
+      "name": "영원의 강변 호위검 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-251.png",
+      "rarity": "에픽",
+      "sha256": "2a0100a70cb292daea07d7e71ff959dcd7ac75cf29a84860ea533c7ece0306cc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-252",
+      "name": "천상의 철산 대검 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-252.png",
+      "rarity": "에픽",
+      "sha256": "9f1510039f34f0ab35cec45276174d3b295b406131309d071869af925ba7ed45",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-253",
+      "name": "전설의 서리끝 검 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-253.png",
+      "rarity": "에픽",
+      "sha256": "f2159b536ae6f2a0b133412db341a00724573a2e3eff007a80c1060bf1027030",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/straight_sword.png"
+    },
+    {
+      "id": "ER-EQ-254",
+      "name": "영원의 붉은 석양검 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-254.png",
+      "rarity": "에픽",
+      "sha256": "4f387876871b1a357620cec14858f8487e752bab9ae396f3e1e50969c651f31d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-255",
+      "name": "천상의 은빛 장검 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-255.png",
+      "rarity": "에픽",
+      "sha256": "08a7baf2542a9509e515bca6f2521bcbf23ce64707ae53d93ede899b1767d0f9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/longsword.png"
+    },
+    {
+      "id": "ER-EQ-256",
+      "name": "전설의 돌개바람 검 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-256.png",
+      "rarity": "에픽",
+      "sha256": "934eb5e882fc1f78bbe209523752b2f70d73904d8bb3add1dc38b898187edbfc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-257",
+      "name": "영원의 갈매기 검 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-257.png",
+      "rarity": "에픽",
+      "sha256": "ce936752d7b82327ff5383167b8781df2281a77a9644ccebabf6a971785a60be",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/curved_sword.png"
+    },
+    {
+      "id": "ER-EQ-258",
+      "name": "천상의 동토 파수검 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-258.png",
+      "rarity": "에픽",
+      "sha256": "3ee372ac0d7a10767c478f1e1c5ff6bf97725e813eeb5c000e7f022cfbfb495c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/greatsword.png"
+    },
+    {
+      "id": "ER-EQ-259",
+      "name": "전설의 버드나무 지팡이 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-259.png",
+      "rarity": "에픽",
+      "sha256": "3caeb023ccdf721cccf8dc4dbc1c3ae8a7f9c132d64cdfdd88600d9f446d3cb8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-260",
+      "name": "영원의 구리 마도봉 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-260.png",
+      "rarity": "에픽",
+      "sha256": "2f3590e2364305dfe15ed730642b7ca50fcab0f850b52b6b4943189123345717",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-261",
+      "name": "천상의 강물의 지팡이 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-261.png",
+      "rarity": "에픽",
+      "sha256": "a3a8a636f10a7cb19029063106c264a35f42f588af0640238c817a0a322c684d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-262",
+      "name": "전설의 꽃잎 마도봉 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-262.png",
+      "rarity": "에픽",
+      "sha256": "ca78394bc37f3b3b8229bc3fee8ad5651cb17563b403dbdd80accc9597859071",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-263",
+      "name": "영원의 유리 심봉 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-263.png",
+      "rarity": "에픽",
+      "sha256": "b4bf64f79e1108e3d80384ee344ad8ac302fdb3da508749bb36423f2c54c6f25",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-264",
+      "name": "천상의 밤하늘 지팡이 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-264.png",
+      "rarity": "에픽",
+      "sha256": "966fe9cddd39344643cf92ba0e1efc35b8797634aba2fab38c1e53cf2a4de8cb",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-265",
+      "name": "전설의 가시나무 봉 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-265.png",
+      "rarity": "에픽",
+      "sha256": "ff0f9680798320d23ae68d2d3692ae6f634805cbf8fc35bf0008077aa4253da3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/nature_staff.png"
+    },
+    {
+      "id": "ER-EQ-266",
+      "name": "영원의 수정 고리봉 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-266.png",
+      "rarity": "에픽",
+      "sha256": "c4342197e6a43179e527c3e252f16010364003eceaaa73e59f4c624ddb429ee4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-267",
+      "name": "천상의 안개 마도봉 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-267.png",
+      "rarity": "에픽",
+      "sha256": "9a4ba6c9dc745886a7e946b88ced0b3c1fd07dd4f25d7dad30847a0b20ca77f4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-268",
+      "name": "전설의 호박 마도봉 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-268.png",
+      "rarity": "에픽",
+      "sha256": "3d727ab402d959004792726ff9a2afabff607d4ad81d73f5fcbf51d130029e6e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-269",
+      "name": "영원의 별무늬 지팡이 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-269.png",
+      "rarity": "에픽",
+      "sha256": "24fbc14f297313fd83541fa925232b2ee1397d757f9dec786fad1f4a7171cd1f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-270",
+      "name": "천상의 청동 술사봉 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-270.png",
+      "rarity": "에픽",
+      "sha256": "8260253e7f83a92420adc64045a6f52463c4d3b2534aff8f1b718ca0557808fb",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/metal_staff.png"
+    },
+    {
+      "id": "ER-EQ-271",
+      "name": "전설의 이슬 방울봉 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-271.png",
+      "rarity": "에픽",
+      "sha256": "76e00d1db45c11d0602e5e411007209653a0e92e1501b6cb117f5ddcc4253acd",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png"
+    },
+    {
+      "id": "ER-EQ-272",
+      "name": "영원의 서리나무 지팡이 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-272.png",
+      "rarity": "에픽",
+      "sha256": "6887477be7e0a5071e9d05552c66a26eddc4413ee6be6d18ca5fd60ae43fa9fd",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-273",
+      "name": "천상의 소용돌이 봉 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-273.png",
+      "rarity": "에픽",
+      "sha256": "e9a78352e5338c55175699f5cd6eb3b3f28f158ff3e625fb26a84bb5291bfc54",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-274",
+      "name": "전설의 먹구름 마도봉 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-274.png",
+      "rarity": "에픽",
+      "sha256": "ea5cfcf5d082890152b8ed494e726bdeeaf4ddc9b67ccd89f35e38346b138b48",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png"
+    },
+    {
+      "id": "ER-EQ-275",
+      "name": "영원의 은실 지팡이 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-275.png",
+      "rarity": "에픽",
+      "sha256": "793bf9621501187f18a23a7191cf0c09eaf0e405907dfba3a33da9836fc25082",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/relic_staff.png"
+    },
+    {
+      "id": "ER-EQ-276",
+      "name": "천상의 고요한 마도봉 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-276.png",
+      "rarity": "에픽",
+      "sha256": "5b99944748cf3d6dbc0a75029a54f67c6aa3602fc42680d79cc38b8a6a42d041",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/wood_staff.png"
+    },
+    {
+      "id": "ER-EQ-277",
+      "name": "전설의 여행자 가죽옷 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-277.png",
+      "rarity": "에픽",
+      "sha256": "d9fff25c04b3718b1777e3421f763f711be0d4bea2444ccdbce6ff4934dfdaa1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-278",
+      "name": "영원의 수습 기사 갑옷 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-278.png",
+      "rarity": "에픽",
+      "sha256": "fa1ae3ca4b0f425df06ad485f4b77572cce8b347a9b7eeb062d03c7c56bf286a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-279",
+      "name": "천상의 삼나무 방호복 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-279.png",
+      "rarity": "에픽",
+      "sha256": "4f4ec9afd4c326e751de4b0baa0b371e7a3870aef14c44650b7c5bbb8443c3be",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/leather_armor.png"
+    },
+    {
+      "id": "ER-EQ-280",
+      "name": "전설의 근위병 철갑 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-280.png",
+      "rarity": "에픽",
+      "sha256": "f3606d4e7389f41a5d6146d2e79b3f83c96eb93c8a5ad5ea9cc35f05daf87319",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-281",
+      "name": "영원의 협곡 경장 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-281.png",
+      "rarity": "에픽",
+      "sha256": "94d5df646d90669494c511cbd2c947cde60fb8b98c102b74e548e5e1f01713e7",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-282",
+      "name": "천상의 대륙 모험복 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-282.png",
+      "rarity": "에픽",
+      "sha256": "40cd2175b32c176ca13d8b1504148f0707d74a7a52ad93ea8c7c29fb0768d7a5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-283",
+      "name": "전설의 마법학도 로브 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-283.png",
+      "rarity": "에픽",
+      "sha256": "5b4fac802463af20549be359d111e09456445c9763819f6eca2bae5a4bdb28a8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/robe.png"
+    },
+    {
+      "id": "ER-EQ-284",
+      "name": "영원의 청류 술사복 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-284.png",
+      "rarity": "에픽",
+      "sha256": "b41cebcbc9dba92c7521e43d98e887bb51be7f4e33ec49c340ff4dcca0f49591",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ritual_armor.png"
+    },
+    {
+      "id": "ER-EQ-285",
+      "name": "천상의 항해자 방호복 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-285.png",
+      "rarity": "에픽",
+      "sha256": "d133e2f151cc4f20b839f8ebc45047637916bf3ef92ee446de170f5de808c965",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-286",
+      "name": "전설의 변경 감시복 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-286.png",
+      "rarity": "에픽",
+      "sha256": "583bd867359287aabc04ef602dedc641860da2d129e87cf84b66bdf5be2b0ae2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/combat_clothes.png"
+    },
+    {
+      "id": "ER-EQ-287",
+      "name": "영원의 황동 장식갑 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-287.png",
+      "rarity": "에픽",
+      "sha256": "e9699ef860d18ed9bc379f4e436215c1c21b66742775404c6612c0c70c518834",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/light_plate.png"
+    },
+    {
+      "id": "ER-EQ-288",
+      "name": "천상의 은빛 수호복 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-288.png",
+      "rarity": "에픽",
+      "sha256": "0bbd3fd5fb2daa7fbdc7985d2b9c2b22e89533aac51042ecb4a2b52f2220d5d4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/heavy_plate.png"
+    },
+    {
+      "id": "ER-EQ-289",
+      "name": "전설의 철제 반지 · 로젠펠트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-289.png",
+      "rarity": "에픽",
+      "sha256": "df595d9d9810109a83d55bd77bbc87221913918343180b795660949484a737e8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-290",
+      "name": "영원의 달빛 목걸이 · 칼트하임의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-290.png",
+      "rarity": "에픽",
+      "sha256": "e5775b7da17e23646cd356a614f712603408a77b70ac76171a9e839371194e71",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/necklace.png"
+    },
+    {
+      "id": "ER-EQ-291",
+      "name": "천상의 호박 펜던트 · 아쿠아렌의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-291.png",
+      "rarity": "에픽",
+      "sha256": "1569879a02689fad2ff00b192d064183883cc95930feee270a079184ceb9276c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-292",
+      "name": "전설의 여행자의 부적 · 발렌하르트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-292.png",
+      "rarity": "에픽",
+      "sha256": "fe068401c5d308ec1e4c79466ecc49fdd2f57f0e3e62642ab2fb6dfe5a9d56df",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-293",
+      "name": "영원의 호위 인장 · 실베른의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-293.png",
+      "rarity": "에픽",
+      "sha256": "e00805e5291831638263c8b063562bfd0d8102d6091f1bc8787f5e9bc98ddef8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-294",
+      "name": "천상의 파도 유리반지 · 엘름베르크의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-294.png",
+      "rarity": "에픽",
+      "sha256": "bf6f18240936f23852218950fd0acea3f093f1b0ba1da0492a17278bac7520f9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "ER-EQ-295",
+      "name": "전설의 은방울 귀걸이 · 세르반의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-295.png",
+      "rarity": "에픽",
+      "sha256": "5f709a93dbd9f61a0d4a3dfd8c56f50dce57b9201e633810b75fdfe4e49cbbf3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/earrings.png"
+    },
+    {
+      "id": "ER-EQ-296",
+      "name": "영원의 마나 수정고리 · 베르크슈타인의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-296.png",
+      "rarity": "에픽",
+      "sha256": "32c19bbb04c44f52e064d1aa66936551ef9eac448a722b1c282535dfa8849aa4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-297",
+      "name": "천상의 별가루 펜던트 · 솔메리아의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-297.png",
+      "rarity": "에픽",
+      "sha256": "9b092b4faff07bc4b4a4375fe833d51867f6d6079cbab79559b5fe283d05c981",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/pendant.png"
+    },
+    {
+      "id": "ER-EQ-298",
+      "name": "전설의 매듭 부적 · 노르발트의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-298.png",
+      "rarity": "에픽",
+      "sha256": "fe068401c5d308ec1e4c79466ecc49fdd2f57f0e3e62642ab2fb6dfe5a9d56df",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/talisman.png"
+    },
+    {
+      "id": "ER-EQ-299",
+      "name": "영원의 황금 나침반 장식 · 아이젠크로네의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-299.png",
+      "rarity": "에픽",
+      "sha256": "00328deffcd98c6fe2e015a8b965f50c413f5ced856e6180d124f48f4d5bc01a",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/mana_ornament.png"
+    },
+    {
+      "id": "ER-EQ-300",
+      "name": "천상의 고요한 흑석 반지 · 벨마리나의 기념",
+      "group": "equipment",
+      "path": "assets/items/equipment/ER-EQ-300.png",
+      "rarity": "에픽",
+      "sha256": "fb7a1994f606423865cc1da7f110adb29976f6a8237c819010f154309c770d76",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/equipment/ring.png"
+    },
+    {
+      "id": "BK-SWD-001",
+      "name": "기초 횡베기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-001.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-002",
+      "name": "일직선 찌르기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-002.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-003",
+      "name": "낮은 자세 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-003.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-004",
+      "name": "단단한 방어 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-004.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-005",
+      "name": "되받아치기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-005.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-006",
+      "name": "발목 스텝 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-006.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-007",
+      "name": "손목 흘리기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-007.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-008",
+      "name": "연속 두 번 베기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-008.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-009",
+      "name": "긴 검끝 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-009.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-010",
+      "name": "차분한 칼끝 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-010.png",
+      "rarity": "하급",
+      "sha256": "d725ac3923afa701c2938c0786de40a498e9352ca04651bcf20799f94eb22118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-1.png"
+    },
+    {
+      "id": "BK-SWD-011",
+      "name": "협곡 내려베기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-011.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-012",
+      "name": "강철 접전 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-012.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-013",
+      "name": "방패 빈틈 찌르기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-013.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-014",
+      "name": "물러나며 베기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-014.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-015",
+      "name": "붉은 장미 검식 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-015.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-016",
+      "name": "서리 검무 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-016.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-017",
+      "name": "단호한 역베기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-017.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-018",
+      "name": "유연한 측면 검격 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-018.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-019",
+      "name": "사자의 세 번 호흡 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-019.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-020",
+      "name": "기둥 깨는 강검 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-020.png",
+      "rarity": "중급",
+      "sha256": "b1add69d2dbd64973a2ea2a34fd389def73606fd34f2e8f86cd17446731f40b8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-2.png"
+    },
+    {
+      "id": "BK-SWD-021",
+      "name": "검날의 선율 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-021.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-022",
+      "name": "유성 찌르기 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-022.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-023",
+      "name": "호위의 원형 검식 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-023.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-024",
+      "name": "은매 그림자 검 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-024.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-025",
+      "name": "적장미 선봉의 문장 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-025.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-026",
+      "name": "바람을 가르는 일섬 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-026.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-027",
+      "name": "파도 위 반격 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-027.png",
+      "rarity": "고급",
+      "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-3.png"
+    },
+    {
+      "id": "BK-SWD-028",
+      "name": "끝없는 검의 궤적 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-028.png",
+      "rarity": "유니크",
+      "sha256": "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-4.png"
+    },
+    {
+      "id": "BK-SWD-029",
+      "name": "검왕의 빈자리 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-029.png",
+      "rarity": "유니크",
+      "sha256": "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-4.png"
+    },
+    {
+      "id": "BK-SWD-030",
+      "name": "별이 가르는 경계 검술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SWD-030.png",
+      "rarity": "에픽",
+      "sha256": "6a5c5dae8fbd74fd715f6a778fe8a13bdcb825d2b7ca686f9fe71b1ac2f5a6ff",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/sword_manual-tier-5.png"
+    },
+    {
+      "id": "BK-SPL-001",
+      "name": "화염탄 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-001.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-002",
+      "name": "물구슬 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-002.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-003",
+      "name": "미풍 장막 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-003.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-004",
+      "name": "정전기 손끝 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-004.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-005",
+      "name": "그림자 가림 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-005.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-006",
+      "name": "빛의 표식 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-006.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-007",
+      "name": "작은 불꽃 고리 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-007.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-008",
+      "name": "정수의 막 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-008.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-009",
+      "name": "바람발걸음 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-009.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-010",
+      "name": "전류 고리 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-010.png",
+      "rarity": "하급",
+      "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-1.png"
+    },
+    {
+      "id": "BK-SPL-011",
+      "name": "희미한 그림자 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-011.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-012",
+      "name": "찬란한 섬광 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-012.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-013",
+      "name": "불꽃 궤적 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-013.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-014",
+      "name": "얼음 결정창 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-014.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-015",
+      "name": "돌풍 화살 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-015.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-016",
+      "name": "청뢰 사슬 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-016.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-017",
+      "name": "먹빛 안개 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-017.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-018",
+      "name": "광휘 보호막 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-018.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-019",
+      "name": "열풍 폭발 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-019.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-020",
+      "name": "소용돌이 방패 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-020.png",
+      "rarity": "중급",
+      "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-2.png"
+    },
+    {
+      "id": "BK-SPL-021",
+      "name": "칼바람 결계 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-021.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-022",
+      "name": "번개 투창 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-022.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-023",
+      "name": "암막 침묵 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-023.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-024",
+      "name": "해돋이 파장 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-024.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-025",
+      "name": "홍염 장벽 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-025.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-026",
+      "name": "물의 거울 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-026.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-027",
+      "name": "폭풍나선 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-027.png",
+      "rarity": "고급",
+      "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png"
+    },
+    {
+      "id": "BK-SPL-028",
+      "name": "청동뢰 폭진 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-028.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-029",
+      "name": "그림자 회랑 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-029.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-030",
+      "name": "백일 광탄 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-030.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-031",
+      "name": "진홍 폭우 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-031.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-032",
+      "name": "만조 포위 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-032.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-033",
+      "name": "하늘갈림 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-033.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-034",
+      "name": "폭뢰 결정 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-034.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-035",
+      "name": "흑월 장막 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-035.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-036",
+      "name": "광휘의 선 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-036.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-037",
+      "name": "천화의 원 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-037.png",
+      "rarity": "유니크",
+      "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png"
+    },
+    {
+      "id": "BK-SPL-038",
+      "name": "심해의 장벽 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-038.png",
+      "rarity": "에픽",
+      "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png"
+    },
+    {
+      "id": "BK-SPL-039",
+      "name": "진공의 눈 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-039.png",
+      "rarity": "에픽",
+      "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png"
+    },
+    {
+      "id": "BK-SPL-040",
+      "name": "천뢰 심판 마술서",
+      "group": "books",
+      "path": "assets/items/books/BK-SPL-040.png",
+      "rarity": "에픽",
+      "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png"
+    },
+    {
+      "id": "MAT-001-1",
+      "name": "서리갈기 가죽",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-001-1.png",
+      "rarity": null,
+      "sha256": "56c2d1797d5a31a672ebd6048cb296e93e9bdf6097488d47b7cd38d3e6e35fe7",
+      "status": "created_visual_verified",
+      "template": "fur_pelt"
+    },
+    {
+      "id": "MAT-001-2",
+      "name": "서리이빨",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-001-2.png",
+      "rarity": null,
+      "sha256": "0ec63ae2fbb69f86e749d531a259240d289c392afbb2fc0d64a5befc0f1c343d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-01.png#part-2"
+    },
+    {
+      "id": "MAT-002-1",
+      "name": "백각 뿔조각",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-002-1.png",
+      "rarity": null,
+      "sha256": "538fd8a35c351e03db3296afcc5c78ba77d7f8220dbdcdd1041e1ae24b50bc3d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-02.png#part-1"
+    },
+    {
+      "id": "MAT-002-2",
+      "name": "빙결 선혈",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-002-2.png",
+      "rarity": null,
+      "sha256": "39ebee6d28f4441e9de270e50b1de70d67a1ed26569408cd3c8139b2957c439f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-02.png#part-2"
+    },
+    {
+      "id": "MAT-003-1",
+      "name": "철가죽 판피",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-003-1.png",
+      "rarity": null,
+      "sha256": "c7edef927623d6040d4b7f877503c114ccce0093dd99d9070aa2e55d0a92cd12",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-03.png#part-1"
+    },
+    {
+      "id": "MAT-003-2",
+      "name": "강철 엄니",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-003-2.png",
+      "rarity": null,
+      "sha256": "ec284e3987db82894be47965791cdfe8e70a31124d91619688851c4203a32b39",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-03.png#part-2"
+    },
+    {
+      "id": "MAT-004-1",
+      "name": "그림자쥐 꼬리",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-004-1.png",
+      "rarity": null,
+      "sha256": "20940fd17327086d5b1d6f445216e31b4e73dd316d4b7bdd61995d335e2519ea",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-04.png#part-1"
+    },
+    {
+      "id": "MAT-004-2",
+      "name": "어두운 수염",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-004-2.png",
+      "rarity": null,
+      "sha256": "41e9f6b7a3072da7a6e92d4704f564c06f3ff36c8628f7725fe223ba150771b5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-04.png#part-2"
+    },
+    {
+      "id": "MAT-005-1",
+      "name": "잿불 등가시",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-005-1.png",
+      "rarity": null,
+      "sha256": "e78e8aac8155c0d7a922bc0391d42730b82ae3465ede4a17238e7d933cd3f48c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-05.png#part-1"
+    },
+    {
+      "id": "MAT-005-2",
+      "name": "열석 비늘",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-005-2.png",
+      "rarity": null,
+      "sha256": "e20deff118d99f5343053b95bbd30370cd0148548a45ab6ae43961e853712ca9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-05.png#part-2"
+    },
+    {
+      "id": "MAT-006-1",
+      "name": "협곡 독수리 깃",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-006-1.png",
+      "rarity": null,
+      "sha256": "c5a0a486470d3c981f92b84e6cd4efbb5a2c31e374f25a160468427d08e8f0dc",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-06.png#part-1"
+    },
+    {
+      "id": "MAT-006-2",
+      "name": "뿔발톱",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-006-2.png",
+      "rarity": null,
+      "sha256": "8df84cfaa06c2a67d62d959fd6369b5e9cc011635baf6f5ddf4972077d93c0f5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-06.png#part-2"
+    },
+    {
+      "id": "MAT-007-1",
+      "name": "광충 수정껍질",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-007-1.png",
+      "rarity": null,
+      "sha256": "e353656fcfd6c4d6bf9edcbb9927c7d103f2f0316c2ffc881b3773e29de97e93",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-07.png#part-1"
+    },
+    {
+      "id": "MAT-007-2",
+      "name": "작은 원광석",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-007-2.png",
+      "rarity": null,
+      "sha256": "97e04b93292327f84e0b7dd3d013a4e56c8262d549ee7836eb7f13c353476a5d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-07.png#part-2"
+    },
+    {
+      "id": "MAT-008-1",
+      "name": "공명 거미실",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-008-1.png",
+      "rarity": null,
+      "sha256": "87cc9f5323d58482ddbefa302c8ad6986518eec4b6e8241ad7d6ebe927d9e1ed",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-08.png#part-1"
+    },
+    {
+      "id": "MAT-008-2",
+      "name": "진동 수정낭",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-008-2.png",
+      "rarity": null,
+      "sha256": "21346b265349dd9d94a588264d58d549092cd5c97598288294f422e1f5a587c2",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-08.png#part-2"
+    },
+    {
+      "id": "MAT-009-1",
+      "name": "청전기 양모",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-009-1.png",
+      "rarity": null,
+      "sha256": "0cd3d8713eb13d8577c02ad6a2f22a33ed9d4176589dff5b4f0a9c8b4a77d14d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-09.png#part-1"
+    },
+    {
+      "id": "MAT-009-2",
+      "name": "전류 뿔조각",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-009-2.png",
+      "rarity": null,
+      "sha256": "a5f397a658c2c643955e8ea96889fe782666f412d42a700387b57dd4fa3e3f2d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-09.png#part-2"
+    },
+    {
+      "id": "MAT-010-1",
+      "name": "회안개 막날개",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-010-1.png",
+      "rarity": null,
+      "sha256": "e00289f945cfc5b45c20551c5b070c02a6bcd3446ca53fc5ae12aa8b5e28737e",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-10.png#part-1"
+    },
+    {
+      "id": "MAT-010-2",
+      "name": "안개 가루",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-010-2.png",
+      "rarity": null,
+      "sha256": "c8922c1325890765611a0604e8a354d54de7643932b51649792123dae4abe0ff",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-10.png#part-2"
+    },
+    {
+      "id": "MAT-011-1",
+      "name": "해풍 뱀비늘",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-011-1.png",
+      "rarity": null,
+      "sha256": "7e67330419acdc3e96f6b8479355d879a38ef32f8b3edaa5cb245767854a89a5",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-11.png#part-1"
+    },
+    {
+      "id": "MAT-011-2",
+      "name": "바람독 주머니",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-011-2.png",
+      "rarity": null,
+      "sha256": "805c3652c549a98801cb139093aae7ca34205de82ac4b628c9f68da1405d56a6",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-11.png#part-2"
+    },
+    {
+      "id": "MAT-012-1",
+      "name": "암초 게껍질",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-012-1.png",
+      "rarity": null,
+      "sha256": "4ea68060e5a53daebfc3078a16da7ce40fefdae191de2fdac097339bd99cb435",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-12.png#part-1"
+    },
+    {
+      "id": "MAT-012-2",
+      "name": "산호 부리",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-012-2.png",
+      "rarity": null,
+      "sha256": "b95e79e0b67098685a6fe78d5c19803a4952b197a37c04db1bcaba4e03ebf586",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-12.png#part-2"
+    },
+    {
+      "id": "MAT-013-1",
+      "name": "흑진주 점액",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-013-1.png",
+      "rarity": null,
+      "sha256": "929e88c67f58e02eb9a5c7b0aa46634335ecc781fab9eca4d1a189efa220ecc9",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-13.png#part-1"
+    },
+    {
+      "id": "MAT-013-2",
+      "name": "먹장어 심핵",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-013-2.png",
+      "rarity": null,
+      "sha256": "ab34c65e839bd5554f99e56c73b29c00f60f251590373e711012281f2f8af4a8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-13.png#part-2"
+    },
+    {
+      "id": "MAT-014-1",
+      "name": "은비늘 수중비늘",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-014-1.png",
+      "rarity": null,
+      "sha256": "c837dda71761a5db605cc9e873f62be1c885d054a8bc242ceb9b1f4252c9fa9c",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-14.png#part-1"
+    },
+    {
+      "id": "MAT-014-2",
+      "name": "물갈퀴 지느러미",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-014-2.png",
+      "rarity": null,
+      "sha256": "d43bc56b7d9361e0b7718658493b350a80feeb2e6cb354f3ba8fa96b727d08ce",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-14.png#part-2"
+    },
+    {
+      "id": "MAT-015-1",
+      "name": "등불 날개가루",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-015-1.png",
+      "rarity": null,
+      "sha256": "d44096754ee699a6c108a1f30968c44c361b78178e6af1bb10aab256b796dd10",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-15.png#part-1"
+    },
+    {
+      "id": "MAT-015-2",
+      "name": "빛나는 더듬이",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-015-2.png",
+      "rarity": null,
+      "sha256": "ce3841c22566da3fb7d461a8ec7b066353e0f2645b7f642485d60acb6e25c7a8",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-15.png#part-2"
+    },
+    {
+      "id": "MAT-016-1",
+      "name": "모래여우 털",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-016-1.png",
+      "rarity": null,
+      "sha256": "cdf8d071b36785297c12a5154db6ec6d3fdd45148da5ed52fcaa1678068e87ee",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-16.png#part-1"
+    },
+    {
+      "id": "MAT-016-2",
+      "name": "황토 발톱",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-016-2.png",
+      "rarity": null,
+      "sha256": "3a5a0156150953cef4c5d8c0aed177f9da289765fcfe779c4d5442d328d7557f",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-16.png#part-2"
+    },
+    {
+      "id": "MAT-017-1",
+      "name": "고목 정령껍질",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-017-1.png",
+      "rarity": null,
+      "sha256": "613b5b2b3eaa534b833cd18076ef2cdaaae2cd69cda762407bf828ae2354312b",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-17.png#part-1"
+    },
+    {
+      "id": "MAT-017-2",
+      "name": "원시림 심재",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-017-2.png",
+      "rarity": null,
+      "sha256": "b1b97f1d1d0be05193620d1e493624a8b484567fd07779054337564a1ae4463d",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-17.png#part-2"
+    },
+    {
+      "id": "MAT-018-1",
+      "name": "심연고리 뿔",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-018-1.png",
+      "rarity": null,
+      "sha256": "c6d98f99314558b55ed74de025b14e849fda21cf95566221228b9d2af9ee73db",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-18.png#part-1"
+    },
+    {
+      "id": "MAT-018-2",
+      "name": "검은 이끼",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-018-2.png",
+      "rarity": null,
+      "sha256": "090ad5a5ade0e899a6ab9e33f3a4b43a1b771e25952cd04a19cd8cafdc1194d1",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-18.png#part-2"
+    },
+    {
+      "id": "MAT-019-1",
+      "name": "균열의 잔광",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-019-1.png",
+      "rarity": null,
+      "sha256": "d72d47bd2dc79f0819a2b5a72905b39944f47df291e7087731232a9d3e6da118",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-19.png#part-1"
+    },
+    {
+      "id": "MAT-019-2",
+      "name": "마나 균열 심석",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-019-2.png",
+      "rarity": null,
+      "sha256": "bccced52035f77baba0c13ace5c3d8ce5380ab7e49576973ab6b7e2b14ab8d18",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-19.png#part-2"
+    },
+    {
+      "id": "MAT-020-1",
+      "name": "고대 돌갑각",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-020-1.png",
+      "rarity": null,
+      "sha256": "4c92a001e39ac47509f7b27438d2c11c64b25fd44b6275e5fba1bbeb2a0a8e20",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-20.png#part-1"
+    },
+    {
+      "id": "MAT-020-2",
+      "name": "고대 문자촉각",
+      "group": "materials",
+      "path": "assets/items/materials/MAT-020-2.png",
+      "rarity": null,
+      "sha256": "d42c121c82a223dc4aeac441bc4a26590bed2b7cc821252a85afcf819607e4e4",
+      "status": "created_visual_verified",
+      "template": "assets/items/templates/materials/source-20.png#part-2"
+    }
+  ]
+}

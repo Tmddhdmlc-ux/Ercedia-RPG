@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "version": "location-image-requirements-v1",
-  "purpose": "Asset production planning only; no images generated or pixels positioned",
+  "purpose": "Canonical location asset slots with individual actual production status; see ART_PRODUCTION_PROGRESS.md.",
   "image_status_default": "not_created",
   "asset_count": 261,
   "category_counts": {

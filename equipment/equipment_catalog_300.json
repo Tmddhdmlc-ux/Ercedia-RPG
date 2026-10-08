@@ -51,15 +51,16 @@
         "weapon_attack": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-001.png"
     },
     {
       "id": "ER-EQ-002",
@@ -79,15 +80,16 @@
         "weapon_attack": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-002.png"
     },
     {
       "id": "ER-EQ-003",
@@ -107,15 +109,16 @@
         "weapon_attack": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-003.png"
     },
     {
       "id": "ER-EQ-004",
@@ -135,15 +138,16 @@
         "weapon_attack": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-004.png"
     },
     {
       "id": "ER-EQ-005",
@@ -163,15 +167,16 @@
         "weapon_attack": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-005.png"
     },
     {
       "id": "ER-EQ-006",
@@ -191,15 +196,16 @@
         "weapon_attack": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-006.png"
     },
     {
       "id": "ER-EQ-007",
@@ -219,15 +225,16 @@
         "weapon_attack": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 아쿠아렌 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-007.png"
     },
     {
       "id": "ER-EQ-008",
@@ -247,15 +254,16 @@
         "weapon_attack": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 발렌하르트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-008.png"
     },
     {
       "id": "ER-EQ-009",
@@ -275,15 +283,16 @@
         "weapon_attack": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 실베른 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-009.png"
     },
     {
       "id": "ER-EQ-010",
@@ -303,15 +312,16 @@
         "weapon_attack": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 엘름베르크 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-010.png"
     },
     {
       "id": "ER-EQ-011",
@@ -331,15 +341,16 @@
         "weapon_attack": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 세르반 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-011.png"
     },
     {
       "id": "ER-EQ-012",
@@ -359,15 +370,16 @@
         "weapon_attack": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 베르크슈타인 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-012.png"
     },
     {
       "id": "ER-EQ-013",
@@ -387,15 +399,16 @@
         "weapon_attack": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-013.png"
     },
     {
       "id": "ER-EQ-014",
@@ -415,15 +428,16 @@
         "weapon_attack": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-014.png"
     },
     {
       "id": "ER-EQ-015",
@@ -443,15 +457,16 @@
         "weapon_attack": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-015.png"
     },
     {
       "id": "ER-EQ-016",
@@ -471,15 +486,16 @@
         "weapon_attack": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-016.png"
     },
     {
       "id": "ER-EQ-017",
@@ -499,15 +515,16 @@
         "weapon_attack": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-017.png"
     },
     {
       "id": "ER-EQ-018",
@@ -527,15 +544,16 @@
         "weapon_attack": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 검 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-018.png"
     },
     {
       "id": "ER-EQ-019",
@@ -556,15 +574,16 @@
         "spell_power": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-019.png"
     },
     {
       "id": "ER-EQ-020",
@@ -585,15 +604,16 @@
         "spell_power": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-020.png"
     },
     {
       "id": "ER-EQ-021",
@@ -614,15 +634,16 @@
         "spell_power": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-021.png"
     },
     {
       "id": "ER-EQ-022",
@@ -643,15 +664,16 @@
         "spell_power": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-022.png"
     },
     {
       "id": "ER-EQ-023",
@@ -672,15 +694,16 @@
         "spell_power": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-023.png"
     },
     {
       "id": "ER-EQ-024",
@@ -701,15 +724,16 @@
         "spell_power": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-024.png"
     },
     {
       "id": "ER-EQ-025",
@@ -730,15 +754,16 @@
         "spell_power": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-025.png"
     },
     {
       "id": "ER-EQ-026",
@@ -759,15 +784,16 @@
         "spell_power": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-026.png"
     },
     {
       "id": "ER-EQ-027",
@@ -788,15 +814,16 @@
         "spell_power": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 실베른 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-027.png"
     },
     {
       "id": "ER-EQ-028",
@@ -817,15 +844,16 @@
         "spell_power": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-028.png"
     },
     {
       "id": "ER-EQ-029",
@@ -846,15 +874,16 @@
         "spell_power": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 세르반 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-029.png"
     },
     {
       "id": "ER-EQ-030",
@@ -875,15 +904,16 @@
         "spell_power": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 베르크슈타인 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-030.png"
     },
     {
       "id": "ER-EQ-031",
@@ -904,15 +934,16 @@
         "spell_power": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-031.png"
     },
     {
       "id": "ER-EQ-032",
@@ -933,15 +964,16 @@
         "spell_power": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-032.png"
     },
     {
       "id": "ER-EQ-033",
@@ -962,15 +994,16 @@
         "spell_power": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-033.png"
     },
     {
       "id": "ER-EQ-034",
@@ -991,15 +1024,16 @@
         "spell_power": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-034.png"
     },
     {
       "id": "ER-EQ-035",
@@ -1020,15 +1054,16 @@
         "spell_power": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-035.png"
     },
     {
       "id": "ER-EQ-036",
@@ -1049,15 +1084,16 @@
         "spell_power": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-036.png"
     },
     {
       "id": "ER-EQ-037",
@@ -1077,15 +1113,16 @@
         "defense": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-037.png"
     },
     {
       "id": "ER-EQ-038",
@@ -1105,15 +1142,16 @@
         "defense": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-038.png"
     },
     {
       "id": "ER-EQ-039",
@@ -1133,15 +1171,16 @@
         "defense": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-039.png"
     },
     {
       "id": "ER-EQ-040",
@@ -1161,15 +1200,16 @@
         "defense": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-040.png"
     },
     {
       "id": "ER-EQ-041",
@@ -1189,15 +1229,16 @@
         "defense": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-041.png"
     },
     {
       "id": "ER-EQ-042",
@@ -1217,15 +1258,16 @@
         "defense": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-042.png"
     },
     {
       "id": "ER-EQ-043",
@@ -1245,15 +1287,16 @@
         "defense": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 아쿠아렌 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-043.png"
     },
     {
       "id": "ER-EQ-044",
@@ -1273,15 +1316,16 @@
         "defense": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 발렌하르트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-044.png"
     },
     {
       "id": "ER-EQ-045",
@@ -1301,15 +1345,16 @@
         "defense": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 실베른 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-045.png"
     },
     {
       "id": "ER-EQ-046",
@@ -1329,15 +1374,16 @@
         "defense": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 엘름베르크 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-046.png"
     },
     {
       "id": "ER-EQ-047",
@@ -1357,15 +1403,16 @@
         "defense": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 세르반 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-047.png"
     },
     {
       "id": "ER-EQ-048",
@@ -1385,15 +1432,16 @@
         "defense": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 방어구 — 베르크슈타인 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-048.png"
     },
     {
       "id": "ER-EQ-049",
@@ -1413,15 +1461,16 @@
         "resistance": 1
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-049.png"
     },
     {
       "id": "ER-EQ-050",
@@ -1441,15 +1490,16 @@
         "resistance": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-050.png"
     },
     {
       "id": "ER-EQ-051",
@@ -1469,15 +1519,16 @@
         "resistance": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 아이젠크로네 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-051.png"
     },
     {
       "id": "ER-EQ-052",
@@ -1497,15 +1548,16 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 벨마리나 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-052.png"
     },
     {
       "id": "ER-EQ-053",
@@ -1525,15 +1577,16 @@
         "resistance": 1
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 로젠펠트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-053.png"
     },
     {
       "id": "ER-EQ-054",
@@ -1553,15 +1606,16 @@
         "resistance": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 칼트하임 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-054.png"
     },
     {
       "id": "ER-EQ-055",
@@ -1581,15 +1635,16 @@
         "resistance": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 아쿠아렌 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-055.png"
     },
     {
       "id": "ER-EQ-056",
@@ -1609,15 +1664,16 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 발렌하르트 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-056.png"
     },
     {
       "id": "ER-EQ-057",
@@ -1637,15 +1693,16 @@
         "resistance": 1
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 실베른 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-057.png"
     },
     {
       "id": "ER-EQ-058",
@@ -1665,15 +1722,16 @@
         "resistance": 2
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 엘름베르크 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-058.png"
     },
     {
       "id": "ER-EQ-059",
@@ -1693,15 +1751,16 @@
         "resistance": 3
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 세르반 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-059.png"
     },
     {
       "id": "ER-EQ-060",
@@ -1721,15 +1780,16 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "하급 장신구 — 베르크슈타인 장인의 양식에서 유래한 길 위의 실용품.",
       "source_tags": [
         "shop",
         "low_dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-060.png"
     },
     {
       "id": "ER-EQ-061",
@@ -1749,8 +1809,8 @@
         "weapon_attack": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1758,7 +1818,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-061.png"
     },
     {
       "id": "ER-EQ-062",
@@ -1778,8 +1839,8 @@
         "weapon_attack": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1787,7 +1848,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-062.png"
     },
     {
       "id": "ER-EQ-063",
@@ -1807,8 +1869,8 @@
         "weapon_attack": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1816,7 +1878,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-063.png"
     },
     {
       "id": "ER-EQ-064",
@@ -1836,8 +1899,8 @@
         "weapon_attack": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1845,7 +1908,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-064.png"
     },
     {
       "id": "ER-EQ-065",
@@ -1865,8 +1929,8 @@
         "weapon_attack": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1874,7 +1938,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-065.png"
     },
     {
       "id": "ER-EQ-066",
@@ -1894,8 +1959,8 @@
         "weapon_attack": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1903,7 +1968,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-066.png"
     },
     {
       "id": "ER-EQ-067",
@@ -1923,8 +1989,8 @@
         "weapon_attack": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 발렌하르트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1932,7 +1998,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-067.png"
     },
     {
       "id": "ER-EQ-068",
@@ -1952,8 +2019,8 @@
         "weapon_attack": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 실베른 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1961,7 +2028,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-068.png"
     },
     {
       "id": "ER-EQ-069",
@@ -1981,8 +2049,8 @@
         "weapon_attack": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 엘름베르크 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -1990,7 +2058,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-069.png"
     },
     {
       "id": "ER-EQ-070",
@@ -2010,8 +2079,8 @@
         "weapon_attack": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 세르반 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2019,7 +2088,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-070.png"
     },
     {
       "id": "ER-EQ-071",
@@ -2039,8 +2109,8 @@
         "weapon_attack": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 베르크슈타인 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2048,7 +2118,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-071.png"
     },
     {
       "id": "ER-EQ-072",
@@ -2068,8 +2139,8 @@
         "weapon_attack": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 솔메리아 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2077,7 +2148,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-072.png"
     },
     {
       "id": "ER-EQ-073",
@@ -2097,8 +2169,8 @@
         "weapon_attack": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2106,7 +2178,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-073.png"
     },
     {
       "id": "ER-EQ-074",
@@ -2126,8 +2199,8 @@
         "weapon_attack": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2135,7 +2208,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-074.png"
     },
     {
       "id": "ER-EQ-075",
@@ -2155,8 +2229,8 @@
         "weapon_attack": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2164,7 +2238,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-075.png"
     },
     {
       "id": "ER-EQ-076",
@@ -2184,8 +2259,8 @@
         "weapon_attack": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2193,7 +2268,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-076.png"
     },
     {
       "id": "ER-EQ-077",
@@ -2213,8 +2289,8 @@
         "weapon_attack": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2222,7 +2298,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-077.png"
     },
     {
       "id": "ER-EQ-078",
@@ -2242,8 +2319,8 @@
         "weapon_attack": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 검 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2251,7 +2328,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-078.png"
     },
     {
       "id": "ER-EQ-079",
@@ -2272,8 +2350,8 @@
         "spell_power": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2281,7 +2359,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-079.png"
     },
     {
       "id": "ER-EQ-080",
@@ -2302,8 +2381,8 @@
         "spell_power": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2311,7 +2390,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-080.png"
     },
     {
       "id": "ER-EQ-081",
@@ -2332,8 +2412,8 @@
         "spell_power": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2341,7 +2421,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-081.png"
     },
     {
       "id": "ER-EQ-082",
@@ -2362,8 +2443,8 @@
         "spell_power": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2371,7 +2452,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-082.png"
     },
     {
       "id": "ER-EQ-083",
@@ -2392,8 +2474,8 @@
         "spell_power": 15
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2401,7 +2483,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-083.png"
     },
     {
       "id": "ER-EQ-084",
@@ -2422,8 +2505,8 @@
         "spell_power": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2431,7 +2514,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-084.png"
     },
     {
       "id": "ER-EQ-085",
@@ -2452,8 +2536,8 @@
         "spell_power": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2461,7 +2545,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-085.png"
     },
     {
       "id": "ER-EQ-086",
@@ -2482,8 +2567,8 @@
         "spell_power": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 실베른 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2491,7 +2576,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-086.png"
     },
     {
       "id": "ER-EQ-087",
@@ -2512,8 +2598,8 @@
         "spell_power": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2521,7 +2607,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-087.png"
     },
     {
       "id": "ER-EQ-088",
@@ -2542,8 +2629,8 @@
         "spell_power": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 세르반 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2551,7 +2638,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-088.png"
     },
     {
       "id": "ER-EQ-089",
@@ -2572,8 +2660,8 @@
         "spell_power": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 베르크슈타인 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2581,7 +2669,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-089.png"
     },
     {
       "id": "ER-EQ-090",
@@ -2602,8 +2691,8 @@
         "spell_power": 15
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2611,7 +2700,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-090.png"
     },
     {
       "id": "ER-EQ-091",
@@ -2632,8 +2722,8 @@
         "spell_power": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2641,7 +2731,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-091.png"
     },
     {
       "id": "ER-EQ-092",
@@ -2662,8 +2753,8 @@
         "spell_power": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2671,7 +2762,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-092.png"
     },
     {
       "id": "ER-EQ-093",
@@ -2692,8 +2784,8 @@
         "spell_power": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2701,7 +2793,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-093.png"
     },
     {
       "id": "ER-EQ-094",
@@ -2722,8 +2815,8 @@
         "spell_power": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2731,7 +2824,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-094.png"
     },
     {
       "id": "ER-EQ-095",
@@ -2752,8 +2846,8 @@
         "spell_power": 13
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2761,7 +2855,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-095.png"
     },
     {
       "id": "ER-EQ-096",
@@ -2782,8 +2877,8 @@
         "spell_power": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2791,7 +2886,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-096.png"
     },
     {
       "id": "ER-EQ-097",
@@ -2811,8 +2907,8 @@
         "defense": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2820,7 +2916,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-097.png"
     },
     {
       "id": "ER-EQ-098",
@@ -2840,8 +2937,8 @@
         "defense": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2849,7 +2946,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-098.png"
     },
     {
       "id": "ER-EQ-099",
@@ -2869,8 +2967,8 @@
         "defense": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2878,7 +2976,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-099.png"
     },
     {
       "id": "ER-EQ-100",
@@ -2898,8 +2997,8 @@
         "defense": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2907,7 +3006,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-100.png"
     },
     {
       "id": "ER-EQ-101",
@@ -2927,8 +3027,8 @@
         "defense": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2936,7 +3036,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-101.png"
     },
     {
       "id": "ER-EQ-102",
@@ -2956,8 +3057,8 @@
         "defense": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2965,7 +3066,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-102.png"
     },
     {
       "id": "ER-EQ-103",
@@ -2985,8 +3087,8 @@
         "defense": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 발렌하르트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -2994,7 +3096,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-103.png"
     },
     {
       "id": "ER-EQ-104",
@@ -3014,8 +3117,8 @@
         "defense": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 실베른 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3023,7 +3126,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-104.png"
     },
     {
       "id": "ER-EQ-105",
@@ -3043,8 +3147,8 @@
         "defense": 11
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 엘름베르크 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3052,7 +3156,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-105.png"
     },
     {
       "id": "ER-EQ-106",
@@ -3072,8 +3177,8 @@
         "defense": 12
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 세르반 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3081,7 +3186,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-106.png"
     },
     {
       "id": "ER-EQ-107",
@@ -3101,8 +3207,8 @@
         "defense": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 베르크슈타인 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3110,7 +3216,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-107.png"
     },
     {
       "id": "ER-EQ-108",
@@ -3130,8 +3237,8 @@
         "defense": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 방어구 — 솔메리아 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3139,7 +3246,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-108.png"
     },
     {
       "id": "ER-EQ-109",
@@ -3159,8 +3267,8 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 노르발트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3168,7 +3276,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-109.png"
     },
     {
       "id": "ER-EQ-110",
@@ -3188,8 +3297,8 @@
         "resistance": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 아이젠크로네 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3197,7 +3306,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-110.png"
     },
     {
       "id": "ER-EQ-111",
@@ -3217,8 +3327,8 @@
         "resistance": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 벨마리나 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3226,7 +3336,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-111.png"
     },
     {
       "id": "ER-EQ-112",
@@ -3246,8 +3357,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 로젠펠트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3255,7 +3366,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-112.png"
     },
     {
       "id": "ER-EQ-113",
@@ -3275,8 +3387,8 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 칼트하임 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3284,7 +3396,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-113.png"
     },
     {
       "id": "ER-EQ-114",
@@ -3304,8 +3417,8 @@
         "resistance": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 아쿠아렌 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3313,7 +3426,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-114.png"
     },
     {
       "id": "ER-EQ-115",
@@ -3333,8 +3447,8 @@
         "resistance": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 발렌하르트 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3342,7 +3456,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-115.png"
     },
     {
       "id": "ER-EQ-116",
@@ -3362,8 +3477,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 실베른 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3371,7 +3486,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-116.png"
     },
     {
       "id": "ER-EQ-117",
@@ -3391,8 +3507,8 @@
         "resistance": 4
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 엘름베르크 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3400,7 +3516,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-117.png"
     },
     {
       "id": "ER-EQ-118",
@@ -3420,8 +3537,8 @@
         "resistance": 5
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 세르반 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3429,7 +3546,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-118.png"
     },
     {
       "id": "ER-EQ-119",
@@ -3449,8 +3567,8 @@
         "resistance": 6
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 베르크슈타인 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3458,7 +3576,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-119.png"
     },
     {
       "id": "ER-EQ-120",
@@ -3478,8 +3597,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "중급 장신구 — 솔메리아 장인의 양식에서 유래한 여행과 호위를 위한 제식품.",
       "source_tags": [
         "shop",
@@ -3487,7 +3606,8 @@
         "dungeon"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-120.png"
     },
     {
       "id": "ER-EQ-121",
@@ -3507,8 +3627,8 @@
         "weapon_attack": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3516,7 +3636,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-121.png"
     },
     {
       "id": "ER-EQ-122",
@@ -3536,8 +3657,8 @@
         "weapon_attack": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3545,7 +3666,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-122.png"
     },
     {
       "id": "ER-EQ-123",
@@ -3565,8 +3687,8 @@
         "weapon_attack": 18
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3574,7 +3696,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-123.png"
     },
     {
       "id": "ER-EQ-124",
@@ -3594,8 +3717,8 @@
         "weapon_attack": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3603,7 +3726,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-124.png"
     },
     {
       "id": "ER-EQ-125",
@@ -3623,8 +3747,8 @@
         "weapon_attack": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3632,7 +3756,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-125.png"
     },
     {
       "id": "ER-EQ-126",
@@ -3652,8 +3777,8 @@
         "weapon_attack": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3661,7 +3786,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-126.png"
     },
     {
       "id": "ER-EQ-127",
@@ -3681,8 +3807,8 @@
         "weapon_attack": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 실베른 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3690,7 +3816,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-127.png"
     },
     {
       "id": "ER-EQ-128",
@@ -3710,8 +3837,8 @@
         "weapon_attack": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 엘름베르크 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3719,7 +3846,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-128.png"
     },
     {
       "id": "ER-EQ-129",
@@ -3739,8 +3867,8 @@
         "weapon_attack": 18
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 세르반 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3748,7 +3876,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-129.png"
     },
     {
       "id": "ER-EQ-130",
@@ -3768,8 +3897,8 @@
         "weapon_attack": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 베르크슈타인 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3777,7 +3906,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-130.png"
     },
     {
       "id": "ER-EQ-131",
@@ -3797,8 +3927,8 @@
         "weapon_attack": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 솔메리아 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3806,7 +3936,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-131.png"
     },
     {
       "id": "ER-EQ-132",
@@ -3826,8 +3957,8 @@
         "weapon_attack": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 노르발트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3835,7 +3966,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-132.png"
     },
     {
       "id": "ER-EQ-133",
@@ -3855,8 +3987,8 @@
         "weapon_attack": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3864,7 +3996,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-133.png"
     },
     {
       "id": "ER-EQ-134",
@@ -3884,8 +4017,8 @@
         "weapon_attack": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3893,7 +4026,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-134.png"
     },
     {
       "id": "ER-EQ-135",
@@ -3913,8 +4047,8 @@
         "weapon_attack": 18
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3922,7 +4056,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-135.png"
     },
     {
       "id": "ER-EQ-136",
@@ -3942,8 +4077,8 @@
         "weapon_attack": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3951,7 +4086,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-136.png"
     },
     {
       "id": "ER-EQ-137",
@@ -3971,8 +4107,8 @@
         "weapon_attack": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -3980,7 +4116,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-137.png"
     },
     {
       "id": "ER-EQ-138",
@@ -4000,8 +4137,8 @@
         "weapon_attack": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 검 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4009,7 +4146,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-138.png"
     },
     {
       "id": "ER-EQ-139",
@@ -4030,8 +4168,8 @@
         "spell_power": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4039,7 +4177,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-139.png"
     },
     {
       "id": "ER-EQ-140",
@@ -4060,8 +4199,8 @@
         "spell_power": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4069,7 +4208,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-140.png"
     },
     {
       "id": "ER-EQ-141",
@@ -4090,8 +4230,8 @@
         "spell_power": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4099,7 +4239,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-141.png"
     },
     {
       "id": "ER-EQ-142",
@@ -4120,8 +4261,8 @@
         "spell_power": 22
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4129,7 +4270,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-142.png"
     },
     {
       "id": "ER-EQ-143",
@@ -4150,8 +4292,8 @@
         "spell_power": 23
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4159,7 +4301,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-143.png"
     },
     {
       "id": "ER-EQ-144",
@@ -4180,8 +4323,8 @@
         "spell_power": 24
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4189,7 +4332,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-144.png"
     },
     {
       "id": "ER-EQ-145",
@@ -4210,8 +4354,8 @@
         "spell_power": 25
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 실베른 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4219,7 +4363,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-145.png"
     },
     {
       "id": "ER-EQ-146",
@@ -4240,8 +4385,8 @@
         "spell_power": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4249,7 +4394,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-146.png"
     },
     {
       "id": "ER-EQ-147",
@@ -4270,8 +4416,8 @@
         "spell_power": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 세르반 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4279,7 +4425,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-147.png"
     },
     {
       "id": "ER-EQ-148",
@@ -4300,8 +4447,8 @@
         "spell_power": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 베르크슈타인 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4309,7 +4456,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-148.png"
     },
     {
       "id": "ER-EQ-149",
@@ -4330,8 +4478,8 @@
         "spell_power": 22
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4339,7 +4487,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-149.png"
     },
     {
       "id": "ER-EQ-150",
@@ -4360,8 +4509,8 @@
         "spell_power": 23
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 노르발트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4369,7 +4518,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-150.png"
     },
     {
       "id": "ER-EQ-151",
@@ -4390,8 +4540,8 @@
         "spell_power": 24
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4399,7 +4549,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-151.png"
     },
     {
       "id": "ER-EQ-152",
@@ -4420,8 +4571,8 @@
         "spell_power": 25
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4429,7 +4580,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-152.png"
     },
     {
       "id": "ER-EQ-153",
@@ -4450,8 +4602,8 @@
         "spell_power": 19
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4459,7 +4611,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-153.png"
     },
     {
       "id": "ER-EQ-154",
@@ -4480,8 +4633,8 @@
         "spell_power": 20
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4489,7 +4642,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-154.png"
     },
     {
       "id": "ER-EQ-155",
@@ -4510,8 +4664,8 @@
         "spell_power": 21
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4519,7 +4673,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-155.png"
     },
     {
       "id": "ER-EQ-156",
@@ -4540,8 +4695,8 @@
         "spell_power": 22
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4549,7 +4704,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-156.png"
     },
     {
       "id": "ER-EQ-157",
@@ -4569,8 +4725,8 @@
         "defense": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4578,7 +4734,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-157.png"
     },
     {
       "id": "ER-EQ-158",
@@ -4598,8 +4755,8 @@
         "defense": 15
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4607,7 +4764,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-158.png"
     },
     {
       "id": "ER-EQ-159",
@@ -4627,8 +4785,8 @@
         "defense": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4636,7 +4794,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-159.png"
     },
     {
       "id": "ER-EQ-160",
@@ -4656,8 +4815,8 @@
         "defense": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4665,7 +4824,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-160.png"
     },
     {
       "id": "ER-EQ-161",
@@ -4685,8 +4845,8 @@
         "defense": 18
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4694,7 +4854,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-161.png"
     },
     {
       "id": "ER-EQ-162",
@@ -4714,8 +4875,8 @@
         "defense": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4723,7 +4884,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-162.png"
     },
     {
       "id": "ER-EQ-163",
@@ -4743,8 +4905,8 @@
         "defense": 15
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 실베른 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4752,7 +4914,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-163.png"
     },
     {
       "id": "ER-EQ-164",
@@ -4772,8 +4935,8 @@
         "defense": 16
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 엘름베르크 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4781,7 +4944,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-164.png"
     },
     {
       "id": "ER-EQ-165",
@@ -4801,8 +4965,8 @@
         "defense": 17
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 세르반 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4810,7 +4974,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-165.png"
     },
     {
       "id": "ER-EQ-166",
@@ -4830,8 +4995,8 @@
         "defense": 18
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 베르크슈타인 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4839,7 +5004,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-166.png"
     },
     {
       "id": "ER-EQ-167",
@@ -4859,8 +5025,8 @@
         "defense": 14
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 솔메리아 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4868,7 +5034,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-167.png"
     },
     {
       "id": "ER-EQ-168",
@@ -4888,8 +5055,8 @@
         "defense": 15
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 방어구 — 노르발트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4897,7 +5064,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-168.png"
     },
     {
       "id": "ER-EQ-169",
@@ -4917,8 +5085,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 아이젠크로네 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4926,7 +5094,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-169.png"
     },
     {
       "id": "ER-EQ-170",
@@ -4946,8 +5115,8 @@
         "resistance": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 벨마리나 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4955,7 +5124,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-170.png"
     },
     {
       "id": "ER-EQ-171",
@@ -4975,8 +5145,8 @@
         "resistance": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 로젠펠트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -4984,7 +5154,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-171.png"
     },
     {
       "id": "ER-EQ-172",
@@ -5004,8 +5175,8 @@
         "resistance": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 칼트하임 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5013,7 +5184,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-172.png"
     },
     {
       "id": "ER-EQ-173",
@@ -5033,8 +5205,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 아쿠아렌 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5042,7 +5214,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-173.png"
     },
     {
       "id": "ER-EQ-174",
@@ -5062,8 +5235,8 @@
         "resistance": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 발렌하르트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5071,7 +5244,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-174.png"
     },
     {
       "id": "ER-EQ-175",
@@ -5091,8 +5265,8 @@
         "resistance": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 실베른 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5100,7 +5274,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-175.png"
     },
     {
       "id": "ER-EQ-176",
@@ -5120,8 +5295,8 @@
         "resistance": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 엘름베르크 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5129,7 +5304,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-176.png"
     },
     {
       "id": "ER-EQ-177",
@@ -5149,8 +5325,8 @@
         "resistance": 7
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 세르반 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5158,7 +5334,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-177.png"
     },
     {
       "id": "ER-EQ-178",
@@ -5178,8 +5355,8 @@
         "resistance": 8
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 베르크슈타인 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5187,7 +5364,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-178.png"
     },
     {
       "id": "ER-EQ-179",
@@ -5207,8 +5385,8 @@
         "resistance": 9
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 솔메리아 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5216,7 +5394,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-179.png"
     },
     {
       "id": "ER-EQ-180",
@@ -5236,8 +5415,8 @@
         "resistance": 10
       },
       "potentials": [],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "고급 장신구 — 노르발트 장인의 양식에서 유래한 정예 탐험가를 위한 제작품.",
       "source_tags": [
         "elite_dungeon",
@@ -5245,7 +5424,8 @@
         "quest"
       ],
       "tradable": true,
-      "unique_power_note": null
+      "unique_power_note": null,
+      "icon_path": "assets/items/equipment/ER-EQ-180.png"
     },
     {
       "id": "ER-EQ-181",
@@ -5273,8 +5453,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5282,7 +5462,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-181.png"
     },
     {
       "id": "ER-EQ-182",
@@ -5310,8 +5491,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5319,7 +5500,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-182.png"
     },
     {
       "id": "ER-EQ-183",
@@ -5347,8 +5529,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5356,7 +5538,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-183.png"
     },
     {
       "id": "ER-EQ-184",
@@ -5384,8 +5567,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5393,7 +5576,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-184.png"
     },
     {
       "id": "ER-EQ-185",
@@ -5421,8 +5605,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5430,7 +5614,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-185.png"
     },
     {
       "id": "ER-EQ-186",
@@ -5458,8 +5643,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5467,7 +5652,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-186.png"
     },
     {
       "id": "ER-EQ-187",
@@ -5495,8 +5681,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 엘름베르크 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5504,7 +5690,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-187.png"
     },
     {
       "id": "ER-EQ-188",
@@ -5532,8 +5719,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 세르반 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5541,7 +5728,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-188.png"
     },
     {
       "id": "ER-EQ-189",
@@ -5569,8 +5757,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 베르크슈타인 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5578,7 +5766,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-189.png"
     },
     {
       "id": "ER-EQ-190",
@@ -5606,8 +5795,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 솔메리아 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5615,7 +5804,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-190.png"
     },
     {
       "id": "ER-EQ-191",
@@ -5643,8 +5833,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 노르발트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5652,7 +5842,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-191.png"
     },
     {
       "id": "ER-EQ-192",
@@ -5680,8 +5871,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 아이젠크로네 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5689,7 +5880,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-192.png"
     },
     {
       "id": "ER-EQ-193",
@@ -5717,8 +5909,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5726,7 +5918,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-193.png"
     },
     {
       "id": "ER-EQ-194",
@@ -5754,8 +5947,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5763,7 +5956,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-194.png"
     },
     {
       "id": "ER-EQ-195",
@@ -5791,8 +5985,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5800,7 +5994,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-195.png"
     },
     {
       "id": "ER-EQ-196",
@@ -5828,8 +6023,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5837,7 +6032,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-196.png"
     },
     {
       "id": "ER-EQ-197",
@@ -5865,8 +6061,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5874,7 +6070,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-197.png"
     },
     {
       "id": "ER-EQ-198",
@@ -5902,8 +6099,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 검 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5911,7 +6108,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-198.png"
     },
     {
       "id": "ER-EQ-199",
@@ -5940,8 +6138,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5949,7 +6147,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-199.png"
     },
     {
       "id": "ER-EQ-200",
@@ -5978,8 +6177,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -5987,7 +6186,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-200.png"
     },
     {
       "id": "ER-EQ-201",
@@ -6016,8 +6216,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6025,7 +6225,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-201.png"
     },
     {
       "id": "ER-EQ-202",
@@ -6054,8 +6255,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6063,7 +6264,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-202.png"
     },
     {
       "id": "ER-EQ-203",
@@ -6092,8 +6294,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6101,7 +6303,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-203.png"
     },
     {
       "id": "ER-EQ-204",
@@ -6130,8 +6333,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6139,7 +6342,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-204.png"
     },
     {
       "id": "ER-EQ-205",
@@ -6168,8 +6372,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6177,7 +6381,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-205.png"
     },
     {
       "id": "ER-EQ-206",
@@ -6206,8 +6411,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 세르반 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6215,7 +6420,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-206.png"
     },
     {
       "id": "ER-EQ-207",
@@ -6244,8 +6450,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 베르크슈타인 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6253,7 +6459,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-207.png"
     },
     {
       "id": "ER-EQ-208",
@@ -6282,8 +6489,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6291,7 +6498,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-208.png"
     },
     {
       "id": "ER-EQ-209",
@@ -6320,8 +6528,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 노르발트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6329,7 +6537,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-209.png"
     },
     {
       "id": "ER-EQ-210",
@@ -6358,8 +6567,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6367,7 +6576,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-210.png"
     },
     {
       "id": "ER-EQ-211",
@@ -6396,8 +6606,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6405,7 +6615,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-211.png"
     },
     {
       "id": "ER-EQ-212",
@@ -6434,8 +6645,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6443,7 +6654,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-212.png"
     },
     {
       "id": "ER-EQ-213",
@@ -6472,8 +6684,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6481,7 +6693,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-213.png"
     },
     {
       "id": "ER-EQ-214",
@@ -6510,8 +6723,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6519,7 +6732,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-214.png"
     },
     {
       "id": "ER-EQ-215",
@@ -6548,8 +6762,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6557,7 +6771,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-215.png"
     },
     {
       "id": "ER-EQ-216",
@@ -6586,8 +6801,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 마도 지팡이 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6595,7 +6810,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-216.png"
     },
     {
       "id": "ER-EQ-217",
@@ -6623,8 +6839,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6632,7 +6848,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-217.png"
     },
     {
       "id": "ER-EQ-218",
@@ -6660,8 +6877,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6669,7 +6886,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-218.png"
     },
     {
       "id": "ER-EQ-219",
@@ -6697,8 +6915,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6706,7 +6924,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-219.png"
     },
     {
       "id": "ER-EQ-220",
@@ -6734,8 +6953,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6743,7 +6962,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-220.png"
     },
     {
       "id": "ER-EQ-221",
@@ -6771,8 +6991,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6780,7 +7000,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-221.png"
     },
     {
       "id": "ER-EQ-222",
@@ -6808,8 +7029,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6817,7 +7038,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-222.png"
     },
     {
       "id": "ER-EQ-223",
@@ -6845,8 +7067,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 엘름베르크 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6854,7 +7076,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-223.png"
     },
     {
       "id": "ER-EQ-224",
@@ -6882,8 +7105,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 세르반 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6891,7 +7114,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-224.png"
     },
     {
       "id": "ER-EQ-225",
@@ -6919,8 +7143,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 베르크슈타인 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6928,7 +7152,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-225.png"
     },
     {
       "id": "ER-EQ-226",
@@ -6956,8 +7181,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 솔메리아 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -6965,7 +7190,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-226.png"
     },
     {
       "id": "ER-EQ-227",
@@ -6993,8 +7219,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 노르발트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7002,7 +7228,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-227.png"
     },
     {
       "id": "ER-EQ-228",
@@ -7030,8 +7257,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 방어구 — 아이젠크로네 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7039,7 +7266,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-228.png"
     },
     {
       "id": "ER-EQ-229",
@@ -7067,8 +7295,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 벨마리나 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7076,7 +7304,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-229.png"
     },
     {
       "id": "ER-EQ-230",
@@ -7104,8 +7333,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 로젠펠트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7113,7 +7342,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-230.png"
     },
     {
       "id": "ER-EQ-231",
@@ -7141,8 +7371,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 칼트하임 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7150,7 +7380,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-231.png"
     },
     {
       "id": "ER-EQ-232",
@@ -7178,8 +7409,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 아쿠아렌 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7187,7 +7418,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-232.png"
     },
     {
       "id": "ER-EQ-233",
@@ -7215,8 +7447,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 발렌하르트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7224,7 +7456,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-233.png"
     },
     {
       "id": "ER-EQ-234",
@@ -7252,8 +7485,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 실베른 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7261,7 +7494,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-234.png"
     },
     {
       "id": "ER-EQ-235",
@@ -7289,8 +7523,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 엘름베르크 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7298,7 +7532,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-235.png"
     },
     {
       "id": "ER-EQ-236",
@@ -7326,8 +7561,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 세르반 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7335,7 +7570,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-236.png"
     },
     {
       "id": "ER-EQ-237",
@@ -7363,8 +7599,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 베르크슈타인 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7372,7 +7608,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-237.png"
     },
     {
       "id": "ER-EQ-238",
@@ -7400,8 +7637,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 솔메리아 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7409,7 +7646,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-238.png"
     },
     {
       "id": "ER-EQ-239",
@@ -7437,8 +7675,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 노르발트 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7446,7 +7684,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-239.png"
     },
     {
       "id": "ER-EQ-240",
@@ -7474,8 +7713,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "유니크 장신구 — 아이젠크로네 장인의 양식에서 유래한 희귀한 개인 유산.",
       "source_tags": [
         "rare_auction",
@@ -7483,7 +7722,8 @@
         "quest_chain"
       ],
       "tradable": true,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-240.png"
     },
     {
       "id": "ER-EQ-241",
@@ -7518,8 +7758,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7527,7 +7767,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-241.png"
     },
     {
       "id": "ER-EQ-242",
@@ -7562,8 +7803,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7571,7 +7812,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-242.png"
     },
     {
       "id": "ER-EQ-243",
@@ -7606,8 +7848,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7615,7 +7857,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-243.png"
     },
     {
       "id": "ER-EQ-244",
@@ -7650,8 +7893,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7659,7 +7902,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-244.png"
     },
     {
       "id": "ER-EQ-245",
@@ -7694,8 +7938,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7703,7 +7947,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-245.png"
     },
     {
       "id": "ER-EQ-246",
@@ -7738,8 +7983,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7747,7 +7992,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-246.png"
     },
     {
       "id": "ER-EQ-247",
@@ -7782,8 +8028,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 세르반 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7791,7 +8037,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-247.png"
     },
     {
       "id": "ER-EQ-248",
@@ -7826,8 +8073,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 베르크슈타인 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7835,7 +8082,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-248.png"
     },
     {
       "id": "ER-EQ-249",
@@ -7870,8 +8118,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 솔메리아 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7879,7 +8127,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-249.png"
     },
     {
       "id": "ER-EQ-250",
@@ -7914,8 +8163,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 노르발트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7923,7 +8172,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-250.png"
     },
     {
       "id": "ER-EQ-251",
@@ -7958,8 +8208,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 아이젠크로네 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -7967,7 +8217,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-251.png"
     },
     {
       "id": "ER-EQ-252",
@@ -8002,8 +8253,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 벨마리나 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8011,7 +8262,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-252.png"
     },
     {
       "id": "ER-EQ-253",
@@ -8046,8 +8298,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8055,7 +8307,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-253.png"
     },
     {
       "id": "ER-EQ-254",
@@ -8090,8 +8343,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8099,7 +8352,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-254.png"
     },
     {
       "id": "ER-EQ-255",
@@ -8134,8 +8388,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8143,7 +8397,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-255.png"
     },
     {
       "id": "ER-EQ-256",
@@ -8178,8 +8433,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8187,7 +8442,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-256.png"
     },
     {
       "id": "ER-EQ-257",
@@ -8222,8 +8478,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8231,7 +8487,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-257.png"
     },
     {
       "id": "ER-EQ-258",
@@ -8266,8 +8523,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 검 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8275,7 +8532,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-258.png"
     },
     {
       "id": "ER-EQ-259",
@@ -8311,8 +8569,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8320,7 +8578,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-259.png"
     },
     {
       "id": "ER-EQ-260",
@@ -8356,8 +8615,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8365,7 +8624,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-260.png"
     },
     {
       "id": "ER-EQ-261",
@@ -8401,8 +8661,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8410,7 +8670,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-261.png"
     },
     {
       "id": "ER-EQ-262",
@@ -8446,8 +8707,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8455,7 +8716,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-262.png"
     },
     {
       "id": "ER-EQ-263",
@@ -8491,8 +8753,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8500,7 +8762,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-263.png"
     },
     {
       "id": "ER-EQ-264",
@@ -8536,8 +8799,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8545,7 +8808,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-264.png"
     },
     {
       "id": "ER-EQ-265",
@@ -8581,8 +8845,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 세르반 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8590,7 +8854,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-265.png"
     },
     {
       "id": "ER-EQ-266",
@@ -8626,8 +8891,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 베르크슈타인 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8635,7 +8900,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-266.png"
     },
     {
       "id": "ER-EQ-267",
@@ -8671,8 +8937,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 솔메리아 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8680,7 +8946,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-267.png"
     },
     {
       "id": "ER-EQ-268",
@@ -8716,8 +8983,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 노르발트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8725,7 +8992,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-268.png"
     },
     {
       "id": "ER-EQ-269",
@@ -8761,8 +9029,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 아이젠크로네 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8770,7 +9038,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-269.png"
     },
     {
       "id": "ER-EQ-270",
@@ -8806,8 +9075,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 벨마리나 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8815,7 +9084,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-270.png"
     },
     {
       "id": "ER-EQ-271",
@@ -8851,8 +9121,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8860,7 +9130,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-271.png"
     },
     {
       "id": "ER-EQ-272",
@@ -8896,8 +9167,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8905,7 +9176,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-272.png"
     },
     {
       "id": "ER-EQ-273",
@@ -8941,8 +9213,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8950,7 +9222,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-273.png"
     },
     {
       "id": "ER-EQ-274",
@@ -8986,8 +9259,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -8995,7 +9268,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-274.png"
     },
     {
       "id": "ER-EQ-275",
@@ -9031,8 +9305,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9040,7 +9314,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-275.png"
     },
     {
       "id": "ER-EQ-276",
@@ -9076,8 +9351,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 마도 지팡이 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9085,7 +9360,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-276.png"
     },
     {
       "id": "ER-EQ-277",
@@ -9120,8 +9396,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9129,7 +9405,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-277.png"
     },
     {
       "id": "ER-EQ-278",
@@ -9164,8 +9441,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9173,7 +9450,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-278.png"
     },
     {
       "id": "ER-EQ-279",
@@ -9208,8 +9486,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9217,7 +9495,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-279.png"
     },
     {
       "id": "ER-EQ-280",
@@ -9252,8 +9531,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9261,7 +9540,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-280.png"
     },
     {
       "id": "ER-EQ-281",
@@ -9296,8 +9576,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9305,7 +9585,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-281.png"
     },
     {
       "id": "ER-EQ-282",
@@ -9340,8 +9621,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9349,7 +9630,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-282.png"
     },
     {
       "id": "ER-EQ-283",
@@ -9384,8 +9666,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 세르반 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9393,7 +9675,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-283.png"
     },
     {
       "id": "ER-EQ-284",
@@ -9428,8 +9711,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 베르크슈타인 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9437,7 +9720,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-284.png"
     },
     {
       "id": "ER-EQ-285",
@@ -9472,8 +9756,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 솔메리아 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9481,7 +9765,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-285.png"
     },
     {
       "id": "ER-EQ-286",
@@ -9516,8 +9801,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 노르발트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9525,7 +9810,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-286.png"
     },
     {
       "id": "ER-EQ-287",
@@ -9560,8 +9846,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 아이젠크로네 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9569,7 +9855,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-287.png"
     },
     {
       "id": "ER-EQ-288",
@@ -9604,8 +9891,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 방어구 — 벨마리나 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9613,7 +9900,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-288.png"
     },
     {
       "id": "ER-EQ-289",
@@ -9648,8 +9936,8 @@
           "value": 7
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 로젠펠트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9657,7 +9945,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-289.png"
     },
     {
       "id": "ER-EQ-290",
@@ -9692,8 +9981,8 @@
           "value": 8
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 칼트하임 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9701,7 +9990,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-290.png"
     },
     {
       "id": "ER-EQ-291",
@@ -9736,8 +10026,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 아쿠아렌 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9745,7 +10035,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-291.png"
     },
     {
       "id": "ER-EQ-292",
@@ -9780,8 +10071,8 @@
           "value": 10
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 발렌하르트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9789,7 +10080,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-292.png"
     },
     {
       "id": "ER-EQ-293",
@@ -9824,8 +10116,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 실베른 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9833,7 +10125,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-293.png"
     },
     {
       "id": "ER-EQ-294",
@@ -9868,8 +10161,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 엘름베르크 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9877,7 +10170,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-294.png"
     },
     {
       "id": "ER-EQ-295",
@@ -9912,8 +10206,8 @@
           "value": 1
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 세르반 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9921,7 +10215,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-295.png"
     },
     {
       "id": "ER-EQ-296",
@@ -9956,8 +10251,8 @@
           "value": 6
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 베르크슈타인 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -9965,7 +10260,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-296.png"
     },
     {
       "id": "ER-EQ-297",
@@ -10000,8 +10296,8 @@
           "value": 5
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 솔메리아 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -10009,7 +10305,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-297.png"
     },
     {
       "id": "ER-EQ-298",
@@ -10044,8 +10341,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 노르발트 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -10053,7 +10350,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-298.png"
     },
     {
       "id": "ER-EQ-299",
@@ -10088,8 +10386,8 @@
           "value": 4
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 아이젠크로네 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -10097,7 +10395,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-299.png"
     },
     {
       "id": "ER-EQ-300",
@@ -10132,8 +10431,8 @@
           "value": 3
         }
       ],
-      "icon_status": "uncreated",
-      "art_status": "uncreated",
+      "icon_status": "created_visual_verified",
+      "art_status": "created_visual_verified",
       "lore": "에픽 장신구 — 벨마리나 장인의 양식에서 유래한 장인의 일생을 담은 희귀 유물.",
       "source_tags": [
         "major_boss",
@@ -10141,7 +10440,8 @@
         "world_event"
       ],
       "tradable": false,
-      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다"
+      "unique_power_note": "잠재능력은 장비 효과로만 작용하며 깨달음·경지 돌파를 강제하지 않는다",
+      "icon_path": "assets/items/equipment/ER-EQ-300.png"
     }
   ]
 }

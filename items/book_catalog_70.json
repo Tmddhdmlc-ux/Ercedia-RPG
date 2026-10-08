@@ -29,7 +29,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-001.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-002",
@@ -55,7 +57,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-002.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-003",
@@ -81,7 +85,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-003.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-004",
@@ -107,7 +113,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-004.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-005",
@@ -133,7 +141,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-005.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-006",
@@ -159,7 +169,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-006.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-007",
@@ -185,7 +197,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-007.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-008",
@@ -211,7 +225,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-008.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-009",
@@ -237,7 +253,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-009.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-010",
@@ -263,7 +281,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-010.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-011",
@@ -289,7 +309,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-011.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-012",
@@ -315,7 +337,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-012.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-013",
@@ -341,7 +365,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-013.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-014",
@@ -367,7 +393,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-014.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-015",
@@ -393,7 +421,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-015.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-016",
@@ -419,7 +449,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-016.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-017",
@@ -445,7 +477,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-017.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-018",
@@ -471,7 +505,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-018.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-019",
@@ -497,7 +533,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-019.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-020",
@@ -523,7 +561,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-020.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-021",
@@ -549,7 +589,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-021.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-022",
@@ -575,7 +617,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-022.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-023",
@@ -601,7 +645,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-023.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-024",
@@ -627,7 +673,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-024.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-025",
@@ -653,7 +701,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-025.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-026",
@@ -679,7 +729,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-026.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-027",
@@ -705,7 +757,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-027.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-028",
@@ -731,7 +785,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-028.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-029",
@@ -757,7 +813,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-029.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SWD-030",
@@ -783,7 +841,9 @@
         "던전 단서 또는 의뢰"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SWD-030.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-001",
@@ -809,7 +869,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-001.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-002",
@@ -835,7 +897,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-002.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-003",
@@ -861,7 +925,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-003.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-004",
@@ -887,7 +953,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-004.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-005",
@@ -913,7 +981,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-005.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-006",
@@ -939,7 +1009,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-006.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-007",
@@ -965,7 +1037,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-007.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-008",
@@ -991,7 +1065,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-008.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-009",
@@ -1017,7 +1093,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-009.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-010",
@@ -1043,7 +1121,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-010.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-011",
@@ -1069,7 +1149,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-011.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-012",
@@ -1095,7 +1177,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-012.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-013",
@@ -1121,7 +1205,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-013.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-014",
@@ -1147,7 +1233,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-014.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-015",
@@ -1173,7 +1261,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-015.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-016",
@@ -1199,7 +1289,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-016.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-017",
@@ -1225,7 +1317,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-017.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-018",
@@ -1251,7 +1345,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-018.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-019",
@@ -1277,7 +1373,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-019.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-020",
@@ -1303,7 +1401,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-020.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-021",
@@ -1329,7 +1429,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-021.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-022",
@@ -1355,7 +1457,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-022.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-023",
@@ -1381,7 +1485,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-023.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-024",
@@ -1407,7 +1513,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-024.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-025",
@@ -1433,7 +1541,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-025.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-026",
@@ -1459,7 +1569,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-026.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-027",
@@ -1485,7 +1597,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-027.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-028",
@@ -1511,7 +1625,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-028.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-029",
@@ -1537,7 +1653,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-029.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-030",
@@ -1563,7 +1681,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-030.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-031",
@@ -1589,7 +1709,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-031.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-032",
@@ -1615,7 +1737,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-032.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-033",
@@ -1641,7 +1765,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-033.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-034",
@@ -1667,7 +1793,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-034.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-035",
@@ -1693,7 +1821,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-035.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-036",
@@ -1719,7 +1849,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-036.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-037",
@@ -1745,7 +1877,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-037.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-038",
@@ -1771,7 +1905,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-038.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-039",
@@ -1797,7 +1933,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-039.png",
+      "icon_status": "created_visual_verified"
     },
     {
       "id": "BK-SPL-040",
@@ -1823,7 +1961,9 @@
         "연구·던전 수집품"
       ],
       "mastery_rule": "책을 획득/읽어 기술 내용을 알지만 실제 숙련 향상은 훈련을 요함; 경지 돌파 자동 불가",
-      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심."
+      "source_note": "월드에서 공인 마술서 구매/등록은 드라켄, 검술서 정식 공급은 벨로아 중심.",
+      "icon_path": "assets/items/books/BK-SPL-040.png",
+      "icon_status": "created_visual_verified"
     }
   ],
   "learning_rules": [
