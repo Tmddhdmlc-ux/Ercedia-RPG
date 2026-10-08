@@ -1,3 +1,7 @@
+## 새 ChatGPT 채팅에서 게임 시작
+
+새 대화에서는 **[BOOTSTRAP.md](BOOTSTRAP.md)**를 먼저 읽어 세계관·13영주령·11신/7마왕·GM 비밀·장면 JSON 규칙을 복원한다. GitHub 문서는 새 채팅의 모델에 자동 주입되지 않으므로 처음에 저장소 문서를 명시적으로 읽어 달라고 요청해야 한다.
+
 # 에르세디아 RPG 웹 UI
 
 ChatGPT 웹페이지 내부의 고정 게임 화면과 GitHub UI 업데이트는 [Tampermonkey 설치·사용 안내](tampermonkey/README.md)를 참고하세요. 런처와 게임 UI는 분리되어 일반 UI 패치 때 재설치가 필요하지 않습니다. 실제 ChatGPT 자동 연결과 v1.1 전체 업데이트 동작은 사용자 확인 대기 상태입니다. 로컬 수동 게임 화면은 `http://localhost:4173/?game=1`입니다.
