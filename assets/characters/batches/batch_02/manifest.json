@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_02",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-011",
+      "name": "요엘 하츠",
+      "affiliation": "해풍수호 기사단",
+      "appearance": "남36 적갈 단발 검은 눈 해군 가죽갑",
+      "rank": "익스퍼트 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-011/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            87,
+            85,
+            936,
+            1451
+          ],
+          "margins_ltrb": [
+            87,
+            85,
+            88,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "1a3f752641be934acd2a6c0ee8b0c582abbe2c05cf168c5d62afc6272492cb4d"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-011/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5982586280e06b45df3b4fb1c92aac567edab50438d69723a67ce1d3a9d02b90"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-012",
+      "name": "시나 브렌",
+      "affiliation": "해풍수호 기사단",
+      "appearance": "여22 백금 포니테일 푸른 눈 해군 제복",
+      "rank": "베이직 나이트",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-012/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            83,
+            85,
+            941,
+            1451
+          ],
+          "margins_ltrb": [
+            83,
+            85,
+            83,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "24108d2b655000271b8ec5983efd60235b4ed4710f1f9fe28c2017fdc84446a7"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-012/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "14ce180869f83cc29ae6c10d30c4fdb3d8ed51449a3176d717c2b42804abac2f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-013",
+      "name": "에르빈 루즈",
+      "affiliation": "칠원기록탑",
+      "appearance": "남31 밤갈 머리 은테 안경 갈색 로브",
+      "rank": "3서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-013/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            101,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            101,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "be23c12c4e425972b2f33409ef37ac6ba79cfc97b1c4bb8b16a696a712c45526"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-013/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            12,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            12,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5838d7598cad2a5cc19892dfcca55b4d3a4c1453c8b31da54a5e4f6584816325"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-014",
+      "name": "리비아 오르",
+      "affiliation": "칠원기록탑",
+      "appearance": "여19 검은 곱슬 녹색 눈 학생 로브",
+      "rank": "1서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-014/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            96,
+            85,
+            928,
+            1451
+          ],
+          "margins_ltrb": [
+            96,
+            85,
+            96,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "1064b38e865d48dd9aa3adcab6e2c64979fc0950e473d54d88e027dc0fe7c514"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-014/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            12,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            12,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "39528d1a3798cc1dce953437b2cd46711342554836608061478772f1a56eb646"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-015",
+      "name": "티렐 루인",
+      "affiliation": "청동뇌명탑",
+      "appearance": "남37 자주빛 머리 번개 문신 금속 장갑",
+      "rank": "4서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-015/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            77,
+            85,
+            946,
+            1451
+          ],
+          "margins_ltrb": [
+            77,
+            85,
+            78,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "f536035235c863fbff5039a0776d1e79f29e519df7a18b4f041d0f29cf9a9adf"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-015/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5f0c4bf368bd4c7134fe156b03007f9758f7e82858f64a8b779c4ffc7ccce183"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-016",
+      "name": "키아 멜즈",
+      "affiliation": "청동뇌명탑",
+      "appearance": "여24 은청 숏컷 청록 눈 청동 소매",
+      "rank": "2서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-016/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            71,
+            85,
+            953,
+            1451
+          ],
+          "margins_ltrb": [
+            71,
+            85,
+            71,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "691d574ec07280edbbe36811cf5920a943fb5a6932f03f1c6769b3d1f796d8b1"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-016/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            9,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            9,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "37c5748d4c689217b021ca28e27441cfd6109ce9c9bf80300d0ace3679d102d4"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-017",
+      "name": "세디아 루브",
+      "affiliation": "청류융합탑",
+      "appearance": "여40 남청 머리 청색 눈 흰청 로브",
+      "rank": "4서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-017/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            73,
+            85,
+            950,
+            1451
+          ],
+          "margins_ltrb": [
+            73,
+            85,
+            74,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6f8039f0dfc1768b8e9195c8b88bd248ce2dfd25aa3e393ebea05045dd746e5d"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-017/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            1,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "d473e208264fd4ea49f39a490878caee0eb5714e86c49a093991f30afc73e100"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-018",
+      "name": "모렌 시프",
+      "affiliation": "청류융합탑",
+      "appearance": "남28 모래 금발 초록 눈 바람 망토",
+      "rank": "2서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-018/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            132,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            132,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "8bb9f7033b4464401517211833b48753829736324c6919d99181bd900562c26e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-018/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            11,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            11,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3b2650ba288b2f3364d82bd1e9fc3ad75c0ceb3506e61b332e71c22e3c224d27"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-019",
+      "name": "엘라스 로크",
+      "affiliation": "황혼음영탑",
+      "appearance": "남33 백회 머리 이색 눈 회색 로브",
+      "rank": "4서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-019/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            69,
+            85,
+            955,
+            1451
+          ],
+          "margins_ltrb": [
+            69,
+            85,
+            69,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "22fe2829dec92a5694d2433990e1ec13e4aa1179d7bbee36213fcee9d6dbef17"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-019/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "28d94a0e813b0414c419f0f973caf5a893f5ded4b7ed0f293ab9a53ddfd850d2"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "affiliation": "황혼음영탑",
+      "appearance": "여23 보라 흑발 회색 눈 검은 베일",
+      "rank": "2서클",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-020/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            139,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            139,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "0729c4598d0a988122bef1a178203e4b21536b9284a1b77b39275295d7f3a556"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-020/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            1,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            1,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5b003149361dbb862abf2802b8c654ab82247a238b797acd9f5e1d11817284c2"
+        }
+      }
+    }
+  ]
+}
