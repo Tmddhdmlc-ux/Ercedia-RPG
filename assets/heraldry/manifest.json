@@ -1,0 +1,411 @@
+{
+  "schema_version": 1,
+  "status": "review_pending",
+  "sources": [
+    "KINGDOMS.md",
+    "LORDSHIPS.md"
+  ],
+  "note": "문장의 구성 요소는 원문 기준. 구도·테두리·미지정 색 조합은 시안이며 정설로 자동 등록하지 않는다.",
+  "flags": [
+    {
+      "id": "draken",
+      "name": "드라켄 왕국",
+      "group": "kingdom",
+      "crest": "쌍두룡·청록 수정·번개와 룬",
+      "palette": "navy blue, silver and turquoise",
+      "path": "assets/heraldry/kingdoms/draken/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        78,
+        107,
+        1458,
+        916
+      ],
+      "sha256": "f181e9232be76a0849251c870eff7df1c68fc85fe66f9333f1f3c6a706e7222b",
+      "status": "review_pending"
+    },
+    {
+      "id": "E1",
+      "name": "칼트하임 변경백령",
+      "group": "lordship",
+      "crest": "검은 늑대·청색 첨봉",
+      "palette": "icy blue black gray",
+      "path": "assets/heraldry/lordships/E1/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        134,
+        78,
+        1402,
+        946
+      ],
+      "sha256": "3ea635d2521127028f7441b98676a57fcf7cf028945c24d75e02b0ed13a81ebd",
+      "status": "review_pending"
+    },
+    {
+      "id": "E2",
+      "name": "아이젠크로네 공작령",
+      "group": "lordship",
+      "crest": "수정 왕관·톱니 원",
+      "palette": "navy silver crystal cyan",
+      "path": "assets/heraldry/lordships/E2/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        120,
+        78,
+        1416,
+        946
+      ],
+      "sha256": "5f2edcae7993388a0035ce11230c1306e01cfd300fa3231be98786794b77e299",
+      "status": "review_pending"
+    },
+    {
+      "id": "E3",
+      "name": "베르크슈타인 후작령",
+      "group": "lordship",
+      "crest": "철산양·검은 성채",
+      "palette": "dark iron black silver",
+      "path": "assets/heraldry/lordships/E3/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        132,
+        78,
+        1403,
+        946
+      ],
+      "sha256": "f1942e4ca0b76279c384f2b250dfde26b070a973095e37e450837c413beca388",
+      "status": "review_pending"
+    },
+    {
+      "id": "E4",
+      "name": "실베른 백작령",
+      "group": "lordship",
+      "crest": "은교량·세 개의 별",
+      "palette": "teal gray silver",
+      "path": "assets/heraldry/lordships/E4/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        145,
+        78,
+        1391,
+        946
+      ],
+      "sha256": "29a219f184397511cf2aa5d0451d6a65da3ed660215bfaad97fb5341befe8654",
+      "status": "review_pending"
+    },
+    {
+      "id": "lumerin",
+      "name": "루메린 왕국",
+      "group": "kingdom",
+      "crest": "떠오르는 태양·파도·바람 찬 돛",
+      "palette": "white, blue-gold and turquoise",
+      "path": "assets/heraldry/kingdoms/lumerin/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        131,
+        78,
+        1405,
+        946
+      ],
+      "sha256": "4954be4b414d2d31abafa16359561cfe6c62595f3a3f3ad48afeceec05c3ab39",
+      "status": "review_pending"
+    },
+    {
+      "id": "S1",
+      "name": "벨마리나 후작령",
+      "group": "lordship",
+      "crest": "금색 돛·푸른 파도",
+      "palette": "rich blue gold white",
+      "path": "assets/heraldry/lordships/S1/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        92,
+        78,
+        1444,
+        946
+      ],
+      "sha256": "f7985bab535d430677d20eb84107e7028d74805dde0ed0c304b6b83c4b1c49a3",
+      "status": "review_pending"
+    },
+    {
+      "id": "S2",
+      "name": "세르반 공작령",
+      "group": "lordship",
+      "crest": "백색 매·금빛 길",
+      "palette": "white navy gold",
+      "path": "assets/heraldry/lordships/S2/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        124,
+        78,
+        1412,
+        946
+      ],
+      "sha256": "d8b1c2d3a4d3e7f6bf4ba9d302c0441788bc5c56a15ba4288fb3ef101bdd4e81",
+      "status": "review_pending"
+    },
+    {
+      "id": "S3",
+      "name": "아쿠아렌 백작령",
+      "group": "lordship",
+      "crest": "은돌고래·쌍파도",
+      "palette": "sea blue silver white",
+      "path": "assets/heraldry/lordships/S3/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        123,
+        78,
+        1413,
+        946
+      ],
+      "sha256": "a07f03ef3ba2595969e3ccb6e2fbf09e3d1c094a21e04d8de598360d5cc2de43",
+      "status": "review_pending"
+    },
+    {
+      "id": "S4",
+      "name": "솔메리아 백작령",
+      "group": "lordship",
+      "crest": "금열쇠·태양 이삭",
+      "palette": "white golden yellow blue",
+      "path": "assets/heraldry/lordships/S4/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        160,
+        78,
+        1375,
+        946
+      ],
+      "sha256": "8d84ac65ab93063f0ecd3b7ec2310dba18e28f789e5a1949148142e36d21c9b4",
+      "status": "review_pending"
+    },
+    {
+      "id": "veloa",
+      "name": "벨로아 왕국",
+      "group": "kingdom",
+      "crest": "황금 사자·밀 이삭·검",
+      "palette": "royal azure blue and gold, restrained white",
+      "path": "assets/heraldry/kingdoms/veloa/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        143,
+        78,
+        1392,
+        946
+      ],
+      "sha256": "8e38b15c05f17417ae039f2947f51c3c83e6fa7824c113abf5299d4d031f0394",
+      "status": "review_pending"
+    },
+    {
+      "id": "W1",
+      "name": "노르발트 변경백령",
+      "group": "lordship",
+      "crest": "검은 곰·은빛 산봉우리",
+      "palette": "cool gray silver with black",
+      "path": "assets/heraldry/lordships/W1/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        120,
+        78,
+        1415,
+        946
+      ],
+      "sha256": "7ff0e4f0eb1fe2bbbb03a39cb86939757a3c677be3bdcb4afbf9107d73e76b78",
+      "status": "review_pending"
+    },
+    {
+      "id": "W2",
+      "name": "발렌하르트 공작령",
+      "group": "lordship",
+      "crest": "은사자·푸른 방패",
+      "palette": "blue and silver",
+      "path": "assets/heraldry/lordships/W2/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        106,
+        78,
+        1430,
+        946
+      ],
+      "sha256": "be9d8a729470cc2d1b2c4e672f426dfadc0f633895a889d056d8be77a6c043fb",
+      "status": "review_pending"
+    },
+    {
+      "id": "W3",
+      "name": "엘름베르크 백작령",
+      "group": "lordship",
+      "crest": "세 이삭·갈색 들판",
+      "palette": "warm brown wheat gold",
+      "path": "assets/heraldry/lordships/W3/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        151,
+        78,
+        1385,
+        946
+      ],
+      "sha256": "8d7c63c8ad5bd52b608d8c01e0c57bf98d2027097cc4c763346e72aeffb998a3",
+      "status": "review_pending"
+    },
+    {
+      "id": "W4",
+      "name": "로젠펠트 후작령",
+      "group": "lordship",
+      "crest": "적장미·교차 창",
+      "palette": "deep red ivory silver",
+      "path": "assets/heraldry/lordships/W4/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        168,
+        78,
+        1367,
+        946
+      ],
+      "sha256": "b2a17ffeeb1f3c097778edcb7045038b0bc5997c07b9698912afdc7230ad4f64",
+      "status": "review_pending"
+    },
+    {
+      "id": "W5",
+      "name": "아르덴슈타인 백작령",
+      "group": "lordship",
+      "crest": "은매·붉은 다리",
+      "palette": "deep red gray silver",
+      "path": "assets/heraldry/lordships/W5/flag.png",
+      "size": [
+        1536,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        132,
+        78,
+        1403,
+        946
+      ],
+      "sha256": "fb03cc89487839a4178f46cb4a5aa2ad2219197ddfcaa8b3bbbd49934cc96b72",
+      "status": "review_pending"
+    }
+  ]
+}
