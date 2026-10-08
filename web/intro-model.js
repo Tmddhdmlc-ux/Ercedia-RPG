@@ -19,5 +19,5 @@ export function creationFields(draft){
 }
 export function initialPlayer(name){
   const t=playerTemplate,s=t.stats;
-  return normalizePlayer({name,job:t.identity.profession||'',level:t.level,xp:t.xp,requiredXp:t.xp_to_next,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,skills:[]});
+  return normalizePlayer({name,job:t.identity.profession||'',level:t.level,xp:t.xp,requiredXp:t.xp_to_next,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,realm:t.realm||'none',levelHpBonus:t.level_hp_bonus||0,unspentStatPoints:t.unspent_stat_points||0,skills:[]});
 }

@@ -12,6 +12,7 @@ import {mountPlayHUD} from './play-hud.js';
 import {mountNewGame} from './new-game.js';
 import {mountBattleUI} from './battle-ui.js';
 import {mountCatalogUI} from './catalog-ui.js';
+import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -194,7 +195,7 @@ $('map-overview').onclick=()=>{state.mapFaction=null;state.mapView='world';state
 const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.observe($('map-container'));
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
 $('inventory-tab').onclick=()=>{switchTo('inventory');dirty();};
-$('status-tab').onclick=()=>{switchTo('status');dirty();};
+$('status-tab').onclick=()=>{if(initializeNameOnlyPlayer(state)){playerUI.render();playHUD.render();saveGame();}switchTo('status');dirty();};
 $('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
 $('stage').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
 document.querySelectorAll('[data-outfit]').forEach(btn=>btn.onclick=()=>{state.outfit=btn.dataset.outfit;renderAppearance();dirty();});

@@ -2,6 +2,7 @@ import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
 import {battleIsActive} from './battle-model.js';
 import {updateNPC,findNPC} from './npc-model.js';
+import {initializeNameOnlyPlayer} from './legacy-player.js';
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -36,6 +37,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
     const name=$('adventurer-name').value.trim();
     if(!name||/^(플레이어|주인공|player)$/i.test(name)){$('name-error').textContent='모험에 사용할 이름을 입력해주세요.';$('adventurer-name').focus();return;}
     state.chosenName=name;state.player.name=name;$('name-error').textContent='';
+    initializeNameOnlyPlayer(state);
     render();controls();persist();status(`${name}님, 모험을 시작하세요.`);$('free-action').focus();
   }
   $('confirm-name').onclick=chooseName;
@@ -48,6 +50,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
     if(pending||state.introDraft||battleIsActive(state)||needsName()||!action.trim())return;
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
+    if(initializeNameOnlyPlayer(state)){render();persist();}
     const requestId=newRequestId();pending={requestId,choiceId};
     $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
     controls();status(embedded?'상대의 반응을 기다리는 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
