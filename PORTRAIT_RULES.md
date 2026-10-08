@@ -4,7 +4,7 @@
 > 상태: 채팅 UI 실험에서 검증된 CDN 표시 규칙 반영. 게임 세계관의 새로운 인물·설정은 사용자가 승인하기 전까지 확정하지 않는다.
 
 ## 1. 기본 원칙
-1. 주요 캐릭터는 승인된 **기준 초상화(base.png)** 한 장을 가진다.
+1. 주요 캐릭터는 승인된 **기준 초상화** 한 장을 가진다. 일반 파일명은 `base.png`이며, 세린은 투명 파일 `base_transparent.png`를 기준으로 사용한다.
 2. 감정·복장·부상 등 변형 이미지는 가능하면 기준 초상화를 참조해 생성한다.
 3. 이미 확정된 캐릭터를 장면마다 새로운 검색 이미지로 대체하지 않는다.
 4. 캐릭터와 마을·지역 모두 통일된 **카툰풍 중세 판타지** 비주얼을 사용한다.
@@ -98,7 +98,7 @@ assets/
 - 테스트명: **세린 (Serin)**
 - 기사 등급: **베이직 나이트**
 - 미확정 사항: 출신 국가, 기사단 소속, 성격, 구체적인 외형.
-- 표시 검증 완료: `assets/characters/main/serin/base.png`를 jsDelivr CDN URL로 지정한 AppBlock HTML 대화창이 정상 표시되었음을 사용자가 확인했다. 표시 방식은 아래 11항을 따른다.
+- 현재 기준 초상화: `assets/characters/main/serin/base_transparent.png`. 배경이 있는 이전 세린 이미지들은 사용자 요청으로 삭제했다. 투명 PNG의 알파 채널과 GitHub 등록을 확인했으며, 이 파일의 대화 UI 합성 표시는 별도 검증한다.
 - 시험 도중 정해진 세부 외형은 사용자의 승인을 거친 후 notes.md에 반영한다.
 
 
@@ -110,19 +110,19 @@ assets/
 - **`raw.githubusercontent.com` 및 `github.com/.../raw/...` 링크를 채팅 UI 이미지 표시용으로 사용하지 않는다.** 두 방식은 이번 UI 테스트에서 실패했고, jsDelivr CDN 방식은 성공했다. 이는 이번 ChatGPT UI 실험 결과이며 GitHub 파일 자체의 존재 여부와는 별개다.
 - 사용자에게 대화창을 보여줄 때는 **HTML 코드 블록만 출력하지 말고 AppBlock으로 렌더링된 대화창을 제공한다.** 코드 예시만 출력한 상태를 이미지 표시 성공으로 보고하지 않는다.
 - 이미지가 **미등록이거나 로드에 실패하면 다른 검색 이미지로 대체하지 않는다.** 미등록 상태 또는 로드 오류를 알리고, 등록된 경로가 있다면 해당 CDN 원본 링크를 제공한다. AppBlock 렌더링을 지원하지 않는 환경에서도 같은 원칙을 따른다.
-- 채팅마다 저장소의 파일 존재를 확인하고, 표정 전환 시 등록된 표정 파일만 사용한다. 요청한 표정이 미등록이면 같은 캐릭터의 승인된 `base.png`가 등록되어 있고 정상 로드되는 경우에만 이를 유지하며, 해당 표정이 미등록임을 알린다. 기본 이미지까지 미등록이거나 로드에 실패하면 위 실패 처리 규칙을 따른다.
-- **세린**: `assets/characters/main/serin/base.png` (금발 포니테일, 푸른 눈, 은백색 갑옷, 남색 망토). 다른 얼굴로 대체 금지.
+- 채팅마다 저장소의 파일 존재를 확인하고, 표정 전환 시 등록된 표정 파일만 사용한다. 요청한 표정이 미등록이면 같은 캐릭터의 승인된 기준 초상화(세린: `base_transparent.png`)가 등록되어 있고 정상 로드되는 경우에만 이를 유지하며, 해당 표정이 미등록임을 알린다. 기본 이미지까지 미등록이거나 로드에 실패하면 위 실패 처리 규칙을 따른다.
+- **세린**: `assets/characters/main/serin/base_transparent.png` (배경 투명 PNG; 현재 유일한 등록 초상화. 표정 변형은 미등록) (금발 포니테일, 푸른 눈, 은백색 갑옷, 남색 망토). 다른 얼굴로 대체 금지.
 - 이미지 표시와 GitHub에 파일이 존재하는 것은 별도로 검증해야 한다. 실제 렌더링 또는 사용자 확인 전에는 '화면 표시 성공'으로 보고하지 않는다.
 
-### 검증된 세린 CDN 주소와 AppBlock HTML 예시
-성공한 실제 CDN URL:
-`https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base.png`
+### 현재 세린 CDN 주소와 AppBlock HTML 예시
+현재 투명 초상화 CDN URL:
+`https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base_transparent.png`
 
 아래는 AppBlock 내부에 넣을 HTML 예시다. 실제 대화에서는 코드 텍스트가 아니라 렌더링된 UI로 표시한다.
 
 ```html
 <img
-  src="https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base.png"
+  src="https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@main/assets/characters/main/serin/base_transparent.png"
   alt="세린 공식 기준 초상화"
   style="display:block;width:220px;max-width:100%;height:auto;border-radius:12px"
 />
