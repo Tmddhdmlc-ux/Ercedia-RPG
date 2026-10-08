@@ -32,7 +32,7 @@
         ],
         "sha256": "7389dc8893105fc68d717dc0dfbc8bdca0f3575a8d288092834af42dabb71238"
       },
-      "commit_sha": null
+      "commit_sha": "4a369bf5c59289e5b668636614c9e511911592e6"
     },
     {
       "id": "ER-EQ-002",
@@ -43,10 +43,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "23aa9b5e952557c44d9d6329ad3fb84694c33111dd26f1370a51bde67a572e53"
+      },
       "commit_sha": null
     },
     {
@@ -58,10 +75,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/rapier.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          39,
+          38,
+          473,
+          473
+        ],
+        "sha256": "50b8c911211fc7ab79878e07b9bcb48cb8835bc12f780da9228e00fbfb95cd11"
+      },
       "commit_sha": null
     },
     {
@@ -73,10 +107,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/straight_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          41,
+          38,
+          470,
+          474
+        ],
+        "sha256": "bed051f6fc1536be758c80573b31d126010515c6bd14ab238ff7419df44c21b8"
+      },
       "commit_sha": null
     },
     {
@@ -88,10 +139,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "33b352214a91426be220b5c990ca69a1be24543e56a95d49ad9c05193bab2a0f"
+      },
       "commit_sha": null
     },
     {
@@ -103,10 +171,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          38,
+          474,
+          474
+        ],
+        "sha256": "2215002b9c3ec519c788b6ffe3f83ccc92683a69ad3890198d25348867499418"
+      },
       "commit_sha": null
     },
     {
@@ -118,10 +203,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/straight_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          41,
+          38,
+          470,
+          474
+        ],
+        "sha256": "63a0562c7de0846f6080467e200689951d85fbb5e9a90b09e7f829e05f837d18"
+      },
       "commit_sha": null
     },
     {
@@ -133,10 +235,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/greatsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          46,
+          47,
+          466,
+          465
+        ],
+        "sha256": "b199952b43f316b7751992bfbe3082e721de01593b30123c33e05e8e14853f5f"
+      },
       "commit_sha": null
     },
     {
@@ -148,10 +267,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/rapier.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          39,
+          38,
+          473,
+          473
+        ],
+        "sha256": "643db3444d260da36725c749675c3eb90ef1802a25944cfee787e569aca98d61"
+      },
       "commit_sha": null
     },
     {
@@ -163,10 +299,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/ceremonial_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          38,
+          474,
+          474
+        ],
+        "sha256": "f22c1361513ada68e0955b63412430370c7a55379509e1174c4bb58764096af7"
+      },
       "commit_sha": null
     },
     {
@@ -178,10 +331,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "05963a6b5a910b4dc763d33eff8cd73200d55810e428c23a9f9c71a8599ded53"
+      },
       "commit_sha": null
     },
     {
@@ -193,10 +363,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/greatsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          46,
+          47,
+          466,
+          465
+        ],
+        "sha256": "f43223acd3e0417ffbfc21d98a2720a1076bb1dc09a9398e6d61182af6ed287c"
+      },
       "commit_sha": null
     },
     {
@@ -208,10 +395,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/straight_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          41,
+          38,
+          470,
+          474
+        ],
+        "sha256": "5aad28266eb3b1748ef9b0d2005d0d292c33f3a31f7b6361e011436329be3e2f"
+      },
       "commit_sha": null
     },
     {
@@ -223,10 +427,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "4c936b3c51222fbb9b1a71c457026e7b9b6386d9108b6af0d4a05b931cdd634c"
+      },
       "commit_sha": null
     },
     {
@@ -238,10 +459,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "4f9005bc4e26172433e3e13301574bc2540388ce4fdc34f0ff0238cdfd24fc78"
+      },
       "commit_sha": null
     },
     {
@@ -253,10 +491,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "86c0a585a8f7a7e2d93fd1b30e6bbfa0ea11a7e945ac1a9bf5c0b85557c67324"
+      },
       "commit_sha": null
     },
     {
@@ -268,10 +523,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "ace983cbede245f673e2f231c1445182497e820eaaf7bfe3d0a6b82c1a2b30e4"
+      },
       "commit_sha": null
     },
     {
@@ -283,10 +555,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/greatsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          46,
+          47,
+          466,
+          465
+        ],
+        "sha256": "5dd6c00662b953d2ba92401c9ec3643220adb7377fd951eb0f32d906c1f895f1"
+      },
       "commit_sha": null
     },
     {
@@ -298,10 +587,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "9ad8fae22795e84a7487fc02ba59311ecef3b7868be7805061f675162dba1d87"
+      },
       "commit_sha": null
     },
     {
@@ -313,10 +619,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "57742ffadc49b994759ab7de6d050a670343a58193ad701813976c1c258cf3e7"
+      },
       "commit_sha": null
     },
     {
@@ -328,10 +651,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "312a8be6ea017d293182cb8b7a4d63faef6497694a4e4dc8a15d93a1c0af3168"
+      },
       "commit_sha": null
     },
     {
@@ -343,10 +683,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "78b2bb6b8b2f13885cd03ba0381860ac1f96a3aff5ab9fefbed04edf3e811cd1"
+      },
       "commit_sha": null
     },
     {
@@ -358,10 +715,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "a25a7b81e8eff033856093d4e47679e3f89e9668403355dd7273ace58d9720b6"
+      },
       "commit_sha": null
     },
     {
@@ -373,10 +747,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "7cffaa4d99bba7d5322d89c88a0376f0d4c778e6c949dfed9dc6812b834b0dd4"
+      },
       "commit_sha": null
     },
     {
@@ -388,10 +779,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "b19b2fed57386240be9b6ca0eff1db617d62a08b0d5998ad96b79c109c04dde8"
+      },
       "commit_sha": null
     },
     {
@@ -6789,7 +7197,7 @@
         ],
         "sha256": "56c2d1797d5a31a672ebd6048cb296e93e9bdf6097488d47b7cd38d3e6e35fe7"
       },
-      "commit_sha": null
+      "commit_sha": "4a369bf5c59289e5b668636614c9e511911592e6"
     },
     {
       "id": "MAT-001-2",
@@ -7396,7 +7804,7 @@
         "mode": "RGB",
         "sha256": "e0de48e8da3a000d087e63874b562609fbf35d7d657ab9eeb283a945bc422eee"
       },
-      "commit_sha": null
+      "commit_sha": "4a369bf5c59289e5b668636614c9e511911592e6"
     },
     {
       "id": "IMG-W1-HUB",

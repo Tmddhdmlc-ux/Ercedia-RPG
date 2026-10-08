@@ -6,12 +6,12 @@
 
 | 분야 | 검수 완료 | 전체 슬롯 |
 |---|---:|---:|
-| 장비 | 1 | 300 |
+| 장비 | 25 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 1 | 40 |
 | 장소 | 1 | 261 |
 
-총 검수 완료: **73/671**.
+총 검수 완료: **97/671**.
 
 ## 목록과 재개 기준
 
@@ -50,11 +50,19 @@
 - 파일 경로/템플릿/검증: [books-batch-03.json](art-production/books-batch-03.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `9935e0e74f3e37f2bd0448efac950ef62520c01a`
 
+### equipment-batch-01
+
+- 대상/완료 ID: ER-EQ-001, ER-EQ-002, ER-EQ-003, ER-EQ-004, ER-EQ-005, ER-EQ-006, ER-EQ-007, ER-EQ-008, ER-EQ-009, ER-EQ-010, ER-EQ-011, ER-EQ-012, ER-EQ-013, ER-EQ-014, ER-EQ-015, ER-EQ-016, ER-EQ-017, ER-EQ-018, ER-EQ-019, ER-EQ-020, ER-EQ-021, ER-EQ-022, ER-EQ-023, ER-EQ-024, ER-EQ-025
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [equipment-batch-01.json](art-production/equipment-batch-01.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `업로드 전`
+
 ### samples-batch-01
 
 - 대상/완료 ID: ER-EQ-001, MAT-001-1, IMG-W1-OVERVIEW
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [samples-batch-01.json](art-production/samples-batch-01.json) 및 전체 자산 목록 참조.
-- 이미지 업로드 커밋: `업로드 전`
+- 이미지 업로드 커밋: `4a369bf5c59289e5b668636614c9e511911592e6`
 
