@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.4
+// @version      1.1.6
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -32,7 +32,7 @@
   const title=document.createElement('strong');title.textContent='에르세디아 RPG';toolbar.append(title);
   const version=document.createElement('span');version.id='ui-version';toolbar.append(version);
   const mode=button('디버그 모드','launcher-mode'),check=button('최신 버전 확인','check-update'),update=button('업데이트 적용','apply-update'),rollback=button('이전 버전 복구','rollback-update');update.hidden=true;rollback.disabled=true;
-  const label=document.createElement('label'),auto=document.createElement('input');auto.type='checkbox';label.append(auto,'자동 연결 시험');toolbar.append(label);
+  const label=document.createElement('label'),auto=document.createElement('input');auto.type='checkbox';label.append(auto,'GPT 자동 연결');toolbar.append(label);
   const resetSize=button('창 기본 크기','reset-size');
   const close=button('게임 종료','close-game'),status=document.createElement('div');status.className='status';status.setAttribute('role','status');toolbar.append(status);
   const info=document.createElement('div');info.className='debug-info';info.textContent='자동 연결은 실험 기능입니다. 실패하면 요청 복사 → ChatGPT 직접 전송 → 응답 JSON 수동 적용을 사용하세요.';info.hidden=true;
@@ -48,6 +48,7 @@
   const storageKey=()=>`ercedia.tm.v1:${conversation}`;
   function read(key,fallback=null){try{return GM_getValue(key,fallback);}catch{return fallback;}}
   function write(key,value){GM_setValue(key,value);}
+  const AUTO_KEY='ercedia.launcher.auto-connect.v1';auto.checked=read(AUTO_KEY,true)!==false;
   function post(record,type,payload,requestId){record?.frame.contentWindow.postMessage({channel:'ercedia',token:record.token,conversation,type,payload,requestId},'*');}
   function send(type,payload){post(active,type,payload);}
   function tell(message){status.textContent=message;send('status',message);}
@@ -113,7 +114,7 @@
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`v${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.1.6 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       tell(initial?'고정 UI 연결됨 · 자동 연결은 꺼져 있습니다.':'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
@@ -137,9 +138,9 @@
   }
   check.onclick=()=>checkLatest(true);update.onclick=()=>prepared&&activate(prepared);rollback.onclick=()=>previous&&activate(previous);
   const latest=()=>{const nodes=document.querySelectorAll('[data-message-author-role="assistant"]');return nodes[nodes.length-1];};
-  const generating=()=>!!document.querySelector('[data-testid="stop-button"],button[aria-label="Stop generating"],button[aria-label="응답 생성 중지"],[data-testid="composer-submit-button"][data-state="stop"]');
+  const generating=()=>[...document.querySelectorAll('[data-testid="stop-button"],button[aria-label="Stop generating"],button[aria-label="응답 생성 중지"],[data-testid="composer-submit-button"][data-state="stop"]')].some(button=>visible(button)&&button.getAttribute('aria-hidden')!=='true');
   function baseline(){latestFingerprint=latest()?.textContent||'';}
-  baseline();auto.onchange=()=>{responseCandidate='';responseSent='';scan();tell(auto.checked?'자동 연결 시험 켜짐 · 공개 페이지의 입력·응답 요소만 사용합니다.':'수동 모드 · 요청 복사와 JSON 적용을 사용하세요.');};
+  baseline();auto.onchange=()=>{try{write(AUTO_KEY,auto.checked);}catch{}responseCandidate='';responseSent='';scan();tell(auto.checked?'GPT 자동 연결 켜짐 · 입력 전송과 장면 응답 반영':'수동 모드 · 요청 복사와 JSON 적용을 사용하세요.');};
   function pageRoots(){
     const roots=[document];
     for(let i=0;i<roots.length;i++)for(const element of roots[i].querySelectorAll('*')){
@@ -211,15 +212,38 @@
     submit.click();tell('전송을 시도했습니다. 응답을 기다리는 중…');
     setTimeout(()=>{if(pending===payload.requestId&&(('value' in editor?editor.value:editor.textContent)||'').trim()&&!generating())tell('전송 확인이 되지 않았습니다. 원본 입력창을 확인하세요. 자동 재전송은 하지 않습니다.');},1200);
   }
+  function responseSources(){
+    const sources=[],visited=new Set();
+    // New ChatGPT layouts may omit data-message-author-role on the response.
+    const selector='[data-message-author-role="assistant"],[data-turn="assistant"],.agent-turn,article[data-testid^="conversation-turn"],[data-testid^="conversation-turn"],pre,[data-testid="code-block"],.markdown';
+    for(const scope of pageRoots()){
+      const nodes=[...scope.querySelectorAll(selector)].reverse();
+      for(const node of nodes){
+        if(node.closest('[data-message-author-role="user"],[data-turn="user"]')||node.closest('[contenteditable="true"],textarea'))continue;
+        for(const text of [node.textContent,node.innerText])if(text&&!visited.has(text)){
+          visited.add(text);sources.push(text);
+        }
+      }
+    }
+    return sources;
+  }
+  let responseNotice='';
   function scan(){
-    if(!auto.checked||!active||generating())return;const node=latest();if(!node)return;
-    const blocks=[...node.querySelectorAll('pre code,pre,[data-testid="code-block"]')].map(block=>block.textContent||'');
-    const value=[...blocks,node.innerText||node.textContent||''].map(extractSceneJSON).find(Boolean);
+    if(!auto.checked||!active||generating())return;
+    const values=responseSources().map(extractSceneJSON).filter(Boolean);
+    const scenes=values.map(value=>({value,scene:JSON.parse(value)}));
+    const found=scenes.find(({scene})=>pending?scene.reply_to===pending:!latestState?.seenScenes?.includes(scene.scene_id));
+    // A response without reply_to remains compatible with the v1 bridge.
+    const fallback=pending?scenes.find(({scene})=>!scene.reply_to&&!latestState?.seenScenes?.includes(scene.scene_id)):null;
+    const value=(found||fallback)?.value;
+    if(!value&&pending&&scenes.length){
+      const message='GPT 장면 JSON을 찾았지만 현재 요청의 reply_to와 다릅니다. 응답의 요청 ID를 확인하세요.';
+      if(responseNotice!==message){responseNotice=message;tell(message);}return;
+    }
     if(!value||value===responseSent)return;
     if(value!==responseCandidate){responseCandidate=value;responseStableAt=Date.now();return;}
     if(Date.now()-responseStableAt<1200)return;
-    const scene=JSON.parse(value);if(pending&&scene.reply_to&&scene.reply_to!==pending)return;
-    responseSent=value;latestFingerprint=value;tell('GPT 장면 응답 감지 · 게임 화면에 적용하는 중…');send('scene',value);
+    responseNotice='';responseSent=value;latestFingerprint=value;tell('GPT 장면 응답 감지 · 게임 화면에 적용하는 중…');send('scene',value);
   }
   function scheduleScan(){if(!auto.checked||scanTimer)return;scanTimer=setTimeout(()=>{scanTimer=null;scan();},600);}
   new MutationObserver(scheduleScan).observe(document.body,{childList:true,subtree:true,characterData:true});
