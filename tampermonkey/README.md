@@ -59,6 +59,8 @@ UI v1.1.2에서 보내기는 sandbox가 차단하는 기본 폼 제출 대신 �
 
 `player`와 `inventory`가 생략되면 기존 정보를 유지하며, 포함될 때는 전체 새 스냅샷으로 갱신합니다. `inventory:[]`는 빈 가방입니다. `game_state`에는 date/time/region/place 문자열과 quests/relationships/events/recent_dialogue 문자열 배열(각 30개 이하)을 보낼 수 있습니다. 장면 적용으로 현재 지도 확대·열린 탭을 바꾸지 않습니다.
 
+인벤토리 아이템의 선택 필드 `rarity`에는 원본 데이터의 `하급`, `중급`, `고급`, `유니크`, `에픽` 중 하나를 전달합니다. UI 1.4.1부터 이 값을 저장·복원하고 [공통 희귀도 테두리](../ITEM_RARITY_RULES.md)를 자동 표시합니다. 값이 없거나 미정이면 희귀도를 추정하지 않습니다. 원본 PNG에 테두리를 넣지 않으며 에픽 책의 금색 표지와 빨간색 테두리는 별개입니다. 브리지·장면 스키마·저장 버전 1을 유지합니다.
+
 [game-bridge.js](../integration/game-bridge.js)의 공개 규격 v1:
 
 ```js

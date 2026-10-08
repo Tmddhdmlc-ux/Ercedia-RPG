@@ -1,3 +1,4 @@
+import {normalizeRarity,applyItemRarity} from './item-rarity.js';
 export const categories={all:'전체',equipment:'장비',consumable:'소비',material:'재료',misc:'기타'};
 export const capacity=32;
 const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
@@ -7,7 +8,8 @@ export function normalizeInventory(raw){
     name:text(v.name,60)||'이름 미정',description:text(v.description,1000),
     category:Object.hasOwn(categories,v.category)&&v.category!=='all'?v.category:'misc',
     quantity:typeof v.quantity==='number'&&Number.isFinite(v.quantity)?Math.max(1,Math.min(999999,Math.floor(v.quantity))):1,
-    effect:text(v.effect,300)
+    effect:text(v.effect,300),
+    ...(normalizeRarity(v.rarity)?{rarity:normalizeRarity(v.rarity)}:{})
   }));
 }
 // These examples only appear in preview mode; they are never granted or saved.
@@ -24,7 +26,7 @@ export function mountInventory(state){
   function hide(){tip.hidden=true;for(const slot of slots)slot.removeAttribute('aria-describedby');}
   function show(index){
     const item=shown[index];if(!item)return hide();
-    hide();$('item-name').textContent=item.name;$('item-category').textContent=categories[item.category];
+    hide();$('item-name').textContent=item.name;$('item-category').textContent=[categories[item.category],item.rarity].filter(Boolean).join(' · ');
     $('item-description').textContent=item.description||'설명 미정';$('item-effect').textContent=item.effect;$('item-effect').hidden=!item.effect;
     $('item-quantity').textContent=`보유 수량 ${item.quantity.toLocaleString('ko-KR')}`;
     tip.hidden=false;slots[index].setAttribute('aria-describedby','item-tooltip');
@@ -53,7 +55,7 @@ export function mountInventory(state){
     $('inventory-preview').textContent=preview?'미리보기 종료':'아이템 미리보기';$('inventory-preview').setAttribute('aria-pressed',String(preview));
     $('inventory-note').textContent=preview?'설명 확인용 예시입니다. 실제 보유 아이템이나 저장 데이터에 포함되지 않습니다.':'슬롯에 커서를 올리거나 눌러 아이템 설명을 확인하세요.';
     for(const button of $('inventory-categories').children)button.setAttribute('aria-pressed',String(button.dataset.category===filter));
-    slots.forEach((slot,i)=>{const item=shown[i];slot.classList.toggle('occupied',!!item);slot.dataset.kind=item?.category||'';slot.firstChild.textContent=item?symbols[item.category]:'';slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);});
+    slots.forEach((slot,i)=>{const item=shown[i];slot.classList.toggle('occupied',!!item);applyItemRarity(slot,item);slot.dataset.kind=item?.category||'';slot.firstChild.textContent=item?symbols[item.category]:'';slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}${item.rarity?`, ${item.rarity}`:''}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);});
   }
   tip.addEventListener('pointerleave',hide);
   $('inventory-preview').onclick=()=>{preview=!preview;render();};

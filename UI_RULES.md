@@ -1,5 +1,11 @@
 # 에르세디아 RPG — 공식 대화 UI 규칙 v0.2
 
+## 아이템 희귀도 테두리 — 2026-10-09 추가 확정
+- 인벤토리·장비창·전리품창·상점·경매장·도감 아이콘은 [ITEM_RARITY_RULES.md](ITEM_RARITY_RULES.md)의 공통 기준을 따른다.
+- `rarity` 기준 테두리: 하급 `#FFFFFF`, 중급 `#26B75A`, 고급 `#3489FF`, 유니크 `#A35CF0`, 에픽 `#E64444`.
+- 원본 PNG는 테두리 없이 제작한다. 기존 장비 디자인과 책 표지색을 유지하되 희귀도 판별은 UI 테두리가 최종 기준이다.
+- 유니크·에픽은 식별을 방해하지 않는 은은한 발광만 허용한다. 모든 아이템 화면은 `web/item-rarity.js`와 공통 스타일을 사용한다.
+
 ## ChatGPT 고정 UI 및 GitHub 업데이트 — 구현본 v1.1
 - [tampermonkey/README.md](tampermonkey/README.md)의 설치형 런처를 사용한다. 일반 메시지마다 게임 화면을 재출력하지 않고 Shadow DOM 내 하나의 게임 프레임을 유지한다.
 - 런처와 게임 UI는 분리한다. 기존 index.html/web 코드를 integration/game.html로 번들링하고 버전 매니페스트를 함께 반영한다. UI 변경 때문에 매번 런처를 재설치하게 하지 않는다.
