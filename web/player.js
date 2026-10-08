@@ -5,6 +5,7 @@ export function normalizePlayer(raw){
   const p=newPlayer();if(!raw||typeof raw!=='object')return p;
   p.name=text(raw.name,40);p.job=text(raw.job,60);
   for(const k of ['level','hp','maxHp','mp','maxMp','xp','requiredXp','strength','dexterity','intelligence'])p[k]=number(raw[k],k==='level'?1:0);
+  for(const k of ['constitution','manaStat'])if(Object.hasOwn(raw,k))p[k]=number(raw[k]);
   for(const [current,max] of [['hp','maxHp'],['mp','maxMp']])if(p[current]!==null&&p[max]!==null)p[current]=Math.min(p[current],p[max]);
   if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false}));
   return p;

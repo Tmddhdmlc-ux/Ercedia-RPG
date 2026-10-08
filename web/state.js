@@ -4,6 +4,7 @@ import {mapData} from './map-data.js';
 import {newPlayer,normalizePlayer} from './player.js';
 import {mapViews} from './map-camera.js';
 import {factionLocations} from './faction-data.js';
+import {normalizeIntroDraft,creationFields} from './intro-model.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -19,6 +20,11 @@ export function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
+  if(raw.intro_completed===true){
+    try{Object.assign(s,creationFields({name:raw.character_name,appearance:raw.gender_or_appearance||'',answers:raw.chosen_answers||{},passive:raw.starting_passive_id,kingdom:({벨로아:'west',드라켄:'east',루메린:'south'})[raw.starting_kingdom],lordship:raw.starting_lordship_id}));}catch{}
+  }
+  if(raw.previousGame&&typeof raw.previousGame==='object'&&raw.previousGame.version===1)s.previousGame=JSON.parse(JSON.stringify(raw.previousGame));
   // Optional until the player chooses a name: legacy launchers compare exact saved keys.
   if(typeof raw.chosenName==='string')s.chosenName=raw.chosenName.trim().slice(0,40);
   if(s.chosenName)s.player.name=s.chosenName;

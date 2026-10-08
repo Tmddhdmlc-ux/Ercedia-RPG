@@ -5,7 +5,7 @@ export function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
     updateScene:scene=>apply(typeof scene==='string'?scene:JSON.stringify(scene)),
-    updatePlayer:player=>{state.player=normalizePlayer(player);if(state.chosenName)state.player.name=state.chosenName;render();persist();},
+    updatePlayer:player=>{const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
     updateInventory:items=>{state.inventory=normalizeInventory(items);render();persist();},
     getGameState:()=>JSON.parse(JSON.stringify(state)),
     restoreGameState:saved=>restore(saved)

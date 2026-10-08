@@ -10,6 +10,9 @@ on:
       - 'integration/version.json'
       - 'integration/assets.json'
       - 'tampermonkey/build.mjs'
+      - 'tampermonkey/intro-build.mjs'
+      - 'characters/new_game_intro.json'
+      - 'characters/player_default.json'
   workflow_dispatch:
 permissions:
   contents: write
@@ -31,7 +34,7 @@ jobs:
         run: |
           git config user.name "github-actions[bot]"
           git config user.email "41898282+github-actions[bot]@users.noreply.github.com"
-          git add integration/game.html integration/update-manifest.json
+          git add integration/game.html integration/update-manifest.json web/intro-data.js
           if ! git diff --cached --quiet; then
             git commit -m "build: update game UI release"
             git push origin HEAD:main

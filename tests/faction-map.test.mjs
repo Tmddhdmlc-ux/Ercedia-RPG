@@ -32,5 +32,5 @@ test('public detail handles unknown representatives and mobile camp without impl
 test('v1 saved games preserve selected faction while older or inconsistent selections stay safe',()=>{
   for(const p of factionLocations){const s=defaults();Object.assign(s,{region:p.anchor_id,mapView:p.region,mapFaction:p.id,page:'map'});assert.equal(normalize(JSON.parse(JSON.stringify(s))).mapFaction,p.id);}
   assert.equal(normalize({...defaults(),mapFaction:'KN01'}).mapFaction,null);
-  const old=defaults();delete old.mapFaction;assert.equal(normalize(old).mapFaction,null);assert.equal(normalize(old).version,1);
+  const old=defaults();delete old.mapFaction;assert.equal(Object.hasOwn(normalize(old),'mapFaction'),false);assert.equal(normalize(old).version,1);
 });

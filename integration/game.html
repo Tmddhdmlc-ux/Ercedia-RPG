@@ -97,6 +97,11 @@
 @keyframes response-wait-spin{to{transform:rotate(360deg)}}
 @media(max-width:600px){.play-hud{padding:8px 12px;gap:6px 12px}.hud-location{flex-basis:100%}.play-hud label{margin-left:auto}.game .tabs button{font-size:calc(14px + var(--text-step))}.game .dialog p,.game.is-expanded .dialog p{font-size:calc(18px + var(--text-step))}.portrait-hint{top:55px;font-size:13px}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 180px)}}
 @media(prefers-reduced-motion:reduce){.connection-row[data-phase=waiting]::before{animation:none}}
+
+.new-game-actions{display:flex;flex-wrap:wrap;gap:8px;padding:10px 16px;background:#101c25;border-bottom:1px solid var(--line);flex-shrink:0}.new-game-actions button{font-size:15px;padding:8px 12px}#intro-new-from-name{width:100%;margin-bottom:18px}.intro-screen{position:absolute;inset:0;z-index:45;display:grid;place-items:center;overflow:auto;background:#000;color:#fff;padding:24px;animation:intro-fade .45s ease-out}.intro-card{width:min(100%,640px);padding:20px 0}.intro-card h2{font-size:clamp(25px,4vw,36px);font-weight:500;line-height:1.6;margin:18px 0}.intro-card h2:focus{outline:none}#intro-progress{color:#b4b4b4;font-size:14px}#intro-description{color:#ddd;font-size:17px;line-height:1.8;margin-bottom:24px}.intro-card label{display:block;margin-bottom:8px;font-size:16px}.intro-card input{width:100%;padding:14px;background:#101010;border:1px solid #aaa;color:#fff;border-radius:5px;font-size:20px}.intro-options{display:grid;gap:12px;margin:18px 0}.intro-options button{background:#111;border:1px solid #777;color:#fff;font-size:18px;padding:16px;text-align:left;min-height:52px;white-space:normal}.intro-options button[aria-pressed=true]{border:2px solid #f0d098;background:#302817}.intro-options strong,.intro-options span,.intro-options small{display:block}.intro-options strong{font-size:22px;color:#f0d098}.intro-options span{font-size:17px;line-height:1.8;margin-top:8px}.intro-options small{font-size:14px;line-height:1.7;color:#ccc;margin-top:10px}.intro-buttons{display:flex;flex-wrap:wrap;gap:10px;margin-top:20px}.intro-buttons button{font-size:16px;min-height:46px}.intro-card #intro-error,#intro-map-error{font-size:16px;color:#edb5a7;margin-top:12px}.game[data-intro-phase=black]{height:min(800px,90dvh);min-height:540px}.game[data-intro-phase=black]>:not(.intro-screen){visibility:hidden}.game.is-expanded[data-intro-phase=black]{height:100dvh;min-height:0}.game[data-intro-phase=map] .map-workspace{animation:intro-fade .6s ease-out}.start-location-panel{padding:16px;margin-bottom:18px;border:1px solid #d6b77c;border-radius:8px;background:#243540}.start-location-panel h2{font-size:24px;color:#f0d098;margin:0 0 14px}.start-location-panel p{font-size:17px;line-height:1.8;margin:8px 0}.start-location-panel>#intro-map-next{width:100%;font-size:18px;margin-top:14px;min-height:50px}.game[data-intro-phase=map] .map-regions button:not([data-map-view=west]):not([data-map-view=east]):not([data-map-view=south]),.game[data-intro-phase=map] [data-start-eligible=false],.game[data-intro-phase=map] .faction-pin,.game[data-intro-phase=map] #faction-panel,.game[data-intro-phase=map] .map-list-tabs,.game[data-intro-phase=map] .map-search,.game[data-intro-phase=map] .map-search-label,.game[data-intro-phase=map] #return{display:none!important}.game[data-intro-phase=map] .tabs button:not(#fullscreen){pointer-events:none;opacity:.4}.game[data-intro-phase=map] .map-sidebar{display:block}.game[data-intro-phase=map] #map-detail-panel{display:block}.starting-passive{padding:16px;background:#d6b77c0c;border:1px solid #d6b77c66;border-radius:7px;margin:16px 0}.starting-passive>span{font-size:14px;color:#bbcad3}.starting-passive h3{font-size:22px;margin:6px 0;color:#f0d098}.starting-passive p{font-size:17px;line-height:1.8}.attributes{grid-template-columns:repeat(5,minmax(0,1fr))}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 218px)}
+@keyframes intro-fade{from{opacity:0}to{opacity:1}}
+@media(max-width:600px){.intro-screen{padding:20px;align-items:start}.intro-card{padding:10px 0}.intro-buttons{gap:8px}.intro-buttons button{flex:1}.game[data-intro-phase=black]{min-height:650px;height:90dvh}.attributes{grid-template-columns:repeat(3,minmax(0,1fr))}.start-location-panel{padding:14px}.new-game-actions button{font-size:14px}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 230px)}}
+@media(prefers-reduced-motion:reduce){.intro-screen,.game[data-intro-phase=map] .map-workspace{animation:none}}
 </style></head>
 <body>
 <main class="shell">
@@ -104,6 +109,8 @@
   <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>써니 빌리지에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
     <article class="game">
+      <div class="new-game-actions"><button id="new-game" type="button">새 게임</button><button id="continue-game" type="button" hidden>이어하기 · 생성 계속</button><button id="restore-previous-game" type="button" hidden>이전 세이브 복구</button></div>
+      <section id="intro-screen" class="intro-screen" aria-label="새 게임 프롤로그" hidden><div class="intro-card"><p id="intro-progress"></p><h2 id="intro-title" tabindex="-1"></h2><p id="intro-description"></p><label id="intro-input-label" for="intro-input">이름</label><input id="intro-input" autocomplete="off"><div id="intro-options" class="intro-options"></div><p id="intro-error" role="alert"></p><div class="intro-buttons"><button id="intro-back" type="button">← 뒤로</button><button id="intro-skip" type="button" hidden>건너뛰기</button><button id="intro-next" type="button" class="primary">다음</button><button id="intro-cancel" type="button">기존 게임으로 돌아가기</button></div></div></section>
       <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
       <section class="play-hud" aria-label="내 상태 요약"><button id="hud-player" type="button" title="상태창 열기">이름 미정</button><span class="hud-resource">HP <b id="hud-hp">미정</b></span><span class="hud-resource">MP <b id="hud-mp">미정</b></span><span id="hud-location" class="hud-location">써니 빌리지</span><label for="text-size">글자 크기 <select id="text-size"><option value="normal">보통</option><option value="large">크게</option><option value="largest">아주 크게</option></select></label></section>
       <section id="story" aria-label="대화 화면">
@@ -126,6 +133,7 @@
         <div class="map-workspace">
         <div id="map-container" class="map"><div id="map-sheet" class="map-sheet"><img id="world-map-image" class="world-map-image" alt="에르세디아 세계지도 · 지리 검토용 시안" draggable="false"><svg id="map-points" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-label="지도 지역과 지점 선택"></svg></div><div id="faction-tooltip" class="faction-tooltip" role="tooltip" hidden></div></div>
         <aside id="map-sidebar" class="map-sidebar" data-list="locations" aria-label="지역 인물 및 세력 정보">
+        <section id="start-location-panel" class="start-location-panel" hidden><h2 id="intro-map-title"></h2><div id="intro-map-summary"></div><p id="intro-map-error" role="alert"></p><button id="intro-map-next" type="button" class="primary" disabled>선택 결과 확인</button><div class="intro-buttons"><button id="intro-map-back" type="button">← 뒤로</button><button id="intro-map-cancel" type="button">기존 게임으로 돌아가기</button></div></section>
         <div class="mapinfo"><div class="region-info"><span class="eyebrow">선택한 지역·거점</span><h2 id="region-title"></h2><p id="region-description"></p><dl id="region-fields" class="region-fields" hidden></dl><p id="region-note" class="region-note" hidden></p></div><button id="return">대화로 복귀 ↗</button></div>
         <nav class="map-list-tabs" aria-label="지도 목록 종류"><button id="map-locations-tab" type="button" aria-pressed="true">지역·인물</button><button id="map-factions-tab" type="button" aria-pressed="false">세력·거점</button></nav>
         <label class="map-search-label" for="map-search">현재 지역에서 찾기</label><input id="map-search" class="map-search" type="search" placeholder="지명, 인물 또는 세력 이름 검색" autocomplete="off">
@@ -141,7 +149,8 @@
         <div class="resource"><div><b>체력 <small>HP</small></b><span id="hp-text">— / —</span></div><progress id="hp-bar" value="0" max="100" aria-label="체력"></progress></div>
         <div class="resource mana"><div><b>마나 <small>MP</small></b><span id="mp-text">— / —</span></div><progress id="mp-bar" value="0" max="100" aria-label="마나"></progress></div>
         <div class="resource experience"><div><b>경험치 <small>EXP</small></b><span id="xp-text">— / —</span></div><progress id="xp-bar" value="0" max="100" aria-label="경험치"></progress><p id="xp-remaining">경험치 정보 미정</p></div>
-        <div class="attributes"><div><span>근력 <small>STR</small></span><strong id="strength-text">—</strong></div><div><span>민첩 <small>DEX</small></span><strong id="dexterity-text">—</strong></div><div><span>지능 <small>INT</small></span><strong id="intelligence-text">—</strong></div></div>
+        <div class="attributes"><div><span>근력 <small>STR</small></span><strong id="strength-text">—</strong></div><div><span>민첩 <small>DEX</small></span><strong id="dexterity-text">—</strong></div><div><span>지능 <small>INT</small></span><strong id="intelligence-text">—</strong></div><div><span>체력 <small>CON</small></span><strong id="constitution-text">—</strong></div><div><span>마나 <small>MANA</small></span><strong id="manaStat-text">—</strong></div></div>
+        <section id="starting-passive" class="starting-passive" hidden><span>시작 패시브</span><h3 id="starting-passive-name"></h3><p id="starting-passive-description"></p></section>
         <div class="skill-heading"><h3>사용 가능 스킬 <span id="skill-count">0</span></h3></div>
         <p id="skills-empty" class="skills-empty">사용 가능한 스킬이 없습니다.</p>
         <div id="skill-list" class="skill-list"></div>
@@ -154,7 +163,7 @@
         <p id="inventory-note" class="inventory-note"></p>
         <div id="item-tooltip" class="item-tooltip" role="tooltip" hidden><span id="item-category"></span><h3 id="item-name"></h3><p id="item-description"></p><p id="item-effect"></p><small id="item-quantity"></small></div>
       </section>
-        <section id="name-setup" class="name-setup" role="dialog" aria-modal="true" aria-labelledby="name-setup-title" hidden><div class="name-setup-card"><h2 id="name-setup-title">어떤 이름으로 모험할까요?</h2><p>정한 이름은 이 채팅의 게임에 저장됩니다.</p><label for="adventurer-name">주인공 이름</label><div class="free-action-row"><input id="adventurer-name" type="text" maxlength="40" autocomplete="off" placeholder="이름을 입력하세요"><button id="confirm-name" type="button" class="primary">이 이름으로 시작</button></div><p id="name-error" role="status"></p></div></section>
+        <section id="name-setup" class="name-setup" role="dialog" aria-modal="true" aria-labelledby="name-setup-title" hidden><div class="name-setup-card"><button id="intro-new-from-name" type="button" class="primary">새 게임 프롤로그 시작</button><h2 id="name-setup-title">어떤 이름으로 모험할까요?</h2><p>정한 이름은 이 채팅의 게임에 저장됩니다.</p><label for="adventurer-name">주인공 이름</label><div class="free-action-row"><input id="adventurer-name" type="text" maxlength="40" autocomplete="off" placeholder="이름을 입력하세요"><button id="confirm-name" type="button" class="primary">이 이름으로 시작</button></div><p id="name-error" role="status"></p></div></section>
       <section id="chat-runtime" class="chat-runtime" aria-label="게임 행동 및 ChatGPT 연결" hidden>
         <div id="choice-heading" class="choice-heading" hidden><strong>어떻게 할까요?</strong><span>선택지를 고르거나 아래에 자유롭게 입력하세요.</span></div><div id="scene-choices" class="scene-choices"></div>
         <form id="free-action-form"><label id="action-label" for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="2" placeholder="세린에게 질문하거나 자유롭게 행동하세요."></textarea><button id="send-action" type="submit" class="primary">보내기</button></div><p class="input-hint">Enter 보내기 · Shift+Enter 줄바꿈</p></form>
@@ -193,6 +202,7 @@ function normalizePlayer(raw){
   const p=newPlayer();if(!raw||typeof raw!=='object')return p;
   p.name=text(raw.name,40);p.job=text(raw.job,60);
   for(const k of ['level','hp','maxHp','mp','maxMp','xp','requiredXp','strength','dexterity','intelligence'])p[k]=number(raw[k],k==='level'?1:0);
+  for(const k of ['constitution','manaStat'])if(Object.hasOwn(raw,k))p[k]=number(raw[k]);
   for(const [current,max] of [['hp','maxHp'],['mp','maxMp']])if(p[current]!==null&&p[max]!==null)p[current]=Math.min(p[current],p[max]);
   if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false}));
   return p;
@@ -291,7 +301,7 @@ function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
     updateScene:scene=>apply(typeof scene==='string'?scene:JSON.stringify(scene)),
-    updatePlayer:player=>{state.player=normalizePlayer(player);if(state.chosenName)state.player.name=state.chosenName;render();persist();},
+    updatePlayer:player=>{const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
     updateInventory:items=>{state.inventory=normalizeInventory(items);render();persist();},
     getGameState:()=>JSON.parse(JSON.stringify(state)),
     restoreGameState:saved=>restore(saved)
@@ -331,11 +341,250 @@ function normalizeNPCProfile(raw){
 }
 
 return {normalizeNPCProfile};})();
+const module9=(()=>{
+// Generated from approved public character creation data.
+const introData = {
+  "schema_version": 1,
+  "flow": [
+    "black_intro",
+    "identity_questions",
+    "passive_result",
+    "kingdom_selection",
+    "lordship_selection",
+    "confirmation",
+    "first_scene"
+  ],
+  "visual": {
+    "background": "#000000",
+    "transition": "fade",
+    "no_world_secrets": true
+  },
+  "questions": [
+    {
+      "id": "name",
+      "text": "사람들은 너를 무엇이라 부르는가?",
+      "type": "text",
+      "required": true
+    },
+    {
+      "id": "gender",
+      "text": "어떤 모습으로 살아갈 것인가?",
+      "type": "free_or_selection",
+      "required": false
+    },
+    {
+      "id": "calling",
+      "text": "어떤 삶을 살아왔는가?",
+      "type": "choice",
+      "options": [
+        {
+          "id": "guard",
+          "label": "누군가를 지키며 살았다",
+          "passive": "steadfast"
+        },
+        {
+          "id": "wanderer",
+          "label": "길 위에서 배웠다",
+          "passive": "traveler"
+        },
+        {
+          "id": "scholar",
+          "label": "책과 관찰로 세상을 알았다",
+          "passive": "observant"
+        },
+        {
+          "id": "artisan",
+          "label": "손으로 무언가를 만들어 왔다",
+          "passive": "craftsman"
+        }
+      ]
+    },
+    {
+      "id": "response",
+      "text": "낯선 위험 앞에서 너는 무엇을 먼저 하는가?",
+      "type": "choice",
+      "options": [
+        {
+          "id": "protect",
+          "label": "주변 사람의 안전을 확인한다",
+          "passive": "steadfast"
+        },
+        {
+          "id": "escape",
+          "label": "먼저 지형과 퇴로를 파악한다",
+          "passive": "traveler"
+        },
+        {
+          "id": "observe",
+          "label": "상대의 의도를 관찰한다",
+          "passive": "observant"
+        },
+        {
+          "id": "prepare",
+          "label": "도구와 준비물을 확인한다",
+          "passive": "craftsman"
+        }
+      ]
+    }
+  ],
+  "passives": [
+    {
+      "id": "steadfast",
+      "name": "굳센 마음",
+      "description": "전투당 첫 번째 공포·위협 판정에 한해 침착한 대응의 서사적 이점을 얻는다.",
+      "scope": "first_fear_response_per_combat",
+      "combat_stat_bonus": 0
+    },
+    {
+      "id": "traveler",
+      "name": "길눈",
+      "description": "처음 방문한 일반 길에서 길찾기와 안전한 우회로 발견에 가벼운 이점을 얻는다.",
+      "scope": "ordinary_roads_only",
+      "combat_stat_bonus": 0
+    },
+    {
+      "id": "observant",
+      "name": "세심한 관찰",
+      "description": "낯선 사람·물건의 눈에 띄는 단서를 놓칠 가능성을 소폭 낮춘다. 숨겨진 진실을 자동으로 알지는 못한다.",
+      "scope": "ordinary_visible_clues",
+      "combat_stat_bonus": 0
+    },
+    {
+      "id": "craftsman",
+      "name": "손재주",
+      "description": "일상적인 장비 수선·도구 사용에서 가벼운 이점을 얻는다. 희귀 장비 제작은 불가하다.",
+      "scope": "mundane_repairs",
+      "combat_stat_bonus": 0
+    }
+  ],
+  "passive_resolution": {
+    "algorithm": "majority_of_two_answers",
+    "tie_break": "let_player_choose_between_tied_results",
+    "limit": 1,
+    "overrides_base_stats": false,
+    "no_unlock_from_rank": true
+  },
+  "start_regions": [
+    {
+      "kingdom": "벨로아",
+      "id": "west",
+      "lordship_ids": [
+        "W1",
+        "W2",
+        "W3",
+        "W4",
+        "W5"
+      ]
+    },
+    {
+      "kingdom": "드라켄",
+      "id": "east",
+      "lordship_ids": [
+        "E1",
+        "E2",
+        "E3",
+        "E4"
+      ]
+    },
+    {
+      "kingdom": "루메린",
+      "id": "south",
+      "lordship_ids": [
+        "S1",
+        "S2",
+        "S3",
+        "S4"
+      ]
+    }
+  ],
+  "start_location_policy": "Select kingdom and lordship from existing world map markers. Actual precise spawn settlements are not canonized, and can be resolved by local safe settlement; wilderness/warfront cannot be forced as safe starts.",
+  "default_character": "characters/player_default.json",
+  "state_fields": [
+    "character_name",
+    "gender_or_appearance",
+    "chosen_answers",
+    "starting_passive_id",
+    "starting_kingdom",
+    "starting_lordship_id",
+    "intro_completed"
+  ],
+  "strict_rules": [
+    "No enlightenment, knight rank or magic circle awarded during character creation.",
+    "Start at Lv1 HP100 MP100 five stats 10.",
+    "No random passive rolls or hidden percentages.",
+    "Only show publicly knowable map locations; no secret god/demon lore.",
+    "New Game opens prologue. Continue existing saves bypasses prologue."
+  ]
+};
+const playerTemplate = {
+  "schema_version": 1,
+  "id": "player_default",
+  "level": 1,
+  "xp": 0,
+  "xp_to_next": 100,
+  "unspent_stat_points": 0,
+  "stats": {
+    "strength": 10,
+    "agility": 10,
+    "intelligence": 10,
+    "constitution": 10,
+    "mana": 10,
+    "hp": 100,
+    "max_hp": 100,
+    "mp": 100,
+    "max_mp": 100
+  },
+  "level_hp_bonus": 0,
+  "realm": null,
+  "identity": {
+    "name": null,
+    "gender": null,
+    "origin": null,
+    "profession": null
+  },
+  "combat": {
+    "speed": 12,
+    "base_attack_min": 18,
+    "base_attack_max": 28
+  },
+  "state": "template_not_active_save",
+  "rules_reference": "COMBAT_GROWTH.md"
+};
+
+return {introData,playerTemplate};})();
+const module10=(()=>{
+const {introData,playerTemplate}=module9;
+const {normalizePlayer}=module3;
+const introSteps=['name','gender','calling','response','passive','kingdom','lordship','confirmation'];
+// Public limits approved in NEW_GAME_INTRO.md; never infer secret abilities.
+const passiveLimits={steadfast:'데미지/HP 증가 아님, 전투당 첫 반응',traveler:'미개척 마나 이상지대 자동 탐지 불가',observant:'비밀 신원/마왕/진실 자동 탐지 불가',craftsman:'고급 제작·희귀 장비 무상 획득 불가'};
+function passiveCandidates(answers){
+  const options=['calling','response'].map(id=>introData.questions.find(q=>q.id===id)?.options.find(o=>o.id===answers[id])?.passive);
+  return [...new Set(options.filter(Boolean))];
+}
+function normalizeIntroDraft(raw){
+  if(!raw||!introSteps.includes(raw.step))return null;
+  return {step:raw.step,name:typeof raw.name==='string'?raw.name.slice(0,40):'',appearance:typeof raw.appearance==='string'?raw.appearance.slice(0,200):'',answers:{calling:typeof raw.answers?.calling==='string'?raw.answers.calling:'',response:typeof raw.answers?.response==='string'?raw.answers.response:''},passive:introData.passives.some(p=>p.id===raw.passive)?raw.passive:'',kingdom:introData.start_regions.some(r=>r.id===raw.kingdom)?raw.kingdom:'',lordship:introData.start_regions.some(r=>r.lordship_ids.includes(raw.lordship))?raw.lordship:'',previousView:{page:raw.previousView?.page||'story',mapView:raw.previousView?.mapView||'world',region:raw.previousView?.region||'village'}};
+}
+function creationFields(draft){
+  const region=introData.start_regions.find(r=>r.id===draft.kingdom),candidates=passiveCandidates(draft.answers);
+  const validAnswers=['calling','response'].every(id=>introData.questions.find(q=>q.id===id).options.some(o=>o.id===draft.answers[id]));
+  if(!draft.name.trim()||!region?.lordship_ids.includes(draft.lordship)||!candidates.includes(draft.passive)||!validAnswers)throw Error('이름, 질문 답변, 패시브와 시작 영주령을 모두 확인해주세요.');
+  return {intro_completed:true,character_name:draft.name.trim(),gender_or_appearance:draft.appearance.trim(),chosen_answers:{...draft.answers},starting_passive_id:draft.passive,starting_kingdom:region.kingdom,starting_lordship_id:draft.lordship};
+}
+function initialPlayer(name){
+  const t=playerTemplate,s=t.stats;
+  return normalizePlayer({name,job:t.identity.profession||'',level:t.level,xp:t.xp,requiredXp:t.xp_to_next,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,skills:[]});
+}
+
+return {introSteps,passiveLimits,passiveCandidates,normalizeIntroDraft,creationFields,initialPlayer};})();
 const module6=(()=>{
 const {normalizePlayer}=module3;
 const {normalizeInventory}=module4;
 const {extractSceneJSON}=module7;
 const {normalizeNPCProfile}=module8;
+const {introData}=module9;
+const {passiveLimits}=module10;
 const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 const characterRegistry={serin:{outfits:['armor','casual','nightwear']}};
 function text(value,key,max=2000,required=true){
@@ -346,7 +595,7 @@ function emotion(value){if(!emotions.includes(value))throw Error('등록되지 �
 function normalizeScene(raw){
   if(!raw||typeof raw!=='object'||raw.schema_version!==1||raw.type!=='ercedia_scene')throw Error('ercedia_scene / schema_version 1 데이터가 필요합니다.');
   const scene={schema_version:1,type:'ercedia_scene',scene_id:text(raw.scene_id,'scene_id',100),location:text(raw.location,'location',120),time:text(raw.time,'time',80),background_id:raw.background_id,npc:null,dialogue:[],choices:[]};
-  if(raw.background_id!=='sunny_village_day')throw Error('등록된 배경은 sunny_village_day입니다.');
+  if(raw.background_id!==null&&raw.background_id!=='sunny_village_day')throw Error('배경은 sunny_village_day 또는 원화 없는 장면의 null이어야 합니다.');
   if(raw.npc!==null){
     const npc=raw.npc,config=characterRegistry[npc?.id];
     if(!config||!config.outfits.includes(npc.outfit))throw Error('등록되지 않은 NPC 또는 복장입니다.');
@@ -379,20 +628,20 @@ function parseScene(source){
   throw Error('완료된 ercedia_scene JSON 블록을 찾지 못했습니다.');
 }
 function contextSummary(state){
-  return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
+  return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
 }
 function actionPrompt(state,action,requestId){
-  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id="sunny_village_day", npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,strength,dexterity,intelligence,constitution,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 써니 빌리지나 세린을 임의로 이동시키지 마세요. npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,strength,dexterity,intelligence,constitution,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
 
 return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
-const module10=(()=>{
+const module12=(()=>{
 // Generated mirror of assets/maps/world/map_locations.json.
 const mapData = {"regions":[{"id":"northwest","label":"북서 미개척 설산·빙하","x":0.21158854166666666,"y":0.166015625,"provisional":true},{"id":"northcenter","label":"북중 미개척 원시림","x":0.4752604166666667,"y":0.16796875,"provisional":true},{"id":"northeast","label":"북동 미개척 마나 이상지대","x":0.751953125,"y":0.17578125,"provisional":true},{"id":"west","label":"벨로아 왕국","x":0.22135416666666666,"y":0.3955078125,"provisional":true},{"id":"east","label":"드라켄 왕국","x":0.7552083333333334,"y":0.419921875,"provisional":true},{"id":"south","label":"루메린 왕국","x":0.5208333333333334,"y":0.7177734375,"provisional":true},{"id":"disputed","label":"중앙 분쟁지","x":0.5045572916666666,"y":0.474609375,"provisional":true}],"locations":[{"id":"W1","label":"노르발트 변경백령","kind":"lordship","region":"west","x":0.18945312,"y":0.31152344,"provisional":true,"kingdom":"벨로아","lord":"에드릭 노르발트","lore_id":"W1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W2","label":"발렌하르트 공작령","kind":"lordship","region":"west","x":0.32291667,"y":0.38867188,"provisional":true,"kingdom":"벨로아","lord":"카시안 발렌하르트","lore_id":"W2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W3","label":"엘름베르크 백작령","kind":"lordship","region":"west","x":0.24283854,"y":0.4765625,"provisional":true,"kingdom":"벨로아","lord":"마르타 엘름베르크","lore_id":"W3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W4","label":"로젠펠트 후작령","kind":"lordship","region":"west","x":0.32291667,"y":0.55175781,"provisional":true,"kingdom":"벨로아","lord":"율리안 로젠펠트","lore_id":"W4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W5","label":"아르덴슈타인 백작령","kind":"lordship","region":"west","x":0.3984375,"y":0.62109375,"provisional":true,"kingdom":"벨로아","lord":"비올레트 아르덴슈타인","lore_id":"W5","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E1","label":"칼트하임 변경백령","kind":"lordship","region":"east","x":0.74414062,"y":0.34570312,"provisional":true,"kingdom":"드라켄","lord":"하인리히 칼트하임","lore_id":"E1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E2","label":"아이젠크로네 공작령","kind":"lordship","region":"east","x":0.66080729,"y":0.40527344,"provisional":true,"kingdom":"드라켄","lord":"셀리아 아이젠크로네","lore_id":"E2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E3","label":"베르크슈타인 후작령","kind":"lordship","region":"east","x":0.66666667,"y":0.48828125,"provisional":true,"kingdom":"드라켄","lord":"발터 베르크슈타인","lore_id":"E3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E4","label":"실베른 백작령","kind":"lordship","region":"east","x":0.69010417,"y":0.56445312,"provisional":true,"kingdom":"드라켄","lord":"에밀 실베른","lore_id":"E4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S1","label":"벨마리나 후작령","kind":"lordship","region":"south","x":0.37109375,"y":0.73730469,"provisional":true,"kingdom":"루메린","lord":"도미니크 벨마리나","lore_id":"S1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S2","label":"세르반 공작령","kind":"lordship","region":"south","x":0.47851562,"y":0.63476562,"provisional":true,"kingdom":"루메린","lord":"이사벨 세르반","lore_id":"S2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S3","label":"아쿠아렌 백작령","kind":"lordship","region":"south","x":0.56901042,"y":0.69824219,"provisional":true,"kingdom":"루메린","lord":"티에라 아쿠아렌","lore_id":"S3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S4","label":"솔메리아 백작령","kind":"lordship","region":"south","x":0.53320312,"y":0.80371094,"provisional":true,"kingdom":"루메린","lord":"라파엘 솔메리아","lore_id":"S4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"CW","label":"벨로아 왕도 (도시명 미정)","kind":"capital","region":"west","x":0.28776042,"y":0.34277344,"provisional":true},{"id":"CE","label":"드라켄 왕도 (도시명 미정)","kind":"capital","region":"east","x":0.72265625,"y":0.4296875,"provisional":true},{"id":"CS","label":"루메린 왕도 (도시명 미정)","kind":"capital","region":"south","x":0.50520833,"y":0.75097656,"provisional":true},{"id":"F1","label":"중앙 요새 후보","kind":"fortress","region":"disputed","x":0.50585938,"y":0.47753906,"provisional":true},{"id":"M1","label":"접경 마나 광산 후보","kind":"mana_mine","region":"disputed","x":0.59505208,"y":0.43847656,"provisional":true},{"id":"P1","label":"남서 항구 후보","kind":"port","region":"south","x":0.30794271,"y":0.69433594,"provisional":true},{"id":"P2","label":"남동 항구 후보","kind":"port","region":"south","x":0.63867188,"y":0.60742188,"provisional":true},{"id":"D1","label":"고대 던전 후보","kind":"dungeon","region":"northwest","x":0.2890625,"y":0.15820312,"provisional":true},{"id":"B1","label":"마수 서식 후보","kind":"beast_habitat","region":"northcenter","x":0.47526042,"y":0.21875,"provisional":true},{"id":"A1","label":"마나 이상·유적 후보","kind":"anomaly","region":"northeast","x":0.76171875,"y":0.15722656,"provisional":true},{"id":"I1","label":"군도 탐험 후보","kind":"island","region":"archipelago","x":0.85026042,"y":0.66894531,"provisional":true}]};
 
 return {mapData};})();
-const module11=(()=>{
-const {mapData}=module10;
+const module13=(()=>{
+const {mapData}=module12;
 const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
 function regionFrame(id){
   if(id==='world')return {x:0,y:0,width:1,height:1};
@@ -423,7 +672,7 @@ function viewForSelection(id){
 }
 
 return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
-const module12=(()=>{
+const module14=(()=>{
 // Generated public-only mirror of faction_locations.json.
 const factionLocations = [
   {
@@ -873,13 +1122,14 @@ const factionLocations = [
 ];
 
 return {factionLocations};})();
-const module9=(()=>{
+const module11=(()=>{
 const {normalizeScene}=module6;
 const {normalizeInventory}=module4;
-const {mapData}=module10;
+const {mapData}=module12;
 const {newPlayer,normalizePlayer}=module3;
-const {mapViews}=module11;
-const {factionLocations}=module12;
+const {mapViews}=module13;
+const {factionLocations}=module14;
+const {normalizeIntroDraft,creationFields}=module10;
 const KEY = 'ercedia.vn.v04';
 const outfitKeys = ['armor', 'casual', 'nightwear'];
 const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -895,6 +1145,11 @@ function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
+  if(raw.intro_completed===true){
+    try{Object.assign(s,creationFields({name:raw.character_name,appearance:raw.gender_or_appearance||'',answers:raw.chosen_answers||{},passive:raw.starting_passive_id,kingdom:({벨로아:'west',드라켄:'east',루메린:'south'})[raw.starting_kingdom],lordship:raw.starting_lordship_id}));}catch{}
+  }
+  if(raw.previousGame&&typeof raw.previousGame==='object'&&raw.previousGame.version===1)s.previousGame=JSON.parse(JSON.stringify(raw.previousGame));
   // Optional until the player chooses a name: legacy launchers compare exact saved keys.
   if(typeof raw.chosenName==='string')s.chosenName=raw.chosenName.trim().slice(0,40);
   if(s.chosenName)s.player.name=s.chosenName;
@@ -926,7 +1181,7 @@ function load(storage) {
 return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
 const module5=(()=>{
 const {parseScene,actionPrompt}=module6;
-const {normalize}=module9;
+const {normalize}=module11;
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -945,16 +1200,16 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     $('connection-status').textContent=pending&&!problem?'상대의 반응을 기다리는 중…':message;
   };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
-  const needsName=()=>!state.player.name.trim()||/^(플레이어|주인공|player)$/i.test(state.player.name.trim());
+  const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
   function controls(){
-    const naming=needsName(),wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
+    const creating=!!state.introDraft,naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
-    const choosing=!!choices.length&&last&&!pending&&!naming;
+    const choosing=!!choices.length&&last&&!pending&&!naming&&!creating;
     $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
     choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
-    $('free-action').disabled=!!pending||naming;$('send-action').disabled=!!pending||naming;$('cancel-wait').hidden=!pending;
+    $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;
   }
   function chooseName(){
     if(!needsName())return;
@@ -964,13 +1219,13 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     render();controls();persist();status(`${name}님, 모험을 시작하세요.`);$('free-action').focus();
   }
   $('confirm-name').onclick=chooseName;
-  $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('adventurer-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
+  $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('intro-new-from-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
   $('adventurer-name').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();chooseName();}});
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
     clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
   }
   function submit(action,choiceId=null){
-    if(pending||needsName()||!action.trim())return;
+    if(pending||state.introDraft||needsName()||!action.trim())return;
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
     const requestId=newRequestId();pending={requestId,choiceId};
@@ -989,7 +1244,10 @@ function mountChatUI(state,{render,persist,storage,embedded}){
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
-      if(scene.player)state.player={...scene.player,...(state.chosenName?{name:state.chosenName}:{})};
+      if(scene.player){
+        const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
+        state.player={...scene.player,...retained,...(state.chosenName?{name:state.chosenName}:{})};
+      }
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
@@ -1006,7 +1264,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();delete state.chosenName;delete state.mapFaction;delete state.uiPreferences;Object.assign(state,normalize(saved));
+    cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
@@ -1034,11 +1292,11 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,isPending:()=>!!pending,conversation:()=>conversation};
 }
 
 return {mountChatUI};})();
-const module13=(()=>{
+const module15=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
 // Casual/nightwear use hair-aligned placement against their existing head artwork.
@@ -1050,7 +1308,7 @@ const faceFit={
 };
 
 return {faceFit};})();
-const module15=(()=>{
+const module17=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -1238,9 +1496,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module14=(()=>{
-const {mapData}=module10;
-const {lordships}=module15;
+const module16=(()=>{
+const {mapData}=module12;
+const {lordships}=module17;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -1259,9 +1517,9 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module16=(()=>{
-const {factionLocations}=module12;
-const {mapData}=module10;
+const module18=(()=>{
+const {factionLocations}=module14;
+const {mapData}=module12;
 const factionTypes={knight_order:['기사단','⚔','#ecc27e'],magic_tower:['마법탑','✦','#c7a4f4'],sanctuary:['교단 성지','✧','#e6e2bb'],guild:['길드','⌂','#a6d69d'],mercenary:['용병·호위','⚑','#e6a595'],merchant:['상단','◆','#e9cc6c'],civic:['민간조직','●','#a0d7d9'],diplomacy:['중재','◇','#bdd2ed']};
 function visibleFactions(view,selection){
   if(view==='world')return [];
@@ -1316,11 +1574,13 @@ function mountFactionMap(state,{select}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module17=(()=>{
+const module19=(()=>{
 const {damageFormula}=module3;
+const {introData}=module9;
+const {passiveLimits}=module10;
 function mountPlayer(state){
   const $=id=>document.getElementById(id);
-  const display=v=>v===null?'—':v.toLocaleString('ko-KR');
+  const display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'—';
   const skillViews=new Map();
   function summary(){
     const p=state.player;
@@ -1332,7 +1592,9 @@ function mountPlayer(state){
       bar.setAttribute('aria-valuetext',known?`${p[current]} / ${p[max]}`:'정보 미정');
     }
     $('xp-remaining').textContent=p.requiredXp===null||p.xp===null?'경험치 정보 미정':`다음 레벨까지 ${display(Math.max(0,p.requiredXp-p.xp))} EXP`;
-    for(const k of ['strength','dexterity','intelligence'])$(k+'-text').textContent=display(p[k]);
+    for(const k of ['strength','dexterity','intelligence','constitution','manaStat'])$(k+'-text').textContent=display(p[k]);
+    const passive=introData.passives.find(p=>p.id===state.starting_passive_id);$('starting-passive').hidden=!passive;
+    $('starting-passive-name').textContent=passive?.name||'';$('starting-passive-description').textContent=passive?`${passive.description} 제한: ${passiveLimits[passive.id]}`:'';
     for(const [skill,view] of skillViews)updateSkill(skill,view);
   }
   function skillCount(){const count=state.player.skills.filter(s=>s.enabled).length;$('skill-count').textContent=String(count);$('skills-empty').hidden=count>0;}
@@ -1361,7 +1623,7 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module18=(()=>{
+const module20=(()=>{
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
@@ -1422,7 +1684,7 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module19=(()=>{
+const module21=(()=>{
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const number=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'—';
@@ -1448,19 +1710,140 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
+const module22=(()=>{
+const {introData}=module9;
+const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module10;
+const {defaults,normalize}=module11;
+const {mapData}=module12;
+const {factionLocations}=module14;
+function mountNewGame(state,{render,persist,chat,embedded}){
+  const $=id=>document.getElementById(id),game=document.querySelector('.game');
+  const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
+  let lastStep='';
+  const available=()=>!!state.introDraft;
+  const text=(tag,value,parent)=>{const node=document.createElement(tag);node.textContent=value;parent.append(node);return node;};
+  function save(){persist();chat.controls();}
+  function begin(){
+    if(chat.isPending())return;
+    if(!state.introDraft)state.introDraft=normalizeIntroDraft({step:'name',previousView:{page:state.page,mapView:state.mapView,region:state.region}});
+    save();render();
+  }
+  function cancel(){
+    if(!state.introDraft)return;
+    Object.assign(state,state.introDraft.previousView);delete state.introDraft;lastStep='';save();render();
+  }
+  function go(step){
+    state.introDraft.step=step;
+    if(['kingdom','lordship','confirmation'].includes(step)){
+      state.page='map';state.mapView=state.introDraft.kingdom||'world';state.region=state.introDraft.lordship||state.mapView;
+    }
+    save();render();
+  }
+  function back(){
+    const index=introSteps.indexOf(state.introDraft.step);if(index>0)go(introSteps[index-1]);
+  }
+  function next(){
+    const draft=state.introDraft;if(!draft)return;
+    if(draft.step==='name'&&!draft.name.trim()){ $('intro-error').textContent='이름을 입력해주세요.';$('intro-input').focus();return; }
+    if(draft.step==='passive'&&!passiveCandidates(draft.answers).includes(draft.passive)){ $('intro-error').textContent='두 후보 중 패시브 하나를 선택해주세요.';return; }
+    if(draft.step==='lordship'&&!draft.lordship)return;
+    go(introSteps[introSteps.indexOf(draft.step)+1]);
+  }
+  function syncMap(){
+    const draft=state.introDraft;if(!draft||!['kingdom','lordship','confirmation'].includes(draft.step))return;
+    const kingdom=introData.start_regions.find(r=>r.id===state.mapView);if(!kingdom){if(state.mapView==='world'&&draft.kingdom){draft.kingdom='';draft.lordship='';draft.step='kingdom';save();refresh();}return;}
+    const id=kingdom.lordship_ids.includes(state.region)?state.region:'';
+    if(draft.kingdom!==kingdom.id||draft.lordship!==id){
+      draft.kingdom=kingdom.id;draft.lordship=id;draft.step='lordship';save();refresh();
+    }
+  }
+  function complete(){
+    try{
+      const draft=state.introDraft,fields=creationFields(draft),passive=introData.passives.find(p=>p.id===fields.starting_passive_id);
+      const place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
+      const backup=JSON.parse(JSON.stringify(state));Object.assign(backup,draft.previousView);delete backup.introDraft;delete backup.previousGame;
+      const fresh={...defaults(),...fields,chosenName:fields.character_name,player:initialPlayer(fields.character_name),previousGame:backup,layouts:state.layouts,...(state.uiPreferences?{uiPreferences:state.uiPreferences}:{}),mapView:draft.kingdom,region:place.id,background:false,character:false};
+      fresh.gameState={region:fields.starting_kingdom,place:place.label+' 내 임시 안전 정착지',time:'시작 시점',quests:[],relationships:[],events:[],recent_dialogue:[]};
+      for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
+      save();render();
+      const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
+      chat.apply(JSON.stringify(scene));
+      if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
+    }catch(error){$('intro-map-error').textContent=error.message;}
+  }
+  function refresh(){
+    const draft=state.introDraft,isMap=draft&&['kingdom','lordship','confirmation'].includes(draft.step);
+    game.dataset.introPhase=draft?(isMap?'map':'black'):'none';screen.hidden=!draft||isMap;mapPanel.hidden=!isMap;
+    for(const child of game.children)if(child!==screen)child.inert=!!draft&&!isMap;
+    for(const button of document.querySelectorAll('.tabs button'))button.disabled=!!draft&&button.id!=='fullscreen';
+    $('new-game').disabled=chat.isPending();$('hud-player').disabled=!!draft;
+    $('continue-game').hidden=!draft&&!state.player.name&&!state.scene;$('continue-game').textContent=draft?'이어하기 · 생성 계속':'이어하기';
+    $('restore-previous-game').hidden=!state.previousGame;
+    const allowed=new Set(introData.start_regions.flatMap(r=>r.lordship_ids));
+    document.querySelectorAll('[data-region]').forEach(node=>{const eligible=allowed.has(node.dataset.region)||introData.start_regions.some(r=>r.id===node.dataset.region);node.dataset.startEligible=String(eligible);node.inert=!!isMap&&!eligible;});
+    document.querySelectorAll('.map-detail-label').forEach(node=>node.dataset.startEligible=String(allowed.has(node.dataset.location)));
+    document.querySelectorAll('.faction-pin').forEach(node=>node.inert=!!isMap);
+    if(!draft){lastStep='';return;}
+    $('intro-back').disabled=draft.step==='name';$('intro-error').textContent='';
+    if(isMap){
+      $('intro-map-title').textContent=draft.step==='confirmation'?'시작 위치와 캐릭터 확인':draft.step==='kingdom'?'어느 왕국에서 시작할까요?':'시작할 영주령을 선택하세요';
+      const place=mapData.locations.find(p=>p.id===draft.lordship),region=introData.start_regions.find(r=>r.id===draft.kingdom),passive=introData.passives.find(p=>p.id===draft.passive);
+      if(region){$('map-detail-title').textContent=region.kingdom+' · 시작 가능한 영주령';$('map-detail-count').textContent=region.lordship_ids.length+'곳';}
+      $('intro-map-summary').replaceChildren();
+      if(draft.step==='confirmation'){
+        for(const value of [`이름: ${draft.name}`,`모습: ${draft.appearance||'나중에 정하기'}`,`삶: ${introData.questions.find(q=>q.id==='calling').options.find(o=>o.id===draft.answers.calling)?.label}`,`위험 앞 행동: ${introData.questions.find(q=>q.id==='response').options.find(o=>o.id===draft.answers.response)?.label}`,`패시브: ${passive?.name}`,`${region?.kingdom} · ${place?.label}`, 'Lv.1 · HP 100/100 · MP 100/100', '근력·민첩·지능·체력·마나 능력치 각각 10','첫 장면은 이 영주령 안의 임시 안전 정착지에서 시작합니다.'])text('p',value,$('intro-map-summary'));
+      }else text('p',place?`${region.kingdom} · ${place.label} 선택됨`:'왕국 버튼과 지도 표식 또는 지역 목록을 이용하세요. 일반 Lv.1 시작은 13개 영주령만 선택할 수 있습니다.',$('intro-map-summary'));
+      if(place){const sites=factionLocations.filter(p=>p.anchor_id===place.id);text('p','등록된 공개 세력 거점: '+(sites.length?sites.map(p=>p.name).join(' · '):'이 영주령에 배정된 거점 정보 없음'),$('intro-map-summary'));}
+      text('p','시작 조건: 전선·미개척지는 제외하고, 영주령 안의 안전한 정착지에서 시작합니다.',$('intro-map-summary'));
+      $('intro-map-next').disabled=!place;$('intro-map-next').textContent=draft.step==='confirmation'?'이 위치에서 새 게임 시작':'선택 결과 확인';
+      return;
+    }
+    const question=introData.questions.find(q=>q.id===draft.step),candidates=passiveCandidates(draft.answers);
+    $('intro-progress').textContent=`캐릭터 생성 ${introSteps.indexOf(draft.step)+1} / 5`;
+    $('intro-title').textContent=question?.text||'당신에게 남은 작은 힘';
+    $('intro-description').textContent=draft.step==='passive'?(candidates.length===1?'두 답변이 같은 방향을 가리킵니다. 아래 패시브 하나를 얻습니다.':'두 답변의 방향이 달라 동률입니다. 아래 두 후보 중 하나를 직접 고르세요.'):'이 대답은 당신의 여정에 작은 흔적을 남깁니다.';
+    const input=$('intro-input'),typing=['name','gender'].includes(draft.step);input.hidden=!typing;$('intro-input-label').hidden=!typing;
+    input.maxLength=draft.step==='name'?40:200;input.placeholder=draft.step==='name'?'이름을 입력하세요':'성별이나 모습을 자유롭게 적거나 건너뛰세요';
+    if(lastStep!==draft.step)input.value=draft.step==='name'?draft.name:draft.appearance;
+    $('intro-input-label').textContent=draft.step==='name'?'이름':'성별·모습 (선택)';
+    $('intro-skip').hidden=draft.step!=='gender';$('intro-next').hidden=['calling','response'].includes(draft.step);$('intro-next').textContent=draft.step==='passive'?'이 패시브로 시작 위치 선택':'다음';
+    $('intro-next').disabled=draft.step==='passive'&&!candidates.includes(draft.passive);
+    options.replaceChildren();
+    if(question?.options)for(const option of question.options){
+      const button=text('button',option.label,options);button.type='button';button.setAttribute('aria-pressed',String(draft.answers[draft.step]===option.id));
+      button.onclick=()=>{draft.answers[draft.step]=option.id;if(draft.step==='response'){const ids=passiveCandidates(draft.answers);draft.passive=ids.length===1?ids[0]:'';}else draft.passive='';next();};
+    }
+    if(draft.step==='passive')for(const id of candidates){
+      const passive=introData.passives.find(p=>p.id===id),button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed',String(draft.passive===id));text('strong',passive.name,button);text('span',passive.description,button);text('small','제한: '+passiveLimits[id],button);text('small','능력치 증가·기사 경지·마법 서클·깨달음 지급 없음',button);options.append(button);
+      button.onclick=()=>{draft.passive=id;save();refresh();$('intro-next').focus();};
+    }
+    if(lastStep!==draft.step){lastStep=draft.step;game.scrollTop=0;screen.scrollTop=0;queueMicrotask(()=>{if(typing)input.focus({preventScroll:true});else $('intro-title').focus({preventScroll:true});});}
+  }
+  $('new-game').onclick=begin;$('intro-new-from-name').onclick=begin;$('continue-game').onclick=()=>{if(!available())state.page='story';render();};
+  $('intro-cancel').onclick=cancel;$('intro-map-cancel').onclick=cancel;$('intro-back').onclick=back;$('intro-map-back').onclick=back;
+  $('intro-next').onclick=next;$('intro-skip').onclick=()=>{state.introDraft.appearance='';next();};
+  $('intro-input').oninput=event=>{const d=state.introDraft;if(!d)return;if(d.step==='name')d.name=event.target.value;else if(d.step==='gender')d.appearance=event.target.value;save();};
+  $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
+  $('intro-map-next').onclick=()=>state.introDraft.step==='confirmation'?complete():go('confirmation');
+  $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
+  return {render:refresh,syncMap,begin};
+}
+
+return {mountNewGame};})();
 const module1=(()=>{
 const {createGameBridge}=module2;
 const {mountChatUI}=module5;
 const {mountInventory,normalizeInventory}=module4;
-const {KEY,defaultLayout,load}=module9;
-const {faceFit}=module13;
-const {mapData}=module10;
-const {mapSelectionInfo}=module14;
-const {mountFactionMap,factionInfo}=module16;
-const {mountPlayer}=module17;
-const {mountNPCInfo}=module18;
-const {mountPlayHUD}=module19;
-const {mapViews,regionFrame,cameraTransform,viewForSelection}=module11;
+const {KEY,defaultLayout,load}=module11;
+const {faceFit}=module15;
+const {mapData}=module12;
+const {mapSelectionInfo}=module16;
+const {mountFactionMap,factionInfo}=module18;
+const {mountPlayer}=module19;
+const {mountNPCInfo}=module20;
+const {mountPlayHUD}=module21;
+const {mountNewGame}=module22;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module13;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
@@ -1494,6 +1877,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
+let introUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -1574,6 +1958,7 @@ function renderDialogue(){
     const scene=state.scene;
     $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
     state.character=!!scene.npc;
+    state.background=scene.background_id!==null;
     if(scene.npc){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
       for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
     }
@@ -1632,7 +2017,7 @@ function renderRegion(){
   for(const [name,value] of info?.fields||[]){const term=document.createElement('dt'),detail=document.createElement('dd');term.textContent=name;detail.textContent=value;fields.append(term,detail);}
   fields.hidden=!info?.fields.length;
   $('region-note').textContent=info?.note||'';$('region-note').hidden=!info?.note;
-  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();
+  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();introUI?.syncMap();
 }
 document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.mapFaction=null;state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
 document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapFaction=null;state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
@@ -1658,8 +2043,9 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();}
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();}
 const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded});
+introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 renderAll();
 

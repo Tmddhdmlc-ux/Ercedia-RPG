@@ -1,7 +1,9 @@
 import {damageFormula} from './player.js';
+import {introData} from './intro-data.js';
+import {passiveLimits} from './intro-model.js';
 export function mountPlayer(state){
   const $=id=>document.getElementById(id);
-  const display=v=>v===null?'—':v.toLocaleString('ko-KR');
+  const display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'—';
   const skillViews=new Map();
   function summary(){
     const p=state.player;
@@ -13,7 +15,9 @@ export function mountPlayer(state){
       bar.setAttribute('aria-valuetext',known?`${p[current]} / ${p[max]}`:'정보 미정');
     }
     $('xp-remaining').textContent=p.requiredXp===null||p.xp===null?'경험치 정보 미정':`다음 레벨까지 ${display(Math.max(0,p.requiredXp-p.xp))} EXP`;
-    for(const k of ['strength','dexterity','intelligence'])$(k+'-text').textContent=display(p[k]);
+    for(const k of ['strength','dexterity','intelligence','constitution','manaStat'])$(k+'-text').textContent=display(p[k]);
+    const passive=introData.passives.find(p=>p.id===state.starting_passive_id);$('starting-passive').hidden=!passive;
+    $('starting-passive-name').textContent=passive?.name||'';$('starting-passive-description').textContent=passive?`${passive.description} 제한: ${passiveLimits[passive.id]}`:'';
     for(const [skill,view] of skillViews)updateSkill(skill,view);
   }
   function skillCount(){const count=state.player.skills.filter(s=>s.enabled).length;$('skill-count').textContent=String(count);$('skills-empty').hidden=count>0;}

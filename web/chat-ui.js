@@ -18,16 +18,16 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     $('connection-status').textContent=pending&&!problem?'상대의 반응을 기다리는 중…':message;
   };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
-  const needsName=()=>!state.player.name.trim()||/^(플레이어|주인공|player)$/i.test(state.player.name.trim());
+  const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
   function controls(){
-    const naming=needsName(),wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
+    const creating=!!state.introDraft,naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
-    const choosing=!!choices.length&&last&&!pending&&!naming;
+    const choosing=!!choices.length&&last&&!pending&&!naming&&!creating;
     $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
     choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
-    $('free-action').disabled=!!pending||naming;$('send-action').disabled=!!pending||naming;$('cancel-wait').hidden=!pending;
+    $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;
   }
   function chooseName(){
     if(!needsName())return;
@@ -37,13 +37,13 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     render();controls();persist();status(`${name}님, 모험을 시작하세요.`);$('free-action').focus();
   }
   $('confirm-name').onclick=chooseName;
-  $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('adventurer-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
+  $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('intro-new-from-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
   $('adventurer-name').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();chooseName();}});
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
     clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
   }
   function submit(action,choiceId=null){
-    if(pending||needsName()||!action.trim())return;
+    if(pending||state.introDraft||needsName()||!action.trim())return;
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
     const requestId=newRequestId();pending={requestId,choiceId};
@@ -62,7 +62,10 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
-      if(scene.player)state.player={...scene.player,...(state.chosenName?{name:state.chosenName}:{})};
+      if(scene.player){
+        const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
+        state.player={...scene.player,...retained,...(state.chosenName?{name:state.chosenName}:{})};
+      }
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
@@ -79,7 +82,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();delete state.chosenName;delete state.mapFaction;delete state.uiPreferences;Object.assign(state,normalize(saved));
+    cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
@@ -107,5 +110,5 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,isPending:()=>!!pending,conversation:()=>conversation};
 }

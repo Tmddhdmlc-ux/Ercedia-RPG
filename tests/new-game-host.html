@@ -1,0 +1,30 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>새 게임 브리지 검증</title>
+<style>body{margin:0;background:#101920;color:#fff;font:16px system-ui}header{padding:12px}iframe{width:100%;height:88vh;border:0}pre{white-space:pre-wrap}</style>
+<header>로컬 브리지 검증 · GPT 응답은 검증용 고정 장면입니다.<pre id="result">로딩 중</pre><button id="roundtrip">세이브 복원 검증</button></header>
+<iframe id="game" title="배포용 게임 UI" sandbox="allow-scripts"></iframe>
+<script type="module">
+import {defaults} from '../web/state.js';
+const frame=document.getElementById('game'),result=document.getElementById('result');
+const token='local-new-game-verification',conversation='local-test';let saved=defaults(),request=null;
+const canonical=value=>Array.isArray(value)?'['+value.map(canonical).join(',')+']':value&&typeof value==='object'?'{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}':JSON.stringify(value);
+const send=(type,payload,extra={})=>frame.contentWindow.postMessage({channel:'ercedia',token,conversation,type,payload,...extra},'*');
+window.addEventListener('message',event=>{
+  const data=event.data;if(event.source!==frame.contentWindow||data?.token!==token||data.channel!=='ercedia')return;
+  if(data.type==='save')saved=data.payload;
+  if(data.type==='action'){
+    request=data.payload;
+    const correct=request.text.includes(saved.starting_lordship_id)&&request.text.includes(saved.starting_passive_id)&&saved.intro_completed;
+    result.textContent=`자동 첫 장면 요청: ${correct?'통과':'실패'} · ${saved.starting_kingdom} / ${saved.starting_lordship_id} / ${saved.starting_passive_id}`;
+    send('action-ack',{requestId:request.requestId});
+    send('scene',JSON.stringify({schema_version:1,type:'ercedia_scene',scene_id:'bridge-first-'+Date.now(),reply_to:request.requestId,location:saved.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'브리지 검증: 선택한 영주령의 안전한 정착지에서 첫 GM 응답을 반영했습니다.'}],choices:[]}));
+  }
+  if(data.type==='applied'&&request)result.textContent+=' · 응답 자동 적용 통과';
+  if(data.type==='restored')result.textContent+=' · 세이브 복원 '+(canonical(data.payload.state)===canonical(saved)?'통과':'실패');
+  if(data.type==='boot-error'||data.type==='parse-error')result.textContent=JSON.stringify(data);
+});
+document.getElementById('roundtrip').onclick=()=>send('restore',saved,{requestId:'roundtrip'});
+const config={token,conversation,saved,assetBase:location.origin+'/'};
+const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config)};window.__ERCEDIA_STORAGE__={getItem:()=>JSON.stringify(window.__ERCEDIA_CONFIG__.saved),setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:'${token}',conversation:'${conversation}',type:'save',payload:state},'*');}};`;
+frame.srcdoc=(await (await fetch('../integration/game.html')).text()).replace('/*__ERCEDIA_BOOTSTRAP__*/',bootstrap);
+result.textContent='검증 준비 완료';
+</script></html>
