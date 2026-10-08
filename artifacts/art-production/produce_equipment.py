@@ -54,6 +54,14 @@ def metal(color):
     return tone(im,masks(im)[0],color,.8)
 
 def ornament(base, center, width, color, angle=0):
+    # Narrow robe shoulders differ from plate silhouettes. Attach the rivet to the
+    # nearest solid object pixel so no metal fitting floats beside the garment.
+    alpha=np.asarray(base.getchannel('A'))
+    cx,cy=map(round,center)
+    if alpha[cy,cx]<128:
+        yy,xx=np.nonzero(alpha>192)
+        nearest=np.argmin((xx-cx)**2+(yy-cy)**2)
+        center=(int(xx[nearest]),int(yy[nearest]))
     detail = metal(color)
     detail = detail.crop(detail.getchannel('A').getbbox())
     detail.thumbnail((width,width),Image.Resampling.LANCZOS)
