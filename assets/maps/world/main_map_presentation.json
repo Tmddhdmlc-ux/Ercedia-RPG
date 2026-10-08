@@ -1,0 +1,23 @@
+{
+  "selected_basis": "world_overlay_guide.png",
+  "labels_basis": "world_concept.png",
+  "primary_display_asset": "world_main.png",
+  "terrain_asset": "world_base.png",
+  "overlay_asset": "world_main_overlay.png",
+  "locations": "map_locations.json",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "location_count": 24,
+  "lordship_candidates": {
+    "west": 5,
+    "east": 4,
+    "south": 4
+  },
+  "geography_changed": false,
+  "ui_integrated": false,
+  "status": "user-selected main map presentation; geography remains provisional",
+  "canonical": false,
+  "terrain_sha256": "edef9a05a2d59772a2bfb8455004764cedeff08ea141c2e7383fecb85eb4696d"
+}
