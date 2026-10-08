@@ -55,7 +55,7 @@ UI v1.1.2에서 보내기는 sandbox가 차단하는 기본 폼 제출 대신 �
 
 ## 데이터와 브리지 규격
 
-장면 스키마 v1: `schema_version:1`, `type:"ercedia_scene"`, 매 턴 고유 `scene_id`, `location`, `time`, `background_id`, `npc`, `dialogue`, `choices`. 요청에 응답할 때는 요청문의 `reply_to` 값을 그대로 출력합니다. 대사는 1~60개, 선택지는 0개 또는 2~4개입니다. 현재 등록된 NPC는 `serin`, 복장은 armor/casual/nightwear, 얼굴은 기존 9종, 배경은 sunny_village_day입니다. 미등록 자산은 적용하지 않습니다.
+장면 스키마 v1: `schema_version:1`, `type:"ercedia_scene"`, 매 턴 고유 `scene_id`, `location`, `time`, `background_id`, `npc`, `dialogue`, `choices`. 요청에 응답할 때는 요청문의 `reply_to` 값을 그대로 출력합니다. 대사는 1~60개, 선택지는 0개 또는 2~4개입니다. 등록된 NPC는 `serin`과 신규 138명입니다. 세린은 armor/casual/nightwear 복장과 기존 9표정, 신규 인물은 none 복장과 base 표정을 지원합니다. 배경은 sunny_village_day입니다. 미등록 자산은 적용하지 않습니다.
 
 `player`와 `inventory`가 생략되면 기존 정보를 유지하며, 포함될 때는 전체 새 스냅샷으로 갱신합니다. `inventory:[]`는 빈 가방입니다. `game_state`에는 date/time/region/place 문자열과 quests/relationships/events/recent_dialogue 문자열 배열(각 30개 이하)을 보낼 수 있습니다. 장면 적용으로 현재 지도 확대·열린 탭을 바꾸지 않습니다.
 
@@ -149,7 +149,7 @@ gameBridge.restoreGameState(savedState);
 
 상태창의 **인물 능력치**에서 이름·소속·지역 검색과 인물 선택을 지원합니다. NPC 100명 및 기존 핵심 인물 38명의 레벨, STR/DEX/INT/CON/MANA, HP/MP, 속도와 기초 공격을 원본 JSON에서 빌드합니다. 소스 수치는 초기 밸런싱 값이며 관계 관심도는 플레이 중 확정된 값만 표시합니다. 세린은 원본에 숫자가 없으면 미등록으로 표시하며 다른 기사의 숫자를 복사하지 않습니다. 선택적인 `characters/serin.json`이 생기면 같은 원본 형식을 읽습니다.
 
-원화가 없는 등록 인물도 `npc={id:"ER-NPC-001",outfit:"none",emotion:"base",speaker:"알윈 페르"}`처럼 대화·상태 데이터로 연결됩니다. 승인 이미지가 없는 인물에 세린 이미지를 붙이지 않습니다. 일반적인 NPC 응답 예시이며 해당 인물을 강제 등장시키는 지시가 아닙니다.
+등록 인물은 `npc={id:"ER-NPC-001",outfit:"none",emotion:"base",speaker:"알윈 페르"}`처럼 대화·상태 데이터로 연결됩니다. 승인 이미지가 없는 인물에 세린 이미지를 붙이지 않습니다. 일반적인 NPC 응답 예시이며 해당 인물을 강제 등장시키는 지시가 아닙니다.
 
 `npc.profile`과 선택적인 `npc_updates={"ER-NPC-001":{hp:400,mp:100,interest:30}}`은 공개된 현재 변화를 반영합니다. profile에는 기존 필드와 `level,manaStat,speed,levelHpBonus,realm`을 지원합니다. `realm`은 none/basic/expert/hyper/master 중 하나이며 기사 승급은 실제 깨달음 판정 없이는 변경하지 않습니다. 변경은 선택적인 세이브 `npcStates`에 기록되며 기존 저장은 자동으로 새 키를 얻지 않습니다. 초기 GitHub 수치와 진행 중 자원·관계 변화는 분리합니다.
 
@@ -171,3 +171,11 @@ GitHub Actions의 원본 JSON 변경 감지를 확장했습니다. 데이터가 
 ## UI 1.6.0 복구 및 의뢰
 최신 버전 확인 → 업데이트 적용으로 UI를 갱신한다. 타이틀이 비어 보이던 애니메이션 표시를 보완하고, 잘못된 응답으로 보내기 버튼이 잠겨 있던 대기를 해제한다. 런처1.1.6도 일반/새 게임 요청 전송 가능하며 전체 설정 파일 자동 첨부는1.1.7 필요. 새 게임 시작 안내를 GitHub 원문 링크로 보내는 이전 런처 경로에서는 GPT의 실제 열람 여부를 확인해야 한다.
 의뢰 탭(Q), 개인 제안 카드, 현지 게시 창구 조회, 실제 증거 목표 갱신과 한 번 보상 지급은 QUEST_SCHEMA.md를 따른다. 로컬 통합 검증: http://localhost:4173/tests/quest-demo.html (테스트GM/분리 저장). 실제 플레이: http://localhost:4173/?game=1
+
+## 캐릭터·거점 아트 연동 — UI 1.8.0
+
+138명의 신규 기본형을 등록했다. 대화 npc.id는 ER-NPC-001~100 또는 ER-CORE-001~038, outfit="none", emotion="base"를 사용한다. 인간은 전신, 마수는 투명 초상화로 표시한다. 세린의 3복장과 9표정은 기존대로 유지한다. 전투 art도 해당 참가자 ID를 그대로 사용한다.
+
+characters/npc_placements.json에 세린 포함 139명의 기본 활동 지역과 기존 지도 거점 좌표를 연결했다. 국왕은 왕도, 영주는 영주령, 기사단장·탑주·성자/성녀와 해당 세력 구성원은 등록된 공개 거점, 그 외 인물·마수는 roster의 location_id를 기준으로 표시한다. 세부 픽셀은 거점 대표 좌표이며 새 도시·국경·실시간 위치를 확정하지 않는다. 실제 이동을 판정한 경우 npc_updates[id].location_id로 등록된 지점 ID를 갱신하면 지도 목록과 저장·다음 요청이 함께 반영된다.
+
+지역을 확대하거나 거점을 선택하면 인물·마수 초상화 목록, 지역 국기·영주 깃발·세력 문장을 표시한다. 인물 이름은 도감을 열고 만남·탐색은 GPT에 요청한다. 버튼만으로 이동·전투·만남이 확정되지 않는다. 런처의 기존 업데이트 확인·적용으로 UI를 받으며 재설치는 필요 없다.

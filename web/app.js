@@ -1,3 +1,4 @@
+import {mountNPCArt} from './npc-art-ui.js';
 import {createGameBridge} from '../integration/game-bridge.js';
 import {mountChatUI} from './chat-ui.js';
 import {mountInventory,normalizeInventory} from './inventory.js';
@@ -54,8 +55,9 @@ const state=restored.state;
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
-const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
+const factionUI=mountFactionMap(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
 $('save-status').textContent=restored.message;
+const npcArt=mountNPCArt({assetBase:window.__ERCEDIA_CONFIG__?.assetBase,status:$('expression-status')});
 const images=new Map();
 const faces=new Map();
 const faceLayer=document.createElement('div');
@@ -93,6 +95,11 @@ for(const expression of Object.keys(labels)){
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','솔브린 마을');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
+  const generic=state.scene?.npc&&state.scene.npc.id!=='serin';
+  document.querySelectorAll('[data-outfit]').forEach(b=>b.disabled=!!generic);$('expression').disabled=!!generic;
+  if(generic){for(const img of images.values())img.hidden=true;faceLayer.hidden=true;$('background').hidden=!state.background;
+    npcArt.render(state.scene.npc,state.character);$('show-background').checked=state.background;$('show-character').checked=state.character;npcInfo.refresh();return;}
+  npcArt.hide();
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
   $('background').hidden=!state.background;
@@ -131,7 +138,7 @@ function renderDialogue(){
   if(state.scene){
     const scene=state.scene;
     $('scene-location').textContent=canonicalLocationLabel(scene.location);$('scene-time').textContent=scene.time;
-    state.character=scene.npc?.id==='serin';
+    state.character=!!scene.npc;
     state.background=scene.background_id!==null;
     if(scene.npc?.id==='serin'){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
       for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
@@ -221,8 +228,8 @@ function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI
 const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 engineUI=mountEngineUI(state,{render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
-battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:CDN});
-catalogUI=mountCatalogUI(state,{request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
+battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
+catalogUI=mountCatalogUI(state,{onShow:()=>switchTo('status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase,request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 questUI=mountQuestUI(state,{chat:chatUI,switchTo,persist:saveGame,showMap:point=>{state.region=point.id;state.mapView=point.region;state.mapFaction=null;switchTo('map');renderRegion();saveGame();}});
 titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});

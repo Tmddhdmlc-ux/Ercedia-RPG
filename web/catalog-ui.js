@@ -1,9 +1,12 @@
+import {mountNPCLocations} from './npc-location-ui.js';
+import {registeredArt,artBase,placementLabel} from './character-art.js';
 import {catalogData} from './catalog-data.js';
 import {npcCatalog,resolveNPC,npcRankLabel} from './npc-model.js';
-export function mountCatalogUI(state,{request,isPending}){
+export function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
   const $=id=>document.getElementById(id),display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'미정';
   let selected='serin',query='',regionKey=null,regionCards=[];
   const options=new Map();for(const p of npcCatalog){const option=document.createElement('option');option.value=p.id;option.textContent=p.name+' · '+p.affiliation;options.set(p.id,option);$('npc-catalog-select').append(option);}
+  const locationUI=mountNPCLocations(state,{request,isPending,assetBase,onSelect(id){query='';$('npc-catalog-search').value='';selected=id;onShow();refresh();$('npc-catalog-card').scrollIntoView({block:'nearest'});}});
   const fields=['소속','레벨','경지·지위','체력','마나','근력','민첩','지능','체력 능력치','마나 능력치','속도','기초 공격','관심도'];
   const views=fields.map(label=>{const row=document.createElement('div'),dt=document.createElement('dt'),dd=document.createElement('dd');dt.textContent=label;row.append(dt,dd);$('npc-catalog-fields').append(row);return dd;});
   function refresh(){
@@ -13,10 +16,11 @@ export function mountCatalogUI(state,{request,isPending}){
     $('npc-catalog-select').value=selected;$('npc-catalog-empty').hidden=!!selected;$('npc-catalog-card').hidden=!selected;
     $('npc-catalog-count').textContent=`${matches.length} / ${npcCatalog.length}명`;
     if(selected){const p=resolveNPC(state,selected,state.scene?.npc?.id===selected?state.scene.npc.profile||{}:{});$('npc-catalog-name').textContent=p.name;
+      const image=$('npc-catalog-portrait'),art=registeredArt[p.id]||(p.id==='serin'?{portrait:'assets/characters/main/serin/base_transparent.png'}:null);image.hidden=!art;image.alt=p.name+' 초상화';if(art){const url=artBase(assetBase)+art.portrait;if(image.getAttribute('src')!==url)image.src=url;}image.onerror=()=>{image.hidden=true;};$('npc-catalog-location').textContent=placementLabel(p.id,state)?'활동 지역 · '+placementLabel(p.id,state):p.location_id||'';
       const values=[p.affiliation,display(p.level),npcRankLabel(p),`${display(p.hp)} / ${display(p.maxHp)}`,`${display(p.mp)} / ${display(p.maxMp)}`,display(p.strength),display(p.dexterity),display(p.intelligence),display(p.constitution),display(p.manaStat),display(p.speed),`${display(p.attackMin)} ~ ${display(p.attackMax)}`,p.interest==null?'아직 기록 없음':`${p.interest} / 100`];views.forEach((view,i)=>view.textContent=values[i]);
       $('npc-catalog-source').textContent=p.statStatus==='unassigned'?'이 인물의 숫자 능력치는 GitHub에 아직 등록되지 않았습니다.':'GitHub 초기 밸런싱 수치에 이 채팅의 부상·마나·관계 변화를 반영합니다.';
     }
-    const allowed=!isPending()&&!state.introDraft&&!!state.player.name.trim();regionCards.forEach(b=>b.disabled=!allowed);
+    const allowed=!isPending()&&!state.introDraft&&!!state.player.name.trim();regionCards.forEach(b=>b.disabled=!allowed);locationUI.render();
   }
   $('npc-catalog-search').oninput=e=>{query=e.target.value.trim().toLowerCase();refresh();};$('npc-catalog-select').onchange=e=>{selected=e.target.value;refresh();};
   $('npc-catalog-current').onclick=()=>{query='';$('npc-catalog-search').value='';selected=state.scene?.npc?.id||'serin';refresh();};

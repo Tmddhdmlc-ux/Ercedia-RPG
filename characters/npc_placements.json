@@ -1,0 +1,1403 @@
+{
+  "schema_version": 1,
+  "sources": [
+    "characters/serin.json",
+    "characters/npc_roster_100.json",
+    "characters/core_cast_stats_38.json",
+    "assets/maps/world/map_locations.json",
+    "assets/maps/world/faction_locations.json"
+  ],
+  "note": "설정상 기본 활동 지역과 기존 거점의 표시 좌표. 실시간 위치·새 국경·새 지점의 확정이 아님.",
+  "placements": [
+    {
+      "id": "ER-NPC-001",
+      "location_id": "CW",
+      "region": "west",
+      "faction_id": "KN01",
+      "x": 0.26822917,
+      "y": 0.36621094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-002",
+      "location_id": "CW",
+      "region": "west",
+      "faction_id": "KN01",
+      "x": 0.26822917,
+      "y": 0.36621094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-003",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "KN02",
+      "x": 0.34635417,
+      "y": 0.54003906,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-004",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "KN02",
+      "x": 0.34635417,
+      "y": 0.54003906,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-005",
+      "location_id": "CE",
+      "region": "east",
+      "faction_id": "KN03",
+      "x": 0.75,
+      "y": 0.41210938,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-006",
+      "location_id": "CE",
+      "region": "east",
+      "faction_id": "KN03",
+      "x": 0.75,
+      "y": 0.41210938,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-007",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": "KN04",
+      "x": 0.72135416,
+      "y": 0.32324218,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-008",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": "KN04",
+      "x": 0.72135416,
+      "y": 0.32324218,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-009",
+      "location_id": "CS",
+      "region": "south",
+      "faction_id": "KN05",
+      "x": 0.53320312,
+      "y": 0.76171875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-010",
+      "location_id": "CS",
+      "region": "south",
+      "faction_id": "KN05",
+      "x": 0.53320312,
+      "y": 0.76171875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-011",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "KN06",
+      "x": 0.59114584,
+      "y": 0.67285156,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-012",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "KN06",
+      "x": 0.59114584,
+      "y": 0.67285156,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-013",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": "MT01",
+      "x": 0.33203125,
+      "y": 0.35058594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-014",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": "MT01",
+      "x": 0.33203125,
+      "y": 0.35058594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-015",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": "MT02",
+      "x": 0.63671875,
+      "y": 0.42871094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-016",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": "MT02",
+      "x": 0.63671875,
+      "y": 0.42871094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-017",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "MT03",
+      "x": 0.53776042,
+      "y": 0.72363281,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-018",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "MT03",
+      "x": 0.53776042,
+      "y": 0.72363281,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-019",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": "MT04",
+      "x": 0.56315104,
+      "y": 0.80566406,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-020",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": "MT04",
+      "x": 0.56315104,
+      "y": 0.80566406,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-021",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": "MT05",
+      "x": 0.69401042,
+      "y": 0.46875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-022",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": "MT05",
+      "x": 0.69401042,
+      "y": 0.46875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-023",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-024",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-025",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-026",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-027",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-028",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-029",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-030",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66080729,
+      "y": 0.40527344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-031",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-032",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-033",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-034",
+      "location_id": "W5",
+      "region": "west",
+      "faction_id": "GD01",
+      "x": 0.41536458,
+      "y": 0.640625,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-035",
+      "location_id": "W5",
+      "region": "west",
+      "faction_id": "GD01",
+      "x": 0.41536458,
+      "y": 0.640625,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-036",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": "GD02",
+      "x": 0.671875,
+      "y": 0.58203125,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-037",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": "GD03",
+      "x": 0.36328125,
+      "y": 0.77636719,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-038",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "MC01",
+      "x": 0.35546875,
+      "y": 0.57910156,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-039",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "MC01",
+      "x": 0.35546875,
+      "y": 0.57910156,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-040",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "MC02",
+      "x": 0.60091146,
+      "y": 0.7421875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-041",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "MC02",
+      "x": 0.60091146,
+      "y": 0.7421875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-042",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": "TR01",
+      "x": 0.39453125,
+      "y": 0.72558594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-043",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": "TR02",
+      "x": 0.52604166,
+      "y": 0.765625,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-044",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": "TR04",
+      "x": 0.71289063,
+      "y": 0.53710937,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-045",
+      "location_id": "W5",
+      "region": "west",
+      "faction_id": "TR05",
+      "x": 0.36783854,
+      "y": 0.60253906,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-046",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": "RS01",
+      "x": 0.22916666,
+      "y": 0.50488281,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-047",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": "RS01",
+      "x": 0.22916666,
+      "y": 0.50488281,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-048",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": "RS02",
+      "x": 0.68489583,
+      "y": 0.37792969,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-049",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66666667,
+      "y": 0.48828125,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-050",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "RS03",
+      "x": 0.54166667,
+      "y": 0.68066406,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-051",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-052",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": "CV01",
+      "x": 0.21289062,
+      "y": 0.453125,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-053",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": "CV02",
+      "x": 0.50390625,
+      "y": 0.6640625,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-054",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": "CV02",
+      "x": 0.50390625,
+      "y": 0.6640625,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-055",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-056",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-057",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-058",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-059",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-060",
+      "location_id": "CS",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.50520833,
+      "y": 0.75097656,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-061",
+      "location_id": "CE",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.72265625,
+      "y": 0.4296875,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-062",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-063",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-064",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-065",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-066",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-067",
+      "location_id": "W5",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.3984375,
+      "y": 0.62109375,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-068",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-069",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-070",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-071",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-072",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-073",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66666667,
+      "y": 0.48828125,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-074",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66080729,
+      "y": 0.40527344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-075",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-076",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-077",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-078",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-079",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-080",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-081",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-082",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-083",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-084",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-085",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-086",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-087",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66666667,
+      "y": 0.48828125,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-088",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66080729,
+      "y": 0.40527344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-089",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-090",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-091",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-092",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-093",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-094",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-095",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-096",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-097",
+      "location_id": "B1",
+      "region": "northcenter",
+      "faction_id": null,
+      "x": 0.47526042,
+      "y": 0.21875,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-098",
+      "location_id": "B1",
+      "region": "northcenter",
+      "faction_id": null,
+      "x": 0.47526042,
+      "y": 0.21875,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-099",
+      "location_id": "A1",
+      "region": "northeast",
+      "faction_id": null,
+      "x": 0.76171875,
+      "y": 0.15722656,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-NPC-100",
+      "location_id": "D1",
+      "region": "northwest",
+      "faction_id": null,
+      "x": 0.2890625,
+      "y": 0.15820312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-001",
+      "location_id": "CW",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.28776042,
+      "y": 0.34277344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-002",
+      "location_id": "CE",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.72265625,
+      "y": 0.4296875,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-003",
+      "location_id": "CS",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.50520833,
+      "y": 0.75097656,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-004",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-005",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-006",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-007",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-008",
+      "location_id": "W5",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.3984375,
+      "y": 0.62109375,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-009",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-010",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66080729,
+      "y": 0.40527344,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-011",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.66666667,
+      "y": 0.48828125,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-012",
+      "location_id": "E4",
+      "region": "east",
+      "faction_id": null,
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-013",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-014",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-015",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-016",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": null,
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-017",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": "SHTH",
+      "x": 0.29557292,
+      "y": 0.41308594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-018",
+      "location_id": "S2",
+      "region": "south",
+      "faction_id": "SHSP",
+      "x": 0.45247395,
+      "y": 0.60839843,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-019",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": "SHLI",
+      "x": 0.26692708,
+      "y": 0.4609375,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-020",
+      "location_id": "W1",
+      "region": "west",
+      "faction_id": "SHDE",
+      "x": 0.21158854,
+      "y": 0.33496094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-021",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "SHFI",
+      "x": 0.29752605,
+      "y": 0.57421875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-022",
+      "location_id": "S1",
+      "region": "south",
+      "faction_id": "SHWA",
+      "x": 0.34700521,
+      "y": 0.71679688,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-023",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "SHWI",
+      "x": 0.60546875,
+      "y": 0.68164063,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-024",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": "SHEL",
+      "x": 0.68229167,
+      "y": 0.44433594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-025",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": "SHLG",
+      "x": 0.30989584,
+      "y": 0.34179688,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-026",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": "SHDK",
+      "x": 0.76171875,
+      "y": 0.38378906,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-027",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": "SHFA",
+      "x": 0.50651041,
+      "y": 0.828125,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-028",
+      "location_id": "CW",
+      "region": "west",
+      "faction_id": "KN01",
+      "x": 0.26822917,
+      "y": 0.36621094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-029",
+      "location_id": "W4",
+      "region": "west",
+      "faction_id": "KN02",
+      "x": 0.34635417,
+      "y": 0.54003906,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-030",
+      "location_id": "CE",
+      "region": "east",
+      "faction_id": "KN03",
+      "x": 0.75,
+      "y": 0.41210938,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-031",
+      "location_id": "E1",
+      "region": "east",
+      "faction_id": "KN04",
+      "x": 0.72135416,
+      "y": 0.32324218,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-032",
+      "location_id": "CS",
+      "region": "south",
+      "faction_id": "KN05",
+      "x": 0.53320312,
+      "y": 0.76171875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-033",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "KN06",
+      "x": 0.59114584,
+      "y": 0.67285156,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-034",
+      "location_id": "W2",
+      "region": "west",
+      "faction_id": "MT01",
+      "x": 0.33203125,
+      "y": 0.35058594,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-035",
+      "location_id": "E2",
+      "region": "east",
+      "faction_id": "MT02",
+      "x": 0.63671875,
+      "y": 0.42871094,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-036",
+      "location_id": "S3",
+      "region": "south",
+      "faction_id": "MT03",
+      "x": 0.53776042,
+      "y": 0.72363281,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-037",
+      "location_id": "S4",
+      "region": "south",
+      "faction_id": "MT04",
+      "x": 0.56315104,
+      "y": 0.80566406,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "ER-CORE-038",
+      "location_id": "E3",
+      "region": "east",
+      "faction_id": "MT05",
+      "x": 0.69401042,
+      "y": 0.46875,
+      "position_kind": "faction_anchor",
+      "exact_position": false
+    },
+    {
+      "id": "serin",
+      "location_id": "W3",
+      "region": "west",
+      "faction_id": null,
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "position_kind": "region_anchor",
+      "exact_position": false
+    }
+  ]
+}

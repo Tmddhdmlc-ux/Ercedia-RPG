@@ -1,4 +1,5 @@
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
+import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
@@ -12,7 +13,9 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
     slot.id=p.id;slot.root.hidden=p.id==='player';slot.root.dataset.participant=p.id;slot.missing.textContent=p.name+' · 스탠딩 미등록';slot.missing.hidden=!!p.art;slot.visual.hidden=!p.art;
     if(!p.art)return;
     if(!slot.body){slot.body=new Image();slot.face=new Image();slot.body.className='battle-body';slot.face.className='battle-face';slot.visual.append(slot.body,slot.face);slot.body.onerror=()=>{slot.visual.hidden=true;slot.missing.hidden=false;slot.missing.textContent=p.name+' · 원화 로드 실패';};slot.face.onerror=()=>{slot.face.hidden=true;slot.missing.hidden=false;slot.missing.textContent='표정 로드 실패 · 원본 얼굴 유지';};}
-    const outfit=p.art.outfit,path=outfit==='armor'?'base.png':`outfits/${outfit}/base.png`,bodyURL=assetBase+'assets/characters/main/serin/standing/'+path,faceURL=assetBase+'assets/characters/main/serin/faces/'+p.art.emotion+'.png';
+    if(p.id!=='serin'){const art=characterVisual(p.id,p.art.outfit,p.art.emotion);slot.face.hidden=true;slot.body.alt=p.name+' '+(art.kind==='monster'?'마수 초상화':'스탠딩');slot.root.classList.toggle('monster-art',art.kind==='monster');const url=artBase(assetBase)+art.path;if(slot.body.getAttribute('src')!==url)slot.body.src=url;return;}
+    slot.root.classList.remove('monster-art');
+    const outfit=p.art.outfit,path=outfit==='armor'?'base.png':`outfits/${outfit}/base.png`,bodyURL=(assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/')+'assets/characters/main/serin/standing/'+path,faceURL=(assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/')+'assets/characters/main/serin/faces/'+p.art.emotion+'.png';
     if(slot.body.getAttribute('src')!==bodyURL)slot.body.src=bodyURL;if(slot.face.getAttribute('src')!==faceURL)slot.face.src=faceURL;
     slot.body.alt=p.name+' 스탠딩';slot.face.alt=p.name+' '+p.art.emotion+' 표정';slot.face.hidden=false;
     const fit=faceFit[outfit];Object.assign(slot.face.style,{left:fit.x/1024*100+'%',top:fit.y/1536*100+'%',width:fit.size/1024*100+'%'});

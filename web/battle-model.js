@@ -1,4 +1,5 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
+import {characterVisual,registeredNPCArt} from './character-art.js';
 import {resolveNPC,findNPC} from './npc-model.js';
 import {potentialMP,potentialDamage} from './combat-potentials.js';
 export const battleRealms={none:1,basic:1,expert:1.25,hyper:1.65,master:2.2};
@@ -35,9 +36,10 @@ function participant(raw){
     return skill;
   });
   if(raw.art!==null&&raw.art!==undefined){
-    if(p.id!=='serin'||p.role==='player'||raw.art.id!=='serin'||!['armor','casual','nightwear'].includes(raw.art.outfit)||!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion))fail('미등록/다른 인물 원화');
-    p.art={id:'serin',outfit:raw.art.outfit,emotion:raw.art.emotion};
+    if(p.role==='player'||raw.art.id!==p.id||!characterVisual(p.id,raw.art.outfit,raw.art.emotion)||(p.id==='serin'?!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion):raw.art.emotion!=='base'))fail('미등록/다른 인물 원화');
+    p.art={id:p.id,outfit:raw.art.outfit,emotion:raw.art.emotion};
   }
+  if(!p.art&&p.role!=='player')p.art=registeredNPCArt(p.id);
   return p;
 }
 export function normalizeBattle(raw){

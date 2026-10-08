@@ -5,6 +5,7 @@ import {createHash} from 'node:crypto';
 import './map-factions-build.mjs';
 import './intro-build.mjs';
 import './catalog-build.mjs';
+import './character-art-build.mjs';
 import './quest-build.mjs';
 import './engine-build.mjs';
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');

@@ -35,7 +35,7 @@
 - 최대 HP/MP와 speed는 COMBAT_GROWTH.md 공식. level_hp_bonus는 누적 기록, 장비/상태 근거가 없으면 0.
 - modifiers: `{weapon_attack,technique_bonus,equipment_hp_bonus,status_hp_bonus,equipment_mp_bonus,status_mp_bonus,equipment_speed_bonus,status_speed_bonus}`. 생략된 값 0. 주인공은 저장의 battleModifiers와 일치. 장비 수치를 새로 발명하지 않는다.
 - skills: `{id,name,kind,mp_cost}` 목록. kind는 physical/magic/unique/defend. magic/unique에는 `power,int_coefficient,mana_coefficient,basis`도 필요. 주인공은 저장에 사용 가능 상태로 등록된 기술만 사용한다. 현재 미확정 주문 계수를 세계 공통 공식으로 선언하지 않는다.
-- art: 원화 없으면 null. 현재 승인된 전투 스탠딩은 참가자 id=serin일 때 `{id:"serin",outfit:"armor|casual|nightwear 중 실제 한 값",emotion:"등록된 9종 중 한 값"}`. **세린을 player 원화로 사용하지 않는다.** 승인 대기 batch_01 원화는 등록하지 않는다. 좌우 반전을 하지 않아 문장/장비/얼굴 호환을 추정하지 않는다.
+- art: 원화 없으면 null. 세린의 승인된 전투 스탠딩은 참가자 id=serin일 때 `{id:"serin",outfit:"armor|casual|nightwear 중 실제 한 값",emotion:"등록된 9종 중 한 값"}`. **세린을 player 원화로 사용하지 않는다.** 추가 등록된 138명은 characters/art_registry.json 기준으로 `{id:"해당 참가자 ID",outfit:"none",emotion:"base"}`를 사용한다. 인간은 전신, 마수는 투명 초상화이며 새 표정이나 복장은 등록하지 않았다. 등록 인물의 art를 생략하면 기본형으로 표시한다. 다른 인물의 원화를 빌려 쓰거나 player에 NPC 원화를 지정하면 거부한다. 좌우 반전을 하지 않아 문장/장비/얼굴 호환을 추정하지 않는다.
 
 ### 사건
 
