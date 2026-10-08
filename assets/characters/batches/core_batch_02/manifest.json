@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "core_batch_02",
+  "roster_version": "core-cast-38-canonical-design",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-CORE-011",
+      "name": "발터 베르크슈타인",
+      "affiliation": "영주 가문",
+      "appearance": "남 54, 184cm, 다듬은 검은 수염과 백발 섞인 흑발, 검은 눈, 짙은 철색 요새 갑옷",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-011/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            72,
+            85,
+            951,
+            1451
+          ],
+          "margins_ltrb": [
+            72,
+            85,
+            73,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "8f2fca1da3a1ebd7a9a3ad34e04af0f195c043d1e85c5b26b0ad533b47169c38"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-011/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            23,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            23,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "7a0cf711adc83dfa249e8e0fef63b8ceec4d00fee6fd004dfec6ecebdf70c682"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-012",
+      "name": "에밀 실베른",
+      "affiliation": "영주 가문",
+      "appearance": "남 29, 181cm, 밝은 회색 머리와 청록색 눈, 부드러운 얼굴, 청록 자수의 짧은 회색 외투",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-012/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            83,
+            85,
+            940,
+            1451
+          ],
+          "margins_ltrb": [
+            83,
+            85,
+            84,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "f6190b379dc38422058c76b8439cb14064dc28e67fb31fb50d76036ac070c8a5"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-012/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            26,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            26,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "aa3c052451398ed8e3719a2621b7302f85c4da4d3025a4983ed7a17ec37403f5"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-013",
+      "name": "도미니크 벨마리나",
+      "affiliation": "영주 가문",
+      "appearance": "남 47, 180cm, 구릿빛 피부와 진갈색 웨이브 머리, 초록 눈, 백색 비단 외투와 진주 검집",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-013/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            82,
+            85,
+            941,
+            1451
+          ],
+          "margins_ltrb": [
+            82,
+            85,
+            83,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "f2d3a2017d57f32c9cf2013f8b53d2dc1fcdaf727823399ee1bbe152fc4afd53"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-013/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "580f858ef2fe22bb062f9afd09779955765eb5ffa618cf6dee57f93f96044f3f"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-014",
+      "name": "이사벨 세르반",
+      "affiliation": "영주 가문",
+      "appearance": "여 50, 175cm, 검붉은 갈색 머리를 땋아 올리고 갈색 눈, 군더더기 없는 백청 제복과 검집",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-014/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            61,
+            85,
+            962,
+            1451
+          ],
+          "margins_ltrb": [
+            61,
+            85,
+            62,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "2163562bea9242591793b999570d4e49c6e45e16ebc2249cf56d40d4fc5383c2"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-014/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            11,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            11,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "8a6041cda368756b78ef0267688acb4c147397aec0c99bb0ae6c9bf1a7d92e67"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-015",
+      "name": "티에라 아쿠아렌",
+      "affiliation": "영주 가문",
+      "appearance": "여 37, 174cm, 검푸른 곱슬 단발과 바다빛 청록색 눈, 햇살에 그을린 피부, 청백 제복과 산호 장식",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-015/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            67,
+            85,
+            957,
+            1451
+          ],
+          "margins_ltrb": [
+            67,
+            85,
+            67,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "c1be62173c1fe6426ad971f680d6e4e3f55ac17730f6580721fe37b20641f0c1"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-015/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            7,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            7,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "a3031c191f92c029d2820b453890f09f8c2ef9f7ee028934d559064f8fec1dee"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-016",
+      "name": "라파엘 솔메리아",
+      "affiliation": "영주 가문",
+      "appearance": "남 58, 177cm, 회백색 묶은 머리와 호박색 눈, 매끈한 피부, 금빛 단추의 백색 가운과 청색 허리띠",
+      "rank": "영주",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-016/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            108,
+            85,
+            916,
+            1451
+          ],
+          "margins_ltrb": [
+            108,
+            85,
+            108,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "749f17e8f452335e26db3be2c259a0e7debf3e63ed0c104dd709d681f22fe2d0"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-016/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            28,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            28,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "d27829e596746eb5db47489cde86b26950b2e1c72b16a1653caada584183956d"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-017",
+      "name": "율렌 크라스",
+      "affiliation": "테오르 교단",
+      "appearance": "- **현직 성자:** **율렌 크라스** (남 66, 은회빛 대머리·금갈색 눈·끝이 닳은 청남색 외투).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-017/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            87,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            87,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6e8ec50a1e56608d0ce0db20a61d2c0ffe0bdafa41dd42237ec0c7bfe17fe34b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-017/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            47,
+            1086,
+            1434
+          ],
+          "margins_ltrb": [
+            0,
+            47,
+            0,
+            14
+          ],
+          "foot_anchor": [
+            543.0,
+            1434
+          ],
+          "sha256": "302fba81123aa5e851a77173aa778ae0e0b5ef2ef8e268a8a1de455ebddd1d1e"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-018",
+      "name": "세아 메르",
+      "affiliation": "아스텔리온 교단",
+      "appearance": "- **현직 성녀:** **세아 메르** (여 24, 구릿빛 피부·검은 단발·은청 눈·흰 여행 코트).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-018/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            70,
+            85,
+            954,
+            1451
+          ],
+          "margins_ltrb": [
+            70,
+            85,
+            70,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9b59f2d154fb8854d5d9dac6dd7b78a0b8ddacb4747b7ac5c60195c3a1947512"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-018/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "e0955049f474f2315712364e30f1e94af7c483167f3a2c4e829a84d2a6742116"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-019",
+      "name": "로나 에일",
+      "affiliation": "엘리시아 교단",
+      "appearance": "- **현직 성녀:** **로나 에일** (여 19, 갈색 곱슬머리·녹금 눈·수수한 회백 성의).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-019/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            141,
+            85,
+            882,
+            1451
+          ],
+          "margins_ltrb": [
+            141,
+            85,
+            142,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "fc4fbfbccd360fd629c944dda7da434d6d1f58ead9e3451f4e6181645975a3f6"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-019/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            14,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            14,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "43452b751dfc6641eb19707fc8be08bc70483c38ac9ab87dd63db26bd887e4a9"
+        }
+      }
+    },
+    {
+      "id": "ER-CORE-020",
+      "name": "다미엔 솔",
+      "affiliation": "모르베인 교단",
+      "appearance": "- **현직 성자:** **다미엔 솔** (남 37, 흑갈색 장발·창백한 피부·은색 테두리 검은 예복).",
+      "rank": "성자/성녀",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-CORE-020/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            65,
+            85,
+            958,
+            1451
+          ],
+          "margins_ltrb": [
+            65,
+            85,
+            66,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6691ecb425b48e31dc54c5f189ac1b7183d6e6cbb72ab6624aea1b4789c7b473"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-CORE-020/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            37,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            37,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "8d148e464e580cf55605a1eb6bfeb4fb319be4777cdfe5a0e1744f7056bcf335"
+        }
+      }
+    }
+  ]
+}
