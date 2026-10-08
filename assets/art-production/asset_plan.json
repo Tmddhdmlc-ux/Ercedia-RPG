@@ -14880,7 +14880,7 @@
         "mode": "RGB",
         "sha256": "95ab77f2681a5ecfebcc5fab12841ca3dae6cd034025328fb2afa8da1bc704c6"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W1-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -14894,10 +14894,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "1269b8e4e570dc88fb61b10b7b381af2505aca5c6ac74951512cc3c45ecac78d"
+      },
       "commit_sha": null
     },
     {
@@ -14909,10 +14916,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "54329812a1cd5333eafab315cddd283beb653d78f0ab481d0761a189120a5b12"
+      },
       "commit_sha": null
     },
     {
@@ -14957,7 +14971,7 @@
         "mode": "RGB",
         "sha256": "5ee3bf5a956531fd3e441754e02758690dc449be1d73131ff2b5542513be36fa"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W1-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -14971,10 +14985,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "327b27c801c3bbaea370a0d3684f4de5c87c0ec88b8011cd6a81ee3a021b4a0c"
+      },
       "commit_sha": null
     },
     {
@@ -14986,10 +15007,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "06c030a743812f0d30a7bd77d5900f3f7d3cd5ed8070679639254ec09d945359"
+      },
       "commit_sha": null
     },
     {
@@ -15001,10 +15029,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "3aa4f825d0b4818ed2325aff8aa43407c768c9cf1eb54c931d9c333b3e344815"
+      },
       "commit_sha": null
     },
     {
@@ -15049,7 +15084,7 @@
         "mode": "RGB",
         "sha256": "78ef4efb26bd99cc56b72cfc0f93f1787420a3d610e2761a52b94db2c3fd571c"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W2-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15063,10 +15098,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "4ab4ef6dfbcd719035010338430165040816f4363fbf0efc909265eb5b979260"
+      },
       "commit_sha": null
     },
     {
@@ -15078,10 +15120,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "af34e142d9484e9412a2371223f4a5ab53b1a5d17a706b59b101f2b73044c846"
+      },
       "commit_sha": null
     },
     {
@@ -15126,7 +15175,7 @@
         "mode": "RGB",
         "sha256": "24da53f9161b8cdc890e65fe4efe8558bbaba7a8e77386d600c93268305dcceb"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W2-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15140,10 +15189,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "eee75dda8892f6835f5ad5964212a71da23f32fc94582eec189b4e303293428d"
+      },
       "commit_sha": null
     },
     {
@@ -15155,10 +15211,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "b3f8b6cd52c0c1ce5197c9548bb7d2c24cdeee3dfda416c60681cea7d08c4b0a"
+      },
       "commit_sha": null
     },
     {
@@ -15170,10 +15233,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "e06ad484c37d4825d821ab39a581fcdd2235328d099588c3fe2e6f4367a176f2"
+      },
       "commit_sha": null
     },
     {
@@ -15185,10 +15255,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "12ce239185abdd4aa075f9853e73294d748d19578116015a5edb58985e9579c5"
+      },
       "commit_sha": null
     },
     {
@@ -15233,7 +15310,7 @@
         "mode": "RGB",
         "sha256": "6ebd4ed2e9fce1d0f3fd15e86f7e8bdacd4957bd2f0a77063f3dd1ccf35772fd"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W3-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15247,10 +15324,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "56aaf6fa993ef31bf4df54a91365ae37bc1468023dfe0fb7a19034a5aec019ef"
+      },
       "commit_sha": null
     },
     {
@@ -15262,10 +15346,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "619c1adb1fa87361e3d5fba7f6a34c7d7e7294b338e5ad3f389ecef80bbe34ed"
+      },
       "commit_sha": null
     },
     {
@@ -15310,7 +15401,7 @@
         "mode": "RGB",
         "sha256": "13aff5210b686a1bd68208285be7cbbb3c3398786e0f1acd721af63f0f852b39"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W3-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15324,10 +15415,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "a6b757b86888c113069cd5458dff94d2244a72fe2d90d90ab0349ff4001d9405"
+      },
       "commit_sha": null
     },
     {
@@ -15339,10 +15437,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "86c889aada7fcd7220eecf27e8a099d642941bcdeba86c09d719db5d01718b01"
+      },
       "commit_sha": null
     },
     {
@@ -15354,10 +15459,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "3daea7894419f30db9e71121614df59c122485558fd886742ad1a3d024a6329e"
+      },
       "commit_sha": null
     },
     {
@@ -15402,7 +15514,7 @@
         "mode": "RGB",
         "sha256": "b8a7bbd65397ab29aeb6ad0aec6dfed715dbe543fbd5302aac9b28c428ac30e8"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W4-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15416,10 +15528,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "62647ad863191aa65c216b1f06cd96cea1ced5a21c9da63c341e931d56ec8052"
+      },
       "commit_sha": null
     },
     {
@@ -15431,10 +15550,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "7a82a556c71df1860b579b9b931290acaba79c64a81a9277c559400dac87d23d"
+      },
       "commit_sha": null
     },
     {
@@ -15446,10 +15572,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "8e068220c3fa71588c0312d1211cafa4e0db76051278ad9e30242d846fbeb56b"
+      },
       "commit_sha": null
     },
     {
@@ -15494,7 +15627,7 @@
         "mode": "RGB",
         "sha256": "d5cd6ec80ce98f4dba10ed4d2e22596246c90f1f465853c978f6b428d7d53932"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W4-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15508,10 +15641,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "6b8f4dac5b8d9efd03b9d65f7f32f95752079995c86b11a6f51d38ecb6ec0ca3"
+      },
       "commit_sha": null
     },
     {
@@ -15523,10 +15663,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "a17e746e87c91c0275d057a17866ff8609ac351037b1423c5d5a554b568ecf31"
+      },
       "commit_sha": null
     },
     {
@@ -15538,10 +15685,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "ef53dcfa88e7b5d4386d77b7808d06b6d4c8eb6507097392497f6956a91c91c6"
+      },
       "commit_sha": null
     },
     {
@@ -15553,10 +15707,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "b623abc941bba8b88daf4c65d3edb0cac6538a4e5324fc63b97388a42b9252d1"
+      },
       "commit_sha": null
     },
     {
@@ -15601,7 +15762,7 @@
         "mode": "RGB",
         "sha256": "63c3e3b62135dfae8697ed474c36239c0ae6244657341556b55b187deab632b6"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W5-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15615,10 +15776,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "c45162b2f8566e2947a2b1e5164bf137ccce1a013169f0ae43d8202ac8d945b0"
+      },
       "commit_sha": null
     },
     {
@@ -15630,10 +15798,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "325f5fca66ed634f33de2e4e24144650b707b63c253c7ddbfdc00bae6ea0c577"
+      },
       "commit_sha": null
     },
     {
@@ -15678,7 +15853,7 @@
         "mode": "RGB",
         "sha256": "1b6c5ed6984567c4996072513887845cc02d8cb086d7f7904b78345c4fd36ad1"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-W5-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15692,10 +15867,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "4fbb0b5f519258815c33782d599d56124362c7d20afb4c4727949c59a0171447"
+      },
       "commit_sha": null
     },
     {
@@ -15707,10 +15889,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "6cdeb1b9707bd147e19533a9f68c6c07170cbef9a8b305a0f11146fd240dd0da"
+      },
       "commit_sha": null
     },
     {
@@ -15722,10 +15911,17 @@
       "rarity": null,
       "priority": "P2",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "bd58654dc882bf1b1d67cf9bf1ac70cdf0f67d9661062704545c8c65bdc3e176"
+      },
       "commit_sha": null
     },
     {
@@ -15770,7 +15966,7 @@
         "mode": "RGB",
         "sha256": "2f661318d69617881ddc8a9dec03b9b8c924102bcc697f578f1463ee87b7a75b"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E1-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15862,7 +16058,7 @@
         "mode": "RGB",
         "sha256": "d1486d030458f6661c13ce3ccc05044d95156ceb32a4006f6d25ed34e7c11e30"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E1-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -15984,7 +16180,7 @@
         "mode": "RGB",
         "sha256": "5a5b447256a41c0dd384b4573b2da62af1f7e30f93b2ba51e96778d74fe84592"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E2-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16076,7 +16272,7 @@
         "mode": "RGB",
         "sha256": "80c9fcfa13579754d45a68673863db629a8887419ba15e821ee429fe940ee86d"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E2-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16198,7 +16394,7 @@
         "mode": "RGB",
         "sha256": "2bf903526b495cfd88d4b911940145b179b3f27ff6c0959e103701e7b853db0b"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E3-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16290,7 +16486,7 @@
         "mode": "RGB",
         "sha256": "5efec122c2c51fcb9965e183bfba94d9932859ab72c8d889c6a347c9b738e7da"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E3-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16397,7 +16593,7 @@
         "mode": "RGB",
         "sha256": "b9529d1cf132263e3d39506ccbbb3faba7a27964caedc7d07e3ab10ebfc77154"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E4-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16474,7 +16670,7 @@
         "mode": "RGB",
         "sha256": "00e65ddb75c16bfb1b7ac79eeb024b11a7e99bbb7efce469d86dd4640eddf602"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-E4-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16566,7 +16762,7 @@
         "mode": "RGB",
         "sha256": "ad5135efe8e3d589d91d618c23e1d8d97956bc887d544d122a4d4b43c1f688ea"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S1-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16643,7 +16839,7 @@
         "mode": "RGB",
         "sha256": "e02a884155a7cb17d4b104b135f4eef568006d27838f96d2bf909278f4bd4818"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S1-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16735,7 +16931,7 @@
         "mode": "RGB",
         "sha256": "b52177cd1f60c6b8e4cf477636c0579208da75423f04d0812139a65f20c9acb9"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S2-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16827,7 +17023,7 @@
         "mode": "RGB",
         "sha256": "eddf74af4ae49931133b9ae37d159cdedc74999be4623437150169ba97deaf1c"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S2-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -16934,7 +17130,7 @@
         "mode": "RGB",
         "sha256": "dd310989fc00e4e71b3a4b7329297db0848b08ed9c5f88a0300ec68bfe96b179"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S3-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -17011,7 +17207,7 @@
         "mode": "RGB",
         "sha256": "e628d5b9615a504fea9c01875ee6d72f45b6f9d5622aaf8b9a206698dfe60133"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S3-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -17118,7 +17314,7 @@
         "mode": "RGB",
         "sha256": "55df1cc1ad2ce7a261d50a17b40244d514e9bb53cd22503a7eb9632ab59b00e9"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S4-01-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"
@@ -17210,7 +17406,7 @@
         "mode": "RGB",
         "sha256": "a507f1bede669b1c1a7a7cf54124cf1292ee55ca84dd5593bea075cfac423b57"
       },
-      "commit_sha": null,
+      "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
       "reuse_source_id": "IMG-DUN-S4-02-ENTRANCE",
       "reuse_reason": "same_physical_dungeon_entrance",
       "visual_verification": "Unmodified copy of individually reviewed canonical entrance"

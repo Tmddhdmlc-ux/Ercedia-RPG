@@ -57,7 +57,7 @@
   ],
   "pending_ids": [],
   "failures": [],
-  "commit_sha": null,
+  "commit_sha": "3eab8b434367fc58a6801f86f9612f42321e52ef",
   "visual_verification": "Source entrances individually reviewed; exact same physical dungeon entry, unchanged image reuse.",
   "visual_verified": true,
   "visual_method": "Final generated scenes inspected individually and PNG integrity checked."
