@@ -1,0 +1,158 @@
+[
+  {
+    "key": "straight_sword",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-f3431378-622c-4534-a197-1d6bb25362e0.png",
+    "prompt": "Use case: stylized-concept. Asset: reusable straight-sword equipment template and Ercedia RPG item ER-EQ-001 '수습의 낡은 철검', lower-tier novice worn iron sword. Draw ONE complete simple medieval straight sword, diagonal with point toward upper right and grip lower left, centered in a square on genuine transparency, ample empty margins 10%. Dark-gray old iron double-edge blade, some light wear and small nicks, simple straight iron crossguard, worn brown leather-wrapped grip and modest round iron pommel. It is a functional beginner sword, not elaborate or magical. Consistent high-quality 2D hand-drawn anime RPG inventory illustration, crisp dark outlines and nuanced flat/painterly shading, upper-left lighting; match refined anime knight equipment, no realistic photographic texture, no 3D rendering. Readable blade and hilt even at 48px. NO rarity frame, NO border, NO halo, NO floating magic or writing, NO background, NO hands or character, NO sheath, NO text or watermark. All parts completely visible.",
+    "template_path": "assets/items/templates/equipment/straight_sword.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        41,
+        38,
+        470,
+        474
+      ],
+      "sha256": "7389dc8893105fc68d717dc0dfbc8bdca0f3575a8d288092834af42dabb71238"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "longsword",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG reusable long-sword equipment template for silver longsword and river escort sword family. ONE complete elegant functional medieval long sword, blade diagonally upward-right, handle lower-left. Slender straight double-edged silver steel blade with long fuller, simple swept slightly arched guard, navy blue leather grip and small oval silver pommel. Modest craft appropriate for low through middle rank variants, not a crown jewel. High-quality 2D anime fantasy inventory illustration, crisp dark contours, restrained painterly/cel shading, upper-left illumination, clearly recognizable at 48 pixels. Match refined silver knight armor and navy cloak aesthetic. Genuine transparent square background, center object, full blade tip, grip and pommel visible with ample margin. No rarity frame, border, outside halo, shadow, letters or pseudo runes. No hands or human, no sheath, no watermark, no 3D realism.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-027bb800-919b-4a22-9628-7c50e85a45ab.png",
+    "template_path": "assets/items/templates/equipment/longsword.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        42,
+        38,
+        469,
+        474
+      ],
+      "sha256": "324cc0f9169dedd9cf07a69aab9e18715496905c8e131599139c189c06d4cf85"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "rapier",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG reusable rapier equipment template for '매의 송곳검' and '바람결 세검' families. ONE complete slender medieval fantasy rapier, sharp long narrow silver blade, compact elegant swept steel basket guard with two curved loops, plain dark brown leather grip, small tear-shaped pommel. Diagonal point upper-right, hilt lower-left. High-quality hand-drawn 2D anime RPG inventory art, crisp contours, restrained cel/painterly shading, upper-left light, functional low-to-mid craft rather than lavish royal treasure. Distinct unmistakable thin thrusting sword silhouette, readable at tiny icon size. Genuinely transparent square background, fully isolated centered, generous padding, all blade/guard/grip visible. No rarity border, frame, halo, text, pseudo writing, outside cast shadow, hands, sheath or watermark. Not photo or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-70844f06-563e-4346-8d16-1d4cbef84f68.png",
+    "template_path": "assets/items/templates/equipment/rapier.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        40,
+        38,
+        474,
+        473
+      ],
+      "sha256": "35f92cf625ca076641bbb369a34fad9dc087b34a43757e487d5ebe6483a1b3cf"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "greatsword",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG reusable greatsword equipment template for '철산 대검' and frontier guard families. ONE complete medieval two-handed greatsword with unmistakably broad straight double-edged forged steel blade, thick central ridge, large strong straight crossguard, long brown leather two-hand grip and compact square iron pommel. Functional and weighty without impossible oversize or fantasy spikes. Diagonal blade tip upper-right, handle lower-left. 2D anime fantasy inventory illustration, clear dark line art, muted gray steel, restrained cel/painterly shading, upper-left light. Full item visible, genuinely transparent square background, centered with 10 percent margin, readable at 48px. No rarity border/frame, no halo/glow, no text, no runes, no hands, no scabbard, no drop shadow, no watermark, not photorealism or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5c705a13-578f-47b4-8de2-44f9b11052fc.png",
+    "template_path": "assets/items/templates/equipment/greatsword.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        54,
+        47,
+        474,
+        465
+      ],
+      "sha256": "77f235b42e75bac6681c79e1e07ba9dbc777a22aa977dcb85e7e45587021078a"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "curved_sword",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG reusable curved sword equipment template, for whirl-wind/seagull/sunset blade families. ONE complete medieval fantasy curved saber with a single gently sweeping silver-gray cutting edge, curved blade tapering to upper-right point, short plain arched iron crossguard, dark brown leather handle, simple brass-capped pommel at lower-left. No katana, not culturally Japanese, rather a restrained medieval maritime curved sword. Clear wide crescent-like blade silhouette distinct from straight sword. High-quality 2D anime RPG inventory illustration, crisp dark drawn contours, restrained cel/painterly shading, top-left lighting. Centered on genuinely transparent square background with generous margins, whole sword visible. No rarity frame, border, floating halo or glow, no runes/words, no hand or sheath, no shadow or watermark, no photorealism or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-4058a171-c22b-4bb2-8d08-a5d61c8be8dc.png",
+    "template_path": "assets/items/templates/equipment/curved_sword.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        39,
+        44,
+        474,
+        467
+      ],
+      "sha256": "76e19113588f451f442fd7c643f2cb796490684588337377753979f8c329cd03"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "ceremonial_sword",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG reusable ceremonial sword equipment template for '왕도 의장검' and '장미 문양검' family. ONE complete medieval ceremonial straight sword, silver double-edged blade, tasteful brass and silver curved crossguard with three small petal-shaped metal flourishes, restrained engraved rose medallion at guard center, navy leather grip, rounded modest brass pommel. Elaborate enough to distinguish ceremonial design from field swords but not an epic relic. Blade tip upper-right, grip lower-left diagonal. 2D hand-drawn anime fantasy RPG inventory illustration, crisp dark contours, nuanced cel/painterly shading, top-left lighting, no photographic or 3D realism. Genuine transparent square background, centered safe margins, entire blade and hilt visible, clear tiny-size silhouette. No rarity frame, outside aura, border, glow, writing or letters; no hands, sheath, drop shadow or watermark.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-676e0d02-9356-40dd-bcb9-53466d78edd6.png",
+    "template_path": "assets/items/templates/equipment/ceremonial_sword.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        38,
+        38,
+        474,
+        474
+      ],
+      "sha256": "ac975d0b50c19bb4dd74e7a9438702bed4b02e9759185d055a5f0603c5de8852"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  }
+]

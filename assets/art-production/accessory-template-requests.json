@@ -1,0 +1,158 @@
+[
+  {
+    "key": "ring",
+    "prompt": "Use case: stylized-concept. Ercedia RPG ring accessory template for iron ring, wave-glass ring, quiet black-stone ring families. ONE medieval ring shown in three-quarter view, modest broad silver-gray iron band with subtle wear and a compact oval muted blue-gray stone in a plain four-prong bezel. Band opening clearly visible, clear sturdy ring silhouette, practical low-to-middle craft, no engraving letters or national emblems. Hand-drawn high-quality 2D anime RPG inventory art, crisp dark contours, cel/painterly metal and gem shading, upper-left lighting. Genuinely transparent square background, centered large safe margin, complete ring visible. No rarity border or frame, no outside aura/glow, no text/runes, no hand/body, no drop shadow or watermark, not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c55996f7-7613-428e-a386-c91e53e1f47c.png",
+    "template_path": "assets/items/templates/equipment/ring.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        102,
+        72,
+        450,
+        411
+      ],
+      "sha256": "cf5a87c80ecfbc549154b82a0e34ed740fa6f8aa55a09d36ff8fa13c76b23ab2"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "necklace",
+    "prompt": "Use case: stylized-concept. Ercedia RPG necklace accessory template for '달빛 목걸이' family. ONE complete medieval silver necklace, slender oval loop of linked silver chain arranged naturally with a small pale silver crescent pendant at bottom center and one modest blue-gray bead, clear distinction between complete necklace chain and standalone pendant. Modest craft, no deity/national insignia. Three-quarter slight view, readable silhouette and clean negative space inside chain. High quality hand-drawn 2D anime RPG inventory illustration, crisp contours, subtle cel/painterly metallic shading, upper-left light. Genuinely transparent square background, centered complete object with ample safe margins. No rarity frame/border, halo/glow, letters/runes, human/neck, cast shadow or watermark. Not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-6a8ddc90-d9f1-4f13-9072-ada66181269f.png",
+    "template_path": "assets/items/templates/equipment/necklace.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        47,
+        39,
+        455,
+        474
+      ],
+      "sha256": "28398786b90cdc7b9d02ce14796a78a51e1efd0d4012f1a0070efdd0d63bb7f4"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "pendant",
+    "prompt": "Use case: stylized-concept. Ercedia RPG pendant accessory template for '호박 펜던트', '별가루 펜던트' families. ONE standalone medieval pendant without necklace chain, warm amber oval polished translucent stone in a simple aged silver bezel, short metal bail at top, modest leaf-like geometric metal clasps around stone. Front three-quarter view, compact readable teardrop/oval silhouette, the gemstone is main recognizable subject. Fine craft but practical early/mid-tier item, no deity/national heraldry. Hand-drawn high-quality 2D anime RPG inventory art, crisp contours, restrained cel/painterly shading, upper-left light, no realistic 3D render. Genuine transparent square background with ample padding and full object visible. No rarity frame/border, no surrounding aura or external glow, no text/runes, no human/hands, no cast shadow/watermark.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-7b08e963-ff7d-488b-aa5a-70fb4eb76eb6.png",
+    "template_path": "assets/items/templates/equipment/pendant.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        145,
+        58,
+        447,
+        448
+      ],
+      "sha256": "b416718d89f0077bd913dd2b547b180039c562f8cfa2bc50df01b7792d0e3b19"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "talisman",
+    "prompt": "Use case: stylized-concept. Ercedia RPG talisman accessory template for '여행자의 부적', '매듭 부적', '호위 인장' families. ONE small medieval travel talisman: flat rounded dark wooden medallion with a simple engraved interlaced knot design (decorative, no writing), modest aged brass rim, short woven brown cord loop tied at top and two short cord ends below. Clear organic craft silhouette distinctly unlike gemstone pendant or metal ring. No religious deity emblem or national heraldry. High-quality 2D hand-drawn anime RPG inventory illustration, crisp dark outlines, restrained cel/painterly wood/cord shading, top-left light. Genuinely transparent square, centered with generous margins, full object visible. No rarity border/frame, no aura/halo/glow, no letters/runes/text, no hand/body, no external cast shadow or watermark, no photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-4a8817fe-2fef-4170-b686-2a9a81df0e88.png",
+    "template_path": "assets/items/templates/equipment/talisman.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        140,
+        39,
+        427,
+        459
+      ],
+      "sha256": "be81039565707b81ec285ae269a75493e99295ea5607da7c372433e445c0e6c5"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "earrings",
+    "prompt": "Use case: stylized-concept. Ercedia RPG earring accessory template for '은방울 귀걸이' family. ONE matched pair of small medieval silver bell earrings, each with an elegant hook, simple silver loop and round bell-shaped drop, one slightly behind the other so pair is readable; restrained small pale blue-gray bead above each bell. Clear polished silver material and compact paired silhouette, modest everyday fantasy craft, no national/divine emblem. High-quality hand-drawn 2D anime RPG inventory illustration, crisp contours and subtle cel/painterly metallic shading, upper-left light. Genuinely transparent square background, centered pair with ample empty padding, all parts visible. No rarity frame/border, halo/glow, letters/runes, human ears/hands or person, no cast shadow/watermark, not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-531b4d79-5f9a-426b-8b68-9c9c0dee0f75.png",
+    "template_path": "assets/items/templates/equipment/earrings.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        55,
+        71,
+        443,
+        408
+      ],
+      "sha256": "509abee8786082bb4052bb8620eab274b8a91d511d40502f128f031554e453ca"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "mana_ornament",
+    "prompt": "Stylized concept art inventory icon for Ercedia medieval fantasy RPG. A single wearable mana crystal ornament: a compact aged silver and warm brass circular brooch with four subtle compass-like points and a central faceted pale blue crystal, small mechanical setting, solid physical object, no floating magic or aura. Elegant modest medieval craftsmanship. Hand-drawn 2D anime fantasy game art, crisp readable dark outlines and painterly cel shading, upper-left light, restrained colors. Object fills most of square frame with generous empty padding, isolated on true transparent background. No rarity border, no frame, no letters, no numbers, no text, no watermark, no person, no photorealism, no 3D render.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-77e8a96f-fb12-4f95-85d6-23bd5e65ede3.png",
+    "template_path": "assets/items/templates/equipment/mana_ornament.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        48,
+        38,
+        468,
+        460
+      ],
+      "sha256": "0dd54b123caa3d5f83dbee59f2851869b1ceb332e771536856dc042a4e4f08f1"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  }
+]

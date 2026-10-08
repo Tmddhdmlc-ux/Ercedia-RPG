@@ -40,7 +40,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/W1/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W1"
     },

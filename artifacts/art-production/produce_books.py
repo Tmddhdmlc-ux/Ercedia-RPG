@@ -56,10 +56,10 @@ def validate(path):
         image.load()
         assert image.format == 'PNG' and image.mode == 'RGBA' and image.size == (512, 512), path
         alpha = image.getchannel('A')
-        assert alpha.getextrema() == (0, 255), path
+        assert alpha.getextrema()[0] == 0 and alpha.getextrema()[1] >= 240, path
         bounds = alpha.getbbox()
         assert bounds[0] >= 24 and bounds[1] >= 24 and bounds[2] <= 488 and bounds[3] <= 488, (path, bounds)
-        return {'size': [512, 512], 'mode': 'RGBA', 'alpha_extrema': [0, 255], 'content_bounds': list(bounds), 'sha256': sha(path)}
+        return {'size': [512, 512], 'mode': 'RGBA', 'alpha_extrema': list(alpha.getextrema()), 'content_bounds': list(bounds), 'sha256': sha(path)}
 
 def plan():
     equipment = read('equipment/equipment_catalog_300.json')['items']

@@ -1,0 +1,158 @@
+[
+  {
+    "key": "wood_staff",
+    "prompt": "Use case: stylized-concept. Asset: Ercedia RPG wooden staff template for '버드나무 지팡이', '서리나무 지팡이' families. ONE complete straight slender medieval wizard walking staff of warm willow wood, subtle grain, rounded fork-like carved wooden head with small restrained pale aqua stone held between wooden prongs, brown leather grip wrapping near lower part, no large mechanical fittings. Diagonal head upper-right and base lower-left, full shaft visible. Simple functional low/mid fantasy staff, clearly wooden. High-quality 2D anime inventory illustration, crisp dark contours, nuanced cel/painterly shading, upper-left light, not photorealistic or 3D. Genuinely transparent square background, isolated centered with safe margins. No rarity frame/border, no halo or outside magic glow, no letters, no pseudo runes, no hands, no scene, no drop shadow or watermark.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-64c417ba-6c3a-4b6d-bc36-d298c89c3def.png",
+    "template_path": "assets/items/templates/equipment/wood_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        46,
+        38,
+        460,
+        466
+      ],
+      "sha256": "b1fae5cc38b769aadc96d01254ef921cb83382a9b19829484e3bf6ea18d99285"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "metal_staff",
+    "prompt": "Use case: stylized-concept. Ercedia RPG equipment metal staff template for copper magic rod and bronze sorcerer staff families. ONE complete medieval mage staff of dark steel and aged copper, slender straight shaft with two modest ring bands and leather grip, head a simple hollow circular copper ring held in a fork and containing a small dull pale blue crystal. Mechanical simplicity, not futuristic gun or sci-fi antenna. Diagonal head upper-right, base lower-left. High-quality 2D hand-drawn anime RPG inventory illustration with crisp outlines, restrained cel/painterly shading, top-left illumination, clear readable metal silhouette. Centered genuine transparent square background, full object with ample padding. No rarity border/frame, no halo, no glow surrounding object, no writing or runes, no hand/person, no shadow, no watermark, not photo or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-234d7bfc-db66-4f7d-9f13-03691b6c3b01.png",
+    "template_path": "assets/items/templates/equipment/metal_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        43,
+        38,
+        468,
+        474
+      ],
+      "sha256": "b6e3b0b7c610cdd0383c42f803336df30d66b19b7539da5bf487e01b26a303c5"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "crystal_staff",
+    "prompt": "Use case: stylized-concept. Ercedia RPG crystal staff equipment template for '유리 심봉', '수정 고리봉', '이슬 방울봉' families. ONE complete slender medieval fantasy staff with a silver-gray metal shaft, modest faceted pale cyan crystal head held in a simple silver three-prong cup, two small matching crystal insets and dark navy hand grip. A practical magical crystal staff, not a futuristic weapon and not a spectacular epic relic. Head upper-right, base lower-left diagonal. High-quality 2D hand-drawn anime RPG inventory illustration, clean dark outlines, controlled pale blue crystal facets, restrained cel/painterly shading and upper-left light. Entire item visible, centered genuinely transparent square background with ample margins. No rarity border or frame, no outside halo/glow, no floating effects, no text/runes, no hands or character, no shadow/watermark, no photorealistic 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-7bd3362c-3f11-4110-ab70-cb768c830e99.png",
+    "template_path": "assets/items/templates/equipment/crystal_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        49,
+        39,
+        463,
+        474
+      ],
+      "sha256": "05c60818700a1bfc8c6727da600ff581adfd8145e17344982b1c85720d9efc1d"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "nature_staff",
+    "prompt": "Use case: stylized-concept. Ercedia RPG natural-wood staff template for '가시나무 봉' and '꽃잎 마도봉' families. ONE complete rustic medieval mage staff grown from dark warm brown twisting branchwood, distinct gnarled organic spiral head with a few small thorn protrusions and two modest muted green leaves, tiny pale clear bead nested within the spiral. Long uneven natural shaft, leather hand grip, organic silhouette distinctly unlike straight carved wood or metal. Head upper-right, base lower-left diagonal, whole item visible. High quality hand-drawn 2D anime RPG inventory art, clear dark outlines and nuanced cel/painterly shading, top-left light. Genuinely transparent square, centered with ample safe margins. No rarity border/frame, no aura, no surrounding glow, no lettering/runes, no hands/person, no cast shadow or watermark, not photorealistic or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-f49a41a2-3867-49b3-b3c5-7617d0d8fe79.png",
+    "template_path": "assets/items/templates/equipment/nature_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        54,
+        38,
+        462,
+        474
+      ],
+      "sha256": "6e01cb8af6129813372b3188a5b1f7ec6b19d9b7fdfe4cc97b878aa02df323d2"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "engineering_staff",
+    "prompt": "Use case: stylized-concept. Ercedia RPG magic-engineering staff equipment template for spiral rod and storm-cloud rod families. ONE complete medieval mage staff of dark steel, brushed brass fittings and restrained pale blue crystal. Head is a compact mechanical armillary assembly of two offset bronze hoops around a small crystal, shaft straight dark metal with simple visible collars and a navy leather hand grip. Plausible handcrafted medieval magitech, no wires, gun barrels, modern electronics or sci-fi machinery. Diagonal head upper-right, foot lower-left, whole staff visible. High-quality hand-drawn 2D anime RPG inventory illustration, crisp dark contours, controlled cel/painterly shading, upper-left light. Genuine transparent square with ample empty margins, centered, readable at 48px. No rarity frame/border, no halo, no external glow/effects, no letters or glyph writing, no hand/person, no ground shadow or watermark, no photorealistic or 3D render.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c19829a2-bed6-4845-828b-c0dc30bcc340.png",
+    "template_path": "assets/items/templates/equipment/engineering_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        45,
+        38,
+        467,
+        474
+      ],
+      "sha256": "e0d50d704679169f4ff5a9a3ab07a91e48c6d74f6370b9d3969c55c116d8e45a"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "relic_staff",
+    "prompt": "Use case: stylized-concept. Ercedia RPG ancient-relic staff equipment template for night-sky and star-marked mage rods. ONE complete old medieval fantasy wizard staff with a straight weathered dark bronze shaft, a compact carved silver crescent head holding a small dull ivory round stone, simple star-shaped metal inset below crescent, restrained archaic geometric carvings without any writing. Handcrafted antique tool, not a god's artifact and not an overpowered epic weapon. Head upper-right, base lower-left diagonal, complete object visible. High-quality 2D hand-drawn anime RPG inventory art, crisp outlines and subtle cel/painterly shading, upper-left lighting, not photo/3D. Genuine transparent square background, centered generous margins. No rarity border/frame, no halo, no external glow, no runes or letters, no person/hands, no cast shadow or watermark.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-2525712c-8b81-49b0-b6a5-58d5e620e2a8.png",
+    "template_path": "assets/items/templates/equipment/relic_staff.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        46,
+        38,
+        473,
+        469
+      ],
+      "sha256": "2a33672496e6d77a321bda5da61997c2766e70a2a185f9db308d7f2bc909266a"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  }
+]

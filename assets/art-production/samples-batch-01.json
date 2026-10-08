@@ -1,0 +1,15 @@
+{
+  "target_ids": [
+    "ER-EQ-001",
+    "MAT-001-1",
+    "IMG-W1-OVERVIEW"
+  ],
+  "completed_ids": [
+    "ER-EQ-001",
+    "MAT-001-1",
+    "IMG-W1-OVERVIEW"
+  ],
+  "pending_ids": [],
+  "failures": [],
+  "commit_sha": null
+}

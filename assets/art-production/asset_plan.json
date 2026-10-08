@@ -11,10 +11,27 @@
       "rarity": "하급",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "straight_sword",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          41,
+          38,
+          470,
+          474
+        ],
+        "sha256": "7389dc8893105fc68d717dc0dfbc8bdca0f3575a8d288092834af42dabb71238"
+      },
       "commit_sha": null
     },
     {
@@ -6132,7 +6149,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-022",
@@ -6164,7 +6181,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-023",
@@ -6196,7 +6213,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-024",
@@ -6228,7 +6245,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-025",
@@ -6260,7 +6277,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-026",
@@ -6292,7 +6309,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-027",
@@ -6324,7 +6341,7 @@
         ],
         "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-028",
@@ -6356,7 +6373,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-029",
@@ -6388,7 +6405,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-030",
@@ -6420,7 +6437,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-031",
@@ -6452,7 +6469,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-032",
@@ -6484,7 +6501,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-033",
@@ -6516,7 +6533,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-034",
@@ -6548,7 +6565,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-035",
@@ -6580,7 +6597,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-036",
@@ -6612,7 +6629,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-037",
@@ -6644,7 +6661,7 @@
         ],
         "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-038",
@@ -6676,7 +6693,7 @@
         ],
         "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-039",
@@ -6708,7 +6725,7 @@
         ],
         "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "BK-SPL-040",
@@ -6740,7 +6757,7 @@
         ],
         "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
       },
-      "commit_sha": null
+      "commit_sha": "9935e0e74f3e37f2bd0448efac950ef62520c01a"
     },
     {
       "id": "MAT-001-1",
@@ -6751,10 +6768,27 @@
       "rarity": null,
       "priority": null,
       "source_sha256": "b208b289fd95f5ba4eec3af828a02b8a80c7980dbf4ae99626a95fe336c86688",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "fur_pelt",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          50,
+          38,
+          471,
+          421
+        ],
+        "sha256": "56c2d1797d5a31a672ebd6048cb296e93e9bdf6097488d47b7cd38d3e6e35fe7"
+      },
       "commit_sha": null
     },
     {
@@ -7351,10 +7385,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "e0de48e8da3a000d087e63874b562609fbf35d7d657ab9eeb283a945bc422eee"
+      },
       "commit_sha": null
     },
     {

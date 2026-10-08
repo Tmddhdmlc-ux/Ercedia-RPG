@@ -1,0 +1,158 @@
+[
+  {
+    "key": "leather_armor",
+    "prompt": "Use case: stylized-concept. Ercedia RPG equipment leather armor template for '여행자 가죽옷' family. ONE complete empty medieval leather torso armor garment, no wearer: chest tunic of sturdy worn brown leather, simple broad leather shoulders, side straps and modest brass buckles, waist belt, short layered leather skirt panels, no helmet, no boots or weapon. Slight three-quarter facing front, compact symmetric-ish readable torso silhouette, rich but restrained seams/material shading, practical traveler gear. High quality 2D hand-drawn anime RPG inventory illustration with crisp contours and controlled cel/painterly shading, upper-left light. Genuine transparent square background, isolated centered with large safe margins, entire garment visible. No rarity border, frame, halo, glow, letters, text, people/mannequin, cast shadow or watermark. Not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-69ce74f1-457c-46dd-b67f-100fd87bab25.png",
+    "template_path": "assets/items/templates/equipment/leather_armor.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        88,
+        38,
+        465,
+        474
+      ],
+      "sha256": "9f2a1960f47a50dea278164419ab5e3cbb3ab00c3ff6e88dc744ac88d63731e6"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "light_plate",
+    "prompt": "Use case: stylized-concept. Ercedia RPG lightweight plate armor template for '수습 기사 갑옷', '협곡 경장', '황동 장식갑'. ONE complete empty medieval knight torso garment without wearer: light silver-gray steel breastplate over dark quilted gambeson, small articulated pauldrons, slim practical waist plates, leather fastening straps and restrained brass rivets. No helmet, weapon, boots or humanoid/mannequin body. Compact readable torso silhouette, slight three-quarter view, functional early knight equipment with modest ornament rather than heavy ornate epic armor. High quality hand-drawn 2D anime RPG inventory illustration, crisp dark outlines, nuanced cel/painterly shading, upper-left lighting. Genuine transparent square background, centered with safe margin, full garment visible. No rarity border/frame, no halo/glow, no insignia or text, no shadow/watermark, not photo or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-9eb77958-8bfe-424f-96a2-74d9d889dd3c.png",
+    "template_path": "assets/items/templates/equipment/light_plate.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        70,
+        38,
+        451,
+        452
+      ],
+      "sha256": "cddc2658556d595da732012632405cf39b3263389628848f0cc7689f66162018"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "heavy_plate",
+    "prompt": "Use case: stylized-concept. Ercedia RPG heavy plate armor template for '근위병 철갑', '은빛 수호복' families. ONE complete empty medieval heavy knight torso armor without wearer, broad thick dark silver steel breastplate, substantial layered shoulder pauldrons, raised protective collar, riveted waist and heavy segmented tassets, leather straps and restrained metal trim. No helmet, boots, weapon, mannequin or person. Massive protective silhouette clearly distinct from light plate, slight three-quarter front view, practical well-made guard armor without spikes or invented national heraldry. High quality hand-drawn 2D anime RPG item illustration, crisp outlines, cel/painterly steel shading, upper-left light, readable at 48px. Genuine transparent square, centered with generous margins and full armor visible. No rarity border/frame, halo, outside glow, writing, text, cast shadow or watermark. Not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-61dc9d46-58cf-4b4e-9bb1-16b5ea5c2125.png",
+    "template_path": "assets/items/templates/equipment/heavy_plate.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        38,
+        42,
+        472,
+        470
+      ],
+      "sha256": "c1216ba288bc6e92fa0e954bca5a647262153d0ae30649631a233d399d0a4da1"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "robe",
+    "prompt": "Use case: stylized-concept. Ercedia RPG mage robe armor template for '마법학도 로브', '청류 술사복' families. ONE complete empty medieval mage robe garment, no wearer: long deep navy cloth robe with hood folded back, wide but controlled sleeves, pale silver stitched trim with simple geometric ornament and leather waist sash, layered cloth front opening, no feet/hands or mannequin. Practical student/scholar mage clothing, graceful fabric silhouette clearly unlike plate armor, not ornate royal regalia. Three-quarter front presentation. High quality 2D hand-drawn anime RPG inventory illustration, crisp contours, subtle cel/painterly folds, upper-left light. Genuine transparent square background, fully isolated centered with margin, entire robe visible. No rarity border/frame, no aura, no outside glow, no readable or pseudo writing, no books/staff/person, no drop shadow/watermark, not photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-93085c5c-73a7-4ebf-987f-0013a4c5d5d5.png",
+    "template_path": "assets/items/templates/equipment/robe.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        113,
+        38,
+        398,
+        474
+      ],
+      "sha256": "af8259f2bde266fe4c77ea1a7c17c2d1663812d122828b0bf5df56b04a31ca7d"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "combat_clothes",
+    "prompt": "Use case: stylized-concept. Ercedia RPG combat clothing armor template for '대륙 모험복', '항해자 방호복', '변경 감시복'. ONE complete empty medieval adventurer torso outfit without wearer, practical short charcoal and navy quilted jacket, reinforced dark brown leather shoulder panels and forearm cuffs, simple belts and buckles, short split waist flaps. Cloth-and-leather mobility rather than heavy plate or long robe. No head, hands, pants/boots, weapon or mannequin. Slight three-quarter front view, controlled simple silhouette readable at tiny inventory size. High quality 2D hand-drawn anime RPG item illustration, crisp dark line art, subtle cel/painterly material shading, upper-left illumination. Genuinely transparent square, centered with safe padding, complete outfit visible. No rarity border/frame, aura/glow, letters, icons or text, no outside cast shadow, no watermark, no photo/3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c0427cde-688c-4832-95a9-67335ff29bdc.png",
+    "template_path": "assets/items/templates/equipment/combat_clothes.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        38,
+        39,
+        430,
+        465
+      ],
+      "sha256": "0fa9dda253ebe18a937805545266e2899e3acab22aa981b4cbf2e7f96bf0905b"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  },
+  {
+    "key": "ritual_armor",
+    "prompt": "Use case: stylized-concept. Ercedia RPG ritual defense clothing armor template. ONE complete empty medieval ceremonial protective mage vestment, without wearer: a fitted dark blue cloth surcoat with modest pale silver breast/shoulder reinforcements, short layered capelet, tasteful silver geometric embroidery, simple waist sash and layered knee-length split front panels. Clearly hybrid ritual defense garment rather than long flowing robe, leather traveler armor or heavy plate. Restrained scholar ceremonial craft, no divine or national insignia, no new lore. Three-quarter front view. High-quality hand-drawn 2D anime RPG inventory illustration, crisp dark lines and controlled cel/painterly shading, upper-left lighting. Genuine transparent square with centered full garment and ample margin. No rarity border/frame, no glow/halo, no words/runes, no human/mannequin, no weapon, no outside shadow/watermark, no photo or 3D.",
+    "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-79bf4f83-5f20-4bed-b90a-f4f57d6ae930.png",
+    "template_path": "assets/items/templates/equipment/ritual_armor.png",
+    "file_checks": {
+      "size": [
+        512,
+        512
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "content_bounds": [
+        122,
+        42,
+        397,
+        459
+      ],
+      "sha256": "d18708b0853b2ecb23cde7f5ca494dca059b64cc3f1242033d9e3f59377ab03e"
+    },
+    "visual_verified": true,
+    "visual_check_method": "Complete source and final 175px / 48px contact sheet inspected; silhouette and transparency verified."
+  }
+]
