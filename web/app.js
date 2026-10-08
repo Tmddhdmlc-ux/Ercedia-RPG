@@ -1,6 +1,7 @@
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
 import {mapData} from './map-data.js';
+import {mountPlayer} from './player-ui.js';
 const $=id=>document.getElementById(id);
 const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
@@ -61,7 +62,7 @@ for(const expression of Object.keys(labels)){
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
-function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.'; }
+function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';$('player-save-status').textContent='변경사항이 있습니다. 저장해주세요.'; }
 function renderAppearance(){
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
@@ -93,10 +94,11 @@ function renderLayout(){
 }
 function renderDialogue(){const d=dialogues[state.index];$('speaker').textContent=d[0];$('emotion').textContent=d[1];$('line').textContent=d[2];$('count').textContent=`0${state.index+1} / 04`;$('previous').disabled=state.index===0;$('next').disabled=state.index===3;$('stage').setAttribute('aria-label',state.index===3?'마지막 대사':'장면을 눌러 다음 대사 보기');}
 function advance(delta){const next=Math.max(0,Math.min(3,state.index+delta));if(next===state.index)return;state.index=next;renderDialogue();dirty();}
-function switchTo(page){state.page=page;$('story').hidden=page!=='story';$('map-panel').hidden=page!=='map';for(const id of ['story','map']){const active=id===page;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}}
+function switchTo(page){state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}}
 function renderRegion(){const r=regions[state.region];$('region-title').textContent=r[0];$('region-description').textContent=r[1];document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});}
 document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;renderRegion();dirty();};el.addEventListener('click',select);el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
+$('status-tab').onclick=()=>{switchTo('status');dirty();};
 $('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
 $('stage').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
 document.querySelectorAll('[data-outfit]').forEach(btn=>btn.onclick=()=>{state.outfit=btn.dataset.outfit;renderAppearance();dirty();});
@@ -105,7 +107,9 @@ let frame=0;
 for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
 for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;renderAppearance();dirty();};
 $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
-$('save').onclick=()=>{try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 복장별 배치와 대화 진행을 이 브라우저에 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}};
+function saveGame(){try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';$('player-save-status').textContent='저장 완료 · 새로고침해도 유지됩니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';$('player-save-status').textContent='저장 실패 · 브라우저 저장 공간을 확인하세요.';}}
+$('save').onclick=saveGame;$('save-player').onclick=saveGame;
+mountPlayer(state,dirty);
 renderAppearance();renderDialogue();renderRegion();switchTo(state.page);
 
 const game=document.querySelector('.game');
