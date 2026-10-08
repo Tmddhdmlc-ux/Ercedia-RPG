@@ -6,10 +6,10 @@
   "role": "npc",
   "gender": "여성",
   "age_status": "성인, 세부 나이 미확정",
-  "affiliation": "솔브린 마을 (순찰 활동; 정식 국가 소속 미확정)",
+  "affiliation": "벨로아 왕국 엘름베르크 백작령 지방 경비조직 · 솔브린 마을 순찰",
   "home_location": "솔브린 마을",
-  "location_id": null,
-  "location_note": "솔브린 마을의 세계지도 좌표 및 어느 영주령 소속인지는 아직 확정되지 않음",
+  "location_id": "W3",
+  "location_note": "솔브린 마을은 벨로아 왕국 W3 엘름베르크 백작령의 마을. 세부 지도 픽셀 좌표는 미확정.",
   "rank": "베이직 나이트",
   "realm": "basic",
   "level": 18,
@@ -62,8 +62,9 @@
   "stat_status": "assigned_initial_balance_v1",
   "notes": "수치 능력치는 초기 밸런스 값. 베이직 나이트 경지/외형/소속은 기존 공개 설정 유지. 깨달음 수치·자동 경지 승급·하이퍼 능력 없음.",
   "duty": "솔브린 마을 순찰·주민 보호",
-  "registration_status": "unverified",
-  "registered_kingdom": null,
-  "official_title_status": "unverified_pending_national_registration",
-  "rank_note": "베이직 나이트는 현재 관찰된 전투 경지; 정식 기사 칭호는 국가 등록 확인 후 사용"
+  "registration_status": "registered",
+  "registered_kingdom": "벨로아",
+  "official_title_status": "licensed_knight",
+  "rank_note": "국가 공인 베이직 나이트. 왕실 근위기사단 소속이 아닌 W3 지방 순찰 기사.",
+  "registration_authority": "벨로아 왕국 기사 등록기관"
 }
