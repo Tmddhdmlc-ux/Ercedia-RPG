@@ -70,7 +70,7 @@ for(const expression of Object.keys(labels)){
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
-function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';$('player-save-status').textContent='변경사항이 있습니다. 저장해주세요.'; }
+function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.'; }
 function renderAppearance(){
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
@@ -135,9 +135,9 @@ let frame=0;
 for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
 for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;renderAppearance();dirty();};
 $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
-function saveGame(){try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';$('player-save-status').textContent='저장 완료 · 새로고침해도 유지됩니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';$('player-save-status').textContent='저장 실패 · 브라우저 저장 공간을 확인하세요.';}}
-$('save').onclick=saveGame;$('save-player').onclick=saveGame;
-mountPlayer(state,dirty);
+function saveGame(){try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
+$('save').onclick=saveGame;
+mountPlayer(state);
 renderAppearance();renderDialogue();renderRegion();switchTo(state.page);
 
 const game=document.querySelector('.game');
