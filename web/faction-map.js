@@ -33,7 +33,7 @@ export function mountFactionMap(state,{select}){
     const icon=document.createElementNS(ns,'text');icon.setAttribute('text-anchor','middle');icon.setAttribute('dy','.35em');icon.textContent=glyph;
     group.append(circle,icon);svg.append(group);
     const button=document.createElement('button');button.dataset.faction=p.id;
-    const title=document.createElement('b'),caption=document.createElement('span');title.textContent=p.name;caption.textContent=`${type} · ${p.leader||'대표 인물 미정'}`;button.append(title,caption);list.append(button);
+    const title=document.createElement('b'),caption=document.createElement('span'),organization=document.createElement('span');title.textContent=p.name;caption.textContent=`${type} · ${p.leader||'대표 인물 미정'}`;organization.textContent=p.group;organization.className='faction-card-group';button.append(title,caption,organization);list.append(button);
     for(const node of [group,button]){
       node.addEventListener('click',()=>{hide();select(p);});
       node.addEventListener('mouseenter',()=>show(p,group));node.addEventListener('mouseleave',hide);

@@ -81,6 +81,12 @@
 .inventory-categories{flex-wrap:wrap}.inventory-categories button,.inventory-heading button{font-size:15px}.inventory-heading>span{font-size:16px}.inventory-empty{font-size:17px}.inventory-note{font-size:14px}.inventory-slot small{font-size:14px}.item-icon{font-size:36px}.item-tooltip{width:340px}.item-tooltip>span,.item-tooltip small{font-size:14px}.item-tooltip h3{font-size:21px}.item-tooltip p{font-size:16px}.game.is-expanded .inventory-grid{max-width:1000px}.game.is-expanded .inventory-heading,.game.is-expanded .inventory-categories,.game.is-expanded .inventory-note{width:100%;max-width:1100px;margin-inline:auto}
 @media(max-width:600px){.tabs{gap:12px;padding-inline:12px}.tabs button{font-size:15px}.tabs #fullscreen{font-size:12px;padding:6px}.dialog p{font-size:18px}.game.is-expanded .dialog p{font-size:19px}.region-fields{grid-template-columns:90px minmax(0,1fr)}.name-setup-card{padding:20px}.name-setup h2{font-size:21px}.inventory-slot small{font-size:12px}}
 @media(max-height:600px) and (min-width:700px){.game.is-expanded .tabs{height:48px}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 92px)}.game.is-expanded .scene-choices{grid-template-columns:repeat(4,minmax(0,1fr))}.game.is-expanded .scene-choices button{font-size:14px;padding:6px 8px}.game.is-expanded .free-action-row textarea{height:54px;min-height:54px}.game.is-expanded .connection-row,.game.is-expanded .input-hint{margin-top:4px}}
+
+/* Map workspace: one large canvas, readable directory, selected information. */
+.map-guide{padding:10px 18px;font-size:16px;color:#edd3a1;border-bottom:1px solid var(--line);flex-shrink:0}.map-guide span{display:block;font-size:14px;color:#bdcbd3;margin-top:3px}.map-workspace{display:flex;flex-direction:column;min-height:0}.map-workspace>.map{height:clamp(360px,52vw,540px);flex:none;min-height:0;background:#102431}.map-sidebar{padding:18px;background:#13232e;min-width:0;scrollbar-width:thin}.map-sidebar .mapinfo{padding:0 0 18px;flex-direction:column;gap:14px;border-bottom:1px solid #ffffff24}.map-sidebar .region-info{max-height:none;overflow:visible;padding:0;width:100%}.map-sidebar .mapinfo h2{font-size:26px;line-height:1.4;color:#f4d99f}.map-sidebar .mapinfo p{font-size:17px;line-height:1.8}.map-sidebar .region-fields{font-size:17px;grid-template-columns:105px minmax(0,1fr);gap:10px 12px}.map-sidebar .region-note{font-size:14px}.map-list-tabs{display:flex;gap:8px;margin:18px 0 14px}.map-list-tabs button{flex:1;font-size:18px;padding:12px 8px}.map-list-tabs button[aria-pressed=true]{border-color:var(--gold);color:#f4d99f;background:#d6b77c18}.map-search-label{display:block;font-size:14px;color:#c4d1d8;margin-bottom:6px}.map-search{width:100%;padding:12px;font-size:17px;background:#0c1823;color:#f0f4f6;border:1px solid #ffffff38;border-radius:6px;margin-bottom:14px}.map-search::placeholder{color:#a4b7c2}.map-sidebar[data-list=locations] #faction-panel,.map-sidebar[data-list=factions] #map-detail-panel{display:none}.map-sidebar .map-detail-panel{padding:0;background:none;border:0}.map-sidebar .map-detail-list{display:flex;flex-direction:column;max-height:none;overflow:visible;gap:10px}.map-sidebar .map-detail-heading{font-size:17px;padding:4px 0 12px}.map-sidebar .map-detail-list button{padding:16px;text-align:left;min-height:86px;border:1px solid #ffffff30;background:#20323f;border-radius:8px}.map-sidebar .map-detail-list button:hover{border-color:#efd097;background:#2b414f}.map-sidebar .map-detail-list b{font-size:20px;font-weight:600;line-height:1.5;color:#edf3f6}.map-sidebar .map-detail-list span{display:block;font-size:17px;line-height:1.7;margin-top:5px;color:#c3d2db}.map-sidebar .map-detail-list .faction-card-group{font-size:15px;color:#f2d49c}.map-sidebar .map-detail-list button.selected{border:2px solid #ebcb8e;background:#d6b77c18}.map-list-empty{padding:18px 12px;border:1px dashed #ffffff38;border-radius:6px;font-size:17px;line-height:1.7;color:#c3d2db}.search-filtered{display:none!important}.map-sidebar #faction-empty{display:none}.map-regions button{font-size:17px;padding:10px 14px}.map-navigation>span{font-size:19px}.map-navigation button{font-size:16px}.faction-pin circle{r:var(--map-pin-radius,14px)}
+@media(min-width:1050px){.game.is-expanded #map-panel{overflow:hidden}.game.is-expanded .map-workspace{display:grid;grid-template-columns:minmax(0,1fr) clamp(360px,28vw,460px);flex:1;min-height:0;overflow:hidden}.game.is-expanded .map-workspace>.map{height:100%;min-height:0;flex:none}.game.is-expanded .map-sidebar{overflow-y:auto;height:100%;border-left:1px solid #ffffff26}.game.is-expanded .map-guide span{display:inline;margin-left:18px}.game.is-expanded .map-status{padding:8px 18px}}
+@media(max-width:1049px){.game.is-expanded .map-workspace{flex:none}.game.is-expanded .map-workspace>.map{height:55dvh;min-height:360px}.game.is-expanded #map-panel{overflow:auto;display:block}.map-sidebar .map-detail-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr))}}
+@media(max-width:600px){.map-guide{font-size:15px;padding:10px 12px}.map-sidebar{padding:14px}.map-sidebar .map-detail-list{grid-template-columns:1fr}.map-sidebar .map-detail-list b{font-size:19px}.map-sidebar .map-detail-list span{font-size:16px}.map-sidebar .mapinfo h2{font-size:24px}.map-regions button{font-size:15px}.map-list-tabs button{font-size:17px}}
 </style></head>
 <body>
 <main class="shell">
@@ -102,11 +108,18 @@
       <section id="map-panel" aria-label="세계지도 화면" hidden>
         <div class="map-navigation"><span id="map-breadcrumb">세계지도</span><button id="map-overview" disabled>← 전체 지도</button></div>
         <nav id="map-regions" class="map-regions" aria-label="확대할 지역 선택"></nav>
+        <p class="map-guide">지역 선택 → 지점 선택 → 인물·세력 정보 확인 <span>표식에 커서를 올리면 간단한 설명을 볼 수 있어요.</span></p>
+        <div class="map-workspace">
         <div id="map-container" class="map"><div id="map-sheet" class="map-sheet"><img id="world-map-image" class="world-map-image" alt="에르세디아 세계지도 · 지리 검토용 시안" draggable="false"><svg id="map-points" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-label="지도 지역과 지점 선택"></svg></div><div id="faction-tooltip" class="faction-tooltip" role="tooltip" hidden></div></div>
+        <aside id="map-sidebar" class="map-sidebar" data-list="locations" aria-label="지역 인물 및 세력 정보">
+        <div class="mapinfo"><div class="region-info"><span class="eyebrow">선택한 지역·거점</span><h2 id="region-title"></h2><p id="region-description"></p><dl id="region-fields" class="region-fields" hidden></dl><p id="region-note" class="region-note" hidden></p></div><button id="return">대화로 복귀 ↗</button></div>
+        <nav class="map-list-tabs" aria-label="지도 목록 종류"><button id="map-locations-tab" type="button" aria-pressed="true">지역·인물</button><button id="map-factions-tab" type="button" aria-pressed="false">세력·거점</button></nav>
+        <label class="map-search-label" for="map-search">현재 지역에서 찾기</label><input id="map-search" class="map-search" type="search" placeholder="지명, 인물 또는 세력 이름 검색" autocomplete="off">
+        <p id="map-list-empty" class="map-list-empty" hidden>선택한 지역에 표시할 항목이 없습니다.</p>
         <div id="map-detail-panel" class="map-detail-panel" hidden><div class="map-detail-heading"><span id="map-detail-title">세부 지점</span><small id="map-detail-count"></small></div><div id="map-detail-list" class="map-detail-list"></div></div>
         <div id="faction-panel" class="map-detail-panel" hidden><div class="map-detail-heading"><span>공개 세력 거점</span><small id="faction-count"></small></div><div id="faction-list" class="map-detail-list"></div><p id="faction-empty" hidden>이 권역에 등록된 공개 거점이 없습니다.</p></div>
+        </aside></div>
         <p id="map-status" class="map-status" role="status">지역명 또는 표식을 누르면 정보를 볼 수 있습니다. 지리와 국경은 검토용 시안입니다.</p>
-        <div class="mapinfo"><div class="region-info"><span class="eyebrow">선택한 지역</span><h2 id="region-title"></h2><p id="region-description"></p><dl id="region-fields" class="region-fields" hidden></dl><p id="region-note" class="region-note" hidden></p></div><button id="return">대화로 복귀 ↗</button></div>
       </section>
       <section id="status-panel" class="player-panel" aria-label="주인공 상태창" hidden>
         <div class="player-content">
@@ -364,8 +377,12 @@ function regionFrame(id){
 }
 function cameraTransform(frame,viewportWidth,viewportHeight){
   const scale=Math.min(viewportWidth/(frame.width*1536),viewportHeight/(frame.height*1024));
-  const x=(viewportWidth-frame.width*1536*scale)/2-frame.x*1536*scale;
-  const y=(viewportHeight-frame.height*1024*scale)/2-frame.y*1024*scale;
+  const centerX=(viewportWidth-frame.width*1536*scale)/2-frame.x*1536*scale;
+  const centerY=(viewportHeight-frame.height*1024*scale)/2-frame.y*1024*scale;
+  // Keep the focus inside the original image: never pan beyond an image edge.
+  const imageWidth=1536*scale,imageHeight=1024*scale;
+  const x=imageWidth<=viewportWidth?(viewportWidth-imageWidth)/2:Math.max(viewportWidth-imageWidth,Math.min(0,centerX));
+  const y=imageHeight<=viewportHeight?(viewportHeight-imageHeight)/2:Math.max(viewportHeight-imageHeight,Math.min(0,centerY));
   return {scale,x,y};
 }
 function viewForSelection(id){
@@ -1231,7 +1248,7 @@ function mountFactionMap(state,{select}){
     const icon=document.createElementNS(ns,'text');icon.setAttribute('text-anchor','middle');icon.setAttribute('dy','.35em');icon.textContent=glyph;
     group.append(circle,icon);svg.append(group);
     const button=document.createElement('button');button.dataset.faction=p.id;
-    const title=document.createElement('b'),caption=document.createElement('span');title.textContent=p.name;caption.textContent=`${type} · ${p.leader||'대표 인물 미정'}`;button.append(title,caption);list.append(button);
+    const title=document.createElement('b'),caption=document.createElement('span'),organization=document.createElement('span');title.textContent=p.name;caption.textContent=`${type} · ${p.leader||'대표 인물 미정'}`;organization.textContent=p.group;organization.className='faction-card-group';button.append(title,caption,organization);list.append(button);
     for(const node of [group,button]){
       node.addEventListener('click',()=>{hide();select(p);});
       node.addEventListener('mouseenter',()=>show(p,group));node.addEventListener('mouseleave',hide);
@@ -1434,7 +1451,26 @@ function updateMapCamera(){
   $('map-sheet').style.setProperty('--map-label-font',`${16/camera.scale}px`);
   $('map-sheet').style.setProperty('--map-label-stroke',`${2/camera.scale}px`);
   $('map-sheet').style.setProperty('--map-pin-font',`${20/camera.scale}px`);
+  $('map-sheet').style.setProperty('--map-pin-radius',`${16/camera.scale}px`);
 }
+let mapListView='';
+function filterMapLists(){
+  const term=$('map-search').value.trim().toLocaleLowerCase();
+  document.querySelectorAll('#map-sidebar .map-detail-list button').forEach(button=>button.classList.toggle('search-filtered',!button.textContent.toLocaleLowerCase().includes(term)));
+  const factions=$('map-sidebar').dataset.list==='factions',panel=$(factions?'faction-panel':'map-detail-panel');
+  const count=[...panel.querySelectorAll('button')].filter(button=>!button.hidden&&!button.classList.contains('search-filtered')).length;
+  $('map-list-empty').hidden=!panel.hidden&&count>0;
+  $('map-list-empty').textContent=state.mapView==='world'?'위쪽 지역 버튼이나 지도에서 지역을 선택하세요.':term?'검색한 이름과 일치하는 항목이 없습니다.':'선택한 지역에 등록된 항목이 없습니다.';
+}
+function setMapList(kind){
+  $('map-sidebar').dataset.list=kind;
+  $('map-locations-tab').setAttribute('aria-pressed',String(kind==='locations'));
+  $('map-factions-tab').setAttribute('aria-pressed',String(kind==='factions'));
+  filterMapLists();
+}
+$('map-search').addEventListener('input',filterMapLists);
+$('map-locations-tab').onclick=()=>setMapList('locations');
+$('map-factions-tab').onclick=()=>setMapList('factions');
 function renderMapView(){
   const overview=state.mapView==='world',view=mapViews.find(r=>r.id===state.mapView);
   $('map-breadcrumb').textContent=overview?'세계지도':`세계지도 › ${view.label}`;$('map-overview').disabled=overview;
@@ -1446,6 +1482,8 @@ function renderMapView(){
   document.querySelectorAll('.map-hit').forEach(el=>{const id=el.dataset.region;const visible=overview || mapData.locations.some(p=>p.id===id&&p.region===state.mapView);el.style.display=visible?'':'none';});
   document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
   factionUI.render();
+  if(mapListView!==state.mapView){mapListView=state.mapView;$('map-search').value='';}
+  setMapList(state.mapFaction?'factions':'locations');
   updateMapCamera();
 }
 function renderRegion(){

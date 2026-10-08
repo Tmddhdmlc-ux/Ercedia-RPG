@@ -134,7 +134,26 @@ function updateMapCamera(){
   $('map-sheet').style.setProperty('--map-label-font',`${16/camera.scale}px`);
   $('map-sheet').style.setProperty('--map-label-stroke',`${2/camera.scale}px`);
   $('map-sheet').style.setProperty('--map-pin-font',`${20/camera.scale}px`);
+  $('map-sheet').style.setProperty('--map-pin-radius',`${16/camera.scale}px`);
 }
+let mapListView='';
+function filterMapLists(){
+  const term=$('map-search').value.trim().toLocaleLowerCase();
+  document.querySelectorAll('#map-sidebar .map-detail-list button').forEach(button=>button.classList.toggle('search-filtered',!button.textContent.toLocaleLowerCase().includes(term)));
+  const factions=$('map-sidebar').dataset.list==='factions',panel=$(factions?'faction-panel':'map-detail-panel');
+  const count=[...panel.querySelectorAll('button')].filter(button=>!button.hidden&&!button.classList.contains('search-filtered')).length;
+  $('map-list-empty').hidden=!panel.hidden&&count>0;
+  $('map-list-empty').textContent=state.mapView==='world'?'위쪽 지역 버튼이나 지도에서 지역을 선택하세요.':term?'검색한 이름과 일치하는 항목이 없습니다.':'선택한 지역에 등록된 항목이 없습니다.';
+}
+function setMapList(kind){
+  $('map-sidebar').dataset.list=kind;
+  $('map-locations-tab').setAttribute('aria-pressed',String(kind==='locations'));
+  $('map-factions-tab').setAttribute('aria-pressed',String(kind==='factions'));
+  filterMapLists();
+}
+$('map-search').addEventListener('input',filterMapLists);
+$('map-locations-tab').onclick=()=>setMapList('locations');
+$('map-factions-tab').onclick=()=>setMapList('factions');
 function renderMapView(){
   const overview=state.mapView==='world',view=mapViews.find(r=>r.id===state.mapView);
   $('map-breadcrumb').textContent=overview?'세계지도':`세계지도 › ${view.label}`;$('map-overview').disabled=overview;
@@ -146,6 +165,8 @@ function renderMapView(){
   document.querySelectorAll('.map-hit').forEach(el=>{const id=el.dataset.region;const visible=overview || mapData.locations.some(p=>p.id===id&&p.region===state.mapView);el.style.display=visible?'':'none';});
   document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
   factionUI.render();
+  if(mapListView!==state.mapView){mapListView=state.mapView;$('map-search').value='';}
+  setMapList(state.mapFaction?'factions':'locations');
   updateMapCamera();
 }
 function renderRegion(){
