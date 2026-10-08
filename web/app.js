@@ -1,6 +1,7 @@
 import {KEY,defaultLayout,load} from './state.js';
+import {faceFit} from './face-fit.js';
 const $=id=>document.getElementById(id);
-const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@74bc3cf3099ddadcc73c34cea8c3cee0e1f0a361/';
+const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const standing='assets/characters/main/serin/standing/';
 // Only approved, registered assets belong here. Drafts and absent expressions are excluded.
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
@@ -12,6 +13,9 @@ try {restored=load(window.localStorage);} catch {restored=load({getItem(){throw 
 const state=restored.state;
 $('save-status').textContent=restored.message;
 const images=new Map();
+const faces=new Map();
+const faceLayer=document.createElement('div');
+faceLayer.className='face-layer';faceLayer.hidden=true;
 function trackImage(img,path,label) {
   const row=document.createElement('li');
   const status=document.createElement('span');
@@ -29,19 +33,28 @@ for (const [outfit,data] of Object.entries(outfits)) {
     images.set(outfit+':'+emotion,img);$('characters').append(img);trackImage(img,path,img.alt);
   }
 }
+$('characters').append(faceLayer);
+for(const expression of Object.keys(labels)){
+  const img=new Image();img.alt=`세린 공통 얼굴 · ${labels[expression]}`;img.className='face-image';img.draggable=false;img.hidden=true;
+  faces.set(expression,img);faceLayer.append(img);
+  trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
+}
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.'; }
 function renderAppearance(){
-  const found=!!outfits[state.outfit].expressions[state.expression];
-  const key=state.outfit+':'+(found?state.expression:'base');
+  const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
   $('background').hidden=!state.background;
   const current=images.get(key);
+  const face=faces.get(state.expression);
+  faceLayer.hidden=!state.character || current.dataset.status!=='ready';
+  for(const [id,img] of faces)img.hidden=id!==state.expression;
   const error=current.dataset.status==='error';
-  $('expression-status').textContent=error ? '캐릭터 이미지 로드 실패. 아래 원본 링크를 확인하세요.' : (found ? '기본 표정 표시 중 · 추가 표정 8종은 미등록입니다.' : `${labels[state.expression]} 표정은 미등록입니다. ${outfits[state.outfit].label} 기본형을 유지합니다.`);
-  if(current.dataset.status==='loading') $('expression-status').textContent+=' 이미지 로딩 중…';
+  $('expression-status').textContent=error ? '캐릭터 이미지 로드 실패. 아래 원본 링크를 확인하세요.' : `${outfits[state.outfit].label} · ${labels[state.expression]} 표정. 복장을 바꿔도 표정이 유지됩니다.`;
+  if(current.dataset.status==='loading' || face.dataset.status==='loading') $('expression-status').textContent+=' 이미지 로딩 중…';
+  if(face.dataset.status==='error') $('expression-status').textContent=`${labels[state.expression]} 얼굴 로드 실패. 복장 원본의 기본 얼굴을 유지합니다.`;
   if($('background').dataset.status==='error') $('expression-status').textContent+=' 배경 로드 실패.';
-  $('expression-status').classList.toggle('asset-alert',error || $('background').dataset.status==='error');
+  $('expression-status').classList.toggle('asset-alert',error || face.dataset.status==='error' || $('background').dataset.status==='error');
   document.querySelectorAll('[data-outfit]').forEach(btn=>{const selected=btn.dataset.outfit===state.outfit;btn.classList.toggle('selected',selected);btn.setAttribute('aria-pressed',String(selected));});
   $('expression').value=state.expression;
   $('show-background').checked=state.background;$('show-character').checked=state.character;
@@ -51,6 +64,11 @@ function renderLayout(){
   const l=state.layouts[state.outfit];
   for(const k of ['scale','x','y']) {$(k).value=l[k];$(k+'-value').textContent=l[k]+(k==='y'?'px':'%');}
   for(const [key,img] of images) if(key.startsWith(state.outfit+':')) {img.style.left=l.x+'%';img.style.top=l.y+'px';img.style.transform=`translateX(-50%) scale(${l.scale/100})`;}
+  faceLayer.style.left=l.x+'%';faceLayer.style.top=l.y+'px';faceLayer.style.transform=`translateX(-50%) scale(${l.scale/100})`;
+  const fit=faceFit[state.outfit];
+  faceLayer.style.setProperty('--face-left',`${fit.x/1024*100}%`);
+  faceLayer.style.setProperty('--face-top',`${fit.y/1536*100}%`);
+  faceLayer.style.setProperty('--face-size',`${fit.size/1024*100}%`);
 }
 function renderDialogue(){const d=dialogues[state.index];$('speaker').textContent=d[0];$('emotion').textContent=d[1];$('line').textContent=d[2];$('count').textContent=`0${state.index+1} / 04`;$('previous').disabled=state.index===0;$('next').disabled=state.index===3;$('stage').setAttribute('aria-label',state.index===3?'마지막 대사':'장면을 눌러 다음 대사 보기');}
 function advance(delta){const next=Math.max(0,Math.min(3,state.index+delta));if(next===state.index)return;state.index=next;renderDialogue();dirty();}
