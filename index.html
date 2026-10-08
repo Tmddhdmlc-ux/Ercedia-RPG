@@ -19,17 +19,8 @@
         <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
       </section>
       <section id="map-panel" aria-label="세계지도 화면" hidden>
-        <div id="map-container" class="map"><svg viewBox="0 0 600 440" aria-label="임시 세계지도">
-<rect width="600" height="440" fill="#39627b"/>
-<path class="region" data-region="wild" fill="#718e78" d="M106 90L168 29 268 43 332 75 411 65 470 123 427 174 335 169 274 184 203 164 146 179Z"/>
-<path class="region" data-region="west" fill="#bd9969" d="M90 158L148 177 205 163 274 182 286 265 245 321 178 349 101 309 48 248Z"/>
-<path class="region" data-region="east" fill="#8b9cc0" d="M337 173L430 179 476 131 529 192 544 267 480 326 393 303 326 266 284 210Z"/>
-<path class="region" data-region="south" fill="#ad7d80" d="M178 349L246 321 286 264 327 270 399 313 475 337 432 389 343 411 251 393 205 403Z"/>
-<path class="region" data-region="ruins" fill="#947eac" stroke-dasharray="6 5" d="M272 184L338 174 285 210 325 267 287 271 284 265Z"/>
-<g pointer-events="none" fill="#fff7dc" font-size="17" font-weight="bold" text-anchor="middle" stroke="#334344" stroke-width="3" paint-order="stroke">
-<text x="260" y="113">북부 마수림</text><text x="156" y="245">서부 왕국</text><text x="426" y="245">동부 왕국</text><text x="320" y="360">남부 왕국</text><text x="296" y="231" font-size="11">고대 유적</text></g>
-<g data-region="village" style="cursor:pointer"><circle cx="177" cy="288" r="17" fill="#f8d778" stroke="#fff5bb" stroke-width="3"/><text x="177" y="294" text-anchor="middle" font-size="20" fill="#263b41">⌂</text><text x="177" y="323" text-anchor="middle" font-size="12" fill="white" stroke="#263b41" stroke-width="3" paint-order="stroke">써니 빌리지</text></g>
-<text x="12" y="429" font-size="11" fill="#ecdfcb">※ 국가 배치 미확정 · UI 테스트</text></svg></div>
+        <div id="map-container" class="map"><img id="world-map-image" class="world-map-image" alt="에르세디아 세계지도 · 지리 검토용 시안" draggable="false"><svg id="map-points" viewBox="0 0 1536 1024" preserveAspectRatio="xMidYMid meet" aria-label="지도 지역과 지점 선택"></svg></div>
+        <p id="map-status" class="map-status" role="status">지역명 또는 표식을 누르면 정보를 볼 수 있습니다. 지리와 국경은 검토용 시안입니다.</p>
         <div class="mapinfo"><div><span class="eyebrow">SELECTED REGION</span><h2 id="region-title"></h2><p id="region-description"></p></div><button id="return">대화로 복귀 ↗</button></div>
       </section>
       <div class="game-foot"><span>✧ 기존 시연 대사 4개</span><span>AI 대화 미연결</span></div>

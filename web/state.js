@@ -1,7 +1,8 @@
+import {mapData} from './map-data.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
-export const regionKeys = ['village','west','east','south','wild','ruins'];
+export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapData.regions.map(r=>r.id),...mapData.locations.map(p=>p.id)];
 export const defaultLayout = () => ({scale:260,x:50,y:-120});
 export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',page:'story'});
 const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;

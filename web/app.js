@@ -1,13 +1,27 @@
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
+import {mapData} from './map-data.js';
 const $=id=>document.getElementById(id);
 const CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
+const MAP_CDN='https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
 const standing='assets/characters/main/serin/standing/';
 // Only approved, registered assets belong here. Drafts and absent expressions are excluded.
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
 const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad:'슬픔',embarrassed:'부끄러움',afraid:'두려움',annoyed:'불쾌함',love:'애정'};
 const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
-const regions={village:['써니 빌리지','현재 세린과 대화하는 마을입니다.'],west:['서부 왕국','임시 국가 배치. 영주령과 국명 미확정.'],east:['동부 왕국','임시 국가 배치. 영주령과 국명 미확정.'],south:['남부 왕국','임시 국가 배치. 영주령과 국명 미확정.'],wild:['북부 마수림','마수 서식지의 임시 위치.'],ruins:['고대 유적','미지의 던전 후보지.']};
+const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
+for(const r of mapData.regions)regions[r.id]=[r.label,'지리 배치 시안 · 공식 국명·국경·지역 설정은 미확정입니다.'];
+const regionNames={west:'서부',east:'동부',south:'남부'};
+const locationLabel=p=>p.label.replace(/^(west|east|south)\b/,(_,id)=>regionNames[id]);
+for(const p of mapData.locations)regions[p.id]=[`${p.id} · ${locationLabel(p)}`,'등록된 지도 클릭 지점 후보입니다. 위치·지명·소속은 검토용 시안이며 실제 이동은 아직 연결되지 않았습니다.'];
+// Build the click overlay once. Its coordinate system and aspect ratio match the map image.
+const svgNS='http://www.w3.org/2000/svg';
+for(const p of [...mapData.regions,...mapData.locations]){
+  const node=document.createElementNS(svgNS,'circle');
+  node.setAttribute('cx',String(p.x*1536));node.setAttribute('cy',String(p.y*1024));
+  node.setAttribute('r',p.kind?'24':'40');node.setAttribute('class','map-hit');node.dataset.region=p.id;
+  const title=document.createElementNS(svgNS,'title');title.textContent=regions[p.id][0];node.append(title);$('map-points').append(node);
+}
 let restored;
 try {restored=load(window.localStorage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
@@ -16,17 +30,24 @@ const images=new Map();
 const faces=new Map();
 const faceLayer=document.createElement('div');
 faceLayer.className='face-layer';faceLayer.hidden=true;
-function trackImage(img,path,label) {
+function trackImage(img,path,label,cdn=CDN) {
   const row=document.createElement('li');
   const status=document.createElement('span');
   const link=document.createElement('a');
-  link.href=CDN+path;link.target='_blank';link.rel='noopener';link.textContent='원본';
+  link.href=cdn+path;link.target='_blank';link.rel='noopener';link.textContent='원본';
   row.append(status,document.createTextNode(' · '),link);$('asset-status').append(row);
   img.dataset.status='loading';status.textContent=label+' · 로딩 중';
-  img.addEventListener('load',()=>{img.dataset.status='ready';img.classList.add('ready');status.textContent=label+' · 정상 로드';renderAppearance();});
-  img.addEventListener('error',()=>{img.dataset.status='error';img.classList.remove('ready');status.textContent=label+' · 로드 실패';row.classList.add('error');document.querySelector('.asset-details').open=true;renderAppearance();});
-  img.src=CDN+path;
+  img.addEventListener('load',()=>{img.dataset.status='ready';img.classList.add('ready');status.textContent=label+' · 정상 로드';if(img.id==='world-map-image')mapImageStatus(true);renderAppearance();});
+  img.addEventListener('error',()=>{img.dataset.status='error';img.classList.remove('ready');status.textContent=label+' · 로드 실패';row.classList.add('error');document.querySelector('.asset-details').open=true;if(img.id==='world-map-image')mapImageStatus(false);renderAppearance();});
+  img.src=cdn+path;
 }
+function mapImageStatus(loaded){
+  $('map-points').style.visibility=loaded?'visible':'hidden';
+  $('map-status').textContent=loaded?'지역명 또는 표식을 누르면 정보를 볼 수 있습니다. 지리와 국경은 검토용 시안입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
+  $('map-status').classList.toggle('asset-alert',!loaded);
+}
+$('map-points').style.visibility='hidden';
+trackImage($('world-map-image'),'assets/maps/world/world_main.png','메인 세계지도',MAP_CDN);
 for (const [outfit,data] of Object.entries(outfits)) {
   for (const [emotion,path] of Object.entries(data.expressions)) {
     const img=new Image();img.alt=`세린 ${data.label} · ${labels[emotion]}`;img.className='person';img.draggable=false;img.hidden=true;

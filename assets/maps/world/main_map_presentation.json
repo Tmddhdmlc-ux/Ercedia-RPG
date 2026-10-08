@@ -16,7 +16,7 @@
     "south": 4
   },
   "geography_changed": false,
-  "ui_integrated": false,
+  "ui_integrated": true,
   "status": "user-selected main map presentation; geography remains provisional",
   "canonical": false,
   "terrain_sha256": "edef9a05a2d59772a2bfb8455004764cedeff08ea141c2e7383fecb85eb4696d"
