@@ -1,0 +1,199 @@
+{
+  "schema_version": 1,
+  "status": "review_pending",
+  "note": "FACTIONS.md에 문장 요소가 명시된8개 공개 조직만 제작. 미지정 배치와 테두리는 시안이며 새 정설을 확정하지 않는다.",
+  "flags": [
+    {
+      "id": "ER-CREST-001",
+      "name": "청금사자 근위기사단 — 벨로아 왕실 직속",
+      "crest": "청금 쌍사자와 세로검",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-001/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        91,
+        944,
+        932
+      ],
+      "sha256": "a839fc0af27bb663da9150734e817d30d512942bda429dd3a01cbeaa67ec0bc0"
+    },
+    {
+      "id": "ER-CREST-002",
+      "name": "적장미 선봉기사단 — 벨로아 특수 직속",
+      "crest": "붉은 장미·은창",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-002/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        92,
+        80,
+        931,
+        944
+      ],
+      "sha256": "b71d1b5f8f79d03c3972cef427ffce13e565ef13866f0b50364b6dbd9a2712e3"
+    },
+    {
+      "id": "ER-CREST-003",
+      "name": "청뢰성벽 기사단 — 드라켄 왕실 직속",
+      "crest": "푸른 번개·은색 방패",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-003/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        88,
+        944,
+        935
+      ],
+      "sha256": "164f25b2968e0019d8d5bc035ab23ae89bbf887c2c47594744510f9c1dab8acb"
+    },
+    {
+      "id": "ER-CREST-004",
+      "name": "흑정찰 균열기사단 — 드라켄 특수 직속",
+      "crest": "흑색 매·푸른 수정 조각",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-004/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        82,
+        80,
+        942,
+        944
+      ],
+      "sha256": "861de56cf0583ad81a1482d8f490f33c681e0187e1b0bc4ebe71bc755f7fa303"
+    },
+    {
+      "id": "ER-CREST-005",
+      "name": "백파도 친위기사단 — 루메린 왕실 직속",
+      "crest": "백색 돌고래·금빛 창",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-005/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        81,
+        80,
+        943,
+        943
+      ],
+      "sha256": "e8708614364a1f6f3038b15a3f1b0b20d0c26f11a6a6a2fbc7c2c7de79c46b2a"
+    },
+    {
+      "id": "ER-CREST-006",
+      "name": "해풍수호 기사단 — 루메린 특수 직속",
+      "crest": "은갈매기·청록 돛",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-006/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        82,
+        80,
+        941,
+        944
+      ],
+      "sha256": "48ba225f859dcaa944fba54fe4fd209e56f4ca3c8f9092364f0f2ed7bd1190f3"
+    },
+    {
+      "id": "ER-CREST-007",
+      "name": "대륙길잡이 길드",
+      "crest": "세 갈래 은화살",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-007/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        88,
+        944,
+        936
+      ],
+      "sha256": "5f6812535da64f42370d8a58f353988fa787303ef74af1418039e2082addb16b"
+    },
+    {
+      "id": "ER-CREST-008",
+      "name": "황금돛 상단연맹",
+      "crest": "두 금빛 돛과 푸른 동전",
+      "source": "FACTIONS.md",
+      "status": "review_pending",
+      "path": "assets/heraldry/factions/ER-CREST-008/crest.png",
+      "size": [
+        1024,
+        1024
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        91,
+        944,
+        936
+      ],
+      "sha256": "b138b93b66f610651d9b471f81e6f68dfdb28f6f09881c059085309bf16287d5"
+    }
+  ]
+}

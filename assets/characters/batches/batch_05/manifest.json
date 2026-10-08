@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_05",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-041",
+      "name": "모니카 페즈",
+      "affiliation": "백범선 해상호위조합",
+      "appearance": "여26 검은 곱슬 금갈 눈 경갑",
+      "rank": "일반 전투원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-041/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            108,
+            85,
+            915,
+            1451
+          ],
+          "margins_ltrb": [
+            108,
+            85,
+            109,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "de84d1abe687c92b1f6825851a4c2804448c2ecf650756e51752590ad60eb52b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-041/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            15,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            15,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "cbd9deca17a5b22258abee4197b17bec772df63838b7faad9e9dbd37ecd304a1"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-042",
+      "name": "루도 산체",
+      "affiliation": "황금돛 상단연맹",
+      "appearance": "남52 은빛 단발 파란 눈 금실 비단",
+      "rank": "상단 간부",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-042/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            121,
+            85,
+            903,
+            1451
+          ],
+          "margins_ltrb": [
+            121,
+            85,
+            121,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "32ec0a75102a4ca7d5cd8923940ce57a7eaaa880336e7cee9d8ab3896e28e808"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-042/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "4a1217916e6f229fe172ca7c4612ef32fd22e05e6afadf80a14e36734845e70f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-043",
+      "name": "밀라 안데르",
+      "affiliation": "황금돛 상단연맹",
+      "appearance": "여33 붉은 땋은머리 갈색 눈 검은 정장",
+      "rank": "상단 실무자",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-043/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            92,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            92,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ad3f8f91265356bf09f669c527a49f44dac86c3b32e55e6f666d7acb6f978499"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-043/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            33,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            33,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "b5b45faa003dbb93a27b49e0a52bd18d4b2a08409d107127fe55a0919f65658a"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "affiliation": "회색다리 대상단",
+      "appearance": "남40 검은 수염 녹색 눈 모직옷",
+      "rank": "상단 호위",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-044/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            82,
+            85,
+            941,
+            1451
+          ],
+          "margins_ltrb": [
+            82,
+            85,
+            83,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9016735d78389d58ce3ef7f9fa95b1e485807ed7a8bf262f1e95c78234a4a286"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-044/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            5,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            5,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "a3c8c1436ccbf78edb1f531925ea9e37ea829eb07b81856ff579865c85b2cf24"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-045",
+      "name": "로나트 피스",
+      "affiliation": "회색다리 대상단",
+      "appearance": "남26 은갈 머리 회청 눈 녹색 목도리",
+      "rank": "상단 실무자",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-045/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            157,
+            85,
+            866,
+            1451
+          ],
+          "margins_ltrb": [
+            157,
+            85,
+            158,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a081eacf86a3aa123be50b951b3081bcd230ddc3b743616bed6273d828f6a2f7"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-045/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            12,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            12,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "7054e180acce703844ed877254f9d860422998b9d26a436f6a4c27436f53fe10"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-046",
+      "name": "네아 페렌",
+      "affiliation": "새벽의 들불",
+      "appearance": "여31 검은 땋은머리 갈색 눈 작업복",
+      "rank": "농민 활동가",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-046/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            80,
+            85,
+            944,
+            1451
+          ],
+          "margins_ltrb": [
+            80,
+            85,
+            80,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "52fcc0ec2373041bdcc865c2f4e2502faa36bcdeee1ca1b9a03a69a50adb9b1e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-046/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            49,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            49,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "043eddbe99404b66b214755456019da933128e2decf88db14ba9098fbae6577e"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-047",
+      "name": "에브란 무르",
+      "affiliation": "새벽의 들불",
+      "appearance": "남45 회갈 머리 갈색 눈 밀짚 모자",
+      "rank": "곡물 배급원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-047/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            61,
+            85,
+            963,
+            1451
+          ],
+          "margins_ltrb": [
+            61,
+            85,
+            61,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a5ba2868fdd449ea5d08c1522222fcfade5c8864b46ce482ceee4e8927884b7e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-047/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3199c5da4927bcbab392362f39a903ff875d52693d4e20c12c6ea42f9a2ed426"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-048",
+      "name": "로키아 멘",
+      "affiliation": "청회 수정회",
+      "appearance": "여34 진갈 머리 구릿빛 피부 황동 고글",
+      "rank": "광부 안전감독",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-048/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            86,
+            85,
+            938,
+            1451
+          ],
+          "margins_ltrb": [
+            86,
+            85,
+            86,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "4a60e1e8ea37b96f75a3320b7265295cd67a32e1321e0a0a29d2a621ff75bc7b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-048/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "a31af9e40198341fb41d60607f9a1085f92cee296f30567a3c74f4f0df05b875"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-049",
+      "name": "후고 벨라",
+      "affiliation": "청회 수정회",
+      "appearance": "남42 검은 단발 푸른 눈 붉은 스카프",
+      "rank": "노동 협상단원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-049/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            77,
+            85,
+            947,
+            1451
+          ],
+          "margins_ltrb": [
+            77,
+            85,
+            77,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "c0df90bf3e0853b6edc82dc1843813ff4893fe5047d7bed08757680cec0c6098"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-049/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            19,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            19,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "2fa88b6c1dfb03192099d3a7d04d432a6e4a58a23fff7c25e970344513d4a44a"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-050",
+      "name": "테아 미르",
+      "affiliation": "흰물결 자치동맹",
+      "appearance": "여37 검정 곱슬 갈색 피부 청록 작업복",
+      "rank": "어부 조합원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-050/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            69,
+            85,
+            955,
+            1451
+          ],
+          "margins_ltrb": [
+            69,
+            85,
+            69,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "bce49cf762c2423482c5205ff866cf7eea68874738e2a4d167d64d2583fccc47"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-050/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            10,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            10,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "e658b6fc287db6974c43399c665ca88972e9208f3785a0a5bf61896dcff3d0c0"
+        }
+      }
+    }
+  ]
+}
