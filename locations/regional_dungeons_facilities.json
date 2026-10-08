@@ -1,0 +1,1172 @@
+{
+  "schema_version": 1,
+  "version": "region-dungeons-facilities-v1",
+  "canon_regions": [
+    "W1",
+    "W2",
+    "W3",
+    "W4",
+    "W5",
+    "E1",
+    "E2",
+    "E3",
+    "E4",
+    "S1",
+    "S2",
+    "S3",
+    "S4"
+  ],
+  "national_specializations": {
+    "벨로아": "정식 고품질 검/방어구 제작·장비 감정·강화 중심",
+    "드라켄": "공인 마법서 원본 획득·구매·등록·필사와 고급 주문 수련 중심",
+    "루메린": "집중 훈련소와 빠른 일반 레벨 경험치 획득 중심"
+  },
+  "border_rules": [
+    "국경 이동 필요: 다른 나라 특화 상점/시설을 원격으로 이용할 수 없음.",
+    "전쟁 상황·통행증·폐쇄·군사 검문으로 국경 통과는 거절·지연될 수 있음.",
+    "어디서든 검과 스태프의 기초 수리, 일상 훈련, 생활 마법 지식 교류는 가능. 단 특정 나라의 전문 보너스/공인 마법서 거래는 현지 직접 방문 필요.",
+    "기존 벨로아 칠원기록탑, 루메린 청류융합탑·황혼음영탑은 존속: 연구·기록·현지 상담은 가능하나 새 공인 마법서 판매/정식 교환·등록 서비스는 드라켄에서만 가능."
+  ],
+  "facilities": [
+    {
+      "id": "FAC-W1-01",
+      "name": "설벽 수비대장간",
+      "region_id": "W1",
+      "kingdom": "벨로아",
+      "type": "equipment",
+      "exclusive_specialty": true,
+      "description": "겨울철 검과 방한 방어구 제작",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "sword_trade",
+        "armor_trade",
+        "smithing",
+        "repair"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-W1-02",
+      "name": "노르발트 장인 재료상",
+      "region_id": "W1",
+      "kingdom": "벨로아",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "재료 구매·장비 수리·감정",
+      "service": [
+        "materials",
+        "repair"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-W2-01",
+      "name": "사자문장 명검공방",
+      "region_id": "W2",
+      "kingdom": "벨로아",
+      "type": "equipment",
+      "exclusive_specialty": true,
+      "description": "귀족 검 감정 및 장비 강화",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "sword_trade",
+        "armor_trade",
+        "smithing",
+        "repair"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-W2-02",
+      "name": "발렌하르트 장인 재료상",
+      "region_id": "W2",
+      "kingdom": "벨로아",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "재료 구매·장비 수리·감정",
+      "service": [
+        "materials",
+        "repair"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-W3-01",
+      "name": "황금이삭 농기구대장간",
+      "region_id": "W3",
+      "kingdom": "벨로아",
+      "type": "equipment",
+      "exclusive_specialty": true,
+      "description": "초보자 검·경갑 및 저가 수리",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "sword_trade",
+        "armor_trade",
+        "smithing",
+        "repair"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-W3-02",
+      "name": "엘름베르크 장인 재료상",
+      "region_id": "W3",
+      "kingdom": "벨로아",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "재료 구매·장비 수리·감정",
+      "service": [
+        "materials",
+        "repair"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-W4-01",
+      "name": "적장미 전장병기소",
+      "region_id": "W4",
+      "kingdom": "벨로아",
+      "type": "equipment",
+      "exclusive_specialty": true,
+      "description": "검과 전쟁 방어구 공급",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "sword_trade",
+        "armor_trade",
+        "smithing",
+        "repair"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-W4-02",
+      "name": "로젠펠트 장인 재료상",
+      "region_id": "W4",
+      "kingdom": "벨로아",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "재료 구매·장비 수리·감정",
+      "service": [
+        "materials",
+        "repair"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-W5-01",
+      "name": "은매 교역제련소",
+      "region_id": "W5",
+      "kingdom": "벨로아",
+      "type": "equipment",
+      "exclusive_specialty": true,
+      "description": "상단 재료 거래·검·방어구 감정",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "sword_trade",
+        "armor_trade",
+        "smithing",
+        "repair"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-W5-02",
+      "name": "아르덴슈타인 장인 재료상",
+      "region_id": "W5",
+      "kingdom": "벨로아",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "재료 구매·장비 수리·감정",
+      "service": [
+        "materials",
+        "repair"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-E1-01",
+      "name": "균열 관측 마법서고",
+      "region_id": "E1",
+      "kingdom": "드라켄",
+      "type": "spellbooks",
+      "exclusive_specialty": true,
+      "description": "1~3서클 공인 주문서 열람·기초 학습",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "spellbook_licensed_trade",
+        "spell_training",
+        "spell_registration"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-E1-02",
+      "name": "칼트하임 마나 휴식관",
+      "region_id": "E1",
+      "kingdom": "드라켄",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "마나 안정과 기초 지식 상담",
+      "service": [
+        "mana_rest",
+        "consultation"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-E2-01",
+      "name": "청동뇌명탑 마법서 교환실",
+      "region_id": "E2",
+      "kingdom": "드라켄",
+      "type": "spellbooks",
+      "exclusive_specialty": true,
+      "description": "공인 마법서 구매·등록·주문 연구 중심",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "spellbook_licensed_trade",
+        "spell_training",
+        "spell_registration"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": true
+    },
+    {
+      "id": "FAC-E2-02",
+      "name": "아이젠크로네 마나 휴식관",
+      "region_id": "E2",
+      "kingdom": "드라켄",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "마나 안정과 기초 지식 상담",
+      "service": [
+        "mana_rest",
+        "consultation"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-E3-01",
+      "name": "회색초석탑 전술서고",
+      "region_id": "E3",
+      "kingdom": "드라켄",
+      "type": "spellbooks",
+      "exclusive_specialty": true,
+      "description": "방벽·광석·방어 마법서 교환",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "spellbook_licensed_trade",
+        "spell_training",
+        "spell_registration"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": true
+    },
+    {
+      "id": "FAC-E3-02",
+      "name": "베르크슈타인 마나 휴식관",
+      "region_id": "E3",
+      "kingdom": "드라켄",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "마나 안정과 기초 지식 상담",
+      "service": [
+        "mana_rest",
+        "consultation"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-E4-01",
+      "name": "실베른 주문 필사관",
+      "region_id": "E4",
+      "kingdom": "드라켄",
+      "type": "spellbooks",
+      "exclusive_specialty": true,
+      "description": "공인 기초 마법서 필사·학습",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "spellbook_licensed_trade",
+        "spell_training",
+        "spell_registration"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-E4-02",
+      "name": "실베른 마나 휴식관",
+      "region_id": "E4",
+      "kingdom": "드라켄",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "마나 안정과 기초 지식 상담",
+      "service": [
+        "mana_rest",
+        "consultation"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-S1-01",
+      "name": "황금돛 초심자 훈련원",
+      "region_id": "S1",
+      "kingdom": "루메린",
+      "type": "training",
+      "exclusive_specialty": true,
+      "description": "안전한 훈련·항해 전투 집중 수련",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "practice_combat",
+        "training_xp_bonus",
+        "sparring"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-S1-02",
+      "name": "벨마리나 훈련 의무소",
+      "region_id": "S1",
+      "kingdom": "루메린",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "훈련 후 치료·회복",
+      "service": [
+        "healing",
+        "rest"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-S2-01",
+      "name": "백매 전장 모의훈련장",
+      "region_id": "S2",
+      "kingdom": "루메린",
+      "type": "training",
+      "exclusive_specialty": true,
+      "description": "보급 호위·집단전 훈련",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "practice_combat",
+        "training_xp_bonus",
+        "sparring"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-S2-02",
+      "name": "세르반 훈련 의무소",
+      "region_id": "S2",
+      "kingdom": "루메린",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "훈련 후 치료·회복",
+      "service": [
+        "healing",
+        "rest"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-S3-01",
+      "name": "해풍수호 승선훈련장",
+      "region_id": "S3",
+      "kingdom": "루메린",
+      "type": "training",
+      "exclusive_specialty": true,
+      "description": "선박 전투·회피·검술 집중 훈련",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "practice_combat",
+        "training_xp_bonus",
+        "sparring"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-S3-02",
+      "name": "아쿠아렌 훈련 의무소",
+      "region_id": "S3",
+      "kingdom": "루메린",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "훈련 후 치료·회복",
+      "service": [
+        "healing",
+        "rest"
+      ],
+      "coordinates_status": "region_marker_only"
+    },
+    {
+      "id": "FAC-S4-01",
+      "name": "금열쇠 고급 훈련아카데미",
+      "region_id": "S4",
+      "kingdom": "루메린",
+      "type": "training",
+      "exclusive_specialty": true,
+      "description": "유료 고급 훈련·전술실습",
+      "accessible_to": [
+        "검사",
+        "마법사"
+      ],
+      "service": [
+        "practice_combat",
+        "training_xp_bonus",
+        "sparring"
+      ],
+      "requirements": {
+        "border_pass_may_be_required": true
+      },
+      "coordinates_status": "region_marker_only",
+      "is_existing_named_tower": false
+    },
+    {
+      "id": "FAC-S4-02",
+      "name": "솔메리아 훈련 의무소",
+      "region_id": "S4",
+      "kingdom": "루메린",
+      "type": "support",
+      "exclusive_specialty": false,
+      "description": "훈련 후 치료·회복",
+      "service": [
+        "healing",
+        "rest"
+      ],
+      "coordinates_status": "region_marker_only"
+    }
+  ],
+  "dungeons": [
+    {
+      "id": "DUN-W1-01",
+      "name": "흰숨 동굴",
+      "region_id": "W1",
+      "kingdom": "벨로아",
+      "recommended_level_min": 6,
+      "recommended_level_max": 19,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "서리갈기 늑대"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W1-02",
+      "name": "설벽 밑 구혈",
+      "region_id": "W1",
+      "kingdom": "벨로아",
+      "recommended_level_min": 14,
+      "recommended_level_max": 19,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "백각 설산사슴"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W2-01",
+      "name": "묵은 왕가 납골묘",
+      "region_id": "W2",
+      "kingdom": "벨로아",
+      "recommended_level_min": 13,
+      "recommended_level_max": 26,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "곡창 그림자쥐"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W2-02",
+      "name": "사자의 폐지하실",
+      "region_id": "W2",
+      "kingdom": "벨로아",
+      "recommended_level_min": 21,
+      "recommended_level_max": 31,
+      "danger_rank": "상급",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W3-01",
+      "name": "잿빛 곡창",
+      "region_id": "W3",
+      "kingdom": "벨로아",
+      "recommended_level_min": 1,
+      "recommended_level_max": 14,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "곡창 그림자쥐"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W3-02",
+      "name": "이삭길 약탈굴",
+      "region_id": "W3",
+      "kingdom": "벨로아",
+      "recommended_level_min": 9,
+      "recommended_level_max": 15,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W4-01",
+      "name": "붉은 참호",
+      "region_id": "W4",
+      "kingdom": "벨로아",
+      "recommended_level_min": 22,
+      "recommended_level_max": 35,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "잿불 송곳도마뱀"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W4-02",
+      "name": "전쟁 잔해 요새",
+      "region_id": "W4",
+      "kingdom": "벨로아",
+      "recommended_level_min": 30,
+      "recommended_level_max": 46,
+      "danger_rank": "상급",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W5-01",
+      "name": "마차무덤",
+      "region_id": "W5",
+      "kingdom": "벨로아",
+      "recommended_level_min": 10,
+      "recommended_level_max": 23,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "철가죽 멧돼지"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-W5-02",
+      "name": "돌문 협곡길",
+      "region_id": "W5",
+      "kingdom": "벨로아",
+      "recommended_level_min": 18,
+      "recommended_level_max": 27,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "뿔돌 협곡독수리"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "sword_or_armor_drop_candidate"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E1-01",
+      "name": "회안개 초소",
+      "region_id": "E1",
+      "kingdom": "드라켄",
+      "recommended_level_min": 26,
+      "recommended_level_max": 39,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "회안개 박쥐"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E1-02",
+      "name": "시린 균열 동굴",
+      "region_id": "E1",
+      "kingdom": "드라켄",
+      "recommended_level_min": 42,
+      "recommended_level_max": 62,
+      "danger_rank": "엘리트",
+      "monster_examples": [
+        "청전기 산양"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E2-01",
+      "name": "청동 도체 회랑",
+      "region_id": "E2",
+      "kingdom": "드라켄",
+      "recommended_level_min": 20,
+      "recommended_level_max": 33,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "공명 수정거미"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E2-02",
+      "name": "폐전류 연구구역",
+      "region_id": "E2",
+      "kingdom": "드라켄",
+      "recommended_level_min": 48,
+      "recommended_level_max": 68,
+      "danger_rank": "엘리트",
+      "monster_examples": [
+        "수정굴 광충"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E3-01",
+      "name": "붕락 수정 갱도",
+      "region_id": "E3",
+      "kingdom": "드라켄",
+      "recommended_level_min": 24,
+      "recommended_level_max": 37,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "수정굴 광충"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E3-02",
+      "name": "잿빛 방벽 지하층",
+      "region_id": "E3",
+      "kingdom": "드라켄",
+      "recommended_level_min": 34,
+      "recommended_level_max": 54,
+      "danger_rank": "상급",
+      "monster_examples": [
+        "공명 수정거미"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E4-01",
+      "name": "바람깎인 교량굴",
+      "region_id": "E4",
+      "kingdom": "드라켄",
+      "recommended_level_min": 8,
+      "recommended_level_max": 21,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "뿔돌 협곡독수리"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-E4-02",
+      "name": "교량 아래 폐통로",
+      "region_id": "E4",
+      "kingdom": "드라켄",
+      "recommended_level_min": 16,
+      "recommended_level_max": 26,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "청전기 산양"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "spell_research_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S1-01",
+      "name": "진주 수로굴",
+      "region_id": "S1",
+      "kingdom": "루메린",
+      "recommended_level_min": 3,
+      "recommended_level_max": 16,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "암초 부리게"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S1-02",
+      "name": "유실 선박 화물창",
+      "region_id": "S1",
+      "kingdom": "루메린",
+      "recommended_level_min": 11,
+      "recommended_level_max": 22,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "은비늘 물갈퀴어"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S2-01",
+      "name": "세르반 잊힌 역참",
+      "region_id": "S2",
+      "kingdom": "루메린",
+      "recommended_level_min": 17,
+      "recommended_level_max": 30,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "사막색 모래여우"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S2-02",
+      "name": "황금길 폐요새",
+      "region_id": "S2",
+      "kingdom": "루메린",
+      "recommended_level_min": 29,
+      "recommended_level_max": 49,
+      "danger_rank": "상급",
+      "monster_examples": [
+        "잿불 송곳도마뱀"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S3-01",
+      "name": "암초 해적 소굴",
+      "region_id": "S3",
+      "kingdom": "루메린",
+      "recommended_level_min": 14,
+      "recommended_level_max": 27,
+      "danger_rank": "하급",
+      "monster_examples": [
+        "해풍 날개뱀"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S3-02",
+      "name": "심해 배수동굴",
+      "region_id": "S3",
+      "kingdom": "루메린",
+      "recommended_level_min": 27,
+      "recommended_level_max": 47,
+      "danger_rank": "상급",
+      "monster_examples": [
+        "흑진주 먹장어"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S4-01",
+      "name": "흑유리 지하금고",
+      "region_id": "S4",
+      "kingdom": "루메린",
+      "recommended_level_min": 29,
+      "recommended_level_max": 42,
+      "danger_rank": "중급",
+      "monster_examples": [
+        "밤등불 나방"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "local_rumor_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": true,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    },
+    {
+      "id": "DUN-S4-02",
+      "name": "달그림자 폐예배당",
+      "region_id": "S4",
+      "kingdom": "루메린",
+      "recommended_level_min": 46,
+      "recommended_level_max": 66,
+      "danger_rank": "엘리트",
+      "monster_examples": [
+        "심연고리 사슴"
+      ],
+      "entrance": "field_in_region",
+      "unlock": "quest_clue_or_exploration",
+      "rewards": [
+        "xp",
+        "crafting_materials",
+        "training_certificate_or_material"
+      ],
+      "repeatable": false,
+      "event_links": [
+        "annual_local_events"
+      ],
+      "coordinates_status": "region_marker_only",
+      "note": "던전 추천 레벨은 전투력 보장이 아니며, 실제 스폰·이벤트는 조건부. 마수 등급은 지역 위험의 범주일 뿐 등장 몬스터 사례의 등급을 강제로 바꾸지 않는다."
+    }
+  ],
+  "coordinates_policy": "Existing lordship marker anchors only, exact building and dungeon entrance coordinates remain pending map update.",
+  "noncanon_note": "새 시설/던전의 첫 위치는 영주령 권역에만 연결, 추가 픽셀 위치는 지도 작업에서 확정."
+}
