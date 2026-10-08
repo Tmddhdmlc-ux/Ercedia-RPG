@@ -33,4 +33,5 @@ await writeFile(path.join(root,'integration/update-manifest.json'),JSON.stringif
 const template=await readFile(path.join(root,'tampermonkey/host.template.js'),'utf8');
 const script=template;
 await writeFile(path.join(root,'tampermonkey/ercedia-rpg.user.js'),script);
+await writeFile(path.join(root,'tampermonkey/ercedia-rpg.meta.js'),script.slice(0,script.indexOf('// ==/UserScript==')+'// ==/UserScript=='.length)+'\n');
 console.log(`Built game bundle and stable launcher (${Buffer.byteLength(script)} bytes)`);
