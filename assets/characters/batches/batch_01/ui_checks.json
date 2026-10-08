@@ -1,0 +1,192 @@
+[
+  {
+    "error": "",
+    "id": "ER-NPC-001",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-001/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-001/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "알윈 페르 · 청금사자 근위기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-002",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-002/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-002/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "브리엘 노바 · 청금사자 근위기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-003",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-003/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-003/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "케른 토리스 · 적장미 선봉기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-004",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-004/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-004/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "미엘 타란 · 적장미 선봉기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-005",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-005/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-005/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "노아 벨크 · 청뢰성벽 기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-006",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-006/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-006/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "헤리나 조스트 · 청뢰성벽 기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-007",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-007/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-007/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "페이 론델 · 흑정찰 균열기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-008",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-008/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-008/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "마티스 렌 · 흑정찰 균열기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-009",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-009/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-009/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "다리오 센 · 백파도 친위기사단"
+  },
+  {
+    "error": "",
+    "id": "ER-NPC-010",
+    "images": [
+      {
+        "complete": true,
+        "height": 1536,
+        "src": "../assets/characters/standings/ER-NPC-010/base.png",
+        "width": 1024
+      },
+      {
+        "complete": true,
+        "height": 1448,
+        "src": "../assets/characters/portraits/dialogue/ER-NPC-010/base.png",
+        "width": 1086
+      }
+    ],
+    "name": "라넬 에스타 · 백파도 친위기사단"
+  }
+]

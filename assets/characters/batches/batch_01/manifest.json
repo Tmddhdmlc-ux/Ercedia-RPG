@@ -1,0 +1,765 @@
+{
+  "schema_version": 1,
+  "batch": "batch_01",
+  "roster_version": "2.0-growth-rebalance",
+  "reference_commit": "31231d6",
+  "generation": "built-in imagegen; one generation per asset",
+  "approval": "user review pending; no runtime NPC registration",
+  "characters": [
+    {
+      "id": "ER-NPC-001",
+      "name": "알윈 페르",
+      "affiliation": "청금사자 근위기사단",
+      "appearance": "남32 검은 단발 진청 눈 은백 판금갑",
+      "pose_proposal": "front, hand resting on sheathed sword, firm square shoulders",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-001/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            61,
+            85,
+            963,
+            1451
+          ],
+          "margins_ltrb": [
+            61,
+            85,
+            61,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "515a31ff9031986a15da9e98ba36aa2bd3f61a193a474f99ba45dbdb4a0bb16a"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-001/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            56,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            56,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5184fbbacd5c33b2cb04a90a9ab6cff5512c6a0eefccb8d9055132038170e7cc"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "affiliation": "청금사자 근위기사단",
+      "appearance": "여23 적갈 땋은머리 호박 눈 청색 휘장",
+      "pose_proposal": "left 15 degree turn, one hand gently holding blue cloak, gentle reserved gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-002/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            71,
+            85,
+            953,
+            1451
+          ],
+          "margins_ltrb": [
+            71,
+            85,
+            71,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "1b51080c72c2b535ebb5dceb2f6c9a814aeb1c0b1e1c52cdd2a039eb1c175f60"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-002/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "be3b298118c39d2063708a795bbfa20fadb654e409312d35ce9a1bde1faeb328"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-003",
+      "name": "케른 토리스",
+      "affiliation": "적장미 선봉기사단",
+      "appearance": "남38 회갈 단발 왼눈 흉터 적색 견장",
+      "pose_proposal": "right 30 degree turn, folded arms, proud stern gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-003/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            66,
+            85,
+            958,
+            1451
+          ],
+          "margins_ltrb": [
+            66,
+            85,
+            66,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a127e5f2f455d232281d09828d887aa18636993036d0d58efd390f47edd8f0ce",
+          "processing": "horizontal mirror to place scar on anatomical left eye; source retained"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-003/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3ea636a24ee625e7a5cce4d2dd00b55fc5a317143959003beac8aff0a370c38d",
+          "processing": "horizontal mirror to place scar on anatomical left eye; source retained"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-004",
+      "name": "미엘 타란",
+      "affiliation": "적장미 선봉기사단",
+      "appearance": "여26 금갈 단발 녹색 눈 경량 판금",
+      "pose_proposal": "left 30 degree turn, hand on hip, practical composed gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-004/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            156,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            156,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "53bfb9b2dab39dafaa3a6d31aa3b7444648228396d3a07d9c97272c052355c8e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-004/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "86d79fe805934d249557d228a8c60b40d42f0a565cb8971114979ed79b69b73b"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-005",
+      "name": "노아 벨크",
+      "affiliation": "청뢰성벽 기사단",
+      "appearance": "남35 흑청 머리 회색 눈 청동 방패",
+      "pose_proposal": "right 15 degree turn, bronze shield held close with arm relaxed, quiet gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-005/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            87,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            87,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "7a8962dd0fcefbba18a02a25f8795a732a2f97515289a584a491391a3ded273b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-005/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "da88206d80681dcabc97a8222476b47dd708ac87aeb01c3174d28ae896081520"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-006",
+      "name": "헤리나 조스트",
+      "affiliation": "청뢰성벽 기사단",
+      "appearance": "여25 은갈 단발 청회 눈 룬 철갑",
+      "pose_proposal": "front slight contrapposto, hands clasped loosely at waist, alert gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-006/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            73,
+            85,
+            951,
+            1451
+          ],
+          "margins_ltrb": [
+            73,
+            85,
+            73,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "514fefe8a133b3a3ce866a7bb98380e5ce47d0b779a13bf5f26dfd9b241b5919"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-006/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            9,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            9,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "63ac8d22b0d6716392ff00947394fe69ad7e4965619924de64a2b51bc4e408ef"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-007",
+      "name": "페이 론델",
+      "affiliation": "흑정찰 균열기사단",
+      "appearance": "여39 검은 단발 올리브 피부 탐지 고글",
+      "pose_proposal": "left 15 degree lean, fingers adjusting forehead detection goggles, cautious kind gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-007/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            105,
+            85,
+            918,
+            1451
+          ],
+          "margins_ltrb": [
+            105,
+            85,
+            106,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a1865c86426f5f2afaf8c73efe03276ec1046af873017467060ccd1b72c266ac"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-007/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "272ceac47a4de28652e2d0f31f087928bf3bed24036ab449f1cb9a5e7ffa2841"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-008",
+      "name": "마티스 렌",
+      "affiliation": "흑정찰 균열기사단",
+      "appearance": "남21 잿빛 삭발 보라 눈 회흑 경갑",
+      "pose_proposal": "right 30 degree turn, hands behind back, chin slightly raised, competitive gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-008/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            156,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            156,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "fe40e474b1b77ae0a73977c0d1c087ce03b210b9b97df4c1579a8d535e11058c"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-008/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            13,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            13,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "475155467bb7278b423893250e02ebec3a0afa26057c161b6c1b8366d78a8806"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-009",
+      "name": "다리오 센",
+      "affiliation": "백파도 친위기사단",
+      "appearance": "남44 청흑 곱슬 갈색 눈 흰청 갑옷",
+      "pose_proposal": "front with weight on one leg, one hand resting on belt, experienced calculating gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-009/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            150,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            150,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "da38af3e974a5f5d16e617427a54004535ef4c592ce7b6f6fdd9539224c7c562"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-009/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "aee8b6daa03d1ca0388498a2f3c688aafabfd2e2d1db223e7b78880e327cf6af"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-010",
+      "name": "라넬 에스타",
+      "affiliation": "백파도 친위기사단",
+      "appearance": "여27 적갈 머리 녹청 눈 청백 제복",
+      "pose_proposal": "right 15 degree turn, one gloved hand holding opposite wrist, quiet observant gaze",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-010/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            93,
+            85,
+            931,
+            1451
+          ],
+          "margins_ltrb": [
+            93,
+            85,
+            93,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "b7de02ebc62d87acadf9376f2ee2cfed0225ec910caab826350795a90cac05ee"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-010/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "64b4c80d0b94b9cb794671585ec6212a554a26f306ffe8f5b549a49671513b8a"
+        }
+      }
+    }
+  ],
+  "expression_candidates": [
+    {
+      "id": "ER-NPC-001",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-002",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-003",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-004",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-005",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-006",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-007",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-008",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-009",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    },
+    {
+      "id": "ER-NPC-010",
+      "reason": "기사단 반복 등장 시 대화 감정 확장 후보; 중요 인물 여부는 플레이 이후 결정"
+    }
+  ],
+  "roster_commit": "1985b27"
+}
