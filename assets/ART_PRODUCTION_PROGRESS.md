@@ -9,9 +9,9 @@
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 40 | 40 |
-| 장소 | 1 | 261 |
+| 장소 | 26 | 261 |
 
-총 검수 완료: **411/671**.
+총 검수 완료: **436/671**.
 
 ## 목록과 재개 기준
 
@@ -145,6 +145,14 @@
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [equipment-batch-12.json](art-production/equipment-batch-12.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `58516dd0346d5ae53a801e70d8c85b7013a50587`
+
+### locations-p1-batch-01
+
+- 대상/완료 ID: IMG-W1-HUB, IMG-W2-OVERVIEW, IMG-W2-HUB, IMG-W3-OVERVIEW, IMG-W3-HUB, IMG-W4-OVERVIEW, IMG-W4-HUB, IMG-W5-OVERVIEW, IMG-W5-HUB, IMG-E1-OVERVIEW, IMG-E1-HUB, IMG-E2-OVERVIEW, IMG-E2-HUB, IMG-E3-OVERVIEW, IMG-E3-HUB, IMG-E4-OVERVIEW, IMG-E4-HUB, IMG-S1-OVERVIEW, IMG-S1-HUB, IMG-S2-OVERVIEW, IMG-S2-HUB, IMG-S3-OVERVIEW, IMG-S3-HUB, IMG-S4-OVERVIEW, IMG-S4-HUB
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [locations-p1-batch-01.json](art-production/locations-p1-batch-01.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `업로드 전`
 
 ### materials-batch-01
 

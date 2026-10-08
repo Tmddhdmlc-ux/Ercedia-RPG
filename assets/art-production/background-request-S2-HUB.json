@@ -1,0 +1,8 @@
+{
+  "id": "IMG-S2-HUB",
+  "path": "assets/backgrounds/regions/S2/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Distinct closer ground-level view of Servan S2 inland fortress supply hub from referenced architecture. Pale warm stone gate upper-middle, wide open stone courtyard center-right. Left timber wagon repair shed with wheel rims, spare axles and simple hand tools, grain sacks under cream awning. Right wall storage building with timber doors, olive baskets, small barrels. Small olive trees visible beyond defensive gate under clear warm daylight. Plain blue-gray roofs and unadorned white stone architecture. This is inland: no ocean, boats or docks. No characters, flags, emblems, text, modern machines, conflict or storyline outcomes. Match reference visual style while changing camera to close courtyard.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5363b300-f497-458c-b88b-dcc65a0c79fe.png",
+  "canon_source": "LORDSHIPS.md#S2",
+  "reference": "assets/backgrounds/regions/S2/overview.png"
+}

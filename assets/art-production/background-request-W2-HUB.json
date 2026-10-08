@@ -1,0 +1,8 @@
+{
+  "id": "IMG-W2-HUB",
+  "path": "assets/backgrounds/regions/W2/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Valenhart representative regional hub (W2), a new ground-level town-square view using the attached overview only as the same settlement's architecture and art-style reference. Velroa knight kingdom, high-quality armor workshops, horse trade, knight schools, regional stone keep. Broad quiet cobblestone square, a sturdy stone archway and modest knight-school training building at left-middle, an open-sided armor forge with anvils and racks inside at far left, a stable frontage at far right, keep rooftops visible above the street. Silver-gray stone and muted blue plain pennants, earth-brown roofs, clear gentle morning sunlight. No royal throne or royal palace, no new named landmarks, no public religious insignia. Empty space in central-right foreground for a standing character; no visible people, no crowd, no readable shop signs.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-43eed18e-c534-4761-bbc4-ab85421e85a3.png",
+  "reference": "assets/backgrounds/regions/W2/overview.png",
+  "canon_source": "LORDSHIPS.md#W2"
+}

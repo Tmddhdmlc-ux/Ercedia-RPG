@@ -1,0 +1,8 @@
+{
+  "id": "IMG-W4-HUB",
+  "path": "assets/backgrounds/regions/W4/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Rosenfeld representative hub W4, new eye-level garrison supply courtyard within the same fortress-town architectural environment as the reference. Heavy gray stone curtain walls and square towers on the left and back, a simple sheltered leather-and-spear workshop at left edge with plain bundled spear shafts and leather rolls, stacked fodder sacks beside a military horse stable at right edge, an empty supply wagon partly at far right. Large open worn flagstone central courtyard with broad gate and fortress buildings behind. Slightly overcast muted daylight, dark red plain pennants with no insignia. Utilitarian fortified appearance, no royal palace, no named new fort, no active battle, burning structures, prisoners or refugees, no people. Keep strong 2D illustrated outlines and painted shading.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-581f1618-fb03-4015-8f0e-e43039db5cd9.png",
+  "reference": "assets/backgrounds/regions/W4/overview.png",
+  "canon_source": "LORDSHIPS.md#W4"
+}

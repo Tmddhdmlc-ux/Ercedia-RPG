@@ -1,0 +1,8 @@
+{
+  "id": "IMG-S1-HUB",
+  "path": "assets/backgrounds/regions/S1/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  New close view of the Belmarina S1 harbor trade hub, matching referenced white sandstone, blue roofs, warm sunlight and timber shipyard architecture. Broad open quayside square center-right foreground, spice warehouse left with open timber doors, baskets of red and golden dry spice, sealed sacks and shipping crates. Right edge timber dock shed, rope coils and barrels. Middle distance calm blue harbor and a moored wooden sailing ship with plain cream sails, shipbuilding crane and partially built hull further back. No giant palace, magical spectacle, people, readable documents or signs, flags, heraldry, logos. Normal peaceful trade setting. Compose a distinct ground-level scene instead of cropping the overview.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-cec15dce-bbbe-4384-9efb-a741b4ce0403.png",
+  "canon_source": "LORDSHIPS.md#S1",
+  "reference": "assets/backgrounds/regions/S1/overview.png"
+}

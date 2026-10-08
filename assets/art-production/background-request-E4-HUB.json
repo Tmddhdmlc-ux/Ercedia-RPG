@@ -1,0 +1,8 @@
+{
+  "id": "IMG-E4-HUB",
+  "path": "assets/backgrounds/regions/E4/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Use the reference to keep the gray stone, slate roofs and cool teal lanterns of Silvern, E4. Create a NEW closer view at the caravan toll yard next to the gorge bridge, not a cropped overview. Broad gray stone paved courtyard foreground, toll gate and bridge approach middle-left above dialogue area. On the left a small timber counter with baskets of highland medicinal herbs, on the right a modest open precision-tool workshop with real hand tools, workbench, fine brass calipers and compact timber wagons. Buildings and rocks frame the image but central-right standing area stays open. Gorge mountain road and distant slopes behind gate. No people, readable signs, flags, crests or modern machines; calm normal trade day, no plot events.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-989b5681-40e3-43e6-9314-e60386581b5e.png",
+  "canon_source": "LORDSHIPS.md#E4",
+  "reference": "assets/backgrounds/regions/E4/overview.png"
+}

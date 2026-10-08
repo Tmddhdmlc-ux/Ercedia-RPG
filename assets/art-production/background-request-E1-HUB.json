@@ -1,0 +1,8 @@
+{
+  "id": "IMG-E1-HUB",
+  "path": "assets/backgrounds/regions/E1/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Kaltheim representative hub E1, a new ground-level courtyard just inside the mountain checkpoint settlement in the reference. Dark slate-roofed stone gate towers behind left-center, a small open ore-sorting shed at left with baskets of gray ore and modest scales, a guarded-road barrier and inspection desk without papers bearing readable text, angular stone watchtower and simple cold-weather workshop at far right. Restrained bronze lifting gear and two pale blue crystal lanterns physically mounted on masonry, not floating. Cold gray-blue daylight, patches of old snow along walls, sturdy practical Draken frontier architecture. Empty central-right stone roadway for VN character, landmark gate above dialogue zone. Plain blue pennants only, no sigil or crest, no giant magic effects, no visible people or plot-specific event.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-150800d4-75e1-4390-b1b1-5d52ca22a844.png",
+  "reference": "assets/backgrounds/regions/E1/overview.png",
+  "canon_source": "LORDSHIPS.md#E1"
+}

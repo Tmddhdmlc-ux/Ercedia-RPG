@@ -1,0 +1,8 @@
+{
+  "id": "IMG-S3-HUB",
+  "path": "assets/backgrounds/regions/S3/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  A NEW close ground-level Aquaren S3 ship-repair hub, use the reference's white stone, blue roofs, warm timber and refined painted anime style. A broad open stone quay center and right foreground. Left open timber repair shed with real hand tools, coiled ropes, planks, spare wooden rudder and a few salt sacks. Middle-left drydock with wooden sailing hull on stable support beams and a simple timber hoist. Middle-right calm sea and small pier, navigation-school white arcade and modest observation tower high behind quay. No palace, flags, logos, text, people, fishing catch creatures, modern machines, battles or supernatural events. All main structures above lower quarter, unobstructed character area.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-007db15c-bcb4-4742-8cda-1a89b0030d7a.png",
+  "canon_source": "LORDSHIPS.md#S3",
+  "reference": "assets/backgrounds/regions/S3/overview.png"
+}

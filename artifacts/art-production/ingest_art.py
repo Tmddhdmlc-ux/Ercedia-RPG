@@ -36,6 +36,7 @@ if args.id:
         'target_ids': [], 'completed_ids': [], 'pending_ids': [], 'failures': [], 'commit_sha': None}
     for field in ['target_ids', 'completed_ids']:
         if args.id not in batch[field]: batch[field].append(args.id)
+    batch['pending_ids'] = [id for id in batch['target_ids'] if id not in batch['completed_ids']]
     write(path, batch)
     if args.background:
         manifest = read('assets/location_image_manifest.json')

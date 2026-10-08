@@ -1,0 +1,8 @@
+{
+  "id": "IMG-E3-HUB",
+  "path": "assets/backgrounds/regions/E3/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Bergstein representative hub E3, new eye-level view of a broad ore-and-stone transport court at the foot of the same iron-gray gorge fortress from the reference. Monumental square-towered stone gateway at left-middle, gray quarry blocks and baskets of iron ore beside a covered smith-work shed at left edge, unassembled iron cannon tubes and wheels inside a far-right workshop, a practical wooden hoist fixed to cliff masonry. Sparse muted teal crystal lamps on brackets only. Dark slate roofs, rough gray rock, cool cloudy daylight, dry weather with no fresh battle damage. Open central-right paved forecourt for a character and lower dialogue box. No flags, heraldry, inscriptions, workers, strikes, royal palace, floating magic or resolved events. Distinct close-ground composition with cohesive painted 2D VN lineart.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-cfef2872-5407-4742-84a9-5ef11e0c3197.png",
+  "reference": "assets/backgrounds/regions/E3/overview.png",
+  "canon_source": "LORDSHIPS.md#E3"
+}

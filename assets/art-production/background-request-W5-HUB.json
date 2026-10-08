@@ -1,0 +1,8 @@
+{
+  "id": "IMG-W5-HUB",
+  "path": "assets/backgrounds/regions/W5/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Ardenstein representative hub W5, a separate eye-level view inside the trade town depicted in the reference. A wide crossroads wagon-yard plaza, low stone toll gatehouse left of center with an empty barrier arm raised, open-sided wagon workshop at far left holding spare wooden wheels and wagon frames, wine barrels and bundled wool near a simple timber storehouse at right. Modest stone-and-timber mercantile architecture, burgundy-brown tiled roofs, natural warm daylight, vineyards glimpsed beyond town gate. NO flags or hanging banners anywhere, NO crests, moons, emblems, signs or written toll prices. No visible people, royal palace or active political event. Open central-right foreground and broad lower dialogue space. Keep cohesive hand-painted 2D VN style from reference.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-d198b3dd-6ca5-4acb-892a-b47676e36632.png",
+  "reference": "assets/backgrounds/regions/W5/overview.png",
+  "canon_source": "LORDSHIPS.md#W5"
+}

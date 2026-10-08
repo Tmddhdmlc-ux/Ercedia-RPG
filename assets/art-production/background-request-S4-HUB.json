@@ -1,0 +1,8 @@
+{
+  "id": "IMG-S4-HUB",
+  "path": "assets/backgrounds/regions/S4/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  NEW ground-level close scene of Solmeria S4 mercantile hub. Use referenced white sandstone blue roof and warm sunshine but COMPLETELY CHANGE CAMERA into a compact trading courtyard. Left two-story arcaded merchant exchange building with plain heavy wooden doors, center back modest scholarly colonnaded courtyard entrance, right open timber silk workshop under cream awning with folded cream/blue cloth bolts and simple loom glimpsed inside. Small fruit trees in stone planters and orchard visible beyond small side archway, cargo cart parked along far left edge. Broad clear paving foreground and center-right standing area. Main entrances above bottom quarter. No sea, boats, royal palace, flags, invented seals, lettering, people, magical spectacle or plot events. Refined hand-painted anime medieval environment.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-e6913752-00e2-40ef-9b97-efa54853a819.png",
+  "canon_source": "LORDSHIPS.md#S4",
+  "reference": "assets/backgrounds/regions/S4/overview.png"
+}

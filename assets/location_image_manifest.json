@@ -50,7 +50,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/W1/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W1"
     },
@@ -60,7 +60,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/W2/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W2"
     },
@@ -70,7 +70,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/W2/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W2"
     },
@@ -80,7 +80,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/W3/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W3"
     },
@@ -90,7 +90,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/W3/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W3"
     },
@@ -100,7 +100,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/W4/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W4"
     },
@@ -110,7 +110,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/W4/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W4"
     },
@@ -120,7 +120,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/W5/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W5"
     },
@@ -130,7 +130,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/W5/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "W5"
     },
@@ -140,7 +140,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/E1/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E1"
     },
@@ -150,7 +150,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/E1/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E1"
     },
@@ -160,7 +160,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/E2/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E2"
     },
@@ -170,7 +170,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/E2/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E2"
     },
@@ -180,7 +180,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/E3/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E3"
     },
@@ -190,7 +190,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/E3/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E3"
     },
@@ -200,7 +200,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/E4/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E4"
     },
@@ -210,7 +210,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/E4/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "E4"
     },
@@ -220,7 +220,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/S1/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S1"
     },
@@ -230,7 +230,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/S1/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S1"
     },
@@ -240,7 +240,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/S2/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S2"
     },
@@ -250,7 +250,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/S2/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S2"
     },
@@ -260,7 +260,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/S3/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S3"
     },
@@ -270,7 +270,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/S3/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S3"
     },
@@ -280,7 +280,7 @@
       "category": "region_overview",
       "path": "assets/backgrounds/regions/S4/overview.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S4"
     },
@@ -290,7 +290,7 @@
       "category": "region_hub",
       "path": "assets/backgrounds/regions/S4/hub.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "LORDSHIPS.md",
       "region_id": "S4"
     },

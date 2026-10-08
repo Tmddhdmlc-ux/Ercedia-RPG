@@ -1,0 +1,8 @@
+{
+  "id": "IMG-W3-HUB",
+  "path": "assets/backgrounds/regions/W3/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed. Create Elmberg representative hub (W3), a separate eye-level view inside the same practical farming settlement shown in the reference. Wide grain-market courtyard between sturdy stone-and-timber granaries, stacked sealed grain sacks and seed baskets arranged at the left edge, a few wheels of cheese at a simple unlettered market table, an empty wooden cart near right edge, a modest administrative building beyond. Wheat-gold fields glimpsed through an open lane in the distance. Warm daylight, earth-brown timber and pale beige plaster, modest practical construction. Do not display the lord's personal crest or any insignia; remove all flags if unsure. No active grain fire, no event-specific destruction, no named new building. Clear empty central-right foreground for standing art, main architecture above dialogue zone, no people, no readable labels.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-8ee14c57-5463-44be-9620-bb60027372e2.png",
+  "reference": "assets/backgrounds/regions/W3/overview.png",
+  "canon_source": "LORDSHIPS.md#W3"
+}
