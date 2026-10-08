@@ -1,0 +1,391 @@
+{
+  "version": "geography-layout-v0.1",
+  "status": "draft_pending_user_approval",
+  "canonical": false,
+  "image": "world_base.png",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "image_sha256": "edef9a05a2d59772a2bfb8455004764cedeff08ea141c2e7383fecb85eb4696d",
+  "coordinates": {
+    "origin": "top_left",
+    "range": [
+      0,
+      1
+    ],
+    "x": "pixel_x / width",
+    "y": "pixel_y / height"
+  },
+  "layout_guidance": {
+    "north_wilderness": 0.4,
+    "human_middle_south": 0.6,
+    "note": "approximate composition only, not measured territorial area"
+  },
+  "lordship_candidate_counts": {
+    "west": 5,
+    "east": 4,
+    "south": 4
+  },
+  "political_boundaries": {
+    "confirmed": false,
+    "polygons": [],
+    "management": "separate future UI layer; do not infer borders from roads or terrain"
+  },
+  "regions": [
+    {
+      "id": "northwest",
+      "label": "북서 미개척 설산·빙하",
+      "x": 0.21158854166666666,
+      "y": 0.166015625,
+      "provisional": true
+    },
+    {
+      "id": "northcenter",
+      "label": "북중 미개척 원시림",
+      "x": 0.4752604166666667,
+      "y": 0.16796875,
+      "provisional": true
+    },
+    {
+      "id": "northeast",
+      "label": "북동 미개척 마나 이상지대",
+      "x": 0.751953125,
+      "y": 0.17578125,
+      "provisional": true
+    },
+    {
+      "id": "west",
+      "label": "서부 왕국 (임시)",
+      "x": 0.22135416666666666,
+      "y": 0.3955078125,
+      "provisional": true
+    },
+    {
+      "id": "east",
+      "label": "동부 왕국 (임시)",
+      "x": 0.7552083333333334,
+      "y": 0.419921875,
+      "provisional": true
+    },
+    {
+      "id": "south",
+      "label": "남부 왕국 (임시)",
+      "x": 0.5208333333333334,
+      "y": 0.7177734375,
+      "provisional": true
+    },
+    {
+      "id": "disputed",
+      "label": "중앙 분쟁지",
+      "x": 0.5045572916666666,
+      "y": 0.474609375,
+      "provisional": true
+    }
+  ],
+  "locations": [
+    {
+      "id": "W1",
+      "label": "west 영주령 후보 1",
+      "kind": "lordship",
+      "region": "west",
+      "x": 0.18945312,
+      "y": 0.31152344,
+      "provisional": true
+    },
+    {
+      "id": "W2",
+      "label": "west 영주령 후보 2",
+      "kind": "lordship",
+      "region": "west",
+      "x": 0.32291667,
+      "y": 0.38867188,
+      "provisional": true
+    },
+    {
+      "id": "W3",
+      "label": "west 영주령 후보 3",
+      "kind": "lordship",
+      "region": "west",
+      "x": 0.24283854,
+      "y": 0.4765625,
+      "provisional": true
+    },
+    {
+      "id": "W4",
+      "label": "west 영주령 후보 4",
+      "kind": "lordship",
+      "region": "west",
+      "x": 0.32291667,
+      "y": 0.55175781,
+      "provisional": true
+    },
+    {
+      "id": "W5",
+      "label": "west 영주령 후보 5",
+      "kind": "lordship",
+      "region": "west",
+      "x": 0.3984375,
+      "y": 0.62109375,
+      "provisional": true
+    },
+    {
+      "id": "E1",
+      "label": "east 영주령 후보 1",
+      "kind": "lordship",
+      "region": "east",
+      "x": 0.74414062,
+      "y": 0.34570312,
+      "provisional": true
+    },
+    {
+      "id": "E2",
+      "label": "east 영주령 후보 2",
+      "kind": "lordship",
+      "region": "east",
+      "x": 0.66080729,
+      "y": 0.40527344,
+      "provisional": true
+    },
+    {
+      "id": "E3",
+      "label": "east 영주령 후보 3",
+      "kind": "lordship",
+      "region": "east",
+      "x": 0.66666667,
+      "y": 0.48828125,
+      "provisional": true
+    },
+    {
+      "id": "E4",
+      "label": "east 영주령 후보 4",
+      "kind": "lordship",
+      "region": "east",
+      "x": 0.69010417,
+      "y": 0.56445312,
+      "provisional": true
+    },
+    {
+      "id": "S1",
+      "label": "south 영주령 후보 1",
+      "kind": "lordship",
+      "region": "south",
+      "x": 0.37109375,
+      "y": 0.73730469,
+      "provisional": true
+    },
+    {
+      "id": "S2",
+      "label": "south 영주령 후보 2",
+      "kind": "lordship",
+      "region": "south",
+      "x": 0.47851562,
+      "y": 0.63476562,
+      "provisional": true
+    },
+    {
+      "id": "S3",
+      "label": "south 영주령 후보 3",
+      "kind": "lordship",
+      "region": "south",
+      "x": 0.56901042,
+      "y": 0.69824219,
+      "provisional": true
+    },
+    {
+      "id": "S4",
+      "label": "south 영주령 후보 4",
+      "kind": "lordship",
+      "region": "south",
+      "x": 0.53320312,
+      "y": 0.80371094,
+      "provisional": true
+    },
+    {
+      "id": "CW",
+      "label": "서부 왕도 후보",
+      "kind": "capital",
+      "region": "west",
+      "x": 0.28776042,
+      "y": 0.34277344,
+      "provisional": true
+    },
+    {
+      "id": "CE",
+      "label": "동부 왕도 후보",
+      "kind": "capital",
+      "region": "east",
+      "x": 0.72265625,
+      "y": 0.4296875,
+      "provisional": true
+    },
+    {
+      "id": "CS",
+      "label": "남부 왕도 후보",
+      "kind": "capital",
+      "region": "south",
+      "x": 0.50520833,
+      "y": 0.75097656,
+      "provisional": true
+    },
+    {
+      "id": "F1",
+      "label": "중앙 요새 후보",
+      "kind": "fortress",
+      "region": "disputed",
+      "x": 0.50585938,
+      "y": 0.47753906,
+      "provisional": true
+    },
+    {
+      "id": "M1",
+      "label": "접경 마나 광산 후보",
+      "kind": "mana_mine",
+      "region": "disputed",
+      "x": 0.59505208,
+      "y": 0.43847656,
+      "provisional": true
+    },
+    {
+      "id": "P1",
+      "label": "남서 항구 후보",
+      "kind": "port",
+      "region": "south",
+      "x": 0.30794271,
+      "y": 0.69433594,
+      "provisional": true
+    },
+    {
+      "id": "P2",
+      "label": "남동 항구 후보",
+      "kind": "port",
+      "region": "south",
+      "x": 0.63867188,
+      "y": 0.60742188,
+      "provisional": true
+    },
+    {
+      "id": "D1",
+      "label": "고대 던전 후보",
+      "kind": "dungeon",
+      "region": "northwest",
+      "x": 0.2890625,
+      "y": 0.15820312,
+      "provisional": true
+    },
+    {
+      "id": "B1",
+      "label": "마수 서식 후보",
+      "kind": "beast_habitat",
+      "region": "northcenter",
+      "x": 0.47526042,
+      "y": 0.21875,
+      "provisional": true
+    },
+    {
+      "id": "A1",
+      "label": "마나 이상·유적 후보",
+      "kind": "anomaly",
+      "region": "northeast",
+      "x": 0.76171875,
+      "y": 0.15722656,
+      "provisional": true
+    },
+    {
+      "id": "I1",
+      "label": "군도 탐험 후보",
+      "kind": "island",
+      "region": "archipelago",
+      "x": 0.85026042,
+      "y": 0.66894531,
+      "provisional": true
+    }
+  ],
+  "trade_routes": [
+    {
+      "id": "west_to_center",
+      "provisional": true,
+      "kind": "land_trade_route_candidate",
+      "vertices": [
+        {
+          "x": 0.32291667,
+          "y": 0.38867188
+        },
+        {
+          "x": 0.37109375,
+          "y": 0.3984375
+        },
+        {
+          "x": 0.41471354,
+          "y": 0.43457031
+        },
+        {
+          "x": 0.46484375,
+          "y": 0.46191406
+        },
+        {
+          "x": 0.50585938,
+          "y": 0.47753906
+        }
+      ]
+    },
+    {
+      "id": "east_to_center",
+      "provisional": true,
+      "kind": "land_trade_route_candidate",
+      "vertices": [
+        {
+          "x": 0.66666667,
+          "y": 0.48828125
+        },
+        {
+          "x": 0.61914062,
+          "y": 0.5
+        },
+        {
+          "x": 0.56901042,
+          "y": 0.50292969
+        },
+        {
+          "x": 0.5390625,
+          "y": 0.48828125
+        },
+        {
+          "x": 0.50585938,
+          "y": 0.47753906
+        }
+      ]
+    },
+    {
+      "id": "south_to_center",
+      "provisional": true,
+      "kind": "land_trade_route_candidate",
+      "vertices": [
+        {
+          "x": 0.56901042,
+          "y": 0.69824219
+        },
+        {
+          "x": 0.51497396,
+          "y": 0.6640625
+        },
+        {
+          "x": 0.49804688,
+          "y": 0.59765625
+        },
+        {
+          "x": 0.52018229,
+          "y": 0.55078125
+        },
+        {
+          "x": 0.51106771,
+          "y": 0.51269531
+        },
+        {
+          "x": 0.50585938,
+          "y": 0.47753906
+        }
+      ]
+    }
+  ]
+}
