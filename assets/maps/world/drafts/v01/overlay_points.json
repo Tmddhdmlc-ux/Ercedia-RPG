@@ -1,0 +1,163 @@
+{
+  "status": "non-canonical draft; candidate coordinates only",
+  "image_size": [
+    1536,
+    1024
+  ],
+  "coordinates": "normalized 0..1, origin top-left",
+  "lordships_per_state": "three candidate lordships plus one candidate capital, expandable to 3-5 lordships",
+  "points": [
+    {
+      "id": "W1",
+      "label": "왕도 후보",
+      "kind": "capital",
+      "x": 0.27,
+      "y": 0.38,
+      "provisional": true
+    },
+    {
+      "id": "W2",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.2,
+      "y": 0.48,
+      "provisional": true
+    },
+    {
+      "id": "W3",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.32,
+      "y": 0.52,
+      "provisional": true
+    },
+    {
+      "id": "W4",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.39,
+      "y": 0.36,
+      "provisional": true
+    },
+    {
+      "id": "E1",
+      "label": "왕도 후보",
+      "kind": "capital",
+      "x": 0.73,
+      "y": 0.38,
+      "provisional": true
+    },
+    {
+      "id": "E2",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.68,
+      "y": 0.49,
+      "provisional": true
+    },
+    {
+      "id": "E3",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.79,
+      "y": 0.48,
+      "provisional": true
+    },
+    {
+      "id": "E4",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.67,
+      "y": 0.32,
+      "provisional": true
+    },
+    {
+      "id": "S1",
+      "label": "왕도 후보",
+      "kind": "capital",
+      "x": 0.49,
+      "y": 0.65,
+      "provisional": true
+    },
+    {
+      "id": "S2",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.44,
+      "y": 0.74,
+      "provisional": true
+    },
+    {
+      "id": "S3",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.56,
+      "y": 0.77,
+      "provisional": true
+    },
+    {
+      "id": "S4",
+      "label": "영주령 후보",
+      "kind": "lordship",
+      "x": 0.57,
+      "y": 0.62,
+      "provisional": true
+    },
+    {
+      "id": "P1",
+      "label": "항구 후보",
+      "kind": "port",
+      "x": 0.35,
+      "y": 0.65,
+      "provisional": true
+    },
+    {
+      "id": "P2",
+      "label": "항구 후보",
+      "kind": "port",
+      "x": 0.65,
+      "y": 0.62,
+      "provisional": true
+    },
+    {
+      "id": "F1",
+      "label": "요새·전선 후보",
+      "kind": "fortress",
+      "x": 0.5,
+      "y": 0.42,
+      "provisional": true
+    },
+    {
+      "id": "D1",
+      "label": "고대 던전 후보",
+      "kind": "dungeon",
+      "x": 0.23,
+      "y": 0.22,
+      "provisional": true
+    },
+    {
+      "id": "B1",
+      "label": "마수 서식 후보",
+      "kind": "beast",
+      "x": 0.46,
+      "y": 0.23,
+      "provisional": true
+    },
+    {
+      "id": "A1",
+      "label": "마나 이상 후보",
+      "kind": "anomaly",
+      "x": 0.76,
+      "y": 0.23,
+      "provisional": true
+    },
+    {
+      "id": "I1",
+      "label": "군도 탐험 후보",
+      "kind": "island",
+      "x": 0.83,
+      "y": 0.68,
+      "provisional": true
+    }
+  ]
+}

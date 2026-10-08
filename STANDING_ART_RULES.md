@@ -51,6 +51,8 @@
 ## 6. 파일 구조
 아래는 정식 자산의 목표 구조다. 현재 세린은 사용자 선택 전신을 정리한 standing/base.png와 PNG 자체 비율을 보정한 outfits/nightwear/base.png, outfits/casual/base.png를 등록했다. 표정 9종 제작은 사용자 요청으로 중지 상태이며 기본형 외 표정은 미등록이다. 변환·앵커·검증 기록은 [standing_notes.md](assets/characters/main/serin/standing/standing_notes.md)와 outfit_alignment.json을 확인한다. standing/drafts/는 이전 생성 원본 보관용이다.
 
+사용자의 후속 지시에 따라 전신 표정 제작 대신 **복장과 독립된 공통 얼굴 표정 9종**을 `assets/characters/main/serin/faces/`에 제작했다. 해당 파일은 512×512 RGBA 얼굴 레이어이며 기존 전신·반신 규격의 대체물이 아니다. [얼굴 레이어 설명](assets/characters/main/serin/faces/README.md)을 확인한다. 복장별 합성은 아직 적용하지 않았다.
+
 ```text
 assets/
   characters/
