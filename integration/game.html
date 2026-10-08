@@ -146,6 +146,7 @@
 .quest-panel{padding:20px;background:#12212c;min-height:480px}.quest-heading{display:flex;gap:12px;align-items:center;flex-wrap:wrap}.quest-heading>div{flex:1}.quest-heading h2{color:#edcf96;margin:0;font-size:26px}.quest-heading p{font-size:16px}.quest-heading button,.quest-actions button,.quest-filters button{min-height:44px;font-size:16px}.quest-filters{display:flex;gap:8px;flex-wrap:wrap;margin:18px 0}.quest-filters [aria-pressed=true]{border-color:#edcf96;color:#edcf96}.quest-layout{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:16px}.quest-list{display:grid;gap:10px}.quest-card{text-align:left;display:grid;gap:6px;padding:16px;min-width:0}.quest-card strong{font-size:20px;color:#edcf96}.quest-card span{font-size:16px;overflow-wrap:anywhere}.quest-card[aria-pressed=true]{border-color:#edcf96}.quest-card progress{width:100%;height:10px;accent-color:#edcf96}.quest-detail{padding:18px;background:#20333f;border:1px solid #edcf9655;border-radius:8px;font-size:17px;overflow-wrap:anywhere}.quest-detail h3{font-size:24px;color:#edcf96;margin:0 0 14px}.quest-detail p{margin:10px 0}.quest-detail li{margin:10px 0}.quest-detail summary{cursor:pointer;color:#edcf96}.quest-actions{display:flex;gap:8px;flex-wrap:wrap;margin-top:14px}.quest-proposals article{border:1px solid #edcf9677;padding:14px;border-radius:8px;margin-bottom:14px;background:#20333f}.quest-proposals strong{font-size:21px;color:#edcf96}.quest-proposals p{font-size:16px;margin-top:8px}.tabs{overflow-x:auto;gap:18px}.tabs button{white-space:nowrap;flex-shrink:0}.quest-panel #quest-empty{font-size:17px;color:#b1c0c8}.game[data-page=quests] .chat-runtime{display:none}
 @media(max-width:700px){.quest-panel{padding:14px}.quest-layout{grid-template-columns:1fr}.quest-heading button{flex:1}.quest-detail{font-size:17px}.quest-card strong{font-size:20px}.tabs{gap:16px}.tabs button span{display:none}}
 .engine-card{margin:20px 0;padding:20px;border:1px solid #52646d;border-radius:12px;font-size:18px}.engine-card p{margin:8px 0}.engine-row{display:flex;align-items:center;justify-content:space-between;gap:16px;border-bottom:1px solid #33434b;padding:6px 0}.engine-card button{min-height:44px;padding:10px 20px;margin:5px;font-size:18px}.engine-owned{padding:16px;margin:12px 0;border:2px solid var(--item-rarity-color,#52646d);border-radius:8px}.engine-row.item-rarity{border:2px solid var(--item-rarity-color)}
+.game[data-intro-phase=map] .play-hud,.game[data-intro-phase=map] .new-game-actions{display:none!important}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -418,7 +419,7 @@ function knownOverrides(raw,base){
 function resolveNPC(state,id,profile={}){const base=findNPC(id);if(!base)return null;const p={...base,...knownOverrides(profile,base),...knownOverrides(state.npcStates?.[base.id],base),id:base.id};for(const [value,max] of [['hp','maxHp'],['mp','maxMp']])if(typeof p[value]==='number'&&typeof p[max]==='number')p[value]=Math.min(p[value],p[max]);return p;}
 function npcSnapshot(state,id){const p=resolveNPC(state,id,state.scene?.npc?.id===id?state.scene.npc.profile||{}:{});if(!p)return null;return {...p,stats:{strength:p.strength,dexterity:p.dexterity,intelligence:p.intelligence,constitution:p.constitution,manaStat:p.manaStat},level_hp_bonus:p.levelHpBonus,art:p.id==='serin'?{id:'serin',outfit:state.outfit,emotion:state.expression}:null};}
 function updateNPC(state,id,profile){const base=findNPC(id);if(!base)throw Error('등록되지 않은 인물입니다.');state.npcStates={...state.npcStates,[base.id]:{...state.npcStates?.[base.id],...knownOverrides(profile)}};}
-function npcContext(state){const id=state.scene?.npc?.id||(state.character?'serin':null);return {catalog_digest:catalogData.digest,current_npc:id?npcSnapshot(state,id):null,npc_changes:state.npcStates||{},sources:catalogData.sources};}
+function npcContext(state){const id=state.scene?.npc?.id||(state.character?'serin':null),changes={};for(const [npcId,profile]of Object.entries(state.npcStates||{})){const base=findNPC(npcId),delta=Object.fromEntries(Object.entries(profile).filter(([key,value])=>value!==null&&value!==base?.[key]));if(Object.keys(delta).length)changes[npcId]=delta;}return {catalog_digest:catalogData.digest,current_npc:id?npcSnapshot(state,id):null,npc_changes:changes,sources:catalogData.sources};}
 
 return {npcCatalog,npcRankLabel,findNPC,resolveNPC,npcSnapshot,updateNPC,npcContext};})();
 const module10=(()=>{
@@ -1106,11 +1107,11 @@ function parseScene(source){
   throw Error('완료된 ercedia_scene JSON 블록을 찾지 못했습니다.');
 }
 function contextSummary(state){
-  return {engine:state.engine||null,scene_id:state.scene?.scene_id||null,location:locationLabel(state.scene?.location||'솔브린 마을'),time:state.scene?.time||'오후',player:state.player,npc_catalog:npcContext(state),...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),quest_log:state.quest_log||[],quest_event_ids:state.quest_event_ids||[],currency:state.currency||0,relationships:state.relationships||{},inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
+  return {campaign_id:state.campaign_id||null,engine:state.engine||null,scene_id:state.scene?.scene_id||null,location:locationLabel(state.scene?.location||'솔브린 마을'),time:state.scene?.time||'오후',player:state.player,npc_catalog:npcContext(state),...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),quest_log:state.quest_log||[],quest_event_ids:state.quest_event_ids||[],currency:state.currency||0,relationships:state.relationships||{},inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
 }
 function actionPrompt(state,action,requestId){
   const engineInstruction='[엔진 지침] tampermonkey/ENGINE_SCHEMA.md를 읽고 실제로 판정한 변경은 engine_events로 출력하세요. 엔진·전투·의뢰의 같은 경험치나 아이템을 이중 지급하지 마세요. 장비가 반영된 player 수치에 engine.bonuses를 다시 더하지 마세요. 기술서는 engine.learned와 player.skills를 참조하고 실제 학습·MP·서클 조건을 지키세요.';
-  return engineInstruction+`\n\n에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 솔브린 마을나 세린을 임의로 이동시키지 마세요. 세린의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. 세린 이외 등록 인물은 npc.id에 characters 데이터의 고유 ID를 사용하고 outfit=none, emotion=base를 사용하세요. 미등록 원화를 붙이지 않습니다. npc_updates는 최대 16명의 공개 변경값을 ID별 객체로 기록합니다. npc_catalog.current_npc의 수치는 UI와 전투가 공유하는 현재 값입니다. characters/npc_roster_100.json, characters/core_cast_stats_38.json, 숫자가 등록된 경우에만 characters/serin.json을 추가 기준으로 NPC를 판정하고, 숫자가 없는 인물의 능력치는 만들지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,level,realm,strength,dexterity,intelligence,constitution,manaStat,speed,levelHpBonus,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n전투 발생 시에는 BATTLE_SYSTEM.md, COMBAT_GROWTH.md, PROGRESSION.md, MONSTER_RANKS.md, EQUIPMENT_RULES.md, REGIONAL_DUNGEONS.md, DUNGEON_STRUCTURE.md, BOOKS_SYSTEM.md, LOOT_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 실제로 읽고, 이 ercedia_scene에 선택 항목 battle을 추가하세요. 전투 전체를 사전 판정하고 battle_id/trigger/participants/initiative/events/outcome을 출력합니다. 참가자 현재 stats 5종/HP/MP/speed/realm/level_hp_bonus/modifiers/skills/art, 순서별 actor/target/kind/result/skill_id/damage/mp_cost/네 자원 after/calculation/narration, 종료 winner/termination/reason/resources/xp_gain/items_added/items_consumed/injuries를 포함합니다. damage는 실제 HP 감소값, 회피는 0. 마수는 npc_catalog의 creatureMultiplier를 별도 creature_multiplier로 사용하고 기사 realm=none을 유지하세요. 기사 배율과 MP 비용/스킬/장비 증빙을 명시하고 깨달음 진척도·확률은 만들지 마세요. 기존 player 능력치가 미정이면 전투를 발명하지 말고 먼저 일반 장면에서 확정하세요. 종료 후 player/inventory/game_state 전체 스냅샷과 복귀할 dialogue/choices를 함께 출력하세요. 주인공 원화는 미등록이면 art=null이며 세린 원화를 주인공에 쓰지 않습니다. UI는 전투 종료 때만 보상/부상을 정산합니다.\n\n의뢰는 QUEST_SYSTEM.md와 tampermonkey/QUEST_SCHEMA.md를 따릅니다. 선택 항목 quest_updates=[의뢰 전체 제안], quest_events=[{event_id,quest_id,kind:accept/decline/abandon/fail/report,reason}], world_events=[{event_id,kind:dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id,location,proof,quantity?,recipient_id?,subject_alive?}]를 사용할 수 있습니다. 의뢰 목표 verification={kind:battle_win/dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id}. current는 UI가 실제 사건으로 갱신합니다. 제안은 offered이며 수락/거절/실패는 GM이 성격·호감도·직무와 실제 상황을 판정한 뒤 quest_events로 확인합니다. 행동 버튼만 눌렀다고 성공 처리하지 않습니다. report는 발행자에게 실제 보고한 뒤에만 출력합니다. 의뢰 보상은 UI가 reward와 claim_event_id로 한 번 지급하므로 report 장면에는 player/inventory/npc_updates 보상 스냅샷을 넣지 마세요. 같은 event_id는 재사용하지 마세요. 전투 토벌은 UI가 종료 때 생성하므로 world_events battle_win을 만들지 마세요. 원문 대사만으로 진행도를 늘리지 말고 실제 기록이 있는 증거만 출력하세요. 지역 영주령 ID는 W1~W5/E1~E4/S1~S4이며 현재 날짜는 12개월 각 30일 달력을 따릅니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+  return (state.campaign_id?`[새 캠페인 경계] campaign_id=${state.campaign_id}. 현재 상태만 이번 게임의 진행 기록입니다. 이전 청명 또는 다른 주인공의 HP/경험치/장비/의뢰/장소를 이번 게임으로 복사하지 마세요. 동일 채팅의 과거 게임 진행은 폐기하고 설정 원문만 참조하세요.\n\n`:" ")+engineInstruction+`\n\n에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 솔브린 마을나 세린을 임의로 이동시키지 마세요. 세린의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. 세린 이외 등록 인물은 npc.id에 characters 데이터의 고유 ID를 사용하고 outfit=none, emotion=base를 사용하세요. 미등록 원화를 붙이지 않습니다. npc_updates는 최대 16명의 공개 변경값을 ID별 객체로 기록합니다. npc_catalog.current_npc의 수치는 UI와 전투가 공유하는 현재 값입니다. characters/npc_roster_100.json, characters/core_cast_stats_38.json, 숫자가 등록된 경우에만 characters/serin.json을 추가 기준으로 NPC를 판정하고, 숫자가 없는 인물의 능력치는 만들지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,level,realm,strength,dexterity,intelligence,constitution,manaStat,speed,levelHpBonus,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n전투 발생 시에는 BATTLE_SYSTEM.md, COMBAT_GROWTH.md, PROGRESSION.md, MONSTER_RANKS.md, EQUIPMENT_RULES.md, REGIONAL_DUNGEONS.md, DUNGEON_STRUCTURE.md, BOOKS_SYSTEM.md, LOOT_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 실제로 읽고, 이 ercedia_scene에 선택 항목 battle을 추가하세요. 전투 전체를 사전 판정하고 battle_id/trigger/participants/initiative/events/outcome을 출력합니다. 참가자 현재 stats 5종/HP/MP/speed/realm/level_hp_bonus/modifiers/skills/art, 순서별 actor/target/kind/result/skill_id/damage/mp_cost/네 자원 after/calculation/narration, 종료 winner/termination/reason/resources/xp_gain/items_added/items_consumed/injuries를 포함합니다. damage는 실제 HP 감소값, 회피는 0. 마수는 npc_catalog의 creatureMultiplier를 별도 creature_multiplier로 사용하고 기사 realm=none을 유지하세요. 기사 배율과 MP 비용/스킬/장비 증빙을 명시하고 깨달음 진척도·확률은 만들지 마세요. 기존 player 능력치가 미정이면 전투를 발명하지 말고 먼저 일반 장면에서 확정하세요. 종료 후 player/inventory/game_state 전체 스냅샷과 복귀할 dialogue/choices를 함께 출력하세요. 주인공 원화는 미등록이면 art=null이며 세린 원화를 주인공에 쓰지 않습니다. UI는 전투 종료 때만 보상/부상을 정산합니다.\n\n의뢰는 QUEST_SYSTEM.md와 tampermonkey/QUEST_SCHEMA.md를 따릅니다. 선택 항목 quest_updates=[의뢰 전체 제안], quest_events=[{event_id,quest_id,kind:accept/decline/abandon/fail/report,reason}], world_events=[{event_id,kind:dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id,location,proof,quantity?,recipient_id?,subject_alive?}]를 사용할 수 있습니다. 의뢰 목표 verification={kind:battle_win/dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id}. current는 UI가 실제 사건으로 갱신합니다. 제안은 offered이며 수락/거절/실패는 GM이 성격·호감도·직무와 실제 상황을 판정한 뒤 quest_events로 확인합니다. 행동 버튼만 눌렀다고 성공 처리하지 않습니다. report는 발행자에게 실제 보고한 뒤에만 출력합니다. 의뢰 보상은 UI가 reward와 claim_event_id로 한 번 지급하므로 report 장면에는 player/inventory/npc_updates 보상 스냅샷을 넣지 마세요. 같은 event_id는 재사용하지 마세요. 전투 토벌은 UI가 종료 때 생성하므로 world_events battle_win을 만들지 마세요. 원문 대사만으로 진행도를 늘리지 말고 실제 기록이 있는 증거만 출력하세요. 지역 영주령 ID는 W1~W5/E1~E4/S1~S4이며 현재 날짜는 12개월 각 30일 달력을 따릅니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
 const {validateEngineEvents}=module20;
 
@@ -1624,6 +1625,7 @@ function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(typeof raw.campaign_id==='string'&&raw.campaign_id.length<=100)s.campaign_id=raw.campaign_id;
   if(raw.engine){const engine=normalizeEngine(raw.engine);if(engine)s.engine=engine;}
   if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,160)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
   if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
@@ -1716,7 +1718,7 @@ function campaignSettingsPrompt(snapshot){
 }
 function legacyCampaignPrompt(snapshot){
   const paths=['BOOTSTRAP.md','WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md',...snapshot.paths.filter(p=>!['BOOTSTRAP.md','WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md'].includes(p))];
-  return `이 채팅에서 새 캠페인을 시작합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n${paths.map(p=>`https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/${p}`).join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
+  return `이 채팅에서 새 캠페인을 시작합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n설정 원문의 공통 경로: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/\n필수 시작 문서: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/BOOTSTRAP.md\n전체 상대 경로 목록(공통 경로 뒤에 붙여 열람):\n${paths.join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
 }
 function campaignNPCStates(snapshot,knownIds){
   const read=path=>JSON.parse(snapshot.files[path]||'{}');
@@ -1815,10 +1817,13 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
   }
-  function apply(source,{commitBattle=false}={}){
+  function apply(source,{commitBattle=false,fromHost=false,manual=false}={}){
     try{
       if(battleIsActive(state)&&!commitBattle)return status('전투 재생 중에는 후속 장면을 시작할 수 없습니다.');
       const scene=parseScene(source);
+      if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
+      if(campaignSettings&&state.campaign_id&&scene.player){const fresh=state.player;for(const key of ['name','level','xp','strength','dexterity','intelligence','constitution','manaStat','hp','maxHp','mp','maxMp'])if(scene.player[key]!==fresh[key]){cancel('새 게임 첫 응답에 이전 주인공 수치가 섞여 있습니다. Lv1 초기 상태를 유지합니다. 현재 시작 위치와 주인공으로 다시 요청하세요.');return;}}
+      if(manual)requireSettingsConfirmation=false;
       if(campaignSettings&&requireSettingsConfirmation&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length)){cancel('GPT의 설정 읽기 확인이 누락되거나 다른 버전입니다. 연결 도움에서 원본 응답을 수정해 적용하거나 다시 요청하세요.');return;}
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
@@ -1864,7 +1869,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
   $('send-action').type='button';
   $('send-action').onclick=()=>submit($('free-action').value);
   $('free-action').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();submit(event.currentTarget.value);}});
-  $('apply-scene').onclick=()=>apply($('scene-json').value);
+  $('apply-scene').onclick=()=>apply($('scene-json').value,{manual:true});
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
@@ -1885,11 +1890,11 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
     }
     if(data.conversation!==conversation)return;
     if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
-    if(data.type==='action-error')cancel(data.payload);
+    if(data.type==='action-error'){cancel(data.payload);$('connection-tools').open=true;}
     if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending||battleIsActive(state),requestId:data.requestId});
     if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
     if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);
-    if(data.type==='scene')apply(data.payload);
+    if(data.type==='scene')apply(data.payload,{fromHost:true});
     if(data.type==='status')status(data.payload);
     if(data.type==='save-error')status('저장 실패 · 화면은 유지됩니다. JSON과 요청을 복사해 보관하세요.');
     if(data.type==='interrupt')cancel(data.payload);
@@ -2324,6 +2329,20 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
+const module35=(()=>{
+const {defaults}=module22;
+const {creationFields,initialPlayer}=module19;
+const {mapData}=module13;
+const {campaignNPCStates}=module26;
+const {npcCatalog}=module7;
+function freshCampaign(state,draft,settings,campaignId){
+  const fields=creationFields(draft),place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
+  if(!place)throw Error('시작 영주령을 확인할 수 없습니다.');
+  const backup=JSON.parse(JSON.stringify(state));Object.assign(backup,draft.previousView);delete backup.introDraft;delete backup.previousGame;
+  return {...defaults(),...fields,campaign_id:campaignId,chosenName:fields.character_name,player:initialPlayer(fields.character_name),previousGame:backup,layouts:state.layouts,...(state.uiPreferences?{uiPreferences:state.uiPreferences}:{}),mapView:draft.kingdom,region:place.id,background:false,character:false,npcStates:campaignNPCStates(settings,npcCatalog.map(p=>p.id)),gameState:{date:'1-1-1',region:place.id,place:place.label+' 내 임시 안전 정착지',time:'시작 시점',quests:[],relationships:[],events:[],recent_dialogue:[]}};
+}
+
+return {freshCampaign};})();
 const module34=(()=>{
 const {introData}=module18;
 const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module19;
@@ -2332,6 +2351,7 @@ const {mapData}=module13;
 const {factionLocations}=module24;
 const {loadCampaignSettings,campaignNPCStates}=module26;
 const {npcCatalog}=module7;
+const {freshCampaign}=module35;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -2385,10 +2405,7 @@ function mountNewGame(state,{render,persist,chat,embedded}){
       if(!settings){$('intro-map-next').disabled=true;await readSettings();}
       const draft=state.introDraft,fields=creationFields(draft),passive=introData.passives.find(p=>p.id===fields.starting_passive_id);
       const place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
-      const backup=JSON.parse(JSON.stringify(state));Object.assign(backup,draft.previousView);delete backup.introDraft;delete backup.previousGame;
-      const fresh={...defaults(),...fields,chosenName:fields.character_name,player:initialPlayer(fields.character_name),previousGame:backup,layouts:state.layouts,...(state.uiPreferences?{uiPreferences:state.uiPreferences}:{}),mapView:draft.kingdom,region:place.id,background:false,character:false};
-      fresh.npcStates=campaignNPCStates(settings,npcCatalog.map(p=>p.id));
-      fresh.gameState={region:fields.starting_kingdom,place:place.label+' 내 임시 안전 정착지',time:'시작 시점',quests:[],relationships:[],events:[],recent_dialogue:[]};
+      const fresh=freshCampaign(state,draft,settings,globalThis.crypto?.randomUUID?.()||'campaign-'+Date.now());
       for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
       save();render();
       const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
@@ -2458,7 +2475,7 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
-const module35=(()=>{
+const module36=(()=>{
 const {battleIsActive,battleFrame,validateBattleSettlement}=module6;
 const {faceFit}=module27;
 function mountBattleUI(state,{render,persist,chat,assetBase}){
@@ -2553,7 +2570,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase}){
 }
 
 return {mountBattleUI};})();
-const module36=(()=>{
+const module37=(()=>{
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module7;
 function mountCatalogUI(state,{request,isPending}){
@@ -2591,7 +2608,7 @@ function mountCatalogUI(state,{request,isPending}){
 }
 
 return {mountCatalogUI};})();
-const module37=(()=>{
+const module38=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -2613,7 +2630,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module38=(()=>{
+const module39=(()=>{
 const {questProgress,calendarDay,questMapPoint}=module11;
 const {mapData}=module13;
 const {findNPC}=module7;
@@ -2663,7 +2680,7 @@ function mountQuestUI(state,{chat,switchTo,persist,showMap}){
 }
 
 return {questLabels,currentQuestRegion,mountQuestUI};})();
-const module39=(()=>{
+const module40=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module20;
 const {applyItemRarity}=module5;
 function mountEngineUI(state,{render,persist,submit,isPending}){
@@ -2700,13 +2717,13 @@ const {mountPlayer}=module31;
 const {mountNPCInfo}=module32;
 const {mountPlayHUD}=module33;
 const {mountNewGame}=module34;
-const {mountBattleUI}=module35;
-const {mountCatalogUI}=module36;
+const {mountBattleUI}=module36;
+const {mountCatalogUI}=module37;
 const {initializeNameOnlyPlayer}=module25;
 const {locationLabel:canonicalLocationLabel}=module16;
-const {mountTitleMenu}=module37;
-const {mountQuestUI}=module38;
-const {mountEngineUI}=module39;
+const {mountTitleMenu}=module38;
+const {mountQuestUI}=module39;
+const {mountEngineUI}=module40;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module23;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';

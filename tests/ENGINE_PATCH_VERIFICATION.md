@@ -12,3 +12,11 @@
 - 동일 세이브로 수정 후 타이틀·불러오기 표시 → 불러오기 → 이름 입력 → 기존 게임 복귀 → 자유 행동 Enter 전송 → 고정 GM 응답 적용 성공.
 - 자동 검사 89개 통과. 실제 ChatGPT 원본 입력 전송은 사용자 브라우저가 연결되지 않아 미검증.
 - 증거: artifacts/title-intro-visibility-fixed.png. 재현 주소 tests/engine-demo.html?intro=1.
+
+## 긴급 수정 — UI 1.7.2 / 런처 1.1.8
+- 새 게임은 campaign_id를 발급하고 이전 주인공, 장비, XP, 의뢰, 관계, 전투 및 엔진 기록을 초기화한다. 이전 진행은 명시적 previousGame 백업에만 보존한다.
+- 새 캠페인에서 요청하지 않은 과거 ChatGPT JSON을 자동 적용하지 않는다. 첫 장면의 주인공 초기값 덮어쓰기도 거부한다. 원본 NPC 기본값은 매 턴 반복 전송하지 않고 실제 변경분만 보낸다.
+- 실제 브라우저의 별도 테스트 저장: 청명 Lv5/HP32/XP74/장비 저장에서 새 게임 → 하늘 → 성향 질문 → E2 선택 → 첫 고정 GM 장면 → 하늘 Lv1/HP100/MP100/XP0/빈 장비 확인. 지역 선택 중 기존 HUD도 숨김.
+- 실제 제작 런처 및 프레임 로더를 로컬 ChatGPT DOM 모형에 연결: Enter 자동 입력·전송·reply_to 일치 응답 적용 1회, 자동 연결 해제 후 원본 입력창 수동 전송 1회, 연결 재개 후 응답 적용 확인. 전송 횟수 총 2회. 첨부 후 교체될 수 있는 입력 요소도 다시 찾는다.
+- 자동 검사 92개 통과. 실제 사용자의 ChatGPT 및 설치된 Tampermonkey에서의 전송 성공은 이 모형 검사로 확정하지 않는다.
+- 증거: artifacts/campaign-send-isolation-fixed.png. 재현 주소 tests/launcher-demo.html 및 tests/engine-demo.html?old=1.

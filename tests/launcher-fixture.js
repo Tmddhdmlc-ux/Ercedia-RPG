@@ -1,3 +1,5 @@
+// Generated test fixture: production launcher with localhost frame URL and GM API shims. No real ChatGPT calls.
+(async()=>{const html=await(await fetch('../integration/game.html')).text(),manifest=await(await fetch('../integration/update-manifest.json')).json(),sha='aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa';const release={sha,html,manifest};const values=new Map([['ercedia.launcher.releases.v1',{current:release}],['ercedia.launcher.window.v1',{width:720,height:620,x:10,y:110}]]);window.GM_getValue=(key,fallback)=>key.startsWith('ercedia.tm.v1:')&&!values.has(key)?{"version":1,"outfit":"armor","expression":"base","layouts":{"armor":{"scale":260,"x":50,"y":-120},"casual":{"scale":260,"x":50,"y":-120},"nightwear":{"scale":260,"x":50,"y":-120}},"background":true,"character":true,"index":0,"region":"village","mapView":"world","page":"story","player":{"name":"연결 확인","job":"","level":1,"hp":100,"maxHp":100,"mp":100,"maxMp":100,"xp":0,"requiredXp":100,"strength":10,"dexterity":10,"intelligence":10,"skills":[],"constitution":10,"manaStat":10,"levelHpBonus":0,"unspentStatPoints":0,"realm":"none"},"inventory":[],"scene":null,"sceneIndex":0,"seenScenes":[],"gameState":{},"chosenName":"연결 확인","campaign_id":"test-new-campaign"}:values.has(key)?values.get(key):fallback;window.GM_setValue=(key,value)=>values.set(key,value);window.GM_registerMenuCommand=()=>{};window.GM_addElement=(parent,tag,attrs)=>{const el=document.createElement(tag);for(const [key,value]of Object.entries(attrs))el.setAttribute(key,value);parent.append(el);return el;};window.GM_xmlhttpRequest=options=>{const url=options.url;queueMicrotask(()=>options.onload({status:200,responseText:url.includes('/commits/main')?JSON.stringify({sha}):url.includes('update-manifest')?JSON.stringify(manifest):html}));};
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
@@ -54,7 +56,7 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
 }
 
   if(document.getElementById('ercedia-game-root'))return;
-  const HOST='https://tmddhdmlc-ux.github.io/Ercedia-RPG';
+  const HOST=location.origin;
   const REPO='Tmddhdmlc-ux/Ercedia-RPG',CACHE='ercedia.launcher.releases.v1';
   const root=document.createElement('div');root.id='ercedia-game-root';
   const shadow=root.attachShadow({mode:'open'}),style=document.createElement('style');
@@ -120,7 +122,7 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
   }
   function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}';return JSON.stringify(value);}
   function createFrame(release,saved){
-    const token=crypto.randomUUID(),config={token,conversation,saved,features:['settings-attachment'],assetBase:`https://raw.githubusercontent.com/${REPO}/${release.sha}/`};
+    const token=crypto.randomUUID(),config={token,conversation,saved,features:['settings-attachment'],assetBase:location.origin+'/'};
     const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config).replaceAll('<','\\u003c')};window.__ERCEDIA_STORAGE__={getItem:()=>window.__ERCEDIA_CONFIG__.saved?JSON.stringify(window.__ERCEDIA_CONFIG__.saved):null,setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'save',payload:state},'*');}};`;
     const html=release.html.replace('/*__ERCEDIA_BOOTSTRAP__*/',()=>bootstrap+"window.addEventListener('error',event=>parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'boot-error',payload:event.message},'*'));");
     const record={release,token,frame:null,ready:false,health:null,html};
@@ -323,4 +325,6 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
   },500);
   setInterval(()=>checkLatest(false),600000);
   (async()=>{const cache=read(CACHE);previous=cache?.previous||null;if(cache?.current)await activate(cache.current,true);if(!active&&cache?.previous)await activate(cache.previous,true);await checkLatest(true);})();
+})();
+
 })();

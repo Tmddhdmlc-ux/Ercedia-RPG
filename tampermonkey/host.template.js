@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.7
+// @version      1.1.8
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -115,7 +115,7 @@
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.1.6 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.1.8 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       tell(initial?'고정 UI 연결됨 · 자동 연결은 꺼져 있습니다.':'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
@@ -180,7 +180,6 @@
   function failAction(message){setMode('debug');tell(message);pending=null;send('action-error',message);}
   async function deliver(payload){
     pending=payload.requestId;baseline();
-    if(!auto.checked){setMode('debug');tell('수동 모드 · 요청 복사로 원본 ChatGPT에 전송하세요.');return;}
     if(generating())return failAction('ChatGPT가 응답 중입니다. 완료 후 다시 보내세요.');
     let editor;
     for(let attempt=0;attempt<10;attempt++){
@@ -196,6 +195,10 @@
       try{await attachCampaignSettings(payload.settingsFile,{roots:pageRoots,isCurrent:()=>conversation===conversationId()&&pending===payload.requestId,wait:ms=>new Promise(resolve=>setTimeout(resolve,ms))});}
       catch(error){return failAction(error.message);}
       if(pending!==payload.requestId||conversation!==conversationId())return;
+      // Uploading can replace the composer node. Never write into a detached editor.
+      editor=findComposer();
+      if(!editor)return failAction('설정 첨부 후 GPT 입력창을 찾지 못했습니다. 원본 입력창을 확인하세요.');
+      if((('value' in editor?editor.value:editor.textContent)||'').trim())return failAction('설정 첨부 중 GPT 입력창에 작성된 내용이 있습니다. 먼저 확인해주세요.');
     }
     editor.focus();
     if('value' in editor){const setter=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;setter?setter.call(editor,payload.text):editor.value=payload.text;}
@@ -205,12 +208,13 @@
       if(!inserted){const paragraphs=payload.text.split('\n').map(line=>{const p=document.createElement('p');p.textContent=line;return p;});editor.replaceChildren(...paragraphs);}
     }
     editor.dispatchEvent(new InputEvent('input',{bubbles:true,composed:true,inputType:'insertText',data:payload.text}));
+    if(!auto.checked){setMode('debug');tell('수동 모드 · GPT 입력창에 요청을 넣었습니다. 원본 GPT의 전송 버튼을 누르세요.');return;}
     tell('ChatGPT 입력창 감지 · 요청 전달 완료 · 전송 버튼을 기다리는 중…');
     let submit;
     for(let attempt=0;attempt<(payload.settingsFile?120:12);attempt++){
       await new Promise(resolve=>setTimeout(resolve,200));
       if(conversation!==conversationId()||pending!==payload.requestId)return;
-      const selectors='button[data-testid="send-button"],button[data-testid="composer-submit-button"],button[aria-label="Send prompt"],button[aria-label="프롬프트 보내기"],button[aria-label="메시지 보내기"]';
+      const selectors='button[data-testid="send-button"],button[data-testid="composer-submit-button"],button[aria-label="Send prompt"],button[aria-label="Send message"],button[aria-label="프롬프트 보내기"],button[aria-label="메시지 보내기"],button[aria-label="보내기"]';
       submit=pageRoots().flatMap(scope=>[...scope.querySelectorAll(selectors)]).find(button=>visible(button)&&!button.disabled&&button.getAttribute('aria-disabled')!=='true'&&!/stop|중지/i.test(button.getAttribute('aria-label')||'')&&button.dataset.state!=='stop');
       if(!submit)submit=editor.closest('form')?.querySelector('button[type="submit"]');
       if(submit&&!submit.disabled&&!generating())break;submit=null;
@@ -236,7 +240,7 @@
   }
   let responseNotice='';
   function scan(){
-    if(!auto.checked||!active||generating())return;
+    if(!auto.checked||!active||!pending||generating())return;
     const values=responseSources().map(extractSceneJSON).filter(Boolean);
     const scenes=values.map(value=>({value,scene:JSON.parse(value)}));
     const found=scenes.find(({scene})=>pending?scene.reply_to===pending:!latestState?.seenScenes?.includes(scene.scene_id));

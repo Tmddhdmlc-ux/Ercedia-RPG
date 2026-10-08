@@ -24,6 +24,7 @@ export function normalize(raw) {
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];
   s.index=num(raw.index,0,3,0);
   s.player=normalizePlayer(raw.player);
+  if(typeof raw.campaign_id==='string'&&raw.campaign_id.length<=100)s.campaign_id=raw.campaign_id;
   if(raw.engine){const engine=normalizeEngine(raw.engine);if(engine)s.engine=engine;}
   if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,160)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
   if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
