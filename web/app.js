@@ -82,7 +82,6 @@ for(const expression of Object.keys(labels)){
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
-  npcInfo.refresh();
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
   $('background').hidden=!state.background;
@@ -100,6 +99,7 @@ function renderAppearance(){
   $('expression').value=state.expression;
   $('show-background').checked=state.background;$('show-character').checked=state.character;
   renderLayout();
+  npcInfo.refresh();
 }
 function renderLayout(){
   const l=state.layouts[state.outfit];

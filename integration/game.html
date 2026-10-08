@@ -90,6 +90,7 @@
 
 .person.ready{pointer-events:auto}.stage .npc-info-button{display:block;z-index:5;font-size:15px;letter-spacing:0;padding:8px 12px;background:#11212de8;border:1px solid #e1c48c80;color:#f2d49b;right:16px;top:16px;cursor:pointer}.npc-info-card{position:absolute;z-index:15;width:360px;max-width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;scrollbar-width:thin;padding:18px;background:#0e1e2cf7;border:1px solid #e2c68c;border-radius:9px;box-shadow:0 12px 36px #0009;cursor:default;color:#edf3f6;font-size:16px}.npc-info-card h2{font-size:24px;color:#f2d49b;margin:0 0 14px;font-weight:600}.npc-info-fields{display:grid;grid-template-columns:85px minmax(0,1fr);gap:8px 12px;margin:0 0 16px}.npc-info-fields dt{color:#b7c9d4}.npc-info-fields dd{margin:0;overflow-wrap:anywhere}.npc-resource{margin:12px 0}.npc-resource>div{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}.npc-resource b{font-weight:500}.npc-resource span{font-size:15px}.npc-resource progress{width:100%;height:8px;appearance:none;display:block;background:#203440;border:0;border-radius:6px;overflow:hidden;accent-color:#dc9189}.npc-resource progress::-webkit-progress-bar{background:#203440}.npc-resource progress::-webkit-progress-value{background:#dc9189}.npc-resource progress::-moz-progress-bar{background:#dc9189}.npc-resource.mana progress::-webkit-progress-value{background:#88bfe2}.npc-resource.mana progress::-moz-progress-bar{background:#88bfe2}.npc-resource progress.unset{opacity:.45}.npc-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0}.npc-stat-grid>div{padding:10px;background:#203440;border-radius:6px}.npc-stat-grid dt{font-size:14px;color:#b7c9d4}.npc-stat-grid dd{font-size:20px;color:#f2d49b;margin:3px 0 0}.npc-interest{border-top:1px solid #ffffff2b;padding-top:14px}.npc-interest b{display:block;font-size:15px;overflow-wrap:anywhere}.npc-interest>span{display:block;font-size:22px;color:#e9b8cf;margin-top:4px}.npc-interest p{font-size:14px;line-height:1.7;color:#d3dfe6;margin-top:5px;overflow-wrap:anywhere}.npc-info-note{font-size:12px;color:#a9bdc9;line-height:1.7;border-top:1px solid #ffffff20;padding-top:12px;margin-top:14px}
 @media(max-width:480px){.stage .npc-info-button{font-size:13px;right:10px;top:12px}.npc-info-card{padding:14px}}
+.person.ready{cursor:pointer}.person:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.npc-action-menu{position:absolute;z-index:16;width:220px;max-width:calc(100% - 24px);padding:14px;background:#102331f7;border:1px solid #e2c68c;border-radius:8px;box-shadow:0 10px 30px #0008;cursor:default}.npc-action-menu strong{display:block;font-size:18px;color:#f2d49b;margin-bottom:10px}.npc-action-menu button{width:100%;font-size:17px;text-align:left;padding:12px;border-color:#d6b77c66}.npc-info-close{float:right;font-size:14px;padding:5px 9px;margin:0 0 10px 10px}.npc-info-card h2{padding-right:75px}
 </style></head>
 <body>
 <main class="shell">
@@ -103,7 +104,8 @@
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
           <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
-          <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-info-card" aria-expanded="false">세린 · 정보 ⓘ</button>
+          <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-action-menu" aria-expanded="false">세린 · 메뉴</button>
+          <div id="npc-action-menu" class="npc-action-menu" role="group" aria-label="상대방 메뉴" hidden><strong id="npc-menu-name">세린</strong><button id="npc-view-info" type="button">ⓘ 정보 보기</button></div>
           <section id="npc-info-card" class="npc-info-card" aria-label="상대방 공개 정보" hidden><h2 id="npc-info-name">세린</h2><dl class="npc-info-fields"><dt>소속</dt><dd id="npc-info-affiliation">미정</dd><dt>현재 경지</dt><dd id="npc-info-rank">베이직 나이트</dd></dl><div class="npc-resource"><div><b>체력</b><span id="npc-info-hp"></span></div><progress id="npc-info-hp-bar" max="1" value="0" aria-label="상대방 체력"></progress></div><div class="npc-resource mana"><div><b>마나</b><span id="npc-info-mp"></span></div><progress id="npc-info-mp-bar" max="1" value="0" aria-label="상대방 마나"></progress></div><dl class="npc-stat-grid"><div><dt>근력</dt><dd id="npc-info-strength"></dd></div><div><dt>민첩</dt><dd id="npc-info-dexterity"></dd></div><div><dt>지능</dt><dd id="npc-info-intelligence"></dd></div><div><dt>체력 능력치</dt><dd id="npc-info-constitution"></dd></div></dl><div class="npc-interest"><b id="npc-interest-label">나에 대한 관심도</b><span id="npc-info-interest"></span><p id="npc-info-interest-text"></p></div><p class="npc-info-note">공개된 설정과 마지막 게임 상태 기준 · 미정인 값은 추정하지 않습니다.</p></section>
           <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
         </div>
@@ -1338,7 +1340,9 @@ return {mountPlayer};})();
 const module18=(()=>{
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
-  let closeTimer=null,pinned=false,point=null,positionFrame=0;
+  const menu=$('npc-action-menu'),view=$('npc-view-info');
+  const close=document.createElement('button');close.type='button';close.className='npc-info-close';close.textContent='닫기 ×';card.prepend(close);
+  let point=null,trigger=button;
   const display=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'미정';
   const current=()=>state.scene?state.scene.npc:(state.character?{id:'serin',speaker:'세린'}:null);
   function refresh(){
@@ -1346,7 +1350,8 @@ function mountNPCInfo(state){
     button.hidden=!npc||!state.character;
     if(button.hidden){hide();return;}
     const name=profile.name||npc.speaker||'이름 미정';
-    button.textContent=`${name} · 정보 ⓘ`;
+    button.textContent=`${name} · 메뉴`;$('npc-menu-name').textContent=name;
+    stage.querySelectorAll('.person').forEach(image=>{image.tabIndex=image.hidden?-1:0;image.setAttribute('role','button');image.setAttribute('aria-label',`${name} 초상화 · 메뉴 열기`);image.setAttribute('aria-controls','npc-action-menu');});
     $('npc-info-name').textContent=name;
     $('npc-info-affiliation').textContent=profile.affiliation||'소속 미정';
     $('npc-info-rank').textContent=profile.rank||(npc.id==='serin'?'베이직 나이트':'경지 미정');
@@ -1360,39 +1365,34 @@ function mountNPCInfo(state){
     $('npc-interest-label').textContent=state.player.name?`${state.player.name}에 대한 관심도`:'나에 대한 관심도';
     $('npc-info-interest').textContent=typeof profile.interest==='number'?`${profile.interest} / 100`:'미정';
     $('npc-info-interest-text').textContent=profile.interestText||(typeof profile.interest==='number'?'마지막 게임 응답에 기록된 관심도입니다.':'아직 기록된 관계 정보가 없습니다.');
-    if(!card.hidden)position();
+    if(!card.hidden)position(card);if(!menu.hidden)position(menu);
   }
-  function position(){
-    const bounds=stage.getBoundingClientRect(),width=card.offsetWidth,height=card.offsetHeight;
+  function position(panel){
+    const bounds=stage.getBoundingClientRect(),width=panel.offsetWidth,height=panel.offsetHeight;
     let x=point?point.x-bounds.left+20:bounds.width-width-16;
     let y=point?point.y-bounds.top+16:60;
     if(point&&x+width>bounds.width-12)x=point.x-bounds.left-width-20;
-    card.style.left=Math.round(Math.max(12,Math.min(bounds.width-width-12,x)))+'px';
-    card.style.top=Math.round(Math.max(12,Math.min(bounds.height-height-12,y)))+'px';
+    panel.style.left=Math.round(Math.max(12,Math.min(bounds.width-width-12,x)))+'px';
+    panel.style.top=Math.round(Math.max(12,Math.min(bounds.height-height-12,y)))+'px';
   }
-  function show(event){
-    clearTimeout(closeTimer);if(!current()||!state.character)return;
-    point=event?.type?.startsWith('pointer')?{x:event.clientX,y:event.clientY}:null;
-    card.hidden=false;button.setAttribute('aria-expanded','true');refresh();position();
+  function openMenu(event){
+    if(!current()||!state.character)return;
+    trigger=event?.target?.matches('.person')?event.target:button;
+    point=event?.type==='click'&&event.detail?{x:event.clientX,y:event.clientY}:null;
+    card.hidden=true;menu.hidden=false;button.setAttribute('aria-expanded','true');refresh();position(menu);view.focus({preventScroll:true});
   }
-  function hide(){clearTimeout(closeTimer);pinned=false;card.hidden=true;button.setAttribute('aria-expanded','false');}
-  function scheduleHide(){if(!pinned)closeTimer=setTimeout(hide,150);}
-  $('characters').addEventListener('pointerover',event=>{if(event.target.matches('.person.ready'))show(event);});
-  $('characters').addEventListener('pointerout',scheduleHide);
-  $('characters').addEventListener('pointermove',event=>{
-    if(card.hidden||pinned)return;point={x:event.clientX,y:event.clientY};
-    if(!positionFrame)positionFrame=requestAnimationFrame(()=>{positionFrame=0;if(!card.hidden)position();});
-  });
-  button.addEventListener('pointerenter',show);button.addEventListener('pointerleave',scheduleHide);
-  button.addEventListener('focus',()=>show());button.addEventListener('blur',scheduleHide);
-  button.addEventListener('click',event=>{event.stopPropagation();if(pinned)hide();else{pinned=true;show();}});
+  function hide(restoreFocus=false){card.hidden=true;menu.hidden=true;button.setAttribute('aria-expanded','false');if(restoreFocus&&!trigger.hidden)trigger.focus({preventScroll:true});}
+  $('characters').addEventListener('click',event=>{if(event.target.matches('.person.ready')){event.stopPropagation();openMenu(event);}});
+  $('characters').addEventListener('keydown',event=>{if(event.target.matches('.person.ready')&&(event.key==='Enter'||event.key===' ')){event.preventDefault();event.stopPropagation();openMenu(event);}});
+  button.addEventListener('click',event=>{event.stopPropagation();if(!menu.hidden)hide();else openMenu(event);});
   button.addEventListener('keydown',event=>event.stopPropagation());
-  card.addEventListener('pointerenter',()=>clearTimeout(closeTimer));card.addEventListener('pointerleave',scheduleHide);
-  card.addEventListener('click',event=>event.stopPropagation());
-  stage.addEventListener('pointerleave',()=>{if(!pinned)hide();});
-  stage.addEventListener('click',event=>{if(pinned&&!card.contains(event.target)&&event.target!==button)hide();});
-  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&!card.hidden){event.stopImmediatePropagation();hide();}},true);
-  new ResizeObserver(()=>{if(!card.hidden)position();}).observe(stage);
+  for(const panel of [menu,card]){panel.addEventListener('click',event=>event.stopPropagation());panel.addEventListener('keydown',event=>event.stopPropagation());}
+  view.onclick=()=>{menu.hidden=true;card.hidden=false;button.setAttribute('aria-expanded','false');refresh();position(card);close.focus({preventScroll:true});};
+  close.onclick=()=>hide(true);
+  stage.addEventListener('click',event=>{if((!card.hidden||!menu.hidden)&&!card.contains(event.target)&&!menu.contains(event.target)&&event.target!==button&&!event.target.matches('.person.ready')){event.stopImmediatePropagation();hide();}},true);
+  document.addEventListener('click',event=>{if(!stage.contains(event.target))hide();});
+  document.addEventListener('keydown',event=>{if(event.key==='Escape'&&(!card.hidden||!menu.hidden)){event.preventDefault();event.stopImmediatePropagation();hide(true);}},true);
+  new ResizeObserver(()=>{if(!card.hidden)position(card);if(!menu.hidden)position(menu);}).observe(stage);
   return {refresh,hide};
 }
 
@@ -1482,7 +1482,6 @@ for(const expression of Object.keys(labels)){
 trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
-  npcInfo.refresh();
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
   $('background').hidden=!state.background;
@@ -1500,6 +1499,7 @@ function renderAppearance(){
   $('expression').value=state.expression;
   $('show-background').checked=state.background;$('show-character').checked=state.character;
   renderLayout();
+  npcInfo.refresh();
 }
 function renderLayout(){
   const l=state.layouts[state.outfit];
