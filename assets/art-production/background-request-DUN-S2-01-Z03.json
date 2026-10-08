@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S2-01-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-S2-01/DUN-S2-01-Z03.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S2-01-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-S2-01/DUN-S2-01-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  Create NEW event-zone composition Collapsed Roadside Post within same Servan Forgotten Roadside Post. View toward partially collapsed modest pale sandstone relay building upper-left/back, blue-gray tiled roof fallen inward and weathered broken timber beams, restrained localized rubble at base. Old carriage shelter adjoining at rear-right, olive trees visible behind wall, warm dry inland daylight. Wide clear intact dry stone-and-dust forecourt center-right for VN characters. Distinct ruined relay building viewpoint rather than stable yard. No people, horses, beasts, bodies, readable signs, treasure, flags, emblems, sea or invented grand castle.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-e071879d-022f-40e6-8468-36151db92590.png"
+}

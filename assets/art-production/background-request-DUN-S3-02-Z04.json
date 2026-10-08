@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S3-02-Z04",
+  "path": "assets/backgrounds/dungeons/DUN-S3-02/DUN-S3-02-Z04.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S3-02-Z04",
+  "reference": "assets/backgrounds/dungeons/DUN-S3-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW miniboss zone Broken Ship Deck within same Deep Sea Drainage Cave. Broad old stranded wooden ship deck wedged inside large damp gray coastal cavern, broken mast stub and damaged railing upper-left, fractured hull ribs and coiled ropes at back edges, cave arch above with faint cool marine light and dark seawater glimpsed lower-left beside hull. New clearly ship DECK viewpoint, not cave walkway. Stable intact DRY broad deck floor center-right foreground for VN characters, damaged mast and rail above dialogue quarter. No people, creatures, bodies, pirates, skull motifs, flags, text, treasure, cannons, modern boats or magical devices.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-41f16e2e-38a7-4b1d-8933-56bdb03b0612.png"
+}

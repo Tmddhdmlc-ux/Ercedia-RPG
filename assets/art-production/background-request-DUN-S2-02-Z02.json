@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S2-02-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-S2-02/DUN-S2-02-Z02.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S2-02-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-S2-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Hoofprint Courtyard within Golden Road Abandoned Fortress DUN-S2-02 in INLAND Servan. Broad deserted fortified inner courtyard enclosed by stout pale gray sandstone ramparts and squat ruined guardtower upper-left, weathered stable arcade rear-right with blue-gray roof fragments, faint old hoof depressions in courtyard dust and empty stone water trough at rear margins. Olive branches over old wall, warm dry daylight. Wide clear flat center-right forecourt for VN character, defense architecture above dialogue quarter. No sea, harbor, people, horses, beasts, bodies, readable signs, flags, insignia, treasure or new palace.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-47831276-0193-404c-ad07-db0202b8c2cb.png"
+}

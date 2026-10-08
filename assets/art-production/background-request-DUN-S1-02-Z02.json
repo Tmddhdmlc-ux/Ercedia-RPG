@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S1-02-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-S1-02/DUN-S1-02-Z02.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S1-02-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-S1-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Pearl Shell Passage inside Lost Ship Cargo Hold DUN-S1-02 at Belmarina. Empty weathered wooden ship cargo passage with curved hull ribs overhead, damp timber plank walls with clusters of small natural shells on lower edges, sea cave pale limestone visible through a broken rear-left hull gap. Shallow seawater left gutter, plain mounted old lanterns and cool reflected coastal light, coiled ropes and closed unmarked crates rear-left. Broad DRY intact stable wooden floor center-right foreground for VN character. Main curved ship ribs above bottom quarter. No giant pearls, treasure, humans, creatures, bodies, written labels, flags or emblems.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-01c897aa-ca7f-4fce-a381-21520e58ab24.png"
+}

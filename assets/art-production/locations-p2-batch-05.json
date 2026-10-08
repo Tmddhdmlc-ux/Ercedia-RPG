@@ -27,8 +27,7 @@
     "IMG-DUN-S4-02-Z05",
     "IMG-DUN-S4-02-Z06"
   ],
-  "completed_ids": [],
-  "pending_ids": [
+  "completed_ids": [
     "IMG-DUN-S1-01-Z02",
     "IMG-DUN-S1-01-Z03",
     "IMG-DUN-S1-02-Z02",
@@ -56,6 +55,9 @@
     "IMG-DUN-S4-02-Z05",
     "IMG-DUN-S4-02-Z06"
   ],
+  "pending_ids": [],
   "failures": [],
-  "commit_sha": null
+  "commit_sha": null,
+  "visual_verified": true,
+  "visual_method": "Final generated scenes inspected individually and PNG integrity checked."
 }

@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S2-01-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-S2-01/DUN-S2-01-Z02.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S2-01-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-S2-01/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW combat zone Hoofprint Courtyard in Servan Forgotten Roadside Post DUN-S2-01, INLAND southern trade road, no sea or harbor. Abandoned modest pale gray sandstone staging courtyard enclosed by low weathered stable buildings with blue-gray tile fragments and old timber eaves, faint horse hoof depressions in dust toward rear-left, empty stone trough and spare wheel leaning at rear edge. Olive grove glimpsed beyond low wall, warm dry daylight. Wide clear flat center-right ground for VN character, courtyard/stable features above dialogue quarter. No horses, people, beasts, bodies, labels, flags, emblems, grand palace or military machines.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-52e5754f-8d58-43be-970f-470af038cdc1.png"
+}

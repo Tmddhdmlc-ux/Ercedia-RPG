@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S2-02-Z04",
+  "path": "assets/backgrounds/dungeons/DUN-S2-02/DUN-S2-02-Z04.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S2-02-Z04",
+  "reference": "assets/backgrounds/dungeons/DUN-S2-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW INTERIOR miniboss zone Old Supply Barracks in same Golden Road Abandoned Fortress. Empty stout pale gray sandstone vaulted military supply hall, heavy timber crossbeams, old simple empty bunk frames and plain closed supply crates, tied grain sacks and barrels along rear-left wall. Small high slit admits warm inland daylight, old mounted oil lamps, slightly cracked worn masonry. More fortified and heavier ceiling than rural relay barracks. Wide intact clear stone floor center-right for VN character, supply furnishings above dialogue quarter. No guards, people, monsters, mannequins, bodies, readable papers or signs, flags, emblems, treasure, sea or modern objects.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-2a61525d-0ec6-4dcf-8658-3db4abb122b0.png"
+}

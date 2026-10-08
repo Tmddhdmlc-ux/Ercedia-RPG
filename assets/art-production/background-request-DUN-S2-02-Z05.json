@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S2-02-Z05",
+  "path": "assets/backgrounds/dungeons/DUN-S2-02/DUN-S2-02-Z05.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S2-02-Z05",
+  "reference": "assets/backgrounds/dungeons/DUN-S2-02/DUN-S2-02-Z04.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW final boss zone Iron Gate Underground Room beneath same Golden Road Abandoned Fortress. Fully underground broad low vaulted pale-gray sandstone chamber, heavy closed plain riveted iron double gate upper-left rear in thick stone arch, dark iron hinge bands, weathered stone buttresses, small plain mounted amber oil lamps create deep quiet shadows. No daylight or outdoor view, no barracks beds, supplies or grand machinery. Wide stable clear level stone floor center-right for VN character, prominent iron gate above bottom quarter. No chains with prisoners, people, creatures, bodies, glowing spells, rune marks, insignia, secret lore, readable text, treasure or sea.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-ef8ac002-64a3-4063-a4e4-51b4aea9b2f2.png"
+}

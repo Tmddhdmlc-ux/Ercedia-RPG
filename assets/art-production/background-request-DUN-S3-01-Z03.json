@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S3-01-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-S3-01/DUN-S3-01-Z03.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S3-01-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-S3-01/DUN-S3-01-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW final boss chamber Rising Tide Trap Cave within same Reef Pirate Den. Broad enclosed rugged gray coastal cavern, narrow rear-left tidal channel with incoming blue-green swell and old timber watergate braces, simple rope pulley mechanism and weathered narrow plank crossing at back suggest practical tidal trap without explaining gameplay. Cool dim reflected seawater light, few mounted amber oil lamps. Broad DRY raised stable stone platform center-right foreground for VN characters, tidal channel and trap above bottom quarter. Different wide cavern from dockside passage. No pirates, monsters, bodies, skull flags, writing, spikes in foreground, modern technology, treasure or active magical mechanism.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-ad965916-2967-4fcd-a0f3-7256d87bdb83.png"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S4-02-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-S4-02/DUN-S4-02-Z02.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S4-02-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-S4-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Mirror Shadow Corridor within Moonshadow Abandoned Chapel DUN-S4-02 Solmeria. Enclosed weathered pale sandstone underground chapel side passage with low pointed stone arches, cracked glossy blackglass wall panels upper-left reflect EMPTY columns and old plain oil lamps only. Subtle aged gold frame edges, dust and small chipped stone at rear margins, dim blue-gray light from high narrow plain unmarked window. More worn chapel masonry than active merchant vault. Wide stable clear stone center-right foreground for VN characters, mirror panels above dialogue quarter. No humanoid reflections, people, creatures, bodies, crosses, crescents, sun symbols, holy icons, statues, writing, treasure or new magic.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-2410dfd1-7020-47ad-bfb8-5dacd2b1cb30.png"
+}

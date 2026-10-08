@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S4-01-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-S4-01/DUN-S4-01-Z03.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S4-01-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-S4-01/DUN-S4-01-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW event zone Vault Mechanical Device in same Blackglass Underground Vault. Broad enclosed pale gray sandstone vaulted service chamber, old ordinary medieval locking mechanism upper-left rear: heavy iron barred gate, small exposed brass cogs with simple lever and iron sliding bolts mounted to gate frame. Modest blackglass side panels and aged gold trim, warm plain oil lamps, dark cool reflections. Human-scaled practical vault lock, not giant steampunk machine or modern bank wheel. Wide clear flat stone center-right foreground for VN character, mechanism above bottom quarter. No people, bodies, creatures, symbols, written numbers, treasure, spell runes, electrical panels or secret lore.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-fd524802-c1d8-453f-83de-c55bd477c325.png"
+}

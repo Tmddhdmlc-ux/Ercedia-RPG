@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-S3-02-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-S3-02/DUN-S3-02-Z03.png",
+  "batch": "locations-p2-batch-05.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-S3-02-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-S3-02/DUN-S3-02-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  Create NEW event chamber Rising Tide Trap Cave within same Deep Sea Drainage Cave. New viewpoint of wide enclosed low gray limestone cavern, incoming tidal water at rear-left low tunnel, old timber gate and simple rope winch mounted above narrow water channel at upper-left, weathered plank crossing behind basin. Dark damp blue-gray palette, cool reflected water and a few warm plain oil lanterns. Wide DRY raised stable rock foreground center-right for VN character, tide mechanism above bottom quarter. Different wide chamber layout from previous winding storage passage. No people, creatures, bodies, skull motifs, flags, labels, modern devices, treasure, magical trap or lore.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-9b05f91b-cb21-4f5f-a1f8-2c01cd7fe18d.png"
+}
