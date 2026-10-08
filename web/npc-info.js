@@ -40,6 +40,7 @@ export function mountNPCInfo(state){
     trigger=event?.target?.matches('.person')?event.target:button;
     point=event?.type==='click'&&event.detail?{x:event.clientX,y:event.clientY}:null;
     card.hidden=true;menu.hidden=false;button.setAttribute('aria-expanded','true');refresh();position(menu);view.focus({preventScroll:true});
+    document.dispatchEvent(new Event('ercedia:npc-menu-open'));
   }
   function hide(restoreFocus=false){card.hidden=true;menu.hidden=true;button.setAttribute('aria-expanded','false');if(restoreFocus&&!trigger.hidden)trigger.focus({preventScroll:true});}
   $('characters').addEventListener('click',event=>{if(event.target.matches('.person.ready')){event.stopPropagation();openMenu(event);}});

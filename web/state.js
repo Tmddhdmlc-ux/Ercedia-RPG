@@ -22,6 +22,12 @@ export function normalize(raw) {
   // Optional until the player chooses a name: legacy launchers compare exact saved keys.
   if(typeof raw.chosenName==='string')s.chosenName=raw.chosenName.trim().slice(0,40);
   if(s.chosenName)s.player.name=s.chosenName;
+  // Keep new preferences absent from old saves until the user changes them.
+  if(raw.uiPreferences&&typeof raw.uiPreferences==='object'){
+    s.uiPreferences={};
+    if(['normal','large','largest'].includes(raw.uiPreferences.textSize))s.uiPreferences.textSize=raw.uiPreferences.textSize;
+    if(typeof raw.uiPreferences.portraitHintDismissed==='boolean')s.uiPreferences.portraitHintDismissed=raw.uiPreferences.portraitHintDismissed;
+  }
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
   s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);

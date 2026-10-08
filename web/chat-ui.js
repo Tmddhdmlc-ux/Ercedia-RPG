@@ -10,7 +10,13 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
-  const status=message=>{$('connection-status').textContent=message;};
+  const status=message=>{
+    $('connection-detail').textContent=message;
+    const problem=/실패|못했|못한|못해|오류|시간.*지났|다른 요청|달라|초과|거절|전송 확인|네트워크|불일치|대기.*해제|원본.*확인/.test(message);
+    const row=$('connection-status').parentElement;
+    row.hidden=!pending&&!problem;row.dataset.phase=pending&&!problem?'waiting':problem?'error':'idle';
+    $('connection-status').textContent=pending&&!problem?'상대의 반응을 기다리는 중…':message;
+  };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||/^(플레이어|주인공|player)$/i.test(state.player.name.trim());
   function controls(){
@@ -18,7 +24,9 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
-    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?.text||'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
+    const choosing=!!choices.length&&last&&!pending&&!naming;
+    $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
+    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
     $('free-action').disabled=!!pending||naming;$('send-action').disabled=!!pending||naming;$('cancel-wait').hidden=!pending;
   }
   function chooseName(){
@@ -40,7 +48,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     try{
     const requestId=newRequestId();pending={requestId,choiceId};
     $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
-    controls();status(embedded?'ChatGPT 연결 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
+    controls();status(embedded?'상대의 반응을 기다리는 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
     notify('action',{text:$('action-copy').value,requestId});
     if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
@@ -58,7 +66,8 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
-      render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});}
   }
   $('free-action-form').onsubmit=event=>{event.preventDefault();submit($('free-action').value);};
@@ -70,7 +79,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();delete state.chosenName;delete state.mapFaction;Object.assign(state,normalize(saved));
+    cancel();delete state.chosenName;delete state.mapFaction;delete state.uiPreferences;Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
@@ -98,5 +107,5 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();return {controls,apply,restore,notify,conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,conversation:()=>conversation};
 }

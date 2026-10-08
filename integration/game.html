@@ -91,6 +91,12 @@
 .person.ready{pointer-events:auto}.stage .npc-info-button{display:block;z-index:5;font-size:15px;letter-spacing:0;padding:8px 12px;background:#11212de8;border:1px solid #e1c48c80;color:#f2d49b;right:16px;top:16px;cursor:pointer}.npc-info-card{position:absolute;z-index:15;width:360px;max-width:calc(100% - 24px);max-height:calc(100% - 24px);overflow:auto;scrollbar-width:thin;padding:18px;background:#0e1e2cf7;border:1px solid #e2c68c;border-radius:9px;box-shadow:0 12px 36px #0009;cursor:default;color:#edf3f6;font-size:16px}.npc-info-card h2{font-size:24px;color:#f2d49b;margin:0 0 14px;font-weight:600}.npc-info-fields{display:grid;grid-template-columns:85px minmax(0,1fr);gap:8px 12px;margin:0 0 16px}.npc-info-fields dt{color:#b7c9d4}.npc-info-fields dd{margin:0;overflow-wrap:anywhere}.npc-resource{margin:12px 0}.npc-resource>div{display:flex;align-items:center;justify-content:space-between;gap:12px;margin-bottom:6px}.npc-resource b{font-weight:500}.npc-resource span{font-size:15px}.npc-resource progress{width:100%;height:8px;appearance:none;display:block;background:#203440;border:0;border-radius:6px;overflow:hidden;accent-color:#dc9189}.npc-resource progress::-webkit-progress-bar{background:#203440}.npc-resource progress::-webkit-progress-value{background:#dc9189}.npc-resource progress::-moz-progress-bar{background:#dc9189}.npc-resource.mana progress::-webkit-progress-value{background:#88bfe2}.npc-resource.mana progress::-moz-progress-bar{background:#88bfe2}.npc-resource progress.unset{opacity:.45}.npc-stat-grid{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;margin:16px 0}.npc-stat-grid>div{padding:10px;background:#203440;border-radius:6px}.npc-stat-grid dt{font-size:14px;color:#b7c9d4}.npc-stat-grid dd{font-size:20px;color:#f2d49b;margin:3px 0 0}.npc-interest{border-top:1px solid #ffffff2b;padding-top:14px}.npc-interest b{display:block;font-size:15px;overflow-wrap:anywhere}.npc-interest>span{display:block;font-size:22px;color:#e9b8cf;margin-top:4px}.npc-interest p{font-size:14px;line-height:1.7;color:#d3dfe6;margin-top:5px;overflow-wrap:anywhere}.npc-info-note{font-size:12px;color:#a9bdc9;line-height:1.7;border-top:1px solid #ffffff20;padding-top:12px;margin-top:14px}
 @media(max-width:480px){.stage .npc-info-button{font-size:13px;right:10px;top:12px}.npc-info-card{padding:14px}}
 .person.ready{cursor:pointer}.person:focus-visible{outline:2px solid var(--gold);outline-offset:4px}.npc-action-menu{position:absolute;z-index:16;width:220px;max-width:calc(100% - 24px);padding:14px;background:#102331f7;border:1px solid #e2c68c;border-radius:8px;box-shadow:0 10px 30px #0008;cursor:default}.npc-action-menu strong{display:block;font-size:18px;color:#f2d49b;margin-bottom:10px}.npc-action-menu button{width:100%;font-size:17px;text-align:left;padding:12px;border-color:#d6b77c66}.npc-info-close{float:right;font-size:14px;padding:5px 9px;margin:0 0 10px 10px}.npc-info-card h2{padding-right:75px}
+
+.play-hud{display:flex;flex-wrap:wrap;align-items:center;gap:10px 18px;padding:10px 18px;background:#101f2a;border-bottom:1px solid #d6b77c33;flex-shrink:0}.play-hud #hud-player{border:0;padding:4px 0;background:none;color:#f0d098;font-size:18px;font-weight:600;max-width:220px;overflow:hidden;white-space:nowrap;text-overflow:ellipsis}.hud-resource{font-size:13px;color:#a9bfcb;white-space:nowrap}.hud-resource b{font-size:16px;font-weight:500;color:#eef3f6;margin-left:6px}.hud-location{flex:1;min-width:100px;font-size:15px;color:#c7d8e0;overflow-wrap:anywhere}.play-hud label{display:flex;align-items:center;gap:8px;font-size:13px;color:#b7cad5}.play-hud select{font-size:15px;max-width:none;padding:6px}.portrait-hint{position:absolute;top:65px;left:16px;z-index:5;display:flex;align-items:center;gap:12px;padding:8px 12px;background:#102331ec;border:1px solid #d6b77c66;border-radius:6px;font-size:14px;color:#f1dcaf;max-width:calc(100% - 32px)}.portrait-hint button{font-size:20px;padding:0 5px;border:0;background:none;line-height:1.3}.choice-heading{margin-bottom:10px}.choice-heading strong{display:block;font-size:20px;color:#f0d098}.choice-heading span{display:block;margin-top:3px;font-size:14px;color:#c2d1da}.scene-choices button{border-color:#d6b77c88;background:#263b46;color:#f0e4c7;min-height:52px;font-size:17px;line-height:1.6}.scene-choices button:hover{border-color:#f0d098;background:#354d59}.connection-row{padding:8px 12px;border-radius:6px;background:#1b303d}.connection-row p{font-size:15px;color:#d1e0e7}.connection-row[data-phase=waiting]::before{content:'';width:16px;height:16px;flex-shrink:0;border:2px solid #d6b77c44;border-top-color:#eed095;border-radius:50%;animation:response-wait-spin 1s linear infinite}.connection-row[data-phase=error]{background:#402d2b;border:1px solid #c6897e}.connection-detail{font-size:13px;line-height:1.8;color:#b9cad5;margin-bottom:10px;overflow-wrap:anywhere}.dialog:focus-within{border-color:#efce8e}.dialog #line:focus{outline:none}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 168px)}
+.game{--text-step:0px}.game[data-text-size=large]{--text-step:2px}.game[data-text-size=largest]{--text-step:4px}.game .dialog p{font-size:calc(20px + var(--text-step))}.game.is-expanded .dialog p{font-size:calc(22px + var(--text-step))}.game .chat-runtime textarea,.game .tabs button{font-size:calc(18px + var(--text-step))}.game .scene-choices button,.game .skill-description,.game .skill-formula,.game .item-tooltip p,.game .npc-info-fields{font-size:calc(17px + var(--text-step))}.game .map-sidebar .map-detail-list b{font-size:calc(20px + var(--text-step))}.game .map-sidebar .map-detail-list span,.game .map-sidebar .mapinfo p,.game .region-fields,.game .resource>div,.game .resource>div>span{font-size:calc(17px + var(--text-step))}.game .attributes span,.game .inventory-categories button{font-size:calc(16px + var(--text-step))}
+@keyframes response-wait-spin{to{transform:rotate(360deg)}}
+@media(max-width:600px){.play-hud{padding:8px 12px;gap:6px 12px}.hud-location{flex-basis:100%}.play-hud label{margin-left:auto}.game .tabs button{font-size:calc(14px + var(--text-step))}.game .dialog p,.game.is-expanded .dialog p{font-size:calc(18px + var(--text-step))}.portrait-hint{top:55px;font-size:13px}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 180px)}}
+@media(prefers-reduced-motion:reduce){.connection-row[data-phase=waiting]::before{animation:none}}
 </style></head>
 <body>
 <main class="shell">
@@ -99,10 +105,12 @@
   <div class="workspace">
     <article class="game">
       <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
+      <section class="play-hud" aria-label="내 상태 요약"><button id="hud-player" type="button" title="상태창 열기">이름 미정</button><span class="hud-resource">HP <b id="hud-hp">미정</b></span><span class="hud-resource">MP <b id="hud-mp">미정</b></span><span id="hud-location" class="hud-location">써니 빌리지</span><label for="text-size">글자 크기 <select id="text-size"><option value="normal">보통</option><option value="large">크게</option><option value="largest">아주 크게</option></select></label></section>
       <section id="story" aria-label="대화 화면">
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
+          <div id="portrait-hint" class="portrait-hint" hidden><span>캐릭터를 누르면 메뉴가 열립니다.</span><button id="dismiss-portrait-hint" type="button" aria-label="초상화 안내 닫기">×</button></div>
           <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
           <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-action-menu" aria-expanded="false">세린 · 메뉴</button>
           <div id="npc-action-menu" class="npc-action-menu" role="group" aria-label="상대방 메뉴" hidden><strong id="npc-menu-name">세린</strong><button id="npc-view-info" type="button">ⓘ 정보 보기</button></div>
@@ -148,10 +156,11 @@
       </section>
         <section id="name-setup" class="name-setup" role="dialog" aria-modal="true" aria-labelledby="name-setup-title" hidden><div class="name-setup-card"><h2 id="name-setup-title">어떤 이름으로 모험할까요?</h2><p>정한 이름은 이 채팅의 게임에 저장됩니다.</p><label for="adventurer-name">주인공 이름</label><div class="free-action-row"><input id="adventurer-name" type="text" maxlength="40" autocomplete="off" placeholder="이름을 입력하세요"><button id="confirm-name" type="button" class="primary">이 이름으로 시작</button></div><p id="name-error" role="status"></p></div></section>
       <section id="chat-runtime" class="chat-runtime" aria-label="게임 행동 및 ChatGPT 연결" hidden>
-        <div id="scene-choices" class="scene-choices"></div>
+        <div id="choice-heading" class="choice-heading" hidden><strong>어떻게 할까요?</strong><span>선택지를 고르거나 아래에 자유롭게 입력하세요.</span></div><div id="scene-choices" class="scene-choices"></div>
         <form id="free-action-form"><label id="action-label" for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="2" placeholder="세린에게 질문하거나 자유롭게 행동하세요."></textarea><button id="send-action" type="submit" class="primary">보내기</button></div><p class="input-hint">Enter 보내기 · Shift+Enter 줄바꿈</p></form>
         <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="cancel-wait" hidden>대기 해제</button></div>
         <details id="connection-tools" class="manual-scene"><summary>연결 도움</summary>
+        <p id="connection-detail" class="connection-detail"></p>
         <div id="action-copy-area" hidden><label for="action-copy">ChatGPT에 보낼 요청</label><textarea id="action-copy" rows="4" readonly></textarea><button id="copy-action">요청 복사</button></div>
         <details class="manual-scene"><summary>응답 JSON 수동 적용</summary><label for="scene-json">ChatGPT의 JSON 응답 전체</label><textarea id="scene-json" rows="5" placeholder="JSON 또는 JSON 코드블록을 붙여넣으세요."></textarea><button id="apply-scene">장면 적용</button></details>
         </details>
@@ -889,6 +898,12 @@ function normalize(raw) {
   // Optional until the player chooses a name: legacy launchers compare exact saved keys.
   if(typeof raw.chosenName==='string')s.chosenName=raw.chosenName.trim().slice(0,40);
   if(s.chosenName)s.player.name=s.chosenName;
+  // Keep new preferences absent from old saves until the user changes them.
+  if(raw.uiPreferences&&typeof raw.uiPreferences==='object'){
+    s.uiPreferences={};
+    if(['normal','large','largest'].includes(raw.uiPreferences.textSize))s.uiPreferences.textSize=raw.uiPreferences.textSize;
+    if(typeof raw.uiPreferences.portraitHintDismissed==='boolean')s.uiPreferences.portraitHintDismissed=raw.uiPreferences.portraitHintDismissed;
+  }
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
   s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);
@@ -922,7 +937,13 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
-  const status=message=>{$('connection-status').textContent=message;};
+  const status=message=>{
+    $('connection-detail').textContent=message;
+    const problem=/실패|못했|못한|못해|오류|시간.*지났|다른 요청|달라|초과|거절|전송 확인|네트워크|불일치|대기.*해제|원본.*확인/.test(message);
+    const row=$('connection-status').parentElement;
+    row.hidden=!pending&&!problem;row.dataset.phase=pending&&!problem?'waiting':problem?'error':'idle';
+    $('connection-status').textContent=pending&&!problem?'상대의 반응을 기다리는 중…':message;
+  };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||/^(플레이어|주인공|player)$/i.test(state.player.name.trim());
   function controls(){
@@ -930,7 +951,9 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
-    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?.text||'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
+    const choosing=!!choices.length&&last&&!pending&&!naming;
+    $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
+    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
     $('free-action').disabled=!!pending||naming;$('send-action').disabled=!!pending||naming;$('cancel-wait').hidden=!pending;
   }
   function chooseName(){
@@ -952,7 +975,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     try{
     const requestId=newRequestId();pending={requestId,choiceId};
     $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
-    controls();status(embedded?'ChatGPT 연결 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
+    controls();status(embedded?'상대의 반응을 기다리는 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
     notify('action',{text:$('action-copy').value,requestId});
     if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
@@ -970,7 +993,8 @@ function mountChatUI(state,{render,persist,storage,embedded}){
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
-      render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});}
   }
   $('free-action-form').onsubmit=event=>{event.preventDefault();submit($('free-action').value);};
@@ -982,7 +1006,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();delete state.chosenName;delete state.mapFaction;Object.assign(state,normalize(saved));
+    cancel();delete state.chosenName;delete state.mapFaction;delete state.uiPreferences;Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
@@ -1010,7 +1034,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();return {controls,apply,restore,notify,conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,conversation:()=>conversation};
 }
 
 return {mountChatUI};})();
@@ -1380,6 +1404,7 @@ function mountNPCInfo(state){
     trigger=event?.target?.matches('.person')?event.target:button;
     point=event?.type==='click'&&event.detail?{x:event.clientX,y:event.clientY}:null;
     card.hidden=true;menu.hidden=false;button.setAttribute('aria-expanded','true');refresh();position(menu);view.focus({preventScroll:true});
+    document.dispatchEvent(new Event('ercedia:npc-menu-open'));
   }
   function hide(restoreFocus=false){card.hidden=true;menu.hidden=true;button.setAttribute('aria-expanded','false');if(restoreFocus&&!trigger.hidden)trigger.focus({preventScroll:true});}
   $('characters').addEventListener('click',event=>{if(event.target.matches('.person.ready')){event.stopPropagation();openMenu(event);}});
@@ -1397,6 +1422,32 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
+const module19=(()=>{
+function mountPlayHUD(state,{persist}){
+  const $=id=>document.getElementById(id),game=document.querySelector('.game');
+  const number=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'—';
+  function render(){
+    const player=state.player;
+    $('hud-player').textContent=player.name||'이름 미정';
+    $('hud-hp').textContent=`${number(player.hp)} / ${number(player.maxHp)}`;
+    $('hud-mp').textContent=`${number(player.mp)} / ${number(player.maxMp)}`;
+    $('hud-location').textContent=state.scene?.location||state.gameState.place||'써니 빌리지';
+    const size=state.uiPreferences?.textSize||'normal';game.dataset.textSize=size;$('text-size').value=size;
+    $('portrait-hint').hidden=!state.character||!!state.uiPreferences?.portraitHintDismissed;
+  }
+  function dismissHint(){
+    if(state.uiPreferences?.portraitHintDismissed)return;
+    state.uiPreferences={...state.uiPreferences,portraitHintDismissed:true};render();persist();
+  }
+  $('hud-player').onclick=()=>$('status-tab').click();
+  $('text-size').onchange=event=>{state.uiPreferences={...state.uiPreferences,textSize:event.target.value};render();persist();};
+  $('dismiss-portrait-hint').onclick=event=>{event.stopPropagation();dismissHint();};
+  $('portrait-hint').addEventListener('keydown',event=>event.stopPropagation());
+  document.addEventListener('ercedia:npc-menu-open',dismissHint);
+  return {render};
+}
+
+return {mountPlayHUD};})();
 const module1=(()=>{
 const {createGameBridge}=module2;
 const {mountChatUI}=module5;
@@ -1408,6 +1459,7 @@ const {mapSelectionInfo}=module14;
 const {mountFactionMap,factionInfo}=module16;
 const {mountPlayer}=module17;
 const {mountNPCInfo}=module18;
+const {mountPlayHUD}=module19;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module11;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -1443,6 +1495,7 @@ let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
 const npcInfo=mountNPCInfo(state);
+const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
 $('save-status').textContent=restored.message;
 const images=new Map();
@@ -1605,7 +1658,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);}
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();}
 const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 renderAll();
