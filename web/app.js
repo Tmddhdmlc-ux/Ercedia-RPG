@@ -219,7 +219,7 @@ $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout
 function saveGame(){try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
 $('save').onclick=saveGame;
 const playerUI=mountPlayer(state);
-const inventoryUI=mountInventory(state);
+const inventoryUI=mountInventory(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
 // A future game engine sends the complete current bag; UI previews never change it.
 window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
@@ -228,7 +228,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
 function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
-engineUI=mountEngineUI(state,{render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
+engineUI=mountEngineUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
 catalogUI=mountCatalogUI(state,{onShow:()=>switchTo('status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase,request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
