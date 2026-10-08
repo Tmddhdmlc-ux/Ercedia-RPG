@@ -9,6 +9,7 @@ import {normalizeIntroDraft,creationFields} from './intro-model.js';
 import {findNPC} from './npc-model.js';
 import {normalizeNPCProfile} from './npc-profile.js';
 import {normalizeEngine} from './engine-model.js';
+import {normalizeLife} from './npc-life.js';
 export const KEY = 'ercedia.vn.v04';
 export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -19,6 +20,7 @@ const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFi
 export function normalize(raw) {
   const s=defaults();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return s;
+  if(raw.npc_life)s.npc_life=normalizeLife(raw.npc_life);
   for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory','quests']})) if (choices.includes(raw[key])) s[key]=raw[key];
   for (const k of outfitKeys) { const l=raw.layouts?.[k]; if (l) s.layouts[k]={scale:num(l.scale,50,400,260),x:num(l.x,0,100,50),y:num(l.y,-350,200,-120)}; }
   for (const k of ['background','character']) if(typeof raw[k] === 'boolean') s[k]=raw[k];

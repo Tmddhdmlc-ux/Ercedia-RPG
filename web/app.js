@@ -18,6 +18,7 @@ import {locationLabel as canonicalLocationLabel} from './location-label.js';
 import {mountTitleMenu} from './title-menu.js';
 import {mountQuestUI} from './quest-ui.js';
 import {mountEngineUI} from './engine-ui.js';
+import {mountNPCLifeUI} from './npc-life-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -52,7 +53,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null;
+let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -224,8 +225,9 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();}
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();}
 const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
+lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 engineUI=mountEngineUI(state,{render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:window.__ERCEDIA_CONFIG__?.assetBase});

@@ -1,4 +1,5 @@
 import {resolveNPC,npcRankLabel} from './npc-model.js';
+import {publicLife} from './npc-life.js';
 export function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
@@ -27,6 +28,7 @@ export function mountNPCInfo(state){
     $('npc-interest-label').textContent=state.player.name?`${state.player.name}에 대한 관심도`:'나에 대한 관심도';
     $('npc-info-interest').textContent=typeof profile.interest==='number'?`${profile.interest} / 100`:'미정';
     $('npc-info-interest-text').textContent=profile.interestText||(typeof profile.interest==='number'?'마지막 게임 응답에 기록된 관심도입니다.':'아직 기록된 관계 정보가 없습니다.');
+    const relationship=publicLife(state,npc.id);$('npc-interest-label').textContent=(state.player.name||'나')+'에 대한 호감도';$('npc-info-interest').textContent=relationship.affection+' / 100';$('npc-info-interest-text').textContent='실제 사건으로 기록된 단일 호감도 · 요구 승낙을 보장하지 않습니다.';
     if(!card.hidden)position(card);if(!menu.hidden)position(menu);
   }
   function position(panel){

@@ -189,3 +189,7 @@
 
 ## UI 1.6.0 의뢰 연동
 의뢰 응답 선택 필드는 tampermonkey/QUEST_SCHEMA.md 참조. quest_updates 제안, quest_events 수락/보고, world_events 실제 증거만 사용한다. 의뢰 보고 보상은 UI가 한 번 정산하므로 report 장면에 player/inventory/npc_updates 보상 스냅샷을 중복 넣지 않는다. 이전 런처의 텍스트 요청은 설정 전체 자동 첨부를 의미하지 않으며 실제 읽은 설정만 기준으로 판정한다.
+
+## PATCH 5 NPC 생활·기억 연동 (UI 1.8.1)
+현재 런처/장면/저장 v1을 유지한다. [tampermonkey/NPC_LIFE_SCHEMA.md](tampermonkey/NPC_LIFE_SCHEMA.md)의 life_events로 일정·이동·호감도·기억·소문·지역 영향을 기록한다. NPC는 자기 기억과 실제 도착한 정보만 알고 국가 의무를 개인 호감도로 무시하지 않는다. 선행 PATCH1~4의 미완성 범위와 검증 한계는 [tests/PATCH5_VERIFICATION.md](tests/PATCH5_VERIFICATION.md)를 확인한다.
+
