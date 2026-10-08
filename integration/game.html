@@ -102,6 +102,20 @@
 @keyframes intro-fade{from{opacity:0}to{opacity:1}}
 @media(max-width:600px){.intro-screen{padding:20px;align-items:start}.intro-card{padding:10px 0}.intro-buttons{gap:8px}.intro-buttons button{flex:1}.game[data-intro-phase=black]{min-height:650px;height:90dvh}.attributes{grid-template-columns:repeat(3,minmax(0,1fr))}.start-location-panel{padding:14px}.new-game-actions button{font-size:14px}.game.is-expanded .chat-runtime{max-height:calc(40dvh - 230px)}}
 @media(prefers-reduced-motion:reduce){.intro-screen,.game[data-intro-phase=map] .map-workspace{animation:none}}
+
+/* Standing battle: animation transforms one composed body/face parent uniformly. */
+.game[data-battle=active] .stage{min-height:600px;cursor:default;background:radial-gradient(ellipse at 50% 70%,#344b50,#101b27)}
+.game[data-battle=active] #characters,.game[data-battle=active] .portrait-hint,.game[data-battle=active] .location,.game[data-battle=active] .npc-info-button,.game[data-battle=active] .npc-action-menu,.game[data-battle=active] .npc-info-card,.game[data-battle=active] .tap-hint,.game[data-battle=active] .story-controls,.game[data-battle=active] .chat-runtime{display:none!important}
+.battle-hud{position:absolute;z-index:5;inset:10px 12px auto;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:8px;max-height:170px;overflow:auto;pointer-events:none}
+.battle-participant{display:grid;grid-template-columns:1fr auto;padding:10px 14px;border:1px solid #91b3c655;background:#0b1829ef;border-radius:8px;gap:5px;font-size:15px}.battle-participant.enemy{border-color:#bd787866}.battle-participant strong{font-size:21px;color:#edcf96}.battle-participant>span:first-of-type{grid-column:1/-1;font-size:13px;color:#c9d4dd}.battle-participant progress{grid-column:1/-1;width:100%;height:10px;accent-color:#cb817e}.battle-participant[data-acting=true]{border-color:#edcf96;box-shadow:0 0 15px #edcf9660}.battle-participant[data-target=true]{outline:1px solid #f1a68c}.battle-participant[data-defeated=true]{opacity:.45}
+.battle-arena{position:absolute;inset:130px 0 132px;z-index:3;pointer-events:none}.battle-slot{position:absolute;top:0;bottom:0;width:38%;display:flex;align-items:flex-end;justify-content:center;transform-origin:center bottom;will-change:transform}.battle-slot.allied{left:5%}.battle-slot.enemy{right:5%}.battle-slot[data-defeated=true]{opacity:.25}.battle-visual{height:100%;aspect-ratio:2/3;position:relative;max-width:100%}.battle-body{position:absolute;inset:0;width:100%;height:100%;object-fit:contain}.battle-face{position:absolute;height:auto}.battle-missing{height:70%;width:100%;display:grid;place-items:center;text-align:center;padding:16px;border:1px dashed #93a7b677;border-radius:12px;background:linear-gradient(#10213188,#2b3e4788);color:#c6d1d9;font-size:18px}
+.battle-number{position:absolute;z-index:7;top:25%;left:25%;font:bold 36px system-ui;color:#f8e3c0;text-shadow:0 3px 8px #000}.battle-number[data-critical=true]{font-size:52px;color:#ffbda0}.battle-effect{position:absolute;inset:10%;pointer-events:none}.battle-effect.barrier{border:4px solid #a7e8ff;border-radius:50%;background:#99ddff25;box-shadow:0 0 30px #90d7e6}.battle-effect.afterimage{border-left:8px solid #d3e4eb55;filter:blur(5px)}.battle-effect.casting,.battle-effect.unique{border:4px solid currentColor;border-radius:50%;box-shadow:0 0 55px currentColor;color:#f3cf81}.battle-effect.fire{color:#ff934f}.battle-effect.water{color:#6ec9f5}.battle-effect.wind{color:#9af1ca}.battle-effect.electric{color:#d5b7ff}.battle-effect.dark{color:#a08ada}.battle-effect.light{color:#fff5aa}
+.battle-cutin{position:absolute;inset:18% -2% auto;background:linear-gradient(90deg,#080d1c,#6c4e2eee,#080d1c);border-block:2px solid #edcf96;padding:20px;text-align:center;color:#f7e4b6;font-size:28px;z-index:8}.game[data-battle=active] .dialog{bottom:12px;min-height:110px;width:92%;padding:16px 20px}.game[data-battle=active] .dialog p{font-size:20px;line-height:1.55;margin-top:8px}
+.battle-controls{display:flex;flex-wrap:wrap;align-items:center;gap:10px;padding:12px 18px;background:#101e2c;border-top:1px solid var(--line);flex-shrink:0}.battle-controls button,.battle-controls select{font-size:17px;min-height:44px}.battle-controls select{background:#122633;color:#fff;padding:6px}.battle-controls>span{color:#edcf96;margin-right:auto;font-size:16px}.battle-controls label{display:flex;align-items:center;gap:6px}.battle-replay{margin:10px 18px;font-size:16px;min-height:44px}.battle-recovery{padding:14px;border:1px solid #e1a48a;background:#3c2826}.battle-recovery p{font-size:17px;line-height:1.6}.battle-recovery button{min-height:44px;font-size:16px;margin:8px}.game.is-expanded[data-battle=active] .stage{min-height:0;flex:1}.game.is-expanded[data-battle=active] #story{flex:1;min-height:0;display:flex;flex-direction:column}.game[data-battle=active] .tabs button:not(#fullscreen){opacity:.4}.game[data-battle=active] .play-hud{display:none}
+@media(max-width:600px){.game[data-battle=active] .stage{min-height:610px}.battle-hud{inset:8px 6px auto;gap:6px}.battle-participant{padding:8px;grid-template-columns:1fr;font-size:13px}.battle-participant strong{font-size:18px}.battle-participant>span:first-of-type{font-size:12px}.battle-arena{inset:160px 0 160px}.battle-slot{width:40%}.battle-missing{font-size:14px;padding:8px}.game[data-battle=active] .dialog{min-height:132px;padding:12px;width:95%}.game[data-battle=active] .dialog p{font-size:18px}.battle-controls{padding:10px;gap:8px}.battle-controls button,.battle-controls select{font-size:15px}.battle-controls>span{width:100%}.battle-cutin{font-size:21px;padding:16px}}
+@media(prefers-reduced-motion:reduce){.battle-slot{will-change:auto}}
+.game[data-battle=active] .new-game-actions{display:none}.battle-participant{padding:8px 12px;gap:4px}.battle-participant strong{grid-column:1;grid-row:1}.battle-participant>span:nth-of-type(2){grid-column:2;grid-row:1;align-self:center}.battle-participant>span:first-of-type{grid-column:1/-1;grid-row:2}.battle-participant progress{grid-row:3;height:8px}.battle-participant>span:nth-of-type(3){grid-column:1/-1;grid-row:4;font-size:13px}.battle-arena{inset:118px 0 8px}.battle-visual{height:100%;width:auto;max-width:none;aspect-ratio:2/3}.game[data-battle=active] .dialog{z-index:6}.battle-missing{height:60%;align-self:center}.game[data-battle=active]:not(.is-expanded) .stage{min-height:clamp(440px,65dvh,650px)}
+@media(max-width:600px){.battle-participant{grid-template-columns:1fr auto;padding:8px 6px}.battle-participant>span:nth-of-type(2){font-size:12px}.battle-arena{inset:150px 0 110px}.battle-slot{align-items:center}.battle-visual{max-height:80vw}.game[data-battle=active]:not(.is-expanded) .stage{min-height:480px}.battle-participant strong{font-size:16px}}
 </style></head>
 <body>
 <main class="shell">
@@ -117,6 +131,8 @@
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
+          <div id="battle-hud" class="battle-hud" hidden aria-label="전투 참가자"></div>
+          <div id="battle-arena" class="battle-arena" hidden aria-label="스탠딩 전투 연출"><div id="battle-left" class="battle-slot allied"></div><div id="battle-right" class="battle-slot enemy"></div><div id="battle-cutin" class="battle-cutin" hidden></div></div>
           <div id="portrait-hint" class="portrait-hint" hidden><span>캐릭터를 누르면 메뉴가 열립니다.</span><button id="dismiss-portrait-hint" type="button" aria-label="초상화 안내 닫기">×</button></div>
           <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
           <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-action-menu" aria-expanded="false">세린 · 메뉴</button>
@@ -125,6 +141,9 @@
           <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
         </div>
         <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
+        <div id="battle-controls" class="battle-controls" hidden aria-label="전투 관전 제어"><span id="battle-progress"></span><button id="battle-pause" type="button">일시정지</button><label>속도 <select id="battle-speed"><option value="0.5">0.5배속</option><option value="1" selected>1배속</option><option value="2">2배속</option></select></label><button id="battle-skip" type="button">즉시 종료</button></div>
+        <div id="battle-recovery" class="battle-recovery" role="alert" hidden><p id="battle-error"></p><button id="battle-retry" type="button">수정 요청 보내기</button><button id="battle-recover-close" type="button">기존 장면 유지</button></div>
+        <button id="battle-replay" class="battle-replay" type="button" hidden>전투 다시보기</button>
       </section>
       <section id="map-panel" aria-label="세계지도 화면" hidden>
         <div class="map-navigation"><span id="map-breadcrumb">세계지도</span><button id="map-overview" disabled>← 전체 지도</button></div>
@@ -203,6 +222,9 @@ function normalizePlayer(raw){
   p.name=text(raw.name,40);p.job=text(raw.job,60);
   for(const k of ['level','hp','maxHp','mp','maxMp','xp','requiredXp','strength','dexterity','intelligence'])p[k]=number(raw[k],k==='level'?1:0);
   for(const k of ['constitution','manaStat'])if(Object.hasOwn(raw,k))p[k]=number(raw[k]);
+  for(const k of ['levelHpBonus','unspentStatPoints'])if(Object.hasOwn(raw,k))p[k]=number(raw[k]);
+  if(Object.hasOwn(raw,'realm'))p.realm=['none','basic','expert','hyper','master'].includes(raw.realm)?raw.realm:'none';
+  if(raw.battleModifiers&&typeof raw.battleModifiers==='object'){p.battleModifiers={};for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.battleModifiers[key]=number(raw.battleModifiers[key]??0,-999999);}
   for(const [current,max] of [['hp','maxHp'],['mp','maxMp']])if(p[current]!==null&&p[max]!==null)p[current]=Math.min(p[current],p[max]);
   if(Array.isArray(raw.skills))p.skills=raw.skills.slice(0,30).filter(s=>s&&typeof s==='object').map(s=>({name:text(s.name,60),description:text(s.description,800),formula:text(s.formula,240),enabled:s.enabled!==false}));
   return p;
@@ -293,23 +315,151 @@ function mountInventory(state){
 }
 
 return {categories,capacity,normalizeInventory,mountInventory};})();
+const module5=(()=>{
+// Validation only. This module never rolls, chooses an action or adjudicates a battle.
+const battleRealms={none:1,basic:1,expert:1.25,hyper:1.65,master:2.2};
+const battleKinds=['attack','dodge','defend','counter','magic','unique','defeat'];
+const battleElements=['water','fire','wind','electric','dark','light'];
+const fail=message=>{throw Error('전투 검증: '+message);};
+const str=(v,label,max=500)=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail(label+' 문자열');return v;};
+const num=(v,label,min=0,max=999999)=>{if(!Number.isInteger(v)||v<min||v>max)fail(label+' 수치');return v;};
+const decimal=(v,label,min=0,max=100)=>{if(typeof v!=='number'||!Number.isFinite(v)||v<min||v>max)fail(label+' 계수');return v;};
+const equal=(a,b,label)=>{if(a!==b)fail(label+` 불일치 (${a} / ${b})`);};
+function battleIsActive(state){return !!state.battlePlayback&&!state.battlePlayback.done;}
+function battleSpeed(p){return p.stats.dexterity+Math.floor(p.stats.strength/5)+p.modifiers.equipment_speed_bonus+p.modifiers.status_speed_bonus;}
+function battleMaximums(p){const s=p.stats,m=p.modifiers;return {hp:Math.max(1,100+10*(s.constitution-10)+3*(s.strength-10)+p.level_hp_bonus+m.equipment_hp_bonus+m.status_hp_bonus),mp:Math.max(0,100+6*(s.manaStat-10)+m.equipment_mp_bonus+m.status_mp_bonus)};}
+function noEnlightenmentNumbers(value){
+  if(!value||typeof value!=='object')return;
+  for(const [key,v] of Object.entries(value)){if(/enlightenment.*(progress|chance|percent|score|probability)|breakthrough.*(chance|probability|progress)|깨달음.*(확률|진척|수치|점수)/i.test(key))fail('깨달음 수치화 금지');noEnlightenmentNumbers(v);}
+}
+function participant(raw){
+  if(!raw||!['allied','enemy'].includes(raw.side)||!['player','npc','monster'].includes(raw.role))fail('참가자 소속/종류');
+  const p={id:str(raw.id,'참가자 ID',80),name:str(raw.name,'이름',60),side:raw.side,role:raw.role,level:num(raw.level,'레벨',1,100),rank:str(raw.rank,'공개 경지',80),realm:raw.realm,stats:{},modifiers:{},skills:[],level_hp_bonus:num(raw.level_hp_bonus,'레벨 HP 기록'),hp:num(raw.hp,'HP'),maxHp:num(raw.maxHp,'최대 HP',1),mp:num(raw.mp,'MP'),maxMp:num(raw.maxMp,'최대 MP'),speed:num(raw.speed,'속도'),art:null};
+  if(!Object.hasOwn(battleRealms,p.realm))fail('기사 경지 코드');
+  if(p.role==='monster'&&p.realm!=='none')fail('마수에 기사 배율 적용 금지');
+  for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])p.stats[key]=num(raw.stats?.[key],key,1);
+  for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.modifiers[key]=num(raw.modifiers?.[key]??0,key,-999999);
+  const maximum=battleMaximums(p);equal(p.maxHp,maximum.hp,'최대 HP 공식');equal(p.maxMp,maximum.mp,'최대 MP 공식');equal(p.speed,battleSpeed(p),'행동 속도');
+  if(p.hp>p.maxHp||p.mp>p.maxMp)fail('현재 자원이 최대값 초과');
+  if(!Array.isArray(raw.skills)||raw.skills.length>30)fail('기술 목록');
+  const ids=new Set();p.skills=raw.skills.map(s=>{
+    const skill={id:str(s.id,'기술 ID',80),name:str(s.name,'기술명',60),kind:s.kind,mp_cost:num(s.mp_cost,'기술 MP 비용')};
+    if(ids.has(skill.id)||!['physical','magic','unique','defend'].includes(skill.kind))fail('기술 ID/종류');ids.add(skill.id);
+    if(skill.kind==='magic'||skill.kind==='unique'){skill.power=num(s.power,'기술 기본 위력');skill.int_coefficient=decimal(s.int_coefficient,'INT');skill.mana_coefficient=decimal(s.mana_coefficient,'MANA');skill.basis=str(s.basis,'승인 기술/고유능력 근거',1000);}
+    return skill;
+  });
+  if(raw.art!==null&&raw.art!==undefined){
+    if(p.id!=='serin'||p.role==='player'||raw.art.id!=='serin'||!['armor','casual','nightwear'].includes(raw.art.outfit)||!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion))fail('미등록/다른 인물 원화');
+    p.art={id:'serin',outfit:raw.art.outfit,emotion:raw.art.emotion};
+  }
+  return p;
+}
+function normalizeBattle(raw){
+  if(!raw||typeof raw!=='object')fail('battle 객체');noEnlightenmentNumbers(raw);
+  const b={battle_id:str(raw.battle_id,'전투 ID',100),trigger:raw.trigger,participants:[],events:[],initiative:null,outcome:null};
+  if(!['dialogue','travel','dungeon','duel','ambush'].includes(b.trigger))fail('진입 상황');
+  if(!Array.isArray(raw.participants)||raw.participants.length<2||raw.participants.length>8)fail('참가자 2~8명');
+  b.participants=raw.participants.map(participant);const byId=new Map(b.participants.map(p=>[p.id,p]));
+  if(byId.size!==b.participants.length||b.participants.filter(p=>p.role==='player').length!==1||b.participants.find(p=>p.role==='player').side!=='allied'||!b.participants.some(p=>p.side==='enemy'))fail('참가자 중복/주인공/적 소속');
+  if(!Array.isArray(raw.events)||!raw.events.length||raw.events.length>120)fail('사건 1~120개');
+  const live=Object.fromEntries(b.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}])),ids=new Set();
+  b.events=raw.events.map((rawEvent,index)=>{
+    const e={id:str(rawEvent.id,'사건 ID',80),actor:rawEvent.actor,target:rawEvent.target,kind:rawEvent.kind,result:rawEvent.result,skill_id:rawEvent.skill_id??null,damage:num(rawEvent.damage,'피해'),mp_cost:num(rawEvent.mp_cost,'MP 소비'),actor_hp_after:num(rawEvent.actor_hp_after,'행동자 HP'),actor_mp_after:num(rawEvent.actor_mp_after,'행동자 MP'),target_hp_after:num(rawEvent.target_hp_after,'대상 HP'),target_mp_after:num(rawEvent.target_mp_after,'대상 MP'),narration:str(rawEvent.narration,'전투 중계',1000),element:rawEvent.element??null};
+    const actor=byId.get(e.actor),target=byId.get(e.target);if(!actor||!target||ids.has(e.id)||!battleKinds.includes(e.kind)||!['hit','dodge','block','critical','none'].includes(e.result))fail('사건 참조/종류');ids.add(e.id);
+    if((live[e.actor].hp===0&&e.kind!=='defeat')||(live[e.target].hp===0&&e.kind!=='defeat'))fail('전투불능 인물의 추가 행동/타격');
+    if(e.actor===e.target&&!['defend','defeat','dodge'].includes(e.kind))fail('자기 자신 공격');
+    const skill=e.skill_id===null?null:actor.skills.find(s=>s.id===e.skill_id);
+    if(e.skill_id!==null&&!skill)fail('보유하지 않은 기술');equal(e.mp_cost,skill?.mp_cost??0,'기술 MP 소비');
+    if(['attack','counter'].includes(e.kind)&&skill&&skill.kind!=='physical')fail('물리 기술 종류');
+    if(e.mp_cost>live[e.actor].mp)fail('MP 부족');
+    if(e.kind==='magic'&&(skill?.kind!=='magic'||!battleElements.includes(e.element)))fail('마법 기술/원소');
+    if(e.kind==='unique'&&(skill?.kind!=='unique'||!['hyper','master'].includes(actor.realm)))fail('고유능력/하이퍼 경지');
+    if(e.kind==='defeat'&&(live[e.actor].hp!==0||e.actor!==e.target))fail('전투불능 퇴장 시점');
+    const damaging=['attack','counter','magic','unique'].includes(e.kind);
+    if(!damaging||e.result==='dodge'||e.result==='none'){equal(e.damage,0,'회피/비공격 피해');}
+    else{
+      const c=rawEvent.calculation;if(!c)fail('피해 공식 증빙');
+      const context=decimal(c.context_multiplier,'상황 보정',0,20),defense=num(c.defense,'실효 방어력');
+      if(context!==1||defense||e.result==='critical'||e.result==='block')str(c.basis,'방어/상성/치명 판정 근거',1000);
+      let expected;
+      if(['attack','counter'].includes(e.kind)){
+        if(skill&&skill.kind!=='physical')fail('물리 기술 종류');
+        const roll=num(c.base_roll,'GM 평타 판정값',10,20);equal(c.realm_multiplier,battleRealms[actor.realm],'기사 피해 배율');
+        expected=Math.max(1,Math.floor((roll+Math.floor(.65*actor.stats.strength+.2*actor.stats.dexterity)+actor.modifiers.weapon_attack+actor.modifiers.technique_bonus)*c.realm_multiplier*context-defense));
+      }else{
+        equal(c.realm_multiplier,1,'마법/고유능력에 기사 물리 배율 금지');
+        expected=Math.max(1,Math.floor((skill.power+skill.int_coefficient*actor.stats.intelligence+skill.mana_coefficient*actor.stats.manaStat)*context-defense));
+      }
+      if(e.result==='block'&&c.full_block===true){str(c.basis,'완전 방어 근거');expected=0;}
+      equal(e.damage,Math.min(live[e.target].hp,expected),'피해 공식');e.calculation={...c};
+    }
+    const nextActor={hp:live[e.actor].hp,mp:live[e.actor].mp-e.mp_cost},nextTarget=e.actor===e.target?nextActor:{hp:live[e.target].hp-e.damage,mp:live[e.target].mp};
+    equal(e.actor_hp_after,nextActor.hp,'행동자 HP 변화');equal(e.actor_mp_after,nextActor.mp,'행동자 MP 변화');equal(e.target_hp_after,nextTarget.hp,'대상 HP 변화');equal(e.target_mp_after,nextTarget.mp,'대상 MP 변화');
+    live[e.actor]=nextActor;live[e.target]=nextTarget;return e;
+  });
+  // Counter validation needs preceding normalized events; validate once the list exists.
+  for(let i=0;i<b.events.length;i++)if(b.events[i].kind==='counter'){const e=b.events[i],p=b.events[i-1];if(!p||p.target!==e.actor||p.actor!==e.target||p.result!=='block')fail('방어 직후 반격 순서');}
+  b.initiative={actor_id:str(raw.initiative?.actor_id,'선공 ID',80),reason:typeof raw.initiative?.reason==='string'?raw.initiative.reason.slice(0,1000):''};
+  equal(b.initiative.actor_id,b.events[0].actor,'선공/첫 행동');const first=byId.get(b.initiative.actor_id),opponents=b.participants.filter(p=>p.side!==first.side);
+  if(opponents.some(p=>p.speed>=first.speed)&&!b.initiative.reason.trim())fail('동시 대응/기습/속도 역전 근거 필요');
+  const o=raw.outcome;if(!o||!['allied','enemy','draw','escape'].includes(o.winner)||!['defeat','surrender','draw','escape'].includes(o.termination))fail('최종 승패');
+  b.outcome={winner:o.winner,termination:o.termination,reason:str(o.reason,'결과 근거',1000),xp_gain:num(o.xp_gain,'경험치 보상'),items_added:[],items_consumed:[],injuries:[],resources:[]};
+  for(const key of ['items_added','items_consumed']){if(!Array.isArray(o[key])||o[key].length>32)fail('아이템 보상/소비');b.outcome[key]=o[key].map(item=>({name:str(item.name,'아이템 이름',60),quantity:num(item.quantity,'아이템 수량',1)}));}
+  if(!Array.isArray(o.injuries)||o.injuries.length>20)fail('부상 목록');b.outcome.injuries=o.injuries.map(s=>str(s,'부상',500));
+  if(!Array.isArray(o.resources)||o.resources.length!==byId.size||new Set(o.resources.map(p=>p.id)).size!==byId.size)fail('최종 자원 목록');
+  b.outcome.resources=o.resources.map(r=>{if(!live[r.id])fail('최종 자원 ID');equal(r.hp,live[r.id].hp,'최종 HP');equal(r.mp,live[r.id].mp,'최종 MP');return {id:r.id,hp:r.hp,mp:r.mp};});
+  if(o.termination==='defeat'){if(!['allied','enemy'].includes(o.winner))fail('전멸 승패');const losers=b.participants.filter(p=>p.side!==o.winner),winners=b.participants.filter(p=>p.side===o.winner);if(losers.some(p=>live[p.id].hp>0)||!winners.some(p=>live[p.id].hp>0))fail('전멸 결과/생존자');}
+  if((o.termination==='draw')!==(o.winner==='draw')||(o.termination==='escape')!==(o.winner==='escape'))fail('종료 방식/승패');
+  return b;
+}
+function battleFrame(battle,count){const resources=Object.fromEntries(battle.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}]));for(const e of battle.events.slice(0,count)){resources[e.actor]={hp:e.actor_hp_after,mp:e.actor_mp_after};resources[e.target]={hp:e.target_hp_after,mp:e.target_mp_after};}return resources;}
+function validateBattleSettlement(scene,state){
+  const b=scene.battle,p=b.participants.find(p=>p.role==='player'),current=state.player;
+  for(const key of ['level','hp','maxHp','mp','maxMp'])equal(p[key],current[key],'현재 주인공 '+key);
+  for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(p.stats[key],current[key],'현재 능력치 '+key);
+  equal(p.realm,current.realm??'none','현재 기사 경지');equal(p.level_hp_bonus,current.levelHpBonus??0,'현재 레벨 HP 기록');
+  for(const skill of p.skills)if(!current.skills.some(s=>s.enabled&&s.name===skill.name))fail('현재 주인공 기술 목록');
+  if(!scene.player||!scene.inventory||!scene.game_state)fail('종료 player/inventory/game_state 전체 스냅샷 필요');
+  const final=b.outcome.resources.find(r=>r.id===p.id),growth=battleGrowth(current,b.outcome.xp_gain);
+  equal(scene.player.hp,Math.min(growth.maxHp,final.hp+growth.hpIncrease),'종료 주인공 HP/레벨 보너스');equal(scene.player.mp,final.mp,'종료 주인공 MP');
+  for(const key of ['maxMp','strength','dexterity','intelligence','constitution','manaStat'])equal(scene.player[key],current[key],'무단 능력치 배분 금지 '+key);
+  for(const key of ['level','maxHp','xp','requiredXp'])equal(scene.player[key],growth[key],'성장/보상 '+key);
+  equal(scene.player.levelHpBonus??0,growth.levelHpBonus,'누적 레벨 HP');equal(scene.player.unspentStatPoints??0,growth.unspentStatPoints,'미사용 성장 포인트');equal(scene.player.realm??'none',current.realm??'none','전투 보상으로 자동 돌파 금지');
+  for(const key of Object.keys(p.modifiers))equal(p.modifiers[key],current.battleModifiers?.[key]??0,'현재 장비/상태 보정 '+key);
+  equal(JSON.stringify(scene.player.skills),JSON.stringify(current.skills),'전투 보상에 없는 기술 변경');
+  for(const key of Object.keys(p.modifiers))equal(scene.player.battleModifiers?.[key]??0,current.battleModifiers?.[key]??0,'전투 보상에 없는 장비/상태 변경 '+key);
+  const bag=items=>{const map=new Map();for(const i of items)map.set(i.name,(map.get(i.name)||0)+i.quantity);return map;};const before=bag(state.inventory),after=bag(scene.inventory),delta=new Map();
+  for(const item of b.outcome.items_added)delta.set(item.name,(delta.get(item.name)||0)+item.quantity);
+  for(const item of b.outcome.items_consumed)delta.set(item.name,(delta.get(item.name)||0)-item.quantity);
+  for(const id of new Set([...before.keys(),...after.keys(),...delta.keys()]))equal(after.get(id)||0,(before.get(id)||0)+(delta.get(id)||0),'아이템 정산 '+id);
+  for(const injury of b.outcome.injuries)if(!scene.game_state.events?.includes(injury))fail('부상 상태 반영 누락');
+  return true;
+}
+function battleGrowth(player,xpGain){
+  let level=player.level,xp=player.xp+xpGain,levelHpBonus=player.levelHpBonus??0,unspentStatPoints=player.unspentStatPoints??0,hpIncrease=0;
+  while(level<100&&xp>=Math.floor(100*level**1.5)){xp-=Math.floor(100*level**1.5);level++;const bonus=2+Math.floor(player.strength/10);levelHpBonus+=bonus;hpIncrease+=bonus;unspentStatPoints+=3;}
+  return {level,xp,requiredXp:level<100?Math.floor(100*level**1.5):0,levelHpBonus,unspentStatPoints,maxHp:player.maxHp+hpIncrease,hpIncrease};
+}
+
+return {battleRealms,battleKinds,battleElements,battleIsActive,battleSpeed,battleMaximums,normalizeBattle,battleFrame,validateBattleSettlement,battleGrowth};})();
 const module2=(()=>{
 const {normalizePlayer}=module3;
 const {normalizeInventory}=module4;
+const {battleIsActive}=module5;
 // Public bridge v1. UI classes and character coordinates are intentionally absent.
 function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
     updateScene:scene=>apply(typeof scene==='string'?scene:JSON.stringify(scene)),
-    updatePlayer:player=>{const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
-    updateInventory:items=>{state.inventory=normalizeInventory(items);render();persist();},
+    updatePlayer:player=>{if(battleIsActive(state))return;const retained=Object.fromEntries(['constitution','manaStat','realm','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
+    updateInventory:items=>{if(battleIsActive(state))return;state.inventory=normalizeInventory(items);render();persist();},
     getGameState:()=>JSON.parse(JSON.stringify(state)),
     restoreGameState:saved=>restore(saved)
   });
 }
 
 return {createGameBridge};})();
-const module7=(()=>{
+const module8=(()=>{
 // Extract a completed scene object from rendered code or surrounding assistant prose.
 // Only JSON.parse is used. Strings, escaped quotes and braces inside dialogue are respected.
 function extractSceneJSON(source){
@@ -327,7 +477,7 @@ function extractSceneJSON(source){
 }
 
 return {extractSceneJSON};})();
-const module8=(()=>{
+const module9=(()=>{
 // Only public display fields are accepted; lore secrets never enter this card.
 function normalizeNPCProfile(raw){
   if(!raw||typeof raw!=='object'||Array.isArray(raw))throw Error('npc.profile은 공개 인물 정보 객체여야 합니다.');
@@ -341,7 +491,7 @@ function normalizeNPCProfile(raw){
 }
 
 return {normalizeNPCProfile};})();
-const module9=(()=>{
+const module10=(()=>{
 // Generated from approved public character creation data.
 const introData = {
   "schema_version": 1,
@@ -552,8 +702,8 @@ const playerTemplate = {
 };
 
 return {introData,playerTemplate};})();
-const module10=(()=>{
-const {introData,playerTemplate}=module9;
+const module11=(()=>{
+const {introData,playerTemplate}=module10;
 const {normalizePlayer}=module3;
 const introSteps=['name','gender','calling','response','passive','kingdom','lordship','confirmation'];
 // Public limits approved in NEW_GAME_INTRO.md; never infer secret abilities.
@@ -578,13 +728,14 @@ function initialPlayer(name){
 }
 
 return {introSteps,passiveLimits,passiveCandidates,normalizeIntroDraft,creationFields,initialPlayer};})();
-const module6=(()=>{
+const module7=(()=>{
 const {normalizePlayer}=module3;
 const {normalizeInventory}=module4;
-const {extractSceneJSON}=module7;
-const {normalizeNPCProfile}=module8;
-const {introData}=module9;
-const {passiveLimits}=module10;
+const {extractSceneJSON}=module8;
+const {normalizeNPCProfile}=module9;
+const {introData}=module10;
+const {passiveLimits}=module11;
+const {normalizeBattle}=module5;
 const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 const characterRegistry={serin:{outfits:['armor','casual','nightwear']}};
 function text(value,key,max=2000,required=true){
@@ -615,6 +766,7 @@ function normalizeScene(raw){
     for(const key of ['quests','relationships','events','recent_dialogue'])if(raw.game_state[key]!==undefined){const list=raw.game_state[key];if(!Array.isArray(list)||list.length>30)throw Error(`${key}는 최대 30개 문자열입니다.`);game[key]=list.map(v=>text(v,key,500,false));}
     scene.game_state=game;
   }
+  if(raw.battle!==undefined)scene.battle=normalizeBattle(raw.battle);
   return scene;
 }
 function parseScene(source){
@@ -631,17 +783,17 @@ function contextSummary(state){
   return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'써니 빌리지',time:state.scene?.time||'오후',player:state.player,...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
 }
 function actionPrompt(state,action,requestId){
-  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 써니 빌리지나 세린을 임의로 이동시키지 마세요. npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,strength,dexterity,intelligence,constitution,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
+  return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 써니 빌리지나 세린을 임의로 이동시키지 마세요. npc의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,strength,dexterity,intelligence,constitution,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n전투 발생 시에는 BATTLE_SYSTEM.md, COMBAT_GROWTH.md, PROGRESSION.md, MONSTER_RANKS.md, EQUIPMENT_RULES.md, REGIONAL_DUNGEONS.md와 tampermonkey/BATTLE_SCHEMA.md를 실제로 읽고, 이 ercedia_scene에 선택 항목 battle을 추가하세요. 전투 전체를 사전 판정하고 battle_id/trigger/participants/initiative/events/outcome을 출력합니다. 참가자 현재 stats 5종/HP/MP/speed/realm/level_hp_bonus/modifiers/skills/art, 순서별 actor/target/kind/result/skill_id/damage/mp_cost/네 자원 after/calculation/narration, 종료 winner/termination/reason/resources/xp_gain/items_added/items_consumed/injuries를 포함합니다. damage는 실제 HP 감소값, 회피는 0. 기사 배율과 MP 비용/스킬/장비 증빙을 명시하고 깨달음 진척도·확률은 만들지 마세요. 기존 player 능력치가 미정이면 전투를 발명하지 말고 먼저 일반 장면에서 확정하세요. 종료 후 player/inventory/game_state 전체 스냅샷과 복귀할 dialogue/choices를 함께 출력하세요. 주인공 원화는 미등록이면 art=null이며 세린 원화를 주인공에 쓰지 않습니다. UI는 전투 종료 때만 보상/부상을 정산합니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
 
 return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
-const module12=(()=>{
+const module13=(()=>{
 // Generated mirror of assets/maps/world/map_locations.json.
 const mapData = {"regions":[{"id":"northwest","label":"북서 미개척 설산·빙하","x":0.21158854166666666,"y":0.166015625,"provisional":true},{"id":"northcenter","label":"북중 미개척 원시림","x":0.4752604166666667,"y":0.16796875,"provisional":true},{"id":"northeast","label":"북동 미개척 마나 이상지대","x":0.751953125,"y":0.17578125,"provisional":true},{"id":"west","label":"벨로아 왕국","x":0.22135416666666666,"y":0.3955078125,"provisional":true},{"id":"east","label":"드라켄 왕국","x":0.7552083333333334,"y":0.419921875,"provisional":true},{"id":"south","label":"루메린 왕국","x":0.5208333333333334,"y":0.7177734375,"provisional":true},{"id":"disputed","label":"중앙 분쟁지","x":0.5045572916666666,"y":0.474609375,"provisional":true}],"locations":[{"id":"W1","label":"노르발트 변경백령","kind":"lordship","region":"west","x":0.18945312,"y":0.31152344,"provisional":true,"kingdom":"벨로아","lord":"에드릭 노르발트","lore_id":"W1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W2","label":"발렌하르트 공작령","kind":"lordship","region":"west","x":0.32291667,"y":0.38867188,"provisional":true,"kingdom":"벨로아","lord":"카시안 발렌하르트","lore_id":"W2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W3","label":"엘름베르크 백작령","kind":"lordship","region":"west","x":0.24283854,"y":0.4765625,"provisional":true,"kingdom":"벨로아","lord":"마르타 엘름베르크","lore_id":"W3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W4","label":"로젠펠트 후작령","kind":"lordship","region":"west","x":0.32291667,"y":0.55175781,"provisional":true,"kingdom":"벨로아","lord":"율리안 로젠펠트","lore_id":"W4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W5","label":"아르덴슈타인 백작령","kind":"lordship","region":"west","x":0.3984375,"y":0.62109375,"provisional":true,"kingdom":"벨로아","lord":"비올레트 아르덴슈타인","lore_id":"W5","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E1","label":"칼트하임 변경백령","kind":"lordship","region":"east","x":0.74414062,"y":0.34570312,"provisional":true,"kingdom":"드라켄","lord":"하인리히 칼트하임","lore_id":"E1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E2","label":"아이젠크로네 공작령","kind":"lordship","region":"east","x":0.66080729,"y":0.40527344,"provisional":true,"kingdom":"드라켄","lord":"셀리아 아이젠크로네","lore_id":"E2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E3","label":"베르크슈타인 후작령","kind":"lordship","region":"east","x":0.66666667,"y":0.48828125,"provisional":true,"kingdom":"드라켄","lord":"발터 베르크슈타인","lore_id":"E3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E4","label":"실베른 백작령","kind":"lordship","region":"east","x":0.69010417,"y":0.56445312,"provisional":true,"kingdom":"드라켄","lord":"에밀 실베른","lore_id":"E4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S1","label":"벨마리나 후작령","kind":"lordship","region":"south","x":0.37109375,"y":0.73730469,"provisional":true,"kingdom":"루메린","lord":"도미니크 벨마리나","lore_id":"S1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S2","label":"세르반 공작령","kind":"lordship","region":"south","x":0.47851562,"y":0.63476562,"provisional":true,"kingdom":"루메린","lord":"이사벨 세르반","lore_id":"S2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S3","label":"아쿠아렌 백작령","kind":"lordship","region":"south","x":0.56901042,"y":0.69824219,"provisional":true,"kingdom":"루메린","lord":"티에라 아쿠아렌","lore_id":"S3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S4","label":"솔메리아 백작령","kind":"lordship","region":"south","x":0.53320312,"y":0.80371094,"provisional":true,"kingdom":"루메린","lord":"라파엘 솔메리아","lore_id":"S4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"CW","label":"벨로아 왕도 (도시명 미정)","kind":"capital","region":"west","x":0.28776042,"y":0.34277344,"provisional":true},{"id":"CE","label":"드라켄 왕도 (도시명 미정)","kind":"capital","region":"east","x":0.72265625,"y":0.4296875,"provisional":true},{"id":"CS","label":"루메린 왕도 (도시명 미정)","kind":"capital","region":"south","x":0.50520833,"y":0.75097656,"provisional":true},{"id":"F1","label":"중앙 요새 후보","kind":"fortress","region":"disputed","x":0.50585938,"y":0.47753906,"provisional":true},{"id":"M1","label":"접경 마나 광산 후보","kind":"mana_mine","region":"disputed","x":0.59505208,"y":0.43847656,"provisional":true},{"id":"P1","label":"남서 항구 후보","kind":"port","region":"south","x":0.30794271,"y":0.69433594,"provisional":true},{"id":"P2","label":"남동 항구 후보","kind":"port","region":"south","x":0.63867188,"y":0.60742188,"provisional":true},{"id":"D1","label":"고대 던전 후보","kind":"dungeon","region":"northwest","x":0.2890625,"y":0.15820312,"provisional":true},{"id":"B1","label":"마수 서식 후보","kind":"beast_habitat","region":"northcenter","x":0.47526042,"y":0.21875,"provisional":true},{"id":"A1","label":"마나 이상·유적 후보","kind":"anomaly","region":"northeast","x":0.76171875,"y":0.15722656,"provisional":true},{"id":"I1","label":"군도 탐험 후보","kind":"island","region":"archipelago","x":0.85026042,"y":0.66894531,"provisional":true}]};
 
 return {mapData};})();
-const module13=(()=>{
-const {mapData}=module12;
+const module14=(()=>{
+const {mapData}=module13;
 const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
 function regionFrame(id){
   if(id==='world')return {x:0,y:0,width:1,height:1};
@@ -672,7 +824,7 @@ function viewForSelection(id){
 }
 
 return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
-const module14=(()=>{
+const module15=(()=>{
 // Generated public-only mirror of faction_locations.json.
 const factionLocations = [
   {
@@ -1122,14 +1274,14 @@ const factionLocations = [
 ];
 
 return {factionLocations};})();
-const module11=(()=>{
-const {normalizeScene}=module6;
+const module12=(()=>{
+const {normalizeScene}=module7;
 const {normalizeInventory}=module4;
-const {mapData}=module12;
+const {mapData}=module13;
 const {newPlayer,normalizePlayer}=module3;
-const {mapViews}=module13;
-const {factionLocations}=module14;
-const {normalizeIntroDraft,creationFields}=module10;
+const {mapViews}=module14;
+const {factionLocations}=module15;
+const {normalizeIntroDraft,creationFields}=module11;
 const KEY = 'ercedia.vn.v04';
 const outfitKeys = ['armor', 'casual', 'nightwear'];
 const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -1169,6 +1321,8 @@ function normalize(raw) {
   }
   if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
   if(Object.hasOwn(raw,'mapFaction'))s.mapFaction=null;
+  if(Array.isArray(raw.battleApplied))s.battleApplied=raw.battleApplied.filter(id=>typeof id==='string'&&id.length<=100).slice(-100);
+  if(raw.battlePlayback){try{const b=raw.battlePlayback,scene=normalizeScene(b.scene);if(!scene.battle)throw Error('battle absent');s.battlePlayback={scene,index:num(b.index,0,scene.battle.events.length,0),speed:[.5,1,2].includes(b.speed)?b.speed:1,paused:b.paused===true,done:b.done===true,replay:b.replay===true};}catch{}}
   const faction=factionLocations.find(p=>p.id===raw.mapFaction);
   if(faction&&faction.region===s.mapView&&faction.anchor_id===s.region)s.mapFaction=faction.id;
   return s;
@@ -1179,16 +1333,17 @@ function load(storage) {
 }
 
 return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
-const module5=(()=>{
-const {parseScene,actionPrompt}=module6;
-const {normalize}=module11;
+const module6=(()=>{
+const {parseScene,actionPrompt}=module7;
+const {normalize}=module12;
+const {battleIsActive}=module5;
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
   return `action-${Date.now()}-${++requestSequence}`;
 }
-function mountChatUI(state,{render,persist,storage,embedded}){
+function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
@@ -1202,7 +1357,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
   function controls(){
-    const creating=!!state.introDraft,naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
+    const creating=!!state.introDraft||battleIsActive(state),naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
@@ -1225,7 +1380,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
   }
   function submit(action,choiceId=null){
-    if(pending||state.introDraft||needsName()||!action.trim())return;
+    if(pending||state.introDraft||battleIsActive(state)||needsName()||!action.trim())return;
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
     const requestId=newRequestId();pending={requestId,choiceId};
@@ -1236,25 +1391,36 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
   }
-  function apply(source){
+  function apply(source,{commitBattle=false}={}){
     try{
+      if(battleIsActive(state)&&!commitBattle)return status('전투 재생 중에는 후속 장면을 시작할 수 없습니다.');
       const scene=parseScene(source);
       if(state.seenScenes.includes(scene.scene_id))return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      if(scene.battle&&!commitBattle){
+        if(state.battleApplied?.includes(scene.battle.battle_id))return status('이미 정산한 전투입니다. 다시보기로 관전하세요.');
+        getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
+      }
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
       if(scene.player){
-        const retained=Object.fromEntries(['constitution','manaStat'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
+        const retained=Object.fromEntries(['constitution','manaStat','realm','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
         state.player={...scene.player,...retained,...(state.chosenName?{name:state.chosenName}:{})};
       }
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
-      cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;
+      cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
-    }catch(error){status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});}
+    }catch(error){
+      const battleError=error.message.includes('전투 검증');
+      if(battleError){cancel('전투 검증 오류 · 기존 상태를 유지합니다.');state.page='story';render();$('battle-recovery').hidden=false;$('battle-error').textContent=error.message;}
+      status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});
+    }
   }
+  $('battle-retry').onclick=()=>{const reason=$('battle-error').textContent;$('battle-recovery').hidden=true;submit('직전 전투 JSON이 검증에서 거절되었습니다: '+reason+'. BATTLE_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 읽고 현재 저장 상태를 기준으로 전투 전체 사건과 종료 스냅샷을 수정하여 다시 출력해주세요.');};
+  $('battle-recover-close').onclick=()=>{$('battle-recovery').hidden=true;};
   $('free-action-form').onsubmit=event=>{event.preventDefault();submit($('free-action').value);};
   // A sandboxed frame intentionally cannot submit native forms. Send through the bridge directly.
   $('send-action').type='button';
@@ -1282,7 +1448,7 @@ function mountChatUI(state,{render,persist,storage,embedded}){
     if(data.conversation!==conversation)return;
     if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
     if(data.type==='action-error')cancel(data.payload);
-    if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending,requestId:data.requestId});
+    if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending||battleIsActive(state),requestId:data.requestId});
     if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
     if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);
     if(data.type==='scene')apply(data.payload);
@@ -1292,11 +1458,11 @@ function mountChatUI(state,{render,persist,storage,embedded}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,isPending:()=>!!pending,conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,isPending:()=>!!pending||battleIsActive(state),conversation:()=>conversation};
 }
 
 return {mountChatUI};})();
-const module15=(()=>{
+const module16=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
 // Casual/nightwear use hair-aligned placement against their existing head artwork.
@@ -1308,7 +1474,7 @@ const faceFit={
 };
 
 return {faceFit};})();
-const module17=(()=>{
+const module18=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -1496,9 +1662,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module16=(()=>{
-const {mapData}=module12;
-const {lordships}=module17;
+const module17=(()=>{
+const {mapData}=module13;
+const {lordships}=module18;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -1517,9 +1683,9 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module18=(()=>{
-const {factionLocations}=module14;
-const {mapData}=module12;
+const module19=(()=>{
+const {factionLocations}=module15;
+const {mapData}=module13;
 const factionTypes={knight_order:['기사단','⚔','#ecc27e'],magic_tower:['마법탑','✦','#c7a4f4'],sanctuary:['교단 성지','✧','#e6e2bb'],guild:['길드','⌂','#a6d69d'],mercenary:['용병·호위','⚑','#e6a595'],merchant:['상단','◆','#e9cc6c'],civic:['민간조직','●','#a0d7d9'],diplomacy:['중재','◇','#bdd2ed']};
 function visibleFactions(view,selection){
   if(view==='world')return [];
@@ -1574,10 +1740,10 @@ function mountFactionMap(state,{select}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module19=(()=>{
+const module20=(()=>{
 const {damageFormula}=module3;
-const {introData}=module9;
-const {passiveLimits}=module10;
+const {introData}=module10;
+const {passiveLimits}=module11;
 function mountPlayer(state){
   const $=id=>document.getElementById(id);
   const display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'—';
@@ -1623,7 +1789,7 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module20=(()=>{
+const module21=(()=>{
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
@@ -1684,7 +1850,7 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module21=(()=>{
+const module22=(()=>{
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const number=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'—';
@@ -1710,12 +1876,12 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
-const module22=(()=>{
-const {introData}=module9;
-const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module10;
-const {defaults,normalize}=module11;
-const {mapData}=module12;
-const {factionLocations}=module14;
+const module23=(()=>{
+const {introData}=module10;
+const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module11;
+const {defaults,normalize}=module12;
+const {mapData}=module13;
+const {factionLocations}=module15;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -1830,20 +1996,111 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
+const module24=(()=>{
+const {battleIsActive,battleFrame,validateBattleSettlement}=module5;
+const {faceFit}=module16;
+function mountBattleUI(state,{render,persist,chat,assetBase}){
+  const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
+  let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,animations=[],cards=new Map();
+  const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
+  const duration=e=>e.kind==='unique'?1800:e.result==='critical'?1300:1000;
+  function clearAnimation(){for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';} $('battle-cutin').hidden=true;}
+  function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
+  function save(){persist();chat.controls();}
+  function art(slot,p){
+    slot.id=p.id;slot.root.dataset.participant=p.id;slot.missing.textContent=p.name+' · 스탠딩 미등록';slot.missing.hidden=!!p.art;slot.visual.hidden=!p.art;
+    if(!p.art)return;
+    if(!slot.body){slot.body=new Image();slot.face=new Image();slot.body.className='battle-body';slot.face.className='battle-face';slot.visual.append(slot.body,slot.face);slot.body.onerror=()=>{slot.visual.hidden=true;slot.missing.hidden=false;slot.missing.textContent=p.name+' · 원화 로드 실패';};slot.face.onerror=()=>{slot.face.hidden=true;slot.missing.hidden=false;slot.missing.textContent='표정 로드 실패 · 원본 얼굴 유지';};}
+    const outfit=p.art.outfit,path=outfit==='armor'?'base.png':`outfits/${outfit}/base.png`,bodyURL=assetBase+'assets/characters/main/serin/standing/'+path,faceURL=assetBase+'assets/characters/main/serin/faces/'+p.art.emotion+'.png';
+    if(slot.body.getAttribute('src')!==bodyURL)slot.body.src=bodyURL;if(slot.face.getAttribute('src')!==faceURL)slot.face.src=faceURL;
+    slot.body.alt=p.name+' 스탠딩';slot.face.alt=p.name+' '+p.art.emotion+' 표정';slot.face.hidden=false;
+    const fit=faceFit[outfit];Object.assign(slot.face.style,{left:fit.x/1024*100+'%',top:fit.y/1536*100+'%',width:fit.size/1024*100+'%'});
+  }
+  function showResources(resources){for(const [id,card] of cards){const p=state.battlePlayback.scene.battle.participants.find(p=>p.id===id),r=resources[id];card.hp.textContent=`HP ${r.hp} / ${p.maxHp}`;card.mp.textContent=`MP ${r.mp} / ${p.maxMp}`;card.bar.max=p.maxHp;card.bar.value=r.hp;card.root.dataset.defeated=String(r.hp===0);}}
+  function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused)a.pause();}
+  function eventStart(){
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];if(!e)return finish();
+    clearAnimation();elapsed=0;impacted=false;showResources(battleFrame(b,playback.index));
+    const actor=b.participants.find(p=>p.id===e.actor),target=b.participants.find(p=>p.id===e.target),allied=actor.side==='allied'?actor:target.side==='allied'?target:b.participants.find(p=>p.side==='allied'),enemy=actor.side==='enemy'?actor:target.side==='enemy'?target:b.participants.find(p=>p.side==='enemy');
+    art(slots[0],allied);art(slots[1],enemy);
+    for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
+    for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
+    $('speaker').textContent=actor.name;$('emotion').textContent='전투 중계';$('line').textContent=e.narration;
+    $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
+    const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
+    if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'translateX(0)'},{transform:`translateX(${direction*65}px)`,offset:.32},{transform:'translateX(0)'}],duration(e));
+    if(active&&e.kind==='magic'){active.effect.className='battle-effect casting '+e.element;animate(active.effect,[{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'scale(1.15)'},{opacity:0}],duration(e));}
+    if(active&&e.kind==='unique'){$('battle-cutin').hidden=false;$('battle-cutin').textContent=actor.name+' · '+actor.skills.find(s=>s.id===e.skill_id).name;animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.18)',offset:.35},{transform:'scale(1)'}],duration(e));active.effect.className='battle-effect unique';}
+    if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
+  }
+  function impact(){
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;showResources(battleFrame(b,playback.index+1));
+    const target=slots.find(s=>s.id===e.target);
+    if(target){target.number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';target.number.dataset.critical=String(e.result==='critical');
+      if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
+      else if(e.result==='block'||e.kind==='defend'){target.effect.className='battle-effect barrier';animate(target.effect,[{opacity:0},{opacity:1},{opacity:0}],duration(e)*.55);}
+      else if(e.damage)animate(target.root,[{transform:'translateX(0)'},{transform:`translateX(${target===slots[0]?-20:20}px)`},{transform:'translateX(0)'}],duration(e)*.55);
+      if(target.number.textContent)animate(target.number,[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.2},{opacity:0,transform:'translateY(-30px)'}],duration(e)*.55);
+    }
+    if(e.result==='critical')animate(stage,[{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],300);
+  }
+  function tick(now){
+    if(!battleIsActive(state)){stop();return;}
+    const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
+    if(!p.paused){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)){p.index++;save();eventStart();}}
+    lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
+  }
+  function finish(){
+    const p=state.battlePlayback;if(!p||p.done)return;stop();
+    p.index=p.scene.battle.events.length;p.done=true;p.paused=false;
+    const id=p.scene.battle.battle_id,already=state.battleApplied?.includes(id);
+    if(!p.replay&&!already){state.battleApplied=[...(state.battleApplied||[]),id].slice(-100);chat.apply(JSON.stringify(p.scene),{commitBattle:true});}
+    else {render();save();}identity=null;
+  }
+  function start(scene){
+    validateBattleSettlement(scene,state);
+    state.battlePlayback={scene,index:0,speed:1,paused:false,done:false,replay:false};state.page='story';identity=null;save();render();
+  }
+  function refresh(){
+    const p=state.battlePlayback,active=battleIsActive(state);game.dataset.battle=active?'active':'none';
+    $('battle-hud').hidden=!active;$('battle-arena').hidden=!active;$('battle-controls').hidden=!active;$('battle-replay').hidden=!p?.done;
+    $('battle-replay').disabled=chat.isPending();
+    for(const id of ['story-tab','map-tab','status-tab','inventory-tab','new-game','continue-game','restore-previous-game','hud-player'])$(id).disabled=active||!!state.introDraft;
+    if(!active){stop();identity=null;return;}
+    // During playback the current battle background is shown without exposing the aftermath.
+    $('background').hidden=p.scene.background_id===null;
+    $('battle-speed').value=String(p.speed);$('battle-pause').textContent=p.paused?'재개':'일시정지';
+    if(identity!==p){stop();identity=p;cards=new Map();$('battle-hud').replaceChildren();
+      for(const participant of p.scene.battle.participants){const root=document.createElement('article'),title=document.createElement('strong'),meta=document.createElement('span'),hp=document.createElement('span'),bar=document.createElement('progress'),mp=document.createElement('span');root.className='battle-participant '+participant.side;title.textContent=participant.name;meta.textContent=`Lv.${participant.level} · ${participant.rank} · 속도 ${participant.speed} · ×${({none:1,basic:1,expert:1.25,hyper:1.65,master:2.2})[participant.realm]}`;root.append(title,meta,hp,bar,mp);$('battle-hud').append(root);cards.set(participant.id,{root,hp,bar,mp});}
+      eventStart();lastTime=0;raf=requestAnimationFrame(tick);
+    }else{
+      // Other UI updates must not overwrite the one-line commentary.
+      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('emotion').textContent='전투 중계';$('line').textContent=e.narration;}
+    }
+  }
+  $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
+  $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
+  $('battle-skip').onclick=finish;
+  $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.replay=true;identity=null;state.page='story';save();render();};
+  return {start,render:refresh,active:()=>battleIsActive(state)};
+}
+
+return {mountBattleUI};})();
 const module1=(()=>{
 const {createGameBridge}=module2;
-const {mountChatUI}=module5;
+const {mountChatUI}=module6;
 const {mountInventory,normalizeInventory}=module4;
-const {KEY,defaultLayout,load}=module11;
-const {faceFit}=module15;
-const {mapData}=module12;
-const {mapSelectionInfo}=module16;
-const {mountFactionMap,factionInfo}=module18;
-const {mountPlayer}=module19;
-const {mountNPCInfo}=module20;
-const {mountPlayHUD}=module21;
-const {mountNewGame}=module22;
-const {mapViews,regionFrame,cameraTransform,viewForSelection}=module13;
+const {KEY,defaultLayout,load}=module12;
+const {faceFit}=module16;
+const {mapData}=module13;
+const {mapSelectionInfo}=module17;
+const {mountFactionMap,factionInfo}=module19;
+const {mountPlayer}=module20;
+const {mountNPCInfo}=module21;
+const {mountPlayHUD}=module22;
+const {mountNewGame}=module23;
+const {mountBattleUI}=module24;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module14;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
@@ -1877,7 +2134,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-let introUI=null;
+let introUI=null,battleUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -1965,7 +2222,7 @@ function renderDialogue(){
     renderAppearance();
   }
 }
-function advance(delta){const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
+function advance(delta){if(battleUI?.active())return;const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
 function switchTo(page){inventoryUI.hide();factionUI.hide();npcInfo.hide();if(page==='inventory')inventoryUI.render();state.page=page;document.querySelector('.game').dataset.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
 function updateMapCamera(){
   factionUI.hide();
@@ -2043,9 +2300,10 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();}
-const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded});
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();}
+const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
+battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:CDN});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 renderAll();
 

@@ -15,6 +15,8 @@
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
+          <div id="battle-hud" class="battle-hud" hidden aria-label="전투 참가자"></div>
+          <div id="battle-arena" class="battle-arena" hidden aria-label="스탠딩 전투 연출"><div id="battle-left" class="battle-slot allied"></div><div id="battle-right" class="battle-slot enemy"></div><div id="battle-cutin" class="battle-cutin" hidden></div></div>
           <div id="portrait-hint" class="portrait-hint" hidden><span>캐릭터를 누르면 메뉴가 열립니다.</span><button id="dismiss-portrait-hint" type="button" aria-label="초상화 안내 닫기">×</button></div>
           <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
           <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-action-menu" aria-expanded="false">세린 · 메뉴</button>
@@ -23,6 +25,9 @@
           <div class="dialog"><div class="dialog-heading"><b id="speaker"></b><span id="emotion"></span></div><p id="line" aria-live="polite"></p><span class="tap-hint">화면을 눌러 계속 <span>⌄</span></span></div>
         </div>
         <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
+        <div id="battle-controls" class="battle-controls" hidden aria-label="전투 관전 제어"><span id="battle-progress"></span><button id="battle-pause" type="button">일시정지</button><label>속도 <select id="battle-speed"><option value="0.5">0.5배속</option><option value="1" selected>1배속</option><option value="2">2배속</option></select></label><button id="battle-skip" type="button">즉시 종료</button></div>
+        <div id="battle-recovery" class="battle-recovery" role="alert" hidden><p id="battle-error"></p><button id="battle-retry" type="button">수정 요청 보내기</button><button id="battle-recover-close" type="button">기존 장면 유지</button></div>
+        <button id="battle-replay" class="battle-replay" type="button" hidden>전투 다시보기</button>
       </section>
       <section id="map-panel" aria-label="세계지도 화면" hidden>
         <div class="map-navigation"><span id="map-breadcrumb">세계지도</span><button id="map-overview" disabled>← 전체 지도</button></div>
