@@ -125,12 +125,15 @@ function renderDialogue(){
   }
 }
 function advance(delta){const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
-function switchTo(page){inventoryUI.hide();factionUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
+function switchTo(page){inventoryUI.hide();factionUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;document.querySelector('.game').dataset.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
 function updateMapCamera(){
   factionUI.hide();
   const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
   const camera=cameraTransform(regionFrame(state.mapView),width,height);
   $('map-sheet').style.transform=`translate(${camera.x}px, ${camera.y}px) scale(${camera.scale})`;
+  $('map-sheet').style.setProperty('--map-label-font',`${16/camera.scale}px`);
+  $('map-sheet').style.setProperty('--map-label-stroke',`${2/camera.scale}px`);
+  $('map-sheet').style.setProperty('--map-pin-font',`${20/camera.scale}px`);
 }
 function renderMapView(){
   const overview=state.mapView==='world',view=mapViews.find(r=>r.id===state.mapView);

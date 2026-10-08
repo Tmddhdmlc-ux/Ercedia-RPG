@@ -14,7 +14,8 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||/^(플레이어|주인공|player)$/i.test(state.player.name.trim());
   function controls(){
-    const naming=needsName();$('name-setup').hidden=!naming;
+    const naming=needsName(),wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
+    if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
     choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?.text||'';button.disabled=!!pending||!last||naming;button.onclick=choice?()=>submit(choice.text,choice.id):null;});
@@ -28,6 +29,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
     render();controls();persist();status(`${name}님, 모험을 시작하세요.`);$('free-action').focus();
   }
   $('confirm-name').onclick=chooseName;
+  $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('adventurer-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
   $('adventurer-name').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();chooseName();}});
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
     clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
