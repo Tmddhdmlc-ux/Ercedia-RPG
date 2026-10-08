@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHSP",
+  "path": "assets/backgrounds/factions/SHSP.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHSP; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Twelve Door Corridor sanctuary, canonical Astellion Way Fellowship at INLAND S2 overland trade gateway. Quiet pale sandstone open courtyard with colonnaded arcaded corridor around back and left sides, series of TWELVE ordinary closed or open wooden doorway bays distributed around corridor, no written numbers, no magical portals. Blue-gray tiled shelter roofs, olive branches and warm southern inland daylight, empty plain travel benches at rear-edge. Spacious neutral welcoming transit sanctuary for travelers; main multiple-door arcade above dialogue quarter, broad clear stone center-right foreground. No sea, gods, people, creatures, bodies, star sigils, religious emblems, flags, text or invented portal technology.",
+  "reference": "assets/backgrounds/regions/S2/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-19b0864a-f4bd-4abe-981c-594e8a026248.png"
+}

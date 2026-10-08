@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHDK",
+  "path": "assets/backgrounds/factions/SHDK.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHDK; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW House of Shade public sanctuary entrance of Noctera, canonical E1 SOUTHERN SAFE UNDERGROUND REFUGE ROUTE. Quiet protective gray stone lower mountain shelter entrance upper-left/back, small covered vestibule with plain dark cloth curtain and ordinary warm oil lantern, simple empty benches and closed supplies along wall; modest unmarked stone arch leads inward but reveal NO secret route layout. Cool softened mountain daylight at safe outer doorway, no ominous villain cult. Broad clear stable stone center-right foreground for VN character, public refuge entrance above dialogue quarter. No glowing void, portal, forbidden seal, demons, bodies, people, creatures, readable writing, invented moon sigil or flags.",
+  "reference": "assets/backgrounds/regions/E1/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5a0de1c8-f071-4156-83ce-c09d097c95c0.png"
+}

@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-GD03",
+  "path": "assets/backgrounds/factions/GD03.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#GD03; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Continental Pathfinder Guild HARBOR BRANCH canonical S1 Belmarina port quest OFFICE. Modest pale sandstone harbor guild office upper-left/back with blue slate roof and sheltered plain wooden service counter, empty visitor benches, closed unmarked pack crates and coiled ropes at rear edges. Clear blue bay and ordinary moored medieval sailing ships distant left, bright gentle maritime daylight. New welcoming public office distinct from merchant federation main trading hall and knight naval base. Wide stable DRY clear stone center-right forecourt for VN character, office and quay above dialogue quarter. No written quest posters, signs, ship names, maps, emblems, flags, people, animals, beasts, corpses or treasure.",
+  "reference": "assets/backgrounds/regions/S1/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-f0769fc6-31dc-40a5-87f2-43dee79ce953.png"
+}

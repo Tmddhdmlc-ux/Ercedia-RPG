@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHLI",
+  "path": "assets/backgrounds/factions/SHLI.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHLI; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW First Dawn Convalescent House sanctuary of Elysia, canonical rural W3 Elmberg life/healing/famine relief. Welcoming modest pale stone and warm timber rest house upper-left with simple slate roof and open sheltered veranda, herb garden with small seedlings and ordinary clear spring basin reflecting gentle dawn gold, empty linen-covered beds only inside distant open doorway. Soft fresh early daylight, wheat-field glimpse beyond low garden wall, rural quiet dignity without noble luxury. Wide clear stone center-right foreground for VN character, rest house above dialogue quarter. No patients, people, gods, corpses, monsters, crosses, red medical symbol, glowing healing magic, readable signs, modern hospital or invented emblem.",
+  "reference": "assets/backgrounds/regions/W3/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-3c350319-b309-4f08-915d-560667239c91.png"
+}

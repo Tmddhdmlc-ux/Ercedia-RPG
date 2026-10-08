@@ -260,6 +260,24 @@
       "canon_source": "locations/dungeon_layouts.json#DUN-S4-02-Z01",
       "zone_name": "검은 유리 문 · 안쪽",
       "sha256": "a507f1bede669b1c1a7a7cf54124cf1292ee55ca84dd5593bea075cfac423b57"
+    },
+    {
+      "source_id": "IMG-FAC-E2-01-EXTERIOR",
+      "target_id": "IMG-FACTION-MT02",
+      "source_path": "assets/backgrounds/facilities/FAC-E2-01/exterior.png",
+      "target_path": "assets/backgrounds/factions/MT02.png",
+      "reason": "청동뇌명탑의 마법서 교환실이 있는 동일 건물 외관.",
+      "canon_source": "FACTIONS.md; locations/regional_dungeons_facilities.json",
+      "sha256": "edf1c2a65616db74f25c9d079b601e7f963e576323faabbba2e401c72ed33879"
+    },
+    {
+      "source_id": "IMG-FAC-E3-01-EXTERIOR",
+      "target_id": "IMG-FACTION-MT05",
+      "source_path": "assets/backgrounds/facilities/FAC-E3-01/exterior.png",
+      "target_path": "assets/backgrounds/factions/MT05.png",
+      "reason": "회색초석탑의 전술서고가 있는 동일 건물 외관.",
+      "canon_source": "FACTIONS.md; locations/regional_dungeons_facilities.json",
+      "sha256": "46eec5da156d3023ac7f8b48dd28e7d1cd19d3fbebbf595654b4672ced33fa2e"
     }
   ]
 }

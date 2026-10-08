@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHTH",
+  "path": "assets/backgrounds/factions/SHTH.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHTH; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW interior of Eternal Hour Grand Archive, canonical TheoR historical sanctuary in academic area near W2 Veloa. Quiet dignified large pale-gray stone vaulted library hall, tall dark wooden shelves upper-left/back filled with CLOSED plain leather books and unmarked rolled records; simple reading tables toward rear edges, one ordinary physical hourglass at back table (canonical time symbol), gentle daylight high plain windows and warm oil lamps. Wide clear stable stone center-right foreground for VN character; shelves above dialogue quarter. No open readable books, inscriptions, genealogy charts, glowing clock, magic portal, gods, people, bodies, creatures, religious statues, invented crest or world secrets.",
+  "reference": "assets/backgrounds/regions/W2/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-0e5463dd-6ce8-4bd1-aee6-c0f6d10bfb87.png"
+}

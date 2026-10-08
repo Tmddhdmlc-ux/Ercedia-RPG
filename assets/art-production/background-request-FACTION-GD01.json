@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-GD01",
+  "path": "assets/backgrounds/factions/GD01.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#GD01; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Continental Pathfinder Adventurer Guild MAIN HALL, canonical W5 Ardenstein GATEWAY ASSEMBLY HOUSE. Welcoming sturdy medieval gray stone and warm timber public hall upper-left/back with slate roof, broad plain double doorway, sheltered counter and empty benches along veranda, plain closed crates for travel supplies. Crossroad merchant town background with modest wagon workshop and distant road gate, temperate western daylight. New civic guild building distinct from smelter/material shop. Broad clear stone center-right foreground for VN character, main assembly hall above dialogue quarter. No arrow crest, posted written quest notices, maps, readable signs, people, animals, monsters, corpses, flags or treasure.",
+  "reference": "assets/backgrounds/regions/W5/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-bc2a01f4-e896-4b27-9568-e106bd405259.png"
+}

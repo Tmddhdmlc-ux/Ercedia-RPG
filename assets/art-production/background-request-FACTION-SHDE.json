@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHDE",
+  "path": "assets/backgrounds/factions/SHDE.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHDE; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Silver Bell Cemetery sanctuary of Morvein, canonical W1 border near ghost cemetery but PUBLIC quiet funerary site. Peaceful snow-dusted gray stone graveyard with small timber-roof memorial shelter and modest plain silver bell hanging upper-left, simple low rectangular headstones WITHOUT ANY WRITING OR SYMBOLS, a few pale lilies and dark conifers along edges, soft cool winter daylight. No open graves or bones, respect quiet mourning and orphan support, not horror haunted dungeon. Broad clear safe stone center-right path for VN character, cemetery shelter above dialogue quarter. No ghosts, spirits, people, corpses, skeletons, monsters, crosses, runes, text, invented crests, flags or secret lore.",
+  "reference": "assets/backgrounds/regions/W1/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c32717a2-8bcf-434b-aadc-ff8fc1b9a38f.png"
+}

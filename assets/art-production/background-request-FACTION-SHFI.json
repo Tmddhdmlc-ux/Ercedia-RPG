@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-SHFI",
+  "path": "assets/backgrounds/factions/SHFI.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#SHFI; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Immortal Great Furnace sanctuary of Ignar, canonical W4 Rosenfeld artisan/fire-safety cult. Empty broad stout gray stone furnace hall with heavy timber roof, large RED-BRICK stone forge furnace upper-left/back containing controlled modest orange fire within hearth, iron hood and practical bellows, ordinary anvils and tongs on workbench at rear edges. Subtle warm amber heat light with cool daylight from high vent, disciplined safe workshop, clear floor not burning. Broad stable uncluttered stone center-right foreground for VN character, great furnace above dialogue quarter. No people, fire god, monsters, bodies, statues, ritual rune circle, emblem, readable text, huge erupting lava or modern industrial machinery.",
+  "reference": "assets/backgrounds/facilities/FAC-W4-01/interior.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-a41b718c-b51b-4d01-b29d-19177d86137d.png"
+}

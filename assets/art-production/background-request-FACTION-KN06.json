@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-KN06",
+  "path": "assets/backgrounds/factions/KN06.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#KN06; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Sea Breeze Guardian Knights headquarters, canonical S3 Aquaren NAVAL BASE NORTH PIER. Empty broad practical stone quay with pale stone naval barracks and blue-gray roofs upper-left, docked ordinary medieval escort sailing ship rear-left with plain teal sails, coiled ropes, boarding plank and closed unmarked naval supply crates along rear edges. Clear blue sea, bright soft coastal daylight, sturdy mooring posts. Main naval building and ship above dialogue quarter, wide clear stable DRY stone center-right foreground. No invented gull crest, skull, readable shipname, labels, guards, sailors, people, animals, creatures, bodies, cannons firing or modern naval equipment.",
+  "reference": "assets/backgrounds/regions/S3/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c401831e-03ce-435c-96f3-08f5bf580ef3.png"
+}

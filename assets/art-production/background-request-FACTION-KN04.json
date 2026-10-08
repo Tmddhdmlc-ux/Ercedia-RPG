@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-KN04",
+  "path": "assets/backgrounds/factions/KN04.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#KN04; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Black Scout Rift Knights canonical E1 Kaltheim OUTER FRONTIER WATCHPOST NETWORK, depict one public approach without inventing fixed network coordinates. Modest practical cold gray stone watchtower and timber guard hut upper-left on rugged mountain ridge, small bronze observation hardware and plain closed equipment crates rear-edge, sparse frost and dark conifers, distant gray ore mountain route. Restrained cool daylight and faint ordinary warm lantern. Wide stable clear stone-and-gravel center-right foreground for VN character. No giant visible world rift, portal, forbidden research, secret seal clues, falcon crest, flags, people, guards, creatures, bodies, readable signs or modern binoculars.",
+  "reference": "assets/backgrounds/regions/E1/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-040ef9e0-6902-41fb-a931-88c3f03a816e.png"
+}

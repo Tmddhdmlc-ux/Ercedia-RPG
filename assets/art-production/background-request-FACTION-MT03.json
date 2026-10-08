@@ -1,0 +1,9 @@
+{
+  "id": "IMG-FACTION-MT03",
+  "path": "assets/backgrounds/factions/MT03.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#MT03; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Clear Flow Fusion Tower exterior, canonical S3 Aquaren research of WATER and WIND, navigation and water purification. Refined pale coastal stone scholar tower upper-left with blue slate roof and open observation balcony, simple physical bronze navigation instrument and wind vane on roof, shallow clear water channel and modest stone filtration basins at garden edge, associated low study wing. Soft bright sea daylight, distant Aquaren blue coast, plain closed supplies near side door. Wide DRY clear stone center-right foreground for VN character, tower above dialogue quarter. No giant elemental magic, floating water, portal, rune glyphs, readable text, emblems, flags, people, animals, creatures or corpses.",
+  "reference": "assets/backgrounds/regions/S3/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-4add4420-94d5-4fc9-a07b-f0f08843bbc3.png"
+}

@@ -1,0 +1,12 @@
+{
+  "id": "IMG-FACTION-KN02",
+  "path": "assets/backgrounds/factions/KN02.png",
+  "batch": "locations-p2-batch-06.json",
+  "canon_source": "assets/maps/world/faction_locations.json#KN02; FACTIONS.md",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW Red Rose Vanguard headquarters, canonical Rosehold Fortress on W4 Rosenfeld FRONTLINE. Broad military inner yard facing sturdy layered gray stone fortress gate and squat crenellated towers upper-left/back, weathered timber barracks and empty stable arcade at edges, practical arms-storage crates, plain muted RED unmarked cloth banners. Cool western fortress daylight with restrained warm lamp near arch. Distinct operational frontier fort, not abandoned ruin or royal palace. Clear broad stone center-right foreground, fortress above dialogue quarter. No roses or invented crests, no knights, horses, people, monsters, bodies, text, siege battle or new named citadel beyond canon.",
+  "reference": "assets/backgrounds/regions/W4/hub.png",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-8f0b0a4e-de7b-4d67-a162-3e497c440a77.png",
+  "original_source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-0f9fbc83-cdc0-49ba-89e7-693621abd0f5.png",
+  "correction_prompt": "Remove every horse and any living animal entirely from the stable arcade on the right. Leave all stalls completely empty, with only hay, wood rails, plain sacks and barrels. Preserve the fortress, plain red banners, empty wide stone foreground, anime style, dimensions and composition. Absolutely no people or animals anywhere. No text or corner marks.",
+  "quality_notes": "Initial render contained horses; removed before ingestion."
+}
