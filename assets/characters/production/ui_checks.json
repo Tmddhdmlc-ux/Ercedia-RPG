@@ -1,0 +1,17 @@
+{
+  "date": "2026-10-09",
+  "page": "http://127.0.0.1:4184/prototypes/npc_art_library.html",
+  "progress": "기본형 세트 138/138명 · 깃발 16/16종 · 세력 문장 8/8종. 마수는 투명 초상화 중심으로 표시합니다.",
+  "characterOptions": 138,
+  "heraldry": {
+    "count": 24,
+    "loaded": 24
+  },
+  "samples": [
+    "ER-CORE-001 VN",
+    "ER-CORE-038 full body",
+    "ER-NPC-099 monster"
+  ],
+  "fullBodyDialogueHidden": true,
+  "runtimeChatGptTwentyTurnsTested": false
+}

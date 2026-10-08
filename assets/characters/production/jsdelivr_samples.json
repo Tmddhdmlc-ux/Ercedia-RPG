@@ -1,0 +1,73 @@
+{
+  "cdn": "jsDelivr",
+  "checked": 6,
+  "passed": 6,
+  "checks": [
+    {
+      "path": "assets/characters/standings/ER-NPC-001/base.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@d0cc61ca1b051d008d763147d3eb3e63ec4b190d/assets/characters/standings/ER-NPC-001/base.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1024,
+        1536
+      ]
+    },
+    {
+      "path": "assets/characters/monsters/portraits/ER-NPC-081.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@c1b94c7d39628f4c73b78f315434af6d342e722f/assets/characters/monsters/portraits/ER-NPC-081.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1024,
+        1024
+      ]
+    },
+    {
+      "path": "assets/characters/portraits/dialogue/ER-CORE-003/base.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@c7c12385b3c5362bd59f456cdd26a57384b9cfb6/assets/characters/portraits/dialogue/ER-CORE-003/base.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1086,
+        1448
+      ]
+    },
+    {
+      "path": "assets/heraldry/kingdoms/draken/flag.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@14469498ed2d57213f82d11c260e8449f42fb77b/assets/heraldry/kingdoms/draken/flag.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "assets/heraldry/lordships/W3/flag.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@14469498ed2d57213f82d11c260e8449f42fb77b/assets/heraldry/lordships/W3/flag.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1536,
+        1024
+      ]
+    },
+    {
+      "path": "assets/heraldry/factions/ER-CREST-001/crest.png",
+      "url": "https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@541cc9e491bb7a2d8384cbb1b19da96927433e62/assets/heraldry/factions/ER-CREST-001/crest.png",
+      "ok": true,
+      "sha256_match": true,
+      "transparent": true,
+      "size": [
+        1024,
+        1024
+      ]
+    }
+  ]
+}
