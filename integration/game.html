@@ -1,6 +1,6 @@
 <!doctype html>
 <html lang="ko">
-<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111a21"><title>에르세디아 RPG · 써니 빌리지</title><style>
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111a21"><title>에르세디아 RPG · 솔브린 마을</title><style>
 :root{color-scheme:dark;--gold:#d6b77c;--muted:#8c999e;--line:#ffffff12;--surface:#18232b}*{box-sizing:border-box}body{margin:0;background:#101920;color:#e9eded;font:14px/1.6 "Malgun Gothic",system-ui,sans-serif}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{border:1px solid #ffffff23;border-radius:6px;padding:9px 14px;background:#202e37;color:#dce3e4;cursor:pointer}button:hover{background:#2c3b44;border-color:#d6b77c88}button:disabled{opacity:.3;cursor:default}button:focus-visible,a:focus-visible,select:focus-visible,input:focus-visible,summary:focus-visible,[tabindex]:focus-visible{outline:2px solid var(--gold);outline-offset:4px}[hidden]{display:none!important}.shell{max-width:1220px;margin:auto;padding:0 36px}.masthead{height:92px;display:flex;align-items:center;justify-content:space-between;border-bottom:1px solid var(--line)}.brand{color:inherit;text-decoration:none;display:flex;align-items:center;gap:14px}.sigil{font:45px Georgia;color:var(--gold)}.brand small{display:block;letter-spacing:5px;font:11px Georgia;color:var(--gold)}.brand strong{font-size:18px;font-weight:600}.build{font-size:11px;color:var(--muted)}.build i{display:inline-block;width:6px;height:6px;background:#87ae9a;border-radius:50%;margin-right:8px}.intro{display:flex;justify-content:space-between;align-items:center;padding:32px 0 26px}.eyebrow{font-size:9px;letter-spacing:2.3px;color:var(--gold)}h1{font-size:27px;font-weight:500;letter-spacing:-1.2px;margin:6px 0}p{margin:0}.intro p{font-size:12px;color:var(--muted)}.chapter{font:10px Georgia;letter-spacing:2px;color:var(--muted)}.chapter b{display:block;font-size:40px;font-weight:400;color:var(--gold);line-height:1.2}.workspace{display:grid;grid-template-columns:minmax(0,1fr) 300px;gap:22px;align-items:start}.game{border:1px solid #ffffff21;border-radius:10px;overflow:hidden;background:var(--surface)}.tabs{display:flex;align-items:center;height:58px;padding:0 20px;gap:24px;border-bottom:1px solid var(--line)}.tabs button{border:0;border-radius:0;background:none;padding:17px 0;color:var(--muted);height:100%}.tabs button.active{color:var(--gold);border-bottom:2px solid var(--gold)}.tabs button span{font:8px Georgia;letter-spacing:1px;margin-left:7px}.local-badge{margin-left:auto;font-size:10px;color:#839891}.stage{height:455px;position:relative;overflow:hidden;background:#354841;isolation:isolate;cursor:pointer}.background{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}.characters{position:absolute;inset:0;pointer-events:none}.person{position:absolute;height:410px;width:auto;max-width:none;object-fit:contain;transform-origin:center top;will-change:transform;visibility:hidden}.person.ready{visibility:visible}.shade{position:absolute;inset:0;pointer-events:none;background:linear-gradient(180deg,#0a182b18 55%,#07121ad9)}.location{position:absolute;left:20px;top:18px;background:#12202cda;border:1px solid #ffffff22;border-radius:5px;padding:5px 12px;font-size:11px}.location>span{color:var(--gold);margin-right:7px}.location em{font-style:normal;color:#aebdbf;margin-left:14px}.scene-tag{position:absolute;right:18px;top:24px;font-size:9px;letter-spacing:2px;text-shadow:0 1px 4px #000}.dialog{position:absolute;left:20px;right:20px;bottom:18px;border:1px solid #d6b77c66;border-top:2px solid var(--gold);border-radius:4px;background:#101d29ed;padding:16px 22px 26px;min-height:134px}.dialog-heading{display:flex;align-items:center;gap:12px}.dialog b{font-size:17px;font-weight:500;color:#ebcb8e}.dialog-heading>span{font-size:10px;color:#9eadae}.dialog p{font-size:14px;line-height:1.8;margin-top:8px;word-break:keep-all}.tap-hint{position:absolute;bottom:7px;right:16px;font-size:9px;color:#95a3a7}.tap-hint>span{color:var(--gold);margin-left:10px}.story-controls{height:54px;display:flex;align-items:center;justify-content:space-between;padding:0 18px}.text-button{border:0;background:transparent;font-size:12px}.story-controls>span{font:11px Georgia;color:var(--gold);letter-spacing:3px}.game-foot{display:flex;justify-content:space-between;border-top:1px solid var(--line);font-size:10px;color:#86969f;padding:11px 22px}.settings{background:var(--surface);border:1px solid var(--line);border-radius:10px;padding:22px}.settings-head{display:flex;justify-content:space-between;align-items:center;margin-bottom:20px}.settings-head h2{font-size:22px;font-weight:500;margin:4px 0}.settings-head h2 small{font:italic 13px Georgia;color:var(--muted);margin-left:6px}.rank{font-size:9px;color:var(--gold);border:1px solid #d6b77c3d;border-radius:4px;padding:4px 7px}fieldset{padding:0;margin:0;border:0}legend,.section-heading{font-size:12px;display:flex;gap:9px;align-items:center;margin-bottom:10px}legend span,.section-heading span{font:8px Georgia;color:var(--muted);letter-spacing:1px}.outfits{display:flex;gap:6px}.outfits button{flex:1;padding:8px 4px;font-size:12px}.outfits .selected{color:var(--gold);border-color:var(--gold);background:#d6b77c0d}.expression-row{display:flex;justify-content:space-between;align-items:center;margin-top:18px;font-size:12px}select{font-size:11px;background:#101b24;border:1px solid #ffffff24;border-radius:5px;color:#d6dedf;padding:7px;max-width:180px}.notice{font-size:10px;color:#aab4b5;min-height:46px;margin-top:8px;line-height:1.65}.section-heading{padding-top:16px;border-top:1px solid var(--line)}.slider-field{margin-bottom:9px}.slider-field label{display:flex;justify-content:space-between;align-items:center;font-size:11px}.slider-field output{font:12px ui-monospace,monospace;color:var(--gold)}input[type=range]{width:100%;margin:9px 0 0;accent-color:var(--gold);height:15px;cursor:ew-resize}.range-ticks{display:flex;justify-content:space-between;color:#71818b;font-size:9px}.layer-toggles{display:flex;gap:20px;margin:16px 0;font-size:10px;color:#bec8ca}.layer-toggles label{display:flex;align-items:center;gap:5px}input[type=checkbox]{accent-color:var(--gold)}.save-actions{display:flex;gap:7px}.save-actions button{padding:9px 8px;font-size:11px;flex:1}.primary{background:var(--gold);border-color:var(--gold);color:#162028;font-weight:700}.primary:hover{background:#e7cb95}.save-status{font-size:10px;line-height:1.7;color:#a4b2b5;margin-top:10px;min-height:34px}.asset-details{font-size:11px;color:var(--muted);margin-top:20px}.asset-details summary{cursor:pointer}.asset-details li{margin:6px 0}.asset-details a{color:var(--gold)}.asset-details .error{color:#f3a99d}.footer{display:flex;justify-content:space-between;gap:20px;font-size:9px;color:#647681;border-top:1px solid var(--line);margin-top:24px;padding:20px 0}.footer i{color:var(--gold);margin:0 8px}.map{height:455px;background:#233e49;overflow:hidden}.map svg{width:100%;height:100%;display:block}.region{cursor:pointer;stroke:#c4b58d;stroke-width:2;transition:stroke-width .12s}.region.selected{stroke:#ffe3a3;stroke-width:5}.region:hover{filter:brightness(1.12)}.mapinfo{padding:18px 22px;display:flex;gap:20px;align-items:center;justify-content:space-between}.mapinfo h2{font-size:17px;font-weight:500;margin:5px 0}.mapinfo p{color:var(--muted);font-size:11px}.mapinfo button{white-space:nowrap;font-size:11px}.asset-alert{color:#f3a99d}
 @media(min-width:1400px){.shell{padding:0 20px}.intro{padding-top:44px;padding-bottom:32px}}
 @media(max-width:900px){.shell{padding:0 18px}.workspace{grid-template-columns:minmax(0,1fr)}.settings{display:block}.settings .notice{min-height:0;margin-bottom:18px}.settings-head{margin-bottom:12px}.slider-field{margin-top:12px}.footer{flex-wrap:wrap}.build{font-size:9px}}
@@ -123,21 +123,21 @@
 <body>
 <main class="shell">
   <header class="masthead"><a class="brand" href="./" aria-label="에르세디아 RPG 시작 화면"><span class="sigil">✧</span><span><small>ERCEDIA</small><strong>에르세디아 RPG</strong></span></a><span class="build"><i></i> 비주얼 노벨 · UI 프리뷰</span></header>
-  <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>써니 빌리지에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
+  <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>솔브린 마을에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
     <article class="game">
       <div class="new-game-actions"><button id="new-game" type="button">새 게임</button><button id="continue-game" type="button" hidden>이어하기 · 생성 계속</button><button id="restore-previous-game" type="button" hidden>이전 세이브 복구</button></div>
       <section id="intro-screen" class="intro-screen" aria-label="새 게임 프롤로그" hidden><div class="intro-card"><p id="intro-progress"></p><h2 id="intro-title" tabindex="-1"></h2><p id="intro-description"></p><label id="intro-input-label" for="intro-input">이름</label><input id="intro-input" autocomplete="off"><div id="intro-options" class="intro-options"></div><p id="intro-error" role="alert"></p><div class="intro-buttons"><button id="intro-back" type="button">← 뒤로</button><button id="intro-skip" type="button" hidden>건너뛰기</button><button id="intro-next" type="button" class="primary">다음</button><button id="intro-cancel" type="button">기존 게임으로 돌아가기</button></div></div></section>
       <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
-      <section class="play-hud" aria-label="내 상태 요약"><button id="hud-player" type="button" title="상태창 열기">이름 미정</button><span class="hud-resource">HP <b id="hud-hp">미정</b></span><span class="hud-resource">MP <b id="hud-mp">미정</b></span><span id="hud-location" class="hud-location">써니 빌리지</span><label for="text-size">글자 크기 <select id="text-size"><option value="normal">보통</option><option value="large">크게</option><option value="largest">아주 크게</option></select></label></section>
+      <section class="play-hud" aria-label="내 상태 요약"><button id="hud-player" type="button" title="상태창 열기">이름 미정</button><span class="hud-resource">HP <b id="hud-hp">미정</b></span><span class="hud-resource">MP <b id="hud-mp">미정</b></span><span id="hud-location" class="hud-location">솔브린 마을</span><label for="text-size">글자 크기 <select id="text-size"><option value="normal">보통</option><option value="large">크게</option><option value="largest">아주 크게</option></select></label></section>
       <section id="story" aria-label="대화 화면">
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
-          <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
+          <img id="background" class="background" alt="솔브린 마을 낮 배경" draggable="false">
           <div id="characters" class="characters"></div><div class="shade"></div>
           <div id="battle-hud" class="battle-hud" hidden aria-label="전투 참가자"></div>
           <div id="battle-arena" class="battle-arena" hidden aria-label="스탠딩 전투 연출"><div id="battle-left" class="battle-slot allied"></div><div id="battle-right" class="battle-slot enemy"></div><div id="battle-cutin" class="battle-cutin" hidden></div></div>
           <div id="portrait-hint" class="portrait-hint" hidden><span>캐릭터를 누르면 메뉴가 열립니다.</span><button id="dismiss-portrait-hint" type="button" aria-label="초상화 안내 닫기">×</button></div>
-          <span class="location"><span>⌖</span> <span id="scene-location">써니 빌리지</span> <em id="scene-time">오후</em></span>
+          <span class="location"><span>⌖</span> <span id="scene-location">솔브린 마을</span> <em id="scene-time">오후</em></span>
           <button id="npc-info-button" class="scene-tag npc-info-button" type="button" aria-controls="npc-action-menu" aria-expanded="false">세린 · 메뉴</button>
           <div id="npc-action-menu" class="npc-action-menu" role="group" aria-label="상대방 메뉴" hidden><strong id="npc-menu-name">세린</strong><button id="npc-view-info" type="button">ⓘ 정보 보기</button></div>
           <section id="npc-info-card" class="npc-info-card" aria-label="상대방 공개 정보" hidden><h2 id="npc-info-name">세린</h2><dl class="npc-info-fields"><dt>소속</dt><dd id="npc-info-affiliation">미정</dd><dt>레벨</dt><dd id="npc-info-level"></dd><dt>현재 경지</dt><dd id="npc-info-rank">베이직 나이트</dd></dl><div class="npc-resource"><div><b>체력</b><span id="npc-info-hp"></span></div><progress id="npc-info-hp-bar" max="1" value="0" aria-label="상대방 체력"></progress></div><div class="npc-resource mana"><div><b>마나</b><span id="npc-info-mp"></span></div><progress id="npc-info-mp-bar" max="1" value="0" aria-label="상대방 마나"></progress></div><dl class="npc-stat-grid"><div><dt>근력</dt><dd id="npc-info-strength"></dd></div><div><dt>민첩</dt><dd id="npc-info-dexterity"></dd></div><div><dt>지능</dt><dd id="npc-info-intelligence"></dd></div><div><dt>체력 능력치</dt><dd id="npc-info-constitution"></dd></div><div><dt>마나 능력치</dt><dd id="npc-info-manaStat"></dd></div></dl><p id="npc-info-source" class="npc-info-note"></p><div class="npc-interest"><b id="npc-interest-label">나에 대한 관심도</b><span id="npc-info-interest"></span><p id="npc-info-interest-text"></p></div><p class="npc-info-note">공개된 설정과 마지막 게임 상태 기준 · 미정인 값은 추정하지 않습니다.</p></section>
@@ -375,15 +375,16 @@ const {normalizeNPCProfile}=module9;
 const npcCatalog=catalogData.npcs;
 function npcRankLabel(p){const rank=p.rank||'미정';if(p.role==='monster')return '마수 등급 · '+rank;if(p.realm&&p.realm!=='none')return rank.includes('나이트')?rank:rank+' · '+({basic:'베이직',expert:'익스퍼트',hyper:'하이퍼',master:'마스터'})[p.realm]+' 나이트';return rank.includes('서클')?rank:rank+' · 전투 경지 미정';}
 function findNPC(id){return npcCatalog.find(p=>p.id===id||p.name===id)||null;}
-function knownOverrides(raw){
+function knownOverrides(raw,base){
   const normalized=normalizeNPCProfile(raw||{});
   // Legacy unknown values are absence of knowledge, not a command to erase canon.
   const result=Object.fromEntries(Object.entries(normalized).filter(([,v])=>v!==null));
+  if(base?.id==='serin'&&base.location_id==='W3'&&['써니 빌리지 순찰','써니 빌리지 (순찰 활동; 정식 국가 소속 미확정)','솔브린 마을 순찰','솔브린 마을 (순찰 활동; 정식 국가 소속 미확정)'].includes(result.affiliation))delete result.affiliation;
   const numeric=['strength','dexterity','intelligence','constitution','manaStat'];
   if(normalized.level===null&&numeric.every(k=>normalized[k]==null)&&normalized.levelHpBonus===0)delete result.levelHpBonus;
   return result;
 }
-function resolveNPC(state,id,profile={}){const base=findNPC(id);if(!base)return null;const p={...base,...knownOverrides(profile),...knownOverrides(state.npcStates?.[base.id]),id:base.id};for(const [value,max] of [['hp','maxHp'],['mp','maxMp']])if(typeof p[value]==='number'&&typeof p[max]==='number')p[value]=Math.min(p[value],p[max]);return p;}
+function resolveNPC(state,id,profile={}){const base=findNPC(id);if(!base)return null;const p={...base,...knownOverrides(profile,base),...knownOverrides(state.npcStates?.[base.id],base),id:base.id};for(const [value,max] of [['hp','maxHp'],['mp','maxMp']])if(typeof p[value]==='number'&&typeof p[max]==='number')p[value]=Math.min(p[value],p[max]);return p;}
 function npcSnapshot(state,id){const p=resolveNPC(state,id,state.scene?.npc?.id===id?state.scene.npc.profile||{}:{});if(!p)return null;return {...p,stats:{strength:p.strength,dexterity:p.dexterity,intelligence:p.intelligence,constitution:p.constitution,manaStat:p.manaStat},level_hp_bonus:p.levelHpBonus,art:p.id==='serin'?{id:'serin',outfit:state.outfit,emotion:state.expression}:null};}
 function updateNPC(state,id,profile){const base=findNPC(id);if(!base)throw Error('등록되지 않은 인물입니다.');state.npcStates={...state.npcStates,[base.id]:{...state.npcStates?.[base.id],...knownOverrides(profile)}};}
 function npcContext(state){const id=state.scene?.npc?.id||(state.character?'serin':null);return {catalog_digest:catalogData.digest,current_npc:id?npcSnapshot(state,id):null,npc_changes:state.npcStates||{},sources:catalogData.sources};}
@@ -541,6 +542,11 @@ function createGameBridge(state,{apply,restore,render,persist}){
 
 return {createGameBridge};})();
 const module12=(()=>{
+// An approved rename of the same village; never teleport or rewrite saved history.
+function locationLabel(value){return value==='써니 빌리지'?'솔브린 마을':value;}
+
+return {locationLabel};})();
+const module13=(()=>{
 // Extract a completed scene object from rendered code or surrounding assistant prose.
 // Only JSON.parse is used. Strings, escaped quotes and braces inside dialogue are respected.
 function extractSceneJSON(source){
@@ -558,7 +564,7 @@ function extractSceneJSON(source){
 }
 
 return {extractSceneJSON};})();
-const module13=(()=>{
+const module14=(()=>{
 // Generated from approved public character creation data.
 const introData = {
   "schema_version": 1,
@@ -769,8 +775,8 @@ const playerTemplate = {
 };
 
 return {introData,playerTemplate};})();
-const module14=(()=>{
-const {introData,playerTemplate}=module13;
+const module15=(()=>{
+const {introData,playerTemplate}=module14;
 const {normalizePlayer}=module3;
 const introSteps=['name','gender','calling','response','passive','kingdom','lordship','confirmation'];
 // Public limits approved in NEW_GAME_INTRO.md; never infer secret abilities.
@@ -797,11 +803,12 @@ function initialPlayer(name){
 return {introSteps,passiveLimits,passiveCandidates,normalizeIntroDraft,creationFields,initialPlayer};})();
 const module11=(()=>{
 const {normalizePlayer}=module3;
+const {locationLabel}=module12;
 const {normalizeInventory}=module4;
-const {extractSceneJSON}=module12;
+const {extractSceneJSON}=module13;
 const {normalizeNPCProfile}=module9;
-const {introData}=module13;
-const {passiveLimits}=module14;
+const {introData}=module14;
+const {passiveLimits}=module15;
 const {normalizeBattle}=module6;
 const {npcCatalog,findNPC,npcContext}=module7;
 const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -849,20 +856,20 @@ function parseScene(source){
   throw Error('완료된 ercedia_scene JSON 블록을 찾지 못했습니다.');
 }
 function contextSummary(state){
-  return {scene_id:state.scene?.scene_id||null,location:state.scene?.location||'솔브린 마을',time:state.scene?.time||'오후',player:state.player,npc_catalog:npcContext(state),...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
+  return {scene_id:state.scene?.scene_id||null,location:locationLabel(state.scene?.location||'솔브린 마을'),time:state.scene?.time||'오후',player:state.player,npc_catalog:npcContext(state),...(state.intro_completed?{character_creation:{intro_completed:true,character_name:state.character_name,gender_or_appearance:state.gender_or_appearance,chosen_answers:state.chosen_answers,starting_passive_id:state.starting_passive_id,starting_passive:{...introData.passives.find(p=>p.id===state.starting_passive_id),limit:passiveLimits[state.starting_passive_id]},starting_kingdom:state.starting_kingdom,starting_lordship_id:state.starting_lordship_id}}:{}),inventory:state.inventory,game_state:state.gameState||{},recent_dialogue:state.scene?.dialogue.slice(-6)||[],...(state.scene?.npc?.profile?{npc:state.scene.npc}:{})};
 }
 function actionPrompt(state,action,requestId){
   return `에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time, background_id는 sunny_village_day 또는 null을 사용하며 원화 없는 장소는 null로 유지하세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 솔브린 마을나 세린을 임의로 이동시키지 마세요. 세린의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. 세린 이외 등록 인물은 npc.id에 characters 데이터의 고유 ID를 사용하고 outfit=none, emotion=base를 사용하세요. 미등록 원화를 붙이지 않습니다. npc_updates는 최대 16명의 공개 변경값을 ID별 객체로 기록합니다. npc_catalog.current_npc의 수치는 UI와 전투가 공유하는 현재 값입니다. characters/npc_roster_100.json, characters/core_cast_stats_38.json, 숫자가 등록된 경우에만 characters/serin.json을 추가 기준으로 NPC를 판정하고, 숫자가 없는 인물의 능력치는 만들지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,level,realm,strength,dexterity,intelligence,constitution,manaStat,speed,levelHpBonus,hp,maxHp,mp,maxMp,interest(0~100),interestText를 사용할 수 있습니다. 미정인 능력치·자원·관심도를 임의로 생성하지 마세요. 관심도는 플레이어에 대한 현재 관심이며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n전투 발생 시에는 BATTLE_SYSTEM.md, COMBAT_GROWTH.md, PROGRESSION.md, MONSTER_RANKS.md, EQUIPMENT_RULES.md, REGIONAL_DUNGEONS.md, DUNGEON_STRUCTURE.md, BOOKS_SYSTEM.md, LOOT_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 실제로 읽고, 이 ercedia_scene에 선택 항목 battle을 추가하세요. 전투 전체를 사전 판정하고 battle_id/trigger/participants/initiative/events/outcome을 출력합니다. 참가자 현재 stats 5종/HP/MP/speed/realm/level_hp_bonus/modifiers/skills/art, 순서별 actor/target/kind/result/skill_id/damage/mp_cost/네 자원 after/calculation/narration, 종료 winner/termination/reason/resources/xp_gain/items_added/items_consumed/injuries를 포함합니다. damage는 실제 HP 감소값, 회피는 0. 마수는 npc_catalog의 creatureMultiplier를 별도 creature_multiplier로 사용하고 기사 realm=none을 유지하세요. 기사 배율과 MP 비용/스킬/장비 증빙을 명시하고 깨달음 진척도·확률은 만들지 마세요. 기존 player 능력치가 미정이면 전투를 발명하지 말고 먼저 일반 장면에서 확정하세요. 종료 후 player/inventory/game_state 전체 스냅샷과 복귀할 dialogue/choices를 함께 출력하세요. 주인공 원화는 미등록이면 art=null이며 세린 원화를 주인공에 쓰지 않습니다. UI는 전투 종료 때만 보상/부상을 정산합니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
 
 return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
-const module16=(()=>{
+const module17=(()=>{
 // Generated mirror of assets/maps/world/map_locations.json.
 const mapData = {"regions":[{"id":"northwest","label":"북서 미개척 설산·빙하","x":0.21158854166666666,"y":0.166015625,"provisional":true},{"id":"northcenter","label":"북중 미개척 원시림","x":0.4752604166666667,"y":0.16796875,"provisional":true},{"id":"northeast","label":"북동 미개척 마나 이상지대","x":0.751953125,"y":0.17578125,"provisional":true},{"id":"west","label":"벨로아 왕국","x":0.22135416666666666,"y":0.3955078125,"provisional":true},{"id":"east","label":"드라켄 왕국","x":0.7552083333333334,"y":0.419921875,"provisional":true},{"id":"south","label":"루메린 왕국","x":0.5208333333333334,"y":0.7177734375,"provisional":true},{"id":"disputed","label":"중앙 분쟁지","x":0.5045572916666666,"y":0.474609375,"provisional":true}],"locations":[{"id":"W1","label":"노르발트 변경백령","kind":"lordship","region":"west","x":0.18945312,"y":0.31152344,"provisional":true,"kingdom":"벨로아","lord":"에드릭 노르발트","lore_id":"W1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W2","label":"발렌하르트 공작령","kind":"lordship","region":"west","x":0.32291667,"y":0.38867188,"provisional":true,"kingdom":"벨로아","lord":"카시안 발렌하르트","lore_id":"W2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W3","label":"엘름베르크 백작령","kind":"lordship","region":"west","x":0.24283854,"y":0.4765625,"provisional":true,"kingdom":"벨로아","lord":"마르타 엘름베르크","lore_id":"W3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W4","label":"로젠펠트 후작령","kind":"lordship","region":"west","x":0.32291667,"y":0.55175781,"provisional":true,"kingdom":"벨로아","lord":"율리안 로젠펠트","lore_id":"W4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"W5","label":"아르덴슈타인 백작령","kind":"lordship","region":"west","x":0.3984375,"y":0.62109375,"provisional":true,"kingdom":"벨로아","lord":"비올레트 아르덴슈타인","lore_id":"W5","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E1","label":"칼트하임 변경백령","kind":"lordship","region":"east","x":0.74414062,"y":0.34570312,"provisional":true,"kingdom":"드라켄","lord":"하인리히 칼트하임","lore_id":"E1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E2","label":"아이젠크로네 공작령","kind":"lordship","region":"east","x":0.66080729,"y":0.40527344,"provisional":true,"kingdom":"드라켄","lord":"셀리아 아이젠크로네","lore_id":"E2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E3","label":"베르크슈타인 후작령","kind":"lordship","region":"east","x":0.66666667,"y":0.48828125,"provisional":true,"kingdom":"드라켄","lord":"발터 베르크슈타인","lore_id":"E3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"E4","label":"실베른 백작령","kind":"lordship","region":"east","x":0.69010417,"y":0.56445312,"provisional":true,"kingdom":"드라켄","lord":"에밀 실베른","lore_id":"E4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S1","label":"벨마리나 후작령","kind":"lordship","region":"south","x":0.37109375,"y":0.73730469,"provisional":true,"kingdom":"루메린","lord":"도미니크 벨마리나","lore_id":"S1","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S2","label":"세르반 공작령","kind":"lordship","region":"south","x":0.47851562,"y":0.63476562,"provisional":true,"kingdom":"루메린","lord":"이사벨 세르반","lore_id":"S2","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S3","label":"아쿠아렌 백작령","kind":"lordship","region":"south","x":0.56901042,"y":0.69824219,"provisional":true,"kingdom":"루메린","lord":"티에라 아쿠아렌","lore_id":"S3","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"S4","label":"솔메리아 백작령","kind":"lordship","region":"south","x":0.53320312,"y":0.80371094,"provisional":true,"kingdom":"루메린","lord":"라파엘 솔메리아","lore_id":"S4","center_status":"provisional_geographic_position","identity_confirmed":true},{"id":"CW","label":"벨로아 왕도 (도시명 미정)","kind":"capital","region":"west","x":0.28776042,"y":0.34277344,"provisional":true},{"id":"CE","label":"드라켄 왕도 (도시명 미정)","kind":"capital","region":"east","x":0.72265625,"y":0.4296875,"provisional":true},{"id":"CS","label":"루메린 왕도 (도시명 미정)","kind":"capital","region":"south","x":0.50520833,"y":0.75097656,"provisional":true},{"id":"F1","label":"중앙 요새 후보","kind":"fortress","region":"disputed","x":0.50585938,"y":0.47753906,"provisional":true},{"id":"M1","label":"접경 마나 광산 후보","kind":"mana_mine","region":"disputed","x":0.59505208,"y":0.43847656,"provisional":true},{"id":"P1","label":"남서 항구 후보","kind":"port","region":"south","x":0.30794271,"y":0.69433594,"provisional":true},{"id":"P2","label":"남동 항구 후보","kind":"port","region":"south","x":0.63867188,"y":0.60742188,"provisional":true},{"id":"D1","label":"고대 던전 후보","kind":"dungeon","region":"northwest","x":0.2890625,"y":0.15820312,"provisional":true},{"id":"B1","label":"마수 서식 후보","kind":"beast_habitat","region":"northcenter","x":0.47526042,"y":0.21875,"provisional":true},{"id":"A1","label":"마나 이상·유적 후보","kind":"anomaly","region":"northeast","x":0.76171875,"y":0.15722656,"provisional":true},{"id":"I1","label":"군도 탐험 후보","kind":"island","region":"archipelago","x":0.85026042,"y":0.66894531,"provisional":true}]};
 
 return {mapData};})();
-const module17=(()=>{
-const {mapData}=module16;
+const module18=(()=>{
+const {mapData}=module17;
 const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
 function regionFrame(id){
   if(id==='world')return {x:0,y:0,width:1,height:1};
@@ -893,7 +900,7 @@ function viewForSelection(id){
 }
 
 return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
-const module18=(()=>{
+const module19=(()=>{
 // Generated public-only mirror of faction_locations.json.
 const factionLocations = [
   {
@@ -1343,14 +1350,14 @@ const factionLocations = [
 ];
 
 return {factionLocations};})();
-const module15=(()=>{
+const module16=(()=>{
 const {normalizeScene}=module11;
 const {normalizeInventory}=module4;
-const {mapData}=module16;
+const {mapData}=module17;
 const {newPlayer,normalizePlayer}=module3;
-const {mapViews}=module17;
-const {factionLocations}=module18;
-const {normalizeIntroDraft,creationFields}=module14;
+const {mapViews}=module18;
+const {factionLocations}=module19;
+const {normalizeIntroDraft,creationFields}=module15;
 const {findNPC}=module7;
 const {normalizeNPCProfile}=module9;
 const KEY = 'ercedia.vn.v04';
@@ -1405,8 +1412,8 @@ function load(storage) {
 }
 
 return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
-const module19=(()=>{
-const {initialPlayer}=module14;
+const module20=(()=>{
+const {initialPlayer}=module15;
 // Only the old name-only start is eligible. Never reset a progressed or injured save.
 function initializeNameOnlyPlayer(state){
   const p=state.player,name=p?.name?.trim();
@@ -1420,10 +1427,10 @@ function initializeNameOnlyPlayer(state){
 return {initializeNameOnlyPlayer};})();
 const module10=(()=>{
 const {parseScene,actionPrompt}=module11;
-const {normalize}=module15;
+const {normalize}=module16;
 const {battleIsActive}=module6;
 const {updateNPC,findNPC}=module7;
-const {initializeNameOnlyPlayer}=module19;
+const {initializeNameOnlyPlayer}=module20;
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -1554,7 +1561,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
 }
 
 return {mountChatUI};})();
-const module20=(()=>{
+const module21=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
 // Casual/nightwear use hair-aligned placement against their existing head artwork.
@@ -1566,7 +1573,7 @@ const faceFit={
 };
 
 return {faceFit};})();
-const module22=(()=>{
+const module23=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -1754,9 +1761,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module21=(()=>{
-const {mapData}=module16;
-const {lordships}=module22;
+const module22=(()=>{
+const {mapData}=module17;
+const {lordships}=module23;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -1775,9 +1782,9 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module23=(()=>{
-const {factionLocations}=module18;
-const {mapData}=module16;
+const module24=(()=>{
+const {factionLocations}=module19;
+const {mapData}=module17;
 const factionTypes={knight_order:['기사단','⚔','#ecc27e'],magic_tower:['마법탑','✦','#c7a4f4'],sanctuary:['교단 성지','✧','#e6e2bb'],guild:['길드','⌂','#a6d69d'],mercenary:['용병·호위','⚑','#e6a595'],merchant:['상단','◆','#e9cc6c'],civic:['민간조직','●','#a0d7d9'],diplomacy:['중재','◇','#bdd2ed']};
 function visibleFactions(view,selection){
   if(view==='world')return [];
@@ -1832,10 +1839,10 @@ function mountFactionMap(state,{select}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module24=(()=>{
+const module25=(()=>{
 const {damageFormula}=module3;
-const {introData}=module13;
-const {passiveLimits}=module14;
+const {introData}=module14;
+const {passiveLimits}=module15;
 function mountPlayer(state){
   const $=id=>document.getElementById(id);
   const display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'—';
@@ -1881,7 +1888,7 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module25=(()=>{
+const module26=(()=>{
 const {resolveNPC,npcRankLabel}=module7;
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
@@ -1944,7 +1951,8 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module26=(()=>{
+const module27=(()=>{
+const {locationLabel}=module12;
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const number=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'—';
@@ -1953,7 +1961,7 @@ function mountPlayHUD(state,{persist}){
     $('hud-player').textContent=player.name||'이름 미정';
     $('hud-hp').textContent=`${number(player.hp)} / ${number(player.maxHp)}`;
     $('hud-mp').textContent=`${number(player.mp)} / ${number(player.maxMp)}`;
-    $('hud-location').textContent=state.scene?.location||state.gameState.place||'써니 빌리지';
+    $('hud-location').textContent=locationLabel(state.scene?.location||state.gameState.place||'솔브린 마을');
     const size=state.uiPreferences?.textSize||'normal';game.dataset.textSize=size;$('text-size').value=size;
     $('portrait-hint').hidden=!state.character||!!state.uiPreferences?.portraitHintDismissed;
   }
@@ -1970,12 +1978,12 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
-const module27=(()=>{
-const {introData}=module13;
-const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module14;
-const {defaults,normalize}=module15;
-const {mapData}=module16;
-const {factionLocations}=module18;
+const module28=(()=>{
+const {introData}=module14;
+const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module15;
+const {defaults,normalize}=module16;
+const {mapData}=module17;
+const {factionLocations}=module19;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -2090,9 +2098,9 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
-const module28=(()=>{
+const module29=(()=>{
 const {battleIsActive,battleFrame,validateBattleSettlement}=module6;
-const {faceFit}=module20;
+const {faceFit}=module21;
 function mountBattleUI(state,{render,persist,chat,assetBase}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,animations=[],cards=new Map();
@@ -2180,7 +2188,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase}){
 }
 
 return {mountBattleUI};})();
-const module29=(()=>{
+const module30=(()=>{
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module7;
 function mountCatalogUI(state,{request,isPending}){
@@ -2222,19 +2230,20 @@ const module1=(()=>{
 const {createGameBridge}=module2;
 const {mountChatUI}=module10;
 const {mountInventory,normalizeInventory}=module4;
-const {KEY,defaultLayout,load}=module15;
-const {faceFit}=module20;
-const {mapData}=module16;
-const {mapSelectionInfo}=module21;
-const {mountFactionMap,factionInfo}=module23;
-const {mountPlayer}=module24;
-const {mountNPCInfo}=module25;
-const {mountPlayHUD}=module26;
-const {mountNewGame}=module27;
-const {mountBattleUI}=module28;
-const {mountCatalogUI}=module29;
-const {initializeNameOnlyPlayer}=module19;
-const {mapViews,regionFrame,cameraTransform,viewForSelection}=module17;
+const {KEY,defaultLayout,load}=module16;
+const {faceFit}=module21;
+const {mapData}=module17;
+const {mapSelectionInfo}=module22;
+const {mountFactionMap,factionInfo}=module24;
+const {mountPlayer}=module25;
+const {mountNPCInfo}=module26;
+const {mountPlayHUD}=module27;
+const {mountNewGame}=module28;
+const {mountBattleUI}=module29;
+const {mountCatalogUI}=module30;
+const {initializeNameOnlyPlayer}=module20;
+const {locationLabel as canonicalLocationLabel}=module12;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module18;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
@@ -2243,7 +2252,7 @@ const standing='assets/characters/main/serin/standing/';
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
 const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad:'슬픔',embarrassed:'부끄러움',afraid:'두려움',annoyed:'불쾌함',love:'애정'};
 const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
-const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
+const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['솔브린 마을','벨로아 왕국 W3 엘름베르크 백작령 소속 마을입니다. 세부 지도 좌표는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
 for(const r of mapData.regions){const info=mapSelectionInfo(r.id);regions[r.id]=[info.title,info.description];}
 regions.archipelago=['주변 군도','군도 탐험 지점의 검토용 시안입니다.'];
 const regionNames={west:'벨로아',east:'드라켄',south:'루메린'};
@@ -2307,7 +2316,7 @@ for(const expression of Object.keys(labels)){
   faces.set(expression,img);faceLayer.append(img);
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
-trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
+trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','솔브린 마을');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
   const key=state.outfit+':base';
@@ -2347,7 +2356,7 @@ function renderDialogue(){
   $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
   if(state.scene){
     const scene=state.scene;
-    $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
+    $('scene-location').textContent=canonicalLocationLabel(scene.location);$('scene-time').textContent=scene.time;
     state.character=scene.npc?.id==='serin';
     state.background=scene.background_id!==null;
     if(scene.npc?.id==='serin'){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;

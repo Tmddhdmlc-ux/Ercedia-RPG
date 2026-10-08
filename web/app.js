@@ -13,6 +13,7 @@ import {mountNewGame} from './new-game.js';
 import {mountBattleUI} from './battle-ui.js';
 import {mountCatalogUI} from './catalog-ui.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
+import {locationLabel as canonicalLocationLabel} from './location-label.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -22,7 +23,7 @@ const standing='assets/characters/main/serin/standing/';
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
 const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad:'슬픔',embarrassed:'부끄러움',afraid:'두려움',annoyed:'불쾌함',love:'애정'};
 const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
-const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
+const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['솔브린 마을','벨로아 왕국 W3 엘름베르크 백작령 소속 마을입니다. 세부 지도 좌표는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
 for(const r of mapData.regions){const info=mapSelectionInfo(r.id);regions[r.id]=[info.title,info.description];}
 regions.archipelago=['주변 군도','군도 탐험 지점의 검토용 시안입니다.'];
 const regionNames={west:'벨로아',east:'드라켄',south:'루메린'};
@@ -86,7 +87,7 @@ for(const expression of Object.keys(labels)){
   faces.set(expression,img);faceLayer.append(img);
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
-trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','써니 빌리지');
+trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','솔브린 마을');
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
   const key=state.outfit+':base';
@@ -126,7 +127,7 @@ function renderDialogue(){
   $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
   if(state.scene){
     const scene=state.scene;
-    $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
+    $('scene-location').textContent=canonicalLocationLabel(scene.location);$('scene-time').textContent=scene.time;
     state.character=scene.npc?.id==='serin';
     state.background=scene.background_id!==null;
     if(scene.npc?.id==='serin'){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
