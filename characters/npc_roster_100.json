@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "roster_version": "1.0",
-  "character_count": 106,
+  "character_count": 100,
   "existing_characters_excluded": true,
   "monster_rank_order": [
     "하급",
@@ -1600,162 +1600,6 @@
     },
     {
       "id": "ER-NPC-062",
-      "name": "나엘라 소프",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "엘름베르크 주민",
-      "location_id": "W3",
-      "rank": "농부",
-      "rank_system": "social",
-      "appearance": "여52 구릿빛 피부 은갈 머리 녹색 눈 베옷",
-      "stats": {
-        "strength": 14,
-        "agility": 16,
-        "intelligence": 20,
-        "constitution": 20,
-        "mana": 14,
-        "hp": 300,
-        "max_hp": 300,
-        "mp": 124,
-        "max_mp": 124
-      },
-      "personality_seed": "온화하지만 비밀이 있음",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-063",
-      "name": "토미 베이",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "노르발트 주민",
-      "location_id": "W1",
-      "rank": "사냥꾼",
-      "rank_system": "social",
-      "appearance": "남22 붉은 곱슬 검은 눈 모피조끼",
-      "stats": {
-        "strength": 17,
-        "agility": 14,
-        "intelligence": 21,
-        "constitution": 21,
-        "mana": 15,
-        "hp": 310,
-        "max_hp": 310,
-        "mp": 130,
-        "max_mp": 130
-      },
-      "personality_seed": "자존심이 강하고 경쟁적",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-064",
-      "name": "사란 프뢰",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "벨마리나 주민",
-      "location_id": "S1",
-      "rank": "경매 상인",
-      "rank_system": "social",
-      "appearance": "여30 검은 포니테일 갈색 눈 남색 비단",
-      "stats": {
-        "strength": 13,
-        "agility": 12,
-        "intelligence": 22,
-        "constitution": 22,
-        "mana": 9,
-        "hp": 320,
-        "max_hp": 320,
-        "mp": 94,
-        "max_mp": 94
-      },
-      "personality_seed": "실용적이고 계산이 빠름",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-065",
-      "name": "볼렌 미크",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "베르크슈타인 주민",
-      "location_id": "E3",
-      "rank": "광부",
-      "rank_system": "social",
-      "appearance": "남44 삭발 이마 흉터 회색 작업복",
-      "stats": {
-        "strength": 16,
-        "agility": 19,
-        "intelligence": 23,
-        "constitution": 15,
-        "mana": 10,
-        "hp": 250,
-        "max_hp": 250,
-        "mp": 100,
-        "max_mp": 100
-      },
-      "personality_seed": "관찰력이 좋고 조용함",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-066",
-      "name": "페넬 바드",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "솔메리아 주민",
-      "location_id": "S4",
-      "rank": "여관 주인",
-      "rank_system": "social",
-      "appearance": "여48 은회 땋은머리 호박 눈 흰 앞치마",
-      "stats": {
-        "strength": 19,
-        "agility": 17,
-        "intelligence": 24,
-        "constitution": 16,
-        "mana": 11,
-        "hp": 260,
-        "max_hp": 260,
-        "mp": 106,
-        "max_mp": 106
-      },
-      "personality_seed": "신중하고 책임감이 강함",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-067",
-      "name": "크로만 젯",
-      "species": "인간",
-      "category": "사회 인물",
-      "affiliation": "아르덴슈타인 주민",
-      "location_id": "W5",
-      "rank": "마차 수리공",
-      "rank_system": "social",
-      "appearance": "남39 짙은 갈수염 청색 눈 가죽조끼",
-      "stats": {
-        "strength": 15,
-        "agility": 15,
-        "intelligence": 14,
-        "constitution": 17,
-        "mana": 12,
-        "hp": 270,
-        "max_hp": 270,
-        "mp": 112,
-        "max_mp": 112
-      },
-      "personality_seed": "온화하지만 비밀이 있음",
-      "default_relation": "neutral",
-      "portrait_status": "uncreated",
-      "stat_status": "initial_balance_provisional"
-    },
-    {
-      "id": "ER-NPC-068",
       "name": "에시아 르몬",
       "species": "인간",
       "category": "사회 인물",
@@ -1781,7 +1625,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-069",
+      "id": "ER-NPC-063",
       "name": "로칸 헤스",
       "species": "인간",
       "category": "사회 인물",
@@ -1807,7 +1651,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-070",
+      "id": "ER-NPC-064",
       "name": "미엔 카프",
       "species": "인간",
       "category": "사회 인물",
@@ -1833,7 +1677,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-071",
+      "id": "ER-NPC-065",
       "name": "오델 비프",
       "species": "인간",
       "category": "사회 인물",
@@ -1859,7 +1703,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-072",
+      "id": "ER-NPC-066",
       "name": "도릭 뤼프",
       "species": "인간",
       "category": "적대적 인간",
@@ -1885,7 +1729,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-073",
+      "id": "ER-NPC-067",
       "name": "바센 모그",
       "species": "인간",
       "category": "적대적 인간",
@@ -1911,7 +1755,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-074",
+      "id": "ER-NPC-068",
       "name": "카자 트른",
       "species": "인간",
       "category": "적대적 인간",
@@ -1937,7 +1781,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-075",
+      "id": "ER-NPC-069",
       "name": "프레트 곤",
       "species": "인간",
       "category": "적대적 인간",
@@ -1963,7 +1807,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-076",
+      "id": "ER-NPC-070",
       "name": "이셸 토브",
       "species": "인간",
       "category": "적대적 인간",
@@ -1989,7 +1833,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-077",
+      "id": "ER-NPC-071",
       "name": "아르고 폰",
       "species": "인간",
       "category": "적대적 인간",
@@ -2015,7 +1859,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-078",
+      "id": "ER-NPC-072",
       "name": "멘자 데크",
       "species": "인간",
       "category": "적대적 인간",
@@ -2041,7 +1885,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-079",
+      "id": "ER-NPC-073",
       "name": "베르곤 헬",
       "species": "인간",
       "category": "적대적 인간",
@@ -2067,7 +1911,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-080",
+      "id": "ER-NPC-074",
       "name": "나시르 젬",
       "species": "인간",
       "category": "적대적 인간",
@@ -2093,7 +1937,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-081",
+      "id": "ER-NPC-075",
       "name": "페이라 록",
       "species": "인간",
       "category": "적대적 인간",
@@ -2119,7 +1963,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-082",
+      "id": "ER-NPC-076",
       "name": "델로스 칼",
       "species": "인간",
       "category": "적대적 인간",
@@ -2145,7 +1989,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-083",
+      "id": "ER-NPC-077",
       "name": "루쉬 엔",
       "species": "인간",
       "category": "적대적 인간",
@@ -2171,7 +2015,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-084",
+      "id": "ER-NPC-078",
       "name": "코드란 얀",
       "species": "인간",
       "category": "적대적 인간",
@@ -2197,7 +2041,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-085",
+      "id": "ER-NPC-079",
       "name": "가레트 보",
       "species": "인간",
       "category": "적대적 인간",
@@ -2223,7 +2067,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-086",
+      "id": "ER-NPC-080",
       "name": "미라한 델",
       "species": "인간",
       "category": "적대적 인간",
@@ -2249,7 +2093,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-087",
+      "id": "ER-NPC-081",
       "name": "서리갈기 늑대",
       "species": "마수",
       "category": "마수",
@@ -2275,7 +2119,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-088",
+      "id": "ER-NPC-082",
       "name": "백각 설산사슴",
       "species": "마수",
       "category": "마수",
@@ -2301,7 +2145,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-089",
+      "id": "ER-NPC-083",
       "name": "철가죽 멧돼지",
       "species": "마수",
       "category": "마수",
@@ -2327,7 +2171,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-090",
+      "id": "ER-NPC-084",
       "name": "곡창 그림자쥐",
       "species": "마수",
       "category": "마수",
@@ -2353,7 +2197,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-091",
+      "id": "ER-NPC-085",
       "name": "잿불 송곳도마뱀",
       "species": "마수",
       "category": "마수",
@@ -2379,7 +2223,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-092",
+      "id": "ER-NPC-086",
       "name": "뿔돌 협곡독수리",
       "species": "마수",
       "category": "마수",
@@ -2405,7 +2249,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-093",
+      "id": "ER-NPC-087",
       "name": "수정굴 광충",
       "species": "마수",
       "category": "마수",
@@ -2431,7 +2275,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-094",
+      "id": "ER-NPC-088",
       "name": "공명 수정거미",
       "species": "마수",
       "category": "마수",
@@ -2457,7 +2301,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-095",
+      "id": "ER-NPC-089",
       "name": "청전기 산양",
       "species": "마수",
       "category": "마수",
@@ -2483,7 +2327,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-096",
+      "id": "ER-NPC-090",
       "name": "회안개 박쥐",
       "species": "마수",
       "category": "마수",
@@ -2509,7 +2353,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-097",
+      "id": "ER-NPC-091",
       "name": "해풍 날개뱀",
       "species": "마수",
       "category": "마수",
@@ -2535,7 +2379,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-098",
+      "id": "ER-NPC-092",
       "name": "암초 부리게",
       "species": "마수",
       "category": "마수",
@@ -2561,7 +2405,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-099",
+      "id": "ER-NPC-093",
       "name": "흑진주 먹장어",
       "species": "마수",
       "category": "마수",
@@ -2587,7 +2431,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-100",
+      "id": "ER-NPC-094",
       "name": "은비늘 물갈퀴어",
       "species": "마수",
       "category": "마수",
@@ -2613,7 +2457,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-101",
+      "id": "ER-NPC-095",
       "name": "밤등불 나방",
       "species": "마수",
       "category": "마수",
@@ -2639,7 +2483,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-102",
+      "id": "ER-NPC-096",
       "name": "사막색 모래여우",
       "species": "마수",
       "category": "마수",
@@ -2665,7 +2509,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-103",
+      "id": "ER-NPC-097",
       "name": "유령나무 산책자",
       "species": "마수",
       "category": "마수",
@@ -2691,7 +2535,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-104",
+      "id": "ER-NPC-098",
       "name": "심연고리 사슴",
       "species": "마수",
       "category": "마수",
@@ -2717,7 +2561,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-105",
+      "id": "ER-NPC-099",
       "name": "푸른균열 사냥개",
       "species": "마수",
       "category": "마수",
@@ -2743,7 +2587,7 @@
       "stat_status": "initial_balance_provisional"
     },
     {
-      "id": "ER-NPC-106",
+      "id": "ER-NPC-100",
       "name": "고대석갑 파수충",
       "species": "마수",
       "category": "마수",
