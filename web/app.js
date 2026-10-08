@@ -4,22 +4,23 @@ import {mountInventory,normalizeInventory} from './inventory.js';
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
 import {mapData} from './map-data.js';
+import {mapSelectionInfo} from './map-info.js';
 import {mountPlayer} from './player-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
-const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@89ba7a06e5b7ed74d3157be77b7dbc1d716bcc35/';
+const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
 const standing='assets/characters/main/serin/standing/';
 // Only approved, registered assets belong here. Drafts and absent expressions are excluded.
 const outfits={armor:{label:'갑옷',expressions:{base:standing+'base.png'}},casual:{label:'평상복',expressions:{base:standing+'outfits/casual/base.png'}},nightwear:{label:'잠옷',expressions:{base:standing+'outfits/nightwear/base.png'}}};
 const labels={base:'기본',smile:'미소',angry:'분노',surprised:'놀람',sad:'슬픔',embarrassed:'부끄러움',afraid:'두려움',annoyed:'불쾌함',love:'애정'};
 const dialogues=[['나레이션','장면 시작','마을 광장에서 순찰을 마친 세린과 마주쳤다.'],['세린','미소','아, 여행자님! 오늘도 좋은 날씨네요.'],['세린','호기심','저는 이 근처를 순찰하고 있었어요. 어디로 가시는 길인가요?'],['세린','주의','아참, 세 나라가 전쟁 중이라 먼 여행은 위험할 수도 있답니다.']];
 const regions={world:['에르세디아 세계지도','등록된 메인 지도 · 지역명과 지점 표식을 눌러 살펴보세요.'],village:['써니 빌리지','현재 대화 장소입니다. 세계지도에서의 위치는 아직 미정입니다.'],wild:['북부 미개척지','북부 위험 지역의 표식을 선택해 살펴보세요.'],ruins:['고대 유적 후보','던전·마나 이상 지역의 위치는 검토용 시안입니다.']};
-for(const r of mapData.regions)regions[r.id]=[r.label,'지리 배치 시안 · 공식 국명·국경·지역 설정은 미확정입니다.'];
+for(const r of mapData.regions){const info=mapSelectionInfo(r.id);regions[r.id]=[info.title,info.description];}
 regions.archipelago=['주변 군도','군도 탐험 지점의 검토용 시안입니다.'];
-const regionNames={west:'서부',east:'동부',south:'남부'};
+const regionNames={west:'벨로아',east:'드라켄',south:'루메린'};
 const locationLabel=p=>p.label.replace(/^(west|east|south)\b/,(_,id)=>regionNames[id]);
-for(const p of mapData.locations)regions[p.id]=[`${p.id} · ${locationLabel(p)}`,'등록된 지도 클릭 지점 후보입니다. 위치·지명·소속은 검토용 시안이며 실제 이동은 아직 연결되지 않았습니다.'];
+for(const p of mapData.locations){const info=mapSelectionInfo(p.id);regions[p.id]=[info.title,info.description];}
 // Build the click overlay once. Its coordinate system and aspect ratio match the map image.
 const svgNS='http://www.w3.org/2000/svg';
 for(const p of [...mapData.regions,...mapData.locations]){
@@ -28,12 +29,12 @@ for(const p of [...mapData.regions,...mapData.locations]){
   node.setAttribute('r',p.kind?'24':'40');node.setAttribute('class','map-hit');node.dataset.region=p.id;
   const title=document.createElementNS(svgNS,'title');title.textContent=regions[p.id][0];node.append(title);$('map-points').append(node);
   if(p.kind){
-    const label=document.createElementNS(svgNS,'text');label.setAttribute('x',String(p.x*1536));label.setAttribute('y',String(p.y*1024-32));label.setAttribute('class','map-detail-label');label.dataset.location=p.id;label.textContent=p.id;$('map-points').append(label);
+    const label=document.createElementNS(svgNS,'text');label.setAttribute('x',String(p.x*1536));label.setAttribute('y',String(p.y*1024-32));label.setAttribute('class','map-detail-label');label.dataset.location=p.id;label.textContent=p.kind==='lordship'?p.label.replace(/ (변경백|공작|후작|백작)령$/,''):p.kind==='capital'?p.label.replace(' (도시명 미정)',''):p.label;$('map-points').append(label);
   }
 }
 const kindLabels={capital:'왕도',lordship:'영주령',port:'항구',fortress:'요새',mana_mine:'마나 광산',dungeon:'던전',beast_habitat:'마수 서식지',anomaly:'마나 이상·유적',island:'군도 탐험'};
 for(const view of mapViews){const button=document.createElement('button');button.dataset.mapView=view.id;button.textContent=view.label.replace(' (임시)','');$('map-regions').append(button);}
-for(const p of mapData.locations){const button=document.createElement('button');button.dataset.region=p.id;button.dataset.parentRegion=p.region;const title=document.createElement('b'),kind=document.createElement('span');title.textContent=`${p.id} · ${locationLabel(p)}`;kind.textContent=kindLabels[p.kind]||p.kind;button.append(title,kind);$('map-detail-list').append(button);}
+for(const p of mapData.locations){const button=document.createElement('button');button.dataset.region=p.id;button.dataset.parentRegion=p.region;const title=document.createElement('b'),kind=document.createElement('span');title.textContent=locationLabel(p);kind.textContent=p.lord?`영주 · ${p.lord}`:kindLabels[p.kind]||p.kind;button.append(title,kind);$('map-detail-list').append(button);}
 const embedded=!!window.__ERCEDIA_CONFIG__;
 let storage;
 let restored;
@@ -57,7 +58,7 @@ function trackImage(img,path,label,cdn=CDN) {
 }
 function mapImageStatus(loaded){
   $('map-points').style.visibility=loaded?'visible':'hidden';
-  $('map-status').textContent=loaded?'지역을 눌러 확대하고 세부 지점을 선택하세요. 지리와 국경은 검토용 시안입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
+  $('map-status').textContent=loaded?'지역을 눌러 확대하고 영주령 정보를 확인하세요. 국경·행정 경계와 대표 위치는 미확정입니다.':'세계지도 이미지 로드 실패 · 아래 이미지 로딩 상태의 원본 링크를 확인하세요.';
   $('map-status').classList.toggle('asset-alert',!loaded);
 }
 $('map-points').style.visibility='hidden';
@@ -140,7 +141,15 @@ function renderMapView(){
   document.querySelectorAll('.map-detail-label').forEach(el=>{el.style.display=!overview&&points.some(p=>p.id===el.dataset.location)?'':'none';});
   updateMapCamera();
 }
-function renderRegion(){const r=regions[state.region];$('region-title').textContent=r[0];$('region-description').textContent=r[1];document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();}
+function renderRegion(){
+  const r=regions[state.region],info=mapSelectionInfo(state.region);
+  $('region-title').textContent=r[0];$('region-description').textContent=r[1];
+  const fields=$('region-fields');fields.replaceChildren();
+  for(const [name,value] of info?.fields||[]){const term=document.createElement('dt'),detail=document.createElement('dd');term.textContent=name;detail.textContent=value;fields.append(term,detail);}
+  fields.hidden=!info?.fields.length;
+  $('region-note').textContent=info?.note||'';$('region-note').hidden=!info?.note;
+  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();
+}
 document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
 document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
 $('map-overview').onclick=()=>{state.mapView='world';state.region='world';renderRegion();dirty();};
