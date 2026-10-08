@@ -4,7 +4,7 @@
 <script>
 window.GM_getValue=(key,fallback)=>JSON.parse(localStorage.getItem(key)||'null')??fallback;
 window.GM_setValue=(key,value)=>localStorage.setItem(key,JSON.stringify(value));
-window.GM_addElement=(parent,tag,attrs)=>{const el=document.createElement(tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,k==='srcdoc'?v.replace(/https:\/\/raw\.githubusercontent\.com\/Tmddhdmlc-ux\/Ercedia-RPG\/[a-f0-9]{40}\//g,location.origin+'/'):v);parent.append(el);return el;};
+window.GM_addElement=(parent,tag,attrs)=>{const el=document.createElement(tag);for(const [k,v] of Object.entries(attrs))el.setAttribute(k,k==='src'?v.replace('https://tmddhdmlc-ux.github.io/Ercedia-RPG',location.origin):k==='srcdoc'?v.replace(/https:\/\/raw\.githubusercontent\.com\/Tmddhdmlc-ux\/Ercedia-RPG\/[a-f0-9]{40}\//g,location.origin+'/'):v);parent.append(el);return el;};
 window.GM_registerMenuCommand=()=>{};
 window.mockRelease=0;window.mockNetworkFailure=false;
 window.GM_xmlhttpRequest=async options=>{

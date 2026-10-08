@@ -1,4 +1,4 @@
-# 에르세디아 RPG · Tampermonkey 고정 런처 v1.1
+# 에르세디아 RPG · Tampermonkey 고정 런처 v1.1.1
 
 기존 `index.html`과 `web/` UI를 ChatGPT 웹페이지에 고정하는 런처입니다. 추가 OpenAI API, 키, 내부 인증정보, 비공식 API를 사용하지 않습니다. GitHub 게임 UI 업데이트는 런처 재설치 없이 받을 수 있습니다.
 
@@ -9,9 +9,17 @@
 1. Chrome 또는 Edge에 Tampermonkey를 설치하고 확장 사용을 켭니다. 브라우저에서 유저스크립트 실행 권한을 요구하면 Tampermonkey의 공식 안내에 따라 설정합니다. [공식 문서](https://www.tampermonkey.net/documentation.php)
 2. [런처 설치 파일](https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.user.js)을 엽니다. 자동 설치 화면이 열리지 않으면 Tampermonkey에서 새 스크립트를 만들고 파일 전체를 붙여넣어 저장합니다.
 3. `https://chatgpt.com/`을 새로고침합니다. 처음에는 GitHub의 게임 UI를 다운로드하므로 인터넷 연결이 필요합니다. localhost 서버는 설치형 런처에 필요하지 않습니다.
-4. 게임 창 상단에 현재 UI 버전과 커밋이 표시됩니다. `게임 종료`를 누르면 원래 ChatGPT 화면을 사용할 수 있고, `에르세디아 열기`로 동일 창을 다시 표시합니다.
+4. 기본 창 크기는 최대 960×760px입니다. 오른쪽 아래 ◢를 드래그해 크기를 조절하고 제목을 드래그해 이동합니다. 크기·위치는 저장됩니다. `창 기본 크기`로 되돌립니다. 게임 창 상단에 현재 UI 버전과 커밋이 표시됩니다. `게임 종료`를 누르면 원래 ChatGPT 화면을 사용할 수 있고, `에르세디아 열기`로 동일 창을 다시 표시합니다.
 
 독립 수동 게임 화면: 저장소에서 `node server.mjs` 실행 → [게임 모드](http://localhost:4173/?game=1). 일반 UI 미리보기는 [기존 화면](http://localhost:4173/)입니다. 이 링크들은 해당 PC의 서버가 켜져 있을 때만 동작합니다.
+
+## 게임을 시작하는 채팅
+
+게임 창을 여는 데 채팅 조건은 없습니다. 설치된 런처가 게임 UI를 불러옵니다. 로더 주소는 https://tmddhdmlc-ux.github.io/Ercedia-RPG/integration/frame.html 입니다. 로더 준비 실패·게임 실행 오류·이미지 대기 시간을 구분해 표시합니다. 페이지 정책으로 외부 프레임이 차단되면 아래 독립 화면을 사용하세요.
+
+실제 게임 진행은 GPT가 세계관과 출력 규격을 알아야 합니다. 처음 시작하는 채팅에 다음 메시지를 보내세요. 저장소 열람이 안 되면 필요한 공개 설정과 예시 JSON을 직접 붙여넣으세요. 비밀 설정을 읽더라도 NPC가 모든 진실을 아는 것으로 처리하지 않아야 합니다.
+
+> https://github.com/Tmddhdmlc-ux/Ercedia-RPG 를 읽고 에르세디아 RPG의 게임 마스터로 진행해줘. WORLD.md, GODS.md, KINGDOMS.md, UI_RULES.md, tampermonkey/README.md와 example-scene.json을 참고해. 개발자용 비밀은 NPC 지식과 구분하고 일반 대사에 노출하지 마. 결과는 schema_version 1의 ercedia_scene JSON 코드블록으로 출력하고, 행동 요청에 reply_to가 있으면 그대로 포함해. 아직 정하지 않은 주인공 정보·아이템·지명을 임의로 확정하지 마.
 
 ## 대화와 수동 연결
 
@@ -55,7 +63,7 @@ gameBridge.getGameState();
 gameBridge.restoreGameState(savedState);
 ```
 
-프레임 밖의 런처는 UI 내부 클래스명이나 얼굴 좌표를 읽지 않습니다. `postMessage` 규격 `channel:"ercedia"`와 프레임별 난수 token, 송신 프레임, 채팅 식별자를 확인해 데이터를 전달합니다. sandbox는 allow-scripts만 허용하며 페이지 DOM·저장소와 분리합니다. Tampermonkey의 저장 API로 채팅별 게임 상태·현재 및 이전 UI 번들을 보관합니다. 저장 실패는 안내하고 임의로 초기화하지 않습니다.
+프레임 밖의 런처는 UI 내부 클래스명이나 얼굴 좌표를 읽지 않습니다. `postMessage` 규격 `channel:"ercedia"`와 프레임별 난수 token, 송신 프레임, 채팅 식별자를 확인해 데이터를 전달합니다. 게임 로더는 GitHub Pages의 별도 HTTPS 주소에서 실행합니다. 기존 srcdoc 방식은 ChatGPT 페이지 정책에 영향을 받을 수 있어 사용하지 않습니다. sandbox는 allow-scripts만 허용하며 페이지 DOM·저장소와 분리합니다. Tampermonkey의 저장 API로 채팅별 게임 상태·현재 및 이전 UI 번들을 보관합니다. 저장 실패는 안내하고 임의로 초기화하지 않습니다.
 
 ## 이후 Work 개발
 
