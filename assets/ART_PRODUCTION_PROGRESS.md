@@ -7,11 +7,11 @@
 | 분야 | 검수 완료 | 전체 슬롯 |
 |---|---:|---:|
 | 장비 | 0 | 300 |
-| 책 | 50 | 70 |
+| 책 | 70 | 70 |
 | 전리품 | 0 | 40 |
 | 장소 | 0 | 261 |
 
-총 검수 완료: **50/671**.
+총 검수 완료: **70/671**.
 
 ## 목록과 재개 기준
 
@@ -40,5 +40,13 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [books-batch-02.json](art-production/books-batch-02.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `2e72dbd9f3e7628c6f2297b5d87c6280d20713f8`
+
+### books-batch-03
+
+- 대상/완료 ID: BK-SPL-021, BK-SPL-022, BK-SPL-023, BK-SPL-024, BK-SPL-025, BK-SPL-026, BK-SPL-027, BK-SPL-028, BK-SPL-029, BK-SPL-030, BK-SPL-031, BK-SPL-032, BK-SPL-033, BK-SPL-034, BK-SPL-035, BK-SPL-036, BK-SPL-037, BK-SPL-038, BK-SPL-039, BK-SPL-040
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [books-batch-03.json](art-production/books-batch-03.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
 

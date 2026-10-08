@@ -5332,7 +5332,7 @@
         ],
         "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SWD-027",
@@ -5364,7 +5364,7 @@
         ],
         "sha256": "df25a0bee98ffe7708ec624833c26d7a98da7e15df81a9613693bdb7e766a029"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SWD-028",
@@ -5396,7 +5396,7 @@
         ],
         "sha256": "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SWD-029",
@@ -5428,7 +5428,7 @@
         ],
         "sha256": "33559909926f9980b81ce822d63a16c5f3de4651f124edeb122efe6f881f73a5"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SWD-030",
@@ -5460,7 +5460,7 @@
         ],
         "sha256": "6a5c5dae8fbd74fd715f6a778fe8a13bdcb825d2b7ca686f9fe71b1ac2f5a6ff"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-001",
@@ -5492,7 +5492,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-002",
@@ -5524,7 +5524,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-003",
@@ -5556,7 +5556,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-004",
@@ -5588,7 +5588,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-005",
@@ -5620,7 +5620,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-006",
@@ -5652,7 +5652,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-007",
@@ -5684,7 +5684,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-008",
@@ -5716,7 +5716,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-009",
@@ -5748,7 +5748,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-010",
@@ -5780,7 +5780,7 @@
         ],
         "sha256": "f550be6b06d0edd5997fb50b28b8b93d2a332de7ff90b08956c8ddf504d93b82"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-011",
@@ -5812,7 +5812,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-012",
@@ -5844,7 +5844,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-013",
@@ -5876,7 +5876,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-014",
@@ -5908,7 +5908,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-015",
@@ -5940,7 +5940,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-016",
@@ -5972,7 +5972,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-017",
@@ -6004,7 +6004,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-018",
@@ -6036,7 +6036,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-019",
@@ -6068,7 +6068,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-020",
@@ -6100,7 +6100,7 @@
         ],
         "sha256": "43d1385e95fe7f04a9dbffe0d80a335ade535b2478912c0dd1cfd0dc9cc4c4cf"
       },
-      "commit_sha": null
+      "commit_sha": "2e72dbd9f3e7628c6f2297b5d87c6280d20713f8"
     },
     {
       "id": "BK-SPL-021",
@@ -6111,10 +6111,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6126,10 +6143,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6141,10 +6175,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6156,10 +6207,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6171,10 +6239,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6186,10 +6271,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6201,10 +6303,27 @@
       "rarity": "고급",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-3.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "c4d2c7680e05226f0cc51d5c75add21ab3d2d704cfb4cfd4df5521a6cdd8eb3f"
+      },
       "commit_sha": null
     },
     {
@@ -6216,10 +6335,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6231,10 +6367,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6246,10 +6399,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6261,10 +6431,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6276,10 +6463,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6291,10 +6495,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6306,10 +6527,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6321,10 +6559,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6336,10 +6591,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6351,10 +6623,27 @@
       "rarity": "유니크",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-4.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "9ef5e83854b6ab4d91b75021da6993d08f4b2bc13ccec9c29407a329167592d9"
+      },
       "commit_sha": null
     },
     {
@@ -6366,10 +6655,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
+      },
       "commit_sha": null
     },
     {
@@ -6381,10 +6687,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
+      },
       "commit_sha": null
     },
     {
@@ -6396,10 +6719,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "3ae6bfb883dd68c1650153b827c3b5c98b2adf6f143563cf8fc8e79a0d6cd5ae",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/books/spellbook-tier-5.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          115,
+          50,
+          463,
+          459
+        ],
+        "sha256": "104435a22fd14c4c2e1af562070bf6a1e2d070326628bff1f686c4b8ea9773e3"
+      },
       "commit_sha": null
     },
     {
