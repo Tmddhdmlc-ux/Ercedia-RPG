@@ -7232,7 +7232,7 @@
         ],
         "sha256": "80dc9cf06a8d8828f63f24afe7321839492bd3e80696b4688dc0aa336a6995f9"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-227",
@@ -7264,7 +7264,7 @@
         ],
         "sha256": "655d050d4632d00ef7ed600c8fbb0d927b29c951f02f190a677a6669008a3110"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-228",
@@ -7296,7 +7296,7 @@
         ],
         "sha256": "e56a471a743a7affb36b9cc39cc87f6863922243375c353e4818102b1e7a279a"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-229",
@@ -7328,7 +7328,7 @@
         ],
         "sha256": "6a1e3189bb4aff64d47fb50af18038e21309354068a2ee91ce122e59d1019228"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-230",
@@ -7360,7 +7360,7 @@
         ],
         "sha256": "a685a5085998a3ded699ced5ee43eda6934eab905f74e0fabaa04861f6c6da54"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-231",
@@ -7392,7 +7392,7 @@
         ],
         "sha256": "0610cedf0dde3ed709c58c4aa081cf3eec89dec54c9714923064aa4ecab72bf0"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-232",
@@ -7424,7 +7424,7 @@
         ],
         "sha256": "0ea714cbef3caf3da7956500fb2a18238961fd89617a1bcc4a70033670492b3a"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-233",
@@ -7456,7 +7456,7 @@
         ],
         "sha256": "a45d77f710c8a90d5bd74c73277d6aef89763e5c87fb99b6a4d0a1256aeca8dd"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-234",
@@ -7488,7 +7488,7 @@
         ],
         "sha256": "652a55a5ee7c37cc1811f0242fd4aef69619cd59744874fbe939ae0b447960d4"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-235",
@@ -7520,7 +7520,7 @@
         ],
         "sha256": "11954765c42658c2617c3ff9fe81195b4e29e7d1bca0574df050989e1253df80"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-236",
@@ -7552,7 +7552,7 @@
         ],
         "sha256": "c9b9592b56aa7154698887a63ee133ba6a49d00d89b005bbac4dab13d7ed57d3"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-237",
@@ -7584,7 +7584,7 @@
         ],
         "sha256": "1d18a5abd30f42e44f7915ddc34830b76a0d7a5c8f42f434c763f69ae5549097"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-238",
@@ -7616,7 +7616,7 @@
         ],
         "sha256": "0ea714cbef3caf3da7956500fb2a18238961fd89617a1bcc4a70033670492b3a"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-239",
@@ -7648,7 +7648,7 @@
         ],
         "sha256": "2d75b1daa2545b72a04106b5781fe575397f61224aaae414326de047a22cf7d8"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-240",
@@ -7680,7 +7680,7 @@
         ],
         "sha256": "b02fc2170659cf3d9bd7236f04755de32273a948ab199cd1479aefcd3f274acd"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-241",
@@ -7712,7 +7712,7 @@
         ],
         "sha256": "586fe7a2daa7d1a76da06bb539127e212c18bfc3e75238fa7423408caacf638e"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-242",
@@ -7744,7 +7744,7 @@
         ],
         "sha256": "dceb4ef9511ef60199214658cdd74a17345f6757ccb3c0c75e8e0a25ada02f92"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-243",
@@ -7776,7 +7776,7 @@
         ],
         "sha256": "0cc06230790b674ae59913bfdca80837695b1a6d9720ac1c7ed74e75a7c2ee14"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-244",
@@ -7808,7 +7808,7 @@
         ],
         "sha256": "99e093d2daeda16166afea8946d0ce145a8d1032590a9c12d636853c8405f41f"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-245",
@@ -7840,7 +7840,7 @@
         ],
         "sha256": "a014c421da905473aab978f1fa672fbe70f02b366958ced574191500b5e39856"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-246",
@@ -7872,7 +7872,7 @@
         ],
         "sha256": "24886755e84af55e886ed4b4bbe7e65e400fb31e8e45bcfc74d389216a6ea7c8"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-247",
@@ -7904,7 +7904,7 @@
         ],
         "sha256": "83d36683ca4b6d86bd765481010ace48295a52e4f47a62abb8541d3cde49a77b"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-248",
@@ -7936,7 +7936,7 @@
         ],
         "sha256": "95691cf6f8af30e40938e33dd232bdb04bd0b2c8225448ab5e4cb0952c77a4fc"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-249",
@@ -7968,7 +7968,7 @@
         ],
         "sha256": "f98c27666367c5c9ea6176ab42ebff9adba90e57d57a29464a95050d602ebfc6"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-250",
@@ -8000,7 +8000,7 @@
         ],
         "sha256": "a2e1cbf218f3a893bc1acac90f72a4023a4ad4330bc05f42cb001b0756c2f870"
       },
-      "commit_sha": null
+      "commit_sha": "4d1263374023c257d19e16f422dd99d911a6ee1e"
     },
     {
       "id": "ER-EQ-251",
@@ -8011,10 +8011,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "2a0100a70cb292daea07d7e71ff959dcd7ac75cf29a84860ea533c7ece0306cc"
+      },
       "commit_sha": null
     },
     {
@@ -8026,10 +8043,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/greatsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          46,
+          47,
+          466,
+          465
+        ],
+        "sha256": "9f1510039f34f0ab35cec45276174d3b295b406131309d071869af925ba7ed45"
+      },
       "commit_sha": null
     },
     {
@@ -8041,10 +8075,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/straight_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          41,
+          38,
+          470,
+          474
+        ],
+        "sha256": "f2159b536ae6f2a0b133412db341a00724573a2e3eff007a80c1060bf1027030"
+      },
       "commit_sha": null
     },
     {
@@ -8056,10 +8107,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "4f387876871b1a357620cec14858f8487e752bab9ae396f3e1e50969c651f31d"
+      },
       "commit_sha": null
     },
     {
@@ -8071,10 +8139,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/longsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          38,
+          469,
+          474
+        ],
+        "sha256": "08a7baf2542a9509e515bca6f2521bcbf23ce64707ae53d93ede899b1767d0f9"
+      },
       "commit_sha": null
     },
     {
@@ -8086,10 +8171,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "934eb5e882fc1f78bbe209523752b2f70d73904d8bb3add1dc38b898187edbfc"
+      },
       "commit_sha": null
     },
     {
@@ -8101,10 +8203,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/curved_sword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          38,
+          44,
+          473,
+          467
+        ],
+        "sha256": "ce936752d7b82327ff5383167b8781df2281a77a9644ccebabf6a971785a60be"
+      },
       "commit_sha": null
     },
     {
@@ -8116,10 +8235,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/greatsword.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          46,
+          47,
+          466,
+          465
+        ],
+        "sha256": "3ee372ac0d7a10767c478f1e1c5ff6bf97725e813eeb5c000e7f022cfbfb495c"
+      },
       "commit_sha": null
     },
     {
@@ -8131,10 +8267,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "3caeb023ccdf721cccf8dc4dbc1c3ae8a7f9c132d64cdfdd88600d9f446d3cb8"
+      },
       "commit_sha": null
     },
     {
@@ -8146,10 +8299,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "2f3590e2364305dfe15ed730642b7ca50fcab0f850b52b6b4943189123345717"
+      },
       "commit_sha": null
     },
     {
@@ -8161,10 +8331,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "a3a8a636f10a7cb19029063106c264a35f42f588af0640238c817a0a322c684d"
+      },
       "commit_sha": null
     },
     {
@@ -8176,10 +8363,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "ca78394bc37f3b3b8229bc3fee8ad5651cb17563b403dbdd80accc9597859071"
+      },
       "commit_sha": null
     },
     {
@@ -8191,10 +8395,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "b4bf64f79e1108e3d80384ee344ad8ac302fdb3da508749bb36423f2c54c6f25"
+      },
       "commit_sha": null
     },
     {
@@ -8206,10 +8427,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "966fe9cddd39344643cf92ba0e1efc35b8797634aba2fab38c1e53cf2a4de8cb"
+      },
       "commit_sha": null
     },
     {
@@ -8221,10 +8459,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/nature_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          52,
+          38,
+          460,
+          474
+        ],
+        "sha256": "ff0f9680798320d23ae68d2d3692ae6f634805cbf8fc35bf0008077aa4253da3"
+      },
       "commit_sha": null
     },
     {
@@ -8236,10 +8491,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "c4342197e6a43179e527c3e252f16010364003eceaaa73e59f4c624ddb429ee4"
+      },
       "commit_sha": null
     },
     {
@@ -8251,10 +8523,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "9a4ba6c9dc745886a7e946b88ced0b3c1fd07dd4f25d7dad30847a0b20ca77f4"
+      },
       "commit_sha": null
     },
     {
@@ -8266,10 +8555,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "3d727ab402d959004792726ff9a2afabff607d4ad81d73f5fcbf51d130029e6e"
+      },
       "commit_sha": null
     },
     {
@@ -8281,10 +8587,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "24fbc14f297313fd83541fa925232b2ee1397d757f9dec786fad1f4a7171cd1f"
+      },
       "commit_sha": null
     },
     {
@@ -8296,10 +8619,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/metal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          43,
+          38,
+          468,
+          474
+        ],
+        "sha256": "8260253e7f83a92420adc64045a6f52463c4d3b2534aff8f1b718ca0557808fb"
+      },
       "commit_sha": null
     },
     {
@@ -8311,10 +8651,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/crystal_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          38,
+          463,
+          473
+        ],
+        "sha256": "76e00d1db45c11d0602e5e411007209653a0e92e1501b6cb117f5ddcc4253acd"
+      },
       "commit_sha": null
     },
     {
@@ -8326,10 +8683,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/wood_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          49,
+          42,
+          463,
+          470
+        ],
+        "sha256": "6887477be7e0a5071e9d05552c66a26eddc4413ee6be6d18ca5fd60ae43fa9fd"
+      },
       "commit_sha": null
     },
     {
@@ -8341,10 +8715,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          45,
+          38,
+          467,
+          474
+        ],
+        "sha256": "e9a78352e5338c55175699f5cd6eb3b3f28f158ff3e625fb26a84bb5291bfc54"
+      },
       "commit_sha": null
     },
     {
@@ -8356,10 +8747,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/engineering_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          45,
+          38,
+          467,
+          474
+        ],
+        "sha256": "ea5cfcf5d082890152b8ed494e726bdeeaf4ddc9b67ccd89f35e38346b138b48"
+      },
       "commit_sha": null
     },
     {
@@ -8371,10 +8779,27 @@
       "rarity": "에픽",
       "priority": null,
       "source_sha256": "9d5c32bd1d7891835f1e4f45b4c720146c8335ea63809c813a825e1774fb6f16",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "assets/items/templates/equipment/relic_staff.png",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          512,
+          512
+        ],
+        "mode": "RGBA",
+        "alpha_extrema": [
+          0,
+          255
+        ],
+        "content_bounds": [
+          42,
+          40,
+          469,
+          471
+        ],
+        "sha256": "793bf9621501187f18a23a7191cf0c09eaf0e405907dfba3a33da9836fc25082"
+      },
       "commit_sha": null
     },
     {
