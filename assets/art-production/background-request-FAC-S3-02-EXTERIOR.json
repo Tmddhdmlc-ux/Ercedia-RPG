@@ -1,0 +1,8 @@
+{
+  "id": "IMG-FAC-S3-02-EXTERIOR",
+  "path": "assets/backgrounds/facilities/FAC-S3-02/exterior.png",
+  "canon_source": "locations/regional_dungeons_facilities.json#FAC-S3-02",
+  "reference": "assets/backgrounds/regions/S3/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Exterior FAC-S3-02 Aquaren Training Infirmary, southern shipyard coast region. A restful single-story white sandstone recovery house with blue tile roof and deeply shaded timber porch, sturdy doors and soft windows. Neatly folded linen bandages, unlabelled medicine jars and dried herb bundles on side table, simple covered treatment cot visible just inside, sheltered bench and herb pots. Shipyard and calm blue water faint behind, warm maritime daylight matching reference. No ship-training deck or bookstore; purpose treatment and recovery after training. New close infirmary facade upper-left/middle, wide unobstructed pale stone courtyard center-right and clear bottom quarter. No people, flags, symbols, red cross, readable text, modern hospital devices, gore, magic healing spectacle or storyline events.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5dea18dd-dbbf-4d8f-b67e-b331bfb051e5.png"
+}

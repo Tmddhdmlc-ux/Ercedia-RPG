@@ -1,0 +1,8 @@
+{
+  "id": "IMG-FAC-S4-02-EXTERIOR",
+  "path": "assets/backgrounds/facilities/FAC-S4-02/exterior.png",
+  "canon_source": "locations/regional_dungeons_facilities.json#FAC-S4-02",
+  "reference": "assets/backgrounds/regions/S4/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Exterior FAC-S4-02 Solmeria Training Infirmary, southern orchard and merchant region. A well-kept modest white sandstone recovery lodge with blue tiled roof, shaded arcade and timber entry doors. Quiet porch left with folded cream linen bandages, plain unlabelled glazed medicine jars, dried herb bundles and simple covered treatment cot seen inside. Orchard tree in a small side garden, stone planters with herbs and sheltered wooden bench. Regional low merchant roofs faint behind, warm golden sunny daylight, no sea or royal palace. New close facade camera, main door upper-left/middle, broad empty pale stone courtyard center-right for standing character, lower quarter clear. No people, injuries, flags, crests, red cross, text, modern medical equipment, magic spectacle or plot events.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-d4144d44-78cc-4b0a-bbe2-3d3dfe0ed880.png"
+}

@@ -1,0 +1,8 @@
+{
+  "id": "IMG-FAC-S2-02-EXTERIOR",
+  "path": "assets/backgrounds/facilities/FAC-S2-02/exterior.png",
+  "canon_source": "locations/regional_dungeons_facilities.json#FAC-S2-02",
+  "reference": "assets/backgrounds/regions/S2/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Exterior FAC-S2-02 Servan Training Infirmary, southern INLAND fortress region. A quiet low warm white sandstone treatment-and-recovery house with blue-gray tiled roof and cream shaded porch, sturdy oak door, simple bench and green herb pots by wall. Open sheltered porch left shows folded linen bandages, plain medicine jars, dried herbs and simple medieval treatment cot inside, no labels or symbols. Olive tree beside building and fortified inland walls softly behind, NO SEA OR BOATS. Calm bright daylight matching reference. New close facility facade, main entrance upper-left/middle, wide empty paved forecourt center-right and clear dialogue quarter. No people, injury, red crosses, flags, crests, lettering, modern medical devices, magic healing spectacle or plot events.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-8a778a13-d0f8-4d9a-89b9-9a0bf99025d6.png"
+}

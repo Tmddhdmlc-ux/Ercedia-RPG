@@ -1,0 +1,8 @@
+{
+  "id": "IMG-FAC-E4-02-EXTERIOR",
+  "path": "assets/backgrounds/facilities/FAC-E4-02/exterior.png",
+  "canon_source": "locations/regional_dungeons_facilities.json#FAC-E4-02",
+  "reference": "assets/backgrounds/regions/E4/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Exterior FAC-E4-02 Silvern Mana Rest House, eastern rugged highland bridge-road region. Calm compact two-story gray stone rest lodge with slate roof, protected timber entry porch and bench, soft warm windows, plain water jugs on side table. Small fixed teal crystal lamps flank doorway; hardy highland herb pots and green shrubs in sheltered courtyard margins. Canyon bridge and rocky highlands faint behind, matches reference regional stone construction. This place serves mana stabilization and basic knowledge consultation, not a spell shop or ritual chamber. New close facade camera, entry upper-left/middle, wide clear cobbled forecourt center-right for character and bottom quarter uncluttered. No people, flags, banners, emblems, readable text, floating magic, modern spa devices or plot events.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-24fc84a8-e88b-4970-99b7-49ed401c4d72.png"
+}

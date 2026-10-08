@@ -1,0 +1,8 @@
+{
+  "id": "IMG-FAC-E2-02-EXTERIOR",
+  "path": "assets/backgrounds/facilities/FAC-E2-02/exterior.png",
+  "canon_source": "locations/regional_dungeons_facilities.json#FAC-E2-02",
+  "reference": "assets/backgrounds/regions/E2/hub.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  Exterior FAC-E2-02 Eisenkrone Mana Rest House, eastern workshop-city region. A compact tranquil two-story gray limestone rest lodge with angular slate roof, copper-edged rain gutters, arched wooden entry and sheltered bench alcove with plain water pitchers. Modest teal crystal lantern fixtures anchored beside doorway, warm soft windows, small potted green plants and protected seating. No bookstore stock porch, heavy industrial machinery, forge, telescope, active portals or magical spectacle. Region's workshop roofs and stone lanes softly behind, entirely NEW close restful lodge facade. Main entry upper-left/middle, broad empty stone courtyard center-right for character, clear bottom quarter. No people, text, signs, flags, banners, crests or modern spa devices.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-9b17a070-8c73-403c-80ef-9bd33a331c0a.png"
+}

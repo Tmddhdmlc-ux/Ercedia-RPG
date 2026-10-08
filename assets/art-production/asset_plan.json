@@ -13164,7 +13164,7 @@
         "mode": "RGB",
         "sha256": "4f518727a40413afd9921f27ace45ab98e4805f6406d8d1d0d293be5e52d2d32"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W2-OVERVIEW",
@@ -13186,7 +13186,7 @@
         "mode": "RGB",
         "sha256": "f7da47341c1e5c08759af5b307b77b2c3285e46df8635c1755974e821fd500bf"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W2-HUB",
@@ -13208,7 +13208,7 @@
         "mode": "RGB",
         "sha256": "cc057044b60651a50871da7697c4e17ebda914c3ada64440bb10e4fce5aade23"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W3-OVERVIEW",
@@ -13230,7 +13230,7 @@
         "mode": "RGB",
         "sha256": "c0bf2cd751c12c0532bea94d9e9ea50d35aac10445b11059076fbfcf13d7bcc8"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W3-HUB",
@@ -13252,7 +13252,7 @@
         "mode": "RGB",
         "sha256": "06b883a17da48f7563a9dc1e86248b3a944817f8a833b7c57d8aeb2a9222ab32"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W4-OVERVIEW",
@@ -13274,7 +13274,7 @@
         "mode": "RGB",
         "sha256": "8efaa4b8518336fb3f2748292c85af2ce836a8f78c12d386fa8d26622e11dc32"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W4-HUB",
@@ -13296,7 +13296,7 @@
         "mode": "RGB",
         "sha256": "0fe9ba93a1acb0458f5b8776bccc3bcfa2e86bc5421dee1d961ba83fcfa5668a"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W5-OVERVIEW",
@@ -13318,7 +13318,7 @@
         "mode": "RGB",
         "sha256": "3f24f02e2d48cf67e1a0297ab9bb9561b2ccebca4cb3e87401ca4193715c09c0"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-W5-HUB",
@@ -13340,7 +13340,7 @@
         "mode": "RGB",
         "sha256": "67356a1518586135ef752ca85cf72e11bdef55093464151e0f253c20038f787f"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E1-OVERVIEW",
@@ -13362,7 +13362,7 @@
         "mode": "RGB",
         "sha256": "1202f72330f2f70c086fe6c0bca1d13910efaf4d7932d67a1f3d4633147e56ad"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E1-HUB",
@@ -13384,7 +13384,7 @@
         "mode": "RGB",
         "sha256": "10c5120a8b46994b37ceea782ccafd6df8bdac588370cf2fb8f22c5fbc52ccb7"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E2-OVERVIEW",
@@ -13406,7 +13406,7 @@
         "mode": "RGB",
         "sha256": "cdf2fb69d15f267b5f18ea62f9802eb26787ca4e728cad9f4afb1f1c33163224"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E2-HUB",
@@ -13428,7 +13428,7 @@
         "mode": "RGB",
         "sha256": "7fa37ed2fbbc3eec260eaa99f8fbe7a82aa734502e30ddd60243b5f51c63528d"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E3-OVERVIEW",
@@ -13450,7 +13450,7 @@
         "mode": "RGB",
         "sha256": "6a548b0f1d3036eea9f004cfa9646fb7a1536acd1576d6605b9d5cd0e7b73de9"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E3-HUB",
@@ -13472,7 +13472,7 @@
         "mode": "RGB",
         "sha256": "28e7baf05d7209fb5cdf314a9ac001453aee392ac01fa6a67c2da237b0ff3621"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E4-OVERVIEW",
@@ -13494,7 +13494,7 @@
         "mode": "RGB",
         "sha256": "97264b38c55df30c4317b4c78c75c8b1c681660176aed4392d47016857331af4"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-E4-HUB",
@@ -13516,7 +13516,7 @@
         "mode": "RGB",
         "sha256": "a51d1537c6aab863448586038eacfd0dc1c61ae0fb1e99c1d0836ae957d4a6f7"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S1-OVERVIEW",
@@ -13538,7 +13538,7 @@
         "mode": "RGB",
         "sha256": "6ce0ac05cfeb7573dd86e4aa7bb979c78ada744cfca1df83d1e0045dabe08b75"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S1-HUB",
@@ -13560,7 +13560,7 @@
         "mode": "RGB",
         "sha256": "79fb2a35ae8f430e8df75c21f7fdbd9a5c103008e89524a1c7baa0609b170a85"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S2-OVERVIEW",
@@ -13582,7 +13582,7 @@
         "mode": "RGB",
         "sha256": "ab8f861e74d4c2700aca8abedafe80a1804c04c6a18a39858ccecaae53412541"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S2-HUB",
@@ -13604,7 +13604,7 @@
         "mode": "RGB",
         "sha256": "d7ed8b87f03dd6e91c66b3cd1b4a128b3c2f6ed283d395f280f0b8e3458b07f1"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S3-OVERVIEW",
@@ -13626,7 +13626,7 @@
         "mode": "RGB",
         "sha256": "72108cafd5cdd6b1e47a20f9c9a7949135adb37b20ecd30a13cd2b54df0a4034"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S3-HUB",
@@ -13648,7 +13648,7 @@
         "mode": "RGB",
         "sha256": "522e3dec202645e9a7b044f01e8a268183433445fa280e5dfed8e34649d5d73f"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S4-OVERVIEW",
@@ -13670,7 +13670,7 @@
         "mode": "RGB",
         "sha256": "1e25e62954747b089b45ea5b88eba5cc9c3eb95ca0fb2684d4fe93a2ca35efe4"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-S4-HUB",
@@ -13692,7 +13692,7 @@
         "mode": "RGB",
         "sha256": "b5b799712457bb2449c4af35e38572d3c421128b462765184418c38ec68fe11f"
       },
-      "commit_sha": null
+      "commit_sha": "b64e96f49c4704d2a9d7b6487f8e0106eaa61cda"
     },
     {
       "id": "IMG-FAC-W1-01-EXTERIOR",
@@ -13703,10 +13703,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "b50c0bfee84e79d6d0177cc60e657ab6e8bd54e38ec152ee6a6d362796f48454"
+      },
       "commit_sha": null
     },
     {
@@ -13733,10 +13740,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "8a810af458289396f5844f2384b316e85b30be6ae3c689464e7ef956966ae98e"
+      },
       "commit_sha": null
     },
     {
@@ -13763,10 +13777,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "638aed36ae19c2ccd05ff53785fe1e97506a5d7269cff99c1388fe50f40b7f30"
+      },
       "commit_sha": null
     },
     {
@@ -13793,10 +13814,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "26b3c096880a94dcee80cddafbecebac640207339129fd31901dd613ec38590f"
+      },
       "commit_sha": null
     },
     {
@@ -13823,10 +13851,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "aa52c79cdc70093e7ea3cd486256eac82d1a1501d2c2c592adde16bee67ff1de"
+      },
       "commit_sha": null
     },
     {
@@ -13853,10 +13888,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "6f1d82cf29f24d9d152f145af9609d63c0289686ae57edfc4fd3f0fba2618be3"
+      },
       "commit_sha": null
     },
     {
@@ -13883,10 +13925,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "c86b344edbc6df558fc76cd564c543db4f9bb645ad0636fb182fcb908712ac20"
+      },
       "commit_sha": null
     },
     {
@@ -13913,10 +13962,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "c495007c41440d1d89462088751729f09229937a8fc941da54a5264c379a939f"
+      },
       "commit_sha": null
     },
     {
@@ -13943,10 +13999,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "8795bc45b20dd518355a9ed170a3a85537f173e293db27b10b166e829bb99654"
+      },
       "commit_sha": null
     },
     {
@@ -13973,10 +14036,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "718f0ca790f2a9f27d3f7e5d6ed924794ea8981e7a694c4ca22468dbfc11a24b"
+      },
       "commit_sha": null
     },
     {
@@ -14003,10 +14073,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "2893015fffd69ecff3b2d3fa3093ff4015fcdfd0b7cca9edf43e1e52a4a14e62"
+      },
       "commit_sha": null
     },
     {
@@ -14033,10 +14110,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "97d9cfba182fe4075713895b9f1996e964d9e76169518d33485fda5116037c2e"
+      },
       "commit_sha": null
     },
     {
@@ -14063,10 +14147,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "edf1c2a65616db74f25c9d079b601e7f963e576323faabbba2e401c72ed33879"
+      },
       "commit_sha": null
     },
     {
@@ -14093,10 +14184,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "073ae28e8e3d1fa5d1980e8fd0a188e7f014ed3fe14d2e343a1c7e2df5e40927"
+      },
       "commit_sha": null
     },
     {
@@ -14123,10 +14221,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "46eec5da156d3023ac7f8b48dd28e7d1cd19d3fbebbf595654b4672ced33fa2e"
+      },
       "commit_sha": null
     },
     {
@@ -14153,10 +14258,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "364e3e79505e345a9a96d7b6ad82069a6c669be87713cdfe704ac54577285be8"
+      },
       "commit_sha": null
     },
     {
@@ -14183,10 +14295,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "fc6c934712c3aeaf2a5889d38f5593b65b922b5c7dd6ccef0602b15b97dcbc5c"
+      },
       "commit_sha": null
     },
     {
@@ -14213,10 +14332,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "d11c98ab796679e893aa60ed906bd1e816e7aa764dcce79ab10fd9cc596e269f"
+      },
       "commit_sha": null
     },
     {
@@ -14243,10 +14369,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "c61798503ac65295c58c6a7d657759c0d30bb3ff0d606b58caacd0397e8385d9"
+      },
       "commit_sha": null
     },
     {
@@ -14273,10 +14406,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "cc88236a732a77d8855d9fb540a836198e4b8999ac15683e35b2caa4b6d1feca"
+      },
       "commit_sha": null
     },
     {
@@ -14303,10 +14443,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "c3b3233f978fe789dfdfe9dcc6b4e9f1bb06befdceeee3aa9744317da7c1fa34"
+      },
       "commit_sha": null
     },
     {
@@ -14333,10 +14480,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "08b461b954ca26aa5358e88bbb8f23ea31f6f2791f91f4e723082af864f22f4b"
+      },
       "commit_sha": null
     },
     {
@@ -14363,10 +14517,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "5c50852124456e7a42eb651c7c84fa921f7a2aba32c4fbde8ef6955e8b94d04d"
+      },
       "commit_sha": null
     },
     {
@@ -14393,10 +14554,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "5ce68caab9102143b45cf071cfeab0127cc092fcfa46327d2483f60f486873a0"
+      },
       "commit_sha": null
     },
     {
@@ -14423,10 +14591,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "e95d3a45a350617f940f6775c647beed54133575d34280f573ac160086abb5cf"
+      },
       "commit_sha": null
     },
     {
@@ -14453,10 +14628,17 @@
       "rarity": null,
       "priority": "P1",
       "source_sha256": "0eaf7491afbc2549a9ae0289793f320ac0440fb2fd1af5cb1eaf981a367c290d",
-      "status": "pending",
-      "template": null,
-      "visual_verified": false,
-      "file_checks": null,
+      "status": "verified",
+      "template": "individual-imagegen",
+      "visual_verified": true,
+      "file_checks": {
+        "size": [
+          1536,
+          1024
+        ],
+        "mode": "RGB",
+        "sha256": "1b837438111ae02c7f3f23c09c30950098b474874ecd16af511f179e6ec8a885"
+      },
       "commit_sha": null
     },
     {

@@ -9,9 +9,9 @@
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 40 | 40 |
-| 장소 | 26 | 261 |
+| 장소 | 52 | 261 |
 
-총 검수 완료: **436/671**.
+총 검수 완료: **462/671**.
 
 ## 목록과 재개 기준
 
@@ -152,6 +152,14 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-p1-batch-01.json](art-production/locations-p1-batch-01.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `b64e96f49c4704d2a9d7b6487f8e0106eaa61cda`
+
+### locations-p1-batch-02
+
+- 대상/완료 ID: IMG-FAC-W1-01-EXTERIOR, IMG-FAC-W1-02-EXTERIOR, IMG-FAC-W2-01-EXTERIOR, IMG-FAC-W2-02-EXTERIOR, IMG-FAC-W3-01-EXTERIOR, IMG-FAC-W3-02-EXTERIOR, IMG-FAC-W4-01-EXTERIOR, IMG-FAC-W4-02-EXTERIOR, IMG-FAC-W5-01-EXTERIOR, IMG-FAC-W5-02-EXTERIOR, IMG-FAC-E1-01-EXTERIOR, IMG-FAC-E1-02-EXTERIOR, IMG-FAC-E2-01-EXTERIOR, IMG-FAC-E2-02-EXTERIOR, IMG-FAC-E3-01-EXTERIOR, IMG-FAC-E3-02-EXTERIOR, IMG-FAC-E4-01-EXTERIOR, IMG-FAC-E4-02-EXTERIOR, IMG-FAC-S1-01-EXTERIOR, IMG-FAC-S1-02-EXTERIOR, IMG-FAC-S2-01-EXTERIOR, IMG-FAC-S2-02-EXTERIOR, IMG-FAC-S3-01-EXTERIOR, IMG-FAC-S3-02-EXTERIOR, IMG-FAC-S4-01-EXTERIOR, IMG-FAC-S4-02-EXTERIOR
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [locations-p1-batch-02.json](art-production/locations-p1-batch-02.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
 
 ### materials-batch-01
