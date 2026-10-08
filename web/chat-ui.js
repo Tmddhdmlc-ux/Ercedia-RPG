@@ -1,6 +1,7 @@
 import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
 import {battleIsActive} from './battle-model.js';
+import {updateNPC,findNPC} from './npc-model.js';
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
@@ -67,6 +68,9 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
       }
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
       state.scene=scene;state.sceneIndex=0;
+      for(const [id,p] of Object.entries(scene.npc_updates||{}))updateNPC(state,id,p);
+      if(scene.npc?.profile&&findNPC(scene.npc.id))updateNPC(state,scene.npc.id,scene.npc.profile);
+      if(commitBattle)for(const r of scene.battle.outcome.resources)if(findNPC(r.id))updateNPC(state,r.id,{hp:r.hp,mp:r.mp});
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
       if(scene.player){
         const retained=Object.fromEntries(['constitution','manaStat','realm','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));

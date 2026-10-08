@@ -11,6 +11,7 @@ import {mountNPCInfo} from './npc-info.js';
 import {mountPlayHUD} from './play-hud.js';
 import {mountNewGame} from './new-game.js';
 import {mountBattleUI} from './battle-ui.js';
+import {mountCatalogUI} from './catalog-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -45,7 +46,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-let introUI=null,battleUI=null;
+let introUI=null,battleUI=null,catalogUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -125,9 +126,9 @@ function renderDialogue(){
   if(state.scene){
     const scene=state.scene;
     $('scene-location').textContent=scene.location;$('scene-time').textContent=scene.time;
-    state.character=!!scene.npc;
+    state.character=scene.npc?.id==='serin';
     state.background=scene.background_id!==null;
-    if(scene.npc){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
+    if(scene.npc?.id==='serin'){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
       for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
     }
     renderAppearance();
@@ -185,7 +186,7 @@ function renderRegion(){
   for(const [name,value] of info?.fields||[]){const term=document.createElement('dt'),detail=document.createElement('dd');term.textContent=name;detail.textContent=value;fields.append(term,detail);}
   fields.hidden=!info?.fields.length;
   $('region-note').textContent=info?.note||'';$('region-note').hidden=!info?.note;
-  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();introUI?.syncMap();
+  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();introUI?.syncMap();catalogUI?.region();
 }
 document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.mapFaction=null;state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
 document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapFaction=null;state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});
@@ -211,10 +212,11 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();}
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();}
 const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:CDN});
+catalogUI=mountCatalogUI(state,{request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 renderAll();
 

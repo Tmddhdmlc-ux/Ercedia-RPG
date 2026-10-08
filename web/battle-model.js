@@ -1,4 +1,5 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
+import {resolveNPC,findNPC} from './npc-model.js';
 export const battleRealms={none:1,basic:1,expert:1.25,hyper:1.65,master:2.2};
 export const battleKinds=['attack','dodge','defend','counter','magic','unique','defeat'];
 export const battleElements=['water','fire','wind','electric','dark','light'];
@@ -19,6 +20,7 @@ function participant(raw){
   const p={id:str(raw.id,'참가자 ID',80),name:str(raw.name,'이름',60),side:raw.side,role:raw.role,level:num(raw.level,'레벨',1,100),rank:str(raw.rank,'공개 경지',80),realm:raw.realm,stats:{},modifiers:{},skills:[],level_hp_bonus:num(raw.level_hp_bonus,'레벨 HP 기록'),hp:num(raw.hp,'HP'),maxHp:num(raw.maxHp,'최대 HP',1),mp:num(raw.mp,'MP'),maxMp:num(raw.maxMp,'최대 MP'),speed:num(raw.speed,'속도'),art:null};
   if(!Object.hasOwn(battleRealms,p.realm))fail('기사 경지 코드');
   if(p.role==='monster'&&p.realm!=='none')fail('마수에 기사 배율 적용 금지');
+  if(p.role==='monster'&&(findNPC(p.id)?.creatureMultiplier!==undefined||raw.creature_multiplier!==undefined)){p.creature_multiplier=decimal(raw.creature_multiplier??findNPC(p.id)?.creatureMultiplier,'마수 배율',.01,10);if(findNPC(p.id))equal(p.creature_multiplier,findNPC(p.id).creatureMultiplier,'등록 마수 배율');}
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])p.stats[key]=num(raw.stats?.[key],key,1);
   for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.modifiers[key]=num(raw.modifiers?.[key]??0,key,-999999);
   const maximum=battleMaximums(p);equal(p.maxHp,maximum.hp,'최대 HP 공식');equal(p.maxMp,maximum.mp,'최대 MP 공식');equal(p.speed,battleSpeed(p),'행동 속도');
@@ -67,7 +69,7 @@ export function normalizeBattle(raw){
       if(['attack','counter'].includes(e.kind)){
         if(skill&&skill.kind!=='physical')fail('물리 기술 종류');
         const roll=num(c.base_roll,'GM 평타 판정값',10,20);equal(c.realm_multiplier,battleRealms[actor.realm],'기사 피해 배율');
-        expected=Math.max(1,Math.floor((roll+Math.floor(.65*actor.stats.strength+.2*actor.stats.dexterity)+actor.modifiers.weapon_attack+actor.modifiers.technique_bonus)*c.realm_multiplier*context-defense));
+        expected=Math.max(1,Math.floor((roll+Math.floor(.65*actor.stats.strength+.2*actor.stats.dexterity)+actor.modifiers.weapon_attack+actor.modifiers.technique_bonus)*c.realm_multiplier*(actor.creature_multiplier??1)*context-defense));
       }else{
         equal(c.realm_multiplier,1,'마법/고유능력에 기사 물리 배율 금지');
         expected=Math.max(1,Math.floor((skill.power+skill.int_coefficient*actor.stats.intelligence+skill.mana_coefficient*actor.stats.manaStat)*context-defense));
@@ -97,6 +99,7 @@ export function normalizeBattle(raw){
 export function battleFrame(battle,count){const resources=Object.fromEntries(battle.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}]));for(const e of battle.events.slice(0,count)){resources[e.actor]={hp:e.actor_hp_after,mp:e.actor_mp_after};resources[e.target]={hp:e.target_hp_after,mp:e.target_mp_after};}return resources;}
 export function validateBattleSettlement(scene,state){
   const b=scene.battle,p=b.participants.find(p=>p.role==='player'),current=state.player;
+  for(const actor of b.participants.filter(a=>a.role!=='player')){const saved=resolveNPC(state,actor.id,state.scene?.npc?.id===actor.id?state.scene.npc.profile||{}:{});if(saved&&saved.level!==null){for(const key of ['level','hp','maxHp','mp','maxMp','speed'])equal(actor[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(actor.stats[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);equal(actor.realm,saved.realm,'NPC 기사 경지');equal(actor.level_hp_bonus,saved.levelHpBonus,'NPC 레벨 HP 기록');}}
   for(const key of ['level','hp','maxHp','mp','maxMp'])equal(p[key],current[key],'현재 주인공 '+key);
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(p.stats[key],current[key],'현재 능력치 '+key);
   equal(p.realm,current.realm??'none','현재 기사 경지');equal(p.level_hp_bonus,current.levelHpBonus??0,'현재 레벨 HP 기록');

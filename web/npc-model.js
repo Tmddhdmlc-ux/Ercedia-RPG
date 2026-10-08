@@ -1,0 +1,9 @@
+import {catalogData} from './catalog-data.js';
+import {normalizeNPCProfile} from './npc-profile.js';
+export const npcCatalog=catalogData.npcs;
+export function npcRankLabel(p){const rank=p.rank||'미정';if(p.role==='monster')return '마수 등급 · '+rank;if(p.realm&&p.realm!=='none')return rank.includes('나이트')?rank:rank+' · '+({basic:'베이직',expert:'익스퍼트',hyper:'하이퍼',master:'마스터'})[p.realm]+' 나이트';return rank.includes('서클')?rank:rank+' · 전투 경지 미정';}
+export function findNPC(id){return npcCatalog.find(p=>p.id===id||p.name===id)||null;}
+export function resolveNPC(state,id,profile={}){const base=findNPC(id);if(!base)return null;const p={...base,...normalizeNPCProfile(profile),...state.npcStates?.[base.id],id:base.id};for(const [value,max] of [['hp','maxHp'],['mp','maxMp']])if(typeof p[value]==='number'&&typeof p[max]==='number')p[value]=Math.min(p[value],p[max]);return p;}
+export function npcSnapshot(state,id){const p=resolveNPC(state,id,state.scene?.npc?.id===id?state.scene.npc.profile||{}:{});if(!p)return null;return {...p,stats:{strength:p.strength,dexterity:p.dexterity,intelligence:p.intelligence,constitution:p.constitution,manaStat:p.manaStat},level_hp_bonus:p.levelHpBonus,art:p.id==='serin'?{id:'serin',outfit:state.outfit,emotion:state.expression}:null};}
+export function updateNPC(state,id,profile){const base=findNPC(id);if(!base)throw Error('등록되지 않은 인물입니다.');state.npcStates={...state.npcStates,[base.id]:{...state.npcStates?.[base.id],...normalizeNPCProfile(profile)}};}
+export function npcContext(state){const id=state.scene?.npc?.id||(state.character?'serin':null);return {catalog_digest:catalogData.digest,current_npc:id?npcSnapshot(state,id):null,npc_changes:state.npcStates||{},sources:catalogData.sources};}

@@ -1,0 +1,23 @@
+{
+  "schema_version": 1,
+  "id": "serin",
+  "name": "세린",
+  "affiliation": "써니 빌리지 순찰",
+  "rank": "베이직 나이트",
+  "level": null,
+  "stats": {
+    "strength": null,
+    "agility": null,
+    "intelligence": null,
+    "constitution": null,
+    "mana": null,
+    "hp": null,
+    "max_hp": null,
+    "mp": null,
+    "max_mp": null
+  },
+  "level_hp_bonus": 0,
+  "combat": {"speed": null,"base_attack_min": null,"base_attack_max": null},
+  "stat_status": "unassigned",
+  "notes": "기존 공개 설정의 세린을 UI에 연결하는 항목. 원본 저장소에 없던 숫자 능력치는 사용자 결정 전까지 미정으로 유지한다. 기사 경지는 기존 베이직 나이트를 따른다."
+}

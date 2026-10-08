@@ -142,3 +142,17 @@ gameBridge.restoreGameState(savedState);
 [BATTLE_SYSTEM.md](../BATTLE_SYSTEM.md) 및 [BATTLE_SCHEMA.md](BATTLE_SCHEMA.md)의 선택 battle 필드를 지원합니다. 기존 ercedia_scene/브리지/저장 v1과 설치 런처를 유지합니다. 기존 VN에서 전투 관전으로 전환하고, 사전 판정 사건을 자동 재생합니다. 재생 중 명령 입력은 없습니다. 0.5/1/2배속, 일시정지, 즉시 종료, 다시보기를 지원하며 보상은 종료 시 한 번만 반영합니다. 원화 없는 주인공/NPC/마수는 미등록 안내를 표시합니다. 세린은 몸체와 얼굴 레이어를 함께 움직입니다.
 
 [분리된 전투 데모](http://localhost:4173/tests/battle-demo.html)는 실제 GPT 없이 고정 검증 사건을 사용하며 채팅 세이브에 보상을 지급하지 않습니다. 실제 ChatGPT의 전투 JSON 생성 및 실물 휴대폰 터치는 별도 검증 범위입니다.
+
+### UI v1.4.0 캐릭터 데이터·지역 콘텐츠 연결
+
+상태창의 **인물 능력치**에서 이름·소속·지역 검색과 인물 선택을 지원합니다. NPC 100명 및 기존 핵심 인물 38명의 레벨, STR/DEX/INT/CON/MANA, HP/MP, 속도와 기초 공격을 원본 JSON에서 빌드합니다. 소스 수치는 초기 밸런싱 값이며 관계 관심도는 플레이 중 확정된 값만 표시합니다. 세린은 원본에 숫자가 없으면 미등록으로 표시하며 다른 기사의 숫자를 복사하지 않습니다. 선택적인 `characters/serin.json`이 생기면 같은 원본 형식을 읽습니다.
+
+원화가 없는 등록 인물도 `npc={id:"ER-NPC-001",outfit:"none",emotion:"base",speaker:"알윈 페르"}`처럼 대화·상태 데이터로 연결됩니다. 승인 이미지가 없는 인물에 세린 이미지를 붙이지 않습니다. 일반적인 NPC 응답 예시이며 해당 인물을 강제 등장시키는 지시가 아닙니다.
+
+`npc.profile`과 선택적인 `npc_updates={"ER-NPC-001":{hp:400,mp:100,interest:30}}`은 공개된 현재 변화를 반영합니다. profile에는 기존 필드와 `level,manaStat,speed,levelHpBonus,realm`을 지원합니다. `realm`은 none/basic/expert/hyper/master 중 하나이며 기사 승급은 실제 깨달음 판정 없이는 변경하지 않습니다. 변경은 선택적인 세이브 `npcStates`에 기록되며 기존 저장은 자동으로 새 키를 얻지 않습니다. 초기 GitHub 수치와 진행 중 자원·관계 변화는 분리합니다.
+
+브리지 v1에 `getNPCCatalog()`, `getNPC(id)`, `updateNPC(id,publicChanges)`를 추가했습니다. GPT 요청의 `npc_catalog.current_npc`는 정보창과 같은 현재 수치를 제공합니다. 등록된 NPC의 전투 시작 수치는 현재 저장과 대조하며 종료 HP/MP는 NPC 상태에도 한 번 반영합니다. 고정 전투 데모의 임의 수치를 실제 NPC 수치로 사용하면 검증에서 거절될 수 있습니다.
+
+영주령 지도에서 26개 던전·26개 시설의 목록을 표시하고 **탐색 요청/방문 요청**으로 기존 GPT 연결에 행동을 전달합니다. 클릭만으로 이동·입장·전투·보상을 확정하지 않습니다. 국경·위치·입구 발견·시설 비용은 GPT가 규칙과 진행 상황에 따라 판정합니다. `dungeon_layouts.json`은 GPT 요청의 참조로 전달하며 미발견 비밀 방이나 아직 발생하지 않은 교전을 자동 표시하지 않습니다.
+
+GitHub Actions의 원본 JSON 변경 감지를 확장했습니다. 데이터가 바뀌면 공개 필드만 `web/catalog-data.js`와 UI 번들에 생성되고 런처의 최신 버전 확인/업데이트로 반영됩니다. 숫자 변경이 진행 중인 전투에 즉시 섞이지 않도록 기존 안전한 업데이트 방식은 유지합니다. 기존 캐릭터 원본·원화·지도 좌표는 변경하지 않았습니다. 실제 ChatGPT/브라우저 클릭 시연은 사용자 요청이 없어 이번 변경에서 수행하지 않았습니다.

@@ -1,3 +1,4 @@
+import {resolveNPC,npcRankLabel} from './npc-model.js';
 export function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
@@ -6,16 +7,17 @@ export function mountNPCInfo(state){
   const display=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'미정';
   const current=()=>state.scene?state.scene.npc:(state.character?{id:'serin',speaker:'세린'}:null);
   function refresh(){
-    const npc=current(),profile=npc?.profile||{};
-    button.hidden=!npc||!state.character;
+    const npc=current(),profile=npc?resolveNPC(state,npc.id,npc.profile||{})||npc.profile||{}:{};
+    button.hidden=!npc;
     if(button.hidden){hide();return;}
     const name=profile.name||npc.speaker||'이름 미정';
     button.textContent=`${name} · 메뉴`;$('npc-menu-name').textContent=name;
     stage.querySelectorAll('.person').forEach(image=>{image.tabIndex=image.hidden?-1:0;image.setAttribute('role','button');image.setAttribute('aria-label',`${name} 초상화 · 메뉴 열기`);image.setAttribute('aria-controls','npc-action-menu');});
     $('npc-info-name').textContent=name;
     $('npc-info-affiliation').textContent=profile.affiliation||'소속 미정';
-    $('npc-info-rank').textContent=profile.rank||(npc.id==='serin'?'베이직 나이트':'경지 미정');
-    for(const key of ['strength','dexterity','intelligence','constitution'])$('npc-info-'+key).textContent=display(profile[key]);
+    $('npc-info-rank').textContent=npcRankLabel(profile);
+    for(const key of ['level','strength','dexterity','intelligence','constitution','manaStat'])$('npc-info-'+key).textContent=display(profile[key]);
+    $('npc-info-source').textContent=profile.statStatus==='unassigned'?'숫자 능력치 미등록 · 설정 확인 필요':'GitHub 초기 수치 + 현재 게임 변화 · 초기 밸런싱 기준';
     for(const [key,maxKey] of [['hp','maxHp'],['mp','maxMp']]){
       const value=profile[key],max=profile[maxKey],known=typeof value==='number'&&typeof max==='number'&&max>0;
       $('npc-info-'+key).textContent=`${display(value)} / ${display(max)}`;
@@ -36,7 +38,7 @@ export function mountNPCInfo(state){
     panel.style.top=Math.round(Math.max(12,Math.min(bounds.height-height-12,y)))+'px';
   }
   function openMenu(event){
-    if(!current()||!state.character)return;
+    if(!current())return;
     trigger=event?.target?.matches('.person')?event.target:button;
     point=event?.type==='click'&&event.detail?{x:event.clientX,y:event.clientY}:null;
     card.hidden=true;menu.hidden=false;button.setAttribute('aria-expanded','true');refresh();position(menu);view.focus({preventScroll:true});
