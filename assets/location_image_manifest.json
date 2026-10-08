@@ -872,7 +872,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W1-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W1-01",
       "region_id": "W1"
@@ -922,7 +922,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W1-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W1-02",
       "region_id": "W1"
@@ -985,7 +985,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W2-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W2-01",
       "region_id": "W2"
@@ -1035,7 +1035,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W2-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W2-02",
       "region_id": "W2"
@@ -1111,7 +1111,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W3-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W3-01",
       "region_id": "W3"
@@ -1161,7 +1161,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W3-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W3-02",
       "region_id": "W3"
@@ -1224,7 +1224,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W4-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W4-01",
       "region_id": "W4"
@@ -1287,7 +1287,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W4-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W4-02",
       "region_id": "W4"
@@ -1363,7 +1363,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W5-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W5-01",
       "region_id": "W5"
@@ -1413,7 +1413,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-W5-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-W5-02",
       "region_id": "W5"
@@ -1476,7 +1476,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E1-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E1-01",
       "region_id": "E1"
@@ -1539,7 +1539,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E1-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E1-02",
       "region_id": "E1"
@@ -1628,7 +1628,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E2-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E2-01",
       "region_id": "E2"
@@ -1691,7 +1691,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E2-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E2-02",
       "region_id": "E2"
@@ -1780,7 +1780,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E3-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E3-01",
       "region_id": "E3"
@@ -1843,7 +1843,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E3-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E3-02",
       "region_id": "E3"
@@ -1919,7 +1919,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E4-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E4-01",
       "region_id": "E4"
@@ -1969,7 +1969,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-E4-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-E4-02",
       "region_id": "E4"
@@ -2032,7 +2032,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S1-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S1-01",
       "region_id": "S1"
@@ -2082,7 +2082,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S1-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S1-02",
       "region_id": "S1"
@@ -2145,7 +2145,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S2-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S2-01",
       "region_id": "S2"
@@ -2208,7 +2208,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S2-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S2-02",
       "region_id": "S2"
@@ -2284,7 +2284,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S3-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S3-01",
       "region_id": "S3"
@@ -2334,7 +2334,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S3-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S3-02",
       "region_id": "S3"
@@ -2410,7 +2410,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S4-01/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S4-01",
       "region_id": "S4"
@@ -2473,7 +2473,7 @@
       "category": "dungeon_entrance",
       "path": "assets/backgrounds/dungeons/DUN-S4-02/entrance.png",
       "priority": "P1",
-      "status": "not_created",
+      "status": "created_visual_verified",
       "source": "locations/regional_dungeons_facilities.json",
       "dungeon_id": "DUN-S4-02",
       "region_id": "S4"

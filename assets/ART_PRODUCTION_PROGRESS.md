@@ -9,9 +9,9 @@
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 40 | 40 |
-| 장소 | 52 | 261 |
+| 장소 | 78 | 261 |
 
-총 검수 완료: **462/671**.
+총 검수 완료: **488/671**.
 
 ## 목록과 재개 기준
 
@@ -160,6 +160,14 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-p1-batch-02.json](art-production/locations-p1-batch-02.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `f4e6ee152e50985d5e754056344e0acf43f4e83e`
+
+### locations-p1-batch-03
+
+- 대상/완료 ID: IMG-DUN-W1-01-ENTRANCE, IMG-DUN-W1-02-ENTRANCE, IMG-DUN-W2-01-ENTRANCE, IMG-DUN-W2-02-ENTRANCE, IMG-DUN-W3-01-ENTRANCE, IMG-DUN-W3-02-ENTRANCE, IMG-DUN-W4-01-ENTRANCE, IMG-DUN-W4-02-ENTRANCE, IMG-DUN-W5-01-ENTRANCE, IMG-DUN-W5-02-ENTRANCE, IMG-DUN-E1-01-ENTRANCE, IMG-DUN-E1-02-ENTRANCE, IMG-DUN-E2-01-ENTRANCE, IMG-DUN-E2-02-ENTRANCE, IMG-DUN-E3-01-ENTRANCE, IMG-DUN-E3-02-ENTRANCE, IMG-DUN-E4-01-ENTRANCE, IMG-DUN-E4-02-ENTRANCE, IMG-DUN-S1-01-ENTRANCE, IMG-DUN-S1-02-ENTRANCE, IMG-DUN-S2-01-ENTRANCE, IMG-DUN-S2-02-ENTRANCE, IMG-DUN-S3-01-ENTRANCE, IMG-DUN-S3-02-ENTRANCE, IMG-DUN-S4-01-ENTRANCE, IMG-DUN-S4-02-ENTRANCE
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [locations-p1-batch-03.json](art-production/locations-p1-batch-03.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
 
 ### materials-batch-01

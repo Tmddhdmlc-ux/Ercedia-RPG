@@ -12,7 +12,7 @@ args=p.parse_args()
 run(sys.executable,'artifacts/art-production/verify_batch.py',args.batch)
 run('node','tampermonkey/build.mjs')
 # The builder rewrites these files' line endings on Windows. Discard only proven cosmetic output.
-for path in ['tampermonkey/ercedia-rpg.meta.js','tampermonkey/ercedia-rpg.user.js','web/catalog-data.js','web/engine-data.js','web/faction-data.js','web/intro-data.js','web/quest-data.js']:
+for path in ['tampermonkey/ercedia-rpg.meta.js','tampermonkey/ercedia-rpg.user.js','web/catalog-data.js','web/engine-data.js','web/faction-data.js','web/intro-data.js','web/quest-data.js','web/character-art-data.js','integration/assets.json']:
     run('git','diff','--quiet','--ignore-space-at-eol','--',path)
     run('git','restore','--',path)
 run('git','add','artifacts/art-production','assets')
