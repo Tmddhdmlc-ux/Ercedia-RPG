@@ -14,6 +14,7 @@ import {mountBattleUI} from './battle-ui.js';
 import {mountCatalogUI} from './catalog-ui.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {locationLabel as canonicalLocationLabel} from './location-label.js';
+import {mountTitleMenu} from './title-menu.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -48,7 +49,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-let introUI=null,battleUI=null,catalogUI=null;
+let introUI=null,battleUI=null,catalogUI=null,titleUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -214,12 +215,13 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();}
-const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI});
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();}
+const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:CDN});
 catalogUI=mountCatalogUI(state,{request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
+titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
 renderAll();
 
 const game=document.querySelector('.game');

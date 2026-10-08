@@ -119,13 +119,25 @@
 @media(max-width:600px){.battle-participant{grid-template-columns:1fr auto;padding:8px 6px}.battle-participant>span:nth-of-type(2){font-size:12px}.battle-arena{inset:150px 0 110px}.battle-slot{align-items:center}.battle-visual{max-height:80vw}.game[data-battle=active]:not(.is-expanded) .stage{min-height:480px}.battle-participant strong{font-size:16px}}
 /* Keep the shared rarity frame through hover and keyboard focus on every item surface. */
 .item-rarity[data-rarity],.item-rarity[data-rarity]:hover,.item-rarity[data-rarity]:focus{border:2px solid var(--item-rarity-color);box-shadow:var(--item-rarity-glow)}
+
+/* Animated title uses only CSS; original character art and save state remain intact. */
+.title-screen-active .masthead,.title-screen-active .intro,.title-screen-active .settings,.title-screen-active .asset-details,.title-screen-active .footer{display:none!important}.title-screen-active .workspace{display:block}.game[data-title=active]>:not(#title-screen){display:none!important}.game[data-title=active]>#title-screen{display:grid!important}.game[data-title=active]{overflow:hidden;background:#050b18}
+.title-screen{isolation:isolate;position:relative;overflow:hidden;min-height:min(760px,calc(100dvh - 32px));padding:clamp(28px,8vh,88px) 20px;place-items:center;text-align:center;background:radial-gradient(ellipse at 50% 35%,#234258 0,#111e35 35%,#050b18 75%);color:#fff}.title-screen[hidden]{display:none!important}.title-screen::before,.title-screen::after{content:'';position:absolute;pointer-events:none;inset:10%;border:1px solid #e7c88720;transform:rotate(45deg);z-index:-1}.title-screen::after{inset:17%;border-color:#a9d9f020;transform:rotate(-45deg)}
+.title-aura{position:absolute;inset:-40%;z-index:-1;pointer-events:none;background:conic-gradient(from 0deg,transparent,#b4dff016,transparent 35%,#e7c88715,transparent 70%);animation:title-orbit 50s linear infinite}.title-stars{position:absolute;inset:0;z-index:-1;pointer-events:none;background-image:radial-gradient(circle,#fff0c5 1px,transparent 2px),radial-gradient(circle,#a5d4eb99 1px,transparent 2px);background-size:137px 157px,211px 229px;background-position:20px 50px,83px 107px;opacity:.3;animation:title-stars 12s ease-in-out infinite alternate}
+.title-content{width:min(100%,760px);animation:title-arrive 1.3s cubic-bezier(.16,1,.3,1) both}.title-kicker{font:12px Georgia,serif;letter-spacing:.38em;color:#a9c9d7;margin:0 0 26px}.title-logo{margin:0;font-family:'Malgun Gothic',serif;font-weight:800;letter-spacing:-.055em;font-size:clamp(38px,7.5vw,90px);line-height:1.25;color:#f3dbab;text-shadow:0 2px 0 #694f2e,0 8px 35px #000,0 0 50px #d8b47535;animation:title-glow 5s ease-in-out 1.2s infinite alternate}.title-logo span{display:block;font:400 clamp(18px,3vw,30px) Georgia,serif;letter-spacing:.6em;margin:12px 0 0 .6em;color:#b6d4e0}.title-rule{height:1px;width:min(300px,65%);margin:32px auto;background:linear-gradient(90deg,transparent,#e8c583,transparent);position:relative}.title-rule::after{content:'✦';position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);color:#edcd91;background:#132337;padding:0 14px}
+.title-menu{display:grid;gap:14px;width:min(310px,100%);margin:46px auto 0}.title-menu button{position:relative;min-height:60px;font-size:22px;letter-spacing:.1em;color:#f7e5c6;background:linear-gradient(100deg,#132a3999,#29455288,#132a3999);border:1px solid #dec18a66;border-radius:5px;padding:14px 24px;transition:transform .2s,border-color .2s,background .2s,box-shadow .2s}.title-menu button:hover:not(:disabled),.title-menu button:focus-visible{transform:translateY(-2px);border-color:#ffe0a3;background:#345364;box-shadow:0 0 26px #e0c28125;outline:2px solid #ead29e;outline-offset:4px}.title-menu button:disabled{opacity:.4;cursor:default}.title-load-note{min-height:24px;color:#a8bbc8;font-size:14px;margin:22px 0 0}.title-return{margin:10px 16px;font-size:15px;min-height:44px;padding:8px 16px}
+@keyframes title-arrive{from{opacity:0;transform:translateY(22px);filter:blur(8px)}to{opacity:1;transform:translateY(0);filter:blur(0)}}@keyframes title-orbit{to{transform:rotate(360deg)}}@keyframes title-stars{to{transform:translateY(-12px);opacity:.5}}@keyframes title-glow{to{text-shadow:0 2px 0 #694f2e,0 8px 35px #000,0 0 60px #d8b47566}}
+@media(max-width:600px){.title-screen{min-height:calc(100dvh - 32px);padding:32px 18px}.title-kicker{font-size:10px;letter-spacing:.22em}.title-menu{margin-top:38px}.title-menu button{font-size:21px;min-height:58px}.title-logo{font-size:clamp(34px,9vw,56px)}}
+@media(prefers-reduced-motion:reduce){.title-screen *{animation:none!important}.title-menu button{transition:none!important}}
 </style></head>
-<body>
+<body class="title-screen-active">
 <main class="shell">
   <header class="masthead"><a class="brand" href="./" aria-label="에르세디아 RPG 시작 화면"><span class="sigil">✧</span><span><small>ERCEDIA</small><strong>에르세디아 RPG</strong></span></a><span class="build"><i></i> 비주얼 노벨 · UI 프리뷰</span></header>
   <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>솔브린 마을에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
-    <article class="game">
+    <article class="game" data-title="active">
+      <section id="title-screen" class="title-screen" aria-label="아르세디아RPG 메인 메뉴"><div class="title-aura" aria-hidden="true"></div><div class="title-stars" aria-hidden="true"></div><div class="title-content"><p class="title-kicker" aria-hidden="true">A NEW JOURNEY AWAITS</p><h1 class="title-logo" tabindex="-1">아르세디아<span>RPG</span></h1><div class="title-rule" aria-hidden="true"></div><nav class="title-menu" aria-label="메인 메뉴"><button id="title-new-game" type="button">새게임 시작</button><button id="title-load-game" type="button">불러오기</button></nav><p id="title-load-note" class="title-load-note" role="status"></p></div></section>
+      <button id="title-return" class="title-return" type="button">메인 메뉴</button>
       <div class="new-game-actions"><button id="new-game" type="button">새 게임</button><button id="continue-game" type="button" hidden>이어하기 · 생성 계속</button><button id="restore-previous-game" type="button" hidden>이전 세이브 복구</button></div>
       <section id="intro-screen" class="intro-screen" aria-label="새 게임 프롤로그" hidden><div class="intro-card"><p id="intro-progress"></p><h2 id="intro-title" tabindex="-1"></h2><p id="intro-description"></p><label id="intro-input-label" for="intro-input">이름</label><input id="intro-input" autocomplete="off"><div id="intro-options" class="intro-options"></div><p id="intro-error" role="alert"></p><div class="intro-buttons"><button id="intro-back" type="button">← 뒤로</button><button id="intro-skip" type="button" hidden>건너뛰기</button><button id="intro-next" type="button" class="primary">다음</button><button id="intro-cancel" type="button">기존 게임으로 돌아가기</button></div></div></section>
       <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
@@ -194,6 +206,7 @@
         <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="cancel-wait" hidden>대기 해제</button></div>
         <details id="connection-tools" class="manual-scene"><summary>연결 도움</summary>
         <p id="connection-detail" class="connection-detail"></p>
+        <a id="settings-download" hidden>GitHub 전체 게임 설정 파일 다운로드</a>
         <div id="action-copy-area" hidden><label for="action-copy">ChatGPT에 보낼 요청</label><textarea id="action-copy" rows="4" readonly></textarea><button id="copy-action">요청 복사</button></div>
         <details class="manual-scene"><summary>응답 JSON 수동 적용</summary><label for="scene-json">ChatGPT의 JSON 응답 전체</label><textarea id="scene-json" rows="5" placeholder="JSON 또는 JSON 코드블록을 붙여넣으세요."></textarea><button id="apply-scene">장면 적용</button></details>
         </details>
@@ -833,6 +846,7 @@ function normalizeScene(raw){
   if(!Array.isArray(raw.choices)||![0,2,3,4].includes(raw.choices.length))throw Error('choices는 0개 또는 2~4개여야 합니다.');
   const ids=new Set();scene.choices=raw.choices.map(choice=>{const id=text(choice?.id,'choice.id',80);if(ids.has(id))throw Error('선택지 ID가 중복됐습니다.');ids.add(id);return {id,text:text(choice.text,'choice.text',400)};});
   if(raw.reply_to!==undefined)scene.reply_to=text(raw.reply_to,'reply_to',100);
+  if(raw.settings_loaded!==undefined){const r=raw.settings_loaded;if(!/^[a-f0-9]{40}$/.test(r?.commit||'')||!Number.isInteger(r.file_count)||r.file_count<1||r.file_count>200)throw Error('설정 읽기 확인 형식 오류');scene.settings_loaded={commit:r.commit,file_count:r.file_count};}
   if(Object.hasOwn(raw,'player'))scene.player=normalizePlayer(raw.player);
   if(Object.hasOwn(raw,'inventory')){if(!Array.isArray(raw.inventory)||raw.inventory.length>32)throw Error('inventory는 최대 32칸입니다.');scene.inventory=normalizeInventory(raw.inventory);}
   if(raw.game_state!==undefined){
@@ -1425,21 +1439,69 @@ function initializeNameOnlyPlayer(state){
 }
 
 return {initializeNameOnlyPlayer};})();
+const module21=(()=>{
+const {normalizeNPCProfile}=module9;
+const REPO='Tmddhdmlc-ux/Ercedia-RPG';
+const excluded=new Set(['AGENTS.md','README.md','IMAGE_ASSET_MANIFEST.md']);
+function isCampaignSetting(path){
+  return /^[A-Z][A-Z0-9_]*\.md$/.test(path)&&!excluded.has(path)||/^(characters|equipment|items|locations|quests)\/[A-Za-z0-9_-]+\.(json|md)$/.test(path)||['assets/events/annual_events.json','assets/maps/world/map_locations.json','assets/maps/world/faction_locations.json'].includes(path);
+}
+async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=()=>{}}={}){
+  async function read(url,json=false){
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
+    try{const r=await fetcher(url,{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('GitHub 설정 읽기 실패 ('+r.status+')');return json?await r.json():await r.text();}finally{clearTimeout(timer);}
+  }
+  onProgress('GitHub 최신 main 확인 중…');
+  const ref=await read(`https://api.github.com/repos/${REPO}/git/ref/heads/main`,true),sha=ref.object?.sha;
+  if(!/^[a-f0-9]{40}$/.test(sha||''))throw Error('GitHub 설정 버전을 확인할 수 없습니다.');
+  const tree=await read(`https://api.github.com/repos/${REPO}/git/trees/${sha}?recursive=1`,true);
+  if(tree.truncated||!Array.isArray(tree.tree))throw Error('GitHub 설정 목록이 불완전합니다. 다시 시도하세요.');
+  const paths=tree.tree.filter(p=>p.type==='blob'&&isCampaignSetting(p.path)).map(p=>p.path).sort();
+  for(const required of ['BOOTSTRAP.md','WORLD.md','characters/player_default.json','characters/serin.json'])if(!paths.includes(required))throw Error('필수 설정 누락: '+required);
+  if(paths.length>200)throw Error('설정 파일 수가 지원 범위를 초과했습니다.');
+  const files={};let index=0,done=0,total=0;
+  await Promise.all(Array.from({length:6},async()=>{
+    while(index<paths.length){const path=paths[index++],raw=await read(`https://raw.githubusercontent.com/${REPO}/${sha}/${path}`);
+      if(raw.length>600000)throw Error('설정 파일이 너무 큽니다: '+path);
+      const content=path.endsWith('.json')?JSON.stringify(JSON.parse(raw)):raw;
+      total+=content.length;if(total>1500000)throw Error('전체 설정이 전송 지원 범위를 초과했습니다.');
+      files[path]=content;onProgress(`GitHub 설정 읽는 중 · ${++done} / ${paths.length}`);
+    }
+  }));
+  return {sha,paths,files};
+}
+function campaignSettingsPrompt(snapshot){
+  const ordered=['BOOTSTRAP.md',...snapshot.paths.filter(p=>p!=='BOOTSTRAP.md')];
+  return `새 캠페인 GitHub 설정 원문 전체입니다. 저장소 ${REPO}, 고정 커밋 ${snapshot.sha}, ${ordered.length}개 게임 설정 파일을 UI가 실제로 읽었습니다. 이 채팅의 GM은 아래 문서와 데이터를 읽고 세계관, 인물, 능력치, 성장, 전투, 장비, 기술서, 던전, 전리품, 관계 규칙을 적용하세요. 전문 문서와 최신 승인 설정을 우선하고, 시안은 승인 설정으로 확정하지 마세요. *_SECRET.md 및 BOOTSTRAP의 내부 설정은 GM 판단 전용이며 일반 대사, NPC 지식, 선택지, 지도, 도감, 정보창에 누설하지 마세요. UI 소스/이미지 바이너리는 세계관 원문에 포함하지 않았습니다. 코드나 README의 과거 구현 상태를 게임 규칙으로 취급하지 마세요. 저장 상태의 주인공 이름·선택한 시작 위치·패시브·현재 자원은 이번 캠페인의 시작 상태입니다. 설정을 읽은 뒤 별도 요약문이나 확인 인사 대신 앞서 요청한 ercedia_scene JSON 하나로 첫 장면을 출력하세요.\n\n${ordered.map(path=>`<<<GITHUB_SETTING ${path}>>>\n${snapshot.files[path]}\n<<<END_GITHUB_SETTING>>>`).join('\n\n')}`;
+}
+function campaignNPCStates(snapshot,knownIds){
+  const read=path=>JSON.parse(snapshot.files[path]||'{}');
+  const roster=[...(read('characters/npc_roster_100.json').characters||[]),...(read('characters/core_cast_stats_38.json').roster||[]),read('characters/serin.json')],allowed=new Set(knownIds),result={};
+  for(const p of roster)if(allowed.has(p.id)){const s=p.stats||{},rank=p.rank||'',realm=p.realm||(['master','hyper','expert','basic'][['마스터 나이트','하이퍼 나이트','익스퍼트 나이트','베이직 나이트'].findIndex(r=>rank.includes(r))])||'none';result[p.id]=normalizeNPCProfile({name:p.name,affiliation:p.affiliation,rank,realm,level:p.level,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,speed:p.combat?.speed,levelHpBonus:p.level_hp_bonus});}
+  return result;
+}
+function campaignSettingsAttachment(snapshot){
+  const name=`ercedia-settings-${snapshot.sha}.txt`;
+  return {file:{name,content:campaignSettingsPrompt(snapshot)},instruction:`이번 새 게임의 전체 GitHub 설정 ${snapshot.paths.length}개가 '${name}' 파일에 첨부됩니다. 저장소의 고정 커밋 ${snapshot.sha}입니다. 이 파일 안의 BOOTSTRAP부터 각 설정 문서와 JSON 원문을 실제로 읽고 게임 마스터로 진행하세요. *_SECRET.md는 GM 전용이며 NPC 대사·메뉴·선택지에 공개하지 마세요. 파일을 읽을 수 없다면 설정을 읽었다고 주장하거나 첫 장면을 만들지 말고 접근 오류를 알리세요. 읽기를 완료한 경우 앞서 요청한 ercedia_scene JSON 한 개에 settings_loaded={commit:"${snapshot.sha}",file_count:${snapshot.paths.length}}를 추가하여 출력하세요.`};
+}
+
+return {isCampaignSetting,loadCampaignSettings,campaignSettingsPrompt,campaignNPCStates,campaignSettingsAttachment};})();
 const module10=(()=>{
 const {parseScene,actionPrompt}=module11;
 const {normalize}=module16;
 const {battleIsActive}=module6;
 const {updateNPC,findNPC}=module7;
 const {initializeNameOnlyPlayer}=module20;
+const {campaignSettingsAttachment}=module21;
 let requestSequence=0;
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
   return `action-${Date.now()}-${++requestSequence}`;
 }
-function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
+function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro}){
   const $=id=>document.getElementById(id);
-  let pending=null,timer=null,ackTimer=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
+  let pending=null,timer=null,ackTimer=null,campaignSettings=null,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
   const status=message=>{
     $('connection-detail').textContent=message;
@@ -1451,7 +1513,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
   function controls(){
-    const creating=!!state.introDraft||battleIsActive(state),naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
+    const creating=!!state.introDraft||battleIsActive(state)||getIntro?.()?.isStarting(),naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
@@ -1479,10 +1541,13 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
     if(initializeNameOnlyPlayer(state)){render();persist();}
-    const requestId=newRequestId();pending={requestId,choiceId};
-    $('action-copy').value=actionPrompt(state,action,requestId);$('action-copy-area').hidden=false;
+    const requestId=newRequestId(),settings=campaignSettings?campaignSettingsAttachment(campaignSettings):null;
+    $('action-copy').value=actionPrompt(state,action,requestId)+(settings?'\n\n'+settings.instruction:'');$('action-copy-area').hidden=false;
+    if(settings){if(settingsURL)URL.revokeObjectURL(settingsURL);settingsURL=URL.createObjectURL(new Blob([settings.file.content],{type:'text/plain;charset=utf-8'}));$('settings-download').href=settingsURL;$('settings-download').download=settings.file.name;$('settings-download').hidden=false;}
+    if(settings&&embedded&&!window.__ERCEDIA_CONFIG__?.features?.includes('settings-attachment'))return status('전체 설정 자동 첨부에는 Tampermonkey 런처 1.1.7 업데이트가 필요합니다. 연결 도움에서 설정 파일과 요청을 직접 사용할 수도 있습니다.');
+    pending={requestId,choiceId};
     controls();status(embedded?'상대의 반응을 기다리는 중…':'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
-    notify('action',{text:$('action-copy').value,requestId});
+    notify('action',{text:$('action-copy').value,requestId,...(settings?{settingsFile:settings.file}:{})});
     if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
     timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
@@ -1491,6 +1556,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
     try{
       if(battleIsActive(state)&&!commitBattle)return status('전투 재생 중에는 후속 장면을 시작할 수 없습니다.');
       const scene=parseScene(source);
+      if(campaignSettings&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length))return status('GPT의 설정 읽기 확인이 누락되거나 다른 버전입니다. 원본 채팅에서 첨부 파일을 읽고 요청의 settings_loaded를 포함해 다시 응답하도록 해주세요. 첫 장면은 유지됩니다.');
       if(state.seenScenes.includes(scene.scene_id))return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
       if(scene.battle&&!commitBattle){
@@ -1510,6 +1576,8 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
       if(scene.inventory)state.inventory=scene.inventory;
       if(scene.game_state)Object.assign(state.gameState,scene.game_state);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
+      campaignSettings=null;
+      $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
       state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
@@ -1557,11 +1625,11 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle}){
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,isPending:()=>!!pending||battleIsActive(state),conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,reportStatus:status,setCampaignSettings:snapshot=>{campaignSettings=snapshot;},isPending:()=>!!pending||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
 }
 
 return {mountChatUI};})();
-const module21=(()=>{
+const module22=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
 // Casual/nightwear use hair-aligned placement against their existing head artwork.
@@ -1573,7 +1641,7 @@ const faceFit={
 };
 
 return {faceFit};})();
-const module23=(()=>{
+const module24=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -1761,9 +1829,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module22=(()=>{
+const module23=(()=>{
 const {mapData}=module17;
-const {lordships}=module23;
+const {lordships}=module24;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -1782,7 +1850,7 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module24=(()=>{
+const module25=(()=>{
 const {factionLocations}=module19;
 const {mapData}=module17;
 const factionTypes={knight_order:['기사단','⚔','#ecc27e'],magic_tower:['마법탑','✦','#c7a4f4'],sanctuary:['교단 성지','✧','#e6e2bb'],guild:['길드','⌂','#a6d69d'],mercenary:['용병·호위','⚑','#e6a595'],merchant:['상단','◆','#e9cc6c'],civic:['민간조직','●','#a0d7d9'],diplomacy:['중재','◇','#bdd2ed']};
@@ -1839,7 +1907,7 @@ function mountFactionMap(state,{select}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module25=(()=>{
+const module26=(()=>{
 const {damageFormula}=module3;
 const {introData}=module14;
 const {passiveLimits}=module15;
@@ -1888,7 +1956,7 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module26=(()=>{
+const module27=(()=>{
 const {resolveNPC,npcRankLabel}=module7;
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
@@ -1951,7 +2019,7 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module27=(()=>{
+const module28=(()=>{
 const {locationLabel}=module12;
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -1978,27 +2046,36 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
-const module28=(()=>{
+const module29=(()=>{
 const {introData}=module14;
 const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module15;
 const {defaults,normalize}=module16;
 const {mapData}=module17;
 const {factionLocations}=module19;
+const {loadCampaignSettings,campaignNPCStates}=module21;
+const {npcCatalog}=module7;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
-  let lastStep='';
+  let lastStep='',starting=false,settings=null;
+  async function readSettings(){
+    starting=true;chat.controls();
+    try{settings=await loadCampaignSettings({onProgress:message=>{$('title-load-note').textContent=message;chat.reportStatus(message);}});return settings;}
+    finally{starting=false;chat.controls();}
+  }
   const available=()=>!!state.introDraft;
   const text=(tag,value,parent)=>{const node=document.createElement(tag);node.textContent=value;parent.append(node);return node;};
   function save(){persist();chat.controls();}
-  function begin(){
-    if(chat.isPending())return;
-    if(!state.introDraft)state.introDraft=normalizeIntroDraft({step:'name',previousView:{page:state.page,mapView:state.mapView,region:state.region}});
-    save();render();
+  async function begin({restart=false}={}){
+    if(chat.isPending())return false;
+    await readSettings();
+    if(!state.introDraft||restart)state.introDraft=normalizeIntroDraft({step:'name',previousView:state.introDraft?.previousView||{page:state.page,mapView:state.mapView,region:state.region}});
+    save();render();return true;
   }
   function cancel(){
     if(!state.introDraft)return;
     Object.assign(state,state.introDraft.previousView);delete state.introDraft;lastStep='';save();render();
+    document.dispatchEvent(new Event('ercedia:intro-cancelled'));
   }
   function go(step){
     state.introDraft.step=step;
@@ -2025,19 +2102,23 @@ function mountNewGame(state,{render,persist,chat,embedded}){
       draft.kingdom=kingdom.id;draft.lordship=id;draft.step='lordship';save();refresh();
     }
   }
-  function complete(){
+  async function complete(){
     try{
+      if(!settings){$('intro-map-next').disabled=true;await readSettings();}
       const draft=state.introDraft,fields=creationFields(draft),passive=introData.passives.find(p=>p.id===fields.starting_passive_id);
       const place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
       const backup=JSON.parse(JSON.stringify(state));Object.assign(backup,draft.previousView);delete backup.introDraft;delete backup.previousGame;
       const fresh={...defaults(),...fields,chosenName:fields.character_name,player:initialPlayer(fields.character_name),previousGame:backup,layouts:state.layouts,...(state.uiPreferences?{uiPreferences:state.uiPreferences}:{}),mapView:draft.kingdom,region:place.id,background:false,character:false};
+      fresh.npcStates=campaignNPCStates(settings,npcCatalog.map(p=>p.id));
       fresh.gameState={region:fields.starting_kingdom,place:place.label+' 내 임시 안전 정착지',time:'시작 시점',quests:[],relationships:[],events:[],recent_dialogue:[]};
       for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
       save();render();
       const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
-      chat.apply(JSON.stringify(scene));
+      chat.setCampaignSettings(null);chat.apply(JSON.stringify(scene));
+      chat.setCampaignSettings(settings);
+      document.dispatchEvent(new Event('ercedia:intro-completed'));
       if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
-    }catch(error){$('intro-map-error').textContent=error.message;}
+    }catch(error){$('intro-map-error').textContent=error.message;$('intro-map-next').disabled=false;}
   }
   function refresh(){
     const draft=state.introDraft,isMap=draft&&['kingdom','lordship','confirmation'].includes(draft.step);
@@ -2087,20 +2168,21 @@ function mountNewGame(state,{render,persist,chat,embedded}){
     }
     if(lastStep!==draft.step){lastStep=draft.step;game.scrollTop=0;screen.scrollTop=0;queueMicrotask(()=>{if(typing)input.focus({preventScroll:true});else $('intro-title').focus({preventScroll:true});});}
   }
-  $('new-game').onclick=begin;$('intro-new-from-name').onclick=begin;$('continue-game').onclick=()=>{if(!available())state.page='story';render();};
+  const start=()=>begin().catch(error=>chat.reportStatus(error.message+' · 저장은 유지됩니다. 새 게임을 눌러 다시 시도하세요.'));
+  $('new-game').onclick=start;$('intro-new-from-name').onclick=start;$('continue-game').onclick=()=>{if(!available())state.page='story';render();};
   $('intro-cancel').onclick=cancel;$('intro-map-cancel').onclick=cancel;$('intro-back').onclick=back;$('intro-map-back').onclick=back;
   $('intro-next').onclick=next;$('intro-skip').onclick=()=>{state.introDraft.appearance='';next();};
   $('intro-input').oninput=event=>{const d=state.introDraft;if(!d)return;if(d.step==='name')d.name=event.target.value;else if(d.step==='gender')d.appearance=event.target.value;save();};
   $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
   $('intro-map-next').onclick=()=>state.introDraft.step==='confirmation'?complete():go('confirmation');
   $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
-  return {render:refresh,syncMap,begin};
+  return {render:refresh,syncMap,begin,isStarting:()=>starting};
 }
 
 return {mountNewGame};})();
-const module29=(()=>{
+const module30=(()=>{
 const {battleIsActive,battleFrame,validateBattleSettlement}=module6;
-const {faceFit}=module21;
+const {faceFit}=module22;
 function mountBattleUI(state,{render,persist,chat,assetBase}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,animations=[],cards=new Map();
@@ -2119,7 +2201,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase}){
     const fit=faceFit[outfit];Object.assign(slot.face.style,{left:fit.x/1024*100+'%',top:fit.y/1536*100+'%',width:fit.size/1024*100+'%'});
   }
   function showResources(resources){for(const [id,card] of cards){const p=state.battlePlayback.scene.battle.participants.find(p=>p.id===id),r=resources[id];card.hp.textContent=`HP ${r.hp} / ${p.maxHp}`;card.mp.textContent=`MP ${r.mp} / ${p.maxMp}`;card.bar.max=p.maxHp;card.bar.value=r.hp;card.root.dataset.defeated=String(r.hp===0);}}
-  function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused)a.pause();}
+  function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused||document.querySelector('.game').dataset.title==='active')a.pause();}
   function eventStart(){
     const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];if(!e)return finish();
     clearAnimation();elapsed=0;impacted=false;showResources(battleFrame(b,playback.index));
@@ -2148,6 +2230,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase}){
   }
   function tick(now){
     if(!battleIsActive(state)){stop();return;}
+    if(document.querySelector('.game').dataset.title==='active'){lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
     if(!p.paused){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)){p.index++;save();eventStart();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
@@ -2184,11 +2267,12 @@ function mountBattleUI(state,{render,persist,chat,assetBase}){
   $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
   $('battle-skip').onclick=finish;
   $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.replay=true;identity=null;state.page='story';save();render();};
+  document.addEventListener('ercedia:title-closed',()=>{lastTime=0;for(const a of animations)if(!state.battlePlayback?.paused)a.play();});
   return {start,render:refresh,active:()=>battleIsActive(state)};
 }
 
 return {mountBattleUI};})();
-const module30=(()=>{
+const module31=(()=>{
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module7;
 function mountCatalogUI(state,{request,isPending}){
@@ -2226,23 +2310,46 @@ function mountCatalogUI(state,{request,isPending}){
 }
 
 return {mountCatalogUI};})();
+const module32=(()=>{
+function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
+function mountTitleMenu(state,{newGame,render,isPending}){
+  const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
+  let active=true,startedFromTitle=false,loading=false,error='';
+  function refresh(){
+    screen.hidden=!active;screen.inert=!active;game.dataset.title=active?'active':'closed';document.body.classList.toggle('title-screen-active',active);
+    if(active)for(const child of game.children)child.inert=child!==screen;
+    const saved=hasGameSave(state),battle=!!state.battlePlayback&&!state.battlePlayback.done;$('title-load-game').disabled=loading||!saved||isPending()&&!battle;$('title-new-game').disabled=loading||isPending();
+    $('title-load-note').textContent=loading?'GitHub 최신 게임 설정을 불러오는 중…':error||(saved?'':'아직 저장된 게임이 없습니다.');
+    $('title-return').disabled=isPending()||!!state.introDraft;
+  }
+  function enter(){active=false;startedFromTitle=false;for(const child of game.children)child.inert=false;render();document.dispatchEvent(new Event('ercedia:title-closed'));}
+  $('title-new-game').onclick=async()=>{if(loading||isPending())return;loading=true;error='';refresh();try{const begun=await newGame.begin({restart:true});if(begun!==false){active=false;startedFromTitle=true;for(const child of game.children)child.inert=false;render();}}catch(e){error=e.message+' · 저장은 유지됩니다. 새게임 시작을 눌러 다시 시도하세요.';}finally{loading=false;refresh();}};
+  $('title-load-game').onclick=()=>{if(!hasGameSave(state)||isPending()&&!(state.battlePlayback&&!state.battlePlayback.done))return;enter();if(state.introDraft)document.getElementById('intro-input').focus({preventScroll:true});};
+  $('title-return').onclick=()=>{if(isPending()||state.introDraft)return;active=true;render();$('title-new-game').focus({preventScroll:true});};
+  document.addEventListener('ercedia:intro-cancelled',()=>{if(startedFromTitle){startedFromTitle=false;active=true;render();$('title-new-game').focus({preventScroll:true});}});
+  document.addEventListener('ercedia:intro-completed',()=>{startedFromTitle=false;});
+  refresh();return {refresh};
+}
+
+return {hasGameSave,mountTitleMenu};})();
 const module1=(()=>{
 const {createGameBridge}=module2;
 const {mountChatUI}=module10;
 const {mountInventory,normalizeInventory}=module4;
 const {KEY,defaultLayout,load}=module16;
-const {faceFit}=module21;
+const {faceFit}=module22;
 const {mapData}=module17;
-const {mapSelectionInfo}=module22;
-const {mountFactionMap,factionInfo}=module24;
-const {mountPlayer}=module25;
-const {mountNPCInfo}=module26;
-const {mountPlayHUD}=module27;
-const {mountNewGame}=module28;
-const {mountBattleUI}=module29;
-const {mountCatalogUI}=module30;
+const {mapSelectionInfo}=module23;
+const {mountFactionMap,factionInfo}=module25;
+const {mountPlayer}=module26;
+const {mountNPCInfo}=module27;
+const {mountPlayHUD}=module28;
+const {mountNewGame}=module29;
+const {mountBattleUI}=module30;
+const {mountCatalogUI}=module31;
 const {initializeNameOnlyPlayer}=module20;
-const {locationLabel as canonicalLocationLabel}=module12;
+const {locationLabel:canonicalLocationLabel}=module12;
+const {mountTitleMenu}=module32;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module18;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -2277,7 +2384,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-let introUI=null,battleUI=null,catalogUI=null;
+let introUI=null,battleUI=null,catalogUI=null,titleUI=null;
 const npcInfo=mountNPCInfo(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const factionUI=mountFactionMap(state,{select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
@@ -2443,12 +2550,13 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();}
-const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI});
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();}
+const chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
 battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:CDN});
 catalogUI=mountCatalogUI(state,{request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
+titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
 renderAll();
 
 const game=document.querySelector('.game');

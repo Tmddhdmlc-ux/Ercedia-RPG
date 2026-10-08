@@ -18,7 +18,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
     const fit=faceFit[outfit];Object.assign(slot.face.style,{left:fit.x/1024*100+'%',top:fit.y/1536*100+'%',width:fit.size/1024*100+'%'});
   }
   function showResources(resources){for(const [id,card] of cards){const p=state.battlePlayback.scene.battle.participants.find(p=>p.id===id),r=resources[id];card.hp.textContent=`HP ${r.hp} / ${p.maxHp}`;card.mp.textContent=`MP ${r.mp} / ${p.maxMp}`;card.bar.max=p.maxHp;card.bar.value=r.hp;card.root.dataset.defeated=String(r.hp===0);}}
-  function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused)a.pause();}
+  function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused||document.querySelector('.game').dataset.title==='active')a.pause();}
   function eventStart(){
     const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];if(!e)return finish();
     clearAnimation();elapsed=0;impacted=false;showResources(battleFrame(b,playback.index));
@@ -47,6 +47,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
   }
   function tick(now){
     if(!battleIsActive(state)){stop();return;}
+    if(document.querySelector('.game').dataset.title==='active'){lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
     if(!p.paused){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)){p.index++;save();eventStart();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
@@ -83,5 +84,6 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
   $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
   $('battle-skip').onclick=finish;
   $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.replay=true;identity=null;state.page='story';save();render();};
+  document.addEventListener('ercedia:title-closed',()=>{lastTime=0;for(const a of animations)if(!state.battlePlayback?.paused)a.play();});
   return {start,render:refresh,active:()=>battleIsActive(state)};
 }

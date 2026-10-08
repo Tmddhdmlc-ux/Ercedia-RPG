@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.6
+// @version      1.1.7
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -20,6 +20,7 @@
 (()=>{
   'use strict';
   /*__RESPONSE_READER__*/
+  /*__SETTINGS_ATTACHMENT__*/
   if(document.getElementById('ercedia-game-root'))return;
   const HOST='https://tmddhdmlc-ux.github.io/Ercedia-RPG';
   const REPO='Tmddhdmlc-ux/Ercedia-RPG',CACHE='ercedia.launcher.releases.v1';
@@ -87,7 +88,7 @@
   }
   function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}';return JSON.stringify(value);}
   function createFrame(release,saved){
-    const token=crypto.randomUUID(),config={token,conversation,saved,assetBase:`https://raw.githubusercontent.com/${REPO}/${release.sha}/`};
+    const token=crypto.randomUUID(),config={token,conversation,saved,features:['settings-attachment'],assetBase:`https://raw.githubusercontent.com/${REPO}/${release.sha}/`};
     const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config).replaceAll('<','\\u003c')};window.__ERCEDIA_STORAGE__={getItem:()=>window.__ERCEDIA_CONFIG__.saved?JSON.stringify(window.__ERCEDIA_CONFIG__.saved):null,setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'save',payload:state},'*');}};`;
     const html=release.html.replace('/*__ERCEDIA_BOOTSTRAP__*/',()=>bootstrap+"window.addEventListener('error',event=>parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'boot-error',payload:event.message},'*'));");
     const record={release,token,frame:null,ready:false,health:null,html};
@@ -190,6 +191,12 @@
     if(!editor)return failAction('ChatGPT 입력창을 인식하지 못했습니다. 페이지 새로고침 후 다시 보내세요.');
     const existing=('value' in editor?editor.value:editor.textContent)||'';
     if(existing.trim())return failAction('원본 ChatGPT 입력창에 작성 중인 내용이 있습니다. 먼저 비운 뒤 다시 보내세요.');
+    if(payload.settingsFile){
+      tell('GitHub 전체 게임 설정을 GPT에 첨부하는 중…');
+      try{await attachCampaignSettings(payload.settingsFile,{roots:pageRoots,isCurrent:()=>conversation===conversationId()&&pending===payload.requestId,wait:ms=>new Promise(resolve=>setTimeout(resolve,ms))});}
+      catch(error){return failAction(error.message);}
+      if(pending!==payload.requestId||conversation!==conversationId())return;
+    }
     editor.focus();
     if('value' in editor){const setter=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;setter?setter.call(editor,payload.text):editor.value=payload.text;}
     else {
@@ -200,7 +207,7 @@
     editor.dispatchEvent(new InputEvent('input',{bubbles:true,composed:true,inputType:'insertText',data:payload.text}));
     tell('ChatGPT 입력창 감지 · 요청 전달 완료 · 전송 버튼을 기다리는 중…');
     let submit;
-    for(let attempt=0;attempt<12;attempt++){
+    for(let attempt=0;attempt<(payload.settingsFile?120:12);attempt++){
       await new Promise(resolve=>setTimeout(resolve,200));
       if(conversation!==conversationId()||pending!==payload.requestId)return;
       const selectors='button[data-testid="send-button"],button[data-testid="composer-submit-button"],button[aria-label="Send prompt"],button[aria-label="프롬프트 보내기"],button[aria-label="메시지 보내기"]';

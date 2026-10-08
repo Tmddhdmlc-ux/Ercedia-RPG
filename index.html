@@ -1,12 +1,14 @@
 <!doctype html>
 <html lang="ko">
 <head><meta charset="utf-8"><meta name="viewport" content="width=device-width, initial-scale=1"><meta name="theme-color" content="#111a21"><title>에르세디아 RPG · 솔브린 마을</title><link rel="stylesheet" href="web/style.css"><script type="module" src="web/app.js"></script></head>
-<body>
+<body class="title-screen-active">
 <main class="shell">
   <header class="masthead"><a class="brand" href="./" aria-label="에르세디아 RPG 시작 화면"><span class="sigil">✧</span><span><small>ERCEDIA</small><strong>에르세디아 RPG</strong></span></a><span class="build"><i></i> 비주얼 노벨 · UI 프리뷰</span></header>
   <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>솔브린 마을에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
-    <article class="game">
+    <article class="game" data-title="active">
+      <section id="title-screen" class="title-screen" aria-label="아르세디아RPG 메인 메뉴"><div class="title-aura" aria-hidden="true"></div><div class="title-stars" aria-hidden="true"></div><div class="title-content"><p class="title-kicker" aria-hidden="true">A NEW JOURNEY AWAITS</p><h1 class="title-logo" tabindex="-1">아르세디아<span>RPG</span></h1><div class="title-rule" aria-hidden="true"></div><nav class="title-menu" aria-label="메인 메뉴"><button id="title-new-game" type="button">새게임 시작</button><button id="title-load-game" type="button">불러오기</button></nav><p id="title-load-note" class="title-load-note" role="status"></p></div></section>
+      <button id="title-return" class="title-return" type="button">메인 메뉴</button>
       <div class="new-game-actions"><button id="new-game" type="button">새 게임</button><button id="continue-game" type="button" hidden>이어하기 · 생성 계속</button><button id="restore-previous-game" type="button" hidden>이전 세이브 복구</button></div>
       <section id="intro-screen" class="intro-screen" aria-label="새 게임 프롤로그" hidden><div class="intro-card"><p id="intro-progress"></p><h2 id="intro-title" tabindex="-1"></h2><p id="intro-description"></p><label id="intro-input-label" for="intro-input">이름</label><input id="intro-input" autocomplete="off"><div id="intro-options" class="intro-options"></div><p id="intro-error" role="alert"></p><div class="intro-buttons"><button id="intro-back" type="button">← 뒤로</button><button id="intro-skip" type="button" hidden>건너뛰기</button><button id="intro-next" type="button" class="primary">다음</button><button id="intro-cancel" type="button">기존 게임으로 돌아가기</button></div></div></section>
       <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
@@ -75,6 +77,7 @@
         <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="cancel-wait" hidden>대기 해제</button></div>
         <details id="connection-tools" class="manual-scene"><summary>연결 도움</summary>
         <p id="connection-detail" class="connection-detail"></p>
+        <a id="settings-download" hidden>GitHub 전체 게임 설정 파일 다운로드</a>
         <div id="action-copy-area" hidden><label for="action-copy">ChatGPT에 보낼 요청</label><textarea id="action-copy" rows="4" readonly></textarea><button id="copy-action">요청 복사</button></div>
         <details class="manual-scene"><summary>응답 JSON 수동 적용</summary><label for="scene-json">ChatGPT의 JSON 응답 전체</label><textarea id="scene-json" rows="5" placeholder="JSON 또는 JSON 코드블록을 붙여넣으세요."></textarea><button id="apply-scene">장면 적용</button></details>
         </details>

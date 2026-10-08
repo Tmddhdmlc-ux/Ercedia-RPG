@@ -15,9 +15,9 @@ async function link(file){
   const sideEffects=[...source.matchAll(/import\s*'([^']+)';/g)];
   for(const match of sideEffects){await link(path.resolve(path.dirname(file),match[1]));source=source.replace(match[0],'');}
   const imports=[...source.matchAll(/import\s*\{([^}]+)\}\s*from\s*'([^']+)';/g)];
-  for(const match of imports){const dependency=await link(path.resolve(path.dirname(file),match[2]));source=source.replace(match[0],`const {${match[1]}}=${dependency};`);}
-  const exports=[...source.matchAll(/export\s+(?:const|function|class)\s+(\w+)/g)].map(match=>match[1]);
-  source=source.replace(/export\s+(?=const|function|class)/g,'');
+  for(const match of imports){const dependency=await link(path.resolve(path.dirname(file),match[2]));const names=match[1].split(',').map(name=>name.trim().replace(/\s+as\s+/,':')).join(',');source=source.replace(match[0],`const {${names}}=${dependency};`);}
+  const exports=[...source.matchAll(/export\s+(?:async\s+)?(?:const|function|class)\s+(\w+)/g)].map(match=>match[1]);
+  source=source.replace(/export\s+(?=async|const|function|class)/g,'');
   if(/^\s*(?:import|export)\b/m.test(source))throw Error(`Unsupported module syntax: ${file}`);
   output.push(`const ${id}=(()=>{\n${source}\nreturn {${exports.join(',')}};})();`);return id;
 }
@@ -36,6 +36,8 @@ await writeFile(path.join(root,'integration/update-manifest.json'),JSON.stringif
 const template=await readFile(path.join(root,'tampermonkey/host.template.js'),'utf8');
 const reader=(await readFile(path.join(root,'web/response-json.js'),'utf8')).replace(/export\s+(?=function)/g,'');
 const script=template.replace('/*__RESPONSE_READER__*/',()=>reader);
-await writeFile(path.join(root,'tampermonkey/ercedia-rpg.user.js'),script);
-await writeFile(path.join(root,'tampermonkey/ercedia-rpg.meta.js'),script.slice(0,script.indexOf('// ==/UserScript==')+'// ==/UserScript=='.length)+'\n');
-console.log(`Built game bundle and stable launcher (${Buffer.byteLength(script)} bytes)`);
+const attachment=(await readFile(path.join(root,'web/settings-attachment.js'),'utf8')).replace(/export\s+(?=async|function)/g,'');
+const launcher=script.replace('/*__SETTINGS_ATTACHMENT__*/',()=>attachment);
+await writeFile(path.join(root,'tampermonkey/ercedia-rpg.user.js'),launcher);
+await writeFile(path.join(root,'tampermonkey/ercedia-rpg.meta.js'),launcher.slice(0,launcher.indexOf('// ==/UserScript==')+'// ==/UserScript=='.length)+'\n');
+console.log(`Built game bundle and launcher (${Buffer.byteLength(launcher)} bytes)`);

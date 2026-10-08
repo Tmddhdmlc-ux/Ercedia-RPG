@@ -3,21 +3,30 @@ import {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntro
 import {defaults,normalize} from './state.js';
 import {mapData} from './map-data.js';
 import {factionLocations} from './faction-data.js';
+import {loadCampaignSettings,campaignNPCStates} from './campaign-settings.js';
+import {npcCatalog} from './npc-model.js';
 export function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
-  let lastStep='';
+  let lastStep='',starting=false,settings=null;
+  async function readSettings(){
+    starting=true;chat.controls();
+    try{settings=await loadCampaignSettings({onProgress:message=>{$('title-load-note').textContent=message;chat.reportStatus(message);}});return settings;}
+    finally{starting=false;chat.controls();}
+  }
   const available=()=>!!state.introDraft;
   const text=(tag,value,parent)=>{const node=document.createElement(tag);node.textContent=value;parent.append(node);return node;};
   function save(){persist();chat.controls();}
-  function begin(){
-    if(chat.isPending())return;
-    if(!state.introDraft)state.introDraft=normalizeIntroDraft({step:'name',previousView:{page:state.page,mapView:state.mapView,region:state.region}});
-    save();render();
+  async function begin({restart=false}={}){
+    if(chat.isPending())return false;
+    await readSettings();
+    if(!state.introDraft||restart)state.introDraft=normalizeIntroDraft({step:'name',previousView:state.introDraft?.previousView||{page:state.page,mapView:state.mapView,region:state.region}});
+    save();render();return true;
   }
   function cancel(){
     if(!state.introDraft)return;
     Object.assign(state,state.introDraft.previousView);delete state.introDraft;lastStep='';save();render();
+    document.dispatchEvent(new Event('ercedia:intro-cancelled'));
   }
   function go(step){
     state.introDraft.step=step;
@@ -44,19 +53,23 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
       draft.kingdom=kingdom.id;draft.lordship=id;draft.step='lordship';save();refresh();
     }
   }
-  function complete(){
+  async function complete(){
     try{
+      if(!settings){$('intro-map-next').disabled=true;await readSettings();}
       const draft=state.introDraft,fields=creationFields(draft),passive=introData.passives.find(p=>p.id===fields.starting_passive_id);
       const place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
       const backup=JSON.parse(JSON.stringify(state));Object.assign(backup,draft.previousView);delete backup.introDraft;delete backup.previousGame;
       const fresh={...defaults(),...fields,chosenName:fields.character_name,player:initialPlayer(fields.character_name),previousGame:backup,layouts:state.layouts,...(state.uiPreferences?{uiPreferences:state.uiPreferences}:{}),mapView:draft.kingdom,region:place.id,background:false,character:false};
+      fresh.npcStates=campaignNPCStates(settings,npcCatalog.map(p=>p.id));
       fresh.gameState={region:fields.starting_kingdom,place:place.label+' 내 임시 안전 정착지',time:'시작 시점',quests:[],relationships:[],events:[],recent_dialogue:[]};
       for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
       save();render();
       const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
-      chat.apply(JSON.stringify(scene));
+      chat.setCampaignSettings(null);chat.apply(JSON.stringify(scene));
+      chat.setCampaignSettings(settings);
+      document.dispatchEvent(new Event('ercedia:intro-completed'));
       if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
-    }catch(error){$('intro-map-error').textContent=error.message;}
+    }catch(error){$('intro-map-error').textContent=error.message;$('intro-map-next').disabled=false;}
   }
   function refresh(){
     const draft=state.introDraft,isMap=draft&&['kingdom','lordship','confirmation'].includes(draft.step);
@@ -106,12 +119,13 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     }
     if(lastStep!==draft.step){lastStep=draft.step;game.scrollTop=0;screen.scrollTop=0;queueMicrotask(()=>{if(typing)input.focus({preventScroll:true});else $('intro-title').focus({preventScroll:true});});}
   }
-  $('new-game').onclick=begin;$('intro-new-from-name').onclick=begin;$('continue-game').onclick=()=>{if(!available())state.page='story';render();};
+  const start=()=>begin().catch(error=>chat.reportStatus(error.message+' · 저장은 유지됩니다. 새 게임을 눌러 다시 시도하세요.'));
+  $('new-game').onclick=start;$('intro-new-from-name').onclick=start;$('continue-game').onclick=()=>{if(!available())state.page='story';render();};
   $('intro-cancel').onclick=cancel;$('intro-map-cancel').onclick=cancel;$('intro-back').onclick=back;$('intro-map-back').onclick=back;
   $('intro-next').onclick=next;$('intro-skip').onclick=()=>{state.introDraft.appearance='';next();};
   $('intro-input').oninput=event=>{const d=state.introDraft;if(!d)return;if(d.step==='name')d.name=event.target.value;else if(d.step==='gender')d.appearance=event.target.value;save();};
   $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
   $('intro-map-next').onclick=()=>state.introDraft.step==='confirmation'?complete():go('confirmation');
   $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
-  return {render:refresh,syncMap,begin};
+  return {render:refresh,syncMap,begin,isStarting:()=>starting};
 }
