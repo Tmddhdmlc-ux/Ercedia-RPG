@@ -67,7 +67,7 @@ export function mountChatUI(state,{render,persist,storage,embedded}){
   $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();Object.assign(state,normalize(saved));
+    cancel();delete state.chosenName;delete state.mapFaction;Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
