@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-E4-02-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-E4-02/DUN-E4-02-Z02.png",
+  "batch": "locations-p2-batch-04.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-E4-02-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-E4-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW combat zone Tilted Wind Bridge within Silvern Mist Bridge Undercroft DUN-E4-02. Deep mist-filled gray canyon, viewpoint from sheltered stone ledge UNDER an old timber bridge: visibly slightly tilted weathered timber bridge deck crosses upper-left distance, massive stone abutments and timber braces above, steep shadowed gray rock walls framing mountain fog. Broad stable clear stone landing center-right foreground under bridge, simple rope guardrail distant left only, sparse hardy plants. Cool silver daylight filtered through mist, landmark overheadbridge above dialogue quarter. No characters, beasts, bodies, written signs, modern bridge, castle, flags, crests, active spells or treasure.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-126a7284-aa37-4b89-b6b6-e7c1329b0152.png"
+}

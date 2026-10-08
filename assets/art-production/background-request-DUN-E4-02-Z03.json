@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-E4-02-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-E4-02/DUN-E4-02-Z03.png",
+  "batch": "locations-p2-batch-04.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-E4-02-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-E4-02/DUN-E4-02-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW event zone Mountain Mist Fork inside same Silvern Mist Bridge Undercroft. Wide shadowed stone ledge underneath timber bridge approach, rocky pathway forks around central gray canyon rock into two shallow arched stone service passages at upper-left and rear-right. Cool drifting pale mountain mist through open gorge left, underside timber beams across upperframe, weathered gray stone masonry and sparse ferns at edges. Distinct forked lower passage from previous wide bridgeview. Safe broad open intact flat stone foreground center-right for VN characters, fork above bottom quarter. No people, beasts, bodies, signs, writings, flags, symbols, treasures or new magical mechanism.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-280594c3-24b2-4dc1-ab1d-f2861544c17d.png"
+}

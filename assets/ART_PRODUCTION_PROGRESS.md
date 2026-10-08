@@ -9,9 +9,9 @@
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
 | 전리품 | 40 | 40 |
-| 장소 | 158 | 261 |
+| 장소 | 186 | 261 |
 
-총 검수 완료: **568/671**.
+총 검수 완료: **596/671**.
 
 ## 목록과 재개 기준
 
@@ -192,12 +192,12 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-p2-batch-03.json](art-production/locations-p2-batch-03.json) 및 전체 자산 목록 참조.
-- 이미지 업로드 커밋: `업로드 전`
+- 이미지 업로드 커밋: `9b393566f1ca3d6816a559fe8243b20b2d039cd6`
 
 ### locations-p2-batch-04
 
 - 대상/완료 ID: IMG-DUN-E1-01-Z02, IMG-DUN-E1-01-Z03, IMG-DUN-E1-01-Z04, IMG-DUN-E1-02-Z02, IMG-DUN-E1-02-Z03, IMG-DUN-E1-02-Z04, IMG-DUN-E1-02-Z05, IMG-DUN-E1-02-Z06, IMG-DUN-E2-01-Z02, IMG-DUN-E2-01-Z03, IMG-DUN-E2-01-Z04, IMG-DUN-E2-02-Z02, IMG-DUN-E2-02-Z03, IMG-DUN-E2-02-Z04, IMG-DUN-E2-02-Z05, IMG-DUN-E2-02-Z06, IMG-DUN-E3-01-Z02, IMG-DUN-E3-01-Z03, IMG-DUN-E3-01-Z04, IMG-DUN-E3-02-Z02, IMG-DUN-E3-02-Z03, IMG-DUN-E3-02-Z04, IMG-DUN-E3-02-Z05, IMG-DUN-E4-01-Z02, IMG-DUN-E4-01-Z03, IMG-DUN-E4-02-Z02, IMG-DUN-E4-02-Z03, IMG-DUN-E4-02-Z04
-- 미완료 ID: IMG-DUN-E1-01-Z02, IMG-DUN-E1-01-Z03, IMG-DUN-E1-01-Z04, IMG-DUN-E1-02-Z02, IMG-DUN-E1-02-Z03, IMG-DUN-E1-02-Z04, IMG-DUN-E1-02-Z05, IMG-DUN-E1-02-Z06, IMG-DUN-E2-01-Z02, IMG-DUN-E2-01-Z03, IMG-DUN-E2-01-Z04, IMG-DUN-E2-02-Z02, IMG-DUN-E2-02-Z03, IMG-DUN-E2-02-Z04, IMG-DUN-E2-02-Z05, IMG-DUN-E2-02-Z06, IMG-DUN-E3-01-Z02, IMG-DUN-E3-01-Z03, IMG-DUN-E3-01-Z04, IMG-DUN-E3-02-Z02, IMG-DUN-E3-02-Z03, IMG-DUN-E3-02-Z04, IMG-DUN-E3-02-Z05, IMG-DUN-E4-01-Z02, IMG-DUN-E4-01-Z03, IMG-DUN-E4-02-Z02, IMG-DUN-E4-02-Z03, IMG-DUN-E4-02-Z04
+- 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [locations-p2-batch-04.json](art-production/locations-p2-batch-04.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`

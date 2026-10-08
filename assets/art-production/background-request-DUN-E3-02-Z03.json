@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-E3-02-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-E3-02/DUN-E3-02-Z03.png",
+  "batch": "locations-p2-batch-04.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-E3-02-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-E3-02/DUN-E3-02-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW event zone Collapsed Mining Cleft within same Ash Gray Barrier Basement. Broad low fortress masonry mining chamber with jagged excavated rock cleft behind cracked supporting ash-gray arch at upper-left, broken stone rubble localized at rear entrance, old solid timber supports beside faint blue-gray crystal vein. Same warm mounted oil lanterns and cold stone palette. Main mining cleft and collapsed arch above bottom quarter, broad safe intact flat clear stone floor center-right for characters. No miners, monsters, bodies, new lore, magic runes, treasure or machines. Make composition distinctly broken excavation chamber compared with previous long corridor.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-72481bc6-08f3-49f4-bb3a-32ff194f215d.png"
+}

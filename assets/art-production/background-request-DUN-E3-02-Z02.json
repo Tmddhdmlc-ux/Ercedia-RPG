@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-E3-02-Z02",
+  "path": "assets/backgrounds/dungeons/DUN-E3-02/DUN-E3-02-Z02.png",
+  "batch": "locations-p2-batch-04.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-E3-02-Z02",
+  "reference": "assets/backgrounds/dungeons/DUN-E3-02/entrance.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW zone Z02 Crystal Byproduct Road within Ash Gray Barrier Basement DUN-E3-02, gray fortress subterranean corridor with stout ash-gray masonry, low broad barrel vault and modest blue-gray mineral seams embedded along lower wall; scattered cut stone chips and crystal byproducts only at edges. Warm plain mounted oil lanterns, cold indirect mineral highlights, medieval fortification basement, enclosed no outside town. Road bends gently upper-left, wide clear stable center-right foreground for character. Distinct built fortress interior compared with natural mine. No miners, creatures, bodies, active spells, machines, symbols, text or treasure.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-24581e7d-9a58-48d8-a0a0-1ab778201f5a.png"
+}

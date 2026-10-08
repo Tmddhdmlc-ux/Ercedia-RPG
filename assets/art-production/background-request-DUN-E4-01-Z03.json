@@ -1,0 +1,9 @@
+{
+  "id": "IMG-DUN-E4-01-Z03",
+  "path": "assets/backgrounds/dungeons/DUN-E4-01/DUN-E4-01-Z03.png",
+  "batch": "locations-p2-batch-04.json",
+  "canon_source": "locations/dungeon_layouts.json#DUN-E4-01-Z03",
+  "reference": "assets/backgrounds/dungeons/DUN-E4-01/DUN-E4-01-Z02.png",
+  "prompt": "Ercedia RPG visual novel environment, high-quality hand-drawn 2D anime medieval fantasy, clean refined outlines and detailed painterly cel shading, coherent perspective, no photorealism or 3D. Wide landscape 1536x1024 or larger. Empty scene without people or monsters. Leave central-right foreground relatively open for character standing art; keep the main landmark above bottom 25 percent dialogue zone. Full background without UI, text, labels, readable signs, lettering, logos, frames, map elements or invented crest symbols. Plain banners only when needed.  No artist signatures, watermarks, decorative letters, tiny corner marks or logos anywhere, keep both bottom corners clean natural environment. Refined painted anime environment with clear linework and cel-shaded shapes rather than photographic textures.  NEW final boss environment Mountain Mist Fork within same Silvern Canyon Bridge Way. Wide exposed flat stone junction on gray mountain ledge, two old rocky tracks separate upper-left and upper-right into dense pale mountain mist. Rugged gorge cliffs, low rough stone roadside edge and sparse conifers, same cool clear daylight softened by mountain fog. Timber bridge glimpsed far away left through mist for physical continuity. Open broad safe stable level center-right foreground, junction landmark above bottom quarter. No signpost text, people, monsters, bodies, bosses, magic portal, ruins of new civilization, flags or emblems.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-6c850042-684c-4926-a4dd-993d2036b5ec.png"
+}
