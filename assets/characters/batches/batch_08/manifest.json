@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_08",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-071",
+      "name": "아르고 폰",
+      "affiliation": "남동 해적단",
+      "appearance": "남43 검은 수염 흰쪽 눈 붉은 허리띠",
+      "rank": "해적 부선장",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-071/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            61,
+            85,
+            963,
+            1451
+          ],
+          "margins_ltrb": [
+            61,
+            85,
+            61,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "1cc1568bee7c0af49bcc102df46f58b1fcd3dc6498ebe5f3fbc62696d93b5585"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-071/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "84a6163380fda1d5208d712a8837827a216952687555d8a0a32d677c926a348a"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-072",
+      "name": "멘자 데크",
+      "affiliation": "남동 해적단",
+      "appearance": "여24 잿빛 단발 갈색 눈 낡은 가죽조끼",
+      "rank": "해적 투척수",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-072/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            64,
+            85,
+            959,
+            1451
+          ],
+          "margins_ltrb": [
+            64,
+            85,
+            65,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ab73a9fecfad8179aaa1ca0e06fa51b760bdabb95e18814ec2064b633e4ae23f"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-072/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            14,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            14,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "3ae546c86a283408945fa3be2dfcfb608ee6ac22b7637cf9ef325ee85a0c3f9d"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-073",
+      "name": "베르곤 헬",
+      "affiliation": "광맥 도굴단",
+      "appearance": "남47 회색 수염 검은 눈 광부 헬멧",
+      "rank": "갱도 파괴자",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-073/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            66,
+            85,
+            958,
+            1451
+          ],
+          "margins_ltrb": [
+            66,
+            85,
+            66,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "02520ba8eb5e60b78163eec9d3ddd7f69fb2f5b7b1e809f94e6fee7362cdfc2f"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-073/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            48,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            48,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "7e02f6a4367493331d52ef31aa4e750dbdaf02bee3b23302330799136442f933"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-074",
+      "name": "나시르 젬",
+      "affiliation": "공방 절도단",
+      "appearance": "남21 적발 호박 눈 금속 도구띠",
+      "rank": "기계 도둑",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-074/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            118,
+            85,
+            905,
+            1451
+          ],
+          "margins_ltrb": [
+            118,
+            85,
+            119,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ba217f396987b4550a9bd6faa9f55b8d90cb6b0b9eb9480df7eb1e5f6b681cf8"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-074/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "1c85ef13661c9235e67caabb19de68e5943ca7453f536a05d7cd0ee04f0cffa5"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-075",
+      "name": "페이라 록",
+      "affiliation": "귀족 사칭단",
+      "appearance": "여34 금갈 장발 청록 눈 자주 예복",
+      "rank": "사기 협상가",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-075/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            131,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            131,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9529df3d225326b50d15d81158d9b933464c7fb637f35ca588eb03ae9e122304"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-075/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "6a8a4e3e273b9120e7a3679b2f16c3aefc68788ddea4b214233548d319b15d5d"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-076",
+      "name": "델로스 칼",
+      "affiliation": "전쟁 물자 도적단",
+      "appearance": "남36 흑갈 머리 녹색 눈 녹슨 창",
+      "rank": "마차 습격자",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-076/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            97,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            97,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "d943c84ca92eb5dfd8e4bc09ca3b9c7600ee3a1ab7514aedb7a3b513705d93fd"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-076/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "f8f547d94a3bf5b4996a09a0d7d2c075de09841cc20dd0710fa2477fcd88a960"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-077",
+      "name": "루쉬 엔",
+      "affiliation": "설산 밀렵단",
+      "appearance": "여28 백발 은안 모피 외투",
+      "rank": "불법 수렵꾼",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-077/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            78,
+            85,
+            946,
+            1451
+          ],
+          "margins_ltrb": [
+            78,
+            85,
+            78,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "c1edabddf1a5640a2f7ff0b294caa8c11adcdae700c592de2f40b3d6dd816856"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-077/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "5bb53b37a2639ff4cebd1c4ae9026540e451d9b4c73f20e85eba71ce7339ad62"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-078",
+      "name": "코드란 얀",
+      "affiliation": "위험지대 불법 탐사대",
+      "appearance": "남40 굵은 턱수염 흑안 황동 장비",
+      "rank": "유적 약탈자",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-078/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            113,
+            85,
+            910,
+            1451
+          ],
+          "margins_ltrb": [
+            113,
+            85,
+            114,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "21052222a27dbd24313890962c0eba95afcd7487c2aadd208f9c5551447c660e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-078/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "b6d8adbe8af7905de86eaec287f870c9a654db71cad028890d39b6d5335a28d7"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-079",
+      "name": "가레트 보",
+      "affiliation": "가짜 경매단",
+      "appearance": "남50 은발 녹안 화려한 반지",
+      "rank": "위조품 판매자",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-079/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            63,
+            85,
+            960,
+            1451
+          ],
+          "margins_ltrb": [
+            63,
+            85,
+            64,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a3cbabbf709a9270b229890266a00729308933c3858c007b86e2998acb9b5c08"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-079/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            25,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            25,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "efffe1fc97e8435690282ec87f48224fa825a07578cd605f71b8c462befa3216"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-080",
+      "name": "미라한 델",
+      "affiliation": "전시 강도단",
+      "appearance": "여31 검청 단발 회안 가짜 휘장",
+      "rank": "거짓 검문관",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-080/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            118,
+            85,
+            905,
+            1451
+          ],
+          "margins_ltrb": [
+            118,
+            85,
+            119,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "d9a5bf1bbd06c2cb3e7a4734c2932908ae8561c3309590c78fff1721b231f0c8"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-080/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "f33065d1a2e15b4a3b9821026a8827fa0842523b48519063da911c6bfc0668a1"
+        }
+      }
+    }
+  ]
+}

@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_07",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-061",
+      "name": "핀 코르다",
+      "affiliation": "드라켄 왕실",
+      "appearance": "남46 회색 단발 빙청 눈 남색 코트",
+      "rank": "공방 조달관",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-061/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            68,
+            85,
+            956,
+            1451
+          ],
+          "margins_ltrb": [
+            68,
+            85,
+            68,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "e615e93277fa5d110032a4709ad2ace9f64086bc74b3cc877558fea5d14c7aec"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-061/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            19,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            19,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "f1180fe92758436d3e1bbf36f5baaf4cb1baeb2bff005a861213c05be1be0789"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-062",
+      "name": "에시아 르몬",
+      "affiliation": "아쿠아렌 주민",
+      "appearance": "여27 갈색 단발 녹색 눈 푸른 가방",
+      "rank": "선박 의사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-062/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            106,
+            85,
+            918,
+            1451
+          ],
+          "margins_ltrb": [
+            106,
+            85,
+            106,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "723ba164859bcf98259b38c4bf63921884cf1f1e26903d8d24309101707b6671"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-062/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "73e07c98ecef97de6b419814ae38414c9aac77e41ac3ea1a45e8cd8083dcf51f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-063",
+      "name": "로칸 헤스",
+      "affiliation": "칼트하임 주민",
+      "appearance": "남56 백발 검은 눈 두꺼운 장갑",
+      "rank": "감시탑 목수",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-063/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            73,
+            85,
+            950,
+            1451
+          ],
+          "margins_ltrb": [
+            73,
+            85,
+            74,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "6aeadc46721fed7fb40c7bbdc6596069e551d52fe2e32dc21ff9465fd4b23423"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-063/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            44,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            44,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "9c0c066872bd66d755db5cfc1af5cb6e802a691e093788303e541c8e15d2b69f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-064",
+      "name": "미엔 카프",
+      "affiliation": "세르반 주민",
+      "appearance": "여33 검은 땋은머리 회색 눈 올리브 작업복",
+      "rank": "약초 재배자",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-064/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            75,
+            85,
+            949,
+            1451
+          ],
+          "margins_ltrb": [
+            75,
+            85,
+            75,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "7bda8b8f2137c6b17054c6b7d73fead299c15e68d9e018b92da7c376f768e29c"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-064/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            19,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            19,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "c685d5e7a9cf2901b4181ed8c7cb013b138f42a7b742e42e9e83851f7108855d"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-065",
+      "name": "오델 비프",
+      "affiliation": "실베른 주민",
+      "appearance": "남19 갈색 곱슬 녹색 눈 회색 후드",
+      "rank": "교량 통행인",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-065/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            87,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            87,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "730b8a7b50eb0ffb6a6746ac72e883fd52dc8345d25113cf9576ed5b73ecca0a"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-065/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "38d1648d7bcf0d6763b735e1290b50df0236b02083fbf1b35b6771eaa0e638f9"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-066",
+      "name": "도릭 뤼프",
+      "affiliation": "곡창길 약탈단",
+      "appearance": "남41 흉터난 코 검은 머리 갈색 갑옷",
+      "rank": "도적 두목",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-066/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            88,
+            85,
+            935,
+            1451
+          ],
+          "margins_ltrb": [
+            88,
+            85,
+            89,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "ea71aa7298ceb0de27a9f2d244481fe9096ce0b12ddb0ccc9c3a9df9a47371db"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-066/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "919b0e6615e853b0df659297a80b01e04533d0bbeef2c765d21e8c6f43f4f746"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-067",
+      "name": "바센 모그",
+      "affiliation": "관문길 도적단",
+      "appearance": "남29 회갈 머리 금갈 눈 누더기 망토",
+      "rank": "도적 궁수",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-067/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            95,
+            85,
+            928,
+            1451
+          ],
+          "margins_ltrb": [
+            95,
+            85,
+            96,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "e64de3851a29d1df234f416db75c51c32807b15d17b44588a48e04a353ecf8b6"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-067/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            42,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            42,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "542fb734dc7fb79b1fda0b3f6b1519591a2515c93cf7c895f87501dad971ff6f"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-068",
+      "name": "카자 트른",
+      "affiliation": "산길 약탈단",
+      "appearance": "여32 흑발 뺨 흉터 검정 가죽갑",
+      "rank": "매복 전투원",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-068/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            69,
+            85,
+            954,
+            1451
+          ],
+          "margins_ltrb": [
+            69,
+            85,
+            70,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "b3337201fc6804f5d18df164411f7fbe4f90d6bfb03b90e60ed65b8125b81211"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-068/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            23,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            23,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "d843cbf77814ad3fdd51e36cbbe6b13926e5c0664e0c2e61aba0ee63461da792"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-069",
+      "name": "프레트 곤",
+      "affiliation": "전장 탈영병단",
+      "appearance": "남38 삭발 탁한 푸른 눈 파손 철갑",
+      "rank": "탈영병 전사",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-069/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            60,
+            97,
+            964,
+            1451
+          ],
+          "margins_ltrb": [
+            60,
+            97,
+            60,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "db7dec4bd924828cfea150dd77c481c746a858a2e6e9d6e96fc1f8f08fc4f10f"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-069/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            58,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            58,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "4046f79f2f17848dd099d3aa1604a8dbebd930fc6d6ad6b5575dd2a9ddb71ded"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-070",
+      "name": "이셸 토브",
+      "affiliation": "항만 밀수단",
+      "appearance": "여35 자색 머리 은색 눈 푸른 후드",
+      "rank": "위조 계약인",
+      "category": "적대적 인간",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-070/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            65,
+            85,
+            958,
+            1451
+          ],
+          "margins_ltrb": [
+            65,
+            85,
+            66,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "f75ed40157e565bba51e635e3ff703ac28752e21fbbffa13b084d4871571edef"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-070/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            16,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            16,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "cf148330f96cfb3485668087d1c337b03e66dc8584be299bd6300d7d4eece214"
+        }
+      }
+    }
+  ]
+}

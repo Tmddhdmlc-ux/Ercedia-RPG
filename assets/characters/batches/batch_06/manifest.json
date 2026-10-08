@@ -1,0 +1,729 @@
+{
+  "schema_version": 1,
+  "batch": "batch_06",
+  "roster_version": "2.1-normalized-starting-hp",
+  "generation": "built-in imagegen; each asset generated separately",
+  "status": "review_pending",
+  "characters": [
+    {
+      "id": "ER-NPC-051",
+      "name": "카데오 넬",
+      "affiliation": "흰물결 자치동맹",
+      "appearance": "남50 은회 머리 청록 눈 앞치마",
+      "rank": "항만 징세감시",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-051/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            70,
+            85,
+            954,
+            1451
+          ],
+          "margins_ltrb": [
+            70,
+            85,
+            70,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "9f666398cba1d57bb19d1dcd5828171b50c02ae72feef5b7401ba26e378d11b7"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-051/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            46,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            46,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "ec2744c1c374e38cec82cac2643601bb87571782e20eb987d3eea120547038d7"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-052",
+      "name": "유리아 크렌",
+      "affiliation": "전쟁유족 공동구호회",
+      "appearance": "여28 흑발 녹색 눈 회백 성의",
+      "rank": "전쟁고아 교사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-052/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            102,
+            85,
+            921,
+            1451
+          ],
+          "margins_ltrb": [
+            102,
+            85,
+            103,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "b86399762093edfe045099e8d5eb4ba47c3c0ffe491e2e7729627b2bd3d52241"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-052/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            5,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            5,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "8648ccc6444f2a4b24dad7f8ace872f2f391d78fb605e579697e38af009cd915"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-053",
+      "name": "헨릭 도르",
+      "affiliation": "세국 전쟁중재회",
+      "appearance": "남49 긴 회발 갈색 눈 남색 코트",
+      "rank": "중재 서기관",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-053/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            89,
+            85,
+            935,
+            1451
+          ],
+          "margins_ltrb": [
+            89,
+            85,
+            89,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "a21f1fd5aed5629cc586476d25a3b07fee13103b01cb020c0f8f50ea042cc31b"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-053/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            15,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            15,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "47ab70b4a621ceadb5018491d009e7c81fdcb638a60f0e415b93dd4eb00b08b2"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-054",
+      "name": "다리아 셀",
+      "affiliation": "세국 전쟁중재회",
+      "appearance": "여32 검은 웨이브 청회 눈 붉은 필기첩",
+      "rank": "전시 번역관",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-054/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            81,
+            85,
+            942,
+            1451
+          ],
+          "margins_ltrb": [
+            81,
+            85,
+            82,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "2fd08a07bc4267e89c68db19de138bada1d12bc920d29232cac0a82af116b742"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-054/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "c2ef2745d743598341254e899b2a6b2a37eb88edd2274666dc52c56877296342"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-055",
+      "name": "베누아 루",
+      "affiliation": "고요한 부엉이",
+      "appearance": "남36 백갈 단발 갈색 눈 보라 가방",
+      "rank": "도서 상인",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-055/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            123,
+            85,
+            901,
+            1451
+          ],
+          "margins_ltrb": [
+            123,
+            85,
+            123,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "1ad727a9fe42a94eddc3d683c58eeb5bb497ae79e9cf59e7f86acdee8ce90095"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-055/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            21,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            21,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "e1821ea950288fc06ebac90fdffd49262aca9fa1ff33b075c342dea6a9744592"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-056",
+      "name": "루카스 멜",
+      "affiliation": "발렌하르트 공작가",
+      "appearance": "남43 금테 안경 백회 머리 청색 외투",
+      "rank": "하급 관료",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-056/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            100,
+            85,
+            924,
+            1451
+          ],
+          "margins_ltrb": [
+            100,
+            85,
+            100,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "8a9b813f72e94b391e6ba445acc3a1251b9acbcf684557eac2668760d503c960"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-056/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            13,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            13,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "70764df6bfbd32ed3cc8a811ff2cd34a8398275eefa92fa654e2b8dffe5d0968"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-057",
+      "name": "마야 로웬",
+      "affiliation": "노르발트 변경백가",
+      "appearance": "여38 밤갈 곱슬 황갈 눈 털망토",
+      "rank": "치료사",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-057/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            92,
+            85,
+            931,
+            1451
+          ],
+          "margins_ltrb": [
+            92,
+            85,
+            93,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "dcbae1d391dfad2d3b97f9386743cbee8b18be1c3910946ddc9bc3dd4a3acf8e"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-057/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            22,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            22,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "7478f2706ddedf674ac0b810b3b63da0d56ce2e183f2f60b84d9a942cdc15e51"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-058",
+      "name": "칼리오 벨",
+      "affiliation": "엘름베르크 백작가",
+      "appearance": "남29 금발 녹색 눈 장부가방",
+      "rank": "곡창 감독관",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-058/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            81,
+            85,
+            943,
+            1451
+          ],
+          "margins_ltrb": [
+            81,
+            85,
+            81,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "af5d4d24f0ec0198505531eef354dd52e69394f8fe990a17eb6d43a2eb03c003"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-058/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            49,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            49,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "9573b71ddb727dc8e0bce3c9fe2c90f903e904dbf087fb0fcf9baf092084d646"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-059",
+      "name": "에델 루마",
+      "affiliation": "솔메리아 백작가",
+      "appearance": "여25 은갈 머리 갈색 눈 흰 조끼",
+      "rank": "장부 보조원",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-059/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            81,
+            85,
+            942,
+            1451
+          ],
+          "margins_ltrb": [
+            81,
+            85,
+            82,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "4fb8886c7c8e69c76433f112c3854e735e2ea55950904a0406efcf90a7c1a931"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-059/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            0,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            0,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "b5dde273f9d22e10bf9bb733db24dd19dc9c3a684da288335f9918eeeafe7be5"
+        }
+      }
+    },
+    {
+      "id": "ER-NPC-060",
+      "name": "로미엘 드란",
+      "affiliation": "루메린 왕실",
+      "appearance": "남41 흑갈 장발 녹색 눈 남청 제복",
+      "rank": "외교 서기관",
+      "category": "사회 인물",
+      "status": "review_pending",
+      "expressions": [
+        "base"
+      ],
+      "assets": {
+        "standing": {
+          "path": "assets/characters/standings/ER-NPC-060/base.png",
+          "size": [
+            1024,
+            1536
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            194,
+            85,
+            829,
+            1451
+          ],
+          "margins_ltrb": [
+            194,
+            85,
+            195,
+            85
+          ],
+          "foot_anchor": [
+            512.0,
+            1451
+          ],
+          "sha256": "f21556f103ec5ce545ec0239773c9914c57085fa088c581ebffbdf3f60184663"
+        },
+        "portrait": {
+          "path": "assets/characters/portraits/dialogue/ER-NPC-060/base.png",
+          "size": [
+            1086,
+            1448
+          ],
+          "mode": "RGBA",
+          "alpha_extrema": [
+            0,
+            255
+          ],
+          "bbox": [
+            0,
+            23,
+            1086,
+            1448
+          ],
+          "margins_ltrb": [
+            0,
+            23,
+            0,
+            0
+          ],
+          "foot_anchor": [
+            543.0,
+            1448
+          ],
+          "sha256": "34123d13fbf320f802c206f1779fa26b73fbc8cf2c4f319a0cbdc9509430f86a"
+        }
+      }
+    }
+  ]
+}
