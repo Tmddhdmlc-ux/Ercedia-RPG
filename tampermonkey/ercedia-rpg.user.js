@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.3
+// @version      1.1.4
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -155,14 +155,55 @@ function extractSceneJSON(source){
   const generating=()=>!!document.querySelector('[data-testid="stop-button"],button[aria-label="Stop generating"],button[aria-label="응답 생성 중지"],[data-testid="composer-submit-button"][data-state="stop"]');
   function baseline(){latestFingerprint=latest()?.textContent||'';}
   baseline();auto.onchange=()=>{responseCandidate='';responseSent='';scan();tell(auto.checked?'자동 연결 시험 켜짐 · 공개 페이지의 입력·응답 요소만 사용합니다.':'수동 모드 · 요청 복사와 JSON 적용을 사용하세요.');};
+  function pageRoots(){
+    const roots=[document];
+    for(let i=0;i<roots.length;i++)for(const element of roots[i].querySelectorAll('*')){
+      if(element!==root&&element.shadowRoot)roots.push(element.shadowRoot);
+    }
+    return roots;
+  }
+  function visible(element){
+    const box=element.getBoundingClientRect(),css=getComputedStyle(element);
+    return element.isConnected&&box.width>0&&box.height>0&&css.display!=='none'&&css.visibility!=='hidden'&&!element.closest('[hidden],[inert]');
+  }
+  function findComposer(){
+    const candidates=[];
+    // ChatGPT editors may be ProseMirror, Lexical, a textbox, or a textarea.
+    for(const scope of pageRoots())for(const element of scope.querySelectorAll('textarea,[contenteditable],[role="textbox"]')){
+      if(!visible(element)||element.disabled||element.readOnly||element.getAttribute('aria-disabled')==='true')continue;
+      if(element.tagName!=='TEXTAREA'&&!element.isContentEditable)continue;
+      // Nested editable children are part of the same editor, not separate inputs.
+      if(element.parentElement?.closest('[contenteditable="true"],[contenteditable="plaintext-only"]'))continue;
+      const hint=[element.id,element.getAttribute('data-testid'),element.getAttribute('aria-label'),element.getAttribute('placeholder'),element.getAttribute('data-placeholder')].filter(Boolean).join(' ');
+      if(/search|검색/i.test(hint)||element.closest('[data-message-author-role],[role="dialog"]'))continue;
+      let score=/prompt-textarea|composer/i.test(hint)?100:0;
+      if(/ChatGPT|message|prompt|메시지|물어보|프롬프트/i.test(hint))score+=60;
+      if(element.closest('form,[data-testid*="composer"],[id*="composer"]'))score+=35;
+      if(element.matches('.ProseMirror,[data-lexical-editor="true"]'))score+=25;
+      if(element.getAttribute('role')==='textbox')score+=10;
+      const box=element.getBoundingClientRect();
+      if(element.isContentEditable&&box.width>250&&box.bottom>innerHeight*.6)score+=20;
+      score+=Math.min(20,element.getBoundingClientRect().bottom/Math.max(1,innerHeight)*20);
+      candidates.push({element,score});
+    }
+    candidates.sort((a,b)=>b.score-a.score);
+    // Do not write to an unrelated search or message-edit field.
+    return candidates[0]?.score>=35?candidates[0].element:null;
+  }
+  function failAction(message){setMode('debug');tell(message);pending=null;send('action-error',message);}
   async function deliver(payload){
     pending=payload.requestId;baseline();
     if(!auto.checked){setMode('debug');tell('수동 모드 · 요청 복사로 원본 ChatGPT에 전송하세요.');return;}
-    if(generating())return tell('ChatGPT가 응답 중입니다. 요청을 전송하지 않았습니다. 대기 해제 후 다시 시도하세요.');
-    const editor=document.querySelector('#prompt-textarea,textarea[data-testid="prompt-textarea"]');
-    if(!editor){setMode('debug');return tell('ChatGPT 입력창을 찾지 못했습니다. 요청 복사로 직접 전송하세요.');}
+    if(generating())return failAction('ChatGPT가 응답 중입니다. 완료 후 다시 보내세요.');
+    let editor;
+    for(let attempt=0;attempt<10;attempt++){
+      if(pending!==payload.requestId)return;
+      editor=findComposer();if(editor)break;
+      await new Promise(resolve=>setTimeout(resolve,300));
+    }
+    if(!editor)return failAction('ChatGPT 입력창을 인식하지 못했습니다. 페이지 새로고침 후 다시 보내세요.');
     const existing=('value' in editor?editor.value:editor.textContent)||'';
-    if(existing.trim()){setMode('debug');return tell('작성 중인 원본 입력을 덮어쓰지 않았습니다. 요청 복사로 직접 전송하세요.');}
+    if(existing.trim())return failAction('원본 ChatGPT 입력창에 작성 중인 내용이 있습니다. 먼저 비운 뒤 다시 보내세요.');
     editor.focus();
     if('value' in editor){const setter=Object.getOwnPropertyDescriptor(HTMLTextAreaElement.prototype,'value')?.set;setter?setter.call(editor,payload.text):editor.value=payload.text;}
     else {
@@ -170,17 +211,18 @@ function extractSceneJSON(source){
       let inserted=false;try{inserted=document.execCommand('insertText',false,payload.text);}catch{}
       if(!inserted){const paragraphs=payload.text.split('\n').map(line=>{const p=document.createElement('p');p.textContent=line;return p;});editor.replaceChildren(...paragraphs);}
     }
-    editor.dispatchEvent(new InputEvent('input',{bubbles:true,inputType:'insertText',data:payload.text}));
+    editor.dispatchEvent(new InputEvent('input',{bubbles:true,composed:true,inputType:'insertText',data:payload.text}));
+    tell('ChatGPT 입력창 감지 · 요청 전달 완료 · 전송 버튼을 기다리는 중…');
     let submit;
     for(let attempt=0;attempt<12;attempt++){
       await new Promise(resolve=>setTimeout(resolve,200));
       if(conversation!==conversationId()||pending!==payload.requestId)return;
       const selectors='button[data-testid="send-button"],button[data-testid="composer-submit-button"],button[aria-label="Send prompt"],button[aria-label="프롬프트 보내기"],button[aria-label="메시지 보내기"]';
-      submit=[...document.querySelectorAll(selectors)].find(button=>!button.disabled&&!/stop|중지/i.test(button.getAttribute('aria-label')||'')&&button.dataset.state!=='stop');
+      submit=pageRoots().flatMap(scope=>[...scope.querySelectorAll(selectors)]).find(button=>visible(button)&&!button.disabled&&button.getAttribute('aria-disabled')!=='true'&&!/stop|중지/i.test(button.getAttribute('aria-label')||'')&&button.dataset.state!=='stop');
       if(!submit)submit=editor.closest('form')?.querySelector('button[type="submit"]');
       if(submit&&!submit.disabled&&!generating())break;submit=null;
     }
-    if(!submit||submit.disabled){setMode('debug');tell('GPT 입력창 전달 완료 · 전송 버튼을 확인하지 못했습니다.');send('action-error','GPT 입력창에는 요청을 넣었지만 전송하지 못했습니다. 원본 입력창의 전송 버튼을 확인하세요.');return;}
+    if(!submit||submit.disabled)return failAction('GPT 입력창에는 요청을 넣었지만 전송하지 못했습니다. 원본 입력창의 전송 버튼을 확인하세요.');
     submit.click();tell('전송을 시도했습니다. 응답을 기다리는 중…');
     setTimeout(()=>{if(pending===payload.requestId&&(('value' in editor?editor.value:editor.textContent)||'').trim()&&!generating())tell('전송 확인이 되지 않았습니다. 원본 입력창을 확인하세요. 자동 재전송은 하지 않습니다.');},1200);
   }
