@@ -1,0 +1,7 @@
+{
+  "monster_number": 18,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: an unusual black deer ring-antler fragment, naturally curved almost into a closed oval loop with two short horn points, charcoal ridged keratin surface, a clean broken root, no metal fitting. RIGHT: a small compact tuft of black moss, very dark green-black fine branching fronds with a few muted olive tips, irregular organic clump, no soil mound. Canon abyss-ring deer has black ringed horns, red eyes and moss-covered fur. Materials only, no eye motif, red gem, occult symbols, jewelry or external aura.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-275bffd8-06b7-4e3d-960f-c23ade6426e4.png",
+  "source_path": "assets/items/templates/materials/source-18.png",
+  "source_sha256": "549b01ef6ccae5bcbf54e015afe78e8e113efb251290ee20d0af5a67640f4ae8"
+}

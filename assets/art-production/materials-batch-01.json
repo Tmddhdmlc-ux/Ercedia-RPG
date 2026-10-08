@@ -67,7 +67,7 @@
     "MAT-010-2"
   ],
   "failures": [],
-  "commit_sha": null,
+  "commit_sha": "3efdb8698016de148a6a4a15e7bf18d6d89b315f",
   "note": "Material rarity is absent in source; monster rank, quality and value_class are not converted to item rarity.",
   "visual_verified": true,
   "visual_method": "Every final icon inspected on the batch contact sheet at 176px and 48px; no frame, clipping, opaque backdrop, or unreadable silhouette."

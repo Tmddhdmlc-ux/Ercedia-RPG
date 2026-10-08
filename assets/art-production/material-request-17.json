@@ -1,0 +1,7 @@
+{
+  "monster_number": 17,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a rugged plate of ancient tree-spirit bark, deep brown cracked bark with a few muted moss-green seams and aged grain, irregular dry edges. RIGHT: a short dense section of primeval forest heartwood, twisted dark honey-brown wood, visible concentric growth rings on the cut end with a faint green tint deep inside the grain, thicker solid log segment rather than bark plate. Canon ghost-tree walker has a moving ancient-tree trunk, green eyes and deep root legs. Draw only bark and heartwood, no faces, eyes, creature limbs, symbols, jewelry or extra magic.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-82a263cc-6512-4b35-8025-9ec8577b926c.png",
+  "source_path": "assets/items/templates/materials/source-17.png",
+  "source_sha256": "26a792421936622b97bf1f96726d82fb6ffe4f5c51c29389023fc81709b8b0f0"
+}

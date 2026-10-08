@@ -1,0 +1,7 @@
+{
+  "monster_number": 15,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a small open dark navy cloth pouch filled with fine warm golden moth-wing powder, tiny reflective grains clearly contained in the pouch, no free glowing cloud. RIGHT: a matched pair of gently curved moth antennae, slender dark navy stems with warm pale gold lantern-like terminal tips and fine feathery sensory branches, arranged as a simple V bundle with clean dry roots. Canon night-lantern moth has dark blue large wings with golden lantern markings. Subtle luminous appearance confined to tips and grains; no halo, no surrounding glow, no full moth.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-c1423477-0579-49f7-9435-076b8b6a4586.png",
+  "source_path": "assets/items/templates/materials/source-15.png",
+  "source_sha256": "af33db94e2b57c7976157162fb081d4979af657e014b4663a4260047304a09c4"
+}

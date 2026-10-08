@@ -8,10 +8,10 @@
 |---|---:|---:|
 | 장비 | 300 | 300 |
 | 책 | 70 | 70 |
-| 전리품 | 20 | 40 |
+| 전리품 | 40 | 40 |
 | 장소 | 1 | 261 |
 
-총 검수 완료: **391/671**.
+총 검수 완료: **411/671**.
 
 ## 목록과 재개 기준
 
@@ -152,6 +152,14 @@
 - 미완료 ID: 없음
 - 실패 이유: 없음
 - 파일 경로/템플릿/검증: [materials-batch-01.json](art-production/materials-batch-01.json) 및 전체 자산 목록 참조.
+- 이미지 업로드 커밋: `3efdb8698016de148a6a4a15e7bf18d6d89b315f`
+
+### materials-batch-02
+
+- 대상/완료 ID: MAT-011-1, MAT-011-2, MAT-012-1, MAT-012-2, MAT-013-1, MAT-013-2, MAT-014-1, MAT-014-2, MAT-015-1, MAT-015-2, MAT-016-1, MAT-016-2, MAT-017-1, MAT-017-2, MAT-018-1, MAT-018-2, MAT-019-1, MAT-019-2, MAT-020-1, MAT-020-2
+- 미완료 ID: 없음
+- 실패 이유: 없음
+- 파일 경로/템플릿/검증: [materials-batch-02.json](art-production/materials-batch-02.json) 및 전체 자산 목록 참조.
 - 이미지 업로드 커밋: `업로드 전`
 
 ### samples-batch-01

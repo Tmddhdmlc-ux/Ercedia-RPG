@@ -1,0 +1,7 @@
+{
+  "monster_number": 12,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a chunky coral-colored crab carapace fragment, rounded dome with a few blunt natural knobs, salmon-pink and muted reddish coral surface, broken edge showing chalky layered shell. RIGHT: a blue crab beak fragment, two short curved interlocking hornlike pieces forming a compact pointed beak, ocean-blue chitin with pale edge highlights. Canon reef beak-crab has coral-colored dorsal shell and a blue beak. Item name 'coral beak' describes origin; retain canon blue beak color. No full animal, coral reef scenery or jewelry.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-5395f7db-6b1a-4386-a0f1-3cc249ae0545.png",
+  "source_path": "assets/items/templates/materials/source-12.png",
+  "source_sha256": "447701ff9c50c4b7f6168f05fdcb38026ea3d83b881ef3cc18ca3fe5229d4cdd"
+}

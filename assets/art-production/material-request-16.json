@@ -1,0 +1,7 @@
+{
+  "monster_number": 16,
+  "prompt": "Create a wide horizontal transparent sprite canvas with TWO separate Ercedia RPG crafting material icons, one complete object entirely inside the left half and one inside the right half, large empty transparent central gap, each full silhouette with safe margins, no shared background. Materials only, no monster or person, no gore or wound. Hand-drawn 2D anime medieval fantasy, clean dark lineart, refined painterly cel shading, upper-left light, restrained colors, thick enough to read at 48px. True alpha transparency, no opaque backdrop, no ground shadow plane, no text, labels, letters, frames, rarity borders, halos, watermarks, photorealism or 3D render. LEFT: a simple tuft of fox fur, soft layered ochre and sand-gold fibers with pale cream underside, compact irregular fur patch, no animal face or tail anatomy. RIGHT: three short pointed fox claws, naturally curved tapered horn shapes, matte earthy ochre-brown surfaces with slightly darker roots, grouped loosely into a fan, no metal or jewelry. Canon sand-colored fox has ochre fur and four tails; only fur and claws are collected. Keep simple natural materials, not decorative ornaments.",
+  "source": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11c2f-3e0f-7b03-9e4e-9b04585c541c\\exec-f183ff8b-3b83-4683-a392-55a50120c05b.png",
+  "source_path": "assets/items/templates/materials/source-16.png",
+  "source_sha256": "69f213cab3b4e61f74aa03ef49bfa0d5684aa3851fa68a283ed529bc05821363"
+}
