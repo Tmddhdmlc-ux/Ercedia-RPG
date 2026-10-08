@@ -7,7 +7,7 @@
   <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>써니 빌리지에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
     <article class="game">
-      <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
+      <nav class="tabs" aria-label="게임 화면"><button id="story-tab" class="active" aria-pressed="true" aria-controls="story">대화 <span>STORY</span></button><button id="map-tab" aria-pressed="false" aria-controls="map-panel">세계지도 <span>WORLD MAP</span></button><button id="status-tab" aria-pressed="false" aria-controls="status-panel">상태창 <span>STATUS</span></button><button id="inventory-tab" aria-pressed="false" aria-controls="inventory-panel">인벤토리 <span>INVENTORY</span></button><button id="fullscreen" aria-pressed="false" title="전체화면으로 보기 · Esc로 돌아가기">⛶ 전체화면</button></nav>
       <section id="story" aria-label="대화 화면">
         <div class="stage" id="stage" role="button" tabindex="0" aria-label="장면을 눌러 다음 대사 보기">
           <img id="background" class="background" alt="써니 빌리지 낮 배경" draggable="false">
@@ -37,6 +37,13 @@
         <p id="skills-empty" class="skills-empty">사용 가능한 스킬이 없습니다.</p>
         <div id="skill-list" class="skill-list"></div>
         </div>
+      </section>
+      <section id="inventory-panel" class="inventory-panel" aria-label="인벤토리" hidden>
+        <div class="inventory-heading"><div><span class="eyebrow">INVENTORY</span><h2>소지품</h2></div><span id="inventory-count"></span><button id="inventory-preview" aria-pressed="false">아이템 미리보기</button></div>
+        <nav id="inventory-categories" class="inventory-categories" aria-label="아이템 분류"></nav>
+        <div id="inventory-scroll" class="inventory-scroll"><div id="inventory-grid" class="inventory-grid" aria-label="아이템 슬롯"></div><p id="inventory-empty" class="inventory-empty"></p></div>
+        <p id="inventory-note" class="inventory-note"></p>
+        <div id="item-tooltip" class="item-tooltip" role="tooltip" hidden><span id="item-category"></span><h3 id="item-name"></h3><p id="item-description"></p><p id="item-effect"></p><small id="item-quantity"></small></div>
       </section>
       <div class="game-foot"><span>✧ 에르세디아 RPG</span><span>AI 대화 미연결</span></div>
     </article>

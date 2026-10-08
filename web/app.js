@@ -1,3 +1,4 @@
+import {mountInventory,normalizeInventory} from './inventory.js';
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
 import {mapData} from './map-data.js';
@@ -102,7 +103,7 @@ function renderLayout(){
 }
 function renderDialogue(){const d=dialogues[state.index];$('speaker').textContent=d[0];$('emotion').textContent=d[1];$('line').textContent=d[2];$('count').textContent=`0${state.index+1} / 04`;$('previous').disabled=state.index===0;$('next').disabled=state.index===3;$('stage').setAttribute('aria-label',state.index===3?'마지막 대사':'장면을 눌러 다음 대사 보기');}
 function advance(delta){const next=Math.max(0,Math.min(3,state.index+delta));if(next===state.index)return;state.index=next;renderDialogue();dirty();}
-function switchTo(page){state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
+function switchTo(page){inventoryUI.hide();if(page==='inventory')inventoryUI.render();state.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();}
 function updateMapCamera(){
   const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
   const camera=cameraTransform(regionFrame(state.mapView),width,height);
@@ -126,6 +127,7 @@ document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.m
 $('map-overview').onclick=()=>{state.mapView='world';state.region='world';renderRegion();dirty();};
 const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.observe($('map-container'));
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
+$('inventory-tab').onclick=()=>{switchTo('inventory');dirty();};
 $('status-tab').onclick=()=>{switchTo('status');dirty();};
 $('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
 $('stage').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
@@ -138,6 +140,12 @@ $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout
 function saveGame(){try{localStorage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
 $('save').onclick=saveGame;
 mountPlayer(state);
+const inventoryUI=mountInventory(state);
+// A future game engine sends the complete current bag; UI previews never change it.
+window.addEventListener('ercedia:inventory-update',event=>{
+  state.inventory=normalizeInventory(event.detail);inventoryUI.render();
+  saveGame();
+});
 renderAppearance();renderDialogue();renderRegion();switchTo(state.page);
 
 const game=document.querySelector('.game');
