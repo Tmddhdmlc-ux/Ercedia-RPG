@@ -37,6 +37,13 @@ async def main():
                            path=target.relative_to(ROOT).as_posix(),
                            sha256=hashlib.sha256(target.read_bytes()).hexdigest()))
         print(ident, target.stat().st_size, flush=True)
+    args = [imageio_ffmpeg.get_ffmpeg_exe(), '-v', 'error', '-y']
+    for line in result:
+        args += ['-i', str(ROOT / line['path'])]
+    filters = ';'.join(f'[{i}:a]apad=pad_dur=0.55[a{i}]' for i in range(len(result)))
+    filters += ';' + ''.join(f'[a{i}]' for i in range(len(result))) + f'concat=n={len(result)}:v=0:a=1[out]'
+    subprocess.run(args + ['-filter_complex', filters, '-map', '[out]', '-c:a', 'libmp3lame',
+                           '-b:a', '160k', str(OUT / 'all-five.mp3')], check=True)
     (OUT / 'lines.json').write_text(json.dumps({
         'status': 'audition_only', 'provider': 'Microsoft Edge online TTS via edge-tts',
         'tool_reference': 'https://github.com/rany2/edge-tts',
