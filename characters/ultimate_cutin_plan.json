@@ -1,0 +1,3968 @@
+{
+  "schema_version": 1,
+  "type": "ultimate_cutin_art_plan",
+  "rules_source": "ULTIMATE_CUTIN_ART_RULES.md",
+  "runtime_registration": "not_requested",
+  "usage_thresholds": {
+    "knight": "expert",
+    "mage_circle": 3
+  },
+  "strong_visual_tiers": {
+    "knight": "hyper",
+    "mage_circle": 6
+  },
+  "character_count": 163,
+  "characters": [
+    {
+      "id": "ER-NPC-001",
+      "name": "알윈 페르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-001/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-001/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-002/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-002/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-003",
+      "name": "케른 토리스",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-003/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-003/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-004",
+      "name": "미엘 타란",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-004/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-004/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-005",
+      "name": "노아 벨크",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-005/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-005/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-006",
+      "name": "헤리나 조스트",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-006/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-006/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-007",
+      "name": "페이 론델",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-007/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-007/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-008",
+      "name": "마티스 렌",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-008/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-008/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-009",
+      "name": "다리오 센",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-009/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-009/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-010",
+      "name": "라넬 에스타",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-010/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-010/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-011",
+      "name": "요엘 하츠",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "익스퍼트 나이트",
+      "current_realm": "expert",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-011/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-011/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-012",
+      "name": "시나 브렌",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-012/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-012/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-013",
+      "name": "에르빈 루즈",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "3서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-013/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-013/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-014",
+      "name": "리비아 오르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "1서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-014/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-014/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-015",
+      "name": "티렐 루인",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "4서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-015/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-015/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-016",
+      "name": "키아 멜즈",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "2서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-016/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-016/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-017",
+      "name": "세디아 루브",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "4서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-017/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-017/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-018",
+      "name": "모렌 시프",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "2서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-018/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-018/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-019",
+      "name": "엘라스 로크",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "4서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-019/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-019/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "2서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-020/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-020/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "4서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-021/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-021/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-022",
+      "name": "에타 칼즈",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "2서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-022/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-022/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-023",
+      "name": "레베카 노스",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-023/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-023/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-024",
+      "name": "단테 로에",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-024/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-024/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-025",
+      "name": "오리아 밈",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-025/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-025/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-026",
+      "name": "로한 베스크",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-026/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-026/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-027",
+      "name": "에린 델프",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-027/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-027/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-028",
+      "name": "세브 루아",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-028/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-028/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-029",
+      "name": "아델 핀",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-029/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-029/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-030",
+      "name": "티온 바르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-030/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-030/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-031",
+      "name": "리아 노엘",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-031/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-031/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-032",
+      "name": "마레스 반",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-032/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-032/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-033",
+      "name": "엘피 세이",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급 사제",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-033/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-033/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-034",
+      "name": "나룬 베일",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "은패",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-034/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-034/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-035",
+      "name": "피아 로만",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "동패",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-035/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-035/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-036",
+      "name": "카린 돌트",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "금패",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-036/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-036/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-037",
+      "name": "가이언 리오",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "은패",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-037/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-037/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-038",
+      "name": "바라크 몬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "숙련 용병",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-038/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-038/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-039",
+      "name": "델리카 포",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "2서클",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-039/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-039/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-NPC-040",
+      "name": "베렌 케이",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "숙련 선원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-040/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-040/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-041",
+      "name": "모니카 페즈",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "일반 전투원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-041/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-041/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-042",
+      "name": "루도 산체",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상단 간부",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-042/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-042/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-043",
+      "name": "밀라 안데르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상단 실무자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-043/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-043/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상단 호위",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-044/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-044/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-045",
+      "name": "로나트 피스",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상단 실무자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-045/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-045/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-046",
+      "name": "네아 페렌",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "농민 활동가",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-046/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-046/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-047",
+      "name": "에브란 무르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "곡물 배급원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-047/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-047/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-048",
+      "name": "로키아 멘",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "광부 안전감독",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-048/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-048/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-049",
+      "name": "후고 벨라",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "노동 협상단원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-049/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-049/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-050",
+      "name": "테아 미르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "어부 조합원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-050/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-050/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-051",
+      "name": "카데오 넬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "항만 징세감시",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-051/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-051/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-052",
+      "name": "유리아 크렌",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "전쟁고아 교사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-052/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-052/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-053",
+      "name": "헨릭 도르",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중재 서기관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-053/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-053/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-054",
+      "name": "다리아 셀",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "전시 번역관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-054/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-054/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-055",
+      "name": "베누아 루",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "도서 상인",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-055/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-055/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-056",
+      "name": "루카스 멜",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급 관료",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-056/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-056/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-057",
+      "name": "마야 로웬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "치료사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-057/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-057/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-058",
+      "name": "칼리오 벨",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "곡창 감독관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-058/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-058/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-059",
+      "name": "에델 루마",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "장부 보조원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-059/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-059/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-060",
+      "name": "로미엘 드란",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "외교 서기관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-060/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-060/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-061",
+      "name": "핀 코르다",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "공방 조달관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-061/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-061/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-062",
+      "name": "에시아 르몬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "선박 의사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-062/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-062/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-063",
+      "name": "로칸 헤스",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "감시탑 목수",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-063/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-063/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-064",
+      "name": "미엔 카프",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "약초 재배자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-064/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-064/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-065",
+      "name": "오델 비프",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "교량 통행인",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-065/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-065/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-066",
+      "name": "도릭 뤼프",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "도적 두목",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-066/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-066/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-067",
+      "name": "바센 모그",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "도적 궁수",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-067/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-067/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-068",
+      "name": "카자 트른",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "매복 전투원",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-068/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-068/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-069",
+      "name": "프레트 곤",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "탈영병 전사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-069/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-069/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-070",
+      "name": "이셸 토브",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "위조 계약인",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-070/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-070/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-071",
+      "name": "아르고 폰",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "해적 부선장",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-071/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-071/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-072",
+      "name": "멘자 데크",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "해적 투척수",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-072/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-072/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-073",
+      "name": "베르곤 헬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "갱도 파괴자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-073/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-073/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-074",
+      "name": "나시르 젬",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "기계 도둑",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-074/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-074/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-075",
+      "name": "페이라 록",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "사기 협상가",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-075/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-075/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-076",
+      "name": "델로스 칼",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "마차 습격자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-076/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-076/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-077",
+      "name": "루쉬 엔",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "불법 수렵꾼",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-077/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-077/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-078",
+      "name": "코드란 얀",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "유적 약탈자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-078/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-078/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-079",
+      "name": "가레트 보",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "위조품 판매자",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-079/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-079/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-080",
+      "name": "미라한 델",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "거짓 검문관",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-NPC-080/base.png",
+        "assets/characters/portraits/dialogue/ER-NPC-080/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-081",
+      "name": "서리갈기 늑대",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-081.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-082",
+      "name": "백각 설산사슴",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-082.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-083",
+      "name": "철가죽 멧돼지",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-083.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-084",
+      "name": "곡창 그림자쥐",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-084.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-085",
+      "name": "잿불 송곳도마뱀",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-085.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-086",
+      "name": "뿔돌 협곡독수리",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-086.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-087",
+      "name": "수정굴 광충",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-087.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-088",
+      "name": "공명 수정거미",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-088.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-089",
+      "name": "청전기 산양",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-089.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-090",
+      "name": "회안개 박쥐",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-090.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-091",
+      "name": "해풍 날개뱀",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "중급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-091.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-092",
+      "name": "암초 부리게",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-092.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-093",
+      "name": "흑진주 먹장어",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-093.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-094",
+      "name": "은비늘 물갈퀴어",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-094.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-095",
+      "name": "밤등불 나방",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-095.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-096",
+      "name": "사막색 모래여우",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "하급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-096.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-097",
+      "name": "유령나무 산책자",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "엘리트",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-097.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-098",
+      "name": "심연고리 사슴",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "상급",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-098.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-099",
+      "name": "푸른균열 사냥개",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "미스틱",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-099.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-NPC-100",
+      "name": "고대석갑 파수충",
+      "source": "characters/npc_roster_100.json",
+      "current_rank": "엘리트",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/monsters/portraits/ER-NPC-100.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-001",
+      "name": "아르센 4세",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "국왕",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-001/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-001/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-002",
+      "name": "레오니스 2세",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "국왕",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-002/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-002/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-003",
+      "name": "세레나 1세",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "여왕",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-003/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-003/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-004",
+      "name": "에드릭 노르발트",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-004/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-004/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-005",
+      "name": "카시안 발렌하르트",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-005/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-005/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-006",
+      "name": "마르타 엘름베르크",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-006/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-006/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-007",
+      "name": "율리안 로젠펠트",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-007/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-007/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-008",
+      "name": "비올레트 아르덴슈타인",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-008/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-008/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-009",
+      "name": "하인리히 칼트하임",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-009/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-009/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-010",
+      "name": "셀리아 아이젠크로네",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-010/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-010/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-011",
+      "name": "발터 베르크슈타인",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-011/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-011/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-012",
+      "name": "에밀 실베른",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-012/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-012/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-013",
+      "name": "도미니크 벨마리나",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-013/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-013/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-014",
+      "name": "이사벨 세르반",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-014/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-014/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-015",
+      "name": "티에라 아쿠아렌",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-015/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-015/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-016",
+      "name": "라파엘 솔메리아",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "영주",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-016/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-016/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-017",
+      "name": "율렌 크라스",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-017/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-017/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-018",
+      "name": "세아 메르",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-018/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-018/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-019",
+      "name": "로나 에일",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-019/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-019/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-020",
+      "name": "다미엔 솔",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-020/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-020/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-021",
+      "name": "카르민 테라",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-021/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-021/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-022",
+      "name": "이오나 베르",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-022/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-022/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-023",
+      "name": "타빈 루오",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-023/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-023/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-024",
+      "name": "레이카스 룬",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-024/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-024/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-025",
+      "name": "에스텔 루나르",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-025/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-025/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-026",
+      "name": "니엘 마크",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-026/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-026/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-027",
+      "name": "베니아 사르",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "성자/성녀",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-027/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-027/base.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-CORE-028",
+      "name": "로데릭 바란",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "마스터 나이트",
+      "current_realm": "master",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-028/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-028/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "하이퍼 나이트",
+      "current_realm": "hyper",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-029/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-029/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-030",
+      "name": "카르스 에델",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "마스터 나이트",
+      "current_realm": "master",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-030/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-030/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-031",
+      "name": "베라 칼트하임",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "하이퍼 나이트",
+      "current_realm": "hyper",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-031/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-031/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-032",
+      "name": "알렉시아 바레트",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "마스터 나이트",
+      "current_realm": "master",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-032/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-032/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-033",
+      "name": "루카 마리노",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "하이퍼 나이트",
+      "current_realm": "hyper",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-033/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-033/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-034",
+      "name": "오르델 비안",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "6서클 마법사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-034/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-034/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "7서클 마법사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-035/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-035/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-036",
+      "name": "마레나 에르노",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "6서클 마법사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-036/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-036/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-037",
+      "name": "세드릭 바일",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "6서클 마법사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-037/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-037/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-CORE-038",
+      "name": "테레사 가른",
+      "source": "characters/core_cast_stats_38.json",
+      "current_rank": "6서클 마법사",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/standings/ER-CORE-038/base.png",
+        "assets/characters/portraits/dialogue/ER-CORE-038/base.png"
+      ],
+      "versions": [
+        {
+          "tier": "circle3",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "circle6",
+          "status": "planned",
+          "image": null
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "serin",
+      "name": "세린",
+      "source": "characters/serin.json",
+      "current_rank": "베이직 나이트",
+      "current_realm": "basic",
+      "reference_art": [
+        "assets/characters/main/serin/standing/base.png",
+        "assets/characters/main/serin/base_transparent.png"
+      ],
+      "versions": [
+        {
+          "tier": "expert",
+          "status": "planned",
+          "image": null
+        },
+        {
+          "tier": "hyper",
+          "status": "reference_sample_ready",
+          "image": "assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png"
+        }
+      ],
+      "status": "needs_approved_ability_review",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "승인된 설정을 확인한 뒤 제작한다. 기술명·속성을 추측하지 않는다."
+    },
+    {
+      "id": "ER-COM-001",
+      "name": "브란 오크펠",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-001/standing.png",
+        "assets/characters/common/drafts/ER-COM-001/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-002",
+      "name": "마레나 펜",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-002/standing.png",
+        "assets/characters/common/drafts/ER-COM-002/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-003",
+      "name": "토렌 바크",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-003/standing.png",
+        "assets/characters/common/drafts/ER-COM-003/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-004",
+      "name": "에다 클라인",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-004/standing.png",
+        "assets/characters/common/drafts/ER-COM-004/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-005",
+      "name": "오스벤 밀러",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-005/standing.png",
+        "assets/characters/common/drafts/ER-COM-005/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-006",
+      "name": "리네트 모어",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-006/standing.png",
+        "assets/characters/common/drafts/ER-COM-006/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-007",
+      "name": "시그나 론",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-007/standing.png",
+        "assets/characters/common/drafts/ER-COM-007/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-008",
+      "name": "페릭 하웬",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-008/standing.png",
+        "assets/characters/common/drafts/ER-COM-008/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-009",
+      "name": "도르만 켈",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-009/standing.png",
+        "assets/characters/common/drafts/ER-COM-009/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-010",
+      "name": "베라 노트",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-010/standing.png",
+        "assets/characters/common/drafts/ER-COM-010/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-011",
+      "name": "니카 펠트",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-011/standing.png",
+        "assets/characters/common/drafts/ER-COM-011/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-012",
+      "name": "울브릭 타너",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-012/standing.png",
+        "assets/characters/common/drafts/ER-COM-012/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-013",
+      "name": "멜리사 베크",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-013/standing.png",
+        "assets/characters/common/drafts/ER-COM-013/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-014",
+      "name": "라덴 크로스",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-014/standing.png",
+        "assets/characters/common/drafts/ER-COM-014/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-015",
+      "name": "신원 미상의 행인",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-015/standing.png",
+        "assets/characters/common/drafts/ER-COM-015/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-016",
+      "name": "그레타 슈멜",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-016/standing.png",
+        "assets/characters/common/drafts/ER-COM-016/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-017",
+      "name": "헤르몬 솔트",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-017/standing.png",
+        "assets/characters/common/drafts/ER-COM-017/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-018",
+      "name": "루치오 마렌",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-018/standing.png",
+        "assets/characters/common/drafts/ER-COM-018/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-019",
+      "name": "이레나 비올",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-019/standing.png",
+        "assets/characters/common/drafts/ER-COM-019/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-020",
+      "name": "테오 파르",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-020/standing.png",
+        "assets/characters/common/drafts/ER-COM-020/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-021",
+      "name": "미라 엔델",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-021/standing.png",
+        "assets/characters/common/drafts/ER-COM-021/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-022",
+      "name": "알데르 바인",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-022/standing.png",
+        "assets/characters/common/drafts/ER-COM-022/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-023",
+      "name": "셀다 네트",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-023/standing.png",
+        "assets/characters/common/drafts/ER-COM-023/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    },
+    {
+      "id": "ER-COM-024",
+      "name": "신원 미상의 행인",
+      "source": "characters/common_npc_roster.json",
+      "current_rank": "미정",
+      "current_realm": "none",
+      "reference_art": [
+        "assets/characters/common/drafts/ER-COM-024/standing.png",
+        "assets/characters/common/drafts/ER-COM-024/portrait.png"
+      ],
+      "versions": [],
+      "status": "pending_class_or_ability",
+      "ability_name": null,
+      "element": null,
+      "composition": {
+        "camera": null,
+        "pose": null,
+        "focal_action": null,
+        "effect_origin": null
+      },
+      "note": "생활형·경지 미정 인물: 전투 직업·궁극기를 임의 부여하지 않고 보류 사유를 기록한다."
+    }
+  ]
+}
