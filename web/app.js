@@ -73,7 +73,7 @@ for(const p of mapData.locations){const button=document.createElement('button');
 const embedded=!!window.__ERCEDIA_CONFIG__;
 let storage;
 let restored;
-try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
+try {const source=window.__ERCEDIA_STORAGE__||window.localStorage;storage={getItem:key=>source.getItem(key),setItem(key,value){if(restored?.saveBlocked)throw Error('기존 저장 보호 중 · 저장 복구가 필요합니다.');source.setItem(key,value);}};restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
 // Embedded storage writes whole saves. Keep audio preferences inside that save.
 const musicStorage={getItem:()=>JSON.stringify(state.uiPreferences?.music||{}),setItem:(key,value)=>{state.uiPreferences={...state.uiPreferences,music:JSON.parse(value)};saveGame();}};
@@ -253,7 +253,7 @@ let frame=0;
 for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
 for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;if(key==='background')state.uiPreferences={...state.uiPreferences,sceneBackground:e.target.checked};renderAppearance();dirty();};
 $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
-function saveGame(){try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
+function saveGame(){if(restored.saveBlocked){$('save-status').textContent=restored.message;return;}try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
 $('save').onclick=saveGame;
 const playerUI=mountPlayer(state);
 const inventoryUI=mountInventory(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
@@ -264,7 +264,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
 });
 let remasterUI=null,worldUI=null,tradeUI=null,adventureUI=null,skillLoadoutUI=null;
 function renderAll(){ambience.sync();backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();timeUI.render();adventureUI?.render();skillLoadoutUI?.render();saveUI?.refresh();}
-chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
+chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI,onRestore:()=>{restored.saveBlocked=false;}});
 mountSceneComposer($('stage'),$('chat-runtime'));
 mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:message=>chatUI.reportStatus(message)});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),getNPC:()=>npcInfo.current()});

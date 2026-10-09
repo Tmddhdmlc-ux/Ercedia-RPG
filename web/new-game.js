@@ -7,6 +7,7 @@ import {factionLocations} from './faction-data.js';
 import {loadCampaignSettings,campaignNPCStates} from './campaign-settings.js';
 import {npcCatalog} from './npc-model.js';
 import {freshCampaign} from './new-game-state.js';
+import {preserveSaveSlots} from './save-preservation.js';
 import {startRegionInfo,automaticStartLordship} from './start-regions.js';
 export function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -166,6 +167,6 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
   $('intro-goal').onkeydown=event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
   $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
   $('intro-map-next').onclick=()=>state.introDraft.kingdom&&state.introDraft.lordship?complete():go('confirmation');
-  $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
+  $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=preserveSaveSlots(normalize(state.previousGame),state.save_slots);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
   return {render:refresh,syncMap,begin,isStarting:()=>starting,setSettings:snapshot=>{settings=snapshot;}};
 }

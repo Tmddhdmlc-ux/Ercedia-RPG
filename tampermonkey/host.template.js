@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.2.4
+// @version      1.2.5
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -26,6 +26,7 @@
   /*__SETTINGS_ATTACHMENT__*/
   /*__CHAT_HANDOFF__*/
   /*__RELEASE_STATE__*/
+  /*__SAVE_PRESERVATION__*/
   if(['127.0.0.1','localhost'].includes(location.hostname)){
     installLocalHandoff({scope:window,write:(key,value)=>GM_setValue(key,value),openTab:url=>GM_openInTab(url,{active:true,insert:true})});return;
   }
@@ -41,6 +42,7 @@
   const title=document.createElement('strong');title.textContent='에르세디아 RPG';toolbar.append(title);
   const version=document.createElement('span');version.id='ui-version';toolbar.append(version);
   const mode=button('디버그 모드','launcher-mode'),check=button('최신 버전 확인','check-update'),update=button('업데이트 적용','apply-update'),rollback=button('이전 버전 복구','rollback-update');update.hidden=true;rollback.disabled=true;
+  const recover=button('저장 복구','recover-save');
   const label=document.createElement('label'),auto=document.createElement('input');auto.type='checkbox';label.append(auto,'GPT 자동 연결');toolbar.append(label);
   const resetSize=button('창 기본 크기','reset-size');
   const close=button('게임 종료','close-game'),status=document.createElement('div');status.className='status';status.setAttribute('role','status');toolbar.append(status);
@@ -51,12 +53,14 @@
   const resizeHandle=document.createElement('button');resizeHandle.className='resize-handle';resizeHandle.textContent='◢';resizeHandle.setAttribute('aria-label','창 크기 조절 · 방향키로도 조절 가능');win.append(resizeHandle);
   shadow.append(style,win,stage,launcher);win.append(toolbar,info,loading);document.documentElement.append(root);root.dataset.mode='game';
   const receivedActions=new Set();let responseCandidate='',responseStableAt=0,responseSent='';
-  let conversation=conversationId(),lastURL=location.href,active=null,prepared=null,previous=null,candidate=null,latestState=null,pending=null,checking=false,switching=false,lastCheck=0,latestFingerprint='',lastApplied='',scanTimer=null,routeTimer=null;
+  let conversation=conversationId(),lastURL=location.href,active=null,prepared=null,previous=null,candidate=null,latestState=null,pending=null,checking=false,switching=false,recovering=false,lastCheck=0,latestFingerprint='',lastApplied='',scanTimer=null,routeTimer=null;
   const waiters=new Map();
   function conversationId(){return location.pathname.match(/\/c\/([^/]+)/)?.[1]||`draft:${location.pathname}`;}
   const storageKey=()=>`ercedia.tm.v1:${conversation}`;
   function read(key,fallback=null){try{return GM_getValue(key,fallback);}catch{return fallback;}}
   function write(key,value){GM_setValue(key,value);}
+  function readGame(key=storageKey()){return recoverSavedGame(key,read);}
+  function writeGame(state,key=storageKey()){return persistSavedGame(key,state,{read,write});}
   const AUTO_KEY='ercedia.launcher.auto-connect.v1';auto.checked=read(AUTO_KEY,true)!==false;
   function post(record,type,payload,requestId){record?.frame.contentWindow.postMessage({channel:'ercedia',token:record.token,conversation,type,payload,requestId},'*');}
   function send(type,payload){post(active,type,payload);}
@@ -105,24 +109,25 @@
   }
   function ready(record){if(record.ready&&record.health!==null){clearTimeout(record.timer);record.health?record.resolve(record):record.reject(Error('새 UI 이미지 로드 실패 · 기존 UI를 유지합니다.'));}}
   async function activate(release,initial=false){
-    if(switching)return;if(!initial&&(pending||generating()))return tell('대화 진행 중에는 업데이트할 수 없습니다. 응답 완료 또는 대기 해제 후 적용하세요.');
+    if(switching||recovering)return;if(!initial&&(pending||generating()))return tell('대화 진행 중에는 업데이트할 수 없습니다. 응답 완료 또는 대기 해제 후 적용하세요.');
     switching=true;update.disabled=true;rollback.disabled=true;
     let record,old=active,route=conversation;
     try{
-      let snapshot=latestState||read(storageKey());
-      if(old){const result=await frameRequest(old,'snapshot',null);if(result.pending||generating())throw Error('게임 행동을 기다리는 중입니다.');snapshot=result.state;write(`${storageKey()}:backup`,snapshot);}
+      let snapshot=latestState||readGame();
+      if(old){const result=await frameRequest(old,'snapshot',null);if(result.pending||generating())throw Error('게임 행동을 기다리는 중입니다.');snapshot=writeGame(result.state);write(`${storageKey()}:backup`,snapshot);}
       tell(initial?'게임 UI를 시작하고 있습니다…':'새 UI를 별도 영역에서 검사하는 중… 현재 화면은 유지됩니다.');
       record=createFrame(await verify(release),snapshot);await record.promise;
       if(route!==conversation)throw Error('채팅이 전환되어 업데이트 적용을 취소했습니다.');
-      if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=fresh.state;}
+      if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=writeGame(fresh.state);}
       const restored=await frameRequest(record,'restore',snapshot);
+      if(restored.error)throw Error(restored.error);
       if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('저장 항목 확인 필요: '+releaseStateDifferences(snapshot,restored.state)+' · 진행 기록을 유지하며 적용을 취소했습니다.');
       // Cache before changing the visible frame; a storage error leaves the current UI intact.
       write(CACHE,{current:release,previous:old?.release||previous});
-      write(storageKey(),restored.state);
-      active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
+      const saved=writeGame(restored.state);
+      active=record;candidate=null;latestState=saved;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.2.4 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.5 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
@@ -147,6 +152,24 @@
     finally{checking=false;check.disabled=false;}
   }
   check.onclick=()=>checkLatest(true);update.onclick=()=>prepared&&activate(prepared);rollback.onclick=()=>previous&&activate(previous);
+  recover.onclick=async()=>{
+    if(switching||recovering||pending||generating())return tell('응답·업데이트가 끝난 뒤 저장을 복구해주세요.');
+    if(!active){
+      try{latestState=recoverSavedGame(storageKey(),read,{preferBackup:true});if(!latestState)throw Error('복구할 저장이 없습니다.');const cache=read(CACHE);if(!cache?.current)throw Error('최신 버전 확인을 먼저 눌러주세요.');await activate(cache.current,true);}
+      catch(error){tell('저장 복구 실패 · '+error.message);}return;
+    }
+    recovering=true;recover.disabled=true;const route=conversation;let before=null;
+    try{
+      const snapshot=await frameRequest(active,'snapshot',null);if(snapshot.pending)throw Error('전투가 끝난 뒤 복구해주세요.');before=snapshot.state;
+      const saved=recoverSavedGame(storageKey(),read,{preferBackup:true});if(!saved)throw Error('복구할 저장이 없습니다.');
+      write(`${storageKey()}:before-recovery`,before);
+      const restored=await frameRequest(active,'restore',saved);
+      if(route!==conversation)throw Error('채팅이 전환되어 복구를 중지했습니다.');
+      if(restored.error||!sameReleaseState(saved,restored.state))throw Error('백업이 현재 UI와 호환되지 않습니다.');
+      latestState=writeGame(restored.state);tell('저장 백업과 보관된 슬롯을 복구했습니다. 불러오기에서 확인하세요.');
+    }catch(error){if(before&&route===conversation)await frameRequest(active,'restore',before).catch(()=>{});tell('저장 복구 실패 · '+error.message+' · 기존 저장은 보존했습니다.');}
+    finally{recovering=false;recover.disabled=false;}
+  };
   const latest=()=>{const nodes=document.querySelectorAll('[data-message-author-role="assistant"]');return nodes[nodes.length-1];};
   const generating=()=>[...document.querySelectorAll('[data-testid="stop-button"],button[aria-label="Stop generating"],button[aria-label="응답 생성 중지"],[data-testid="composer-submit-button"][data-state="stop"]')].some(button=>visible(button)&&button.getAttribute('aria-hidden')!=='true');
   function baseline(){latestFingerprint=latest()?.textContent||'';}
@@ -281,7 +304,7 @@
     if(data.type==='health'){record.health=data.payload.ok;ready(record);}
     if(data.payload?.requestId){const waiter=waiters.get(data.payload.requestId);if(waiter?.record===record){waiters.delete(data.payload.requestId);waiter.resolve(data.payload);}}
     if(record!==active)return;
-    if(data.type==='save'){latestState=data.payload;try{write(storageKey(),latestState);}catch{send('save-error',null);}}
+    if(data.type==='save'&&!recovering){try{latestState=writeGame(data.payload);}catch{send('save-error',null);}}
     if(data.type==='action'){
       post(record,'action-ack',{requestId:data.payload.requestId});
       if(receivedActions.has(data.payload.requestId))return;
@@ -295,8 +318,9 @@
   setInterval(()=>{
     if(location.href===lastURL)return;lastURL=location.href;const next=conversationId();if(next===conversation)return;
     clearTimeout(scanTimer);clearTimeout(routeTimer);const wasDraft=conversation.startsWith('draft:')&&!!pending;
-    const saved=wasDraft?latestState:read(`ercedia.tm.v1:${next}`);conversation=next;if(!wasDraft)pending=null;lastApplied='';responseCandidate='';responseSent='';latestState=saved;
-    if(wasDraft&&saved)try{write(storageKey(),saved);}catch{}baseline();if(wasDraft){send('conversation',null);tell('새 채팅에 게임 요청 연결 · GPT 응답을 기다리는 중…');}else{send('restore',saved);tell('채팅 전환 · 저장 상태 복원 요청');}
+    let saved;try{saved=wasDraft?latestState:readGame(`ercedia.tm.v1:${next}`);}catch(error){return tell(error.message+' · 채팅을 새로고침한 뒤 저장 복구를 이용해주세요.');}
+    conversation=next;if(!wasDraft)pending=null;lastApplied='';responseCandidate='';responseSent='';latestState=saved;
+    if(wasDraft&&saved)try{writeGame(saved);}catch{}baseline();if(wasDraft){send('conversation',null);tell('새 채팅에 게임 요청 연결 · GPT 응답을 기다리는 중…');}else{send('restore',saved);tell('채팅 전환 · 저장 상태 복원 요청');}
   },500);
   setInterval(()=>checkLatest(false),600000);
   (async()=>{

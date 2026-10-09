@@ -21,7 +21,7 @@ function newRequestId(){
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
   return `action-${Date.now()}-${++requestSequence}`;
 }
-export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro}){
+export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{}}){
   let loadedSettingsCommit=null;
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
@@ -213,10 +213,16 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   $('cancel-wait').onclick=()=>{failedRequest=null;cancel();};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved,{prepared=false,deferRender=false}={}){
+    // Validate before deleting the live state, including when saved aliases state.
+    if(saved!=null&&saved.version!==1)throw Error('지원하지 않는 저장 버전입니다. 현재 여정을 유지합니다.');
+    const next=prepared?saved:normalize(saved);
+    if(saved?.scene&&!next.scene||saved?.battlePlayback&&!next.battlePlayback)throw Error('저장된 장면을 읽지 못했습니다. 현재 여정을 유지합니다.');
+    const candidate=next===state?JSON.parse(JSON.stringify(next)):next;
     settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;
-    failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,prepared?saved:normalize(saved));
+    failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,candidate);
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
+    onRestore(state);
     if(!deferRender)render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
   }
   async function refreshSettings(){
@@ -231,8 +237,8 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const data=event.data;
     if(!embedded||event.source!==parent||data?.channel!=='ercedia'||data.token!==window.__ERCEDIA_CONFIG__.token)return;
     if(data.type==='restore'){
-      cancel();conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;
-      restore(data.payload);notify('restored',{state:JSON.parse(JSON.stringify(state)),requestId:data.requestId});return;
+      try{restore(data.payload);conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;notify('restored',{state:JSON.parse(JSON.stringify(state)),requestId:data.requestId});}
+      catch(error){status(error.message);notify('restored',{state:JSON.parse(JSON.stringify(state)),error:error.message,requestId:data.requestId});}return;
     }
     if(data.type==='conversation'){
       conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;

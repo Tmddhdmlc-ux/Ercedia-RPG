@@ -82,6 +82,12 @@ export function normalize(raw) {
   return s;
 }
 export function load(storage) {
-  try { const data=storage.getItem(KEY); return {state:data ? normalize(JSON.parse(data)) : defaults(),message:data ? '저장된 설정을 불러왔습니다.' : '설정은 이 브라우저에 저장됩니다.'}; }
-  catch { return {state:defaults(),message:'저장값을 읽지 못해 기본 설정으로 시작합니다.'}; }
+  try {
+    const data=storage.getItem(KEY),raw=data?JSON.parse(data):null;
+    if(data&&(!raw||raw.version!==1||Array.isArray(raw)))throw Error('지원하지 않는 저장 버전');
+    const state=raw?normalize(raw):defaults();
+    if(raw?.scene&&!state.scene||raw?.battlePlayback&&!state.battlePlayback)throw Error('이전 장면을 읽지 못했습니다');
+    return {state,message:data?'저장된 설정을 불러왔습니다.':'설정은 이 브라우저에 저장됩니다.'};
+  }
+  catch { return {state:defaults(),saveBlocked:true,message:'저장값을 읽지 못했습니다. 기존 저장 보호를 위해 자동 저장을 중지했습니다. 저장 복구를 이용해주세요.'}; }
 }
