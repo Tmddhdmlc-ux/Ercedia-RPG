@@ -1,0 +1,2289 @@
+{
+  "count": 48,
+  "expected": 48,
+  "files": [
+    {
+      "id": "ER-COM-001",
+      "name": "브란 오크펠",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-001/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 712080,
+      "opaque_pixels": 849284,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1356
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        92
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1356
+        ]
+      },
+      "sha256": "05cf3712d566e6a577683c2098163916790026b9278f75537061b454d1d4157b",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-001",
+      "name": "브란 오크펠",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-001/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1137640,
+      "opaque_pixels": 420717,
+      "bbox": [
+        231,
+        92,
+        793,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        231,
+        92,
+        231,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          231,
+          92,
+          793,
+          1459
+        ]
+      },
+      "sha256": "d535f0add4d1cae60d32e1f8c86b02bf6ba8985f76fed25ae31ad22d0b020914",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-002",
+      "name": "마레나 펜",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-002/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 624331,
+      "opaque_pixels": 917998,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1400
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        48
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          40,
+          19,
+          1075,
+          1448
+        ]
+      },
+      "sha256": "9372462a7c482a2aa68399200efc469d20cebb0af9febefe65f863a451f23756",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-002",
+      "name": "마레나 펜",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-002/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1150882,
+      "opaque_pixels": 409212,
+      "bbox": [
+        202,
+        220,
+        821,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        202,
+        220,
+        203,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          25,
+          21,
+          1001,
+          1518
+        ]
+      },
+      "sha256": "fc2b65e657cd8cf6becc3b0fc850cb659ca9a2d118d3501dce0dfaa12cee3a84",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-003",
+      "name": "토렌 바크",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-003/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 653027,
+      "opaque_pixels": 900661,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1377
+        ]
+      },
+      "sha256": "aa01e251c1f386e858283676565bb9e919f0da16eed8358a2296c757375cbb0f",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-003",
+      "name": "토렌 바크",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-003/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1209922,
+      "opaque_pixels": 347282,
+      "bbox": [
+        244,
+        137,
+        779,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        244,
+        137,
+        245,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          244,
+          137,
+          779,
+          1459
+        ]
+      },
+      "sha256": "429d0a336f7c57a69728f0cf2c4c4bb57696e5055703b026279f0fd3d26e1109",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-004",
+      "name": "에다 클라인",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-004/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 685952,
+      "opaque_pixels": 843972,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1398
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        50
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1398
+        ]
+      },
+      "sha256": "08775a6a953151e1c499102dbdcdc3bade35b94e65e5e5d5b3e38b1c20f1dfc9",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-004",
+      "name": "에다 클라인",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-004/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1215818,
+      "opaque_pixels": 337942,
+      "bbox": [
+        224,
+        190,
+        800,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        224,
+        190,
+        224,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          224,
+          190,
+          800,
+          1459
+        ]
+      },
+      "sha256": "8b81d834fc00dbd5f2411dce90b5b73efbc4f6cd04af01f3a9dae4d1dcec2a01",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-005",
+      "name": "오스벤 밀러",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-005/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 663914,
+      "opaque_pixels": 896636,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1377
+        ]
+      },
+      "sha256": "64660127deb00718297fb02decf40fcfd84e8cc6db04185d092c91b8b2cc8089",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-005",
+      "name": "오스벤 밀러",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-005/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1106019,
+      "opaque_pixels": 457543,
+      "bbox": [
+        233,
+        160,
+        791,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        233,
+        160,
+        233,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          233,
+          160,
+          791,
+          1459
+        ]
+      },
+      "sha256": "00a975d753f6d26634f6cc5853da4ab405a3b842a0287ca72ee16c7a6813625b",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-006",
+      "name": "리네트 모어",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-006/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 595973,
+      "opaque_pixels": 938269,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1373
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        75
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1373
+        ]
+      },
+      "sha256": "a89d40456c303ed23969158175373b802ab77348a827c7ded770e20c6c0a9e6f",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-006",
+      "name": "리네트 모어",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-006/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1258307,
+      "opaque_pixels": 296507,
+      "bbox": [
+        184,
+        242,
+        840,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        184,
+        242,
+        184,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          184,
+          242,
+          840,
+          1459
+        ]
+      },
+      "sha256": "e07537a66304531aba928e900986521d8779b1752f6ff6325653b87d9f75b44a",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-007",
+      "name": "시그나 론",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-007/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 664432,
+      "opaque_pixels": 866821,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1326
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        122
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          37,
+          48,
+          1086,
+          1434
+        ]
+      },
+      "sha256": "28bdaaf6da76b6b02128416a92e59e1c215e2b351f45043a725e0834b48008aa",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-007",
+      "name": "시그나 론",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-007/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1165874,
+      "opaque_pixels": 379766,
+      "bbox": [
+        244,
+        152,
+        780,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        244,
+        152,
+        244,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          33,
+          21,
+          994,
+          1518
+        ]
+      },
+      "sha256": "494c8ea7447c4847d4417554486208c62bd00ea02381092b29bbca7277f5a59f",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-008",
+      "name": "페릭 하웬",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-008/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 697751,
+      "opaque_pixels": 856924,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1378
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        70
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1378
+        ]
+      },
+      "sha256": "92c0b0f7b5763a71320662ab03d807078ebdde8b953dab071d17b18f0b441b64",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-008",
+      "name": "페릭 하웬",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-008/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1290064,
+      "opaque_pixels": 272995,
+      "bbox": [
+        312,
+        175,
+        710,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        312,
+        175,
+        314,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          312,
+          175,
+          710,
+          1459
+        ]
+      },
+      "sha256": "434021a28fc727240dfd67c741a0dd93e875d4522b4d80b2ea3d71644374cce2",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-009",
+      "name": "도르만 켈",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-009/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 574991,
+      "opaque_pixels": 983400,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1377
+        ]
+      },
+      "sha256": "e83f653c045cd91f1d1264025c1c4cedf8a6c8cdbeab3f8156f877225e5b878d",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-009",
+      "name": "도르만 켈",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-009/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1050412,
+      "opaque_pixels": 497684,
+      "bbox": [
+        110,
+        115,
+        913,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        110,
+        115,
+        111,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          110,
+          115,
+          913,
+          1459
+        ]
+      },
+      "sha256": "e5941fca8a304810769bb46122053cf4398c0f2002ef62c06fb22cb34963e3b0",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-010",
+      "name": "베라 노트",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-010/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 632709,
+      "opaque_pixels": 909848,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1380
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        68
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1380
+        ]
+      },
+      "sha256": "bae21bc19ed7f8db7c209b4d39cf88e64985bb849a86c2463cdd252928e3e051",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-010",
+      "name": "베라 노트",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-010/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1220155,
+      "opaque_pixels": 340119,
+      "bbox": [
+        273,
+        227,
+        750,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        273,
+        227,
+        274,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          273,
+          227,
+          750,
+          1459
+        ]
+      },
+      "sha256": "7a04b284111522b9eae1bde91a19a9df18772a9271fdec14806a22594761be6a",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-011",
+      "name": "니카 펠트",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-011/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 683835,
+      "opaque_pixels": 855642,
+      "bbox": [
+        44,
+        46,
+        1041,
+        1388
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        45,
+        60
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1388
+        ]
+      },
+      "sha256": "8df5564bdeb2b7fc11ad94e41ecc5ae779e3ffa1f92835bf800bbe94ef25ea15",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-011",
+      "name": "니카 펠트",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-011/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1315221,
+      "opaque_pixels": 244328,
+      "bbox": [
+        279,
+        182,
+        744,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        279,
+        182,
+        280,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          279,
+          182,
+          744,
+          1459
+        ]
+      },
+      "sha256": "fba1ea0fbde224d760ea1fa5ba0225fd4818c51ada0e313b08b5d34ff02656c9",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-012",
+      "name": "울브릭 타너",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-012/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 633070,
+      "opaque_pixels": 926580,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1373
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        75
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1373
+        ]
+      },
+      "sha256": "d4dacd816fb139793d65fe205371a392d6c8e0d020897d2afa5e8f39621bde38",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-012",
+      "name": "울브릭 타너",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-012/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1130469,
+      "opaque_pixels": 431589,
+      "bbox": [
+        248,
+        145,
+        776,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        248,
+        145,
+        248,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          248,
+          145,
+          776,
+          1459
+        ]
+      },
+      "sha256": "3318a97a6751a75cbdb41ac5a5e6a9b32d554461ea242a7163be7d3c17939234",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-013",
+      "name": "멜리사 베크",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-013/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 709505,
+      "opaque_pixels": 831635,
+      "bbox": [
+        59,
+        46,
+        1026,
+        1402
+      ],
+      "margins_left_top_right_bottom": [
+        59,
+        46,
+        60,
+        46
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          59,
+          46,
+          1026,
+          1402
+        ]
+      },
+      "sha256": "ef7f26c9006af9109f5daee9087d93e5052e07ae93e7ad25ffa17a175b788a37",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-013",
+      "name": "멜리사 베크",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-013/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1264395,
+      "opaque_pixels": 296208,
+      "bbox": [
+        290,
+        197,
+        734,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        290,
+        197,
+        290,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          290,
+          197,
+          734,
+          1459
+        ]
+      },
+      "sha256": "fc02a00fe41a9c754c7baadfdde762dda9e14082401f37b43b0cfb7cb488cde8",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-014",
+      "name": "라덴 크로스",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-014/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 609847,
+      "opaque_pixels": 946573,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1374
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        74
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1374
+        ]
+      },
+      "sha256": "ca1bf1af398e9017b1c874b5546a9bb7d2949b719c2942547f2d70b90d334333",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-014",
+      "name": "라덴 크로스",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-014/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1078737,
+      "opaque_pixels": 478328,
+      "bbox": [
+        186,
+        77,
+        837,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        186,
+        77,
+        187,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          186,
+          77,
+          837,
+          1459
+        ]
+      },
+      "sha256": "c0ccf83b52ab942740712c70bfcbfece453439433c33c44dcfba9c9d077c5fbe",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-015",
+      "name": "사비나 리드",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-015/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 657081,
+      "opaque_pixels": 888338,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1388
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        60
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1388
+        ]
+      },
+      "sha256": "210f120762c610fdeed9b5dfd053d84af8d453a09bb5bcabbe2976eafc1c0dfd",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-015",
+      "name": "사비나 리드",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-015/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1240753,
+      "opaque_pixels": 315732,
+      "bbox": [
+        261,
+        205,
+        763,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        261,
+        205,
+        261,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          261,
+          205,
+          763,
+          1459
+        ]
+      },
+      "sha256": "b27ca4710f4c471a515d2bf3d4992d0ac68fa207b71415e4e0ff89e1c58deb14",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-016",
+      "name": "그레타 슈멜",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-016/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 687602,
+      "opaque_pixels": 854021,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1361
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        87
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1361
+        ]
+      },
+      "sha256": "64705685f15091bec3bc346786990d783d2997229c6a2a10a6fbbbfc488e6c27",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-016",
+      "name": "그레타 슈멜",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-016/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1192715,
+      "opaque_pixels": 365948,
+      "bbox": [
+        230,
+        167,
+        794,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        230,
+        167,
+        230,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          230,
+          167,
+          794,
+          1459
+        ]
+      },
+      "sha256": "30c0af7fecfa14afc8367971fa8776cb692926102dfe51c440059807d57adfb8",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-017",
+      "name": "헤르몬 솔트",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-017/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 657089,
+      "opaque_pixels": 895391,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1373
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        75
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1373
+        ]
+      },
+      "sha256": "156cdb12fcd7d247ed34d4b85e60f1cc16c2955df5bd5afa831771f32ffb348f",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-017",
+      "name": "헤르몬 솔트",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-017/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1169347,
+      "opaque_pixels": 372137,
+      "bbox": [
+        255,
+        122,
+        769,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        255,
+        122,
+        255,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          255,
+          122,
+          769,
+          1459
+        ]
+      },
+      "sha256": "84fa193bf4ec2287ce8276e002e4e52162d9384cbf3ffaa74c487e39b7c636bc",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-018",
+      "name": "루치오 마렌",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-018/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 726473,
+      "opaque_pixels": 827197,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          44,
+          46,
+          1042,
+          1377
+        ]
+      },
+      "sha256": "42c1c4553c07979885526fa52887abd9df8134a03ebbfeb4fde7c88d2efa4074",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-018",
+      "name": "루치오 마렌",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-018/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1249688,
+      "opaque_pixels": 310171,
+      "bbox": [
+        261,
+        130,
+        762,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        261,
+        130,
+        262,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          261,
+          130,
+          762,
+          1459
+        ]
+      },
+      "sha256": "a575908c28bc945b7f72ebacb714616485eb9b51e97566d69aceb5ae499001e3",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-019",
+      "name": "이레나 비올",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-019/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 641589,
+      "opaque_pixels": 878920,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1086,
+          1448
+        ]
+      },
+      "sha256": "b1abe442931031774a333346e6adfd7353a1eee738b6a0abd51f13af7359c61b",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-019",
+      "name": "이레나 비올",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-019/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1104228,
+      "opaque_pixels": 440658,
+      "bbox": [
+        164,
+        212,
+        860,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        164,
+        212,
+        164,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          0,
+          2,
+          1008,
+          1514
+        ]
+      },
+      "sha256": "4b5aad4c3db853e2d874c5b28284e78343f057cb3ebd2da1bdd1a1e473ab2d95",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-020",
+      "name": "테오 파르",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-020/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 764305,
+      "opaque_pixels": 780251,
+      "bbox": [
+        62,
+        46,
+        1024,
+        1402
+      ],
+      "margins_left_top_right_bottom": [
+        62,
+        46,
+        62,
+        46
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1072,
+          1448
+        ]
+      },
+      "sha256": "fcfe9c7d18018ffea975063fb7c07c59eb4e6a0e76e7c26259f3e89aa20cf708",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-020",
+      "name": "테오 파르",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-020/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1257596,
+      "opaque_pixels": 295789,
+      "bbox": [
+        303,
+        182,
+        721,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        303,
+        182,
+        303,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          59,
+          33,
+          1006,
+          1516
+        ]
+      },
+      "sha256": "e937fff70c648e8ffb3fbf46b6be5a111905f6e93ad5202f857831df5d18e07f",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-021",
+      "name": "미라 엔델",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-021/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 743961,
+      "opaque_pixels": 792372,
+      "bbox": [
+        75,
+        46,
+        1011,
+        1402
+      ],
+      "margins_left_top_right_bottom": [
+        75,
+        46,
+        75,
+        46
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          67,
+          0,
+          1072,
+          1448
+        ]
+      },
+      "sha256": "bfa344efc3f6e2302a723d2fef2aee632f570c234d92108f396f32949bdcebb6",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-021",
+      "name": "미라 엔델",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-021/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1218256,
+      "opaque_pixels": 334856,
+      "bbox": [
+        259,
+        250,
+        764,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        259,
+        250,
+        260,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          57,
+          0,
+          842,
+          1536
+        ]
+      },
+      "sha256": "b170f49f659334b58b5ae43ce2010348afe6e316e0eb58b8a2bc81710bede023",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-022",
+      "name": "알데르 바인",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-022/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 642398,
+      "opaque_pixels": 904320,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1086,
+          1448
+        ]
+      },
+      "sha256": "9dd192e4e1fe7bb68b8477faf6746667a67e032a0a2f5bccccc31d43e77175a9",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-022",
+      "name": "알데르 바인",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-022/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1150299,
+      "opaque_pixels": 394762,
+      "bbox": [
+        233,
+        152,
+        791,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        233,
+        152,
+        233,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          135,
+          4,
+          992,
+          1521
+        ]
+      },
+      "sha256": "b665fb8452cd3fe361c24a96b4d74aefadea2c747584db353d677ad6ba99d141",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-023",
+      "name": "셀다 네트",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-023/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 661309,
+      "opaque_pixels": 869636,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1377
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        71
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1086,
+          1448
+        ]
+      },
+      "sha256": "f38438a185b728e3e48e7b4344246ea5e53d0fe3895b8bdbf4eb4e2085fdff1d",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-023",
+      "name": "셀다 네트",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-023/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1193927,
+      "opaque_pixels": 347813,
+      "bbox": [
+        255,
+        190,
+        768,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        255,
+        190,
+        256,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          0,
+          15,
+          1010,
+          1520
+        ]
+      },
+      "sha256": "20ad75d75504aaf63e4dd150bda8ea927e8612aaaa092ac440063b2e935c2849",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-024",
+      "name": "노엘 스카",
+      "kind": "portrait",
+      "path": "assets/characters/common/drafts/ER-COM-024/portrait.png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 694452,
+      "opaque_pixels": 846896,
+      "bbox": [
+        44,
+        46,
+        1042,
+        1378
+      ],
+      "margins_left_top_right_bottom": [
+        44,
+        46,
+        44,
+        70
+      ],
+      "temporary_anchor": null,
+      "source_metrics": {
+        "size": [
+          1086,
+          1448
+        ],
+        "alpha_bbox": [
+          0,
+          0,
+          1086,
+          1448
+        ]
+      },
+      "sha256": "74cebe8d9283fe6812f5cf562a23539dd530fa32b4b002940005ea1bcaadd2c9",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    },
+    {
+      "id": "ER-COM-024",
+      "name": "노엘 스카",
+      "kind": "standing",
+      "path": "assets/characters/common/drafts/ER-COM-024/standing.png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "transparent_pixels": 1268094,
+      "opaque_pixels": 282354,
+      "bbox": [
+        268,
+        145,
+        756,
+        1459
+      ],
+      "margins_left_top_right_bottom": [
+        268,
+        145,
+        268,
+        77
+      ],
+      "temporary_anchor": [
+        512,
+        1459
+      ],
+      "source_metrics": {
+        "size": [
+          1024,
+          1536
+        ],
+        "alpha_bbox": [
+          41,
+          12,
+          984,
+          1536
+        ]
+      },
+      "sha256": "12c2fb0d75b094562e629851a93a618b5b08feca3853e3e11eb08fb256946a58",
+      "passed": true,
+      "visual_review": "Contact sheets reviewed: distinct identity, occupation silhouettes, matching portrait/standing costume, full standing head/feet/props. Final detailed artistic approval pending user.",
+      "approval": "pending_user_review"
+    }
+  ],
+  "all_present": true,
+  "all_passed": true,
+  "method": "Source images generated by built-in image_gen; prior authorized general image processing standardizes alpha noise and pads/resizes without changing aspect ratio or redrawing. Standing scale retains roster height relative to184cm, common temporary foot anchor512,1459."
+}
