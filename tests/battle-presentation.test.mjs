@@ -47,7 +47,7 @@ test('damage to the invisible player appears on the player HUD at impact',()=>{
     ui.start(f.scene);
     for(let i=0;i<3;i++){h.clock(i*2000+1);h.clock(i*2000+1501);ui.next();}
     const player=h.get('battle-hud').children[0];
-    h.clock(6001);h.clock(6701);
+    h.clock(6001);h.clock(6801);
     assert.equal(h.get('battle-left').hidden,true);
     assert.equal(player.children.at(-1).textContent,'-28');
     assert.equal(player.children[3].value,72);

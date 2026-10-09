@@ -9,11 +9,11 @@ test('approval preview contains exactly two canonical skills per element and twe
  for(const s of elementalSamples)assert.equal(books.find(b=>b.skill_id===s.id)?.element,s.element);
  for(const id of ['spell_012','spell_017','spell_035'])assert.equal(elementalSamples.find(s=>s.id===id).damage,0);
 });
-test('revised samples strike quickly; approved electricity and darkness retain their exact rendering',()=>{
+test('revised samples strike quickly; electricity and darkness accelerate without changing their approved impact geometry',()=>{
  let commands=[];const ctx=Object.fromEntries(['setTransform','clearRect','fillRect','drawImage','beginPath','moveTo','lineTo','stroke','closePath','fill','ellipse','arc'].map(op=>[op,(...args)=>commands.push([op,...args])]));ctx.createRadialGradient=()=>({addColorStop(){}});
  const canvas=()=>({getContext:()=>ctx}),renderer=createElementalRenderer(canvas(),{createCanvas:canvas});renderer.resize(1000,600);
  const frame=(s,t,revised)=>{renderer.draw(s,t,{revised});commands=[];renderer.draw(s,t,{revised});return commands.slice();};
- for(const s of elementalSamples){const old=sampleTiming(s,false),now=sampleTiming(s,true);if(['electricity','darkness'].includes(s.element)){assert.deepEqual(now,old);for(const t of [.25,.5,.8])assert.deepEqual(frame(s,t,true),frame(s,t,false));}else{assert.ok(now.duration*now.impact<old.duration*old.impact);assert.notDeepEqual(frame(s,.5,true),frame(s,.5,false));}}
+ for(const s of elementalSamples){const old=sampleTiming(s,false),now=sampleTiming(s,true);if(['electricity','darkness'].includes(s.element)){assert.ok(now.duration<old.duration);assert.ok(now.duration*now.impact<old.duration*old.impact);assert.deepEqual(frame(s,now.impact,true),frame(s,.42,false));}else{assert.ok(now.duration*now.impact<old.duration*old.impact);assert.notDeepEqual(frame(s,.5,true),frame(s,.5,false));}}
 });
 test('all twelve effects render throughout the timeline, reuse bounded textures and clear safely',()=>{
  let drawings=0,created=0;const operations=['setTransform','clearRect','fillRect','drawImage','beginPath','moveTo','lineTo','stroke','closePath','fill','ellipse','arc'];

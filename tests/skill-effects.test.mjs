@@ -16,7 +16,7 @@ test('same-element skills use different shapes; support proposals never show fak
 test('first-person projectile, caster and movement effects never travel from left to right',async()=>{
  const script=await readFile(new URL('./battle-effects-preview.js',import.meta.url),'utf8'),css=await readFile(new URL('./battle-effects-preview.css',import.meta.url),'utf8');
  assert.doesNotMatch(script,/width\s*\*\s*\.18|translateX\((?:-?\d+px|0)\)|tx-sx/);
- assert.match(script,/translateY\(\$\{toY-fromY\}px\) scale\(\.55\)/);
+ assert.match(script,/mountBattleVFX/);assert.match(script,/vfx.draw/);
  assert.match(css,/left:calc\(50% - 55px\)/);assert.match(css,/left:25%;width:50%;height:65%/);
  for(const id of ['skill_swd_002','spell_001','spell_014','spell_013','spell_036']){
   const svg=skillEffectSVG(effectProfiles[id]);assert.doesNotMatch(svg,/M20 250H|M0 250H|M30 335|M50 225/);

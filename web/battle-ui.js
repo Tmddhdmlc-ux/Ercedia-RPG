@@ -1,4 +1,5 @@
 import {mountBattleAudio} from './battle-audio.js';
+import {mountBattleVFX,battleEffectTiming} from './battle-vfx.js';
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
@@ -9,11 +10,12 @@ import {renderDialogueTerms} from './dialogue-glossary.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
+  const vfx=mountBattleVFX(stage);
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
-  const duration=e=>e.kind==='unique'?2200:e.skill_id?1600:e.result==='critical'?1300:1000;
-  function clearAnimation(){audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
+  const duration=e=>battleEffectTiming(e).duration;
+  function clearAnimation(){vfx.clear();audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
   function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
   function save(){persist();chat.controls();}
   function art(slot,p){
@@ -34,14 +36,14 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     clearAnimation();elapsed=0;impacted=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
     const actor=b.participants.find(p=>p.id===e.actor),target=b.participants.find(p=>p.id===e.target),allied=actor.side==='allied'?actor:target.side==='allied'?target:b.participants.find(p=>p.side==='allied'),enemy=actor.side==='enemy'?actor:target.side==='enemy'?target:b.participants.find(p=>p.side==='enemy');
     art(slots[0],allied);art(slots[1],enemy);
+    const effectTarget=slots.find(s=>s.id===e.target);vfx.start(e,effectTarget?.root.hidden?null:effectTarget?.root,e.target==='player');
     for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
     for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
     $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),playback.scene);
     const skill=actor.skills.find(s=>s.id===e.skill_id);if(skill){$('battle-cutin').hidden=false;$('battle-cutin').textContent=skill.name;$('battle-cutin').dataset.kind=e.kind;animate($('battle-cutin'),[{opacity:0,transform:'translateY(10px) scale(.9)'},{opacity:1,transform:'translateY(0) scale(1)',offset:.15},{opacity:1,offset:.65},{opacity:0,transform:'translateY(-8px) scale(1.03)'}],duration(e)*.8);}
     $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
-    const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
-    if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'translateX(0)'},{transform:`translateX(${direction*65}px)`,offset:.32},{transform:'translateX(0)'}],duration(e));
-    if(active&&e.kind==='magic'){active.effect.className='battle-effect casting '+e.element;animate(active.effect,[{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'scale(1.15)'},{opacity:0}],duration(e));}
+    const active=slots.find(s=>s.id===e.actor);
+    if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.06)',offset:.32},{transform:'scale(1)'}],duration(e));
     if(active&&e.kind==='unique'){animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.18)',offset:.35},{transform:'scale(1)'}],duration(e));active.effect.className='battle-effect unique';}
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
@@ -51,7 +53,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
       else if(e.result==='block'||e.kind==='defend'){target.effect.className='battle-effect barrier';animate(target.effect,[{opacity:0},{opacity:1},{opacity:0}],duration(e)*.55);}
-      else if(e.damage){animate(target.root,[{transform:'translateX(0)'},{transform:`translateX(${target===slots[0]?-20:20}px)`},{transform:'translateX(0)'}],duration(e)*.55);if(!target.root.hidden){target.effect.className='battle-effect strike '+(e.element||'physical');animate(target.effect,[{opacity:0,transform:'scale(.65) rotate(-12deg)'},{opacity:1,transform:'scale(1)',offset:.2},{opacity:0,transform:'scale(1.2) rotate(12deg)'}],400);}}
+      else if(e.damage){animate(target.root,[{transform:'scale(1)'},{transform:'scale(.97) translateY(5px)'},{transform:'scale(1)'}],duration(e)*.4);}
       if(number.textContent)animate(number,[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.2},{opacity:0,transform:'translateY(-30px)'}],duration(e)*.55);
     }
     if(e.result==='critical')animate(stage,[{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],300);
@@ -60,7 +62,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)*.8)$('battle-cutin').hidden=true;if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){
