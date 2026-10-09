@@ -1,0 +1,293 @@
+{
+  "status": "recorded_and_processed_auditions",
+  "banks": [
+    {
+      "id": "female_young",
+      "label": "여성 · 어린",
+      "description": "기존 귀여운 웃음·놀람 유지, 나머지는 별도의 귀여운 여성 발성에서 선택한 후보",
+      "cues": {
+        "base": {
+          "label": "기본",
+          "path": "assets/audio/voices/female_young/base.wav",
+          "source": "assets/audio/voices/source/cute_healed1.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "smile": {
+          "label": "기쁨",
+          "path": "assets/audio/voices/female_young/smile.wav",
+          "source": "assets/audio/voices/female_laugh.wav",
+          "processing": "unchanged",
+          "status": "approved_reference"
+        },
+        "angry": {
+          "label": "분노",
+          "path": "assets/audio/voices/female_young/angry.wav",
+          "source": "assets/audio/voices/source/cute_attack3.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "surprised": {
+          "label": "놀람",
+          "path": "assets/audio/voices/female_young/surprised.wav",
+          "source": "assets/audio/voices/female_gasp.wav",
+          "processing": "unchanged",
+          "status": "approved_reference"
+        },
+        "sad": {
+          "label": "슬픔",
+          "path": "assets/audio/voices/female_young/sad.wav",
+          "source": "assets/audio/voices/source/cute_damaged1.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "embarrassed": {
+          "label": "부끄러움",
+          "path": "assets/audio/voices/female_young/embarrassed.wav",
+          "source": "assets/audio/voices/source/cute_healed2.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "afraid": {
+          "label": "두려움",
+          "path": "assets/audio/voices/female_young/afraid.wav",
+          "source": "assets/audio/voices/source/cute_damaged3.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "annoyed": {
+          "label": "짜증",
+          "path": "assets/audio/voices/female_young/annoyed.wav",
+          "source": "assets/audio/voices/source/cute_attack2.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "love": {
+          "label": "애정",
+          "path": "assets/audio/voices/female_young/love.wav",
+          "source": "assets/audio/voices/source/cute_healed3.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        }
+      }
+    },
+    {
+      "id": "female_mature",
+      "label": "여성 · 중후",
+      "description": "별도의 중후 여성 성우 녹음에서 선택한 리액션",
+      "cues": {
+        "base": {
+          "label": "기본",
+          "path": "assets/audio/voices/female_mature/base.wav",
+          "source": "assets/audio/voices/source/mature_anime_eh.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "smile": {
+          "label": "기쁨",
+          "path": "assets/audio/voices/female_mature/smile.wav",
+          "source": "assets/audio/voices/source/mature_laugh.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "angry": {
+          "label": "분노",
+          "path": "assets/audio/voices/female_mature/angry.wav",
+          "source": "assets/audio/voices/source/mature_annoyed_grumble.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "surprised": {
+          "label": "놀람",
+          "path": "assets/audio/voices/female_mature/surprised.wav",
+          "source": "assets/audio/voices/source/mature_gasp1.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "sad": {
+          "label": "슬픔",
+          "path": "assets/audio/voices/female_mature/sad.wav",
+          "source": "assets/audio/voices/source/mature_sigh1.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "embarrassed": {
+          "label": "부끄러움",
+          "path": "assets/audio/voices/female_mature/embarrassed.wav",
+          "source": "assets/audio/voices/source/mature_anime_uh.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "afraid": {
+          "label": "두려움",
+          "path": "assets/audio/voices/female_mature/afraid.wav",
+          "source": "assets/audio/voices/source/mature_anime_wah.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "annoyed": {
+          "label": "짜증",
+          "path": "assets/audio/voices/female_mature/annoyed.wav",
+          "source": "assets/audio/voices/source/mature_sigh2.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        },
+        "love": {
+          "label": "애정",
+          "path": "assets/audio/voices/female_mature/love.wav",
+          "source": "assets/audio/voices/source/mature_small_single_laugh.wav",
+          "processing": "trim, mono, rate 1.0, level and fades",
+          "status": "audition_candidate"
+        }
+      }
+    },
+    {
+      "id": "male_young",
+      "label": "남성 · 어린",
+      "description": "기존 남성 녹음을 조금 밝고 빠르게 가공한 후보",
+      "cues": {
+        "base": {
+          "label": "기본",
+          "path": "assets/audio/voices/male_young/base.wav",
+          "source": "assets/audio/voices/male_jump.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "smile": {
+          "label": "기쁨",
+          "path": "assets/audio/voices/male_young/smile.wav",
+          "source": "assets/audio/voices/source/male_victory0.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "angry": {
+          "label": "분노",
+          "path": "assets/audio/voices/male_young/angry.wav",
+          "source": "assets/audio/voices/source/male_attackbig0.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "surprised": {
+          "label": "놀람",
+          "path": "assets/audio/voices/male_young/surprised.wav",
+          "source": "assets/audio/voices/source/male_hurt6.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "sad": {
+          "label": "슬픔",
+          "path": "assets/audio/voices/male_young/sad.wav",
+          "source": "assets/audio/voices/source/male_gameover0.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "embarrassed": {
+          "label": "부끄러움",
+          "path": "assets/audio/voices/male_young/embarrassed.wav",
+          "source": "assets/audio/voices/source/male_hurt2.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "afraid": {
+          "label": "두려움",
+          "path": "assets/audio/voices/male_young/afraid.wav",
+          "source": "assets/audio/voices/source/male_hurt4.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "annoyed": {
+          "label": "짜증",
+          "path": "assets/audio/voices/male_young/annoyed.wav",
+          "source": "assets/audio/voices/source/male_attack2.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        },
+        "love": {
+          "label": "애정",
+          "path": "assets/audio/voices/male_young/love.wav",
+          "source": "assets/audio/voices/source/male_jump1.wav",
+          "processing": "trim, mono, rate 1.1, level and fades",
+          "status": "audition_candidate"
+        }
+      }
+    },
+    {
+      "id": "male_mature",
+      "label": "남성 · 중후",
+      "description": "같은 남성 녹음을 낮고 여유 있게 가공한 후보",
+      "cues": {
+        "base": {
+          "label": "기본",
+          "path": "assets/audio/voices/male_mature/base.wav",
+          "source": "assets/audio/voices/male_jump.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "smile": {
+          "label": "기쁨",
+          "path": "assets/audio/voices/male_mature/smile.wav",
+          "source": "assets/audio/voices/source/male_victory0.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "angry": {
+          "label": "분노",
+          "path": "assets/audio/voices/male_mature/angry.wav",
+          "source": "assets/audio/voices/source/male_attackbig0.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "surprised": {
+          "label": "놀람",
+          "path": "assets/audio/voices/male_mature/surprised.wav",
+          "source": "assets/audio/voices/source/male_hurt6.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "sad": {
+          "label": "슬픔",
+          "path": "assets/audio/voices/male_mature/sad.wav",
+          "source": "assets/audio/voices/source/male_gameover0.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "embarrassed": {
+          "label": "부끄러움",
+          "path": "assets/audio/voices/male_mature/embarrassed.wav",
+          "source": "assets/audio/voices/source/male_hurt2.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "afraid": {
+          "label": "두려움",
+          "path": "assets/audio/voices/male_mature/afraid.wav",
+          "source": "assets/audio/voices/source/male_hurt4.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "annoyed": {
+          "label": "짜증",
+          "path": "assets/audio/voices/male_mature/annoyed.wav",
+          "source": "assets/audio/voices/source/male_attack2.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        },
+        "love": {
+          "label": "애정",
+          "path": "assets/audio/voices/male_mature/love.wav",
+          "source": "assets/audio/voices/source/male_jump1.wav",
+          "processing": "trim, mono, rate 0.88, level and fades, gentle low-pass blend",
+          "status": "audition_candidate"
+        }
+      }
+    }
+  ],
+  "npc_defaults": {
+    "serin": "female_young"
+  },
+  "notes": [
+    "Four voice styles are audition directions, not verified actor ages.",
+    "Emotion labels on effort/breath samples are editorial candidates, not newly acted emotional performances.",
+    "Only the two approved bright female cues are kept byte-for-byte. No NPC auto-play is added by this build."
+  ]
+}

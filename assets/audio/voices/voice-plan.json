@@ -1,5 +1,5 @@
 {
-  "status": "awaiting_voice_generation_connection",
+  "status": "recorded_and_processed_auditions",
   "format": "short_nonverbal_reactions",
   "voice_duration_seconds": [
     0.4,
@@ -8,14 +8,24 @@
   "takes_per_emotion": 2,
   "voices": [
     {
-      "id": "female",
-      "label": "여성",
-      "direction": "An original adult feminine voice, clear warm mid-high register, expressive fantasy game acting, consistent speaker throughout all takes."
+      "id": "female_young",
+      "label": "여성 · 어린",
+      "direction": "기존 귀여운 웃음·놀람 유지, 나머지는 별도의 귀여운 여성 발성에서 선택한 후보"
     },
     {
-      "id": "male",
-      "label": "남성",
-      "direction": "An original adult masculine voice, warm mid-low register, expressive fantasy game acting, consistent speaker throughout all takes."
+      "id": "female_mature",
+      "label": "여성 · 중후",
+      "direction": "별도의 중후 여성 성우 녹음에서 선택한 리액션"
+    },
+    {
+      "id": "male_young",
+      "label": "남성 · 어린",
+      "direction": "기존 남성 녹음을 조금 밝고 빠르게 가공한 후보"
+    },
+    {
+      "id": "male_mature",
+      "label": "남성 · 중후",
+      "direction": "같은 남성 녹음을 낮고 여유 있게 가공한 후보"
     }
   ],
   "emotions": [
@@ -75,11 +85,10 @@
     }
   ],
   "notes": [
-    "Same speaker identity for all emotions in each voice bank.",
-    "Clean dry mono voice only; no music, effects, room noise or reverb.",
-    "No real-person imitation or voice cloning.",
-    "Guide syllables communicate delivery; no sentences or English phrases.",
-    "Generate/record 18 main cues first. Two variants per emotion can follow after audition.",
-    "No NPC gender inferred from names. Auditions are not applied to the game."
+    "36 recorded/processed audition cues available in voice-banks.json.",
+    "Emotion labels on existing effort samples are editorial candidates, not newly recorded acting.",
+    "Young/mature indicate voice styling, not actor birth age.",
+    "Current bright female laughter and gasp remain byte-identical.",
+    "No NPC autoplay; Serin is registered for the bright female bank for future attachment."
   ]
 }

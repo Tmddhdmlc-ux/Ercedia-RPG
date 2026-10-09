@@ -31,7 +31,7 @@ test('sample failures remain nonfatal and can be retried; voice count is bounded
   fail=false;assert.equal(await h.audio.unlock(),true);for(let i=0;i<12;i++)h.audio.play(hit);assert.equal(h.audio.status().active,4);h.audio.stop();assert.equal(h.audio.status().active,0);
 });
 test('all registered samples are real Ogg assets and match the bundle audio list',async()=>{
-  const paths=[...new Set([...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').concat(skillSamplePaths,['female_laugh','female_gasp','male_attack','male_hurt','male_jump'].map(n=>'assets/audio/voices/'+n+'.wav')))].sort();
+  const paths=[...new Set([...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').concat(skillSamplePaths,['female_laugh','female_gasp','male_attack','male_hurt','male_jump'].map(n=>'assets/audio/voices/'+n+'.wav').concat(JSON.parse(await readFile(new URL('../assets/audio/voices/voice-banks.json',import.meta.url))).banks.flatMap(b=>Object.values(b.cues).map(c=>c.path)))))].sort();
   assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>!p.endsWith('.mp3')),paths);
   for(const path of paths){const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),path.endsWith('.wav')?'RIFF':'OggS');assert.ok(bytes.length>1000);}
 });
