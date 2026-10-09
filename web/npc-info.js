@@ -4,16 +4,20 @@ export function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
   const close=document.createElement('button');close.type='button';close.className='npc-info-close';close.textContent='닫기 ×';card.prepend(close);
-  let point=null,trigger=button;
+  let point=null,trigger=button,selected=null;
   const display=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'미정';
-  const current=()=>state.scene?state.scene.npc:(state.character?{id:'serin',speaker:'세린'}:null);
+  const current=()=>{
+    const cast=state.scene?.cast,line=state.scene?.dialogue[state.sceneIndex];
+    if(cast)return cast.find(p=>p.id===selected)||cast.find(p=>p.id===line?.speaker_id||p.speaker===line?.speaker)||cast.find(p=>p.id===state.scene.npc?.id)||cast[0];
+    return state.scene?state.scene.npc:(state.character?{id:'serin',speaker:'세린'}:null);
+  };
   function refresh(){
     const npc=current(),profile=npc?resolveNPC(state,npc.id,npc.profile||{})||npc.profile||{}:{};
     button.hidden=!npc;
     if(button.hidden){hide();return;}
     const name=profile.name||npc.speaker||'이름 미정';
     button.textContent=`${name} · 메뉴`;$('npc-menu-name').textContent=name;
-    stage.querySelectorAll('.person').forEach(image=>{image.tabIndex=image.hidden?-1:0;image.setAttribute('role','button');image.setAttribute('aria-label',`${name} 초상화 · 메뉴 열기`);image.setAttribute('aria-controls','npc-action-menu');});
+    stage.querySelectorAll('.person').forEach(image=>{const label=state.scene?.cast?.find(p=>p.id===image.dataset.npcId)?.speaker||name;image.tabIndex=image.hidden?-1:0;image.setAttribute('role','button');image.setAttribute('aria-label',`${label} 초상화 · 메뉴 열기`);image.setAttribute('aria-controls','npc-action-menu');});
     $('npc-info-name').textContent=name;
     $('npc-info-affiliation').textContent=profile.affiliation||'소속 미정';
     $('npc-info-rank').textContent=npcRankLabel(profile);
@@ -46,7 +50,7 @@ export function mountNPCInfo(state){
     card.hidden=true;menu.hidden=false;button.setAttribute('aria-expanded','true');refresh();position(menu);view.focus({preventScroll:true});
     document.dispatchEvent(new Event('ercedia:npc-menu-open'));
   }
-  function hide(restoreFocus=false){card.hidden=true;menu.hidden=true;button.setAttribute('aria-expanded','false');if(restoreFocus&&!trigger.hidden)trigger.focus({preventScroll:true});}
+  function hide(restoreFocus=false){card.hidden=true;menu.hidden=true;selected=null;button.setAttribute('aria-expanded','false');if(restoreFocus&&!trigger.hidden)trigger.focus({preventScroll:true});}
   $('characters').addEventListener('click',event=>{if(event.target.matches('.person.ready')){event.stopPropagation();openMenu(event);}});
   $('characters').addEventListener('keydown',event=>{if(event.target.matches('.person.ready')&&(event.key==='Enter'||event.key===' ')){event.preventDefault();event.stopPropagation();openMenu(event);}});
   button.addEventListener('click',event=>{event.stopPropagation();if(!menu.hidden)hide();else openMenu(event);});
@@ -58,5 +62,5 @@ export function mountNPCInfo(state){
   document.addEventListener('click',event=>{if(!stage.contains(event.target))hide();});
   document.addEventListener('keydown',event=>{if(event.key==='Escape'&&(!card.hidden||!menu.hidden)){event.preventDefault();event.stopImmediatePropagation();hide(true);}},true);
   new ResizeObserver(()=>{if(!card.hidden)position(card);if(!menu.hidden)position(menu);}).observe(stage);
-  return {refresh,hide};
+  return {refresh,hide,current,select(id,event){if(!state.scene?.cast?.some(p=>p.id===id))return;selected=id;openMenu(event);}};
 }

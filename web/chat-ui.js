@@ -129,6 +129,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       mutationBegan=true;failedRequest=null;state.scene=scene;state.sceneIndex=0;
       for(const [id,p] of Object.entries(scene.npc_updates||{}))updateNPC(state,id,p);
       if(scene.npc?.profile&&findNPC(scene.npc.id))updateNPC(state,scene.npc.id,scene.npc.profile);
+      for(const npc of scene.cast||[])if(npc.profile&&findNPC(npc.id))updateNPC(state,npc.id,npc.profile);
       if(commitBattle)for(const r of scene.battle.outcome.resources)if(findNPC(r.id))updateNPC(state,r.id,{hp:r.hp,mp:r.mp});
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
       if(scene.player){

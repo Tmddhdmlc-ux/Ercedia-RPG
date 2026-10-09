@@ -1,12 +1,12 @@
 import {publicLife,lifeRole} from './npc-life.js';
 import {findNPC} from './npc-model.js';
-export function mountNPCLifeUI(state,{submit,isPending}){
+export function mountNPCLifeUI(state,{submit,isPending,getNPC}){
   const $=id=>document.getElementById(id),info=document.createElement('section'),actions=document.createElement('div'),journal=document.createElement('details'),summary=document.createElement('summary');
   info.className='npc-life-info';info.setAttribute('aria-label','인물의 활동과 기억');$('npc-info-card').append(info);
   actions.className='npc-life-actions';$('npc-action-menu').append(actions);summary.textContent='모험 일지 · 직접 경험한 사건';journal.append(summary);journal.className='adventure-journal';$('quests-panel').append(journal);
   const labels={talk:'대화하기',news:'최근 소식 묻기',quest:'개인 의뢰 확인',trade:'거래하기',companion:'동행 요청',advice:'수련 조언 요청',master:'사사 요청',goodbye:'작별 인사'};
   function render(){
-    const id=state.scene?.npc?.id,p=id?publicLife(state,id):null;info.replaceChildren();actions.replaceChildren();
+    const id=getNPC?getNPC()?.id:state.scene?.npc?.id,p=id?publicLife(state,id):null;info.replaceChildren();actions.replaceChildren();
     if(p){const name=findNPC(id)?.name||id,role=lifeRole(id),lead=document.createElement('p');lead.textContent=`현재 활동: ${p.activity} · ${p.accompanying?'동행 중':'동행하지 않음'} · 호감도 ${p.affection} / 100`;info.append(lead);
       const last=document.createElement('p');last.textContent=p.last_meeting?`마지막 만남: ${p.last_meeting.date} · ${p.last_meeting.place}`:'이전 만남 기록 없음';info.append(last);
       const condition=document.createElement('p');condition.textContent=`피로: ${({rested:'휴식 충분',tired:'피곤함',exhausted:'탈진'})[p.fatigue]||'미확인'} · 부상: ${p.injuries.join(' · ')||'기록 없음'}`;info.append(condition);

@@ -493,6 +493,57 @@ input[type=range] {
   inset:0;
   pointer-events:none
 }
+/* Each cast member is clipped to their own equal-width slot. Original art is uniformly scaled. */
+.scene-cast {
+  position:absolute;
+  inset:0;
+  display:flex;
+  pointer-events:none;
+  z-index:1
+}
+.cast-slot {
+  flex:1;
+  min-width:0;
+  position:relative;
+  overflow:hidden;
+  pointer-events:none
+}
+.cast-canvas {
+  position:absolute;
+  height:140%;
+  aspect-ratio:2/3;
+  top:-6%;
+  left:50%;
+  transform:translateX(-50%);
+  filter:brightness(.72);
+  transition:filter 160ms ease-out
+}
+.cast-slot[data-active=true] .cast-canvas {filter:brightness(1)}
+.cast-body.person {
+  width:100%;
+  height:100%;
+  inset:0;
+  transform:none;
+  object-fit:contain;
+  animation:none
+}
+.cast-canvas[data-kind=monster] {height:80%;top:8%;aspect-ratio:1}
+.cast-face {position:absolute;height:auto;pointer-events:none}
+.cast-name {
+  position:absolute;
+  top:58px;
+  left:50%;
+  transform:translateX(-50%);
+  max-width:95%;
+  pointer-events:auto;
+  white-space:normal;
+  background:#101820e6;
+  font-size:16px
+}
+.cast-slot[data-active=true] .cast-name {border-color:var(--gold);color:var(--gold)}
+.cast-slot[data-failed=true] .cast-name::after {content:' · 원화 로드 실패';display:block;color:var(--muted)}
+.game[data-battle=active] #scene-cast {display:none}
+@media (prefers-reduced-motion:reduce) {.cast-canvas {transition:none}}
 .person {
   position:absolute;
   width:auto;

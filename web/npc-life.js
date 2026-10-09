@@ -1,6 +1,7 @@
 import {findNPC,npcCatalog} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 const clone=v=>JSON.parse(JSON.stringify(v));
+const present=scene=>scene.cast||(scene.npc?[scene.npc]:[]);
 const fail=m=>{throw Error('NPC 생활 검증 · '+m);};
 const text=(v,max=500)=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail('문자열 형식');return v;};
 const npc=id=>{if(!findNPC(id)||findNPC(id).id!==id)fail('미등록 NPC');return id;};
@@ -58,7 +59,7 @@ function crossBorder(from,to,proof,date){
   npc(proof.issuer_id);
 }
 export function planNPCLife(state,scene,questResult=null){
-  if(!state.npc_life&&!scene.life_events&&!scene.npc&&!scene.battle&&!state.quest_log?.length)return null;
+  if(!state.npc_life&&!scene.life_events&&!present(scene).length&&!scene.battle&&!state.quest_log?.length)return null;
   const life=state.npc_life?normalizeLife(state.npc_life):empty(),relationships=clone(questResult?.relationships||state.relationships||{});
   const date=scene.game_state?.date||state.gameState?.date||life.clock,now=calendarDay(date);
   if(life.clock&&now!==null&&now<day(life.clock))fail('게임 시간 역행');
@@ -78,10 +79,10 @@ export function planNPCLife(state,scene,questResult=null){
     if(e.npc_id)get(e.npc_id);
     if(e.kind==='schedule'){get(e.npc_id).schedule=e.entries;get(e.npc_id).schedule_source=e.event_id;}
     if(e.kind==='move'){const p=get(e.npc_id);crossBorder(p.region,e.region,e.border,e.date);Object.assign(p,{region:e.region,place:e.place,activity:e.activity,destination:null,updated_at:e.date,location_confirmed:true});}
-    if(e.kind==='companion'){const p=get(e.npc_id);if(e.accompanying&&scene.npc?.id!==e.npc_id)fail('만나지 않은 인물 동행');p.accompanying=e.accompanying;}
+    if(e.kind==='companion'){const p=get(e.npc_id);if(e.accompanying&&!present(scene).some(n=>n.id===e.npc_id))fail('만나지 않은 인물 동행');p.accompanying=e.accompanying;}
     if(e.kind==='condition')Object.assign(get(e.npc_id),{injuries:e.injuries,fatigue:e.fatigue,major_event:e.major_event});
     if(e.kind==='experience'){
-      if(e.player_witnessed&&!(scene.npc?.id===e.npc_id||scene.battle?.participants.some(p=>p.id===e.npc_id)||get(e.npc_id).accompanying&&get(e.npc_id).place===(scene.game_state?.place||scene.location)))fail('만나지 않은 NPC 직접 경험');
+      if(e.player_witnessed&&!(present(scene).some(n=>n.id===e.npc_id)||scene.battle?.participants.some(p=>p.id===e.npc_id)||get(e.npc_id).accompanying&&get(e.npc_id).place===(scene.game_state?.place||scene.location)))fail('만나지 않은 NPC 직접 경험');
       for(const id of e.participants)if(get(id).region&&get(e.npc_id).region&&get(id).region!==get(e.npc_id).region)fail('다른 지역의 NPC가 즉시 목격');
       if((questResult?.quest_log||state.quest_log||[]).some(q=>q.claim_event_id===e.source_id&&q.reward.affection_effects.some(r=>r.npc_id===e.npc_id))&&e.affection_delta)fail('의뢰 호감도 이중 지급');
       if(e.affection_delta){const claim='affection-source:'+e.source_id+':'+e.npc_id;if(life.applied[claim])fail('같은 원인 사건의 호감도 이중 지급');life.applied[claim]='affection';}
@@ -92,7 +93,7 @@ export function planNPCLife(state,scene,questResult=null){
       if(!m)fail('소문 발신자가 모르는 사건');if(life.rumors.length>=128)fail('소문 저장 한도');
       life.rumors.push({...e,id:e.event_id,delivered:false,player_heard:false});
     }
-    if(e.kind==='relay'){const r=life.rumors.find(r=>r.id===e.rumor_id);if(r&&day(r.arrives_at)<=now)r.delivered=true;if(!r||!r.delivered||scene.npc?.id!==r.to_npc)fail('도착하지 않거나 만나지 않은 소문');r.player_heard=e.player_heard;}
+    if(e.kind==='relay'){const r=life.rumors.find(r=>r.id===e.rumor_id);if(r&&day(r.arrives_at)<=now)r.delivered=true;if(!r||!r.delivered||!present(scene).some(n=>n.id===r.to_npc))fail('도착하지 않거나 만나지 않은 소문');r.player_heard=e.player_heard;}
     if(e.kind==='npc_relation'){if(life.links.length>=256)fail('인물 관계 한도');life.links.push({...e});}
     if(e.kind==='region_effect'){
       const battle=scene.battle&&e.source_id==='battle:'+scene.battle.battle_id&&scene.battle.outcome.winner==='allied';
@@ -103,17 +104,17 @@ export function planNPCLife(state,scene,questResult=null){
     }
     life.applied[e.event_id]=digest;
   }
-  const priority=new Set([scene.npc?.id,...Object.keys(life.npcs).filter(id=>life.npcs[id].accompanying||life.npcs[id].major_event),...(questResult?.quest_log||state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id)].filter(id=>findNPC(id)));
+  const priority=new Set([...present(scene).map(n=>n.id),...Object.keys(life.npcs).filter(id=>life.npcs[id].accompanying||life.npcs[id].major_event),...(questResult?.quest_log||state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id)].filter(id=>findNPC(id)));
   for(const id of priority){const p=get(id);if(!p.accompanying&&now!==null&&p.updated_at!==date){const scheduled=p.schedule.find(s=>day(s.start)<=now&&day(s.end)>=now);if(scheduled){crossBorder(p.region,scheduled.region,null,date);Object.assign(p,{region:scheduled.region,place:scheduled.place,activity:scheduled.activity,location_confirmed:true});}else if(!p.schedule.length&&(!p.updated_at||now>day(p.updated_at)))p.activity=roleActivities[lifeRole(id)][now%4];p.updated_at=date;p.destination=p.schedule.find(s=>day(s.start)>now)?.place||null;}
     p.quests=(questResult?.quest_log||state.quest_log||[]).filter(q=>q.issuer_npc_id===id&&['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.id);
     const stats=state.npcStates?.[id];if(stats?.hp===0)p.activity='전투불능';
   }
   for(const [id,p] of Object.entries(life.npcs)){if(p.accompanying&&p.region===state.gameState?.region&&p.place===state.gameState?.place){const area=scene.game_state?.region||state.gameState.region,place=scene.game_state?.place||scene.location;if(country(p.region)===country(area))Object.assign(p,{region:area,place,activity:'동행',updated_at:date||p.updated_at});}}
-  if(scene.npc){const p=get(scene.npc.id),place=scene.game_state?.place||scene.location,area=scene.game_state?.region||state.gameState?.region;
+  for(const npc of present(scene)){const p=get(npc.id),place=scene.game_state?.place||scene.location,area=scene.game_state?.region||state.gameState?.region;
     if(p.region&&area&&country(p.region)!==country(area))fail('이동하지 않은 NPC가 다른 왕국에서 등장');
     if(p.location_confirmed&&p.place!==place&&p.place!==p.region&&!p.accompanying)fail('이동한 NPC가 이전 장소에서 등장');
     p.place=place;p.known=true;p.last_meeting={date:date||'날짜 미확인',place};
-    const id='first-meeting:'+scene.npc.id;if(!life.applied[id]){remember({event_id:id,npc_id:scene.npc.id,date:date||'날짜 미확인',location:place,action:'첫 만남',result:'처음 대화를 나눴다.',affection_delta:0,follow_up:'재회 시 첫 만남을 기억한다.',player_witnessed:true,participants:[]});life.applied[id]='first';}
+    const id='first-meeting:'+npc.id;if(!life.applied[id]){remember({event_id:id,npc_id:npc.id,date:date||'날짜 미확인',location:place,action:'첫 만남',result:'처음 대화를 나눴다.',affection_delta:0,follow_up:'재회 시 첫 만남을 기억한다.',player_witnessed:true,participants:[]});life.applied[id]='first';}
   }
   if(scene.battle){for(const p of scene.battle.participants.filter(p=>findNPC(p.id))){const id='battle-memory:'+scene.battle.battle_id+':'+p.id;if(life.applied[id])continue;if(scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0)get(p.id).activity='전투불능';remember({event_id:id,npc_id:p.id,date:date||'날짜 미확인',location:scene.location,action:'함께한 전투',result:scene.battle.outcome.winner,affection_delta:0,follow_up:'',player_witnessed:true,participants:[]});life.applied[id]='battle';}}
   for(const q of questResult?.quest_log||[]){const old=(state.quest_log||[]).find(p=>p.id===q.id);if(old?.status===q.status||!findNPC(q.issuer_npc_id))continue;const id='quest-memory:'+q.id+':'+q.status;if(life.applied[id])continue;remember({event_id:id,npc_id:q.issuer_npc_id,date:date||'날짜 미확인',location:scene.location,action:'의뢰 '+({offered:'제안',accepted:'수락',active:'진행',ready_to_report:'보고 가능',completed:'완료',failed:'실패',expired:'기한 만료',abandoned:'포기',declined:'거절'})[q.status],result:q.title,affection_delta:0,follow_up:'',player_witnessed:true,participants:[]});life.applied[id]='quest';}
@@ -121,5 +122,5 @@ export function planNPCLife(state,scene,questResult=null){
   normalizeLife(life);return {npc_life:life,relationships};
 }
 export function regionImpact(state,id,{publicOnly=false}={}){const traces=(state.npc_life?.traces||[]).filter(t=>t.region===id&&(!publicOnly||t.player_known));const calendar=Object.values(state.world_engine?.annual_events||{}).filter(e=>e.region_id===id&&e.status==='resolved'&&(!publicOnly||e.known_to_player)).map(e=>({event_id:e.id,changes:e.effects}));traces.push(...calendar);const changes={};for(const t of traces)for(const [key,value]of Object.entries(t.changes))changes[key]=(changes[key]||0)+value;return {region:id,changes,events:clone(traces)};}
-export function lifeContext(state){const life=state.npc_life;if(!life)return null;const id=state.scene?.npc?.id,related=new Set([id,...Object.keys(life.npcs).filter(id=>life.npcs[id].accompanying),...(state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id)]);return {clock:life.clock,regional_changes:regionImpact(state,state.gameState?.region).changes,npcs:Object.fromEntries([...related].filter(id=>life.npcs[id]).map(id=>[id,life.npcs[id]])),memories:[...life.memories.filter(m=>related.has(m.npc_id)&&m.action==='첫 만남'),...life.memories.filter(m=>related.has(m.npc_id)&&m.action!=='첫 만남').slice(-40)],rumors:life.rumors.filter(r=>r.delivered&&related.has(r.to_npc)).slice(-20),region_traces:life.traces.filter(t=>t.region===state.gameState?.region).slice(-10),relationships:life.links.filter(r=>related.has(r.from_npc)||related.has(r.to_npc)).slice(-16),constraints:'각 NPC는 자기 memories와 수신 완료 rumors만 안다. 다른 NPC 기록·플레이어 일지·미도착 소문은 대사 지식이 아니다. 직무·법·소속을 호감도보다 우선한다.'};}
+export function lifeContext(state){const life=state.npc_life;if(!life)return null;const id=state.scene?.npc?.id,related=new Set([id,...present(state.scene||{}).map(p=>p.id),...Object.keys(life.npcs).filter(id=>life.npcs[id].accompanying),...(state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id)]);return {clock:life.clock,regional_changes:regionImpact(state,state.gameState?.region).changes,npcs:Object.fromEntries([...related].filter(id=>life.npcs[id]).map(id=>[id,life.npcs[id]])),memories:[...life.memories.filter(m=>related.has(m.npc_id)&&m.action==='첫 만남'),...life.memories.filter(m=>related.has(m.npc_id)&&m.action!=='첫 만남').slice(-40)],rumors:life.rumors.filter(r=>r.delivered&&related.has(r.to_npc)).slice(-20),region_traces:life.traces.filter(t=>t.region===state.gameState?.region).slice(-10),relationships:life.links.filter(r=>related.has(r.from_npc)||related.has(r.to_npc)).slice(-16),constraints:'각 NPC는 자기 memories와 수신 완료 rumors만 안다. 다른 NPC 기록·플레이어 일지·미도착 소문은 대사 지식이 아니다. 직무·법·소속을 호감도보다 우선한다.'};}
 export function publicLife(state,id){const life=state.npc_life,p=life?.npcs[id];return {activity:p?.known?p.activity:'확인되지 않음',accompanying:p?.accompanying||false,last_meeting:p?.last_meeting||null,quests:p?.known?p.quests:[],affection:state.relationships?.[id]?.affection??0,injuries:p?.known?p.injuries:[],fatigue:p?.known?p.fatigue:null,memories:life?.memories.filter(m=>m.npc_id===id&&m.player_witnessed).slice(-5)||[]};}
