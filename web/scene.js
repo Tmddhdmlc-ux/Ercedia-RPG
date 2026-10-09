@@ -111,9 +111,11 @@ export function contextSummary(state){
 // Full requests bootstrap a conversation; continuations reuse acknowledged rules.
 export function turnDomains(state,action,choiceId){
   const choice=state.scene?.choices?.find(c=>c.id===choiceId),kind=choice?.kind,text=String(action);
+  // Routing only: an emergency treatment or a remembered attack is not a new combat command.
+  const combatText=text.replace(/응급\s*처치/g,'치료');
   return {
-    combat:/전투(?!불능)|공격|싸우|싸움|토벌|처치|사냥|궁극기|사격|견제|화살|베어|베기|찌른|늑대/.test(text),
-    dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스|탐색|탐험/.test(text),
+    combat:/전투(?!불능|\s*(?:이후|후|뒤))|공격(?!력|받|당|을\s*받)|싸우|싸움|토벌|처치|사냥(?!꾼)|궁극기|사격|견제|베어|베기|찌른|쏜다|쏘아|쏘겠|발사|타격|방어(?!구)|가드/.test(combatText),
+    dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스/.test(text),
     trade:kind==='trade'||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|경매|입찰|시설|치료|숙박/.test(text),
     crafting:/제작|대장간|강화|분해|조합|단조|검.{0,15}(?:만들|만든)/.test(text),
     growth:kind==='training'||/수련|단련|훈련|학습|배우|배운|연습|공부|단조|익히|익힌|연구|기술서|돌파|경지|서클|입문|직업|전직/.test(text),
