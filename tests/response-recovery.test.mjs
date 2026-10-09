@@ -98,3 +98,9 @@ test('malformed first-meeting life records repair with exact required evidence a
   t.reply(repaired.requestId,{npc,location:'장터',game_state});assert.equal(t.saves(),1);assert.equal(t.state.npc_life.memories.filter(m=>m.npc_id===npc.id&&m.action==='첫 만남').length,1);assert.equal(t.actions().length,2);
  }finally{t.h.close();}
 });
+
+test('departure participant and intermediate location errors explain the valid scene boundary without mutating failed saves',()=>{
+ for(const extra of [{dialogue:[{speaker:'브란 오크펠',speaker_id:'ER-COM-001',text:'쉬게.'}]},{world_events:[{event_id:'farewell',kind:'action',target_id:'farewell',location:'출발지 장터',proof:'작별했다'}]}]){
+  const t=setup();try{const before=structuredClone(t.state);t.reply(t.actions()[0].requestId,extra);assert.deepEqual(t.state,before);assert.equal(t.saves(),0);const repair=t.actions()[1];assert.match(repair.text,/장소 기록 규격/);assert.match(repair.text,/다른 장소에서 한 일을 최종 장소에서 한 것처럼 바꾸지/);assert.match(repair.text,/목표 검증에 필요한 중간 장소 사건은 생략하지/);t.reply(repair.requestId);assert.equal(t.saves(),1);assert.equal(t.actions().length,2);}finally{t.h.close();}
+ }
+});

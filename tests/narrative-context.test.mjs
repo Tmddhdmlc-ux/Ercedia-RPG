@@ -89,3 +89,9 @@ test('first meetings remain automatic and malformed life events identify missing
  assert.throws(()=>validateLifeEvents([{event_id:'first',date:'650-07-03',source_id:'scene:meeting'}]),/reason 문자열 형식/);
  const scene={...s.scene,scene_id:'meeting',location:'장터',game_state:{region:'W1',place:'장터',date:'650-07-03'}};delete scene.cast;Object.assign(s,planNPCLife(s,scene));const first=s.npc_life.memories.filter(m=>m.npc_id==='ER-COM-007'&&m.action==='첫 만남');assert.equal(first.length,1);Object.assign(s,planNPCLife(s,scene));assert.equal(s.npc_life.memories.filter(m=>m.action==='첫 만남').length,1);
 });
+
+test('choice diversity reaches current offers and active episodes without treating remote offers as current work',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');s.quest_log=[{id:'local-offer',title:'관찰 의뢰',status:'offered',issuer_npc_id:'ER-COM-007'},{id:'remote-offer',title:'다른 제안',status:'offered',issuer_npc_id:'ER-COM-001'}];
+ const before=JSON.stringify(s),sync=createTurnSync();assert.ok(narrativeFocus(s).choice_rule);sync.acknowledge(sync.prepare(s,'관찰 의뢰를 맡고 출발한다'));assert.ok(sync.prepare(s,'관찰 의뢰를 맡고 출발한다').payload.state.turn_facts.narrative_focus.choice_rule);assert.equal(JSON.stringify(s),before);
+ s.scene.npc=null;assert.equal(narrativeFocus(s,'혼자 쉰다').choice_rule,undefined);assert.ok(narrativeFocus(s,'관찰 의뢰의 조건을 묻는다').choice_rule);s.quest_log[0].status='active';assert.ok(narrativeFocus(s,'위험한 흔적에 대응한다').choice_rule);s.quest_log[0].status='completed';assert.equal(narrativeFocus(s,'혼자 쉰다').choice_rule,undefined);
+});
