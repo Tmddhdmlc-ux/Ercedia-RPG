@@ -88,7 +88,8 @@ export function settleQuests(state,scene){
     else if(e.kind==='report'){
       assertQuestStory(q);
       if(q.status!=='ready_to_report'||q.claim_event_id)fail('실제 목표 확인과 미지급 보상 필요');
-      if(q.issuer_npc_id?scene.npc?.id!==q.issuer_npc_id:region!==q.region_id)fail('발행자에게 실제 보고해야 합니다.');
+      const presentIssuers=[scene.npc,...(scene.cast||[])].filter(Boolean);
+      if(q.issuer_npc_id?!presentIssuers.some(n=>n.id===q.issuer_npc_id):region!==q.region_id)fail('발행자에게 실제 보고해야 합니다.');
       if(scene.player||scene.inventory||scene.npc_updates)fail('의뢰 보상은 UI가 한 번만 정산합니다. report 장면에 보상 스냅샷을 중복 포함하지 마세요.');
       if(q.reward.xp){if(![player.level,player.xp,player.maxHp,player.hp,player.strength].every(Number.isFinite))fail('경험치 지급에 필요한 현재 능력치 미정');const growth=battleGrowth(player,q.reward.xp);player={...player,...growth,hp:Math.min(growth.maxHp,player.hp+growth.hpIncrease)};delete player.hpIncrease;}
       for(const r of [...q.reward.item_ids.map(id=>({id,quantity:1})),...q.reward.materials]){const item=itemById(r.id);if(!item)fail('미등록 보상 아이템');const old=inventory.find(i=>i.name===item.name);if(old)old.quantity+=r.quantity;else{if(inventory.length>=32)fail('인벤토리 여유 공간 필요');inventory.push({name:item.name,quantity:r.quantity,id:item.id,category:item.category,description:item.description||item.effect||'',effect:item.effect||'',rarity:item.rarity});}}
