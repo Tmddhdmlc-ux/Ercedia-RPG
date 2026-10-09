@@ -1,0 +1,994 @@
+{
+  "checked": 52,
+  "planned": 52,
+  "results": [
+    {
+      "id": "DUN-W1-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        43,
+        172,
+        1218,
+        1147
+      ],
+      "sha256": "8dc2234ef3a997f6ea58d4d94d8f902bfe80dafe6c50c81d3efef4c19246ab4e"
+    },
+    {
+      "id": "DUN-W1-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        20,
+        41,
+        1234,
+        1229
+      ],
+      "sha256": "2345fd30edcf9d54dc2423d17172ac1625111b3af3e53c2420d28e116be252e5"
+    },
+    {
+      "id": "DUN-W1-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        116,
+        138,
+        1205,
+        1150
+      ],
+      "sha256": "7b3bed284a78f0286a6d39c43948bbe63dd91f2ba2a91298b153bbf265d937e0"
+    },
+    {
+      "id": "DUN-W1-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        135,
+        29,
+        1163,
+        1225
+      ],
+      "sha256": "9e900fd3a270ddb39d5299e0c7edd8560d932279f9a17ea187d545333086dbd0"
+    },
+    {
+      "id": "DUN-W2-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        93,
+        140,
+        1188,
+        1148
+      ],
+      "sha256": "4a286367f06a23f4c186c94895fbf6024d453fa59a3dbbf036249b7eb5b086e6"
+    },
+    {
+      "id": "DUN-W2-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        86,
+        127,
+        1205,
+        1183
+      ],
+      "sha256": "6fe8ed487372f2eaef8a49915b8c71e1a72857c2660b93eff6f5db8a29cc7b56"
+    },
+    {
+      "id": "DUN-W2-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        84,
+        123,
+        1190,
+        1150
+      ],
+      "sha256": "f5177056b63a2e01fa301be6331492f8ff7ca8b2b6829c2b6aa23da5043b6838"
+    },
+    {
+      "id": "DUN-W2-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        75,
+        71,
+        1205,
+        1189
+      ],
+      "sha256": "280825398c623d516bf2caae59c750cafb0a033b72b7433b3ea681fa8537c9b8"
+    },
+    {
+      "id": "DUN-W3-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        96,
+        119,
+        1189,
+        1159
+      ],
+      "sha256": "d13c6934b270de04e1c2782fbb86db21d40a310ef57af6286c389ee17421a45b"
+    },
+    {
+      "id": "DUN-W3-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        133,
+        1212,
+        1169
+      ],
+      "sha256": "4944e49be439f691fee5f40e732317b97647ab026fc2195d68f74a38b8aa7e3d"
+    },
+    {
+      "id": "DUN-W3-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        86,
+        159,
+        1168,
+        1115
+      ],
+      "sha256": "cc0a5e29e73b6f2720f56e951db2919add5a92bcc8678ab041fab67854e8df92"
+    },
+    {
+      "id": "DUN-W3-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        73,
+        98,
+        1216,
+        1183
+      ],
+      "sha256": "77d576821631df6cb7a3f8fc83703eeda5c16565fd0cca82a45c21e76d54d57f"
+    },
+    {
+      "id": "DUN-W4-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        80,
+        109,
+        1185,
+        1178
+      ],
+      "sha256": "cf57b34b55db2661b4bae20f9b1c858e30d8905c0d498070c7fcd1b8fe55c3b1"
+    },
+    {
+      "id": "DUN-W4-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        66,
+        1216,
+        1199
+      ],
+      "sha256": "f7adb13a1ae70633045a0934559c8e8dd2ea949b010b440402dbf170761ce84d"
+    },
+    {
+      "id": "DUN-W4-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        99,
+        135,
+        1156,
+        1154
+      ],
+      "sha256": "612ed47c084714452206a1f7e32bc7567552961cebb76610e839b377aeb22bf9"
+    },
+    {
+      "id": "DUN-W4-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        64,
+        95,
+        1207,
+        1172
+      ],
+      "sha256": "e5f3c48195a42e43bd185b9c499696672b023e3c484ca07a3e0c698ff92a4029"
+    },
+    {
+      "id": "DUN-W5-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        102,
+        118,
+        1169,
+        1147
+      ],
+      "sha256": "a49b85191a0ca46656a90f492e669452b00b605016a41d842b892309002d22aa"
+    },
+    {
+      "id": "DUN-W5-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        75,
+        117,
+        1207,
+        1157
+      ],
+      "sha256": "4f0de89d6659b0f24d779b42482de581eea6bbd70229ac206898f55df22be7a4"
+    },
+    {
+      "id": "DUN-W5-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        79,
+        63,
+        1205,
+        1193
+      ],
+      "sha256": "361570d514e0d3cf3e4e50219e62368dffbe4d5a06c5ce03b1acadfa725087bd"
+    },
+    {
+      "id": "DUN-W5-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        49,
+        38,
+        1250,
+        1181
+      ],
+      "sha256": "935faaeece976dd099d547f926b21296184656fcb997337ca45cdf8244f6708e"
+    },
+    {
+      "id": "DUN-E1-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        74,
+        114,
+        1196,
+        1150
+      ],
+      "sha256": "179fdd4b6ffa9b9e591ee89e68dd860280ffbccc06947b7c563751a4d35aa2f7"
+    },
+    {
+      "id": "DUN-E1-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        59,
+        99,
+        1219,
+        1161
+      ],
+      "sha256": "c1c70b12ae461626b2fe9e30af3489548d1f5cbd12eec1c6d242c4c6b6f4f922"
+    },
+    {
+      "id": "DUN-E1-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        118,
+        135,
+        1201,
+        1152
+      ],
+      "sha256": "9761014ba8bb185a40b58bf36febf7ca03528dbceaf711961020a5c35f450662"
+    },
+    {
+      "id": "DUN-E1-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        102,
+        61,
+        1203,
+        1206
+      ],
+      "sha256": "379ffa087ce4f24bca3fb4a9a13e188b854ee709d3dbb7f1a9fde4709ec7f0ec"
+    },
+    {
+      "id": "DUN-E2-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        78,
+        136,
+        1180,
+        1128
+      ],
+      "sha256": "b2bd2a62f146de479f8fe35d0241fd44f8ecf33355a38d3b3ef29e0dd7561b57"
+    },
+    {
+      "id": "DUN-E2-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        63,
+        109,
+        1223,
+        1161
+      ],
+      "sha256": "10a8f9cd60b746a7078b9afe3a4b304af3817d701a0be9fe55329c1ad69c8c4a"
+    },
+    {
+      "id": "DUN-E2-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        118,
+        146,
+        1195,
+        1143
+      ],
+      "sha256": "531be90254b280aab80b229ed6d61b07e4c8717dcf3c3a77bf511e55b38ae168"
+    },
+    {
+      "id": "DUN-E2-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        62,
+        66,
+        1203,
+        1188
+      ],
+      "sha256": "e1d3ca65d17701d5f983f599c2054e7424bd8baefcc5a5d9354f196e756ec4b0"
+    },
+    {
+      "id": "DUN-E3-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        97,
+        111,
+        1172,
+        1158
+      ],
+      "sha256": "c154152c8a3c875699d0173bb119b8c46fb31c6299210f69a7265d3201f12b8f"
+    },
+    {
+      "id": "DUN-E3-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        55,
+        72,
+        1204,
+        1181
+      ],
+      "sha256": "0263fb9bcb90440720045518a22c2de7f22eca0d2c4955d6dce877c8c81e61e0"
+    },
+    {
+      "id": "DUN-E3-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        67,
+        164,
+        1194,
+        1118
+      ],
+      "sha256": "5168ca8a57c62af5e96aaa03829a58d80d144a4e0af7d8086c5373c23b2f6ce1"
+    },
+    {
+      "id": "DUN-E3-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        52,
+        108,
+        1209,
+        1168
+      ],
+      "sha256": "0a12661fbac34322a418f63ac0e4cf8f64f191a106af278474cba2116390d22f"
+    },
+    {
+      "id": "DUN-E4-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        85,
+        58,
+        1225,
+        1131
+      ],
+      "sha256": "3ebdcb9aaf1e2574d306251a5bcde5762f7b53cbf3045625bf95fe6a4ed3be9c"
+    },
+    {
+      "id": "DUN-E4-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        60,
+        75,
+        1220,
+        1166
+      ],
+      "sha256": "b6a8928dace78ee9425e091c824bbdd2a56232d954f00d6765d062f421b8d079"
+    },
+    {
+      "id": "DUN-E4-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        85,
+        62,
+        1196,
+        1200
+      ],
+      "sha256": "78f6d4878e759c0c8ed3ed9641e0c18de1f89abbfaced994b7220a69c025df3b"
+    },
+    {
+      "id": "DUN-E4-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        94,
+        61,
+        1221,
+        1198
+      ],
+      "sha256": "9cbc19554c0249c047dfe0615981919130f8ad1ca86434b47765b36ada10f0ae"
+    },
+    {
+      "id": "DUN-S1-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        87,
+        150,
+        1212,
+        1122
+      ],
+      "sha256": "d19018ace282b9a20d59200ec9c2964fabbef8c76abe72a843bba639d21802d1"
+    },
+    {
+      "id": "DUN-S1-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        49,
+        74,
+        1222,
+        1151
+      ],
+      "sha256": "8b3f296f7537c20f9c4d036758e1bc4dc9d9c4be1bfab182c652f9102cf1fad3"
+    },
+    {
+      "id": "DUN-S1-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        140,
+        87,
+        1165,
+        1174
+      ],
+      "sha256": "1525c31b7657037b7fa8561c4013327e190298a91d5e23776d253620a94fea87"
+    },
+    {
+      "id": "DUN-S1-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        89,
+        57,
+        1189,
+        1182
+      ],
+      "sha256": "d26d39aeaf8a1b1faa3a9d1b321da76f43360f61d27ecc5ffc8ad8fbc2fc5b5a"
+    },
+    {
+      "id": "DUN-S2-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        45,
+        136,
+        1204,
+        1163
+      ],
+      "sha256": "61e9feedeadc8e0802306c6f8c3704ea815e0b78d55c558fa208bfa3402c1e92"
+    },
+    {
+      "id": "DUN-S2-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        71,
+        71,
+        1185,
+        1177
+      ],
+      "sha256": "bf1d5b44877fc7bd656e93e842e1f92c6186f5d0d6bb8c5e640f9fd91ba2fc45"
+    },
+    {
+      "id": "DUN-S2-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        79,
+        145,
+        1160,
+        1140
+      ],
+      "sha256": "0f82a5cbe22a34d0bc8b59422ac004abe22629b35fb3af1c30e0c50989d2fba2"
+    },
+    {
+      "id": "DUN-S2-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        60,
+        93,
+        1200,
+        1185
+      ],
+      "sha256": "2480ecbde459795364f18f1533d68ce4d26d5e17248f7d1e03c6ae7c8f5b3031"
+    },
+    {
+      "id": "DUN-S3-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        119,
+        81,
+        1172,
+        1193
+      ],
+      "sha256": "ef9c66542a177a99e5d2824bfd1a1ba08afbcd3e3cf059007d7d12a3b1ad5b14"
+    },
+    {
+      "id": "DUN-S3-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        102,
+        48,
+        1194,
+        1215
+      ],
+      "sha256": "06c529f1ff8f43c54571f8b10838b113f6283578d05ac0ec476d0a995ccd02dd"
+    },
+    {
+      "id": "DUN-S3-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        55,
+        99,
+        1202,
+        1175
+      ],
+      "sha256": "8d44458cb9389e6d7b161af39933aaf98519181a3d69fdc873d8398aeea0b5f2"
+    },
+    {
+      "id": "DUN-S3-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        96,
+        83,
+        1198,
+        1190
+      ],
+      "sha256": "8696d3e420d25d50c76ccc5766f03b4588f7995bf18f2c8de1523eb9a794d5f7"
+    },
+    {
+      "id": "DUN-S4-01-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        87,
+        74,
+        1192,
+        1155
+      ],
+      "sha256": "314baa85d83a81f461d9514a7bdd8b64fa93a29507dd4c2c8969e53edcbcd105"
+    },
+    {
+      "id": "DUN-S4-01-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        63,
+        74,
+        1207,
+        1173
+      ],
+      "sha256": "8bd60d6ab81569a0f2cafa2160026368aa4a1b54fe8dfe417edbae542ec2d4a6"
+    },
+    {
+      "id": "DUN-S4-02-ELITE",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        125,
+        53,
+        1204,
+        1202
+      ],
+      "sha256": "763a2401f9474e67c3a07aab02aec48fa6be24f8c216d46d62a8aadb4c7c1418"
+    },
+    {
+      "id": "DUN-S4-02-BOSS",
+      "size": [
+        1254,
+        1254
+      ],
+      "mode": "RGBA",
+      "alpha": [
+        0,
+        255
+      ],
+      "bbox": [
+        156,
+        71,
+        1184,
+        1201
+      ],
+      "sha256": "4e16180d06db884370588560f9c488c5e16a793249cae603c5a50ccc19c63d23"
+    }
+  ]
+}
