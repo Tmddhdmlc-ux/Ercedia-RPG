@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
-  "approved_for_engine": "User requested engine integration on 2026-10-09",
-  "asset_commit": "ab565b9d07281376e4982b14de51406060e158e7",
+  "approved_for_engine": "User requested all female NPCs five expression variants on 2026-10-09",
+  "asset_commit": "f9cce72373a05f232f01bfcfa64ed518eb6329ce",
   "characters": {
     "ER-NPC-001": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-001/base.png",
@@ -18,12 +18,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-002/base.png",
       "standing": "assets/characters/standings/ER-NPC-002/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-002/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-002/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-002/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-002/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-002/embarrassed.png"
+      }
     },
     "ER-NPC-003": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-003/base.png",
@@ -40,12 +52,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-004/base.png",
       "standing": "assets/characters/standings/ER-NPC-004/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-004/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-004/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-004/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-004/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-004/embarrassed.png"
+      }
     },
     "ER-NPC-005": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-005/base.png",
@@ -62,23 +86,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-006/base.png",
       "standing": "assets/characters/standings/ER-NPC-006/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-006/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-006/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-006/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-006/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-006/embarrassed.png"
+      }
     },
     "ER-NPC-007": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-007/base.png",
       "standing": "assets/characters/standings/ER-NPC-007/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-007/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-007/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-007/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-007/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-007/embarrassed.png"
+      }
     },
     "ER-NPC-008": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-008/base.png",
@@ -106,12 +154,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-010/base.png",
       "standing": "assets/characters/standings/ER-NPC-010/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-010/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-010/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-010/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-010/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-010/embarrassed.png"
+      }
     },
     "ER-NPC-011": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-011/base.png",
@@ -128,12 +188,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-012/base.png",
       "standing": "assets/characters/standings/ER-NPC-012/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-012/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-012/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-012/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-012/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-012/embarrassed.png"
+      }
     },
     "ER-NPC-013": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-013/base.png",
@@ -150,12 +222,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-014/base.png",
       "standing": "assets/characters/standings/ER-NPC-014/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-014/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-014/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-014/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-014/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-014/embarrassed.png"
+      }
     },
     "ER-NPC-015": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-015/base.png",
@@ -172,23 +256,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-016/base.png",
       "standing": "assets/characters/standings/ER-NPC-016/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-016/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-016/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-016/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-016/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-016/embarrassed.png"
+      }
     },
     "ER-NPC-017": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-017/base.png",
       "standing": "assets/characters/standings/ER-NPC-017/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-017/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-017/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-017/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-017/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-017/embarrassed.png"
+      }
     },
     "ER-NPC-018": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-018/base.png",
@@ -216,12 +324,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-020/base.png",
       "standing": "assets/characters/standings/ER-NPC-020/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-020/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-020/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-020/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-020/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-020/embarrassed.png"
+      }
     },
     "ER-NPC-021": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-021/base.png",
@@ -238,23 +358,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-022/base.png",
       "standing": "assets/characters/standings/ER-NPC-022/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-022/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-022/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-022/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-022/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-022/embarrassed.png"
+      }
     },
     "ER-NPC-023": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-023/base.png",
       "standing": "assets/characters/standings/ER-NPC-023/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-023/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-023/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-023/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-023/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-023/embarrassed.png"
+      }
     },
     "ER-NPC-024": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-024/base.png",
@@ -271,12 +415,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-025/base.png",
       "standing": "assets/characters/standings/ER-NPC-025/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-025/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-025/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-025/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-025/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-025/embarrassed.png"
+      }
     },
     "ER-NPC-026": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-026/base.png",
@@ -293,12 +449,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-027/base.png",
       "standing": "assets/characters/standings/ER-NPC-027/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-027/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-027/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-027/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-027/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-027/embarrassed.png"
+      }
     },
     "ER-NPC-028": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-028/base.png",
@@ -315,12 +483,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-029/base.png",
       "standing": "assets/characters/standings/ER-NPC-029/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-029/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-029/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-029/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-029/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-029/embarrassed.png"
+      }
     },
     "ER-NPC-030": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-030/base.png",
@@ -337,12 +517,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-031/base.png",
       "standing": "assets/characters/standings/ER-NPC-031/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-031/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-031/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-031/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-031/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-031/embarrassed.png"
+      }
     },
     "ER-NPC-032": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-032/base.png",
@@ -359,12 +551,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-033/base.png",
       "standing": "assets/characters/standings/ER-NPC-033/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-033/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-033/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-033/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-033/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-033/embarrassed.png"
+      }
     },
     "ER-NPC-034": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-034/base.png",
@@ -381,23 +585,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-035/base.png",
       "standing": "assets/characters/standings/ER-NPC-035/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-035/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-035/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-035/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-035/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-035/embarrassed.png"
+      }
     },
     "ER-NPC-036": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-036/base.png",
       "standing": "assets/characters/standings/ER-NPC-036/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-036/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-036/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-036/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-036/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-036/embarrassed.png"
+      }
     },
     "ER-NPC-037": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-037/base.png",
@@ -425,12 +653,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-039/base.png",
       "standing": "assets/characters/standings/ER-NPC-039/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-039/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-039/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-039/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-039/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-039/embarrassed.png"
+      }
     },
     "ER-NPC-040": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-040/base.png",
@@ -447,12 +687,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-041/base.png",
       "standing": "assets/characters/standings/ER-NPC-041/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-041/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-041/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-041/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-041/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-041/embarrassed.png"
+      }
     },
     "ER-NPC-042": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-042/base.png",
@@ -469,12 +721,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-043/base.png",
       "standing": "assets/characters/standings/ER-NPC-043/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-043/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-043/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-043/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-043/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-043/embarrassed.png"
+      }
     },
     "ER-NPC-044": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-044/base.png",
@@ -502,12 +766,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-046/base.png",
       "standing": "assets/characters/standings/ER-NPC-046/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-046/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-046/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-046/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-046/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-046/embarrassed.png"
+      }
     },
     "ER-NPC-047": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-047/base.png",
@@ -524,12 +800,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-048/base.png",
       "standing": "assets/characters/standings/ER-NPC-048/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-048/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-048/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-048/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-048/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-048/embarrassed.png"
+      }
     },
     "ER-NPC-049": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-049/base.png",
@@ -546,12 +834,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-050/base.png",
       "standing": "assets/characters/standings/ER-NPC-050/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-050/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-050/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-050/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-050/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-050/embarrassed.png"
+      }
     },
     "ER-NPC-051": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-051/base.png",
@@ -568,12 +868,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-052/base.png",
       "standing": "assets/characters/standings/ER-NPC-052/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-052/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-052/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-052/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-052/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-052/embarrassed.png"
+      }
     },
     "ER-NPC-053": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-053/base.png",
@@ -590,12 +902,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-054/base.png",
       "standing": "assets/characters/standings/ER-NPC-054/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-054/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-054/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-054/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-054/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-054/embarrassed.png"
+      }
     },
     "ER-NPC-055": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-055/base.png",
@@ -623,12 +947,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-057/base.png",
       "standing": "assets/characters/standings/ER-NPC-057/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-057/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-057/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-057/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-057/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-057/embarrassed.png"
+      }
     },
     "ER-NPC-058": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-058/base.png",
@@ -645,12 +981,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-059/base.png",
       "standing": "assets/characters/standings/ER-NPC-059/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-059/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-059/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-059/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-059/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-059/embarrassed.png"
+      }
     },
     "ER-NPC-060": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-060/base.png",
@@ -678,12 +1026,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-062/base.png",
       "standing": "assets/characters/standings/ER-NPC-062/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-062/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-062/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-062/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-062/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-062/embarrassed.png"
+      }
     },
     "ER-NPC-063": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-063/base.png",
@@ -700,12 +1060,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-064/base.png",
       "standing": "assets/characters/standings/ER-NPC-064/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-064/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-064/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-064/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-064/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-064/embarrassed.png"
+      }
     },
     "ER-NPC-065": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-065/base.png",
@@ -744,12 +1116,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-068/base.png",
       "standing": "assets/characters/standings/ER-NPC-068/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-068/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-068/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-068/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-068/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-068/embarrassed.png"
+      }
     },
     "ER-NPC-069": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-069/base.png",
@@ -766,12 +1150,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-070/base.png",
       "standing": "assets/characters/standings/ER-NPC-070/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-070/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-070/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-070/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-070/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-070/embarrassed.png"
+      }
     },
     "ER-NPC-071": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-071/base.png",
@@ -788,12 +1184,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-072/base.png",
       "standing": "assets/characters/standings/ER-NPC-072/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-072/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-072/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-072/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-072/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-072/embarrassed.png"
+      }
     },
     "ER-NPC-073": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-073/base.png",
@@ -821,12 +1229,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-075/base.png",
       "standing": "assets/characters/standings/ER-NPC-075/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-075/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-075/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-075/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-075/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-075/embarrassed.png"
+      }
     },
     "ER-NPC-076": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-076/base.png",
@@ -843,12 +1263,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-077/base.png",
       "standing": "assets/characters/standings/ER-NPC-077/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-077/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-077/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-077/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-077/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-077/embarrassed.png"
+      }
     },
     "ER-NPC-078": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-078/base.png",
@@ -876,12 +1308,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-080/base.png",
       "standing": "assets/characters/standings/ER-NPC-080/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-NPC-080/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-NPC-080/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-NPC-080/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-NPC-080/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-NPC-080/embarrassed.png"
+      }
     },
     "ER-NPC-081": {
       "portrait": "assets/characters/monsters/portraits/ER-NPC-081.png",
@@ -1129,12 +1573,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-003/base.png",
       "standing": "assets/characters/standings/ER-CORE-003/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-003/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-003/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-003/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-003/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-003/embarrassed.png"
+      }
     },
     "ER-CORE-004": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-004/base.png",
@@ -1162,12 +1618,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-006/base.png",
       "standing": "assets/characters/standings/ER-CORE-006/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-006/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-006/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-006/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-006/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-006/embarrassed.png"
+      }
     },
     "ER-CORE-007": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-007/base.png",
@@ -1184,12 +1652,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-008/base.png",
       "standing": "assets/characters/standings/ER-CORE-008/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-008/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-008/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-008/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-008/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-008/embarrassed.png"
+      }
     },
     "ER-CORE-009": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-009/base.png",
@@ -1206,12 +1686,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-010/base.png",
       "standing": "assets/characters/standings/ER-CORE-010/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-010/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-010/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-010/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-010/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-010/embarrassed.png"
+      }
     },
     "ER-CORE-011": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-011/base.png",
@@ -1250,23 +1742,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-014/base.png",
       "standing": "assets/characters/standings/ER-CORE-014/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-014/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-014/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-014/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-014/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-014/embarrassed.png"
+      }
     },
     "ER-CORE-015": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-015/base.png",
       "standing": "assets/characters/standings/ER-CORE-015/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-015/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-015/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-015/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-015/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-015/embarrassed.png"
+      }
     },
     "ER-CORE-016": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-016/base.png",
@@ -1294,23 +1810,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-018/base.png",
       "standing": "assets/characters/standings/ER-CORE-018/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-018/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-018/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-018/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-018/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-018/embarrassed.png"
+      }
     },
     "ER-CORE-019": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-019/base.png",
       "standing": "assets/characters/standings/ER-CORE-019/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-019/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-019/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-019/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-019/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-019/embarrassed.png"
+      }
     },
     "ER-CORE-020": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-020/base.png",
@@ -1327,23 +1867,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-021/base.png",
       "standing": "assets/characters/standings/ER-CORE-021/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-021/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-021/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-021/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-021/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-021/embarrassed.png"
+      }
     },
     "ER-CORE-022": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-022/base.png",
       "standing": "assets/characters/standings/ER-CORE-022/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-022/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-022/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-022/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-022/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-022/embarrassed.png"
+      }
     },
     "ER-CORE-023": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-023/base.png",
@@ -1371,12 +1935,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-025/base.png",
       "standing": "assets/characters/standings/ER-CORE-025/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-025/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-025/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-025/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-025/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-025/embarrassed.png"
+      }
     },
     "ER-CORE-026": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-026/base.png",
@@ -1393,12 +1969,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-027/base.png",
       "standing": "assets/characters/standings/ER-CORE-027/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-027/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-027/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-027/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-027/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-027/embarrassed.png"
+      }
     },
     "ER-CORE-028": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-028/base.png",
@@ -1415,12 +2003,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-029/base.png",
       "standing": "assets/characters/standings/ER-CORE-029/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-029/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-029/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-029/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-029/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-029/embarrassed.png"
+      }
     },
     "ER-CORE-030": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-030/base.png",
@@ -1437,23 +2037,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-031/base.png",
       "standing": "assets/characters/standings/ER-CORE-031/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-031/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-031/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-031/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-031/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-031/embarrassed.png"
+      }
     },
     "ER-CORE-032": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-032/base.png",
       "standing": "assets/characters/standings/ER-CORE-032/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-032/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-032/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-032/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-032/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-032/embarrassed.png"
+      }
     },
     "ER-CORE-033": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-033/base.png",
@@ -1481,23 +2105,47 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-035/base.png",
       "standing": "assets/characters/standings/ER-CORE-035/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-035/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-035/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-035/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-035/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-035/embarrassed.png"
+      }
     },
     "ER-CORE-036": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-036/base.png",
       "standing": "assets/characters/standings/ER-CORE-036/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-036/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-036/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-036/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-036/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-036/embarrassed.png"
+      }
     },
     "ER-CORE-037": {
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-037/base.png",
@@ -1514,12 +2162,24 @@
       "portrait": "assets/characters/portraits/dialogue/ER-CORE-038/base.png",
       "standing": "assets/characters/standings/ER-CORE-038/base.png",
       "expressions": [
-        "base"
+        "base",
+        "smile",
+        "angry",
+        "sad",
+        "surprised",
+        "embarrassed"
       ],
       "outfits": [
         "none"
       ],
-      "kind": "human"
+      "kind": "human",
+      "expression_portraits": {
+        "smile": "assets/characters/portraits/dialogue/ER-CORE-038/smile.png",
+        "angry": "assets/characters/portraits/dialogue/ER-CORE-038/angry.png",
+        "sad": "assets/characters/portraits/dialogue/ER-CORE-038/sad.png",
+        "surprised": "assets/characters/portraits/dialogue/ER-CORE-038/surprised.png",
+        "embarrassed": "assets/characters/portraits/dialogue/ER-CORE-038/embarrassed.png"
+      }
     }
   },
   "symbols": {

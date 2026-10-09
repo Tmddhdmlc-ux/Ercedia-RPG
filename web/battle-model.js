@@ -50,7 +50,7 @@ function participant(raw){
     return skill;
   });
   if(raw.art!==null&&raw.art!==undefined){
-    if(p.role==='player'||raw.art.id!==(p.catalog_id||p.id)||!characterVisual(p.catalog_id||p.id,raw.art.outfit,raw.art.emotion)||(p.id==='serin'?!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion):raw.art.emotion!=='base'))fail('미등록/다른 인물 원화');
+    if(p.role==='player'||raw.art.id!==(p.catalog_id||p.id)||!characterVisual(p.catalog_id||p.id,raw.art.outfit,raw.art.emotion)||(p.id==='serin'&&!['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'].includes(raw.art.emotion)))fail('미등록/다른 인물 원화');
     p.art={id:p.catalog_id||p.id,outfit:raw.art.outfit,emotion:raw.art.emotion};
   }
   if(!p.art&&p.role!=='player')p.art=registeredNPCArt(p.catalog_id||p.id);

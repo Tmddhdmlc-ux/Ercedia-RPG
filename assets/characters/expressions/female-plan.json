@@ -1,0 +1,342 @@
+{
+  "scope": "All registered canonically female human NPCs; Serin already has all five expressions",
+  "expressions": [
+    "smile",
+    "angry",
+    "sad",
+    "surprised",
+    "embarrassed"
+  ],
+  "characters": [
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "appearance": "여23 적갈 땋은머리 호박 눈 청색 휘장",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-002/base.png"
+    },
+    {
+      "id": "ER-NPC-004",
+      "name": "미엘 타란",
+      "appearance": "여26 금갈 단발 녹색 눈 경량 판금",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-004/base.png"
+    },
+    {
+      "id": "ER-NPC-006",
+      "name": "헤리나 조스트",
+      "appearance": "여25 은갈 단발 청회 눈 룬 철갑",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-006/base.png"
+    },
+    {
+      "id": "ER-NPC-007",
+      "name": "페이 론델",
+      "appearance": "여39 검은 단발 올리브 피부 탐지 고글",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-007/base.png"
+    },
+    {
+      "id": "ER-NPC-010",
+      "name": "라넬 에스타",
+      "appearance": "여27 적갈 머리 녹청 눈 청백 제복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-010/base.png"
+    },
+    {
+      "id": "ER-NPC-012",
+      "name": "시나 브렌",
+      "appearance": "여22 백금 포니테일 푸른 눈 해군 제복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-012/base.png"
+    },
+    {
+      "id": "ER-NPC-014",
+      "name": "리비아 오르",
+      "appearance": "여19 검은 곱슬 녹색 눈 학생 로브",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-014/base.png"
+    },
+    {
+      "id": "ER-NPC-016",
+      "name": "키아 멜즈",
+      "appearance": "여24 은청 숏컷 청록 눈 청동 소매",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-016/base.png"
+    },
+    {
+      "id": "ER-NPC-017",
+      "name": "세디아 루브",
+      "appearance": "여40 남청 머리 청색 눈 흰청 로브",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-017/base.png"
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "appearance": "여23 보라 흑발 회색 눈 검은 베일",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-020/base.png"
+    },
+    {
+      "id": "ER-NPC-022",
+      "name": "에타 칼즈",
+      "appearance": "여29 구리 갈발 녹색 눈 황동 렌즈",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-022/base.png"
+    },
+    {
+      "id": "ER-NPC-023",
+      "name": "레베카 노스",
+      "appearance": "여42 잿빛 땋은머리 갈색 눈 남청 기록복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-023/base.png"
+    },
+    {
+      "id": "ER-NPC-025",
+      "name": "오리아 밈",
+      "appearance": "여35 밤갈 포니테일 녹색 눈 초록 성의",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-025/base.png"
+    },
+    {
+      "id": "ER-NPC-027",
+      "name": "에린 델프",
+      "appearance": "여24 붉은 단발 금갈 눈 화로 앞치마",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-027/base.png"
+    },
+    {
+      "id": "ER-NPC-029",
+      "name": "아델 핀",
+      "appearance": "여21 은회 단발 녹색 눈 흰 망토",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-029/base.png"
+    },
+    {
+      "id": "ER-NPC-031",
+      "name": "리아 노엘",
+      "appearance": "여38 백금 단발 금갈 눈 흰금 제의",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-031/base.png"
+    },
+    {
+      "id": "ER-NPC-033",
+      "name": "엘피 세이",
+      "appearance": "여45 은빛 곱슬 보라 눈 자주 문장띠",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-033/base.png"
+    },
+    {
+      "id": "ER-NPC-035",
+      "name": "피아 로만",
+      "appearance": "여22 검은 단발 갈색 눈 두꺼운 부츠",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-035/base.png"
+    },
+    {
+      "id": "ER-NPC-036",
+      "name": "카린 돌트",
+      "appearance": "여41 금발 녹색 눈 깃털 망토",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-036/base.png"
+    },
+    {
+      "id": "ER-NPC-039",
+      "name": "델리카 포",
+      "appearance": "여29 밤색 땋은머리 갈색 눈 의료가방",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-039/base.png"
+    },
+    {
+      "id": "ER-NPC-041",
+      "name": "모니카 페즈",
+      "appearance": "여26 검은 곱슬 금갈 눈 경갑",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-041/base.png"
+    },
+    {
+      "id": "ER-NPC-043",
+      "name": "밀라 안데르",
+      "appearance": "여33 붉은 땋은머리 갈색 눈 검은 정장",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-043/base.png"
+    },
+    {
+      "id": "ER-NPC-046",
+      "name": "네아 페렌",
+      "appearance": "여31 검은 땋은머리 갈색 눈 작업복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-046/base.png"
+    },
+    {
+      "id": "ER-NPC-048",
+      "name": "로키아 멘",
+      "appearance": "여34 진갈 머리 구릿빛 피부 황동 고글",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-048/base.png"
+    },
+    {
+      "id": "ER-NPC-050",
+      "name": "테아 미르",
+      "appearance": "여37 검정 곱슬 갈색 피부 청록 작업복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-050/base.png"
+    },
+    {
+      "id": "ER-NPC-052",
+      "name": "유리아 크렌",
+      "appearance": "여28 흑발 녹색 눈 회백 성의",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-052/base.png"
+    },
+    {
+      "id": "ER-NPC-054",
+      "name": "다리아 셀",
+      "appearance": "여32 검은 웨이브 청회 눈 붉은 필기첩",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-054/base.png"
+    },
+    {
+      "id": "ER-NPC-057",
+      "name": "마야 로웬",
+      "appearance": "여38 밤갈 곱슬 황갈 눈 털망토",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-057/base.png"
+    },
+    {
+      "id": "ER-NPC-059",
+      "name": "에델 루마",
+      "appearance": "여25 은갈 머리 갈색 눈 흰 조끼",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-059/base.png"
+    },
+    {
+      "id": "ER-NPC-062",
+      "name": "에시아 르몬",
+      "appearance": "여27 갈색 단발 녹색 눈 푸른 가방",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-062/base.png"
+    },
+    {
+      "id": "ER-NPC-064",
+      "name": "미엔 카프",
+      "appearance": "여33 검은 땋은머리 회색 눈 올리브 작업복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-064/base.png"
+    },
+    {
+      "id": "ER-NPC-068",
+      "name": "카자 트른",
+      "appearance": "여32 흑발 뺨 흉터 검정 가죽갑",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-068/base.png"
+    },
+    {
+      "id": "ER-NPC-070",
+      "name": "이셸 토브",
+      "appearance": "여35 자색 머리 은색 눈 푸른 후드",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-070/base.png"
+    },
+    {
+      "id": "ER-NPC-072",
+      "name": "멘자 데크",
+      "appearance": "여24 잿빛 단발 갈색 눈 낡은 가죽조끼",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-072/base.png"
+    },
+    {
+      "id": "ER-NPC-075",
+      "name": "페이라 록",
+      "appearance": "여34 금갈 장발 청록 눈 자주 예복",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-075/base.png"
+    },
+    {
+      "id": "ER-NPC-077",
+      "name": "루쉬 엔",
+      "appearance": "여28 백발 은안 모피 외투",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-077/base.png"
+    },
+    {
+      "id": "ER-NPC-080",
+      "name": "미라한 델",
+      "appearance": "여31 검청 단발 회안 가짜 휘장",
+      "portrait": "assets/characters/portraits/dialogue/ER-NPC-080/base.png"
+    },
+    {
+      "id": "ER-CORE-003",
+      "name": "세레나 1세",
+      "appearance": "여32, 꿀빛 금발 긴 웨이브, 청록 눈, 백청금 왕실 예복",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-003/base.png"
+    },
+    {
+      "id": "ER-CORE-006",
+      "name": "마르타 엘름베르크",
+      "appearance": "여 43, 172cm, 짙은 밤갈색 땋은 머리와 녹갈색 눈, 주근깨, 밀색 망토와 실용적인 갈색 예복",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-006/base.png"
+    },
+    {
+      "id": "ER-CORE-008",
+      "name": "비올레트 아르덴슈타인",
+      "appearance": "여 31, 169cm, 잿빛 금발의 낮은 묶음머리와 짙은 청색 눈, 가는 안경, 먹색 승마복과 남색 망토",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-008/base.png"
+    },
+    {
+      "id": "ER-CORE-010",
+      "name": "셀리아 아이젠크로네",
+      "appearance": "여 45, 178cm, 강철빛 은발 단발과 보랏빛 회안, 뚜렷한 광대뼈, 남청 고칼라 제복과 수정 견장",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-010/base.png"
+    },
+    {
+      "id": "ER-CORE-014",
+      "name": "이사벨 세르반",
+      "appearance": "여 50, 175cm, 검붉은 갈색 머리를 땋아 올리고 갈색 눈, 군더더기 없는 백청 제복과 검집",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-014/base.png"
+    },
+    {
+      "id": "ER-CORE-015",
+      "name": "티에라 아쿠아렌",
+      "appearance": "여 37, 174cm, 검푸른 곱슬 단발과 바다빛 청록색 눈, 햇살에 그을린 피부, 청백 제복과 산호 장식",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-015/base.png"
+    },
+    {
+      "id": "ER-CORE-018",
+      "name": "세아 메르",
+      "appearance": "- **현직 성녀:** **세아 메르** (여 24, 구릿빛 피부·검은 단발·은청 눈·흰 여행 코트).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-018/base.png"
+    },
+    {
+      "id": "ER-CORE-019",
+      "name": "로나 에일",
+      "appearance": "- **현직 성녀:** **로나 에일** (여 19, 갈색 곱슬머리·녹금 눈·수수한 회백 성의).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-019/base.png"
+    },
+    {
+      "id": "ER-CORE-021",
+      "name": "카르민 테라",
+      "appearance": "- **현직 성녀:** **카르민 테라** (여 30, 붉은 짧은 머리·호박색 눈·구릿빛 근육·망치 장식).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-021/base.png"
+    },
+    {
+      "id": "ER-CORE-022",
+      "name": "이오나 베르",
+      "appearance": "- **현직 성녀:** **이오나 베르** (여 41, 짙은 파랑 긴 땋은 머리·청록 눈·진주 장식).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-022/base.png"
+    },
+    {
+      "id": "ER-CORE-025",
+      "name": "에스텔 루나르",
+      "appearance": "- **현직 성녀:** **에스텔 루나르** (여 26, 백금색 곧은 머리·황금 눈·흰금 성의).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-025/base.png"
+    },
+    {
+      "id": "ER-CORE-027",
+      "name": "베니아 사르",
+      "appearance": "- **현직 성녀:** **베니아 사르** (여 46, 짧은 은갈색 머리·보라색 눈·회색-보라색 의복).",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-027/base.png"
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "appearance": "- **기사단장:** **리네트 로젠펠트** (여 33, 붉은 갈색 긴 땋은 머리·회청 눈·흉터 난 오른손). **경지:** 하이퍼 나이트.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-029/base.png"
+    },
+    {
+      "id": "ER-CORE-031",
+      "name": "베라 칼트하임",
+      "appearance": "- **기사단장:** **베라 칼트하임** (여 38, 백금색 짧은 머리·진청 눈·한쪽 볼에 화상). **경지:** 하이퍼 나이트.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-031/base.png"
+    },
+    {
+      "id": "ER-CORE-032",
+      "name": "알렉시아 바레트",
+      "appearance": "- **기사단장:** **알렉시아 바레트** (여 40, 검푸른 단발·호박색 눈·갈색 피부·긴 코 흉터). **경지:** 마스터 나이트.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-032/base.png"
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "appearance": "- **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-035/base.png"
+    },
+    {
+      "id": "ER-CORE-036",
+      "name": "마레나 에르노",
+      "appearance": "- **탑주:** 마레나 에르노 (여 44, 남청색 포니테일·녹회색 눈·백청 망토). **경지:** 6서클.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-036/base.png"
+    },
+    {
+      "id": "ER-CORE-038",
+      "name": "테레사 가른",
+      "appearance": "- **탑주:** 테레사 가른 (여 57, 붉은 회갈색 짧은 머리·검은 눈·두꺼운 작업복). **경지:** 6서클.",
+      "portrait": "assets/characters/portraits/dialogue/ER-CORE-038/base.png"
+    }
+  ]
+}
