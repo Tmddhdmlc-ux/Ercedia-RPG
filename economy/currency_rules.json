@@ -1,0 +1,96 @@
+{
+  "schema_version": 1,
+  "currency": {
+    "base_unit": "copper",
+    "copper_per_silver": 100,
+    "silver_per_gold": 100,
+    "display_order": [
+      "gold",
+      "silver",
+      "copper"
+    ],
+    "integer_only": true
+  },
+  "new_game": {
+    "starting_copper": 500,
+    "starting_silver": 5,
+    "starting_gold": 0,
+    "apply_once": true
+  },
+  "baseline_prices": [
+    {
+      "id": "bread",
+      "name": "빵 1개",
+      "copper": 5
+    },
+    {
+      "id": "simple_meal",
+      "name": "간단한 식사",
+      "copper": 20
+    },
+    {
+      "id": "inn_night",
+      "name": "일반 여관 1박",
+      "copper": 100
+    },
+    {
+      "id": "nice_inn_night",
+      "name": "좋은 여관 1박",
+      "copper": 300
+    },
+    {
+      "id": "carriage_short",
+      "name": "마차 단거리",
+      "copper": 200
+    },
+    {
+      "id": "herbal_treatment",
+      "name": "일반 약초 치료",
+      "copper": 500
+    },
+    {
+      "id": "basic_sword",
+      "name": "초급 검 기준가",
+      "copper": 1500
+    },
+    {
+      "id": "basic_staff",
+      "name": "초급 스태프 기준가",
+      "copper": 2000
+    },
+    {
+      "id": "basic_armor",
+      "name": "일반 방어구 기준가",
+      "copper": 3000
+    },
+    {
+      "id": "basic_sword_manual",
+      "name": "초급 검술서 기준가",
+      "copper": 5000
+    },
+    {
+      "id": "rare_spellbook",
+      "name": "희귀 마법서 기준 최저가",
+      "copper": 50000
+    }
+  ],
+  "rules": {
+    "prices_are_reference_not_override_item_catalog": true,
+    "market_supply_and_budget_required": true,
+    "transaction_idempotence": true,
+    "no_coin_drops_from_monsters_by_default": true,
+    "loot_sell_to_npc": true,
+    "quest_payments_from_contract_budget": true,
+    "auction_requires_funds_and_ownership": true,
+    "mythic_artifacts_not_tradeable": true,
+    "integer_copper_minimum_zero": true,
+    "dynamic_market_factors": [
+      "region",
+      "war",
+      "supply",
+      "demand",
+      "reputation",
+      "merchant_stock"
+    ]
+  }
+}
