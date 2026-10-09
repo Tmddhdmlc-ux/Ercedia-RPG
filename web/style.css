@@ -3205,3 +3205,9 @@ input[type=range] {
 
 .town-person-availability{margin:3px 10px 7px;font-size:11px;color:#D6BB92;line-height:1.4;}
 .town-person-availability[data-available=true]{color:#A9D3B6;}
+
+/* Actual acquired rewards, separate from narrative dialogue. */
+.reward-notice{position:absolute;z-index:145;top:36%;left:50%;transform:translate(-50%,-50%);width:max-content;max-width:85%;max-height:45%;overflow:auto;padding:18px 36px;text-align:center;pointer-events:none;color:#fff3ce;background:radial-gradient(ellipse,#111b25e6,#111b2580 65%,transparent);text-shadow:0 2px 5px #000,0 0 15px #cba75580;animation:reward-notice-in .3s ease-out}
+.reward-notice[hidden]{display:none}.reward-notice p{margin:8px 0;font-size:clamp(18px,2vw,30px);font-weight:600;line-height:1.45;overflow-wrap:anywhere}
+@keyframes reward-notice-in{from{opacity:0;transform:translate(-50%,-40%)}to{opacity:1;transform:translate(-50%,-50%)}}
+@media(prefers-reduced-motion:reduce){.reward-notice{animation:none}}

@@ -1,3 +1,4 @@
+import {rewardSnapshot,rewardMessages} from './reward-notice.js';
 import {createTurnSync,incrementalPrompt} from './turn-sync.js';
 import {mergeRulings} from './gm-rulings.js';
 import {bindWallet,wallet} from './wallet.js';
@@ -24,7 +25,7 @@ function newRequestId(){
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
   return `action-${Date.now()}-${++requestSequence}`;
 }
-export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{},onStatus=()=>{}}){
+export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{},onStatus=()=>{},onRewards=()=>{}}){
   let loadedSettingsCommit=null,hasTurnContext=false;const turnSync=createTurnSync();let battlePacket=null;
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
@@ -137,7 +138,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(!reply&&typeof source==='string')reply=source.match(/"reply_to"\s*:\s*"([A-Za-z0-9_-]{1,100})"/)?.[1];
       if(!manual&&!commitBattle&&reply&&retiredRequests.has(reply))return status('종료한 요청의 늦은 응답입니다. 적용하지 않았습니다.');
       if(!manual&&pending&&reply&&reply!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
-      let scene=parseScene(source);const lootBalanceBefore=wallet(state);
+      let scene=parseScene(source);const lootBalanceBefore=wallet(state),rewardBefore=rewardSnapshot(state);
       if(!commitBattle&&scene.battle?.outcome.loot_rolls!==undefined)throw Error('처치별 전리품 난수는 UI 엔진이 생성합니다. GM 응답에는 loot_rolls를 넣지 마세요.');
       if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
       if(fromHost&&pending&&scene.reply_to!==pending.requestId)throw Error('현재 요청의 reply_to가 누락되었습니다.');
@@ -191,7 +192,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;
       $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
-      if(!marketOnly)state.page='story';render();controls();persist();hasTurnContext=true;notify('applied',{scene_id:scene.scene_id});
+      if(!marketOnly)state.page='story';render();controls();persist();onRewards(rewardMessages(rewardBefore,state,{battle:commitBattle}));hasTurnContext=true;notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;if(!state.lootPopup?.pending)line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
       const rejected=pending;

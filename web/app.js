@@ -1,3 +1,4 @@
+import {mountRewardNotice} from './reward-notice.js';
 import {mountMapContext} from './map-context.js';
 import {mountTownPeople} from './town-people.js';
 import {mountPanelLayouts} from './panel-layout.js';
@@ -268,7 +269,8 @@ window.addEventListener('ercedia:inventory-update',event=>{
 });
 let townPeopleUI=null,remasterUI=null,worldUI=null,tradeUI=null,adventureUI=null,skillLoadoutUI=null;
 function renderAll(){ambience.sync();backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();timeUI.render();adventureUI?.render();townPeopleUI?.render();skillLoadoutUI?.render();saveUI?.refresh();}
-chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI,onRestore:()=>{restored.saveBlocked=false;},onStatus:()=>titleUI?.refresh()});
+const rewardNotice=mountRewardNotice($('stage'));
+chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI,onRewards:messages=>rewardNotice.show(messages),onRestore:()=>{rewardNotice.clear();restored.saveBlocked=false;},onStatus:()=>titleUI?.refresh()});
 mountSceneComposer($('stage'),$('chat-runtime'));
 mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:message=>chatUI.reportStatus(message)});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),getNPC:()=>npcInfo.current()});
