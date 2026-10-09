@@ -10,7 +10,7 @@ export function mountShopUI(state,{submit,isPending,assetBase}){
   const request=action=>submit(action+' 실제 조건을 판정하고 성공한 변경만 ECONOMY_SCHEMA.md의 system_events로 확인하세요. 화폐/물품 스냅샷을 중복 지급하지 마세요.');
   function render(root,w,region,date){
     const tooltip=document.getElementById('item-tooltip');if(tooltip)tooltip.hidden=true;
-    const offers=Object.values(w.offers).filter(o=>o.region_id===region),now=calendarDay(date),rows=offers.flatMap(o=>o.items.map(r=>({o,r,key:o.id+':'+r.id}))),layout=document.createElement('div'),list=document.createElement('div'),detail=document.createElement('article');
+    const offers=Object.values(w.offers).filter(o=>o.region_id===region),now=calendarDay(date),rows=offers.filter(o=>!o.bilateral_shop_id).flatMap(o=>o.items.map(r=>({o,r,key:o.id+':'+r.id}))),layout=document.createElement('div'),list=document.createElement('div'),detail=document.createElement('article');
     layout.className='shop-layout';list.className='shop-list';detail.className='shop-detail';layout.append(list,detail);root.append(layout);
     const prices=(o,r)=>({buy:priceAt(w,o,r,'buy',now),sell:priceAt(w,o,r,'sell',now)});
     for(const row of rows){const {o,r,key}=row,cat=tradeItem(r.id),p=prices(o,r),b=button(list,cat.name,()=>{selected=key;root.replaceChildren();render(root,w,region,date);});b.textContent='';b.className='shop-product';b.setAttribute('aria-pressed',String(selected===key));appendItemIcon(b,r,assetBase);const name=document.createElement('span'),text=document.createElement('span');name.className='shop-product-name';name.textContent=cat.name;text.textContent=o.venue_name+' · '+formatCopper(p.buy)+' · 재고 '+r.stock;b.append(name,text);}

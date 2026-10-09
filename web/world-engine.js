@@ -1,4 +1,5 @@
 import {bindWallet,wallet} from './wallet.js';
+import {registerShop,updateShop} from './trade-model.js';
 import {tradeItem,tradeCategory} from './economy.js';
 import {prepareEconomy,economyKinds,applyEconomyEvent,applyMarket} from './economy-engine.js';
 // GM adjudicates; this module validates and commits confirmed changes atomically.
@@ -18,12 +19,12 @@ export const kingdomOf=region=>({W:'west',E:'east',S:'south'})[region?.[0]]||({C
 const kingdoms=['west','east','south'];
 export function emptyWorld(state={}){
   const origin=({벨로아:'west',드라켄:'east',루메린:'south'})[state.starting_kingdom]||null;
-  return {version:1,applied:{},loot_claims:{},dungeons:{},active_dungeon:null,party:[],national_origin:origin,kingdom_reputation:Object.fromEntries(kingdoms.map(k=>[k,k===origin?10:0])),entry_permits:[],wanted_flags:{},border_crossing_history:[],active_border_route:null,offers:{},auctions:{},transactions:[],calendar:{date:null,month_cursor:null},annual_events:{},monthly_world_state:{},facility_history:[]};
+  return {version:1,applied:{},loot_claims:{},dungeons:{},active_dungeon:null,party:[],national_origin:origin,kingdom_reputation:Object.fromEntries(kingdoms.map(k=>[k,k===origin?10:0])),entry_permits:[],wanted_flags:{},border_crossing_history:[],active_border_route:null,shops:{},trade_ids:{},offers:{},auctions:{},transactions:[],calendar:{date:null,month_cursor:null},annual_events:{},monthly_world_state:{},facility_history:[]};
 }
 export function normalizeWorld(raw,state={}){
   check(raw?.version===1&&JSON.stringify(raw).length<=2000000,'세계 저장 구조/크기');
   const w={...emptyWorld(state),...clone(raw)};
-  for(const key of ['applied','loot_claims','dungeons','offers','auctions','annual_events','monthly_world_state','kingdom_reputation','wanted_flags'])check(w[key]&&typeof w[key]==='object'&&!Array.isArray(w[key])&&Object.keys(w[key]).every(id),'세계 저장 '+key);
+  for(const key of ['applied','loot_claims','dungeons','offers','auctions','annual_events','monthly_world_state','kingdom_reputation','wanted_flags','shops','trade_ids'])check(w[key]&&typeof w[key]==='object'&&!Array.isArray(w[key])&&Object.keys(w[key]).every(id),'세계 저장 '+key);
   for(const key of ['party','entry_permits','border_crossing_history','transactions','facility_history'])check(Array.isArray(w[key]),'세계 저장 '+key);
   check(Object.keys(w.applied).length<=10000&&w.party.length<=6&&new Set(w.party).size===w.party.length&&w.party.every(v=>findNPC(v)),'사건/동료 한도');
   for(const k of kingdoms)check(integer(w.kingdom_reputation[k],-100,100),'국가 명성');
@@ -35,7 +36,7 @@ export function normalizeWorld(raw,state={}){
 export function validateSystemEvents(raw){
   if(raw===undefined)return [];
   check(Array.isArray(raw)&&raw.length<=32,'system_events 최대 32개');
-  const ids=new Set();return raw.map(e=>{check(e&&id(e.event_id)&&!ids.has(e.event_id)&&text(e.reason),'사건 ID/판정 근거');ids.add(e.event_id);check(['loot','discover_dungeon','enter_dungeon','enter_zone','resolve_zone','retreat','respawn','clear_dungeon','party','reputation','permit','wanted','border','offer','trade','service','auction','bid','auction_result','calendar_result','market','cash_receipt'].includes(e.kind),'사건 종류');check(JSON.stringify(e).length<=16000,'사건 크기');return clone(e);});
+  const ids=new Set();return raw.map(e=>{check(e&&id(e.event_id)&&!ids.has(e.event_id)&&text(e.reason),'사건 ID/판정 근거');ids.add(e.event_id);check(['loot','discover_dungeon','enter_dungeon','enter_zone','resolve_zone','retreat','respawn','clear_dungeon','party','reputation','permit','wanted','border','offer','trade','service','auction','bid','auction_result','calendar_result','market','cash_receipt','shop_open','shop_update'].includes(e.kind),'사건 종류');check(JSON.stringify(e).length<=16000,'사건 크기');return clone(e);});
 }
 function quantity(bag,catalogId){return bag.filter(i=>(i.catalog_id||i.id)===catalogId).reduce((n,i)=>n+i.quantity,0);}
 function give(state,catalogId,amount,instanceId){
@@ -158,6 +159,8 @@ export function planWorldScene(state,scene){
       }else check(to===from,'검문 미통과 상태에서 실제 국가 이동 금지');
       w.active_border_route=e.result==='passed'?null:e.route_id;w.border_crossing_history.push({event_id:e.event_id,route_id:e.route_id,from,to:e.to,date,result:e.result,reason:e.reason});
     }
+    else if(e.kind==='shop_open'){registerShop(next,e.shop);}
+    else if(e.kind==='shop_update'){updateShop(next,e);}
     else if(economyKinds.includes(e.kind)){applyEconomyEvent(next,scene,e,date,{assertOfferLocation,give,take,awardXP,kingdomOf,facility:id=>worldData.facilities.find(f=>f.id===id)});reward=true;}
     else if(e.kind==='calendar_result'){
       const entry=w.annual_events[e.ref_id];check(entry&&['active','resolved','cancelled'].includes(e.status)&&!['resolved','cancelled'].includes(entry.status),'현재 연간 사건 판정');check(entry.year*360+(entry.month-1)*30<=day(date),'미래 사건 실행 금지');

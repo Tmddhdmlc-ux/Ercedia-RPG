@@ -127,6 +127,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
       const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
+      const marketOnly=scene.system_events?.length&&scene.system_events.every(e=>['shop_update','market'].includes(e.kind))&&!scene.player&&!scene.inventory&&!scene.battle&&!scene.engine_events?.length&&!scene.quest_events?.length&&!scene.life_events?.length&&scene.location===state.scene?.location&&scene.npc?.id===state.scene?.npc?.id&&['region','place','date','time'].every(k=>scene.game_state?.[k]===undefined||scene.game_state[k]===state.gameState[k]);
       const questBase=worldResult?{...state,wallet_copper:worldResult.wallet_copper,...(worldResult.engine?{engine:worldResult.engine}:{})}:state;
       if(scene.battle&&!commitBattle){
         if(state.battleApplied?.includes(scene.battle.battle_id))return status('이미 정산한 전투입니다. 다시보기로 관전하세요.');
@@ -161,7 +162,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;
       $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
-      state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      if(!marketOnly)state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
       const rejected=pending;

@@ -2,6 +2,7 @@ import {mountNPCArt} from './npc-art-ui.js';
 import {mountWalletUI} from './wallet-ui.js';
 import {mountSceneCast} from './scene-cast.js';
 import {mountChatConnection} from './chat-connection-ui.js';
+import {mountTradeUI} from './trade-ui.js';
 import {mountWorldUI} from './world-ui.js';
 import {mountBackground,resolveBackground} from './location-art.js';
 import {mountRemasterUI} from './remaster-ui.js';
@@ -161,7 +162,8 @@ function renderDialogue(){
   }
 }
 function advance(delta){if(battleUI?.active()){if(delta>0)battleUI.next();return;}const key=state.scene?'sceneIndex':'index',last=(state.scene?.dialogue.length||dialogues.length)-1;const next=Math.max(0,Math.min(last,state[key]+delta));if(next===state[key])return;state[key]=next;renderDialogue();chatUI.controls();dirty();}
-function switchTo(page){if(state.page!==page)inventoryUI.hide();factionUI.hide();npcInfo.hide();if(page==='inventory')inventoryUI.render();state.page=page;document.querySelector('.game').dataset.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel'],['quests','quests-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();if(page==='quests')questUI?.render();}
+function switchTo(page){
+  if(state.page!==page)tradeUI?.close();if(state.page!==page)inventoryUI.hide();factionUI.hide();npcInfo.hide();if(page==='inventory')inventoryUI.render();state.page=page;document.querySelector('.game').dataset.page=page;for(const [id,panel] of [['story','story'],['map','map-panel'],['status','status-panel'],['inventory','inventory-panel'],['quests','quests-panel']]){const active=id===page;$(panel).hidden=!active;$(id+'-tab').classList.toggle('active',active);$(id+'-tab').setAttribute('aria-pressed',String(active));}if(page==='map')updateMapCamera();if(page==='quests')questUI?.render();}
 function updateMapCamera(){
   factionUI.hide();
   const width=$('map-container').clientWidth,height=$('map-container').clientHeight;if(!width||!height)return;
@@ -238,8 +240,8 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-let remasterUI=null,worldUI=null;
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();remasterUI?.render();}
+let remasterUI=null,worldUI=null,tradeUI=null;
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 // Keep the full-scene background above the actual composer, including connection feedback.
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));
@@ -253,6 +255,7 @@ window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.rest
 questUI=mountQuestUI(state,{chat:chatUI,switchTo,persist:saveGame,showMap:point=>{state.region=point.id;state.mapView=point.region;state.mapFaction=null;switchTo('map');renderRegion();saveGame();}});
 titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
 worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
+tradeUI=mountTradeUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,isPending:()=>chatUI.isPending(),submit:(...args)=>chatUI.submit(...args),render:renderAll,persistCandidate:candidate=>storage.setItem(KEY,JSON.stringify(candidate)),returnToStory:()=>{switchTo('story');renderAll();saveGame();}});
 remasterUI=mountRemasterUI(state);
 renderAll();
 

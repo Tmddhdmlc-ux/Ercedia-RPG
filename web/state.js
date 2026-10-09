@@ -50,6 +50,7 @@ export function normalize(raw) {
   if(Array.isArray(raw.quest_event_ids))s.quest_event_ids=[...new Set(raw.quest_event_ids.filter(v=>typeof v==='string'&&v.length<=200))].slice(0,10000);
   if(Object.hasOwn(raw,'wallet_copper')||Object.hasOwn(raw,'currency'))bindWallet(Object.assign(s,{...(Object.hasOwn(raw,'wallet_copper')?{wallet_copper:raw.wallet_copper}:{currency:raw.currency})}));
   if(raw.initial_currency_granted===true)s.initial_currency_granted=true;
+  if(raw.inventory_limits&&Number.isSafeInteger(raw.inventory_limits.slots)&&raw.inventory_limits.slots>0&&raw.inventory_limits.slots<=32)s.inventory_limits={slots:raw.inventory_limits.slots,...(Number.isFinite(raw.inventory_limits.max_weight)&&raw.inventory_limits.max_weight>=0?{max_weight:raw.inventory_limits.max_weight}:{})};
   if(raw.relationships&&typeof raw.relationships==='object'&&!Array.isArray(raw.relationships)){s.relationships={};for(const [id,r] of Object.entries(raw.relationships).slice(0,160)){if(!r||!Number.isFinite(r.affection))continue;s.relationships[id]={affection:Math.max(-100,Math.min(100,r.affection)),flags:Array.isArray(r.flags)?r.flags.filter(v=>typeof v==='string').slice(-100):[],interaction_history:Array.isArray(r.interaction_history)?r.interaction_history.filter(v=>typeof v==='string').slice(-100):[],last_interaction_day:typeof r.last_interaction_day==='string'?r.last_interaction_day:null};}}
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}

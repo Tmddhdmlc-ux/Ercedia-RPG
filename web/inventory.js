@@ -11,6 +11,7 @@ export function normalizeInventory(raw){
     category:Object.hasOwn(categories,v.category)&&v.category!=='all'?v.category:'misc',
     quantity:typeof v.quantity==='number'&&Number.isFinite(v.quantity)?Math.max(1,Math.min(999999,Math.floor(v.quantity))):1,
     effect:text(v.effect,300),
+    ...Object.fromEntries(['instance_id','bag_id','condition','durability','enhancement','weight','quest_item','quest_protected','protected','divine_artifact','tradable','required_permit'].filter(k=>Object.hasOwn(v,k)).map(k=>[k,v[k]])),
     ...(Array.isArray(v.instance_ids)?{instance_ids:[...new Set(v.instance_ids.filter(id=>typeof id==='string'&&/^[A-Za-z0-9:_-]{1,120}$/.test(id)))].slice(0,Math.min(999999,Math.max(1,Math.floor(v.quantity||1))))}:{}),
     ...(normalizeRarity(v.rarity)?{rarity:normalizeRarity(v.rarity)}:{}),
     ...(cat?{id:cat.id,...(v.catalog_id?{catalog_id:cat.id}:{}),name:cat.name,category:itemCategory(cat),rarity:cat.rarity||'',description:text(v.description,1000)||itemDescription(cat),effect:text(v.effect,300)||itemDetails(cat).slice(0,300)}:{})

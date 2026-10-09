@@ -13,10 +13,12 @@ export function normalizeEngine(raw){
 export function ensureEngine(state){
   const e=state.engine||(state.engine={version:1,applied:[],equipped:{},instances:[],learned:[],bonuses:{},serial:0});
   const counts=new Map();
-  for(const item of state.inventory){const id=item.catalog_id||item.id,cat=engineItem(id);if(!cat)continue;counts.set(id,(counts.get(id)||0)+item.quantity);}
+  for(const item of state.inventory){const id=item.catalog_id||item.id,cat=engineItem(id);if(!cat)continue;counts.set(id,(counts.get(id)||0)+item.quantity);check(counts.get(id)<=128,'개별 장비·책 인스턴스 한도');
+    if(item.instance_id){check(item.quantity===1,'개별 물품 번호는 수량 1만 허용합니다.');const existing=e.instances.find(i=>i.instance_id===item.instance_id);check(!existing||existing.catalog_id===id,'물품 번호 중복');if(!existing)e.instances.push({instance_id:item.instance_id,catalog_id:id,...Object.fromEntries(['condition','durability','enhancement','quest_protected','protected','tradable','required_permit'].filter(k=>Object.hasOwn(item,k)).map(k=>[k,item[k]]))});}}
   for(const [id,count]of counts){const owned=e.instances.filter(i=>i.catalog_id===id);for(let n=owned.length;n<count;n++){do{e.serial=(e.serial||0)+1;}while(e.instances.some(i=>i.instance_id==='owned-'+e.serial));e.instances.push({instance_id:'owned-'+e.serial,catalog_id:id});}}
   const keep=new Map();e.instances=e.instances.filter(i=>{const n=keep.get(i.catalog_id)||0;keep.set(i.catalog_id,n+1);return n<(counts.get(i.catalog_id)||0);});
   for(const slot of ['weapon','armor','accessory'])if(!e.instances.some(i=>i.instance_id===e.equipped[slot]))delete e.equipped[slot];
+  check(e.instances.length<=128&&new Set(e.instances.map(i=>i.instance_id)).size===e.instances.length,'물품 인스턴스 중복·보관 한도');
   return e;
 }
 export function equippedCatalog(state){const e=ensureEngine(state);return Object.values(e.equipped).map(id=>e.instances.find(i=>i.instance_id===id)).filter(Boolean).map(i=>engineItem(i.catalog_id));}

@@ -1,0 +1,123 @@
+{
+  "wallet_copper": 930,
+  "inventory": [
+    {
+      "name": "서리갈기 가죽",
+      "description": "실제 거래 모델 검증용 재료",
+      "id": "MAT-001-1",
+      "category": "material",
+      "quantity": 1,
+      "effect": "서리갈기 늑대 · W1 · 일반 재료",
+      "rarity": ""
+    },
+    {
+      "name": "빛바랜 푸른강 검",
+      "description": "하급 검 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
+      "id": "ER-EQ-002",
+      "category": "equipment",
+      "quantity": 1,
+      "effect": "요구 Lv.1 · 검사\n근력 +1 / 무기 공격력 +3",
+      "rarity": "하급"
+    },
+    {
+      "id": "ER-EQ-001",
+      "name": "수습의 낡은 철검",
+      "category": "equipment",
+      "description": "하급 검 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
+      "quantity": 1,
+      "rarity": "하급"
+    }
+  ],
+  "instances": [
+    {
+      "instance_id": "owned-1",
+      "catalog_id": "ER-EQ-002",
+      "condition": 57,
+      "enhancement": 2
+    },
+    {
+      "instance_id": "qa-shop:stock:0:0",
+      "catalog_id": "ER-EQ-001",
+      "owner_id": "shop-qa-isolated"
+    }
+  ],
+  "stock": [
+    {
+      "stock_id": "qa-shop:stock:0:1",
+      "item": {
+        "id": "ER-EQ-001",
+        "name": "수습의 낡은 철검",
+        "category": "equipment",
+        "description": "하급 검 — 솔메리아 장인의 양식에서 유래한 길 위의 실용품.",
+        "quantity": 1,
+        "rarity": "하급"
+      },
+      "quantity": 1,
+      "buy_price": 100,
+      "sell_price": 40,
+      "price_basis": "격리된 거래 테스트 견적 · 공식 세계관 가격 아님",
+      "instance": {
+        "instance_id": "qa-shop:stock:0:1",
+        "catalog_id": "ER-EQ-001"
+      }
+    },
+    {
+      "stock_id": "qa-shop:stock:1",
+      "item": {
+        "id": "MAT-001-1",
+        "name": "서리갈기 가죽",
+        "category": "material",
+        "description": "서리갈기 늑대에서 획득하는 일반 재료. 감정과 가공을 거쳐 장비 제작·수선에 활용 가능.",
+        "quantity": 1
+      },
+      "quantity": 8,
+      "buy_price": 30,
+      "sell_price": 15,
+      "price_basis": "격리된 거래 테스트 견적 · 공식 세계관 가격 아님"
+    },
+    {
+      "stock_id": "qa-shop:stock:2:0",
+      "item": {
+        "id": "ER-EQ-002",
+        "name": "빛바랜 푸른강 검",
+        "category": "equipment",
+        "description": "하급 검 — 노르발트 장인의 양식에서 유래한 길 위의 실용품.",
+        "quantity": 1,
+        "rarity": "하급"
+      },
+      "quantity": 1,
+      "buy_price": 180,
+      "sell_price": 75,
+      "price_basis": "격리된 거래 테스트 견적 · 공식 세계관 가격 아님",
+      "instance": {
+        "instance_id": "qa-shop:stock:2:0",
+        "catalog_id": "ER-EQ-002"
+      }
+    },
+    {
+      "stock_id": "qa-shop:sold:1",
+      "item": {
+        "name": "서리갈기 가죽",
+        "description": "실제 거래 모델 검증용 재료",
+        "id": "MAT-001-1",
+        "category": "material",
+        "quantity": 1,
+        "effect": "서리갈기 늑대 · W1 · 일반 재료",
+        "rarity": ""
+      },
+      "stack_instance": false,
+      "quantity": 2,
+      "instance": null
+    }
+  ],
+  "merchant_funds": 2070,
+  "receipt_count": 1,
+  "saved_wallet_copper": 930,
+  "page": "inventory",
+  "dialogue": [
+    {
+      "speaker": "루도 산체",
+      "text": "물품을 고르고 판매할 것도 함께 올려보세요."
+    }
+  ]
+}

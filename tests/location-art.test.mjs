@@ -17,7 +17,7 @@ const scene=id=>({schema_version:1,type:'ercedia_scene',scene_id:'image-test',lo
 
 test('all 671 final slots have checksum-matching engine registrations and update assets',async()=>{
   const plan=await read('assets/art-production/asset_plan.json'),staged=new Set(await read('integration/assets.json'));
-  assert.equal(locationArt.length,262);assert.equal(itemCatalog.length,410);
+  assert.equal(locationArt.length,262);assert.equal(itemCatalog.filter(i=>i.icon_path).length,410);
   for(const row of plan.assets){
     const entry=row.group==='locations'?locationArt.find(a=>a.id===row.id):itemCatalog.find(a=>a.id===row.id);
     assert.equal(entry?.path||entry?.icon_path,row.path,row.id);assert.ok(staged.has(row.path),row.id);
@@ -60,7 +60,7 @@ test('background node loads lazily, clears missing scenes, preserves whole new a
 });
 test('all registered item icons use canonical identity and rarity, preserving ungraded materials',()=>{
   const h=uiHarness();try{
-    for(const item of itemCatalog){const root=h.get(item.id),frame=appendItemIcon(root,item,'/');assert.ok(frame);assert.equal(frame.children[0].src,'/'+item.icon_path);assert.equal(frame.dataset.rarity,item.rarity||undefined);}
+    for(const item of itemCatalog.filter(i=>i.icon_path)){const root=h.get(item.id),frame=appendItemIcon(root,item,'/');assert.ok(frame);assert.equal(frame.children[0].src,'/'+item.icon_path);assert.equal(frame.dataset.rarity,item.rarity||undefined);}
     assert.equal(resolveItemArt({id:'unknown',name:'발명된 물품'}),null);assert.equal(appendItemIcon(h.get('unknown'),{id:'unknown'},'/'),null);
     const item=itemCatalog[0];assert.equal(resolveItemArt({name:item.name}).id,item.id);
   }finally{h.close();}

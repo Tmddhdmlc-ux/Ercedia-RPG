@@ -1,3 +1,4 @@
+import {newTrade,reserveTrade,commitTrade,playerTradeRows} from './trade-model.js';
 import {copper,wallet,addCopper,totalCopper} from './wallet.js';
 import {tradeItem,tradeCategory,tradable,priceAt,currencyRules} from './economy.js';
 import {findNPC} from './npc-model.js';
@@ -46,7 +47,7 @@ export function applyMarket(next,scene,e,date){
   check(w.market_changes.length<1000,'시장 기록 한도');
   w.market_changes.push({event_id:e.event_id,region_id:e.region_id,cause:e.cause,evidence_id:e.evidence_id,starts_at:e.starts_at,ends_at:e.ends_at,starts_day:start,ends_day:end,price_percent:e.price_percent,categories:clone(e.categories),reason:e.reason});
   check(!e.stock_changes||Array.isArray(e.stock_changes)&&e.stock_changes.length<=40,'재고 변화');
-  for(const r of e.stock_changes||[]){const o=w.offers[r.offer_id],item=o?.items.find(i=>i.id===r.item_id);check(o?.region_id===e.region_id&&item,'현지 재고');item.stock=addCopper(item.stock,r.delta);check(item.stock<=999999,'재고 한도');}
+  for(const r of e.stock_changes||[]){const o=w.offers[r.offer_id],item=o?.items.find(i=>i.id===r.item_id);check(o?.region_id===e.region_id&&item,'현지 재고');check(!o.bilateral_shop_id,'개별 재고 상점은 shop_update 물류 사건으로 갱신하세요.');item.stock=addCopper(item.stock,r.delta);check(item.stock<=999999,'재고 한도');}
   if(e.budget_delta!==undefined){check(findNPC(e.merchant_npc_id)&&w.merchants[e.merchant_npc_id],'확인된 현지 상인 예산');const shops=Object.values(w.offers).filter(o=>o.merchant_id===e.merchant_npc_id);check(shops.some(o=>o.region_id===e.region_id),'상인 활동 지역');transfer(w,next,e.merchant_npc_id,e.budget_delta);}
   // Validate even a price change that has no immediate trade.
   for(const o of Object.values(w.offers))for(const r of o.items)for(const direction of ['buy','sell'])priceAt(w,o,r,direction,now);
@@ -69,7 +70,9 @@ export function applyEconomyEvent(next,scene,e,date,ctx){
   }else if(e.kind==='trade'||e.kind==='service'){
     const o=w.offers[e.offer_id];check(o,'실제 발행 견적');eligibility(w,o,e,scene,ctx,date);
     check(!scene.player&&!scene.inventory&&!scene.quest_events?.some(v=>v.kind==='report'),'보상 스냅샷 중복 금지');const before=wallet(next);let amount;
-    if(e.kind==='trade'){
+    if(e.kind==='trade'&&o.bilateral_shop_id){
+      const shop=w.shops[o.bilateral_shop_id];if(e.education_approval)shop.education_approval=e.education_approval;const draft=newTrade(next,shop.id,e.event_id);let remaining=e.quantity;check(Number.isSafeInteger(remaining)&&remaining>0&&['buy','sell'].includes(e.direction),'거래 수량·방향');const rows=e.direction==='buy'?shop.stock:playerTradeRows(next);for(const row of rows){if((row.item.catalog_id||row.item.id)!==e.item_id||e.instance_id&&row.instance?.instance_id!==e.instance_id)continue;const n=Math.min(remaining,row.quantity);if(n>0)reserveTrade(next,draft,e.direction,row.stock_id||row.row_id,n);remaining-=n;if(!remaining)break;}check(remaining===0,'실제 개별 재고·소유 수량');const receipt=commitTrade(next,draft);record(w,e,date,{offer_id:o.id,merchant_id:o.merchant_id,amount:Math.abs(receipt.totals.net),balance_before:before,balance_after:wallet(next)});
+    }else if(e.kind==='trade'){
       const r=o.items.find(r=>r.id===e.item_id);check(r&&tradable(r.id)&&['buy','sell'].includes(e.direction)&&Number.isSafeInteger(e.quantity)&&e.quantity>=1&&e.quantity<=999999,'거래 품목·방향·수량');
       const unit=priceAt(w,o,r,e.direction,now);amount=totalCopper(unit,e.quantity);
       if(e.direction==='buy'){check(r.stock>=e.quantity,'재고 부족');money(next,-amount);ctx.give(next,r.id,e.quantity);merchant(w,o).wallet_copper=addCopper(merchant(w,o).wallet_copper,amount);r.stock-=e.quantity;}

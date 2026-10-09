@@ -6,6 +6,7 @@ export function resolveItemArt(item){
 }
 export function appendItemIcon(parent,item,assetBase){
   const registered=resolveItemArt(item);if(!registered)return null;
+  if(!registered.icon_path){const frame=document.createElement('span');frame.className='registered-item-icon';frame.textContent=registered.ui_symbol||'◈';frame.setAttribute('aria-label',registered.name);parent.append(frame);return frame;}
   const frame=document.createElement('span'),image=document.createElement('img');frame.className='registered-item-icon';
   image.loading='lazy';image.alt=registered.name;image.src=itemIconURL(registered,assetBase);image.onerror=()=>{image.hidden=true;frame.textContent='◇';frame.setAttribute('aria-label',registered.name+' · 이미지 로드 실패');};
   frame.append(image);applyItemRarity(frame,registered);parent.append(frame);return frame;
