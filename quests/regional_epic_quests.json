@@ -1,0 +1,831 @@
+{
+  "schema_version": 1,
+  "version": "regional-epic-quests-v1",
+  "thresholds": {
+    "completed_quests": 5,
+    "region_affection": 30,
+    "logic": "OR",
+    "completed_only": true,
+    "exclude_epic_and_repeat_farm": true
+  },
+  "lordship_quest_count": 13,
+  "lordship_quests": [
+    {
+      "id": "EPIC-W1-01",
+      "scope": "lordship",
+      "region_id": "W1",
+      "region_name": "노르발트",
+      "title": "사라진 북방 봉화",
+      "issuer_npc_name": "에드릭 노르발트",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "마수의 대이동과 밀수 정찰대의 거래를 파헤쳐 남은 촌락의 봉화를 살린다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "W1"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-191",
+            "rarity": "유니크",
+            "name": "유산의 강변 호위검 · 노르발트의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SWD-028",
+            "rarity": "유니크",
+            "name": "끝없는 검의 궤적 검술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-W2-01",
+      "scope": "lordship",
+      "region_id": "W2",
+      "region_name": "발렌하르트",
+      "title": "왕가의 사라진 혈통 기록",
+      "issuer_npc_name": "카시안 발렌하르트",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "위조 의혹이 있는 왕실 계보를 둘러싼 음모를 조사하고 공개 여부를 결정한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "W2"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-185",
+            "rarity": "유니크",
+            "name": "유산의 새벽 순찰검 · 발렌하르트의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SWD-029",
+            "rarity": "유니크",
+            "name": "검왕의 빈자리 검술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-W3-01",
+      "scope": "lordship",
+      "region_id": "W3",
+      "region_name": "엘름베르크",
+      "title": "황금 들판의 검은 재",
+      "issuer_npc_name": "마르타 엘름베르크",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "곡물 창고 화재와 부패 징세를 추적하고 기근 전 주민을 보호한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "W3"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-187",
+            "rarity": "유니크",
+            "name": "비전의 흑요석 검 · 엘름베르크의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SWD-030",
+            "rarity": "에픽",
+            "name": "별이 가르는 경계 검술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-W4-01",
+      "scope": "lordship",
+      "region_id": "W4",
+      "region_name": "로젠펠트",
+      "title": "침묵한 전선의 깃발",
+      "issuer_npc_name": "율리안 로젠펠트",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "은폐된 패전과 포로 문제를 해결하며 전선의 민간 피해를 줄인다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "W4"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-182",
+            "rarity": "유니크",
+            "name": "유산의 푸른강 검 · 로젠펠트의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-028",
+            "rarity": "유니크",
+            "name": "청동뢰 폭진 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-W5-01",
+      "scope": "lordship",
+      "region_id": "W5",
+      "region_name": "아르덴슈타인",
+      "title": "붉은 다리의 밀약",
+      "issuer_npc_name": "비올레트 아르덴슈타인",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "상단과 세관을 이용한 은밀한 거래의 실체를 밝혀 영지를 위기에서 구한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "W5"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-181",
+            "rarity": "유니크",
+            "name": "비전의 낡은 철검 · 벨마리나의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-029",
+            "rarity": "유니크",
+            "name": "그림자 회랑 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-E1-01",
+      "scope": "lordship",
+      "region_id": "E1",
+      "region_name": "칼트하임",
+      "title": "서릿성의 봉인 장부",
+      "issuer_npc_name": "하인리히 칼트하임",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "변경 병참과 봉인된 유적의 단서를 놓고 여러 세력의 충돌을 해결한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "E1"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-183",
+            "rarity": "유니크",
+            "name": "각성한 매의 송곳검 · 칼트하임의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-030",
+            "rarity": "유니크",
+            "name": "백일 광탄 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-E2-01",
+      "scope": "lordship",
+      "region_id": "E2",
+      "region_name": "아이젠크로네",
+      "title": "수정탑에 남은 메아리",
+      "issuer_npc_name": "셀리아 아이젠크로네",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "마나 공명의 이상 현상이 번지기 전에 진원을 조사하고 피해를 막는다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "E2"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-192",
+            "rarity": "유니크",
+            "name": "각성한 철산 대검 · 아이젠크로네의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-031",
+            "rarity": "유니크",
+            "name": "진홍 폭우 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-E3-01",
+      "scope": "lordship",
+      "region_id": "E3",
+      "region_name": "베르크슈타인",
+      "title": "강철 관문의 이중명령",
+      "issuer_npc_name": "발터 베르크슈타인",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "전쟁 보급 명령의 모순을 추적하여 정면전 없이도 해결책을 모색한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "E3"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-189",
+            "rarity": "유니크",
+            "name": "각성한 바람결 세검 · 베르크슈타인의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-032",
+            "rarity": "유니크",
+            "name": "만조 포위 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-E4-01",
+      "scope": "lordship",
+      "region_id": "E4",
+      "region_name": "실베른",
+      "title": "은빛 서고의 빈 서명",
+      "issuer_npc_name": "에밀 실베른",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "누락된 연구 기록과 사라진 마법 학자의 행방을 조사한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "E4"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-186",
+            "rarity": "유니크",
+            "name": "각성한 장미 문양검 · 실베른의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-033",
+            "rarity": "유니크",
+            "name": "하늘갈림 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-S1-01",
+      "scope": "lordship",
+      "region_id": "S1",
+      "region_name": "벨마리나",
+      "title": "비단 돛과 침묵의 세금",
+      "issuer_npc_name": "도미니크 벨마리나",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "항구의 상선 실종과 항만 세금의 비밀을 밝혀 항로를 지킨다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "S1"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-181",
+            "rarity": "유니크",
+            "name": "비전의 낡은 철검 · 벨마리나의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-034",
+            "rarity": "유니크",
+            "name": "폭뢰 결정 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-S2-01",
+      "scope": "lordship",
+      "region_id": "S2",
+      "region_name": "세르반",
+      "title": "세 갈래 바닷길의 협상",
+      "issuer_npc_name": "이사벨 세르반",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "교역로 봉쇄와 항구 세력의 갈등을 중재하거나 타개한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "S2"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-188",
+            "rarity": "유니크",
+            "name": "유산의 회색 협곡검 · 세르반의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-035",
+            "rarity": "유니크",
+            "name": "흑월 장막 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-S3-01",
+      "scope": "lordship",
+      "region_id": "S3",
+      "region_name": "아쿠아렌",
+      "title": "심해에서 돌아온 편지",
+      "issuer_npc_name": "티에라 아쿠아렌",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "난파선이 남긴 기록과 해저의 위협을 조사하여 실종자를 찾아낸다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "S3"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-184",
+            "rarity": "유니크",
+            "name": "비전의 참나무 손잡이검 · 아쿠아렌의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-036",
+            "rarity": "유니크",
+            "name": "광휘의 선 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    },
+    {
+      "id": "EPIC-S4-01",
+      "scope": "lordship",
+      "region_id": "S4",
+      "region_name": "솔메리아",
+      "title": "황혼 축제의 사라진 종",
+      "issuer_npc_name": "라파엘 솔메리아",
+      "issuer_identity": "existing_lord_or_delegate",
+      "premise": "축제 중 사라진 성물을 찾는 과정에서 도시의 숨은 갈등을 마주한다",
+      "unlock": {
+        "any": [
+          {
+            "regional_completed_quests_gte": 5
+          },
+          {
+            "region_affection_gte": 30
+          }
+        ],
+        "scope_id": "S4"
+      },
+      "stages": [
+        {
+          "id": "clue",
+          "type": "investigate",
+          "summary": "증언과 현장 단서 확보"
+        },
+        {
+          "id": "conflict",
+          "type": "world_event",
+          "summary": "갈등 세력과 맞서거나 대안 모색"
+        },
+        {
+          "id": "resolution",
+          "type": "multi_path",
+          "summary": "지역 피해와 결과를 결정하는 결말"
+        }
+      ],
+      "rewards": {
+        "choice_one_of": [
+          {
+            "kind": "equipment",
+            "catalog_id": "ER-EQ-190",
+            "rarity": "유니크",
+            "name": "비전의 왕도 의장검 · 솔메리아의 기념"
+          },
+          {
+            "kind": "book",
+            "catalog_id": "BK-SPL-037",
+            "rarity": "유니크",
+            "name": "천화의 원 마술서"
+          }
+        ],
+        "grant_on": "validated_completion",
+        "once_per_campaign": true
+      },
+      "difficulty": "epic_story_difficulty_not_level_scaled",
+      "state": "design_template",
+      "public_trigger_hint": "지역 의뢰 5건 달성 또는 지역 호감도 30 이상"
+    }
+  ],
+  "village_quest_template": {
+    "id": "EPIC-VILLAGE-TEMPLATE",
+    "scope": "settlement",
+    "instantiate_for": "known_settlement_location_id",
+    "unlock": {
+      "any": [
+        {
+          "settlement_completed_quests_gte": 5
+        },
+        {
+          "settlement_affection_gte": 30
+        }
+      ]
+    },
+    "unique_instance_id": "EPIC-VILLAGE-${settlement_id}-01",
+    "issue_origin": "local_community_or_responsible_NPC",
+    "plot_generator": "Use actual settlement history, livelihoods, local conflict, and autonomous world events; do not duplicate its parent lordship epic quest",
+    "stages": [
+      "local_problem_discovery",
+      "choice_with_consequences",
+      "regional_resolution"
+    ],
+    "rewards": {
+      "pool_rarity_min": "유니크",
+      "kinds": [
+        "equipment",
+        "sword_manual",
+        "spellbook"
+      ],
+      "catalog_references_required": true,
+      "unique_selection_with_existing_item_ids": true,
+      "delivery_only_after_validated_completion": true,
+      "once_per_settlement_per_campaign": true
+    },
+    "known_instance_seeds": [
+      {
+        "settlement": "솔브린 마을",
+        "parent_lordship_id": "W3",
+        "id": "EPIC-VILLAGE-W3-SOLBRIN-01",
+        "title": "솔브린의 마지막 수확",
+        "premise": "주민들이 오랫동안 지켜온 밭과 식량을 둘러싼 실종·위협을 해결한다"
+      }
+    ]
+  },
+  "notes": [
+    "Settlement affection is a new distinct locality reputation value and MUST NOT be conflated with existing NPC affection or kingdom reputation.",
+    "If a settlement reputation feature is not implemented, evaluate five completed quests only until an engine adds settlement_affection with provenance.",
+    "Eligibility unlocks OFFER, not forced acceptance, guaranteed victory, or item delivery.",
+    "Parent lordship counter and village counter only progress when quest explicitly tags both IDs."
+  ]
+}
