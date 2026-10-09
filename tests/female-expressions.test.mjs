@@ -6,7 +6,17 @@ import {normalizeScene} from '../web/scene.js';
 import {castFrame,mountSceneCast} from '../web/scene-cast.js';
 import {defaults,normalize} from '../web/state.js';
 import {uiHarness} from './ui-harness.mjs';
+import {battleFixture} from './battle-fixtures.js';
+import {normalizeBattle} from '../web/battle-model.js';
 const plan=JSON.parse(readFileSync('assets/characters/expressions/female-plan.json'));
+test('battle accepts a woman’s registered expressions and rejects unavailable or borrowed art',()=>{
+  const p=plan.characters[0],battle=battleFixture().scene.battle;
+  const ally=structuredClone(battle.participants[0]);ally.id=p.id;ally.name=p.name;ally.role='npc';ally.art={id:p.id,outfit:'none',emotion:'angry'};
+  battle.participants.push(ally);battle.outcome.resources.push({id:p.id,hp:100,mp:100});
+  for(const emotion of plan.expressions){ally.art.emotion=emotion;assert.equal(normalizeBattle(battle).participants[2].art.emotion,emotion);}
+  ally.art.emotion='afraid';assert.throws(()=>normalizeBattle(battle),/미등록/);
+  ally.art={id:plan.characters[1].id,outfit:'none',emotion:'smile'};assert.throws(()=>normalizeBattle(battle),/다른 인물/);
+});
 test('all 55 registered female NPCs have five real staged expression images',()=>{
   const staged=JSON.parse(readFileSync('integration/assets.json'));
   assert.equal(plan.characters.length,55);

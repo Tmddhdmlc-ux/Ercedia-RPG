@@ -47,7 +47,7 @@ test('battle loads a registered monster portrait automatically and refuses anoth
   enemy.art=null;b.participants[0].art={id:'ER-NPC-001',outfit:'none',emotion:'base'};assert.throws(()=>normalizeBattle(b),/원화/);
 });
 test('dialogue image controller lazily loads the chosen person and handles missing image without Serin substitution',()=>{
-  const h=uiHarness();try{const ui=mountNPCArt({assetBase:'/',status:h.get('expression-status')});ui.render({id:'ER-NPC-001',outfit:'none',emotion:'base',speaker:'알윈'},true);assert.equal(ui.image.src,'/assets/characters/standings/ER-NPC-001/base.png');ui.image.onerror();assert.match(h.get('expression-status').textContent,/로드 실패/);ui.render({id:'ER-NPC-081',outfit:'none',emotion:'base',speaker:'늑대'},true);assert.equal(ui.image.src,'/assets/characters/monsters/portraits/ER-NPC-081.png');ui.hide();assert.equal(ui.image.hidden,true);assert.ok(artBase().includes('@53782e9'));}finally{h.close();}
+  const h=uiHarness();try{const ui=mountNPCArt({assetBase:'/',status:h.get('expression-status')});ui.render({id:'ER-NPC-001',outfit:'none',emotion:'base',speaker:'알윈'},true);assert.equal(ui.image.src,'/assets/characters/standings/ER-NPC-001/base.png');ui.image.onerror();assert.match(h.get('expression-status').textContent,/로드 실패/);ui.render({id:'ER-NPC-081',outfit:'none',emotion:'base',speaker:'늑대'},true);assert.equal(ui.image.src,'/assets/characters/monsters/portraits/ER-NPC-081.png');ui.hide();assert.equal(ui.image.hidden,true);assert.ok(artBase().includes('@'+JSON.parse(readFileSync('characters/art_registry.json')).asset_commit+'/'));}finally{h.close();}
 });
 test('battle renderer uses each human standing or monster portrait with no Serin face layer',()=>{
   for(const id of ['ER-NPC-001','ER-NPC-100']){
