@@ -56,7 +56,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 12,
+      "level_hp_bonus": 33,
+      "stats": {
+        "strength": 18,
+        "agility": 12,
+        "intelligence": 10,
+        "constitution": 17,
+        "mana": 8,
+        "hp": 227,
+        "max_hp": 227,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4156,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "나무꾼",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-001-MAIN-01",
+        "name": "안전 벌목",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "밧줄과 날을 덮은 도끼를 확인하고 나무의 무게 방향을 따라 안전하게 벌목한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "영지 주민 · 독립 벌목 노동자",
+          "appearance": "182cm, 넓은 어깨와 굵은 팔, 거친 손과 오른쪽 눈썹의 작은 흉터.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-002",
@@ -89,7 +149,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 10,
+      "level_hp_bonus": 27,
+      "stats": {
+        "strength": 12,
+        "agility": 11,
+        "intelligence": 13,
+        "constitution": 14,
+        "mana": 8,
+        "hp": 173,
+        "max_hp": 173,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 3162,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "농부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 13,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-002-MAIN-01",
+        "name": "종자 선별",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "곡물의 색과 건조 상태를 살펴 다음 파종에 쓸 종자를 분리한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "영지 주민 · 곡물 재배 농가",
+          "appearance": "165cm, 튼튼한 체형, 햇볕에 그을린 피부와 양 볼의 옅은 주근깨.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-003",
@@ -122,7 +242,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 11,
+      "level_hp_bonus": 30,
+      "stats": {
+        "strength": 17,
+        "agility": 13,
+        "intelligence": 10,
+        "constitution": 16,
+        "mana": 7,
+        "hp": 211,
+        "max_hp": 211,
+        "mp": 82,
+        "max_mp": 82
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 3648,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "수레꾼",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-003-MAIN-01",
+        "name": "수레 균형",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "짐의 중심을 낮추고 수레의 바퀴와 끈을 점검한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "독립 운송 노동자",
+          "appearance": "176cm, 마른 근육형, 붉어진 코와 왼쪽 턱의 작은 점.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-004",
@@ -155,7 +335,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 12,
+      "level_hp_bonus": 33,
+      "stats": {
+        "strength": 16,
+        "agility": 13,
+        "intelligence": 14,
+        "constitution": 15,
+        "mana": 9,
+        "hp": 201,
+        "max_hp": 201,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4156,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "대장장이 조수",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-004-MAIN-01",
+        "name": "화로 집게",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "집게로 달군 금속을 고정해 대장장이의 가공을 보조한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "영지 민간 대장간의 작업 조수",
+          "appearance": "169cm, 탄탄한 팔과 둥근 턱, 볼에 작은 검댕 얼룩.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-005",
@@ -188,7 +428,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 13,
+      "level_hp_bonus": 36,
+      "stats": {
+        "strength": 12,
+        "agility": 12,
+        "intelligence": 15,
+        "constitution": 13,
+        "mana": 8,
+        "hp": 172,
+        "max_hp": 172,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4687,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "빵집 주인",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 14,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-005-MAIN-01",
+        "name": "빵 발효",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "밀가루와 물의 상태를 살피고 시간과 온도를 맞춰 반죽을 발효한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "독립 빵집 운영자",
+          "appearance": "173cm, 둥근 배와 두꺼운 손, 웃을 때 볼에 깊은 주름.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-006",
@@ -221,7 +521,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 9,
+      "level_hp_bonus": 24,
+      "stats": {
+        "strength": 11,
+        "agility": 13,
+        "intelligence": 12,
+        "constitution": 13,
+        "mana": 9,
+        "hp": 157,
+        "max_hp": 157,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 2700,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "양치기",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-006-MAIN-01",
+        "name": "양떼 유도",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "목소리와 울타리를 이용해 흩어진 양을 안전한 길로 모은다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "아르덴슈타인 백작령",
+          "lord": "비올레트 아르덴슈타인",
+          "regional_economy": "포도주·양모·통행세·수레 제작",
+          "regional_terrain": "교역 교차로와 조세 장벽",
+          "affiliation": "영지 주민 · 소규모 양 사육 농가",
+          "appearance": "162cm, 작고 날렵한 체형, 코 위의 옅은 주근깨.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-007",
@@ -254,7 +614,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 15,
+      "level_hp_bonus": 42,
+      "stats": {
+        "strength": 14,
+        "agility": 19,
+        "intelligence": 13,
+        "constitution": 14,
+        "mana": 10,
+        "hp": 194,
+        "max_hp": 194,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5809,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "사냥꾼",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-007-MAIN-01",
+        "name": "숲길 사격",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "숲의 발자국과 바람을 살피고 준비한 한 발로 사냥한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "독립 사냥꾼",
+          "appearance": "174cm, 긴 팔과 날렵한 어깨, 왼쪽 볼의 옅은 긁힌 자국.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-008",
@@ -287,7 +707,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 14,
+      "level_hp_bonus": 39,
+      "stats": {
+        "strength": 10,
+        "agility": 12,
+        "intelligence": 19,
+        "constitution": 11,
+        "mana": 9,
+        "hp": 149,
+        "max_hp": 149,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5238,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "세금 징수 보조관",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 14,
+        "base_attack_min": 18,
+        "base_attack_max": 28,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-008-MAIN-01",
+        "name": "징세 대조",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "영지 징세 기록과 실제 수납액을 대조해 착오를 찾는다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "로젠펠트 영지 징세 업무 보조",
+          "appearance": "171cm, 마른 체형, 가는 입술과 긴 손가락.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-009",
@@ -320,7 +800,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 13,
+      "level_hp_bonus": 36,
+      "stats": {
+        "strength": 19,
+        "agility": 11,
+        "intelligence": 11,
+        "constitution": 18,
+        "mana": 7,
+        "hp": 243,
+        "max_hp": 243,
+        "mp": 82,
+        "max_mp": 82
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4687,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "광부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 14,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-009-MAIN-01",
+        "name": "갱도 지주",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "갱도의 균열을 살피고 버팀목을 세워 작업 공간을 확보한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "영지 민간 광산의 채굴 노동자",
+          "appearance": "179cm, 두꺼운 목과 넓은 손, 눈 아래의 검은 먼지 흔적.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-010",
@@ -353,7 +893,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 12,
+      "level_hp_bonus": 33,
+      "stats": {
+        "strength": 10,
+        "agility": 15,
+        "intelligence": 17,
+        "constitution": 12,
+        "mana": 10,
+        "hp": 153,
+        "max_hp": 153,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4156,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "약초채집꾼",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 17,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-010-MAIN-01",
+        "name": "약초 감별",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "약초의 잎과 냄새를 비교해 독성 식물을 분리한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "독립 약초 채집·납품 노동자",
+          "appearance": "164cm, 가는 체형, 둥근 코와 햇볕 자국이 있는 손등.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-011",
@@ -386,7 +986,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 14,
+      "level_hp_bonus": 39,
+      "stats": {
+        "strength": 12,
+        "agility": 20,
+        "intelligence": 13,
+        "constitution": 14,
+        "mana": 9,
+        "hp": 185,
+        "max_hp": 185,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5238,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "전령",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 22,
+        "base_attack_min": 21,
+        "base_attack_max": 31,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-011-MAIN-01",
+        "name": "산길 전달",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "가벼운 몸으로 산길을 이동하며 봉인한 전언을 전달한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "영지 연락 업무를 맡는 민간 전령",
+          "appearance": "170cm, 긴 다리와 날렵한 체형, 얼굴에 옅은 바람 자국.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-012",
@@ -419,7 +1079,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 13,
+      "level_hp_bonus": 36,
+      "stats": {
+        "strength": 13,
+        "agility": 11,
+        "intelligence": 18,
+        "constitution": 14,
+        "mana": 8,
+        "hp": 185,
+        "max_hp": 185,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4687,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "창고 관리인",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 13,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-012-MAIN-01",
+        "name": "재고 분류",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "물품을 종류와 상태별로 나누고 창고 장부를 맞춘다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "영지 민간 창고의 재고 관리 담당",
+          "appearance": "175cm, 굽은 어깨와 굵은 허리, 오른쪽 볼의 작은 검버섯.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-013",
@@ -452,7 +1172,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 15,
+      "level_hp_bonus": 42,
+      "stats": {
+        "strength": 10,
+        "agility": 14,
+        "intelligence": 20,
+        "constitution": 12,
+        "mana": 9,
+        "hp": 162,
+        "max_hp": 162,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5809,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "상인",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 16,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-013-MAIN-01",
+        "name": "금속 감정",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "작은 금속 제품의 무게와 표면을 살펴 불량품을 구분한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "독립 금속 잡화 상인",
+          "appearance": "168cm, 단단한 체형, 높은 광대와 오른쪽 눈 밑 작은 점.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-014",
@@ -485,7 +1265,95 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 18,
+      "level_hp_bonus": 68,
+      "stats": {
+        "strength": 25,
+        "agility": 22,
+        "intelligence": 13,
+        "constitution": 23,
+        "mana": 13,
+        "hp": 343,
+        "max_hp": 343,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 7636,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "용병",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 27,
+        "base_attack_min": 30,
+        "base_attack_max": 40,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-014-MAIN-01",
+        "name": "계약 방어",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "고용 계약의 보호 대상을 확인하고 짧은 검으로 접근선을 막는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "독립 고용 용병",
+          "appearance": "184cm, 탄탄한 체형, 왼쪽 입가의 오래된 흉터와 넓은 턱.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-COM-014-ULT-01",
+        "name": "계약 방어 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-COM-014-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "고용 계약의 보호 대상을 확인하고 짧은 검으로 접근선을 막는다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "고용 계약의 보호 대상을 확인하고 짧은 검으로 접근선을 막는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "계약 방어의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-COM-015",
@@ -518,7 +1386,67 @@
       "species": "인간",
       "category": "배경형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 14,
+      "level_hp_bonus": 39,
+      "stats": {
+        "strength": 12,
+        "agility": 23,
+        "intelligence": 16,
+        "constitution": 12,
+        "mana": 10,
+        "hp": 165,
+        "max_hp": 165,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5238,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "도적",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 25,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-015-MAIN-01",
+        "name": "골목 이탈",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "골목의 장애물을 이용해 추적 시야를 끊고 이탈한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "소속 미확정 · 단독으로 활동하는 도적",
+          "appearance": "167cm, 마른 체형, 왼쪽 귀의 작은 찢어진 흔적.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-016",
@@ -551,7 +1479,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 11,
+      "level_hp_bonus": 30,
+      "stats": {
+        "strength": 16,
+        "agility": 12,
+        "intelligence": 13,
+        "constitution": 16,
+        "mana": 8,
+        "hp": 208,
+        "max_hp": 208,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 3648,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "광부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-016-MAIN-01",
+        "name": "광석 선별",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "광석의 결을 비교해 맥석과 사용 가능한 광물을 분리한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "영지 민간 광산의 선광 노동자",
+          "appearance": "172cm, 넓은 어깨와 튼튼한 손목, 깊은 미간 주름.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-017",
@@ -584,7 +1572,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 12,
+      "level_hp_bonus": 33,
+      "stats": {
+        "strength": 16,
+        "agility": 15,
+        "intelligence": 12,
+        "constitution": 16,
+        "mana": 8,
+        "hp": 211,
+        "max_hp": 211,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4156,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "어부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 18,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-017-MAIN-01",
+        "name": "연안 투망",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "조수와 바람을 확인하고 가까운 바다에 그물을 던진다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "영지 주민 · 소규모 연안 어업 종사자",
+          "appearance": "178cm, 넓은 가슴과 거친 손, 깊게 그을린 피부와 웃음 주름.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-018",
@@ -617,7 +1665,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 15,
+      "level_hp_bonus": 42,
+      "stats": {
+        "strength": 11,
+        "agility": 15,
+        "intelligence": 19,
+        "constitution": 12,
+        "mana": 9,
+        "hp": 165,
+        "max_hp": 165,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5809,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "상인",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 17,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-018-MAIN-01",
+        "name": "생활품 흥정",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "잡화의 상태와 운송 비용을 근거로 거래를 흥정한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "독립 생활 잡화 상인",
+          "appearance": "177cm, 날씬한 체형, 둥근 눈썹과 작은 콧수염.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-019",
@@ -650,7 +1758,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 13,
+      "level_hp_bonus": 36,
+      "stats": {
+        "strength": 10,
+        "agility": 18,
+        "intelligence": 16,
+        "constitution": 12,
+        "mana": 11,
+        "hp": 156,
+        "max_hp": 156,
+        "mp": 106,
+        "max_mp": 106
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4687,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "악사",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 20,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-019-MAIN-01",
+        "name": "거리 합주",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "손가락의 리듬과 관객 반응을 살피며 악기를 연주한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "독립 거리 악사",
+          "appearance": "166cm, 유연하고 가벼운 체형, 오른쪽 볼의 작은 보조개.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-020",
@@ -683,7 +1851,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 14,
+      "level_hp_bonus": 39,
+      "stats": {
+        "strength": 11,
+        "agility": 19,
+        "intelligence": 17,
+        "constitution": 12,
+        "mana": 9,
+        "hp": 162,
+        "max_hp": 162,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5238,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "재봉사",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 21,
+        "base_attack_min": 20,
+        "base_attack_max": 30,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-020-MAIN-01",
+        "name": "바느질 수선",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "의복의 찢어진 결을 따라 바늘로 수선하고 치수를 맞춘다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "독립 의복 수선·제작 노동자",
+          "appearance": "170cm, 가는 체형, 긴 손가락과 가늘고 정돈된 콧수염.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-021",
@@ -716,7 +1944,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 12,
+      "level_hp_bonus": 33,
+      "stats": {
+        "strength": 10,
+        "agility": 16,
+        "intelligence": 17,
+        "constitution": 13,
+        "mana": 9,
+        "hp": 163,
+        "max_hp": 163,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4156,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "여관 종업원",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 18,
+        "base_attack_min": 19,
+        "base_attack_max": 29,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-021-MAIN-01",
+        "name": "여관 접객",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "손님의 요구와 빈방을 확인해 식사와 숙박을 안내한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "영지 민간 여관의 접객 종업원",
+          "appearance": "161cm, 작고 균형 잡힌 체형, 둥근 얼굴과 코 옆 작은 점.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-022",
@@ -749,7 +2037,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 11,
+      "level_hp_bonus": 30,
+      "stats": {
+        "strength": 16,
+        "agility": 12,
+        "intelligence": 13,
+        "constitution": 16,
+        "mana": 8,
+        "hp": 208,
+        "max_hp": 208,
+        "mp": 88,
+        "max_mp": 88
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 3648,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "농부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 15,
+        "base_attack_min": 22,
+        "base_attack_max": 32,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-022-MAIN-01",
+        "name": "채소 이식",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "흙의 수분과 뿌리 상태를 확인해 채소 모종을 이식한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "영지 주민 · 채소 재배 농가",
+          "appearance": "174cm, 다부진 체형, 짙게 그을린 얼굴과 굵은 손.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-023",
@@ -782,7 +2130,67 @@
       "species": "인간",
       "category": "생활형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 13,
+      "level_hp_bonus": 36,
+      "stats": {
+        "strength": 17,
+        "agility": 15,
+        "intelligence": 13,
+        "constitution": 17,
+        "mana": 9,
+        "hp": 227,
+        "max_hp": 227,
+        "mp": 94,
+        "max_mp": 94
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 4687,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "어부",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 18,
+        "base_attack_min": 24,
+        "base_attack_max": 34,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-023-MAIN-01",
+        "name": "그물 매듭",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "그물의 해진 곳에 매듭을 이어 인장력을 나누어 받게 한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "영지 주민 · 연안 어업과 그물 수선 종사자",
+          "appearance": "169cm, 탄탄한 어깨와 팔, 햇볕에 바랜 피부와 짧은 손톱.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-COM-024",
@@ -815,7 +2223,67 @@
       "species": "인간",
       "category": "배경형 NPC",
       "image_status": "uncreated",
-      "stat_status": "not_assigned"
+      "stat_status": "assigned_initial_balance_v1",
+      "level": 15,
+      "level_hp_bonus": 42,
+      "stats": {
+        "strength": 13,
+        "agility": 24,
+        "intelligence": 15,
+        "constitution": 13,
+        "mana": 10,
+        "hp": 181,
+        "max_hp": 181,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "xp": 0,
+      "unspent_stat_points": 0,
+      "realm_awarded_bonuses": {},
+      "xp_to_next": 5809,
+      "level_hp_bonus_method": "initial_baseline_estimate",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반인",
+      "specialization": "도적",
+      "setting_status": "established_v1_user_requested",
+      "realm_damage_multiplier": 1,
+      "combat": {
+        "speed": 26,
+        "base_attack_min": 23,
+        "base_attack_max": 33,
+        "realm_damage_multiplier": 1
+      },
+      "main_skill": {
+        "id": "ER-COM-024-MAIN-01",
+        "name": "부두 숨기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "부두 화물 틈에서 소리를 줄이고 추적자의 시야를 피한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "소속 미확정 · 단독으로 활동하는 도적",
+          "appearance": "175cm, 마르고 긴 체형, 오른쪽 턱의 작은 흉터와 좁은 입술.",
+          "references": [
+            "characters/common_npc_roster.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     }
   ]
 }

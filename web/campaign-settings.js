@@ -57,8 +57,8 @@ export function legacyCampaignPrompt(snapshot){
 }
 export function campaignNPCStates(snapshot,knownIds){
   const read=path=>JSON.parse(snapshot.files[path]||'{}');
-  const roster=[...(read('characters/npc_roster_100.json').characters||[]),...(read('characters/core_cast_stats_38.json').roster||[]),read('characters/serin.json')],allowed=new Set(knownIds),result={};
-  for(const p of roster)if(allowed.has(p.id)){const s=p.stats||{},rank=p.rank||'',realm=p.realm||(['master','hyper','expert','basic'][['마스터 나이트','하이퍼 나이트','익스퍼트 나이트','베이직 나이트'].findIndex(r=>rank.includes(r))])||'none';result[p.id]=normalizeNPCProfile({name:p.name,affiliation:p.affiliation,rank,realm,level:p.level,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,speed:p.combat?.speed,levelHpBonus:p.level_hp_bonus});}
+  const roster=[...(read('characters/npc_roster_100.json').characters||[]),...(read('characters/core_cast_stats_38.json').roster||[]),...(read('characters/common_npc_roster.json').characters||[]).filter(p=>p.job!=='도적'),read('characters/serin.json')],allowed=new Set(knownIds),result={};
+  for(const p of roster)if(allowed.has(p.id)){const s=p.stats||{},rank=p.rank||'',realm=p.realm||(['master','hyper','expert','basic'][['마스터 나이트','하이퍼 나이트','익스퍼트 나이트','베이직 나이트'].findIndex(r=>rank.includes(r))])||'none';result[p.id]=normalizeNPCProfile({name:p.name,affiliation:p.affiliation,rank:p.combat_rank||rank,realm,...(p.circle===undefined?{}:{circle:p.circle}),level:p.level,strength:s.strength,dexterity:s.agility,intelligence:s.intelligence,constitution:s.constitution,manaStat:s.mana,hp:s.hp,maxHp:s.max_hp,mp:s.mp,maxMp:s.max_mp,speed:p.combat?.speed,levelHpBonus:p.level_hp_bonus});}
   return result;
 }
 export function campaignSettingsAttachment(snapshot){

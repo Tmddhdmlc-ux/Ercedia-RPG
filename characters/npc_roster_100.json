@@ -58,9 +58,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-001-MAIN-01",
+        "name": "왕문 수호",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "장검을 세워 통로를 좁히고 반격 한 번으로 침입자를 밀어낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "청금사자 근위기사단",
+          "appearance": "남32 검은 단발 진청 눈 은백 판금갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-001-ULT-01",
+        "name": "왕문 수호 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-001-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "장검을 세워 통로를 좁히고 반격 한 번으로 침입자를 밀어낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "장검을 세워 통로를 좁히고 반격 한 번으로 침입자를 밀어낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "왕문 수호의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-002",
@@ -108,9 +172,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-002-MAIN-01",
+        "name": "청색 엄호",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "청금사자 근위기사단",
+          "appearance": "여23 적갈 땋은머리 호박 눈 청색 휘장",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-002-ULT-01",
+        "name": "청색 엄호 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-002-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "청색 엄호의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-003",
@@ -158,9 +286,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-003-MAIN-01",
+        "name": "장미 선봉",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "낮은 자세에서 한 발 깊게 들어가 갑옷 틈을 찌른다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "적장미 선봉기사단",
+          "appearance": "남38 회갈 단발 왼눈 흉터 적색 견장",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-003-ULT-01",
+        "name": "장미 선봉 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-003-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "낮은 자세에서 한 발 깊게 들어가 갑옷 틈을 찌른다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "낮은 자세에서 한 발 깊게 들어가 갑옷 틈을 찌른다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "장미 선봉의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-004",
@@ -208,9 +400,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "쾌검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-004-MAIN-01",
+        "name": "측면 돌파",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "경량 갑옷의 기동성을 살려 옆으로 돌아 짧게 벤다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "적장미 선봉기사단",
+          "appearance": "여26 금갈 단발 녹색 눈 경량 판금",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-004-ULT-01",
+        "name": "측면 돌파 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-004-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "경량 갑옷의 기동성을 살려 옆으로 돌아 짧게 벤다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "경량 갑옷의 기동성을 살려 옆으로 돌아 짧게 벤다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "측면 돌파의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-005",
@@ -258,9 +514,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-005-MAIN-01",
+        "name": "성벽 되받기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "방패로 공격을 흘린 뒤 짧은 검격을 되돌린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "청뢰성벽 기사단",
+          "appearance": "남35 흑청 머리 회색 눈 청동 방패",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-005-ULT-01",
+        "name": "성벽 되받기 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-005-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "방패로 공격을 흘린 뒤 짧은 검격을 되돌린다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "방패로 공격을 흘린 뒤 짧은 검격을 되돌린다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "성벽 되받기의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-006",
@@ -308,9 +628,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-006-MAIN-01",
+        "name": "철갑 버티기",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "룬 철갑의 보호 부위를 맞춰 충격을 받아낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "청뢰성벽 기사단",
+          "appearance": "여25 은갈 단발 청회 눈 룬 철갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-006-ULT-01",
+        "name": "철갑 버티기 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-006-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "룬 철갑의 보호 부위를 맞춰 충격을 받아낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "룬 철갑의 보호 부위를 맞춰 충격을 받아낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "철갑 버티기의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-007",
@@ -358,9 +742,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-007-MAIN-01",
+        "name": "균열 추적",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "고글로 관찰한 발자국과 지형을 따라 퇴로를 차단한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "흑정찰 균열기사단",
+          "appearance": "여39 검은 단발 올리브 피부 탐지 고글",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-007-ULT-01",
+        "name": "균열 추적 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-007-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "고글로 관찰한 발자국과 지형을 따라 퇴로를 차단한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "고글로 관찰한 발자국과 지형을 따라 퇴로를 차단한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "균열 추적의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-008",
@@ -408,9 +856,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "쾌검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-008-MAIN-01",
+        "name": "회흑 급습",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "장애물 뒤에서 한 번 짧게 접근해 베고 이탈한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "흑정찰 균열기사단",
+          "appearance": "남21 잿빛 삭발 보라 눈 회흑 경갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-008-ULT-01",
+        "name": "회흑 급습 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-008-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "장애물 뒤에서 한 번 짧게 접근해 베고 이탈한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "장애물 뒤에서 한 번 짧게 접근해 베고 이탈한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "회흑 급습의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-009",
@@ -458,9 +970,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-009-MAIN-01",
+        "name": "백파도 호위",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "배의 흔들림에 맞춰 발을 옮기며 근접 위협을 밀어낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "백파도 친위기사단",
+          "appearance": "남44 청흑 곱슬 갈색 눈 흰청 갑옷",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-009-ULT-01",
+        "name": "백파도 호위 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-009-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "배의 흔들림에 맞춰 발을 옮기며 근접 위협을 밀어낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "배의 흔들림에 맞춰 발을 옮기며 근접 위협을 밀어낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "백파도 호위의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-010",
@@ -508,9 +1084,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-010-MAIN-01",
+        "name": "선측 막기",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "청백 제복의 활동성을 살려 좁은 선측을 지킨다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "백파도 친위기사단",
+          "appearance": "여27 적갈 머리 녹청 눈 청백 제복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-010-ULT-01",
+        "name": "선측 막기 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-010-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "청백 제복의 활동성을 살려 좁은 선측을 지킨다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "청백 제복의 활동성을 살려 좁은 선측을 지킨다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "선측 막기의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-011",
@@ -558,9 +1198,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-011-MAIN-01",
+        "name": "해풍 가르기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "밧줄 사이를 지나 무기 팔을 짧게 베어 진로를 확보한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "해풍수호 기사단",
+          "appearance": "남36 적갈 단발 검은 눈 해군 가죽갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-011-ULT-01",
+        "name": "해풍 가르기 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-011-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "밧줄 사이를 지나 무기 팔을 짧게 베어 진로를 확보한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "밧줄 사이를 지나 무기 팔을 짧게 베어 진로를 확보한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "해풍 가르기의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-012",
@@ -608,9 +1312,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-012-MAIN-01",
+        "name": "갑판 균형",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "흔들리는 갑판에서 체중을 낮춰 공격을 흘린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "해풍수호 기사단",
+          "appearance": "여22 백금 포니테일 푸른 눈 해군 제복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-012-ULT-01",
+        "name": "갑판 균형 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-012-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "흔들리는 갑판에서 체중을 낮춰 공격을 흘린다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "흔들리는 갑판에서 체중을 낮춰 공격을 흘린다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "갑판 균형의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-013",
@@ -658,9 +1426,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 3,
+      "combat_rank": "3서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-013-MAIN-01",
+        "name": "문헌 투영",
+        "category": "spell",
+        "element": "빛",
+        "element_status": "established",
+        "action": "손에 든 기록 위로 빛을 모아 숨겨진 필기와 마나 흔적을 읽는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "칠원기록탑",
+          "appearance": "남31 밤갈 머리 은테 안경 갈색 로브",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-013-ULT-01",
+        "name": "문헌 투영 · 결전식",
+        "element": "빛",
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-013-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "손에 든 기록 위로 빛을 모아 숨겨진 필기와 마나 흔적을 읽는다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "손에 든 기록 위로 빛을 모아 숨겨진 필기와 마나 흔적을 읽는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-014",
@@ -708,9 +1534,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 1,
+      "combat_rank": "1서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-014-MAIN-01",
+        "name": "서고 등불",
+        "category": "spell",
+        "element": "빛",
+        "element_status": "established",
+        "action": "책상 한 곳을 비추는 작은 빛을 일정하게 유지한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "칠원기록탑",
+          "appearance": "여19 검은 곱슬 녹색 눈 학생 로브",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-014-ULT-01",
+        "name": "서고 등불 · 결전식",
+        "element": "빛",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-014-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "책상 한 곳을 비추는 작은 빛을 일정하게 유지한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "책상 한 곳을 비추는 작은 빛을 일정하게 유지한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-015",
@@ -758,9 +1642,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 4,
+      "combat_rank": "4서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-015-MAIN-01",
+        "name": "뇌명 분할",
+        "category": "spell",
+        "element": "전기",
+        "element_status": "established",
+        "action": "금속 장갑의 도체를 따라 전류를 나눠 가까운 한 대상에 모은다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "청동뇌명탑",
+          "appearance": "남37 자주빛 머리 번개 문신 금속 장갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-015-ULT-01",
+        "name": "뇌명 분할 · 결전식",
+        "element": "전기",
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-015-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "금속 장갑의 도체를 따라 전류를 나눠 가까운 한 대상에 모은다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "금속 장갑의 도체를 따라 전류를 나눠 가까운 한 대상에 모은다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-016",
@@ -808,9 +1750,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 2,
+      "combat_rank": "2서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-016-MAIN-01",
+        "name": "공방 도통",
+        "category": "spell",
+        "element": "전기",
+        "element_status": "established",
+        "action": "청동 소매의 도체로 장치 하나의 전류를 안정시킨다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "청동뇌명탑",
+          "appearance": "여24 은청 숏컷 청록 눈 청동 소매",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-016-ULT-01",
+        "name": "공방 도통 · 결전식",
+        "element": "전기",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-016-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "청동 소매의 도체로 장치 하나의 전류를 안정시킨다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "청동 소매의 도체로 장치 하나의 전류를 안정시킨다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-017",
@@ -858,9 +1858,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 4,
+      "combat_rank": "4서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-017-MAIN-01",
+        "name": "청류 회환",
+        "category": "spell",
+        "element": "물",
+        "element_status": "established",
+        "action": "물줄기를 휘감아 국소 화재를 진압하거나 접근을 밀어낸다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "청류융합탑",
+          "appearance": "여40 남청 머리 청색 눈 흰청 로브",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-017-ULT-01",
+        "name": "청류 회환 · 결전식",
+        "element": "물",
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-017-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "물줄기를 휘감아 국소 화재를 진압하거나 접근을 밀어낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "물줄기를 휘감아 국소 화재를 진압하거나 접근을 밀어낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-018",
@@ -908,9 +1966,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 2,
+      "combat_rank": "2서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-018-MAIN-01",
+        "name": "선상 순풍",
+        "category": "spell",
+        "element": "바람",
+        "element_status": "established",
+        "action": "망토 곁의 기류를 정돈해 작은 돛 하나를 보조한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "청류융합탑",
+          "appearance": "남28 모래 금발 초록 눈 바람 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-018-ULT-01",
+        "name": "선상 순풍 · 결전식",
+        "element": "바람",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-018-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "망토 곁의 기류를 정돈해 작은 돛 하나를 보조한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 바람 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "망토 곁의 기류를 정돈해 작은 돛 하나를 보조한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 바람 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-019",
@@ -958,9 +2074,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 4,
+      "combat_rank": "4서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-019-MAIN-01",
+        "name": "황혼 장막",
+        "category": "spell",
+        "element": "암흑",
+        "element_status": "established",
+        "action": "한 구역의 명암을 낮춰 후퇴하는 동료를 숨긴다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "황혼음영탑",
+          "appearance": "남33 백회 머리 이색 눈 회색 로브",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-019-ULT-01",
+        "name": "황혼 장막 · 결전식",
+        "element": "암흑",
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-019-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "한 구역의 명암을 낮춰 후퇴하는 동료를 숨긴다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "한 구역의 명암을 낮춰 후퇴하는 동료를 숨긴다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-020",
@@ -1008,9 +2182,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 2,
+      "combat_rank": "2서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-020-MAIN-01",
+        "name": "음영 접기",
+        "category": "spell",
+        "element": "암흑",
+        "element_status": "established",
+        "action": "검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "황혼음영탑",
+          "appearance": "여23 보라 흑발 회색 눈 검은 베일",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-020-ULT-01",
+        "name": "음영 접기 · 결전식",
+        "element": "암흑",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-020-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-021",
@@ -1058,9 +2290,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 4,
+      "combat_rank": "4서클 마법사",
+      "specialization": "마나 방호",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-021-MAIN-01",
+        "name": "초석 방벽",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "회색초석탑",
+          "appearance": "남46 회색 수염 검은 눈 두꺼운 회청 로브",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-021-ULT-01",
+        "name": "초석 방벽 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-021-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-022",
@@ -1108,9 +2398,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 2,
+      "combat_rank": "2서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-022-MAIN-01",
+        "name": "광맥 점검",
+        "category": "spell",
+        "element": "빛",
+        "element_status": "established",
+        "action": "황동 렌즈로 광석의 발광 차이를 관찰해 불안정 부분을 표시한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "회색초석탑",
+          "appearance": "여29 구리 갈발 녹색 눈 황동 렌즈",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-022-ULT-01",
+        "name": "광맥 점검 · 결전식",
+        "element": "빛",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-022-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "황동 렌즈로 광석의 발광 차이를 관찰해 불안정 부분을 표시한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "황동 렌즈로 광석의 발광 차이를 관찰해 불안정 부분을 표시한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-023",
@@ -1158,9 +2506,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-023-MAIN-01",
+        "name": "기록 대조",
+        "category": "divine_service",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "남청 기록복의 문서철을 펼쳐 연대와 증언의 불일치를 찾는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "영시기록원",
+          "appearance": "여42 잿빛 땋은머리 갈색 눈 남청 기록복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-024",
@@ -1208,9 +2592,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-024-MAIN-01",
+        "name": "길목 측량",
+        "category": "divine_service",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "여행 도구로 문과 길의 간격을 재고 통행자를 안내한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "천문의 길회",
+          "appearance": "남30 검은 단발 은청 눈 흰 여행복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-025",
@@ -1258,9 +2678,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-025-MAIN-01",
+        "name": "생체 살피기",
+        "category": "support",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "손으로 생체 마나 흐름을 살펴 압박 지혈과 응급 처치를 돕는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "새벽샘 성회",
+          "appearance": "여35 밤갈 포니테일 녹색 눈 초록 성의",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-026",
@@ -1308,9 +2764,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-026-MAIN-01",
+        "name": "은종 안식",
+        "category": "divine_service",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "은종의 잔향을 따라 사령 침범의 흔적을 식별하고 매장 의례를 돕는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "종언의 안식원",
+          "appearance": "남53 삭발 은회 눈 검은 예복 은종",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-027",
@@ -1358,9 +2850,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-027-MAIN-01",
+        "name": "화로 진정",
+        "category": "divine_service",
+        "element": "불",
+        "element_status": "established",
+        "action": "작은 화로의 불길을 손 가까이에서 낮춰 안전한 작업을 돕는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "홍염의 화로단",
+          "appearance": "여24 붉은 단발 금갈 눈 화로 앞치마",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-028",
@@ -1408,9 +2936,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-028-MAIN-01",
+        "name": "조수 정화",
+        "category": "divine_service",
+        "element": "물",
+        "element_status": "established",
+        "action": "받아 둔 물 한 그릇의 불순물을 분리한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "푸른 조수성당",
+          "appearance": "남34 흑청 웨이브 청록 눈 진주 브로치",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-029",
@@ -1458,9 +3022,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-029-MAIN-01",
+        "name": "순례 바람",
+        "category": "divine_service",
+        "element": "바람",
+        "element_status": "established",
+        "action": "짧은 바람으로 연기와 먼지를 밀어 길을 확보한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "순풍의 순례단",
+          "appearance": "여21 은회 단발 녹색 눈 흰 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-030",
@@ -1508,9 +3108,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-030-MAIN-01",
+        "name": "피뢰 분기",
+        "category": "divine_service",
+        "element": "전기",
+        "element_status": "established",
+        "action": "청동 도체의 전류를 접지선 쪽으로 분산한다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "천뢰공학회",
+          "appearance": "남48 갈색 삭발 청회 눈 청동 안경",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-031",
@@ -1558,9 +3194,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-031-MAIN-01",
+        "name": "광휘 길잡이",
+        "category": "support",
+        "element": "빛",
+        "element_status": "established",
+        "action": "흰금 제의 앞에 빛을 띄워 피난 통로를 밝힌다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "광휘대성당",
+          "appearance": "여38 백금 단발 금갈 눈 흰금 제의",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-032",
@@ -1608,9 +3280,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-032-MAIN-01",
+        "name": "그늘 피난",
+        "category": "support",
+        "element": "암흑",
+        "element_status": "established",
+        "action": "작은 천막의 밝기를 낮춰 피난민의 노출을 줄인다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "흑월의 성소",
+          "appearance": "남36 자주 흑수염 은색 눈 검은 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-033",
@@ -1658,9 +3366,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "cleric",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급 사제",
+      "specialization": "교단 실무",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-033-MAIN-01",
+        "name": "인연 중재",
+        "category": "divine_service",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "서로의 증언과 계약을 대조해 오해를 좁힌다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다. 신의 전체 권능이나 신격을 상속하지 않으며 신앙 기적은 별도 GM 판정이다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "인연의 직조회",
+          "appearance": "여45 은빛 곱슬 보라 눈 자주 문장띠",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-034",
@@ -1699,7 +3443,7 @@
         "constitution": 0,
         "mana": 0
       },
-      "realm_damage_multiplier": 1,
+      "realm_damage_multiplier": 1.25,
       "creature_damage_multiplier": null,
       "combat": {
         "speed": 38,
@@ -1708,9 +3452,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-034-MAIN-01",
+        "name": "붉은길 추적",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "여행 망토를 여미고 지형 흔적을 따라 목표의 이동 경로를 찾는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "아르덴슈타인 백작령",
+          "lord": "비올레트 아르덴슈타인",
+          "regional_economy": "포도주·양모·통행세·수레 제작",
+          "regional_terrain": "교역 교차로와 조세 장벽",
+          "affiliation": "대륙길잡이 길드",
+          "appearance": "남30 붉은 머리 청색 눈 여행 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-034-ULT-01",
+        "name": "붉은길 추적 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-034-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "여행 망토를 여미고 지형 흔적을 따라 목표의 이동 경로를 찾는다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "여행 망토를 여미고 지형 흔적을 따라 목표의 이동 경로를 찾는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "붉은길 추적의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-035",
@@ -1758,9 +3566,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-035-MAIN-01",
+        "name": "돌길 회피",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "두꺼운 부츠로 발판을 확보해 한 공격을 피한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "아르덴슈타인 백작령",
+          "lord": "비올레트 아르덴슈타인",
+          "regional_economy": "포도주·양모·통행세·수레 제작",
+          "regional_terrain": "교역 교차로와 조세 장벽",
+          "affiliation": "대륙길잡이 길드",
+          "appearance": "여22 검은 단발 갈색 눈 두꺼운 부츠",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-035-ULT-01",
+        "name": "돌길 회피 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-035-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "두꺼운 부츠로 발판을 확보해 한 공격을 피한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "두꺼운 부츠로 발판을 확보해 한 공격을 피한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "돌길 회피의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-036",
@@ -1808,9 +3680,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "금패",
+      "specialization": "금패",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-036-MAIN-01",
+        "name": "깃털 연격",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "가벼운 체중 이동으로 다른 각도의 검격 두 번을 잇는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "대륙길잡이 길드",
+          "appearance": "여41 금발 녹색 눈 깃털 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-037",
@@ -1858,9 +3766,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-037-MAIN-01",
+        "name": "항로 호위",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "좁은 길목을 막고 동료가 지나갈 틈을 만든다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "대륙길잡이 길드",
+          "appearance": "남27 곱슬 흑발 청록 눈 흰 조끼",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-037-ULT-01",
+        "name": "항로 호위 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-037-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "좁은 길목을 막고 동료가 지나갈 틈을 만든다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "좁은 길목을 막고 동료가 지나갈 틈을 만든다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "항로 호위의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-038",
@@ -1899,7 +3871,7 @@
         "constitution": 0,
         "mana": 0
       },
-      "realm_damage_multiplier": 1,
+      "realm_damage_multiplier": 1.25,
       "creature_damage_multiplier": null,
       "combat": {
         "speed": 29,
@@ -1908,9 +3880,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1.25
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "expert",
+      "circle": 0,
+      "combat_rank": "익스퍼트 나이트",
+      "specialization": "강검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-038-MAIN-01",
+        "name": "쇠갈퀴 격파",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "큰 체격과 쇠갑옷의 무게를 실어 정면 방어를 압박한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "쇠갈퀴 용병단",
+          "appearance": "남34 큰 체격 회색 눈 쇠갑옷",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-038-ULT-01",
+        "name": "쇠갈퀴 격파 · 결전식",
+        "element": null,
+        "current_eligible": true,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-038-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "큰 체격과 쇠갑옷의 무게를 실어 정면 방어를 압박한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "current_tier_concept"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "큰 체격과 쇠갑옷의 무게를 실어 정면 방어를 압박한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "쇠갈퀴 격파의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-039",
@@ -1958,9 +3994,67 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "mage",
+      "realm": "none",
+      "circle": 2,
+      "combat_rank": "2서클 마법사",
+      "specialization": "원소 주문",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-039-MAIN-01",
+        "name": "의료 청수",
+        "category": "support",
+        "element": "물",
+        "element_status": "established",
+        "action": "의료가방의 물을 정화하고 처치 도구를 씻는다",
+        "limits": "준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "쇠갈퀴 용병단",
+          "appearance": "여29 밤색 땋은머리 갈색 눈 의료가방",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-039-ULT-01",
+        "name": "의료 청수 · 결전식",
+        "element": "물",
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-039-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "circle3",
+          "action": "의료가방의 물을 정화하고 처치 도구를 씻는다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "circle6",
+          "action": "의료가방의 물을 정화하고 처치 도구를 씻는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical"
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-040",
@@ -2008,9 +4102,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "숙련 선원",
+      "specialization": "숙련 선원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-040-MAIN-01",
+        "name": "선원 걸기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "밧줄로 상대의 균형을 흐트러뜨린 뒤 물러선다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "백범선 해상호위조합",
+          "appearance": "남47 대머리 귀 흉터 청색 외투",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-041",
@@ -2058,9 +4188,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "일반 전투원",
+      "specialization": "일반 전투원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-041-MAIN-01",
+        "name": "해상 엄호",
+        "category": "defense",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "경갑을 이용해 이동하며 동료의 측면을 지킨다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "백범선 해상호위조합",
+          "appearance": "여26 검은 곱슬 금갈 눈 경갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-042",
@@ -2108,9 +4274,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "상단 간부",
+      "specialization": "상단 간부",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-042-MAIN-01",
+        "name": "황금돛 결산",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "계약과 운임을 대조해 손실과 납기 위험을 계산한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "황금돛 상단연맹",
+          "appearance": "남52 은빛 단발 파란 눈 금실 비단",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-043",
@@ -2158,9 +4360,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "상단 실무자",
+      "specialization": "상단 실무자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-043-MAIN-01",
+        "name": "항만 수배",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "납품 명부를 확인해 물자 운송 순서를 조정한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "황금돛 상단연맹",
+          "appearance": "여33 붉은 땋은머리 갈색 눈 검은 정장",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-044",
@@ -2208,9 +4446,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-044-MAIN-01",
+        "name": "대상단 방어",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "회색다리 대상단",
+          "appearance": "남40 검은 수염 녹색 눈 모직옷",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-044-ULT-01",
+        "name": "대상단 방어 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-044-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "대상단 방어의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-045",
@@ -2258,9 +4560,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "상단 실무자",
+      "specialization": "상단 실무자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-045-MAIN-01",
+        "name": "통행 장부",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "관문별 요금과 운송 문서를 맞춰 통과 문제를 찾는다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "아르덴슈타인 백작령",
+          "lord": "비올레트 아르덴슈타인",
+          "regional_economy": "포도주·양모·통행세·수레 제작",
+          "regional_terrain": "교역 교차로와 조세 장벽",
+          "affiliation": "회색다리 대상단",
+          "appearance": "남26 은갈 머리 회청 눈 녹색 목도리",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-046",
@@ -2308,9 +4646,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "농민 활동가",
+      "specialization": "농민 활동가",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-046-MAIN-01",
+        "name": "들불 설득",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "작업복 차림으로 주민의 증언을 모아 공개 청원을 조직한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "새벽의 들불",
+          "appearance": "여31 검은 땋은머리 갈색 눈 작업복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-047",
@@ -2358,9 +4732,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "곡물 배급원",
+      "specialization": "곡물 배급원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-047-MAIN-01",
+        "name": "곡물 분배",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "밀짚 모자와 계량 도구를 이용해 배급량을 확인한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "새벽의 들불",
+          "appearance": "남45 회갈 머리 갈색 눈 밀짚 모자",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-048",
@@ -2408,9 +4818,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "광부 안전감독",
+      "specialization": "광부 안전감독",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-048-MAIN-01",
+        "name": "갱도 안전점검",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "황동 고글로 지지대와 낙석 징후를 확인한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "청회 수정회",
+          "appearance": "여34 진갈 머리 구릿빛 피부 황동 고글",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-049",
@@ -2458,9 +4904,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "노동 협상단원",
+      "specialization": "노동 협상단원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-049-MAIN-01",
+        "name": "노동 협상",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "붉은 스카프를 정리하고 작업 기록을 근거로 보상을 협상한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "청회 수정회",
+          "appearance": "남42 검은 단발 푸른 눈 붉은 스카프",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-050",
@@ -2508,9 +4990,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "어부 조합원",
+      "specialization": "어부 조합원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-050-MAIN-01",
+        "name": "그물 구호",
+        "category": "support",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "청록 작업복의 팔을 걷고 그물과 밧줄로 구조한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "흰물결 자치동맹",
+          "appearance": "여37 검정 곱슬 갈색 피부 청록 작업복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-051",
@@ -2558,9 +5076,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "항만 징세감시",
+      "specialization": "항만 징세감시",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-051-MAIN-01",
+        "name": "징세 검산",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "항만 징세 명부와 실제 하역량을 비교한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "흰물결 자치동맹",
+          "appearance": "남50 은회 머리 청록 눈 앞치마",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-052",
@@ -2608,9 +5162,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "전쟁고아 교사",
+      "specialization": "전쟁고아 교사",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-052-MAIN-01",
+        "name": "전쟁고아 돌봄",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "회백 성의 차림으로 아이들을 진정시키고 안전하게 이동시킨다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "전쟁유족 공동구호회",
+          "appearance": "여28 흑발 녹색 눈 회백 성의",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-053",
@@ -2658,9 +5248,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중재 서기관",
+      "specialization": "중재 서기관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-053-MAIN-01",
+        "name": "중재 기록",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "남색 코트의 문서철에 양측 합의와 미합의 조건을 분리한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "세국 전쟁중재회",
+          "appearance": "남49 긴 회발 갈색 눈 남색 코트",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-054",
@@ -2708,9 +5334,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "전시 번역관",
+      "specialization": "전시 번역관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-054-MAIN-01",
+        "name": "전시 통역",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "붉은 필기첩으로 서로 다른 말과 군사 용어를 교차 확인한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "세국 전쟁중재회",
+          "appearance": "여32 검은 웨이브 청회 눈 붉은 필기첩",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-055",
@@ -2758,9 +5420,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "도서 상인",
+      "specialization": "도서 상인",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-055-MAIN-01",
+        "name": "도서 감별",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "보라 가방에서 견본을 꺼내 필사와 위조 흔적을 비교한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "고요한 부엉이",
+          "appearance": "남36 백갈 단발 갈색 눈 보라 가방",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-056",
@@ -2808,9 +5506,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급 관료",
+      "specialization": "하급 관료",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-056-MAIN-01",
+        "name": "칙령 정리",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "금테 안경으로 조항을 확인하고 필요한 공문을 작성한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "발렌하르트 공작가",
+          "appearance": "남43 금테 안경 백회 머리 청색 외투",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-057",
@@ -2858,9 +5592,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "치료사",
+      "specialization": "치료사",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-057-MAIN-01",
+        "name": "변경 응급처치",
+        "category": "support",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "털망토를 깔고 동상과 외상을 응급 처치한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "노르발트 변경백가",
+          "appearance": "여38 밤갈 곱슬 황갈 눈 털망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-058",
@@ -2908,9 +5678,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "곡창 감독관",
+      "specialization": "곡창 감독관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-058-MAIN-01",
+        "name": "곡창 검수",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "장부가방의 명부와 곡물 저장 상태를 맞춘다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "엘름베르크 백작가",
+          "appearance": "남29 금발 녹색 눈 장부가방",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-059",
@@ -2958,9 +5764,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "장부 보조원",
+      "specialization": "장부 보조원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-059-MAIN-01",
+        "name": "수입 대조",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "흰 조끼 차림으로 입출고 수량과 장부를 검산한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "솔메리아 백작가",
+          "appearance": "여25 은갈 머리 갈색 눈 흰 조끼",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-060",
@@ -3008,9 +5850,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "외교 서기관",
+      "specialization": "외교 서기관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-060-MAIN-01",
+        "name": "사절 조율",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "남청 제복을 갖추고 교섭 발언과 조건을 조정한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "루메린 왕실",
+          "appearance": "남41 흑갈 장발 녹색 눈 남청 제복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-061",
@@ -3058,9 +5936,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "공방 조달관",
+      "specialization": "공방 조달관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-061-MAIN-01",
+        "name": "공방 조달",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "부품 규격과 납품량을 비교해 대체 조달을 정한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "드라켄 왕실",
+          "appearance": "남46 회색 단발 빙청 눈 남색 코트",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-062",
@@ -3108,9 +6022,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "선박 의사",
+      "specialization": "선박 의사",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-062-MAIN-01",
+        "name": "선박 응급처치",
+        "category": "support",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "푸른 가방의 도구로 흔들리는 배 안에서 지혈한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "아쿠아렌 주민",
+          "appearance": "여27 갈색 단발 녹색 눈 푸른 가방",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-063",
@@ -3158,9 +6108,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "감시탑 목수",
+      "specialization": "감시탑 목수",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-063-MAIN-01",
+        "name": "감시탑 보강",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "두꺼운 장갑으로 손상 목재를 다루고 지지대를 보강한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "칼트하임 주민",
+          "appearance": "남56 백발 검은 눈 두꺼운 장갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-064",
@@ -3208,9 +6194,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "약초 재배자",
+      "specialization": "약초 재배자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-064-MAIN-01",
+        "name": "약초 선별",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "올리브 작업복을 걷고 식물 상태를 비교해 재배와 채취를 정한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "세르반 주민",
+          "appearance": "여33 검은 땋은머리 회색 눈 올리브 작업복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-065",
@@ -3258,9 +6280,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "교량 통행인",
+      "specialization": "교량 통행인",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-065-MAIN-01",
+        "name": "교량 발판",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "짐의 무게를 옮기며 흔들리는 교량을 조심스럽게 통과한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "실베른 주민",
+          "appearance": "남19 갈색 곱슬 녹색 눈 회색 후드",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-066",
@@ -3308,9 +6366,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-066-MAIN-01",
+        "name": "곡창길 압박",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "갈색 갑옷으로 길목을 막고 강한 내려치기로 호위를 몰아낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "곡창길 약탈단",
+          "appearance": "남41 흉터난 코 검은 머리 갈색 갑옷",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-066-ULT-01",
+        "name": "곡창길 압박 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-066-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "갈색 갑옷으로 길목을 막고 강한 내려치기로 호위를 몰아낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "갈색 갑옷으로 길목을 막고 강한 내려치기로 호위를 몰아낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "곡창길 압박의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-067",
@@ -3358,9 +6480,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "도적 궁수",
+      "specialization": "도적 궁수",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-067-MAIN-01",
+        "name": "관문 매복궁",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "누더기 망토로 몸을 가리고 준비한 한 발을 쏜다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "아르덴슈타인 백작령",
+          "lord": "비올레트 아르덴슈타인",
+          "regional_economy": "포도주·양모·통행세·수레 제작",
+          "regional_terrain": "교역 교차로와 조세 장벽",
+          "affiliation": "관문길 도적단",
+          "appearance": "남29 회갈 머리 금갈 눈 누더기 망토",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-068",
@@ -3408,9 +6566,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "매복 전투원",
+      "specialization": "매복 전투원",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-068-MAIN-01",
+        "name": "산길 급습",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "검정 가죽갑의 기동성으로 사각에서 찌르고 이탈한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "산길 약탈단",
+          "appearance": "여32 흑발 뺨 흉터 검정 가죽갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-069",
@@ -3458,9 +6652,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "수호검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-069-MAIN-01",
+        "name": "탈영병 반격",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "파손 철갑의 멀쩡한 부위로 받아내고 거칠게 반격한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "전장 탈영병단",
+          "appearance": "남38 삭발 탁한 푸른 눈 파손 철갑",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-069-ULT-01",
+        "name": "탈영병 반격 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-069-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "파손 철갑의 멀쩡한 부위로 받아내고 거칠게 반격한다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "파손 철갑의 멀쩡한 부위로 받아내고 거칠게 반격한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "탈영병 반격의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-070",
@@ -3508,9 +6766,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "위조 계약인",
+      "specialization": "위조 계약인",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-070-MAIN-01",
+        "name": "계약 위조",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "푸른 후드 아래 서류의 인장과 문구를 흉내 낸다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "항만 밀수단",
+          "appearance": "여35 자색 머리 은색 눈 푸른 후드",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-071",
@@ -3558,9 +6852,73 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "knight",
+      "realm": "basic",
+      "circle": 0,
+      "combat_rank": "베이직 나이트",
+      "specialization": "정검",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-071-MAIN-01",
+        "name": "갑판 강습",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "붉은 허리띠를 낮게 묶고 상대를 선측 쪽으로 몰아낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "남동 해적단",
+          "appearance": "남43 검은 수염 흰쪽 눈 붉은 허리띠",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": {
+        "id": "ER-NPC-071-ULT-01",
+        "name": "갑판 강습 · 결전식",
+        "element": null,
+        "current_eligible": false,
+        "learned": false,
+        "equipped": false,
+        "source_skill": "ER-NPC-071-MAIN-01",
+        "usage_rules": "ULTIMATE_SYSTEM.md",
+        "low": {
+          "tier": "expert",
+          "action": "붉은 허리띠를 낮게 묶고 상대를 선측 쪽으로 몰아낸다",
+          "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
+          "scope": "future_hypothetical"
+        },
+        "high": {
+          "tier": "hyper",
+          "action": "붉은 허리띠를 낮게 묶고 상대를 선측 쪽으로 몰아낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+          "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
+          "scope": "future_hypothetical",
+          "unique_phenomenon": {
+            "name": "갑판 강습의 검결",
+            "effect": "대표 동작의 방향에 마나를 응축하여 한 궤적을 유지한다. 고유 현상의 구체 한계는 근거리 한 교환으로 제한한다.",
+            "cost": "마나 유지가 끊기거나 자세가 무너지면 해제. 광역 절대 방어·자동 추적 없음.",
+            "status": "future_hypothetical_only"
+          }
+        },
+        "note": "기술 연출 설계 확정. 현재 학습·장착을 뜻하지 않으며 기존 저장의 기술·경지·스탯을 자동 변경하지 않는다."
+      }
     },
     {
       "id": "ER-NPC-072",
@@ -3608,9 +6966,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "해적 투척수",
+      "specialization": "해적 투척수",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-072-MAIN-01",
+        "name": "선측 투척",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "낡은 가죽조끼 차림으로 가까운 표적에 투척물을 던진다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "남동 해적단",
+          "appearance": "여24 잿빛 단발 갈색 눈 낡은 가죽조끼",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-073",
@@ -3658,9 +7052,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "갱도 파괴자",
+      "specialization": "갱도 파괴자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-073-MAIN-01",
+        "name": "갱도 파쇄",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "광부 도구로 약한 지지점을 노려 통로를 막는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "광맥 도굴단",
+          "appearance": "남47 회색 수염 검은 눈 광부 헬멧",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-074",
@@ -3708,9 +7138,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "기계 도둑",
+      "specialization": "기계 도둑",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-074-MAIN-01",
+        "name": "장치 해체",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "금속 도구띠의 도구로 잠금 장치를 분해한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "공방 절도단",
+          "appearance": "남21 적발 호박 눈 금속 도구띠",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-075",
@@ -3758,9 +7224,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "사기 협상가",
+      "specialization": "사기 협상가",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-075-MAIN-01",
+        "name": "귀족 사칭",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "자주 예복과 호칭으로 신뢰를 얻으려 시도한다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "발렌하르트 공작령",
+          "lord": "카시안 발렌하르트",
+          "regional_economy": "제련·말 거래·고급 갑옷·징세 대행",
+          "regional_terrain": "왕도 주변 산업·기사학교와 관료 파벌",
+          "affiliation": "귀족 사칭단",
+          "appearance": "여34 금갈 장발 청록 눈 자주 예복",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-076",
@@ -3808,9 +7310,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "마차 습격자",
+      "specialization": "마차 습격자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-076-MAIN-01",
+        "name": "수레길 창격",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "녹슨 창의 사거리를 살려 좁은 수레길을 찌른다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "전쟁 물자 도적단",
+          "appearance": "남36 흑갈 머리 녹색 눈 녹슨 창",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-077",
@@ -3858,9 +7396,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "불법 수렵꾼",
+      "specialization": "불법 수렵꾼",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-077-MAIN-01",
+        "name": "설산 추격궁",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "모피 외투로 몸을 덮고 눈밭의 발자국을 따라 사냥한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "설산 밀렵단",
+          "appearance": "여28 백발 은안 모피 외투",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-078",
@@ -3908,9 +7482,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "유적 약탈자",
+      "specialization": "유적 약탈자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-078-MAIN-01",
+        "name": "유적 지렛대",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "황동 장비로 닫힌 틈을 열고 낙하 함정을 살핀다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "위험지대 불법 탐사대",
+          "appearance": "남40 굵은 턱수염 흑안 황동 장비",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-079",
@@ -3958,9 +7568,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "civilian",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "위조품 판매자",
+      "specialization": "위조품 판매자",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-079-MAIN-01",
+        "name": "가짜 경매",
+        "category": "profession",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "화려한 반지와 말솜씨로 물건의 가치를 부풀린다",
+        "limits": "도구·시간·재료와 실제 정보가 필요하며 성공과 결과를 자동 보장하지 않는다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "가짜 경매단",
+          "appearance": "남50 은발 녹안 화려한 반지",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-080",
@@ -4008,9 +7654,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "martial",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "거짓 검문관",
+      "specialization": "거짓 검문관",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-080-MAIN-01",
+        "name": "검문 위협",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "가짜 휘장과 짧은 무기로 행인을 압박한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "전시 강도단",
+          "appearance": "여31 검청 단발 회안 가짜 휘장",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "initial_background_training"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-081",
@@ -4058,9 +7740,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-081-MAIN-01",
+        "name": "서리갈기 돌진",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "눈밭에서 낮게 달려들어 턱으로 물고 늘어진다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "북방 야생 마수",
+          "appearance": "은회 갈기와 눈송이 털 푸른 눈 네발 늑대",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-082",
@@ -4108,9 +7826,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-082-MAIN-01",
+        "name": "백각 밀치기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "거대한 뿔을 낮춰 전방의 상대를 밀어낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "노르발트 변경백령",
+          "lord": "에드릭 노르발트",
+          "regional_economy": "목재·모피·산양·빙설초",
+          "regional_terrain": "산악 나무 요새와 겨울 식량난",
+          "affiliation": "북방 야생 마수",
+          "appearance": "하얀 거대 뿔과 푸른 맥동 문양 설산 사슴",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-083",
@@ -4158,9 +7912,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-083-MAIN-01",
+        "name": "철가죽 들이받기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "단단한 등피로 충격을 견디며 엄니를 들이민다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "평야 야생 마수",
+          "appearance": "먹색 판금 같은 등피 회색 엄니",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-084",
@@ -4208,9 +7998,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-084-MAIN-01",
+        "name": "곡창 잠입",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "좁은 저장 틈으로 숨고 꼬리로 균형을 잡아 달아난다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "엘름베르크 백작령",
+          "lord": "마르타 엘름베르크",
+          "regional_economy": "밀·보리·치즈·종자",
+          "regional_terrain": "풍작이나 군량 징발과 소작료 갈등",
+          "affiliation": "평야 야생 마수",
+          "appearance": "검은 긴 꼬리 붉은 수염 번뜩이는 쥐",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-085",
@@ -4258,9 +8084,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-085-MAIN-01",
+        "name": "잿불 분사",
+        "category": "attack",
+        "element": "불",
+        "element_status": "established",
+        "action": "등가시 가까이에 열을 모아 짧은 불꽃을 뿜는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "벨로아",
+          "national_trait": "농경·기병·기사 문화",
+          "lordship": "로젠펠트 후작령",
+          "lord": "율리안 로젠펠트",
+          "regional_economy": "군마·가죽·사료·창 제조",
+          "regional_terrain": "요새 연쇄와 난민 유입, 군량 소모",
+          "affiliation": "전장 야생 마수",
+          "appearance": "진홍 등가시 황금 세로 동공 도마뱀",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-086",
@@ -4308,9 +8170,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-086-MAIN-01",
+        "name": "협곡 급강하",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "돌빛 날개를 접고 발톱으로 한 목표를 움켜잡는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "실베른 백작령",
+          "lord": "에밀 실베른",
+          "regional_economy": "통행료·고원 약초·정밀공구",
+          "regional_terrain": "험로·협곡 다리·상단 통제",
+          "affiliation": "협곡 야생 마수",
+          "appearance": "돌빛 날개 금빛 뿔발톱의 거대 독수리",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-087",
@@ -4358,9 +8256,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-087-MAIN-01",
+        "name": "광충 섬광",
+        "category": "attack",
+        "element": "빛",
+        "element_status": "established",
+        "action": "수정 껍질에 모은 빛을 짧게 터뜨려 접근자를 교란한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "베르크슈타인 후작령",
+          "lord": "발터 베르크슈타인",
+          "regional_economy": "마나광·철광·대포 부품·석재",
+          "regional_terrain": "협곡의 장대 요새, 채굴민 임금 분쟁",
+          "affiliation": "광산 야생 마수",
+          "appearance": "투명 수정 껍질 자줏빛 다리의 광충",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-088",
@@ -4408,9 +8342,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-088-MAIN-01",
+        "name": "수정 진동망",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "다리와 거미줄을 통해 가까운 진동을 감지한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "아이젠크로네 공작령",
+          "lord": "셀리아 아이젠크로네",
+          "regional_economy": "마도구·합금·수정 가공·기계",
+          "regional_terrain": "대공방과 마법탑·노동자 파업",
+          "affiliation": "광산 야생 마수",
+          "appearance": "청보라 수정 등딱지 다리 여덟의 거미",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-089",
@@ -4458,9 +8428,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-089-MAIN-01",
+        "name": "청전기 뿔치기",
+        "category": "attack",
+        "element": "전기",
+        "element_status": "established",
+        "action": "뿔 사이의 짧은 전류를 접촉한 상대에 흘린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "고원 야생 마수",
+          "appearance": "청흑 뿔과 청백 전류 털의 산양",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-090",
@@ -4508,9 +8514,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-090-MAIN-01",
+        "name": "안개 회피",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "막날개를 접고 흐린 시야 속으로 급히 물러선다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "드라켄",
+          "national_trait": "고원·마나 광맥·공방·요새",
+          "lordship": "칼트하임 변경백령",
+          "lord": "하인리히 칼트하임",
+          "regional_economy": "광산 경비·냉철·희귀 광석 선별",
+          "regional_terrain": "산길 관문·오염 지역 접근 통제",
+          "affiliation": "마나 이상지대 변두리",
+          "appearance": "회색 반투명 막날개 흰 눈 박쥐",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-091",
@@ -4558,9 +8600,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "중급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-091-MAIN-01",
+        "name": "해풍 활공",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "작은 날개와 지느러미로 바람을 타고 짧게 덮친다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "연안 야생 마수",
+          "appearance": "청록 비늘 작은 지느러미날개 긴 뱀",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-092",
@@ -4608,9 +8686,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-092-MAIN-01",
+        "name": "암초 집게",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "단단한 집게로 붙들고 암초 틈으로 물러난다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "항만 야생 마수",
+          "appearance": "산호빛 등갑 푸른 부리의 게",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-093",
@@ -4658,9 +8772,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "상급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-093-MAIN-01",
+        "name": "심해 휘감기",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "긴 몸으로 감고 이빨로 고정해 움직임을 제한한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "벨마리나 후작령",
+          "lord": "도미니크 벨마리나",
+          "regional_economy": "향신료·조선·해외 무역·보험",
+          "regional_terrain": "거대 부두, 해적 침입과 계약 사기",
+          "affiliation": "심해 야생 마수",
+          "appearance": "검은 광택 피부 백진주 이빨의 장어",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-094",
@@ -4708,9 +8858,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-094-MAIN-01",
+        "name": "은비늘 급류",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "지느러미로 물살을 타며 짧게 돌진한다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "아쿠아렌 백작령",
+          "lord": "티에라 아쿠아렌",
+          "regional_economy": "조선·소금·어획·선박 수리",
+          "regional_terrain": "조선소와 항해 학교, 숙련 선원 부족",
+          "affiliation": "연안 야생 마수",
+          "appearance": "은청 비늘과 청록 지느러미의 수중어",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-095",
@@ -4758,9 +8944,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-095-MAIN-01",
+        "name": "밤등불 점멸",
+        "category": "attack",
+        "element": "빛",
+        "element_status": "established",
+        "action": "날개의 빛무늬를 점멸시켜 추적 방향을 흐린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "솔메리아 백작령",
+          "lord": "라파엘 솔메리아",
+          "regional_economy": "금융·과수·비단·학술 후원",
+          "regional_terrain": "왕도 남쪽 상업·농경 혼합 지대, 고리대 문제",
+          "affiliation": "남부 야생 마수",
+          "appearance": "황금 등불무늬 검푸른 커다란 나방",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-096",
@@ -4808,9 +9030,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "하급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-096-MAIN-01",
+        "name": "모래 꼬리막",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "꼬리로 모래를 흩뿌려 시야를 가린다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "루메린",
+          "national_trait": "항해·교역·구호·항만",
+          "lordship": "세르반 공작령",
+          "lord": "이사벨 세르반",
+          "regional_economy": "마차·올리브·군량 계약·도로 관세",
+          "regional_terrain": "전략적 내륙 요새, 징집 반발",
+          "affiliation": "남부 들판 야생 마수",
+          "appearance": "황토 털 네 꼬리 작은 여우",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-097",
@@ -4858,9 +9116,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "엘리트",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-097-MAIN-01",
+        "name": "원시림 뿌리결박",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "뿌리다리를 펼쳐 가까운 이동로를 붙잡는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "문명권 밖",
+          "national_trait": "기존 생태 및 마나 이상지대",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "북중 원시림",
+          "appearance": "움직이는 고목 몸통 녹빛 눈 깊은 뿌리다리",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-098",
@@ -4908,9 +9202,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "상급",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-098-MAIN-01",
+        "name": "심연고리 압박",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "뿔고리와 체중으로 상대를 몰아낸다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "문명권 밖",
+          "national_trait": "기존 생태 및 마나 이상지대",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "북중 원시림",
+          "appearance": "검은 뿔고리 붉은 눈 이끼털의 사슴",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-099",
@@ -4958,9 +9288,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "미스틱",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-099-MAIN-01",
+        "name": "균열 잔상",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "여섯 발의 급격한 방향 전환과 짧은 마나 잔상으로 추적을 흔든다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "문명권 밖",
+          "national_trait": "기존 생태 및 마나 이상지대",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "북동 마나 이상지대",
+          "appearance": "청백 균열무늬 검은 털 여섯발 사냥개",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     },
     {
       "id": "ER-NPC-100",
@@ -5008,9 +9374,45 @@
         "weapon_attack": 0,
         "technique_bonus": 0,
         "equipment_hp_bonus": 0,
-        "status_hp_bonus": 0
+        "status_hp_bonus": 0,
+        "realm_damage_multiplier": 1
       },
-      "level_hp_bonus_method": "reconstructed_approximation"
+      "level_hp_bonus_method": "reconstructed_approximation",
+      "combat_class": "monster",
+      "realm": "none",
+      "circle": 0,
+      "combat_rank": "엘리트",
+      "specialization": "생태 기술",
+      "setting_status": "established_v1_user_requested",
+      "main_skill": {
+        "id": "ER-NPC-100-MAIN-01",
+        "name": "석갑 통로봉쇄",
+        "category": "attack",
+        "element": null,
+        "element_status": "non_elemental",
+        "action": "고대 문자 돌갑각을 세우고 거대한 몸으로 던전 통로를 막는다",
+        "limits": "시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다.",
+        "cost_rule": "실제 사용 범위와 기술 비용을 GM 사건에 기록한다. 미정 위력·피해·회복 수치는 자동 지급하지 않는다.",
+        "setting_basis": {
+          "kingdom": "문명권 밖",
+          "national_trait": "기존 생태 및 마나 이상지대",
+          "lordship": null,
+          "lord": "",
+          "regional_economy": "",
+          "regional_terrain": "",
+          "affiliation": "북서 고대 던전",
+          "appearance": "고대 문자 돌갑각 금빛 촉각의 거대 곤충",
+          "references": [
+            "characters/npc_roster_100.json",
+            "KINGDOMS.md",
+            "LORDSHIPS.md",
+            "FACTIONS.md",
+            "CLASS_GROWTH.md"
+          ]
+        },
+        "learning_status": "species_behavior"
+      },
+      "ultimate_design": null
     }
   ],
   "rebalance_notes": [

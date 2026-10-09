@@ -10,9 +10,9 @@ const state=()=>({...defaults(),gameState:{date:'1-1-1',region:'W1',place:'노�
 const normal=(i)=>normalizeQuest({id:'ordinary-'+i,title:'현장 조사 '+i,summary:'실제 증거 조사',type:'investigate',origin:'guild_board',rank:'F',region_id:'W1',status:'completed',claim_event_id:'claim-'+i,objectives:[{id:'clue',description:'현장 단서',current:1,target:1,verification:{kind:'clue',target_id:'proof-'+i},evidence_ids:['proof-'+i]}],reward:{xp:0,currency:0,item_ids:[],materials:[],affection_effects:[]}});
 const unlocked=()=>{const s=state();s.quest_log=Array.from({length:5},(_,i)=>normal(i));s.quest_event_ids=s.quest_log.map(q=>q.claim_event_id);return s;};
 const rawScene=(extra={})=>({schema_version:1,type:'ercedia_scene',scene_id:'test',location:'노르발트',time:'오전',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'현장 사건 확인'}],choices:[],game_state:{date:'1-1-1',region:'W1',place:'노르발트'},...extra});
-test('24 common NPCs have their own standings, placement, unknown combat stats and persistent profiles',()=>{
+test('24 common NPCs have their own standings, placement, assigned initial stats, concealed identities and persistent profiles',()=>{
   const common=npcCatalog.filter(p=>p.id.startsWith('ER-COM-'));assert.equal(common.length,24);
-  for(const p of common){assert.ok(characterVisual(p.id).path.includes(p.id));assert.equal(placementFor(p.id).location_id,p.location_id);assert.equal(p.level,null);assert.equal(p.hp,null);assert.equal(p.strength,null);normalizeScene(rawScene({npc:{id:p.id,outfit:'none',emotion:'base',speaker:p.name}}));}
+  for(const p of common){assert.ok(characterVisual(p.id).path.includes(p.id));assert.equal(placementFor(p.id).location_id,p.location_id);if(['ER-COM-015','ER-COM-024'].includes(p.id)){assert.equal(p.level,null);assert.equal(p.hp,null);assert.equal(p.strength,null);}else{assert.ok(p.level>0);assert.ok(p.hp>0);assert.ok(p.strength>0);}normalizeScene(rawScene({npc:{id:p.id,outfit:'none',emotion:'base',speaker:p.name}}));}
   const s=state();assert.ok(npcContext(s).nearby_npcs.some(p=>p.id==='ER-COM-001'));updateNPC(s,'ER-COM-001',{hp:25,maxHp:30});assert.equal(resolveNPC(normalize(s),'ER-COM-001').hp,25);
 });
 test('five unique verified ordinary completions unlock an epic; repeats, foreign quests and other reputations do not',()=>{
