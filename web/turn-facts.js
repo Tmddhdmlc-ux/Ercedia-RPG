@@ -1,4 +1,5 @@
 import {narrativeFocus} from './narrative-context.js';
+import {isRecoveryAction,recoveryFacts} from './recovery-context.js';
 import {itemCatalog,catalogItem} from './item-catalog.js';
 import {currencyRules} from './economy.js';
 import {npcSnapshot} from './npc-model.js';
@@ -7,6 +8,7 @@ import {npcSnapshot} from './npc-model.js';
 export function turnFacts(state,domains,action='',nearbyActors=[]){
  const facts={},focus=narrativeFocus(state);
  if(Object.keys(focus).length)facts.narrative_focus=focus;
+ if(isRecoveryAction(action))facts.recovery_wire=recoveryFacts(state);
  if(domains.crafting||domains.trade||/장비|무기|검|스태프|기술서|카탈로그/.test(action)){
   const owned=new Set((state.inventory||[]).map(i=>i.catalog_id||i.id));
   const named=itemCatalog.filter(i=>action.includes(i.id)||action.includes(i.name));
