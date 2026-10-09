@@ -6,6 +6,10 @@
 
 ## 설치
 
+UI 2.1.13: 인물 이름과 직접 대사는 파란색, 실제 사용 기술명은 전투 화면 중앙에 크게 표시합니다. 피해 숫자는 타격 시 상대 스탠딩 위에 표시하고, 스탠딩을 숨긴 주인공은 자신의 자원바 위에 표시합니다. 원본 전투 판정·승패·보상은 변경하지 않습니다.
+
+상단이 `런처 1.1.6 · UI 2.1.8`이라면 아래 설치 파일로 런처를 **한 번 1.2.2로 갱신**한 뒤 ChatGPT를 새로고침하고 `최신 버전 확인 → 업데이트 적용`을 누르세요. 진행 중 요청/전투가 있으면 완료하거나 대기를 해제한 뒤 적용합니다. 이후 일반 UI 변경은 런처 재설치 없이 갱신할 수 있습니다.
+
 1. Chrome 또는 Edge에 Tampermonkey를 설치하고 확장 사용을 켭니다. 브라우저에서 유저스크립트 실행 권한을 요구하면 Tampermonkey의 공식 안내에 따라 설정합니다. [공식 문서](https://www.tampermonkey.net/documentation.php)
 2. [런처 설치 파일](https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.user.js)을 엽니다. 자동 설치 화면이 열리지 않으면 Tampermonkey에서 새 스크립트를 만들고 파일 전체를 붙여넣어 저장합니다.
 3. `https://chatgpt.com/`을 새로고침합니다. 처음에는 GitHub의 게임 UI를 다운로드하므로 인터넷 연결이 필요합니다. localhost 서버는 설치형 런처에 필요하지 않습니다.

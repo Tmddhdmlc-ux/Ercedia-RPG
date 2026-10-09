@@ -3,13 +3,14 @@ import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
 import {resolveBackground,backgroundURL} from './location-art.js';
 import {appendItemIcon} from './item-art-ui.js';
+import {battleCommentary} from './battle-presentation.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
-  const duration=e=>e.kind==='unique'?1800:e.result==='critical'?1300:1000;
-  function clearAnimation(){for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';} $('battle-cutin').hidden=true;}
+  const duration=e=>e.kind==='unique'?2200:e.skill_id?1600:e.result==='critical'?1300:1000;
+  function clearAnimation(){for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
   function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
   function save(){persist();chat.controls();}
   function art(slot,p){
@@ -32,22 +33,23 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     art(slots[0],allied);art(slots[1],enemy);
     for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
     for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
-    $('speaker').textContent=actor.name;$('emotion').textContent='전투 중계';$('line').textContent=e.narration;
+    $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);
+    const skill=actor.skills.find(s=>s.id===e.skill_id);if(skill){$('battle-cutin').hidden=false;$('battle-cutin').textContent=skill.name;$('battle-cutin').dataset.kind=e.kind;animate($('battle-cutin'),[{opacity:0,transform:'translateY(10px) scale(.9)'},{opacity:1,transform:'translateY(0) scale(1)',offset:.15},{opacity:1,offset:.65},{opacity:0,transform:'translateY(-8px) scale(1.03)'}],duration(e)*.8);}
     $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
     const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
     if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'translateX(0)'},{transform:`translateX(${direction*65}px)`,offset:.32},{transform:'translateX(0)'}],duration(e));
     if(active&&e.kind==='magic'){active.effect.className='battle-effect casting '+e.element;animate(active.effect,[{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'scale(1.15)'},{opacity:0}],duration(e));}
-    if(active&&e.kind==='unique'){$('battle-cutin').hidden=false;$('battle-cutin').textContent=actor.name+' · '+actor.skills.find(s=>s.id===e.skill_id).name;animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.18)',offset:.35},{transform:'scale(1)'}],duration(e));active.effect.className='battle-effect unique';}
+    if(active&&e.kind==='unique'){animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.18)',offset:.35},{transform:'scale(1)'}],duration(e));active.effect.className='battle-effect unique';}
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
   function impact(){
     const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;showResources(battleFrame(b,playback.index+1));
     const target=slots.find(s=>s.id===e.target);
-    if(target){target.number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';target.number.dataset.critical=String(e.result==='critical');
+    if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
       else if(e.result==='block'||e.kind==='defend'){target.effect.className='battle-effect barrier';animate(target.effect,[{opacity:0},{opacity:1},{opacity:0}],duration(e)*.55);}
-      else if(e.damage)animate(target.root,[{transform:'translateX(0)'},{transform:`translateX(${target===slots[0]?-20:20}px)`},{transform:'translateX(0)'}],duration(e)*.55);
-      if(target.number.textContent)animate(target.number,[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.2},{opacity:0,transform:'translateY(-30px)'}],duration(e)*.55);
+      else if(e.damage){animate(target.root,[{transform:'translateX(0)'},{transform:`translateX(${target===slots[0]?-20:20}px)`},{transform:'translateX(0)'}],duration(e)*.55);if(!target.root.hidden){target.effect.className='battle-effect strike '+(e.element||'physical');animate(target.effect,[{opacity:0,transform:'scale(.65) rotate(-12deg)'},{opacity:1,transform:'scale(1)',offset:.2},{opacity:0,transform:'scale(1.2) rotate(12deg)'}],400);}}
+      if(number.textContent)animate(number,[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.2},{opacity:0,transform:'translateY(-30px)'}],duration(e)*.55);
     }
     if(e.result==='critical')animate(stage,[{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],300);
   }
@@ -55,7 +57,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(!battleIsActive(state)){stop();return;}
     if(document.querySelector('.game').dataset.title==='active'){lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)*.8)$('battle-cutin').hidden=true;if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){
@@ -82,11 +84,11 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     renderBackground(resolveBackground(p.scene,state));
     $('battle-speed').value=String(p.speed);$('battle-pause').textContent=p.paused?'재개':'일시정지';$('battle-mode').textContent=p.manual===false?'자동 재생 중':'한 턴씩 읽기';$('battle-mode').setAttribute('aria-pressed',String(p.manual!==false));
     if(identity!==p){stop();identity=p;cards=new Map();$('battle-hud').replaceChildren();
-      for(const participant of p.scene.battle.participants){const root=document.createElement('article'),title=document.createElement('strong'),meta=document.createElement('span'),hp=document.createElement('span'),bar=document.createElement('progress'),mp=document.createElement('span'),mpBar=document.createElement('progress');root.className='battle-participant '+participant.side;title.textContent=participant.name;meta.textContent=`Lv.${participant.level} · ${participant.rank} · 속도 ${participant.speed} · ×${({none:1,basic:1,expert:1.25,hyper:1.65,master:2.2})[participant.realm]*(participant.creature_multiplier??1)}`;bar.className='battle-hp-bar';mpBar.className='battle-mp-bar';bar.setAttribute('aria-label',participant.name+' 체력');mpBar.setAttribute('aria-label',participant.name+' 마나');root.append(title,meta,hp,bar,mp,mpBar);$('battle-hud').append(root);cards.set(participant.id,{root,hp,bar,mp,mpBar});}
+      for(const participant of p.scene.battle.participants){const root=document.createElement('article'),title=document.createElement('strong'),meta=document.createElement('span'),hp=document.createElement('span'),bar=document.createElement('progress'),mp=document.createElement('span'),mpBar=document.createElement('progress'),number=document.createElement('span');number.className='battle-number battle-hud-number';number.setAttribute('aria-live','polite');root.className='battle-participant '+participant.side;title.textContent=participant.name;meta.textContent=`Lv.${participant.level} · ${participant.rank} · 속도 ${participant.speed} · ×${({none:1,basic:1,expert:1.25,hyper:1.65,master:2.2})[participant.realm]*(participant.creature_multiplier??1)}`;bar.className='battle-hp-bar';mpBar.className='battle-mp-bar';bar.setAttribute('aria-label',participant.name+' 체력');mpBar.setAttribute('aria-label',participant.name+' 마나');root.append(title,meta,hp,bar,mp,mpBar,number);$('battle-hud').append(root);cards.set(participant.id,{root,hp,bar,mp,mpBar,number});}
       eventStart();lastTime=0;raf=requestAnimationFrame(tick);
     }else{
       // Other UI updates must not overwrite the one-line commentary.
-      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('emotion').textContent='전투 중계';$('line').textContent=e.narration;}
+      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);}
     }
   }
   function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}

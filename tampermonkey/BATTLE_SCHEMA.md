@@ -50,7 +50,7 @@
 - counter는 바로 앞 사건의 block 대상이 공격자에게 반격하는 별도 사건.
 - magic element: water/fire/wind/electric/dark/light.
 - unique: 하이퍼/마스터가 이미 보유한 고유능력만. 근거/비용/한계를 기록.
-- narration: 화면에서 관측 가능한 중계 한 문장. 피해, MP 감소와 일치. 기술/연계 이름을 포함해도 된다.
+- narration: 화면에서 관측 가능한 공격·회피·방어 중계. 피해량과 HP/MP 숫자는 문장에 나열하지 않는다. 수치는 damage와 *_after에 정확히 기록하며 타격 시 피해 숫자·자원바로 표시한다. 기존 응답의 수치 안내 문장은 화면에서만 걸러내고 원본 사건은 보존한다. 실제 보유 skill_id의 기술명은 중앙에 크게 표시한다.
 
 ### 피해 증빙 calculation
 
