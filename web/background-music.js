@@ -1,10 +1,11 @@
 export const musicTracks=Object.fromEntries([
   ['title','타이틀 · 에르세디아의 서막'],
+  ['norvalt','노르발트 · 노르발트의 설원'],
   ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
 ].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
-export function sceneMusic({battle=false,title=false,intro=false,background='',place='',time=''}={}){
+export function sceneMusic({battle=false,title=false,intro=false,background='',region='',place='',time=''}={}){
   if(title||intro)return 'title';
   if(battle&&!title)return 'battle';
   if(!title){
@@ -12,6 +13,7 @@ export function sceneMusic({battle=false,title=false,intro=false,background='',p
     if(background==='IMG-SHARED-09'||/국왕실|왕실|왕궁|알현실/.test(place))return 'royal';
     if(/극동/.test(place))return 'farEast';
     if(/미탐색|미개척|미탐사/.test(place))return 'unexplored';
+    if(region==='W1'||background?.startsWith('IMG-W1-')||/노르발트/.test(place))return 'norvalt';
   }
   const hour=String(time).match(/(?:^|\s)(\d{1,2}):\d{2}/);
   return /밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6))?'night':'village';

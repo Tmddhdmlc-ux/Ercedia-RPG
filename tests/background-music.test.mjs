@@ -45,3 +45,18 @@ test('music activation survives settings clicks and failed loads, but respects m
  mountBackgroundMusic(root,{storage:{getItem:()=>JSON.stringify({enabled:false})},audioFactory:()=>({select(){},status:()=>({enabled:false,volume:.22}),enable(){throw Error('manual mute');}})});listeners.click(gesture);
  }finally{globalThis.document=oldDoc;globalThis.MutationObserver=oldObserver;}
 });
+
+// Region is resolved from the actual background, never the selected map marker.
+test('Norvalt uses its quiet snow theme while title, creation and combat keep priority',()=>{
+  assert.equal(sceneMusic({place:'노르발트 변경백령 · 안전한 정착지'}),'norvalt');
+  assert.equal(sceneMusic({background:'IMG-W1-HUB',time:'밤'}),'norvalt');
+  assert.equal(sceneMusic({region:'W1',place:'북방 여관'}),'norvalt');
+  assert.equal(sceneMusic({region:'W2',place:'여관'}),'village');
+  assert.equal(sceneMusic({background:null,place:'노르발트 정착지'}),'norvalt');
+  assert.equal(sceneMusic({background:null,place:'일반 마을'}),'village');
+  assert.equal(sceneMusic({region:'W1',place:'국경 검문소'}),'border');
+  assert.equal(sceneMusic({region:'W1',place:'알현실'}),'royal');
+  assert.equal(sceneMusic({region:'W1',battle:true}),'battle');
+  assert.equal(sceneMusic({region:'W1',intro:true}),'title');
+  assert.equal(sceneMusic({region:'W1',title:true}),'title');
+});
