@@ -22,7 +22,7 @@ test('running campaign settings refresh discovers new rules, requires matching c
     assert.match(first.text,/새 게임이나 다음 턴을 시작하지/);assert.ok(!first.text.includes('이름·성별·직업·시작 지역은 아직 선택 전'));
     t.h.reply('scene',JSON.stringify(ack(first.requestId,{settings_loaded:{commit:'d'.repeat(40),file_count:6}})));
     assert.deepEqual(t.state,before);assert.equal(t.actions().length,2);
-    const retry=t.actions()[1];assert.match(retry.text,/현재 캠페인/);
+    const retry=t.actions()[1];assert.match(retry.text,/새 채팅방 설정 등록/);
     t.h.reply('scene',JSON.stringify(ack(retry.requestId)));
     assert.deepEqual(t.state,before);assert.equal(t.chat.isPending(),false);assert.match(t.h.get('connection-status').textContent,/동기화 완료/);
     t.chat.submit('안부를 묻는다.');

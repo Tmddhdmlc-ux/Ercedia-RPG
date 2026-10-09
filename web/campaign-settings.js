@@ -77,7 +77,7 @@ export function campaignSettingsPrompt(snapshot){
 export function legacyCampaignPrompt(snapshot){
   validateConvenienceRules(snapshot.files);
   const paths=['BOOTSTRAP.md',conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md',...snapshot.paths.filter(p=>!['BOOTSTRAP.md',conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md'].includes(p))];
-  return convenienceInstruction+'\n\n'+`이 채팅에서 새 캠페인을 시작합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n설정 원문의 공통 경로: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/\n필수 시작 문서: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/BOOTSTRAP.md\n전체 상대 경로 목록(공통 경로 뒤에 붙여 열람):\n${paths.join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
+  return convenienceInstruction+'\n\n'+`이 채팅에 에르세디아 설정을 등록합니다. 기존 캠페인과 진행이 있다면 유지합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n설정 원문의 공통 경로: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/\n필수 시작 문서: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/BOOTSTRAP.md\n전체 상대 경로 목록(공통 경로 뒤에 붙여 열람):\n${paths.join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
 }
 export function campaignNPCStates(snapshot,knownIds){
   const read=path=>JSON.parse(snapshot.files[path]||'{}');

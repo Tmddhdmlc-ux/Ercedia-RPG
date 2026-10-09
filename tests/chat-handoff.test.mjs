@@ -35,21 +35,21 @@ test('completed prologue transfers the prepared settings and completed character
   globalThis.window={location:{origin:'http://127.0.0.1:4184'},addEventListener(type,fn){messageHandler=fn;},postMessage:m=>sent.push(m)};globalThis.setTimeout=()=>0;
   try{mountChatConnection(packet().state,{embedded:false,isPending:()=>false});messageHandler({source:window,origin:window.location.origin,data:{channel:'ercedia-handoff',type:'ready',payload:{version:'1.2.1'}}});completed({detail:{settings:settings()}});assert.equal(sent.length,1);assert.equal(sent[0].type,'start');assert.equal(sent[0].payload.settings.files['WORLD.md'],'공식 세계관 원문');assert.equal(sent[0].payload.stage,undefined);assert.equal(sent[0].payload.state.player.name,'검증');assert.equal(sent[0].payload.state.introDraft,undefined);assert.ok(validateChatHandoff(sent[0].payload));assert.deepEqual(normalize(sent[0].payload.state),sent[0].payload.state);}finally{globalThis.document=oldDocument;globalThis.window=oldWindow;globalThis.setTimeout=oldTimeout;}
 });
-test('ChatGPT frame handoff queues a real request with the full settings file and requires a reading confirmation',()=>{
+test('automatic frame handoff does not send a setup request',()=>{
   const h=uiHarness();try{
     window.__ERCEDIA_CONFIG__.features=['settings-attachment'];const state=packet().state;
     mountChatUI(state,{render(){},persist(){},storage:{},embedded:true});
     h.reply('bootstrap-campaign',{settings:settings(),action:'첫 장면 시작'});
-    const action=h.messages.find(m=>m.type==='action');assert.ok(action);assert.match(action.payload.settingsFile.content,/공식 세계관 원문/);assert.match(action.payload.text,/settings_loaded/);assert.equal(h.messages.find(m=>m.type==='bootstrap-started').payload.started,true);
+    assert.equal(h.messages.some(m=>m.type==='action'),false);assert.equal(h.messages.find(m=>m.type==='bootstrap-started').payload.started,false);
   }finally{h.close();}
 });
-test('settings are sent before entering a name, and the acknowledgement cannot mutate the setup or grant assets',()=>{
+test('explicit registration can precede a name and its acknowledgement cannot change the game',()=>{
   const h=uiHarness();try{
     window.__ERCEDIA_CONFIG__.features=['settings-attachment'];const state=defaults();state.introDraft={step:'name'};const original=structuredClone(state);
     const chat=mountChatUI(state,{render(){},persist(){},storage:{},embedded:true});chat.sendSettings(settings());
-    const action=h.messages.find(m=>m.type==='action');assert.ok(action);assert.match(action.payload.text,/이름·성별·직업·시작 지역은 아직 선택 전/);assert.ok(action.payload.settingsFile);assert.equal(state.player.name,'');
+    const action=h.messages.find(m=>m.type==='action');assert.ok(action);assert.match(action.payload.text,/새 채팅방 설정 등록/);assert.ok(action.payload.settingsFile);assert.equal(state.player.name,'');
     const ack={schema_version:1,type:'ercedia_scene',scene_id:'settings-ready',reply_to:action.payload.requestId,location:'캐릭터 생성 준비',time:'시작 전',background_id:null,npc:null,dialogue:[{speaker:'시스템',text:'설정 읽기 완료'}],choices:[],settings_loaded:{commit:settings().sha,file_count:3}};
-    h.reply('scene',JSON.stringify(ack));assert.equal(chat.isPending(),false);assert.deepEqual(state,original);assert.match(h.get('connection-status').textContent,/설정 읽기 확인 완료/);
+    h.reply('scene',JSON.stringify(ack));assert.equal(chat.isPending(),false);assert.deepEqual(state,original);assert.match(h.get('connection-status').textContent,/동기화 완료/);
     delete state.introDraft;state.player.name='이후 선택한 이름';chat.setCampaignSettings(settings());chat.submit('첫 게임 장면을 시작한다');
     const second=h.messages.filter(m=>m.type==='action').at(-1);assert.equal(second.payload.settingsFile,undefined);
   }finally{h.close();}

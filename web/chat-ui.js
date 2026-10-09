@@ -15,7 +15,7 @@ import {planWorldScene} from './world-engine.js';
 import {planNPCLife} from './npc-life.js';
 function setupSettingsPrompt(requestId){return '새 게임 시작 버튼으로 세계관 설정 읽기를 시작합니다. 첨부 설정 전체를 먼저 읽고 GM 전용 비밀을 공개하지 마세요. 이름·성별·직업·시작 지역은 아직 선택 전입니다. 기존 주인공이나 과거 진행을 복사하거나 첫 게임 장면을 만들지 말고, 준비 확인만 ercedia_scene JSON 한 개로 답하세요. schema_version=1, type="ercedia_scene", 고유 scene_id, reply_to="'+requestId+'", location="캐릭터 생성 준비", time="시작 전", background_id=null, npc=null, dialogue=[{speaker:"시스템",text:"설정을 읽었습니다. 캐릭터 설정을 진행해주세요."}], choices=[]와 settings_loaded를 포함하세요. player/inventory/game_state/battle/의뢰/엔진 사건은 출력하지 마세요.';}
 let requestSequence=0;
-function refreshSettingsPrompt(state,requestId){return `현재 캠페인의 GitHub 설정을 최신 버전으로 동기화합니다. 첨부 전체를 읽고 이후 턴부터 최신 승인 규칙을 적용하세요. 새 게임이나 다음 턴을 시작하지 마세요. 현재 진행 기록·이름·자원·소지품·관계·완료 보상은 유지하며 새로운 기본값으로 덮어쓰지 마세요. 미구현 UI 기능을 구현했다고 주장하지 마세요. GM 전용 비밀의 공개 제한을 유지하세요. 설정 읽기 확인만 schema_version=1,type="ercedia_scene",고유 scene_id,reply_to="${requestId}",location="설정 동기화",time="현재",background_id=null,npc=null,dialogue=[{speaker:"시스템",text:"최신 설정을 확인했습니다."}],choices=[]와 settings_loaded를 포함한 JSON으로 출력하세요. player/inventory/game_state/battle/의뢰/엔진 사건은 출력하지 마세요. 현재 진행 참고: ${JSON.stringify({name:state.player.name,level:state.player.level,location:state.scene?.location,game_state:state.gameState})}`;}
+function refreshSettingsPrompt(state,requestId){return `메뉴에서 직접 요청한 새 채팅방 설정 등록입니다. 이 채팅방에 GitHub 설정을 등록합니다. 첨부 전체를 읽고 이후 턴부터 최신 승인 규칙을 적용하세요. 새 게임이나 다음 턴을 시작하지 마세요. 현재 진행 기록·이름·자원·소지품·관계·완료 보상은 유지하며 새로운 기본값으로 덮어쓰지 마세요. 미구현 UI 기능을 구현했다고 주장하지 마세요. GM 전용 비밀의 공개 제한을 유지하세요. 설정 읽기 확인만 schema_version=1,type="ercedia_scene",고유 scene_id,reply_to="${requestId}",location="설정 동기화",time="현재",background_id=null,npc=null,dialogue=[{speaker:"시스템",text:"최신 설정을 확인했습니다."}],choices=[]와 settings_loaded를 포함한 JSON으로 출력하세요. player/inventory/game_state/battle/의뢰/엔진 사건은 출력하지 마세요. 현재 진행 참고: ${JSON.stringify({name:state.player.name,level:state.player.level,location:state.scene?.location,game_state:state.gameState})}`;}
 function newRequestId(){
   if(typeof globalThis.crypto?.randomUUID==='function')return globalThis.crypto.randomUUID();
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
@@ -43,7 +43,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   function controls(){
     const creating=!!state.introDraft||battleIsActive(state)||settingsRefreshing||!!getIntro?.()?.isStarting(),naming=needsName()&&!creating,wasHidden=$('name-setup').hidden;$('name-setup').hidden=!naming;
     $('sync-settings').disabled=!!pending||creating;
-    $('sync-settings').textContent=settingsRefreshing?'설정 읽는 중…':pending?.settingsRefresh?'설정 확인 중…':'설정 동기화';
+    $('sync-settings').textContent=settingsRefreshing?'설정 읽는 중…':pending?.settingsRefresh?'설정 확인 중…':'새 채팅방 설정 등록';
     if(naming&&wasHidden)queueMicrotask(()=>$('adventurer-name').focus({preventScroll:true}));
     $('action-label').textContent=naming?'자유 대화·행동':`${state.player.name}의 대화·행동`;
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
@@ -106,12 +106,13 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     if(!action.trim())return;
     if(action.length>2000)return status('자유 행동은 2,000자까지 입력할 수 있습니다.');
     try{
+    if(!setupOnly)campaignSettings=null;
     if(!setupOnly&&initializeNameOnlyPlayer(state)){render();persist();}
-    const requestId=newRequestId(),settings=campaignSettings?campaignSettingsAttachment(campaignSettings):null;
+    const requestId=newRequestId(),settings=setupOnly&&campaignSettings?campaignSettingsAttachment(campaignSettings):null;
     const request={requestId,choiceId,action,...(setupOnly?{setupOnly:true}:{}),...(settingsRefresh?{settingsRefresh:true}:{}),rootRequestId:recovery?.rootRequestId||requestId,repairAttempt:recovery?.repairAttempt||0};
     const supportsAttachment=!embedded||window.__ERCEDIA_CONFIG__?.features?.includes('settings-attachment');
     requireSettingsConfirmation=!!settings&&supportsAttachment;
-    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):actionPrompt(state,action,requestId,{compact:!campaignSettings&&(!!loadedSettingsCommit||hasTurnContext),choiceId}))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
+    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):actionPrompt(state,action,requestId,{compact:true,choiceId}))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
     if(settings){if(settingsURL)URL.revokeObjectURL(settingsURL);settingsURL=URL.createObjectURL(new Blob([settings.file.content],{type:'text/plain;charset=utf-8'}));$('settings-download').href=settingsURL;$('settings-download').download=settings.file.name;$('settings-download').hidden=false;}
     failedRequest=null;pending=request;
     controls();status(embedded?(settings&&!supportsAttachment?'이전 런처로 요청을 전송합니다. GPT가 GitHub 원문을 직접 읽도록 요청했습니다. 전체 파일 자동 첨부는 런처 1.1.7에서 지원합니다.':'상대의 반응을 기다리는 중…'):'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
@@ -226,9 +227,9 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     if(!deferRender)render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
   }
   async function refreshSettings(){
-    if(pending||settingsRefreshing||battleIsActive(state)||state.introDraft||getIntro?.()?.isStarting())return status('진행 중인 응답·전투·새 게임 준비를 완료한 뒤 설정 동기화를 누르세요.');
+    if(pending||settingsRefreshing||battleIsActive(state)||state.introDraft||getIntro?.()?.isStarting())return status('진행 중인 응답·전투·새 게임 준비를 완료한 뒤 새 채팅방 설정 등록을 누르세요.');
     settingsRefreshing=true;controls();const epoch=++settingsEpoch;
-    try{const snapshot=await loadCampaignSettings({onProgress:status});if(epoch!==settingsEpoch)return;campaignSettings=snapshot;settingsRefreshing=false;submit('현재 게임 설정 동기화',null,null,'refresh');}
+    try{const snapshot=await loadCampaignSettings({onProgress:status});if(epoch!==settingsEpoch)return;campaignSettings=snapshot;settingsRefreshing=false;submit('새 채팅방 설정 등록',null,null,'refresh');}
     catch(error){status(`설정 동기화 실패 · ${error.message} · 현재 진행은 유지됩니다.`);}
     finally{settingsRefreshing=false;controls();}
   }
@@ -246,9 +247,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     if(data.conversation!==conversation)return;
     if(data.type==='sync-settings'){refreshSettings();return;}
     if(data.type==='bootstrap-campaign'){
-      if(pending||battleIsActive(state)||(!state.introDraft&&needsName()))return notify('bootstrap-started',{requestId:data.requestId,started:false,message:'새 채팅 게임 상태가 준비되지 않았습니다.'});
-      campaignSettings=data.payload.settings;getIntro?.()?.setSettings?.(campaignSettings);submit(data.payload.action,null,null,!!state.introDraft);
-      notify('bootstrap-started',{requestId:data.requestId,started:!!pending});return;
+      notify('bootstrap-started',{requestId:data.requestId,started:false,message:'자동 설정 전송은 중지되었습니다. 메뉴의 새 채팅방 설정 등록을 눌러주세요.'});return;
     }
     if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
     if(data.type==='action-error'){transportFailed(data.payload);$('connection-tools').open=true;}
@@ -262,6 +261,6 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,refreshSettings,reportStatus:status,sendSettings:snapshot=>{campaignSettings=snapshot;submit('새 게임 설정 읽기',null,null,true);},setCampaignSettings:snapshot=>{campaignSettings=snapshot?.sha===loadedSettingsCommit?null:snapshot;},isPending:()=>!!pending||settingsRefreshing||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,refreshSettings,reportStatus:status,sendSettings:snapshot=>{campaignSettings=snapshot;submit('새 채팅방 설정 등록',null,null,'refresh');},setCampaignSettings:snapshot=>{campaignSettings=snapshot?.sha===loadedSettingsCommit?null:snapshot;},isPending:()=>!!pending||settingsRefreshing||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
 }
 

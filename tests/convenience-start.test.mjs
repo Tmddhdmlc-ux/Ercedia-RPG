@@ -25,7 +25,7 @@ test('missing, old or incomplete convenience rules block loading and prompt gene
 
 
 const drain=()=>new Promise(resolve=>setImmediate(resolve));
-test('region question opens before downloads finish and full rules travel with the first playable scene',async()=>{
+test('region question opens before downloads finish and departure creates a local scene without sending setup',async()=>{
  const h=uiHarness(),oldFetch=globalThis.fetch;
  try{
   let release;const gate=new Promise(resolve=>release=resolve);const fetcher=source(base);globalThis.fetch=async url=>{await gate;return fetcher(url);};document.dispatchEvent=()=>true;document.querySelectorAll=()=>[];
@@ -39,9 +39,9 @@ test('region question opens before downloads finish and full rules travel with t
   h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();
   assert.equal(state.introDraft.step,'passive');h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();h.get('intro-goal').oninput({target:{value:'최고의 전사가 된다'}});h.get('intro-next').onclick();assert.equal(state.introDraft.step,'departure');
   h.get('intro-next').onclick();assert.equal(state.player.name,'');release();await drain();await drain();
-  const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,1);const action=actions[0].payload;
-  assert.ok(action.settingsFile.content.includes(rules));assert.equal(action.setupOnly,undefined);assert.equal(state.player.name,'새 여행자');assert.equal(state.starting_kingdom,'루메린');assert.equal(state.player.hp,100);assert.equal(state.background,true);assert.equal(state.introDraft,undefined);assert.equal(chat.isPending(),true);
-  h.get('intro-next').onclick();assert.equal(h.messages.filter(m=>m.type==='action').length,1);
+  const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,0);
+  assert.equal(state.player.name,'새 여행자');assert.equal(state.starting_kingdom,'루메린');assert.equal(state.player.hp,100);assert.equal(state.background,true);assert.equal(state.introDraft,undefined);assert.equal(chat.isPending(),false);
+  h.get('intro-next').onclick();assert.equal(h.messages.filter(m=>m.type==='action').length,0);
  }finally{globalThis.fetch=oldFetch;h.close();}
 });
 test('failed required rules allow questions but block departure without replacing an existing game',async()=>{

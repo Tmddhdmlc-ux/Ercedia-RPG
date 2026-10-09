@@ -49,23 +49,23 @@ test('dungeon and combat turns retain rules without sending the global UI-only l
   assert.match(prompt,/BATTLE_SCHEMA.md/);assert.match(prompt,/loot_mode/);
   assert.ok(!prompt.includes('"dungeon_pools"'));
 });
-test('the actual UI switches after a valid turn and falls back after save restoration',()=>{
+test('ordinary UI turns remain compact before and after save restoration',()=>{
   const h=uiHarness(),state=saved();try{
     const chat=mountChatUI(state,{embedded:true,render(){},persist(){}});
     const actions=()=>h.messages.filter(m=>m.type==='action').map(m=>m.payload);
     chat.submit('안부를 묻는다.','talk');const first=actions().at(-1);
-    assert.match(first.text,/\[대장간 제작\]/);assert.ok(!first.text.includes('"dungeon_pools"')); 
+    assert.ok(!first.text.includes("[대장간 제작]"));assert.ok(!first.text.includes('"dungeon_pools"')); 
     h.reply('scene',JSON.stringify({...state.scene,scene_id:'next',reply_to:first.requestId}));
     assert.equal(chat.isPending(),false);
     chat.submit('안부를 묻는다.','talk');const second=actions().at(-1);
-    assert.ok(second.text.length<first.text.length*.2);assert.ok(second.text.endsWith('안부를 묻는다.'));
-    chat.restore(saved());chat.submit('안부를 묻는다.','talk');assert.match(actions().at(-1).text,/\[대장간 제작\]/);
+    assert.ok(second.text.length<first.text.length*1.1);assert.ok(second.text.endsWith('안부를 묻는다.'));
+    chat.restore(saved());chat.submit('안부를 묻는다.','talk');assert.ok(!actions().at(-1).text.includes("[대장간 제작]"));
   }finally{h.close();}
 });
-test('failed responses never establish compact continuation context',()=>{
+test('failed responses do not cause automatic settings retransmission',()=>{
   const h=uiHarness(),state=saved();try{
     const chat=mountChatUI(state,{embedded:true,render(){},persist(){}});
     chat.submit('안부를 묻는다.');chat.apply('{"schema_version":99,"type":"ercedia_scene"}');chat.submit('안부를 묻는다.');
-    const actions=h.messages.filter(m=>m.type==='action');assert.match(actions.at(-1).payload.text,/\[대장간 제작\]/);
+    const actions=h.messages.filter(m=>m.type==='action');assert.ok(!actions.at(-1).payload.text.includes("[대장간 제작]"));assert.equal(actions.at(-1).payload.settingsFile,undefined);
   }finally{h.close();}
 });

@@ -28,7 +28,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     if(!state.introDraft||restart){settingsEpoch++;settings=null;settingsTask=null;state.introDraft=normalizeIntroDraft({step:'origin',previousView:state.introDraft?.previousView||{page:state.page,mapView:state.mapView,region:state.region}});}
     save();render();
     document.dispatchEvent(new CustomEvent('ercedia:new-game-started',{detail:{settings}}));
-    // Prefetch while the player answers; the full snapshot travels with the first scene.
+    // Prepare local catalogs while answering. Chat settings registration is manual.
     readSettings().catch(error=>chat.reportStatus?.('GitHub 설정 준비 실패 · '+error.message+' · 문답은 계속할 수 있으며 출발할 때 다시 시도합니다.'));
     return true;
   }
@@ -81,9 +81,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
       starting=false;save();render();
       const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:fresh.gameState.time,background_id:regionBackground(fields.starting_lordship_id),npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
       chat.setCampaignSettings(null);chat.apply(JSON.stringify(scene));
-      chat.setCampaignSettings(settings);
       document.dispatchEvent(new CustomEvent('ercedia:intro-completed',{detail:{settings}}));
-      if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. 에르세디아력 650년 7월 1일 오전 09:00부터 시작하세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
     }catch(error){errorNode.textContent='설정 준비 실패 · '+error.message+' · 출발 버튼을 눌러 다시 시도할 수 있습니다.';}
     finally{starting=false;chat.controls();$('intro-next').disabled=false;$('intro-map-next').disabled=false;}
   }
