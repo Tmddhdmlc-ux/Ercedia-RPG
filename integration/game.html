@@ -3810,11 +3810,12 @@ function mountGameTime(state){const $=id=>document.getElementById(id),stage=$('s
 
 return {parseGameTime,gameTimeView,timeAtmosphere,mountGameTime};})();
 const module24=(()=>{
-// Generated from voice-banks.json and explicit roster gender/age; audio style cutoff: 30.
-const voiceBanks={"female_young":{"label":"여성 · 어린","cues":{"base":"assets/audio/voices/female_young/base.wav","smile":"assets/audio/voices/female_young/smile.wav","angry":"assets/audio/voices/female_young/angry.wav","surprised":"assets/audio/voices/female_young/surprised.wav","sad":"assets/audio/voices/female_young/sad.wav","embarrassed":"assets/audio/voices/female_young/embarrassed.wav","afraid":"assets/audio/voices/female_young/afraid.wav","annoyed":"assets/audio/voices/female_young/annoyed.wav","love":"assets/audio/voices/female_young/love.wav"}},"female_mature":{"label":"여성 · 중후","cues":{"base":"assets/audio/voices/female_mature/base.wav","smile":"assets/audio/voices/female_mature/smile.wav","angry":"assets/audio/voices/female_mature/angry.wav","surprised":"assets/audio/voices/female_mature/surprised.wav","sad":"assets/audio/voices/female_mature/sad.wav","embarrassed":"assets/audio/voices/female_mature/embarrassed.wav","afraid":"assets/audio/voices/female_mature/afraid.wav","annoyed":"assets/audio/voices/female_mature/annoyed.wav","love":"assets/audio/voices/female_mature/love.wav"}},"male_young":{"label":"남성 · 어린","cues":{"base":"assets/audio/voices/male_young/base.wav","smile":"assets/audio/voices/male_young/smile.wav","angry":"assets/audio/voices/male_young/angry.wav","surprised":"assets/audio/voices/male_young/surprised.wav","sad":"assets/audio/voices/male_young/sad.wav","embarrassed":"assets/audio/voices/male_young/embarrassed.wav","afraid":"assets/audio/voices/male_young/afraid.wav","annoyed":"assets/audio/voices/male_young/annoyed.wav","love":"assets/audio/voices/male_young/love.wav"}},"male_mature":{"label":"남성 · 중후","cues":{"base":"assets/audio/voices/male_mature/base.wav","smile":"assets/audio/voices/male_mature/smile.wav","angry":"assets/audio/voices/male_mature/angry.wav","surprised":"assets/audio/voices/male_mature/surprised.wav","sad":"assets/audio/voices/male_mature/sad.wav","embarrassed":"assets/audio/voices/male_mature/embarrassed.wav","afraid":"assets/audio/voices/male_mature/afraid.wav","annoyed":"assets/audio/voices/male_mature/annoyed.wav","love":"assets/audio/voices/male_mature/love.wav"}}};
-const npcVoiceDefaults={"serin":"female_young","ER-NPC-001":"male_mature","ER-NPC-002":"female_young","ER-NPC-003":"male_mature","ER-NPC-004":"female_young","ER-NPC-005":"male_mature","ER-NPC-006":"female_young","ER-NPC-007":"female_mature","ER-NPC-008":"male_young","ER-NPC-009":"male_mature","ER-NPC-010":"female_young","ER-NPC-011":"male_mature","ER-NPC-012":"female_young","ER-NPC-013":"male_mature","ER-NPC-014":"female_young","ER-NPC-015":"male_mature","ER-NPC-016":"female_young","ER-NPC-017":"female_mature","ER-NPC-018":"male_young","ER-NPC-019":"male_mature","ER-NPC-020":"female_young","ER-NPC-021":"male_mature","ER-NPC-022":"female_young","ER-NPC-023":"female_mature","ER-NPC-024":"male_mature","ER-NPC-025":"female_mature","ER-NPC-026":"male_mature","ER-NPC-027":"female_young","ER-NPC-028":"male_mature","ER-NPC-029":"female_young","ER-NPC-030":"male_mature","ER-NPC-031":"female_mature","ER-NPC-032":"male_mature","ER-NPC-033":"female_mature","ER-NPC-034":"male_mature","ER-NPC-035":"female_young","ER-NPC-036":"female_mature","ER-NPC-037":"male_young","ER-NPC-038":"male_mature","ER-NPC-039":"female_young","ER-NPC-040":"male_mature","ER-NPC-041":"female_young","ER-NPC-042":"male_mature","ER-NPC-043":"female_mature","ER-NPC-044":"male_mature","ER-NPC-045":"male_young","ER-NPC-046":"female_mature","ER-NPC-047":"male_mature","ER-NPC-048":"female_mature","ER-NPC-049":"male_mature","ER-NPC-050":"female_mature","ER-NPC-051":"male_mature","ER-NPC-052":"female_young","ER-NPC-053":"male_mature","ER-NPC-054":"female_mature","ER-NPC-055":"male_mature","ER-NPC-056":"male_mature","ER-NPC-057":"female_mature","ER-NPC-058":"male_young","ER-NPC-059":"female_young","ER-NPC-060":"male_mature","ER-NPC-061":"male_mature","ER-NPC-062":"female_young","ER-NPC-063":"male_mature","ER-NPC-064":"female_mature","ER-NPC-065":"male_young","ER-NPC-066":"male_mature","ER-NPC-067":"male_young","ER-NPC-068":"female_mature","ER-NPC-069":"male_mature","ER-NPC-070":"female_mature","ER-NPC-071":"male_mature","ER-NPC-072":"female_young","ER-NPC-073":"male_mature","ER-NPC-074":"male_young","ER-NPC-075":"female_mature","ER-NPC-076":"male_mature","ER-NPC-077":"female_young","ER-NPC-078":"male_mature","ER-NPC-079":"male_mature","ER-NPC-080":"female_mature"};
+// Generated voice banks and allowlisted IDs only. Explicit canon demographics; audio style cutoff: 30.
+const voiceBanks={"female_young":{"label":"여성 · 어린","cues":{"base":"assets/audio/voices/female_young/base.wav","smile":"assets/audio/voices/female_young/smile.wav","angry":"assets/audio/voices/female_young/angry.wav","surprised":"assets/audio/voices/female_young/surprised.wav","sad":"assets/audio/voices/female_young/sad.wav","embarrassed":"assets/audio/voices/female_young/embarrassed.wav","afraid":"assets/audio/voices/female_young/afraid.wav","annoyed":"assets/audio/voices/female_young/annoyed.wav","love":"assets/audio/voices/female_young/love.wav"}},"female_mature":{"label":"여성 · 중후","cues":{"base":"assets/audio/voices/female_mature/base.wav","smile":"assets/audio/voices/female_mature/smile.wav","angry":"assets/audio/voices/female_mature/angry.wav","surprised":"assets/audio/voices/female_mature/surprised.wav","sad":"assets/audio/voices/female_mature/sad.wav","embarrassed":"assets/audio/voices/female_mature/embarrassed.wav","afraid":"assets/audio/voices/female_mature/afraid.wav","annoyed":"assets/audio/voices/female_mature/annoyed.wav","love":"assets/audio/voices/female_mature/love.wav"}},"male_young":{"label":"남성 · 어린","cues":{"base":"assets/audio/voices/male_young/base.wav","smile":"assets/audio/voices/male_young/smile.wav","angry":"assets/audio/voices/male_young/angry.wav","surprised":"assets/audio/voices/male_young/surprised.wav","sad":"assets/audio/voices/male_young/sad.wav","embarrassed":"assets/audio/voices/male_young/embarrassed.wav","afraid":"assets/audio/voices/male_young/afraid.wav","annoyed":"assets/audio/voices/male_young/annoyed.wav","love":"assets/audio/voices/male_young/love.wav"}},"male_mature":{"label":"남성 · 중후","cues":{"base":"assets/audio/voices/male_mature/base.wav","smile":"assets/audio/voices/male_mature/smile.wav","angry":"assets/audio/voices/male_mature/angry.wav","surprised":"assets/audio/voices/male_mature/surprised.wav","sad":"assets/audio/voices/male_mature/sad.wav","embarrassed":"assets/audio/voices/male_mature/embarrassed.wav","afraid":"assets/audio/voices/male_mature/afraid.wav","annoyed":"assets/audio/voices/male_mature/annoyed.wav","love":"assets/audio/voices/male_mature/love.wav"}},"monster_canine":{"label":"몬스터 · 짐승 · 송곳니","cues":{"base":"assets/audio/monsters/canine/base.wav","smile":"assets/audio/monsters/canine/base.wav","angry":"assets/audio/monsters/canine/attack.wav","surprised":"assets/audio/monsters/canine/hurt.wav","sad":"assets/audio/monsters/canine/hurt.wav","embarrassed":"assets/audio/monsters/canine/base.wav","afraid":"assets/audio/monsters/canine/hurt.wav","annoyed":"assets/audio/monsters/canine/attack.wav","love":"assets/audio/monsters/canine/base.wav"},"combat":{"base":"assets/audio/monsters/canine/base.wav","attack":"assets/audio/monsters/canine/attack.wav","hurt":"assets/audio/monsters/canine/hurt.wav","death":"assets/audio/monsters/canine/death.wav"}},"monster_horned":{"label":"몬스터 · 뿔짐승 · 울림","cues":{"base":"assets/audio/monsters/horned/base.wav","smile":"assets/audio/monsters/horned/base.wav","angry":"assets/audio/monsters/horned/attack.wav","surprised":"assets/audio/monsters/horned/hurt.wav","sad":"assets/audio/monsters/horned/hurt.wav","embarrassed":"assets/audio/monsters/horned/base.wav","afraid":"assets/audio/monsters/horned/hurt.wav","annoyed":"assets/audio/monsters/horned/attack.wav","love":"assets/audio/monsters/horned/base.wav"},"combat":{"base":"assets/audio/monsters/horned/base.wav","attack":"assets/audio/monsters/horned/attack.wav","hurt":"assets/audio/monsters/horned/hurt.wav","death":"assets/audio/monsters/horned/death.wav"}},"monster_boar":{"label":"몬스터 · 멧돼지 · 거친 숨","cues":{"base":"assets/audio/monsters/boar/base.wav","smile":"assets/audio/monsters/boar/base.wav","angry":"assets/audio/monsters/boar/attack.wav","surprised":"assets/audio/monsters/boar/hurt.wav","sad":"assets/audio/monsters/boar/hurt.wav","embarrassed":"assets/audio/monsters/boar/base.wav","afraid":"assets/audio/monsters/boar/hurt.wav","annoyed":"assets/audio/monsters/boar/attack.wav","love":"assets/audio/monsters/boar/base.wav"},"combat":{"base":"assets/audio/monsters/boar/base.wav","attack":"assets/audio/monsters/boar/attack.wav","hurt":"assets/audio/monsters/boar/hurt.wav","death":"assets/audio/monsters/boar/death.wav"}},"monster_small":{"label":"몬스터 · 작은 생물 · 날카로운 소리","cues":{"base":"assets/audio/monsters/small/base.wav","smile":"assets/audio/monsters/small/base.wav","angry":"assets/audio/monsters/small/attack.wav","surprised":"assets/audio/monsters/small/hurt.wav","sad":"assets/audio/monsters/small/hurt.wav","embarrassed":"assets/audio/monsters/small/base.wav","afraid":"assets/audio/monsters/small/hurt.wav","annoyed":"assets/audio/monsters/small/attack.wav","love":"assets/audio/monsters/small/base.wav"},"combat":{"base":"assets/audio/monsters/small/base.wav","attack":"assets/audio/monsters/small/attack.wav","hurt":"assets/audio/monsters/small/hurt.wav","death":"assets/audio/monsters/small/death.wav"}},"monster_reptile":{"label":"몬스터 · 파충류 · 쉿소리","cues":{"base":"assets/audio/monsters/reptile/base.wav","smile":"assets/audio/monsters/reptile/base.wav","angry":"assets/audio/monsters/reptile/attack.wav","surprised":"assets/audio/monsters/reptile/hurt.wav","sad":"assets/audio/monsters/reptile/hurt.wav","embarrassed":"assets/audio/monsters/reptile/base.wav","afraid":"assets/audio/monsters/reptile/hurt.wav","annoyed":"assets/audio/monsters/reptile/attack.wav","love":"assets/audio/monsters/reptile/base.wav"},"combat":{"base":"assets/audio/monsters/reptile/base.wav","attack":"assets/audio/monsters/reptile/attack.wav","hurt":"assets/audio/monsters/reptile/hurt.wav","death":"assets/audio/monsters/reptile/death.wav"}},"monster_winged":{"label":"몬스터 · 날개 생물 · 울음","cues":{"base":"assets/audio/monsters/winged/base.wav","smile":"assets/audio/monsters/winged/base.wav","angry":"assets/audio/monsters/winged/attack.wav","surprised":"assets/audio/monsters/winged/hurt.wav","sad":"assets/audio/monsters/winged/hurt.wav","embarrassed":"assets/audio/monsters/winged/base.wav","afraid":"assets/audio/monsters/winged/hurt.wav","annoyed":"assets/audio/monsters/winged/attack.wav","love":"assets/audio/monsters/winged/base.wav"},"combat":{"base":"assets/audio/monsters/winged/base.wav","attack":"assets/audio/monsters/winged/attack.wav","hurt":"assets/audio/monsters/winged/hurt.wav","death":"assets/audio/monsters/winged/death.wav"}},"monster_insect":{"label":"몬스터 · 벌레 · 기괴한 진동","cues":{"base":"assets/audio/monsters/insect/base.wav","smile":"assets/audio/monsters/insect/base.wav","angry":"assets/audio/monsters/insect/attack.wav","surprised":"assets/audio/monsters/insect/hurt.wav","sad":"assets/audio/monsters/insect/hurt.wav","embarrassed":"assets/audio/monsters/insect/base.wav","afraid":"assets/audio/monsters/insect/hurt.wav","annoyed":"assets/audio/monsters/insect/attack.wav","love":"assets/audio/monsters/insect/base.wav"},"combat":{"base":"assets/audio/monsters/insect/base.wav","attack":"assets/audio/monsters/insect/attack.wav","hurt":"assets/audio/monsters/insect/hurt.wav","death":"assets/audio/monsters/insect/death.wav"}},"monster_aquatic":{"label":"몬스터 · 수중 생물 · 젖은 울림","cues":{"base":"assets/audio/monsters/aquatic/base.wav","smile":"assets/audio/monsters/aquatic/base.wav","angry":"assets/audio/monsters/aquatic/attack.wav","surprised":"assets/audio/monsters/aquatic/hurt.wav","sad":"assets/audio/monsters/aquatic/hurt.wav","embarrassed":"assets/audio/monsters/aquatic/base.wav","afraid":"assets/audio/monsters/aquatic/hurt.wav","annoyed":"assets/audio/monsters/aquatic/attack.wav","love":"assets/audio/monsters/aquatic/base.wav"},"combat":{"base":"assets/audio/monsters/aquatic/base.wav","attack":"assets/audio/monsters/aquatic/attack.wav","hurt":"assets/audio/monsters/aquatic/hurt.wav","death":"assets/audio/monsters/aquatic/death.wav"}},"monster_spectral":{"label":"몬스터 · 영체 · 낮은 신음","cues":{"base":"assets/audio/monsters/spectral/base.wav","smile":"assets/audio/monsters/spectral/base.wav","angry":"assets/audio/monsters/spectral/attack.wav","surprised":"assets/audio/monsters/spectral/hurt.wav","sad":"assets/audio/monsters/spectral/hurt.wav","embarrassed":"assets/audio/monsters/spectral/base.wav","afraid":"assets/audio/monsters/spectral/hurt.wav","annoyed":"assets/audio/monsters/spectral/attack.wav","love":"assets/audio/monsters/spectral/base.wav"},"combat":{"base":"assets/audio/monsters/spectral/base.wav","attack":"assets/audio/monsters/spectral/attack.wav","hurt":"assets/audio/monsters/spectral/hurt.wav","death":"assets/audio/monsters/spectral/death.wav"}}};
+const npcVoiceDefaults={"serin":"female_young","ER-NPC-001":"male_mature","ER-NPC-002":"female_young","ER-NPC-003":"male_mature","ER-NPC-004":"female_young","ER-NPC-005":"male_mature","ER-NPC-006":"female_young","ER-NPC-007":"female_mature","ER-NPC-008":"male_young","ER-NPC-009":"male_mature","ER-NPC-010":"female_young","ER-NPC-011":"male_mature","ER-NPC-012":"female_young","ER-NPC-013":"male_mature","ER-NPC-014":"female_young","ER-NPC-015":"male_mature","ER-NPC-016":"female_young","ER-NPC-017":"female_mature","ER-NPC-018":"male_young","ER-NPC-019":"male_mature","ER-NPC-020":"female_young","ER-NPC-021":"male_mature","ER-NPC-022":"female_young","ER-NPC-023":"female_mature","ER-NPC-024":"male_mature","ER-NPC-025":"female_mature","ER-NPC-026":"male_mature","ER-NPC-027":"female_young","ER-NPC-028":"male_mature","ER-NPC-029":"female_young","ER-NPC-030":"male_mature","ER-NPC-031":"female_mature","ER-NPC-032":"male_mature","ER-NPC-033":"female_mature","ER-NPC-034":"male_mature","ER-NPC-035":"female_young","ER-NPC-036":"female_mature","ER-NPC-037":"male_young","ER-NPC-038":"male_mature","ER-NPC-039":"female_young","ER-NPC-040":"male_mature","ER-NPC-041":"female_young","ER-NPC-042":"male_mature","ER-NPC-043":"female_mature","ER-NPC-044":"male_mature","ER-NPC-045":"male_young","ER-NPC-046":"female_mature","ER-NPC-047":"male_mature","ER-NPC-048":"female_mature","ER-NPC-049":"male_mature","ER-NPC-050":"female_mature","ER-NPC-051":"male_mature","ER-NPC-052":"female_young","ER-NPC-053":"male_mature","ER-NPC-054":"female_mature","ER-NPC-055":"male_mature","ER-NPC-056":"male_mature","ER-NPC-057":"female_mature","ER-NPC-058":"male_young","ER-NPC-059":"female_young","ER-NPC-060":"male_mature","ER-NPC-061":"male_mature","ER-NPC-062":"female_young","ER-NPC-063":"male_mature","ER-NPC-064":"female_mature","ER-NPC-065":"male_young","ER-NPC-066":"male_mature","ER-NPC-067":"male_young","ER-NPC-068":"female_mature","ER-NPC-069":"male_mature","ER-NPC-070":"female_mature","ER-NPC-071":"male_mature","ER-NPC-072":"female_young","ER-NPC-073":"male_mature","ER-NPC-074":"male_young","ER-NPC-075":"female_mature","ER-NPC-076":"male_mature","ER-NPC-077":"female_young","ER-NPC-078":"male_mature","ER-NPC-079":"male_mature","ER-NPC-080":"female_mature","ER-CORE-001":"male_mature","ER-CORE-002":"male_mature","ER-CORE-003":"female_mature","ER-CORE-004":"male_mature","ER-CORE-005":"male_mature","ER-CORE-006":"female_mature","ER-CORE-007":"male_mature","ER-CORE-008":"female_mature","ER-CORE-009":"male_mature","ER-CORE-010":"female_mature","ER-CORE-011":"male_mature","ER-CORE-012":"male_young","ER-CORE-013":"male_mature","ER-CORE-014":"female_mature","ER-CORE-015":"female_mature","ER-CORE-016":"male_mature","ER-CORE-017":"male_mature","ER-CORE-018":"female_young","ER-CORE-019":"female_young","ER-CORE-020":"male_mature","ER-CORE-021":"female_mature","ER-CORE-022":"female_mature","ER-CORE-023":"male_young","ER-CORE-024":"male_young","ER-CORE-025":"female_young","ER-CORE-026":"male_mature","ER-CORE-027":"female_mature","ER-CORE-028":"male_mature","ER-CORE-029":"female_mature","ER-CORE-030":"male_mature","ER-CORE-031":"female_mature","ER-CORE-032":"female_mature","ER-CORE-033":"male_mature","ER-CORE-034":"male_mature","ER-CORE-035":"female_mature","ER-CORE-036":"female_mature","ER-CORE-037":"male_mature","ER-CORE-038":"female_mature","ER-COM-001":"male_mature","ER-COM-002":"female_mature","ER-COM-003":"male_mature","ER-COM-004":"female_young","ER-COM-005":"male_mature","ER-COM-006":"female_young","ER-COM-007":"female_mature","ER-COM-008":"male_young","ER-COM-009":"male_mature","ER-COM-010":"female_mature","ER-COM-011":"female_young","ER-COM-012":"male_mature","ER-COM-013":"female_mature","ER-COM-014":"male_mature","ER-COM-015":"female_young","ER-COM-016":"female_mature","ER-COM-017":"male_mature","ER-COM-018":"male_mature","ER-COM-019":"female_young","ER-COM-020":"male_mature","ER-COM-021":"female_young","ER-COM-022":"male_mature","ER-COM-023":"female_mature","ER-COM-024":"male_mature","ER-NPC-081":"monster_canine","ER-NPC-082":"monster_horned","ER-NPC-083":"monster_boar","ER-NPC-084":"monster_small","ER-NPC-085":"monster_reptile","ER-NPC-086":"monster_winged","ER-NPC-087":"monster_insect","ER-NPC-088":"monster_insect","ER-NPC-089":"monster_horned","ER-NPC-090":"monster_winged","ER-NPC-091":"monster_reptile","ER-NPC-092":"monster_aquatic","ER-NPC-093":"monster_aquatic","ER-NPC-094":"monster_aquatic","ER-NPC-095":"monster_insect","ER-NPC-096":"monster_small","ER-NPC-097":"monster_spectral","ER-NPC-098":"monster_spectral","ER-NPC-099":"monster_canine","ER-NPC-100":"monster_insect"};
+const monsterSamplePaths=["assets/audio/monsters/canine/base.wav","assets/audio/monsters/canine/attack.wav","assets/audio/monsters/canine/hurt.wav","assets/audio/monsters/canine/death.wav","assets/audio/monsters/horned/base.wav","assets/audio/monsters/horned/attack.wav","assets/audio/monsters/horned/hurt.wav","assets/audio/monsters/horned/death.wav","assets/audio/monsters/boar/base.wav","assets/audio/monsters/boar/attack.wav","assets/audio/monsters/boar/hurt.wav","assets/audio/monsters/boar/death.wav","assets/audio/monsters/small/base.wav","assets/audio/monsters/small/attack.wav","assets/audio/monsters/small/hurt.wav","assets/audio/monsters/small/death.wav","assets/audio/monsters/reptile/base.wav","assets/audio/monsters/reptile/attack.wav","assets/audio/monsters/reptile/hurt.wav","assets/audio/monsters/reptile/death.wav","assets/audio/monsters/winged/base.wav","assets/audio/monsters/winged/attack.wav","assets/audio/monsters/winged/hurt.wav","assets/audio/monsters/winged/death.wav","assets/audio/monsters/insect/base.wav","assets/audio/monsters/insect/attack.wav","assets/audio/monsters/insect/hurt.wav","assets/audio/monsters/insect/death.wav","assets/audio/monsters/aquatic/base.wav","assets/audio/monsters/aquatic/attack.wav","assets/audio/monsters/aquatic/hurt.wav","assets/audio/monsters/aquatic/death.wav","assets/audio/monsters/spectral/base.wav","assets/audio/monsters/spectral/attack.wav","assets/audio/monsters/spectral/hurt.wav","assets/audio/monsters/spectral/death.wav"];
 
-return {voiceBanks,npcVoiceDefaults};})();
+return {voiceBanks,npcVoiceDefaults,monsterSamplePaths};})();
 const module26=(()=>{
 // Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
 // Armor follows faces/manifest.json's source crop and render frame exactly.
@@ -3911,14 +3912,14 @@ function createVoiceAudio({assetBase='',contextFactory=()=>new (window.AudioCont
 }
 function mountVoiceAudio(root,{state,assetBase='',persist=()=>{},getScene=()=>state.scene,getIndex=()=>state.sceneIndex}={}){
   let current=null;const preferences=()=>normalizeVoicePreferences(state.uiPreferences?.voice);
-  const audio=createVoiceAudio({assetBase,onStatus:s=>{root.dataset.voicePlaying=String(s.playing);root.dataset.voiceBank=s.playing?s.bank:'';root.dataset.voiceEmotion=s.playing?s.emotion:'';status.textContent=s.error?'음성을 불러오지 못했어요.':s.playing?`${s.speaker} · ${voiceBanks[s.bank].label}`:'표정에 맞춰 짧은 리액션이 재생됩니다.';}});
+  const audio=createVoiceAudio({assetBase,onStatus:s=>{root.dataset.voicePlaying=String(s.playing);root.dataset.voiceBank=s.playing?s.bank:'';root.dataset.voiceEmotion=s.playing?s.emotion:'';if(s.playing){root.dataset.voiceLastBank=s.bank;root.dataset.voiceLastEmotion=s.emotion;}status.textContent=s.error?'음성을 불러오지 못했어요.':s.playing?`${s.speaker} · ${voiceBanks[s.bank].label}`:'표정에 맞춰 짧은 리액션이 재생됩니다.';}});
   const details=document.createElement('details'),summary=document.createElement('summary'),panel=document.createElement('div'),button=document.createElement('button'),select=document.createElement('select'),volume=document.createElement('input'),status=document.createElement('span');
   details.className='music-controls';panel.className='music-settings';summary.textContent='성우 리액션';button.type='button';select.setAttribute('aria-label','현재 화자 음색');
-  for(const [id,label] of [['auto','기본 음색'],...Object.entries(voiceBanks).map(([id,b])=>[id,b.label])]){const option=document.createElement('option');option.value=id;option.textContent=label;select.append(option);}
+  for(const [id,label] of [['auto','기본 음색'],...Object.entries(voiceBanks).filter(([id])=>!id.startsWith('monster_')).map(([id,b])=>[id,b.label])]){const option=document.createElement('option');option.value=id;option.textContent=label;select.append(option);}
   const label=document.createElement('label');label.textContent='성우 음량 ';volume.type='range';volume.min='0';volume.max='100';volume.setAttribute('aria-label','성우 음량');label.append(volume);status.setAttribute('role','status');status.textContent='표정에 맞춰 짧은 리액션이 재생됩니다.';
   panel.append(button,select,label,status);details.append(summary,panel);root.querySelector('.tabs')?.append(details);
   const blocked=()=>document.hidden||state.page!=='story'||root.dataset.title==='active'||root.dataset.battle==='active'||['black','map'].includes(root.dataset.introPhase);
-  function refresh(){const p=preferences();audio.configure(p);button.textContent=p.enabled?'성우 끄기':'성우 켜기';volume.value=String(Math.round(p.volume*100));select.disabled=!current;select.value=current?(p.banks[current.id]||'auto'):'auto';select.title=current?current.speaker+'의 음색':'NPC 대사에서 선택하세요.';}
+  function refresh(){const p=preferences();audio.configure(p);button.textContent=p.enabled?'성우 끄기':'성우 켜기';volume.value=String(Math.round(p.volume*100));select.disabled=!current||current.bank.startsWith('monster_');select.value=current?(p.banks[current.id]||'auto'):'auto';select.title=current?current.speaker+'의 음색':'NPC 대사에서 선택하세요.';}
   function sync(){current=dialogueReaction(getScene(),getIndex(),preferences());refresh();if(blocked()){audio.stop();return;}void audio.play(current);}
   function save(p){state.uiPreferences={...state.uiPreferences,voice:p};persist();refresh();}
   button.onclick=()=>{const p=preferences();p.enabled=!p.enabled;save(p);};volume.oninput=()=>{const p=preferences();p.volume=Number(volume.value)/100;save(p);};
@@ -9426,9 +9427,28 @@ const skillAudioProfiles={
 const skillSamplePaths=[...new Set(Object.values(skillAudioProfiles).flatMap(p=>[...p.cast,...p.impact].map(l=>l.path)))];
 
 return {skillAudioProfiles,skillSamplePaths};})();
+const module75=(()=>{
+const {npcVoiceDefaults,voiceBanks}=module24;
+function monsterVoiceBank(participant){
+  if(participant?.role!=='monster')return null;
+  const bank=npcVoiceDefaults[participant.catalog_id||participant.id];
+  return bank?.startsWith('monster_')?bank:'monster_canine';
+}
+function monsterBattleReactions(event,participants,phase){
+  if(!event)return [];
+  const actor=participants.find(p=>p.id===event.actor),target=participants.find(p=>p.id===event.target);
+  if(phase==='cast')return monsterVoiceBank(actor)&&['attack','counter','magic','unique'].includes(event.kind)?[{participant:actor,phase:'attack'}]:[];
+  if(phase==='impact'&&event.damage>0&&event.result!=='dodge'&&monsterVoiceBank(target))return [{participant:target,phase:event.target_hp_after===0?'death':'hurt'}];
+  return [];
+}
+function monsterCombatPath(participant,phase){return voiceBanks[monsterVoiceBank(participant)]?.combat?.[phase]||null;}
+
+return {monsterVoiceBank,monsterBattleReactions,monsterCombatPath};})();
 const module73=(()=>{
 // External licensed samples (CC0 / CC BY 4.0; see skills/CREDITS.md). Audio is presentation only and never changes combat data.
 const {skillAudioProfiles,skillSamplePaths}=module74;
+const {monsterSamplePaths}=module24;
+const {monsterCombatPath}=module75;
 const impactSamples={
   hit:['starninjas/sword_3','starninjas/sword_4','starninjas/sword_6'],
   critical:['starninjas/sword_1','starninjas/sword_2'],
@@ -9446,10 +9466,10 @@ function impactCue(event){
   return event.result==='critical'?'critical':'hit';
 }
 function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),storage=()=>window.localStorage}={}){
-  let ctx,master,loading,ready=false,unlocked=false,muted=false,volume=.65,error=false,played=0,lastCue=null;
+  let ctx,master,loading,ready=false,unlocked=false,muted=false,volume=.65,error=false,played=0,lastCue=null,monsterPlayed=0,lastMonsterCue=null;
   const buffers=new Map(),sampleGain=new Map(),voices=new Set(),cursor={};
   try{const saved=JSON.parse(storage().getItem('ercedia-impact-audio')||'null');if(saved){muted=saved.muted===true;if(Number.isFinite(saved.volume))volume=Math.max(0,Math.min(1,saved.volume));}}catch{}
-  const status=()=>({ready,unlocked,muted,volume,error,played,lastCue,active:voices.size});
+  const status=()=>({ready,unlocked,muted,volume,error,played,lastCue,monsterPlayed,lastMonsterCue,active:voices.size});
   const report=()=>onStatus(status());
   function save(){try{storage().setItem('ercedia-impact-audio',JSON.stringify({muted,volume}));}catch{}}
   function stop(){for(const source of voices){try{source.stop();}catch{}source.disconnect();}voices.clear();}
@@ -9458,7 +9478,7 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
       if(!ctx){ctx=contextFactory();master=ctx.createGain();const limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-12;limiter.knee.value=8;limiter.ratio.value=8;limiter.attack.value=.003;limiter.release.value=.08;master.connect(limiter);limiter.connect(ctx.destination);master.gain.value=muted?0:volume;}
       // Resume immediately in the trusted click; no delayed impacts are queued.
       await ctx.resume();unlocked=ctx.state==='running';
-      if(!loading){error=false;loading=Promise.all([...new Set([...Object.values(impactSamples).flat(),...skillSamplePaths])].map(async name=>{
+      if(!loading){error=false;loading=Promise.all([...new Set([...Object.values(impactSamples).flat(),...skillSamplePaths,...monsterSamplePaths])].map(async name=>{
         if(buffers.has(name))return;
         const response=await fetchAudio(assetBase+(name.startsWith('assets/')?name:'assets/audio/'+name+'.ogg'));
         if(!response.ok)throw Error('Audio load failed');
@@ -9471,8 +9491,8 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
   }
   function play(event,phase='impact'){
     const profile=skillAudioProfiles[event.skill_id],eligible=['attack','counter','magic','unique','defend'].includes(event.kind);
-    const layers=eligible&&profile&&(phase==='cast'||!['dodge','block'].includes(event.result))?profile[phase]:null;
-    const cue=layers?event.skill_id+':'+phase:phase==='impact'?impactCue(event):null;
+    const layers=event.monsterSample?[{path:event.monsterSample,gain:.65,rate:1,delay:0}]:eligible&&profile&&(phase==='cast'||!['dodge','block'].includes(event.result))?profile[phase]:null;
+    const cue=event.monsterSample?'monster:'+event.result:layers?event.skill_id+':'+phase:phase==='impact'?impactCue(event):null;
     if(!cue||!ready||muted||volume===0||ctx?.state!=='running')return false;
     const choices=impactSamples[cue]||[],index=choices.length?(cursor[cue]||0)%choices.length:0;cursor[cue]=index+1;
     while(voices.size>=4){const oldest=voices.values().next().value;oldest.stop();oldest.disconnect();voices.delete(oldest);}
@@ -9505,17 +9525,18 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
       tone('triangle',critical?2300:1900,critical?850:1100,critical?.07:.045,critical?.14:.085);
       if(critical)tone('sine',110,46,.16,.15);
     }else sample(choices[index],cue==='block'?.58:cue==='dodge'?.6:.82);
-    played++;lastCue=cue;report();return true;
+    played++;lastCue=cue;if(event.monsterSample){monsterPlayed++;lastMonsterCue=event.result;}report();return true;
   }
   function setMuted(value){muted=!!value;if(muted)stop();if(master)master.gain.value=muted?0:volume;save();report();}
   function setVolume(value){volume=Math.max(0,Math.min(1,Number(value)||0));if(master)master.gain.value=muted?0:volume;if(volume===0)stop();save();report();}
-  return {unlock,play,stop,setMuted,setVolume,status};
+  function playMonster(participant,phase){const path=monsterCombatPath(participant,phase);return path?play({monsterSample:path,result:phase}):false;}
+  return {unlock,play,playMonster,stop,setMuted,setVolume,status};
 }
 function mountBattleAudio(controls,assetBase){
   const button=document.createElement('button'),label=document.createElement('label'),slider=document.createElement('input'),note=document.createElement('span');
   button.type='button';button.id='battle-sound';slider.type='range';slider.min='0';slider.max='100';slider.step='5';slider.id='battle-volume';slider.setAttribute('aria-label','타격음 음량');
   label.style.whiteSpace='nowrap';label.textContent='전투음 ';label.append(slider);note.id='battle-audio-status';note.setAttribute('role','status');note.style.fontSize='12px';
-  const audio=createBattleAudio({assetBase,onStatus:s=>{note.dataset.played=String(s.played);note.dataset.cue=s.lastCue||'';button.textContent=s.muted?'소리 켜기':s.unlocked?'소리 끄기':'소리 켜기';button.setAttribute('aria-pressed',String(s.unlocked&&!s.muted));slider.value=String(Math.round(s.volume*100));note.textContent=s.error?'음원 로드 실패 · 다시 켜기':s.ready?(s.muted?'음소거':'타격음 준비됨'):s.unlocked?'음원 준비 중':'클릭하면 타격음이 켜집니다';}});
+  const audio=createBattleAudio({assetBase,onStatus:s=>{note.dataset.played=String(s.played);note.dataset.cue=s.lastCue||'';note.dataset.monsterPlayed=String(s.monsterPlayed);note.dataset.monsterCue=s.lastMonsterCue||'';button.textContent=s.muted?'소리 켜기':s.unlocked?'소리 끄기':'소리 켜기';button.setAttribute('aria-pressed',String(s.unlocked&&!s.muted));slider.value=String(Math.round(s.volume*100));note.textContent=s.error?'음원 로드 실패 · 다시 켜기':s.ready?(s.muted?'음소거':'전투음 준비됨'):s.unlocked?'음원 준비 중':'클릭하면 타격음이 켜집니다';}});
   slider.value=String(Math.round(audio.status().volume*100));button.textContent='소리 켜기';note.textContent='클릭하면 타격음이 켜집니다';
   button.onclick=async()=>{const s=audio.status();if(s.unlocked&&!s.muted&&!s.error){audio.setMuted(true);return;}audio.setMuted(false);await audio.unlock();};
   slider.oninput=()=>audio.setVolume(Number(slider.value)/100);
@@ -9525,7 +9546,7 @@ function mountBattleAudio(controls,assetBase){
 }
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
-const module76=(()=>{
+const module77=(()=>{
 // Original target-local blade trails, inspired by real-time ribbon VFX. Visuals only.
 // The number of visual trails is not a new damage event or a combat hit calculation.
 const specs=[
@@ -9574,7 +9595,7 @@ function createSwordRenderer(canvas){const ctx=canvas.getContext('2d');let w=100
 }
 
 return {swordProfiles,swordTiming,swordFrame,swordFallbackSVG,createSwordRenderer};})();
-const module77=(()=>{
+const module78=(()=>{
 // Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
 const elementalSamples=[
  {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
@@ -9686,8 +9707,8 @@ function createElementalRenderer(canvas,{createCanvas=()=>document.createElement
 }
 
 return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
-const module78=(()=>{
-const {swordProfiles,swordFallbackSVG}=module76;
+const module79=(()=>{
+const {swordProfiles,swordFallbackSVG}=module77;
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -9772,10 +9793,10 @@ function skillEffectSVG(p){
 }
 
 return {effectProfiles,elementColors,skillEffectSVG};})();
-const module75=(()=>{
-const {swordProfiles,swordTiming,createSwordRenderer}=module76;
-const {createElementalRenderer,palettes,sampleTiming}=module77;
-const {effectProfiles,skillEffectSVG}=module78;
+const module76=(()=>{
+const {swordProfiles,swordTiming,createSwordRenderer}=module77;
+const {createElementalRenderer,palettes,sampleTiming}=module78;
+const {effectProfiles,skillEffectSVG}=module79;
 const {engineData}=module19;
 // A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
 const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
@@ -9805,7 +9826,7 @@ function mountBattleVFX(stage){
 }
 
 return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
-const module79=(()=>{
+const module80=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -9814,7 +9835,7 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module80=(()=>{
+const module81=(()=>{
 const {mapData}=module12;
 const {lordships}=module64;
 const {factionLocations}=module51;
@@ -9898,14 +9919,15 @@ function mountDialogueGlossary(element){
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
 const module72=(()=>{
 const {mountBattleAudio}=module73;
-const {mountBattleVFX,battleEffectTiming}=module75;
+const {monsterBattleReactions}=module75;
+const {mountBattleVFX,battleEffectTiming}=module76;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module9;
 const {characterVisual,artBase}=module10;
 const {faceFit}=module26;
 const {resolveBackground,backgroundURL}=module21;
 const {appendItemIcon}=module53;
-const {battleCommentary}=module79;
-const {renderDialogueTerms}=module80;
+const {battleCommentary}=module80;
+const {renderDialogueTerms}=module81;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
@@ -9947,7 +9969,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
   function impact(){
-    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden)audio.play(e);showResources(battleFrame(b,playback.index+1));
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden){audio.play(e);for(const reaction of monsterBattleReactions(e,b.participants,'impact'))audio.playMonster(reaction.participant,reaction.phase);}showResources(battleFrame(b,playback.index+1));
     const target=slots.find(s=>s.id===e.target);
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
@@ -9961,7 +9983,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden)audio.play(e,'cast');}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden){audio.play(e,'cast');for(const reaction of monsterBattleReactions(e,p.scene.battle.participants,'cast'))audio.playMonster(reaction.participant,reaction.phase);}}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){
@@ -10007,7 +10029,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module82=(()=>{
+const module83=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module10;
 const {findNPC}=module13;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -10036,8 +10058,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module81=(()=>{
-const {mountNPCLocations}=module82;
+const module82=(()=>{
+const {mountNPCLocations}=module83;
 const {registeredArt,artBase,placementLabel}=module10;
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module13;
@@ -10078,7 +10100,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module83=(()=>{
+const module84=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -10100,7 +10122,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module85=(()=>{
+const module86=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module18;
 const {applyItemRarity}=module17;
 const {appendItemIcon}=module53;
@@ -10134,7 +10156,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module86=(()=>{
+const module87=(()=>{
 const {engineItem}=module40;
 const {appendItemIcon}=module53;
 const {applyItemRarity}=module17;
@@ -10169,12 +10191,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module84=(()=>{
+const module85=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module40;
 const {applyItemRarity}=module17;
 const {appendItemIcon}=module53;
-const {mountItemLibrary}=module85;
-const {mountEquipmentSlots}=module86;
+const {mountItemLibrary}=module86;
+const {mountEquipmentSlots}=module87;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -10201,7 +10223,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module87=(()=>{
+const module88=(()=>{
 const {publicLife,lifeRole}=module49;
 const {findNPC}=module13;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -10254,15 +10276,15 @@ const {mountNPCInfo}=module67;
 const {mountPlayHUD}=module68;
 const {mountNewGame}=module69;
 const {mountBattleUI}=module72;
-const {dialogueVoice}=module79;
-const {renderDialogueTerms,mountDialogueGlossary}=module80;
-const {mountCatalogUI}=module81;
+const {dialogueVoice}=module80;
+const {renderDialogueTerms,mountDialogueGlossary}=module81;
+const {mountCatalogUI}=module82;
 const {initializeNameOnlyPlayer}=module62;
 const {locationLabel:canonicalLocationLabel}=module45;
-const {mountTitleMenu}=module83;
+const {mountTitleMenu}=module84;
 const {mountQuestUI}=module60;
-const {mountEngineUI}=module84;
-const {mountNPCLifeUI}=module87;
+const {mountEngineUI}=module85;
+const {mountNPCLifeUI}=module88;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module50;
 const $=id=>document.getElementById(id);
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
