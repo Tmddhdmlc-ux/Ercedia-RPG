@@ -22,5 +22,77 @@
     "tempo_hint_bpm": 79,
     "key_hint": "D minor",
     "requested_style": "Instrumental high-energy medieval fantasy battle music, 146 BPM, urgent driving rhythm, aggressive rhythmic string ostinatos, bold French horn and low brass accents, powerful cinematic war drums and timpani, bright metallic percussion punctuating sword strikes, adventurous heroic melody over a tense minor-key harmony, clear rhythmic pulse, continuous momentum suitable for RPG combat, dynamic but controlled mix allowing short combat sound effects to cut through, no vocals, no long quiet breakdowns, no abrupt ending, cyclic motifs and a sustained rhythmic ending suitable for seamless game looping."
+  },
+  "border": {
+    "title": "경계의 깃발",
+    "path": "assets/audio/music/border_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 174,
+    "tempo_hint_bpm": 107,
+    "key_hint": "A minor",
+    "requested_style": "Instrumental fantasy frontier music, vigilant tense marching mood, restrained snare drums, low strings, lonely oboe and distant horns, steady 96 BPM, wind swept military border, memorable solemn melody, no vocals."
+  },
+  "royal": {
+    "title": "황금의 알현",
+    "path": "assets/audio/music/royal_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 180,
+    "tempo_hint_bpm": 76,
+    "key_hint": "C major",
+    "requested_style": "Instrumental regal fantasy palace music, stately majestic ceremonial mood, elegant chamber strings, golden brass, harp arpeggios and gentle timpani, noble melody, 88 BPM, spacious grand throne room, no vocals."
+  },
+  "night": {
+    "title": "솔브린의 달빛",
+    "path": "assets/audio/music/night_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 175,
+    "tempo_hint_bpm": 87,
+    "key_hint": "A minor",
+    "requested_style": "Instrumental peaceful medieval fantasy village at night, tender wooden flute melody, sparse harp and lute, soft sustained strings, warm moonlit atmosphere, slow 66 BPM, minimal percussion, gentle lullaby mood, no vocals."
+  },
+  "farEast": {
+    "title": "먼 하늘의 잔향",
+    "path": "assets/audio/music/farEast_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 175,
+    "tempo_hint_bpm": 84,
+    "key_hint": "E minor",
+    "requested_style": "Instrumental mysterious fantasy music, distant ancient eastern landscape, bamboo flute, plucked zither, deep drones, crystalline bells and soft frame drums, enigmatic flowing melody, 82 BPM, magical atmospheric mood, no vocals."
+  },
+  "unexplored": {
+    "title": "지도 밖의 길",
+    "path": "assets/audio/music/unexplored_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 166,
+    "tempo_hint_bpm": 87,
+    "key_hint": "D major",
+    "requested_style": "Instrumental fantasy exploration music, wondrous unknown wilderness, spacious wooden flute, shimmering harp, warm strings, gentle hand drums, gradually unfolding adventurous melody, 100 BPM, curiosity and subtle danger, no vocals."
+  },
+  "boss": {
+    "title": "압도하는 왕좌",
+    "path": "assets/audio/music/boss_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 164,
+    "tempo_hint_bpm": 111,
+    "key_hint": "E minor",
+    "requested_style": "Instrumental overwhelming epic fantasy boss battle music, monumental terrifying power, thunderous taiko and timpani, massive low brass, pipe organ, ferocious string ostinatos, dramatic dark minor melody, 154 BPM, relentless intense rhythm and towering climaxes, no vocals."
   }
 }
