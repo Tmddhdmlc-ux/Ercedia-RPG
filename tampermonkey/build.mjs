@@ -12,6 +12,7 @@ import './quest-build.mjs';
 import './engine-build.mjs';
 import './world-build.mjs';
 import './voice-build.mjs';
+import './growth-build.mjs';
 await import('./shop-build.mjs');
 // Run after the other registries finish updating the shared asset list.
 await import('./location-art-build.mjs');

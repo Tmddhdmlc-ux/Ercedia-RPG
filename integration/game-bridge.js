@@ -1,3 +1,4 @@
+import {growthContext,assertGrowthSnapshot} from '../web/growth-model.js';
 import {wallet,splitCopper} from '../web/wallet.js';
 import {currencyRules} from '../web/economy.js';
 import {shopTypes} from '../web/shop-types.js';
@@ -13,6 +14,7 @@ import {locationArt} from '../web/location-art.js';
 export function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
+    getGrowthRules:()=>JSON.parse(JSON.stringify(growthContext(state))),
     getShopTypes:()=>JSON.parse(JSON.stringify(shopTypes)),
     getShops:()=>JSON.parse(JSON.stringify(state.world_engine?.shops||{})),
     getTradeReceipts:()=>JSON.parse(JSON.stringify(state.world_engine?.trade_ids||{})),
@@ -34,7 +36,7 @@ export function createGameBridge(state,{apply,restore,render,persist}){
     getQuestLog:()=>JSON.parse(JSON.stringify(state.quest_log||[])),
     updateNPC:(id,profile)=>{if(battleIsActive(state))return;updateNPC(state,id,profile);render();persist();},
     updateScene:scene=>apply(typeof scene==='string'?scene:JSON.stringify(scene)),
-    updatePlayer:player=>{if(battleIsActive(state))return;const retained=Object.fromEntries(['constitution','manaStat','realm','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
+    updatePlayer:player=>{if(battleIsActive(state))return;assertGrowthSnapshot(state,player);const retained=Object.fromEntries(['constitution','manaStat','realm','circle','realmAbilities','uniqueAbility','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(player||{},k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));state.player=normalizePlayer({...player,...retained});if(state.chosenName)state.player.name=state.chosenName;render();persist();},
     updateInventory:items=>{if(battleIsActive(state))return;const inventory=normalizeInventory(items);if(state.quest_log?.length)Object.assign(state,settleQuests(state,{scene_id:'inventory-'+Date.now(),location:state.scene?.location||state.gameState.place||'',inventory}));else state.inventory=inventory;render();persist();},
     getGameState:()=>JSON.parse(JSON.stringify(state)),
     restoreGameState:saved=>restore(saved)

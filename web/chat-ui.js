@@ -161,7 +161,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(commitBattle)for(const r of scene.battle.outcome.resources)if(findNPC(r.id))updateNPC(state,r.id,{hp:r.hp,mp:r.mp});
       state.seenScenes=[...state.seenScenes,scene.scene_id].slice(-100);
       if(scene.player){
-        const retained=Object.fromEntries(['constitution','manaStat','realm','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
+        const retained=Object.fromEntries(['constitution','manaStat','realm','circle','realmAbilities','uniqueAbility','levelHpBonus','unspentStatPoints','battleModifiers'].filter(k=>!Object.hasOwn(scene.player,k)&&Object.hasOwn(state.player,k)).map(k=>[k,state.player[k]]));
         state.player={...scene.player,...retained,...(state.chosenName?{name:state.chosenName}:{})};
       }
       if(scene.inventory)state.inventory=scene.inventory;

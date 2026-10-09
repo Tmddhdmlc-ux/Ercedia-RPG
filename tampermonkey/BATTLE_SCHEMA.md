@@ -9,7 +9,7 @@
 - 장면의 `dialogue/choices/npc/location/time/background_id`는 **전투 종료 후 장면**이다. 재생 중 대사는 `battle.events[].narration`만 한 줄씩 보인다. background_id는 sunny_village_day 또는 null. 장소에 맞는 승인 원화가 없으면 null.
 - `player`, `inventory`, `game_state`는 종료 후 전체 스냅샷으로 반드시 포함한다. 전투 중에는 기존 세이브를 덮어쓰지 않고 생성된 전투와 재생 위치만 저장한다.
 - `reply_to`는 원래 행동 요청 ID 그대로. `scene_id`와 `battle_id`는 고유 ID.
-- 다섯 player 능력치 키는 `strength,dexterity,intelligence,constitution,manaStat`. 선택 항목 `realm`은 none/basic/expert/hyper/master. `levelHpBonus`, `unspentStatPoints`, `battleModifiers`를 지원한다. 기존 저장에는 항목을 자동 추가하지 않는다. 마법사 서클/마수 등급은 공개 rank에 표현하며 기사 배율은 none.
+- 다섯 player 능력치 키는 `strength,dexterity,intelligence,constitution,manaStat`. 선택 항목 `realm`은 none/basic/expert/hyper/master. `levelHpBonus`, `unspentStatPoints`, `battleModifiers`를 지원한다. 기존 저장에는 항목을 자동 추가하지 않는다. 마법사 서클/마수 등급은 공개 rank에 표현하며 기사 배율은 none. 선택 circle과 realmAbilities는 GROWTH_SCHEMA.md를 따르며 실제 저장과 일치해야 한다.
 - 경험치 보상으로 레벨이 오르면 PROGRESSION.md의 이월, +3 미사용 포인트와 COMBAT_GROWTH.md의 레벨 HP 보너스를 종료 스냅샷에 반영한다. 능력치 자동 분배/경지 자동 승급은 금지. HP 증가는 기존 피해량을 보존한다.
 - 부상 문자열은 `game_state.events`에도 기록. 피해에 따른 현재 HP와 서술 부상을 혼동하지 않는다.
 
@@ -84,3 +84,6 @@
 - `gameBridge.getNPC(id)` 또는 GPT 요청의 `npc_catalog.current_npc`는 GitHub 원본의 5스탯/레벨/HP/MP/속도/레벨 HP 기록에 해당 채팅의 NPC 변화값을 합친다. 등록 인물의 battle 시작 스냅샷이 이 값과 다르면 재생을 거절한다. 이름 대신 고유 ID를 사용한다.
 - 마수의 원본 `creature_damage_multiplier`는 `creature_multiplier`로 선언한다. 미기재 시 등록된 마수는 원본 배율을 읽는다. 이는 REBALANCE_V2의 잠정 마수 배율이며 기사 경지 배율과 별개다. 물리 피해 식에서 원시피해 × 기사 배율(마수는1) × 마수 배율 × 상황 보정 후 방어를 적용한다. 마법의 위력은 선언한 기술 공식을 따른다.
 - NPC 숫자 원본이 미등록인 경우 캐릭터 정보를 먼저 확정한다. 숫자를 임의 생성하지 않는다. NPC의 종료 자원은 전투 종료 정산 시 npcStates에 기록되어 정보창과 다음 턴에 공유된다.
+
+## 경지 반응 확장 (UI 2.1.35)
+GROWTH_SCHEMA.md를 따른다. physical calculation의 선택 mana_component는 물리 피해와 별도 마나 추가 피해. 사건 realm_reaction=mana_guard/reflection의 학습·경지·MP·감소율·GM 난수를 검사한다. 방어자 MP도 같은 사건에서 줄어든다. 성공 반사는 원래 공격 피해0과 바로 다음 reflection_source_event 주문을 검증하고 다시 반사하지 않는다. 기존 확장 없는 전투는 기존 공식·재생 그대로 동작한다.

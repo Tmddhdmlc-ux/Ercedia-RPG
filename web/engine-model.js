@@ -1,3 +1,6 @@
+import {resolveNPC,assertNPCGrowth} from './npc-model.js';
+import {growthRules} from './growth-data.js';
+import {applyGrowthEvent,assertGrowthSnapshot,currentCircle} from './growth-model.js';
 import {engineData} from './engine-data.js';
 import {battleGrowth} from './battle-model.js';
 export const statKeys=['strength','dexterity','intelligence','constitution','manaStat'];
@@ -52,12 +55,12 @@ export function bookEligibility(state,id){
   if(!state.inventory.some(i=>(i.catalog_id||i.id)===id))return '기술서를 소유하고 있지 않습니다.';
   if(!state.player.job.includes(b.required_class))return '직업 조건: '+b.required_class;
   if(state.player.level<b.required_level)return '요구 레벨 '+b.required_level;
-  if(b.required_circle&&(state.engine?.registration?.circle||0)<b.required_circle)return '필요 서클 '+b.required_circle+' · 실제 서클 확인이 필요합니다.';
+  if(b.required_circle&&currentCircle(state)<b.required_circle)return '필요 서클 '+b.required_circle+' · 실제 서클 확인이 필요합니다.';
   if((b.prerequisite_skill_ids||[]).some(id=>!state.player.skills.some(s=>s.id===id)))return '선행 기술이 필요합니다.';return '';
 }
 export function learnBook(state,id,proof){
   check(!bookEligibility(state,id),bookEligibility(state,id));check(typeof proof==='string'&&proof.trim().length>0,'GM의 학습·연습 확인이 필요합니다.');const b=engineData.books.find(b=>b.id===id),e=ensureEngine(state);if(e.learned.includes(id))return state;
-  check(state.player.skills.length<70,'기술 목록이 가득 찼습니다.');e.learned.push(id);state.player.skills.push({id:b.skill_id,name:b.skill_name,description:b.effect_summary,formula:b.category==='sword_manual'?`STR * 0.65 + DEX * 0.2 + ${10+b.physical_technique_bonus}`:'',enabled:true,mp_cost:b.base_mp_cost,spell_base_power:b.spell_base_power,technique_bonus:b.physical_technique_bonus,element:b.element,book_id:id});return state;
+  check(state.player.skills.length<70,'기술 목록이 가득 찼습니다.');e.learned.push(id);state.player.skills.push({id:b.skill_id,name:b.skill_name,description:b.effect_summary,formula:b.category==='sword_manual'?`STR * 0.65 + DEX * 0.2 + ${10+b.physical_technique_bonus}`:'',enabled:true,mp_cost:b.base_mp_cost,spell_base_power:b.spell_base_power,technique_bonus:b.physical_technique_bonus,element:b.element,...(b.required_circle?{circle:b.required_circle}:{}),book_id:id});return state;
 }
 export function usableSkills(state){return state.player.skills.filter(s=>s.enabled&&(s.mp_cost||0)<=state.player.mp&&(!s.book_id||state.engine?.learned.includes(s.book_id)));}
 export function awardXP(state,amount){check(Number.isSafeInteger(amount)&&amount>=0,'경험치 수치 오류');check(Number.isInteger(state.player.level)&&Number.isInteger(state.player.xp),'주인공 성장 정보가 미정입니다.');const growth=battleGrowth(state.player,amount);state.player={...state.player,...growth,hp:Math.min(growth.maxHp,state.player.hp+growth.hpIncrease)};delete state.player.hpIncrease;return state;}
@@ -65,14 +68,37 @@ export function validateEngineEvents(raw){if(raw===undefined)return [];check(Arr
 export function applyEngineEvent(state,event){
   const e=ensureEngine(state);if(e.applied.includes(event.event_id))return false;check(e.applied.length<10000,'엔진 사건 기록 보존 한도 초과');
   if(event.kind==='xp')awardXP(state,event.amount);
-  else if(event.kind==='profession'){check(['검사','마법사'].includes(event.job),'직업 오류');state.player.job=event.job;e.registration={...(e.registration||{}),job:event.job,...(event.circle?{circle:event.circle}:{})};check(!event.circle||(Number.isInteger(event.circle)&&event.circle>=1&&event.circle<=9),'서클 확인 오류');}
+  else if(event.kind==='profession'){check(['검사','마법사'].includes(event.job),'직업 오류');check(event.circle===undefined||event.circle===currentCircle(state),'서클 변경은 breakthrough 사건으로 기록하세요.');check(!state.player.job||state.player.job===event.job,'직업 변경·히든클래스 해금은 아직 미정입니다.');state.player.job=event.job;e.registration={...(e.registration||{}),job:event.job};}
+  else if(['breakthrough','learn_realm_ability'].includes(event.kind)){
+    if(event.npc_id){
+      const npc=resolveNPC(state,event.npc_id);check(npc&&npc.role!=='monster','등록된 인간 NPC가 필요합니다.');
+      const actor={player:{...npc,job:npc.realm!=='none'?'검사':npc.circle?'마법사':''},engine:{registration:{circle:npc.circle||0}},inventory:[]};
+      applyGrowthEvent(actor,event);actor.player.rank=event.kind==='breakthrough'?(event.track==='knight'?growthRules.knights.find(r=>r.id===actor.player.realm).name:actor.player.circle+'서클 마법사'):npc.rank;
+      const m=actor.player;
+      if(event.kind==='breakthrough'){
+        check([...statKeys,'speed','hp','maxHp','mp','maxMp'].every(k=>Number.isFinite(npc[k])),'NPC 성장 자원이 미정입니다.');
+        const loss=npc.maxHp-npc.hp,spent=npc.maxMp-npc.mp;
+        m.maxHp=npc.maxHp+10*(m.constitution-npc.constitution)+3*(m.strength-npc.strength);m.maxMp=npc.maxMp+6*(m.manaStat-npc.manaStat);m.hp=Math.max(0,m.maxHp-loss);m.mp=Math.max(0,m.maxMp-spent);m.speed=npc.speed+(m.dexterity-npc.dexterity)+Math.floor(m.strength/5)-Math.floor(npc.strength/5);
+      }
+      state.npcStates={...(state.npcStates||{}),[npc.id]:{...(state.npcStates?.[npc.id]||{}),...m}};
+      e.npc_growth_history=[...(e.npc_growth_history||[]),{event_id:event.event_id,npc_id:npc.id,reason:event.reason,enlightenment:event.enlightenment||null}];
+    }else {applyGrowthEvent(state,event);recalculateEquipment(state);}
+  }
   else if(event.kind==='learn_book')learnBook(state,event.catalog_id,event.reason);
   else throw Error('지원하지 않는 엔진 사건: '+event.kind);
   e.applied.push(event.event_id);return true;
 }
 export function planEngineScene(state,scene,questResult){
+  assertGrowthSnapshot(state,scene.player);
+  for(const [id,profile] of Object.entries(scene.npc_updates||{}))assertNPCGrowth(state,id,profile);
+  for(const npc of [scene.npc,...(scene.cast||[])])if(npc?.profile)assertNPCGrowth(state,npc.id,npc.profile);
   if(!state.engine&&!scene.engine_events?.length)return null;
   const next=copyEngine(state);if(scene.player)next.player={...next.player,...scene.player};if(scene.inventory)next.inventory=copyEngine(scene.inventory);if(scene.game_state)Object.assign(next.gameState,scene.game_state);if(questResult)Object.assign(next,questResult);
+  if(scene.engine_events?.some(event=>event.npc_id&&['breakthrough','learn_realm_ability'].includes(event.kind))){
+    for(const [id,profile] of Object.entries(scene.npc_updates||{})){const npc=resolveNPC(next,id);if(npc)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),...profile}};}
+    for(const npc of [scene.npc,...(scene.cast||[])])if(npc?.profile)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),...npc.profile}};
+    for(const resource of scene.battle?.outcome?.resources||[]){const npc=resolveNPC(next,resource.id);if(npc)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),hp:resource.hp,mp:resource.mp}};}
+  }
   for(const event of scene.engine_events||[]){check(!(event.kind==='xp'&&(scene.battle||scene.quest_events?.some(q=>q.kind==='report'))),'중복 경험치 정산 금지');applyEngineEvent(next,event);}
-  recalculateEquipment(next);return {engine:next.engine,player:next.player,inventory:next.inventory};
+  recalculateEquipment(next);return {engine:next.engine,player:next.player,inventory:next.inventory,...(scene.engine_events?.some(event=>event.npc_id&&['breakthrough','learn_realm_ability'].includes(event.kind))?{npcStates:next.npcStates}:{})};
 }

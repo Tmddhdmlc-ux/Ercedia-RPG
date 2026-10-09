@@ -1,3 +1,4 @@
+import {growthContext} from './growth-model.js';
 import {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility} from './engine-model.js';
 import {applyItemRarity} from './item-rarity.js';
 import {appendItemIcon} from './item-art-ui.js';
@@ -16,7 +17,9 @@ export function mountEngineUI(state,{render,persist,submit,isPending,assetBase})
   const equipment=mountEquipmentSlots({assetBase,isBusy:busy,unequip:slot=>commit(s=>unequipItem(s,slot))});
   function refresh(){
     library.render();
-    growth.replaceChildren();gear.replaceChildren();line(growth,'능력치 투자 · 미사용 포인트 '+(state.player.unspentStatPoints||0));
+    growth.replaceChildren();gear.replaceChildren();
+    const g=growthContext(state),current=g.profile.knight||g.profile.mage;line(growth,'현재 경지 · '+(current?.name||'미정'));if(current)line(growth,current.social_description);if(g.next)line(growth,'다음 경지 · '+g.next.name+' · 최소 Lv.'+g.next.min_level+' · '+(g.next.minimum_level_met?'레벨 충족 · 깨달음 필요':'레벨 미달'));line(growth,'경지 능력 · '+(g.learned_abilities.map(id=>g.rules.abilities.find(a=>a.id===id)?.name||id).join(' / ')||'습득한 능력 없음'));if(state.player.uniqueAbility)line(growth,'고유능력 · '+state.player.uniqueAbility.name+' · '+state.player.uniqueAbility.description);
+    line(growth,'능력치 투자 · 미사용 포인트 '+(state.player.unspentStatPoints||0));
     for(const key of statKeys){const row=document.createElement('div');row.className='engine-row';line(row,statLabels[key]+' '+(state.player[key]??'미정'));row.append(button('+',()=>{const next=copyEngine(state);investStat(next,key);preview={key,before:combatPreview(state),after:combatPreview(next),cost:(state.player.unspentStatPoints||0)-next.player.unspentStatPoints,remaining:next.player.unspentStatPoints};refresh();},busy()||!state.player.unspentStatPoints));growth.append(row);}
     if(preview){const {before:a,after:b}=preview;line(growth,`${statLabels[preview.key]} +1 · 비용 ${preview.cost} · 남은 포인트 ${preview.remaining}`);line(growth,`최대 HP ${a.hp} → ${b.hp} / MP ${a.mp} → ${b.mp} / 물리 공격 ${a.attack.join('~')} → ${b.attack.join('~')} / 속도 ${a.speed} → ${b.speed}`);growth.append(button('투자 확정',()=>commit(s=>investStat(s,preview.key)),busy()),button('취소',()=>{preview=null;refresh();}));}
     line(gear,'장비 · 기술서');const next=copyEngine(state),e=ensureEngine(next),p=combatPreview(state);line(gear,`물리 공격 ${p.attack.join('~')} · 속도 ${p.speed} · 방어 ${p.defense} · 저항 ${p.resistance} · 주문 보정 ${p.spell_power}`);
