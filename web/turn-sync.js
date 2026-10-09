@@ -36,7 +36,7 @@ export function createTurnSync(){
 }
 export function incrementalPrompt(state,action,id,packet){
  const d=packet.domains;
- let rules='에르세디아 다음 턴. 이 채팅에서 확인한 BOOTSTRAP.md, WORLD.md와 승인 설정을 유지합니다. 확인된 세계관을 유지하고 미정인 진행 방법은 GM이 구성하세요. 실행은 준비 질문을 연속 반복하지 말고 가능한 대체 방법으로 이번 응답에서 결과까지 처리하세요. 게임 속 시간을 정산하고 실제 대기를 요구하지 마세요. 정보 문의와 실행을 구분하고 큰 위험·미승인 지출·중요 선택만 확인하세요. 캠페인 기록만 사용하며 journey_goal은 동기입니다. NPC 지식·비밀 제한을 지키세요. '+
+ let rules='에르세디아 다음 턴. 이 채팅에서 확인한 BOOTSTRAP.md, WORLD.md와 승인 설정을 유지합니다. 확인된 세계관을 유지하고 미정인 진행 방법은 GM이 구성하세요. 실행은 준비 질문을 연속 반복하지 말고 가능한 대체 방법으로 이번 응답에서 결과까지 처리하세요. 게임 속 시간을 정산하고 실제 대기를 요구하지 마세요. 정보 문의와 실행을 구분하고 큰 위험·미승인 지출·중요 선택만 확인하세요. 캠페인 기록만 사용하며 journey_goal은 동기입니다. NPC 지식·비밀 제한을 지키세요. 보상 없음·지급 없음·수치 변화 없음·수락하지 않음 같은 무변화 보고는 dialogue에 넣지 마세요. 실제로 달라진 상황과 인물 반응만 자연스럽게 서술하고 보상은 획득했을 때만 짧게 알리세요. 실행 불가·실패·비용·위험처럼 다음 선택에 필요한 제한은 이유와 함께 안내하세요. 실제 판정과 구조화 사건은 유지하세요. '+
  '생략된 상태는 이전 값을 유지합니다. delta의 객체는 제공 필드만 병합하고 배열은 전체 대체합니다. checkpoint는 최신 진행 요약입니다. removed의 필드 경로는 현재 문맥에서 제거합니다. 엔진의 최신 상태가 대화 기억보다 우선합니다. 전체 진행 요약은 최초/불러오기 직후와 성공한 10턴마다 제공합니다. 전체 설정을 다시 읽거나 요청하지 마세요. '+
  'ercedia_scene JSON 코드블록 하나: schema_version=1,type=ercedia_scene,고유 scene_id,reply_to="'+id+'",location,time,background_id,npc,dialogue,choices. npc/cast는 등록 ID·원화·표정만, 원화 없으면 null. NPC 대사에 speaker_id를 넣고 cast 최대3명. choices.kind는 dialogue/travel/quest/investigate/trade/training/action 또는 생략. 중요한 선택2~4개, 자유입력만이면0개. 일반 대화는1~3개 짧은 대사. '+
  '변경 없는 player/inventory/game_state·profile은 생략하고 변경 시 전체 최신값을 출력하세요. 실제 시간 경과와 위치를 game_state에 반영하세요. 미정 진행 방법은 gm_rulings로 기록하고 기존 판정을 지키세요. 보상·관계·이동·직업 변경은 기존 사건으로 검증하고 보상을 중복 지급하지 마세요. 미장착 스킬 효과 금지. 실제 성과는 practice, 새 기술 학습은 learn_custom_skill로 기록하세요. ';
