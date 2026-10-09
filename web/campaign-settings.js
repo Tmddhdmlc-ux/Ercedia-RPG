@@ -16,7 +16,7 @@ export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=
   if(tree.truncated||!Array.isArray(tree.tree))throw Error('GitHub 설정 목록이 불완전합니다. 다시 시도하세요.');
   const paths=tree.tree.filter(p=>p.type==='blob'&&isCampaignSetting(p.path)).map(p=>p.path).sort();
   for(const required of ['BOOTSTRAP.md','WORLD.md','characters/player_default.json','characters/serin.json'])if(!paths.includes(required))throw Error('필수 설정 누락: '+required);
-  if(paths.length>200)throw Error('설정 파일 수가 지원 범위를 초과했습니다.');
+  if(paths.length>500)throw Error('설정 파일 수가 지원 범위를 초과했습니다.');
   const files={};let index=0,done=0,total=0;
   await Promise.all(Array.from({length:6},async()=>{
     while(index<paths.length){const path=paths[index++],raw=await read(`https://raw.githubusercontent.com/${REPO}/${sha}/${path}`);

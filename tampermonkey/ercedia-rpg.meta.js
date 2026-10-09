@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.8
+// @version      1.2.0
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
+// @match        http://127.0.0.1/*
+// @match        http://localhost/*
 // @run-at       document-idle
 // @updateURL    https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.meta.js
 // @downloadURL  https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.user.js
@@ -14,6 +16,7 @@
 // @grant        GM_addElement
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
+// @grant        GM_openInTab
 // @connect      api.github.com
 // @connect      raw.githubusercontent.com
 // ==/UserScript==

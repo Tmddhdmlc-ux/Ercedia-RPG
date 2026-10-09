@@ -2772,3 +2772,5 @@ input[type=range] {
 .face-image.ready {
   animation:standing-arrive .2s ease
 }
+
+.chat-connection{margin:12px 0;padding:12px;border:1px solid #c9ad6655;border-radius:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.chat-connection:has(button[hidden]){display:none}.chat-connection p{width:100%;margin:0;font-size:15px}.chat-connection a{color:#e1bf75}.chat-connection button{min-height:44px}

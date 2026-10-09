@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.8
+// @version      1.2.0
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
+// @match        http://127.0.0.1/*
+// @match        http://localhost/*
 // @run-at       document-idle
 // @updateURL    https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.meta.js
 // @downloadURL  https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.user.js
@@ -14,6 +16,7 @@
 // @grant        GM_addElement
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
+// @grant        GM_openInTab
 // @connect      api.github.com
 // @connect      raw.githubusercontent.com
 // ==/UserScript==
@@ -38,8 +41,17 @@ function extractSceneJSON(source){
   // Uses only ChatGPT's public file input and visible attachment confirmation.
 async function attachCampaignSettings(file,{roots,isCurrent,wait}){
   if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>1500000)throw Error('설정 첨부 파일 형식 오류');
-  const inputs=roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
-  const input=inputs.find(node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim()))));
+  const findInputs=()=>roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
+  const suitable=node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim())));
+  let inputs=findInputs(),input=inputs.find(suitable);
+  if(!input){
+    const controls=roots().flatMap(root=>[...root.querySelectorAll('button')]);
+    const menu=controls.find(node=>!node.disabled&&(node.getAttribute('data-testid')==='composer-plus-btn'||/^(?:Add photos and files|Attach files|파일 및 사진 추가|사진 및 파일 추가|파일 첨부)$/i.test(node.getAttribute('aria-label')||'')));
+    if(menu&&isCurrent()){
+      menu.click();
+      for(let attempt=0;attempt<20&&!input;attempt++){await wait(300);if(!isCurrent())throw Error('채팅이 바뀌어 설정 첨부를 취소했습니다.');inputs=findInputs();input=inputs.find(suitable);}
+    }
+  }
   if(!input)throw Error('GPT 파일 입력창을 찾지 못했습니다. 연결 도움의 설정 파일을 직접 첨부한 뒤 요청을 보내세요.');
   if(inputs.some(node=>[...(node.files||[])].some(f=>f.name!==file.name)))throw Error('원본 GPT 입력창에 다른 첨부 파일이 있습니다. 먼저 기존 첨부를 확인하고 비운 뒤 다시 보내세요.');
   if(!isCurrent())throw Error('채팅이 바뀌어 설정 첨부를 취소했습니다.');
@@ -53,6 +65,37 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
   throw Error('설정 파일의 첨부 확인 시간이 지났습니다. 원본 GPT의 첨부 상태를 확인하세요. 자동 재전송하지 않습니다.');
 }
 
+  function validateChatHandoff(payload){
+  if(!payload||typeof payload!=='object'||JSON.stringify(payload).length>4000000)throw Error('게임 전달 데이터가 너무 크거나 올바르지 않습니다.');
+  const s=payload.settings;
+  if(!/^[a-f0-9]{40}$/.test(s?.sha||'')||!Array.isArray(s.paths)||s.paths.length>500||new Set(s.paths).size!==s.paths.length||!s.paths.includes('BOOTSTRAP.md')||!s.paths.includes('WORLD.md'))throw Error('전체 GitHub 설정이 필요합니다.');
+  let size=0;for(const path of s.paths){if(typeof path!=='string'||typeof s.files?.[path]!=='string')throw Error('누락된 설정 원문이 있습니다.');size+=s.files[path].length;}if(size>1500000)throw Error('설정 원문이 전송 한도를 초과했습니다.');
+  if(payload.state?.version!==1||!payload.state.player?.name?.trim()||payload.state.introDraft||typeof payload.action!=='string'||!payload.action.trim()||payload.action.length>2000)throw Error('캐릭터 설정을 완료한 뒤 연결하세요.');
+  return payload;
+}
+function readChatHandoff(location,read,now=Date.now()){
+  if(!['chatgpt.com','chat.openai.com'].includes(location.hostname)||!['/',''].includes(location.pathname))return null;
+  const id=new URLSearchParams(location.hash.replace(/^#/,'' )).get('ercedia-handoff');if(!/^[a-f0-9-]{36}$/.test(id||''))return null;
+  const key='ercedia.handoff.v1:'+id,record=read(key);
+  if(!record||!Number.isFinite(record.created)||now-record.created<0||now-record.created>600000)return null;
+  try{return {...validateChatHandoff(record),key};}catch{return null;}
+}
+function installLocalHandoff({scope,write,openTab,now=Date.now}){
+  if(!['127.0.0.1','localhost'].includes(scope.location.hostname)||scope.location.port!=='4184'||!['/','/index.html'].includes(scope.location.pathname))return false;
+  const reply=(type,id,payload)=>scope.postMessage({channel:'ercedia-handoff',type,id,payload},scope.location.origin);
+  const handled=new Set();
+  scope.addEventListener('message',event=>{
+    const d=event.data;if(event.source!==scope||event.origin!==scope.location.origin||d?.channel!=='ercedia-handoff')return;
+    if(d.type==='probe'){reply('ready',d.id,{version:'1.2.0'});return;}
+    if(d.type!=='start'||!/^[a-f0-9-]{36}$/.test(d.id||'')||handled.has(d.id))return;
+    try{validateChatHandoff(d.payload);handled.add(d.id);const key='ercedia.handoff.v1:'+d.id;write(key,{...d.payload,created:now()});openTab('https://chatgpt.com/#ercedia-handoff='+d.id);reply('opened',d.id,'새 ChatGPT 채팅에서 설정과 게임 상태를 전달하고 있습니다.');}
+    catch(error){reply('error',d.id,error.message);}
+  });return true;
+}
+
+  if(['127.0.0.1','localhost'].includes(location.hostname)){
+    installLocalHandoff({scope:window,write:(key,value)=>GM_setValue(key,value),openTab:url=>GM_openInTab(url,{active:true,insert:true})});return;
+  }
   if(document.getElementById('ercedia-game-root'))return;
   const HOST='https://tmddhdmlc-ux.github.io/Ercedia-RPG';
   const REPO='Tmddhdmlc-ux/Ercedia-RPG',CACHE='ercedia.launcher.releases.v1';
@@ -147,9 +190,9 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.1.8 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.0 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
-      tell(initial?'고정 UI 연결됨 · 자동 연결은 꺼져 있습니다.':'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
+      tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
     finally{switching=false;update.disabled=false;rollback.disabled=!previous;}
   }
@@ -322,5 +365,19 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
     if(wasDraft&&saved)try{write(storageKey(),saved);}catch{}baseline();if(wasDraft){send('conversation',null);tell('새 채팅에 게임 요청 연결 · GPT 응답을 기다리는 중…');}else{send('restore',saved);tell('채팅 전환 · 저장 상태 복원 요청');}
   },500);
   setInterval(()=>checkLatest(false),600000);
-  (async()=>{const cache=read(CACHE);previous=cache?.previous||null;if(cache?.current)await activate(cache.current,true);if(!active&&cache?.previous)await activate(cache.previous,true);await checkLatest(true);})();
+  (async()=>{
+    const transfer=readChatHandoff(location,read),cache=read(CACHE);previous=cache?.previous||null;
+    if(transfer){latestState=transfer.state;auto.checked=true;}
+    if(!transfer&&cache?.current)await activate(cache.current,true);
+    if(!transfer&&!active&&cache?.previous)await activate(cache.previous,true);
+    await checkLatest(true);
+    if(transfer){
+      if(!active)return tell('새 채팅의 게임 UI를 시작하지 못했습니다. 원래 게임 상태는 보존됩니다.');
+      try{
+        const result=await frameRequest(active,'bootstrap-campaign',{settings:transfer.settings,action:transfer.action});
+        if(!result.started)throw Error(result.message||'설정 전달 요청을 시작하지 못했습니다.');
+        write(transfer.key,null);history.replaceState(null,'',location.pathname+location.search);
+      }catch(error){tell('새 채팅 설정 연결 실패 · '+error.message);}
+    }
+  })();
 })();

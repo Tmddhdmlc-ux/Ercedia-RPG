@@ -1,4 +1,5 @@
 import {mountNPCArt} from './npc-art-ui.js';
+import {mountChatConnection} from './chat-connection-ui.js';
 import {mountWorldUI} from './world-ui.js';
 import {mountRemasterUI} from './remaster-ui.js';
 import {createGameBridge} from '../integration/game-bridge.js';
@@ -230,6 +231,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
 let remasterUI=null,worldUI=null;
 function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();remasterUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
+mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:message=>chatUI.reportStatus(message)});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 engineUI=mountEngineUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});

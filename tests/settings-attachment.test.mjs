@@ -10,6 +10,14 @@ test('attachment without an available public file input fails before sending the
   await assert.rejects(()=>attachCampaignSettings({name:'ercedia-settings-'+ 'a'.repeat(40)+'.txt',content:'test'},{roots:()=>[{querySelectorAll:()=>[]}],isCurrent:()=>true,wait:async()=>{}}),/파일 입력창/);
   await assert.rejects(()=>attachCampaignSettings({name:'other.txt',content:'test'},{}),/형식 오류/);
 });
+test('a collapsed composer attachment menu is opened before checking its file input',async()=>{
+  const old=globalThis.DataTransfer;globalThis.DataTransfer=class{files=[];items={add:file=>this.files.push(file)};};
+  let opened=false,attached=false;const input={accept:'.txt',disabled:false,dispatchEvent(e){if(e.type==='change')attached=true;}};
+  const button={disabled:false,getAttribute:key=>key==='data-testid'?'composer-plus-btn':null,click(){opened=true;}};
+  const file={name:'ercedia-settings-'+ 'c'.repeat(40)+'.txt',content:'설정 원문'};
+  const root={querySelectorAll(selector){return selector==='input[type="file"]'?(opened?[input]:[]):selector==='button'?[button]:attached?[{textContent:file.name}]:[];}};
+  try{await attachCampaignSettings(file,{roots:()=>[root],isCurrent:()=>true,wait:async()=>{}});assert.equal(opened,true);assert.equal(input.files[0].name,file.name);assert.equal(attached,true);}finally{globalThis.DataTransfer=old;}
+});
 test('a supported public file input receives the full file and requires visible confirmation',async()=>{
   const old=globalThis.DataTransfer;globalThis.DataTransfer=class{files=[];items={add:file=>this.files.push(file)};};
   let attached=false;const events=[],input={accept:'.txt',disabled:false,dispatchEvent(e){events.push(e.type);if(e.type==='change')attached=true;}};

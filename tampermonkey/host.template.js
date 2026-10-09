@@ -1,10 +1,12 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.1.8
+// @version      1.2.0
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
+// @match        http://127.0.0.1/*
+// @match        http://localhost/*
 // @run-at       document-idle
 // @updateURL    https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.meta.js
 // @downloadURL  https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/tampermonkey/ercedia-rpg.user.js
@@ -14,6 +16,7 @@
 // @grant        GM_addElement
 // @grant        GM_xmlhttpRequest
 // @grant        GM_registerMenuCommand
+// @grant        GM_openInTab
 // @connect      api.github.com
 // @connect      raw.githubusercontent.com
 // ==/UserScript==
@@ -21,6 +24,10 @@
   'use strict';
   /*__RESPONSE_READER__*/
   /*__SETTINGS_ATTACHMENT__*/
+  /*__CHAT_HANDOFF__*/
+  if(['127.0.0.1','localhost'].includes(location.hostname)){
+    installLocalHandoff({scope:window,write:(key,value)=>GM_setValue(key,value),openTab:url=>GM_openInTab(url,{active:true,insert:true})});return;
+  }
   if(document.getElementById('ercedia-game-root'))return;
   const HOST='https://tmddhdmlc-ux.github.io/Ercedia-RPG';
   const REPO='Tmddhdmlc-ux/Ercedia-RPG',CACHE='ercedia.launcher.releases.v1';
@@ -115,9 +122,9 @@
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.1.8 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.0 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
-      tell(initial?'고정 UI 연결됨 · 자동 연결은 꺼져 있습니다.':'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
+      tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
     finally{switching=false;update.disabled=false;rollback.disabled=!previous;}
   }
@@ -290,5 +297,19 @@
     if(wasDraft&&saved)try{write(storageKey(),saved);}catch{}baseline();if(wasDraft){send('conversation',null);tell('새 채팅에 게임 요청 연결 · GPT 응답을 기다리는 중…');}else{send('restore',saved);tell('채팅 전환 · 저장 상태 복원 요청');}
   },500);
   setInterval(()=>checkLatest(false),600000);
-  (async()=>{const cache=read(CACHE);previous=cache?.previous||null;if(cache?.current)await activate(cache.current,true);if(!active&&cache?.previous)await activate(cache.previous,true);await checkLatest(true);})();
+  (async()=>{
+    const transfer=readChatHandoff(location,read),cache=read(CACHE);previous=cache?.previous||null;
+    if(transfer){latestState=transfer.state;auto.checked=true;}
+    if(!transfer&&cache?.current)await activate(cache.current,true);
+    if(!transfer&&!active&&cache?.previous)await activate(cache.previous,true);
+    await checkLatest(true);
+    if(transfer){
+      if(!active)return tell('새 채팅의 게임 UI를 시작하지 못했습니다. 원래 게임 상태는 보존됩니다.');
+      try{
+        const result=await frameRequest(active,'bootstrap-campaign',{settings:transfer.settings,action:transfer.action});
+        if(!result.started)throw Error(result.message||'설정 전달 요청을 시작하지 못했습니다.');
+        write(transfer.key,null);history.replaceState(null,'',location.pathname+location.search);
+      }catch(error){tell('새 채팅 설정 연결 실패 · '+error.message);}
+    }
+  })();
 })();

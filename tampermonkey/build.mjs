@@ -41,7 +41,8 @@ const template=await readFile(path.join(root,'tampermonkey/host.template.js'),'u
 const reader=(await readFile(path.join(root,'web/response-json.js'),'utf8')).replace(/export\s+(?=function)/g,'');
 const script=template.replace('/*__RESPONSE_READER__*/',()=>reader);
 const attachment=(await readFile(path.join(root,'web/settings-attachment.js'),'utf8')).replace(/export\s+(?=async|function)/g,'');
-const launcher=script.replace('/*__SETTINGS_ATTACHMENT__*/',()=>attachment);
+const handoff=(await readFile(path.join(root,'web/chat-handoff.js'),'utf8')).replace(/export\s+(?=function)/g,'');
+const launcher=script.replace('/*__SETTINGS_ATTACHMENT__*/',()=>attachment).replace('/*__CHAT_HANDOFF__*/',()=>handoff);
 await writeFile(path.join(root,'tampermonkey/ercedia-rpg.user.js'),launcher);
 await writeFile(path.join(root,'tampermonkey/ercedia-rpg.meta.js'),launcher.slice(0,launcher.indexOf('// ==/UserScript==')+'// ==/UserScript=='.length)+'\n');
 console.log(`Built game bundle and launcher (${Buffer.byteLength(launcher)} bytes)`);

@@ -1,8 +1,17 @@
 // Uses only ChatGPT's public file input and visible attachment confirmation.
 export async function attachCampaignSettings(file,{roots,isCurrent,wait}){
   if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>1500000)throw Error('설정 첨부 파일 형식 오류');
-  const inputs=roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
-  const input=inputs.find(node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim()))));
+  const findInputs=()=>roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
+  const suitable=node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim())));
+  let inputs=findInputs(),input=inputs.find(suitable);
+  if(!input){
+    const controls=roots().flatMap(root=>[...root.querySelectorAll('button')]);
+    const menu=controls.find(node=>!node.disabled&&(node.getAttribute('data-testid')==='composer-plus-btn'||/^(?:Add photos and files|Attach files|파일 및 사진 추가|사진 및 파일 추가|파일 첨부)$/i.test(node.getAttribute('aria-label')||'')));
+    if(menu&&isCurrent()){
+      menu.click();
+      for(let attempt=0;attempt<20&&!input;attempt++){await wait(300);if(!isCurrent())throw Error('채팅이 바뀌어 설정 첨부를 취소했습니다.');inputs=findInputs();input=inputs.find(suitable);}
+    }
+  }
   if(!input)throw Error('GPT 파일 입력창을 찾지 못했습니다. 연결 도움의 설정 파일을 직접 첨부한 뒤 요청을 보내세요.');
   if(inputs.some(node=>[...(node.files||[])].some(f=>f.name!==file.name)))throw Error('원본 GPT 입력창에 다른 첨부 파일이 있습니다. 먼저 기존 첨부를 확인하고 비운 뒤 다시 보내세요.');
   if(!isCurrent())throw Error('채팅이 바뀌어 설정 첨부를 취소했습니다.');

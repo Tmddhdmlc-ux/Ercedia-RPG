@@ -195,6 +195,11 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
     }
     if(data.conversation!==conversation)return;
+    if(data.type==='bootstrap-campaign'){
+      if(pending||battleIsActive(state)||needsName()||state.introDraft)return notify('bootstrap-started',{requestId:data.requestId,started:false,message:'새 채팅 게임 상태가 준비되지 않았습니다.'});
+      campaignSettings=data.payload.settings;submit(data.payload.action);
+      notify('bootstrap-started',{requestId:data.requestId,started:!!pending});return;
+    }
     if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
     if(data.type==='action-error'){transportFailed(data.payload);$('connection-tools').open=true;}
     if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending||battleIsActive(state),requestId:data.requestId});
