@@ -1,5 +1,15 @@
 # 의뢰 브리지 v1 — UI 1.6.0
 
+## 지역 에픽 확장 — UI 2.1.15
+
+`REGIONAL_EPIC_QUESTS.md`와 `quests/regional_epic_quests.json`의 등록 시드를 사용한다. 검증된 일반 의뢰 5개 완료 또는 독립적인 지역 호감도 30이면 제안 자격이 열린다. 수락·완료·보상은 기존 의뢰 사건 검증을 그대로 거친다. 개인 NPC 호감도와 국가 명성은 지역 호감도가 아니다.
+
+에픽 제안은 `id=epic_id=등록된 에픽 ID`, `rank="EPIC"`, 해당 `region_id`를 포함한다. 솔브린 마을은 `settlement_id="W3-SOLBRIN"`를 사용한다. 일반 의뢰도 실제 마을 실적이면 같은 태그를 포함하며 반복 파밍은 `repeatable=true`로 표시한다. 에픽 자체와 반복 파밍은 일반 의뢰 해금 실적에서 제외한다. 완료 ID와 보상 사건 기록은 기존 `quest_log`와 `quest_event_ids`에 보관한다.
+
+보상은 원본 지역별 후보 중 한 개만 `reward.item_ids`에 지정한다. 마을 시드는 등록된 유니크 이상 장비·기술서 한 개를 사용하며 신물은 제외한다. 원본에 없는 경험치·재화·재료·개인 호감도 보상을 추가하지 않는다. 실제 목표 증거와 발행자 보고가 확인되어야 기존 `claim_event_id`로 한 번 지급한다.
+
+실제 도움·배신 등 공동체 평가 사건은 장면에 `locality_events=[{event_id,scope_id,delta,reason}]`로 기록한다. 최대 16개, delta는 -100..100 정수, reason은 실제 사건의 공개 근거다. scope_id는 13개 영주령 ID 또는 등록된 W3-SOLBRIN이며 실제 장면 지역과 일치해야 한다. 마을 사건은 실제 솔브린 마을 장면만 허용한다. 같은 사건을 반복 적용하지 않으며 변경된 동일 ID는 거절한다. 세이브의 `local_reputation={affection:{},events:{}}`에 별도로 보존한다. 설정 읽기 확인 응답에서는 이를 출력하지 않는다.
+
 기존 ercedia_scene/schema_version=1에 다음 선택 필드를 추가한다. 원본 세계관·템플릿·NPC 조건은 QUEST_SYSTEM.md 및 quests/quest_templates.json을 따른다. 장면의 설명문은 목표 증거가 아니다.
 
 ## 제안 및 조건 협상

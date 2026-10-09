@@ -6,6 +6,7 @@ import './map-factions-build.mjs';
 import './intro-build.mjs';
 import './economy-build.mjs';
 import './catalog-build.mjs';
+import './epic-build.mjs';
 import './character-art-build.mjs';
 import './quest-build.mjs';
 import './engine-build.mjs';

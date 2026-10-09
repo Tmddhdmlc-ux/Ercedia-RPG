@@ -1,3 +1,4 @@
+import {normalizeLocalReputation} from './epic-model.js';
 import {bindWallet} from './wallet.js';
 import {normalizeScene} from './scene.js';
 import {normalizeQuestLog} from './quest-model.js';
@@ -22,6 +23,7 @@ const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFi
 export function normalize(raw) {
   const s=defaults();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return s;
+  if(raw.local_reputation)s.local_reputation=normalizeLocalReputation(raw.local_reputation);
   if(raw.npc_life)s.npc_life=normalizeLife(raw.npc_life);
   for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory','quests']})) if (choices.includes(raw[key])) s[key]=raw[key];
   for (const k of outfitKeys) { const l=raw.layouts?.[k]; if (l) s.layouts[k]={scale:num(l.scale,50,400,260),x:num(l.x,0,100,50),y:num(l.y,-350,200,-120)}; }
@@ -31,7 +33,7 @@ export function normalize(raw) {
   if(raw.world_engine)s.world_engine=normalizeWorld(raw.world_engine,raw);
   if(typeof raw.campaign_id==='string'&&raw.campaign_id.length<=100)s.campaign_id=raw.campaign_id;
   if(raw.engine){const engine=normalizeEngine(raw.engine);if(engine)s.engine=engine;}
-  if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,160)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
+  if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,256)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
   if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
   if(raw.intro_completed===true){
     try{Object.assign(s,creationFields({name:raw.character_name,appearance:raw.gender_or_appearance||'',answers:raw.chosen_answers||{},passive:raw.starting_passive_id,kingdom:({벨로아:'west',드라켄:'east',루메린:'south'})[raw.starting_kingdom],lordship:raw.starting_lordship_id}));}catch{}
@@ -51,7 +53,7 @@ export function normalize(raw) {
   if(Object.hasOwn(raw,'wallet_copper')||Object.hasOwn(raw,'currency'))bindWallet(Object.assign(s,{...(Object.hasOwn(raw,'wallet_copper')?{wallet_copper:raw.wallet_copper}:{currency:raw.currency})}));
   if(raw.initial_currency_granted===true)s.initial_currency_granted=true;
   if(raw.inventory_limits&&Number.isSafeInteger(raw.inventory_limits.slots)&&raw.inventory_limits.slots>0&&raw.inventory_limits.slots<=32)s.inventory_limits={slots:raw.inventory_limits.slots,...(Number.isFinite(raw.inventory_limits.max_weight)&&raw.inventory_limits.max_weight>=0?{max_weight:raw.inventory_limits.max_weight}:{})};
-  if(raw.relationships&&typeof raw.relationships==='object'&&!Array.isArray(raw.relationships)){s.relationships={};for(const [id,r] of Object.entries(raw.relationships).slice(0,160)){if(!r||!Number.isFinite(r.affection))continue;s.relationships[id]={affection:Math.max(-100,Math.min(100,r.affection)),flags:Array.isArray(r.flags)?r.flags.filter(v=>typeof v==='string').slice(-100):[],interaction_history:Array.isArray(r.interaction_history)?r.interaction_history.filter(v=>typeof v==='string').slice(-100):[],last_interaction_day:typeof r.last_interaction_day==='string'?r.last_interaction_day:null};}}
+  if(raw.relationships&&typeof raw.relationships==='object'&&!Array.isArray(raw.relationships)){s.relationships={};for(const [id,r] of Object.entries(raw.relationships).slice(0,256)){if(!r||!Number.isFinite(r.affection))continue;s.relationships[id]={affection:Math.max(-100,Math.min(100,r.affection)),flags:Array.isArray(r.flags)?r.flags.filter(v=>typeof v==='string').slice(-100):[],interaction_history:Array.isArray(r.interaction_history)?r.interaction_history.filter(v=>typeof v==='string').slice(-100):[],last_interaction_day:typeof r.last_interaction_day==='string'?r.last_interaction_day:null};}}
   s.inventory=normalizeInventory(raw.inventory);
   try {s.scene=raw.scene?normalizeScene(raw.scene):null;}catch {s.scene=null;}
   s.sceneIndex=num(raw.sceneIndex,0,(s.scene?.dialogue.length||1)-1,0);

@@ -2903,6 +2903,7 @@ input[type=range] {
 #quest-list .quest-card{text-align:left;width:100%;padding:16px;border-left:4px solid #D6B67C}
 #quest-list .quest-card strong{font-size:22px;line-height:1.4}
 #quest-list .quest-card .quest-card-reward{font-size:18px;color:#E5C989;opacity:1}
+.regional-epics{margin:20px 0;padding:18px;border:1px solid #AD8BCD;border-radius:10px;background:#211E2C}.regional-epics h3{color:#D1B2F0;font-size:22px}.regional-epics article{margin:12px 0;padding:14px;border:1px solid #AD8BCD55;border-radius:8px}.regional-epics strong{font-size:20px;color:#E6D3F7}.regional-epics p{font-size:17px;line-height:1.6}
 
 /* Battle presentation: named speakers, skill announcements and impact-only numbers. */
 #speaker[data-voice=character],#line[data-voice=character],.battle-participant>strong{color:#86C9FF}

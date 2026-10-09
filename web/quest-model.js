@@ -1,3 +1,4 @@
+import {validateEpicQuest,planLocalReputation} from './epic-model.js';
 import {wallet,copper,addCopper,bindWallet} from './wallet.js';
 import {catalogData} from './catalog-data.js';
 import {questItems} from './quest-data.js';
@@ -24,7 +25,7 @@ export function normalizeQuest(raw){
     ids.add(o.id);return {id:txt(o.id,100),description:txt(o.description),current:Math.min(o.target,integer(o.current)),target:o.target,verification:{kind:o.verification.kind,target_id:txt(o.verification.target_id,100),...(o.verification.recipient_id?{recipient_id:txt(o.verification.recipient_id,100)}:{})},evidence_ids:Array.isArray(o.evidence_ids)?o.evidence_ids.filter(v=>typeof v==='string').slice(-1000):[]};
   });
   const reward=raw.reward||{};copper(reward.currency??0);if(reward.budget_copper!==undefined){copper(reward.budget_copper);if(reward.budget_copper<(reward.currency||0)||!txt(reward.budget_basis))fail('발주자 예산과 실제 근거 필요');}
-  return {id:txt(raw.id,100),title:txt(raw.title,160),summary:txt(raw.summary,3000),origin:raw.origin,type:raw.type,status:raw.status,rank:['F','E','D','C','B'].includes(raw.rank)?raw.rank:null,region_id:raw.region_id,target_location_id:txt(raw.target_location_id,100)||null,issuer_npc_id:txt(raw.issuer_npc_id,100)||null,issuer_faction_id:txt(raw.issuer_faction_id,100)||null,issuer_name:txt(raw.issuer_name,160),accepted_at:txt(raw.accepted_at,80)||null,deadline_at:txt(raw.deadline_at,80)||null,claim_event_id:txt(raw.claim_event_id,100)||null,visibility:['public','revealed','private'].includes(raw.visibility)?raw.visibility:'revealed',objectives,reward:{xp:integer(reward.xp),currency:copper(reward.currency??0),...(reward.budget_copper!==undefined?{budget_copper:reward.budget_copper,budget_basis:txt(reward.budget_basis)}:{}),item_ids:Array.isArray(reward.item_ids)?reward.item_ids.filter(v=>typeof v==='string').slice(0,32):[],materials:Array.isArray(reward.materials)?reward.materials.slice(0,32).map(v=>({id:txt(v.id,100),quantity:integer(v.quantity)||1})):[],affection_effects:Array.isArray(reward.affection_effects)?reward.affection_effects.slice(0,16).map(v=>({npc_id:txt(v.npc_id,100),delta:Number.isInteger(v.delta)&&Math.abs(v.delta)<=200?v.delta:0,reason:txt(v.reason)})):[]},journal:Array.isArray(raw.journal)?raw.journal.filter(v=>typeof v==='string').slice(-100).map(v=>txt(v)):[]};
+  return {...(raw.epic_id?{epic_id:txt(raw.epic_id,100)}:{}),...(raw.settlement_id?{settlement_id:txt(raw.settlement_id,100)}:{}),...(typeof raw.repeatable==='boolean'?{repeatable:raw.repeatable}:{}),id:txt(raw.id,100),title:txt(raw.title,160),summary:txt(raw.summary,3000),origin:raw.origin,type:raw.type,status:raw.status,rank:['F','E','D','C','B','EPIC'].includes(raw.rank)?raw.rank:null,region_id:raw.region_id,target_location_id:txt(raw.target_location_id,100)||null,issuer_npc_id:txt(raw.issuer_npc_id,100)||null,issuer_faction_id:txt(raw.issuer_faction_id,100)||null,issuer_name:txt(raw.issuer_name,160),accepted_at:txt(raw.accepted_at,80)||null,deadline_at:txt(raw.deadline_at,80)||null,claim_event_id:txt(raw.claim_event_id,100)||null,visibility:['public','revealed','private'].includes(raw.visibility)?raw.visibility:'revealed',objectives,reward:{xp:integer(reward.xp),currency:copper(reward.currency??0),...(reward.budget_copper!==undefined?{budget_copper:reward.budget_copper,budget_basis:txt(reward.budget_basis)}:{}),item_ids:Array.isArray(reward.item_ids)?reward.item_ids.filter(v=>typeof v==='string').slice(0,32):[],materials:Array.isArray(reward.materials)?reward.materials.slice(0,32).map(v=>({id:txt(v.id,100),quantity:integer(v.quantity)||1})):[],affection_effects:Array.isArray(reward.affection_effects)?reward.affection_effects.slice(0,16).map(v=>({npc_id:txt(v.npc_id,100),delta:Number.isInteger(v.delta)&&Math.abs(v.delta)<=200?v.delta:0,reason:txt(v.reason)})):[]},journal:Array.isArray(raw.journal)?raw.journal.filter(v=>typeof v==='string').slice(-100).map(v=>txt(v)):[]};
 }
 export function normalizeQuestLog(raw){const result=[];for(const q of Array.isArray(raw)?raw.slice(0,100):[]){try{const v=normalizeQuest(q);if(!result.some(p=>p.id===v.id))result.push(v);}catch{}}return result;}
 export function normalizeWorldEvents(raw){
@@ -39,8 +40,8 @@ const quantity=(bag,name)=>bag.filter(i=>i.name===name).reduce((n,i)=>n+i.quanti
 export function settleQuests(state,scene){
   const quests=normalizeQuestLog(state.quest_log),ledger=[...(state.quest_event_ids||[])],before=state.inventory,bag=scene.inventory||before;
   const now=calendarDay(scene.game_state?.date||state.gameState.date),location=scene.game_state?.place||scene.location,region=scene.game_state?.region||state.gameState.region;
-  const updates=scene.quest_updates||[];
-  for(const raw of updates){
+  const reputation=planLocalReputation(state,scene),gateState={...state,local_reputation:reputation}; const updates=scene.quest_updates||[];
+  for(const raw of updates){ validateEpicQuest(gateState,raw);
     const old=quests.find(q=>q.id===raw.id);
     if(old){if(old.status!=='offered')fail('수락한 의뢰 조건은 임의 변경할 수 없습니다.');const q=normalizeQuest(raw);if(q.status!=='offered')fail('상태는 quest_events로 변경');Object.assign(old,q,{objectives:q.objectives.map(o=>({...o,current:0,evidence_ids:[]})),claim_event_id:null});}
     else {if(quests.length>=100)fail('의뢰 기록은 최대 100개');const q=normalizeQuest(raw);if(q.status!=='offered')fail('새 의뢰는 offered');q.objectives=q.objectives.map(o=>({...o,current:0,evidence_ids:[]}));q.claim_event_id=null;quests.push(q);}
@@ -88,7 +89,7 @@ export function settleQuests(state,scene){
   }
   // Keep accepted event IDs for the entire save lifetime, never drop reward tombstones.
   if(ledger.length>10000)fail('사건 기록 보관 한도 도달');
-  return bindWallet({quest_log:quests,quest_event_ids:ledger,player,inventory:normalizeInventory(inventory),wallet_copper,relationships});
+  return bindWallet({...((state.local_reputation||scene.locality_events?.length)?{local_reputation:reputation}:{}),quest_log:quests,quest_event_ids:ledger,player,inventory:normalizeInventory(inventory),wallet_copper,relationships});
 }
 export function questProgress(q){return Math.round(q.objectives.reduce((n,o)=>n+Math.min(o.current,o.target)/o.target,0)/q.objectives.length*100);}
 export function questMapPoint(q){const anchor=q.target_location_id||q.region_id;return mapData.locations.find(p=>p.id===anchor||p.id===q.region_id||p.code===q.region_id)||mapData.locations.find(p=>p.label?.includes(q.region_id));}

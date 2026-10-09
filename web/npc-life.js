@@ -9,11 +9,11 @@ const region=id=>{if(!/^(W[1-5]|E[1-4]|S[1-4]|CW|CE|CS)$/.test(id))fail('미등�
 const country=id=>({W:'west',E:'east',S:'south'})[id?.[0]]||({CW:'west',CE:'east',CS:'south'})[id];
 const day=d=>{const n=calendarDay(d);if(n===null)fail('360일 달력 날짜');return n;};
 export const roleActivities={knight:['순찰','수련','경비','휴식'],mage:['연구','마법서 학습','실험','휴식'],lord:['영지 운영','재정 관리','외교','휴식'],merchant:['재고 확보','거래','이동 준비','휴식'],priest:['의식','치유 준비','구호','휴식'],resident:['농업·생활','생활','휴식','생활'],bandit:['은신','약탈 준비','영역 경계','휴식'],monster:['먹이 활동','영역 경계','둥지 방어','휴식']};
-export function lifeRole(id){const p=findNPC(id),s=(p?.rank||'')+' '+(p?.affiliation||'');return p?.role==='monster'?'monster':/도적|약탈|해적/.test(s)?'bandit':/영주|공작|백작|후작|국왕|여왕/.test(p?.rank||'')?'lord':/나이트|기사/.test(s)?'knight':/서클|마법|연구/.test(s)?'mage':/상인|상단|무역/.test(s)?'merchant':/교단|성직|성자|성녀|사제/.test(s)?'priest':'resident';}
+export function lifeRole(id){const p=findNPC(id),s=(p?.rank||'')+' '+(p?.affiliation||'')+' '+(p?.duty||'');return p?.role==='monster'?'monster':/도적|약탈|해적/.test(s)?'bandit':/영주|공작|백작|후작|국왕|여왕/.test(p?.rank||'')?'lord':/나이트|기사/.test(s)?'knight':/서클|마법|연구/.test(s)?'mage':/상인|상단|무역/.test(s)?'merchant':/교단|성직|성자|성녀|사제/.test(s)?'priest':'resident';}
 export function normalizeLife(raw){
   if(!raw||raw.version!==1)fail('저장 버전');
   if(!raw.npcs||!raw.applied||!Array.isArray(raw.memories)||!Array.isArray(raw.rumors)||!Array.isArray(raw.links)||!Array.isArray(raw.traces))fail('저장 구조');
-  if(Object.keys(raw.applied).length>10000||Object.keys(raw.npcs).length>139||raw.memories.length>2000||raw.rumors.length>128||raw.links.length>256||raw.traces.length>512)fail('저장 한도');
+  if(Object.keys(raw.applied).length>10000||Object.keys(raw.npcs).length>256||raw.memories.length>2000||raw.rumors.length>128||raw.links.length>256||raw.traces.length>512)fail('저장 한도');
   if(JSON.stringify(raw).length>2000000)fail('기억 저장 크기 한도: 백업 후 기록 정리 필요');
   for(const [id,p] of Object.entries(raw.npcs)){npc(id);if(p.region)region(p.region);if(p.updated_at)day(p.updated_at);if(p.schedule)for(const s of p.schedule){day(s.start);day(s.end);region(s.region);}}
   return clone(raw);

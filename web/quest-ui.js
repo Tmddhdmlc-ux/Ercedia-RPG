@@ -1,4 +1,5 @@
 import {wallet,formatCopper} from './wallet.js';
+import {epicSeeds,epicEligibility} from './epic-model.js';
 import {questProgress,calendarDay,questMapPoint} from './quest-model.js';
 import {mapData} from './map-data.js';
 import {findNPC} from './npc-model.js';
@@ -15,6 +16,7 @@ export function currentQuestRegion(state){
 }
 export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
   const $=id=>document.getElementById(id);let filter='active',selected=null;
+  const epics=document.createElement('section');epics.className='regional-epics';$('quests-panel').append(epics);
   const regionName=id=>mapData.locations.find(p=>p.id===id)?.label||id;
   function deadline(q){const end=calendarDay(q.deadline_at),now=calendarDay(state.gameState.date);return !q.deadline_at?'기한 없음':end!==null&&now!==null?`기한 ${Math.max(0,end-now)}일 남음`:`기한 ${q.deadline_at}`;}
   function issuer(q){return q.issuer_name||findNPC(q.issuer_npc_id)?.name||q.issuer_faction_id||'발행자 미정';}
@@ -23,6 +25,12 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
   function render(){
     $('quest-preview').hidden=true;
     const log=state.quest_log||[],nowRegion=currentQuestRegion(state),busy=chat.isPending()||!!state.introDraft;
+    epics.replaceChildren();const epicHeading=document.createElement('h3');epicHeading.textContent='지역 에픽 의뢰';epics.append(epicHeading);
+    for(const seed of epicSeeds().filter(s=>s.region_id===nowRegion&&(s.scope!=='settlement'||(state.scene?.location||state.gameState.place||'').includes(s.settlement)))){
+      const eligibility=epicEligibility(state,seed),existing=log.find(q=>q.epic_id===seed.id||q.id===seed.id),card=document.createElement('article'),title=document.createElement('strong'),info=document.createElement('p');
+      title.textContent=seed.title;info.textContent=`${eligibility.eligible?'제안 조건 충족':'미해금'} · 검증된 일반 의뢰 ${eligibility.completed}/5 · 지역 호감도 ${eligibility.affection}/30${existing?' · '+questLabels[existing.status]:''}`;card.append(title,info);
+      const ask=button(existing?'의뢰 기록 보기':'에픽 의뢰 알아보기',()=>{if(existing){selected=existing.id;filter=existing.status==='completed'?'complete':['failed','declined','abandoned','expired'].includes(existing.status)?'failed':existing.status==='offered'?'available':'active';render();return;}switchTo('story');chat.submit(`현재 지역 에픽 [${seed.id}] 「${seed.title}」의 발행자와 접근 조건을 확인합니다. 해금은 충족했지만 강제 수락하지 않습니다. 실제 세계 상황과 REGIONAL_EPIC_QUESTS.md에 따라 quest_updates offered로 제안하고 목표·위험·보상 후보 중 하나를 확인해주세요. 기존 공식 조직을 새로 만들지 마세요.`);});ask.disabled=busy||(!existing&&!eligibility.eligible);card.append(ask);epics.append(card);
+    }
     $('quest-region').textContent=(nowRegion?regionName(nowRegion):'현재 영주령 미확인')+` · 소지금 ${formatCopper(wallet(state))}`;$('quest-board').disabled=busy||!nowRegion;
     const groups={active:['accepted','active','ready_to_report'],available:['offered'],complete:['completed'],failed:['failed','expired','abandoned','declined']};
     document.querySelectorAll('[data-quest-filter]').forEach(el=>{el.setAttribute('aria-pressed',String(el.dataset.questFilter===filter));});

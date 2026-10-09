@@ -10,7 +10,7 @@ import {battleFixture} from './battle-fixtures.js';
 import {validateBattleSettlement,normalizeBattle} from '../web/battle-model.js';
 test('all 138 source NPC stats map exactly and only public allowlisted fields ship',()=>{
   for(const [path,list] of [['characters/npc_roster_100.json','characters'],['characters/core_cast_stats_38.json','roster']])for(const p of JSON.parse(readFileSync(path))[list]){const ui=resolveNPC(defaults(),p.id);assert.equal(ui.strength,p.stats.strength);assert.equal(ui.dexterity,p.stats.agility);assert.equal(ui.manaStat,p.stats.mana);assert.equal(ui.maxHp,p.stats.max_hp);assert.equal(ui.level,p.level);assert.equal(ui.speed,p.combat.speed);assert.ok(!Object.hasOwn(ui,'notes'));assert.ok(!Object.hasOwn(ui,'personality_seed'));}
-  assert.equal(npcCatalog.length,139);assert.equal(catalogData.regional.dungeons.length,26);assert.equal(catalogData.regional.facilities.length,26);
+  assert.equal(npcCatalog.length,163);assert.equal(catalogData.regional.dungeons.length,26);assert.equal(catalogData.regional.facilities.length,26);
 });
 test('NPC changes persist independently without healing or modifying source stats or legacy saves',()=>{
   const state=defaults(),base=resolveNPC(state,'ER-NPC-001');assert.deepEqual(normalize(state),state);updateNPC(state,base.id,{hp:base.hp-10,interest:40,secret:'ignored'});assert.equal(resolveNPC(state,base.id).hp,base.hp-10);assert.deepEqual(normalize(state),state);assert.equal(resolveNPC(defaults(),base.id).hp,base.hp);assert.equal(resolveNPC(state,base.id).secret,undefined);assert.deepEqual(npcSnapshot(state,base.id).art,{id:base.id,outfit:'none',emotion:'base'});
