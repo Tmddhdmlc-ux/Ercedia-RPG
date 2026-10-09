@@ -7087,16 +7087,19 @@ return {mountNewGame};})();
 const module68=(()=>{
 // External CC0 samples. Audio is presentation only and never changes combat data.
 const impactSamples={
-  hit:['impactPunch_medium_000','impactPunch_medium_001','impactPunch_medium_002'],
-  critical:['impactPunch_heavy_000','impactPunch_heavy_001'],
-  block:['impactMetal_medium_000','impactMetal_medium_001'],
-  dodge:['knifeSlice','knifeSlice2']
+  hit:['starninjas/sword_3','starninjas/sword_4','starninjas/sword_6'],
+  critical:['starninjas/sword_1','starninjas/sword_2'],
+  block:['kenney/impactMetal_medium_000','kenney/impactMetal_medium_001'],
+  dodge:['kenney/knifeSlice','kenney/knifeSlice2'],
+  magicHit:['kenney/impactPunch_medium_000','kenney/impactPunch_medium_001','kenney/impactPunch_medium_002'],
+  magicCritical:['kenney/impactPunch_heavy_000','kenney/impactPunch_heavy_001']
 };
 function impactCue(event){
   if(!['attack','counter','magic','unique','defend'].includes(event.kind))return null;
   if(event.result==='dodge')return 'dodge';
   if(event.result==='block'||event.kind==='defend')return 'block';
   if(!(event.damage>0))return null;
+  if(event.kind==='magic')return event.result==='critical'?'magicCritical':'magicHit';
   return event.result==='critical'?'critical':'hit';
 }
 function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),storage=()=>window.localStorage}={}){
@@ -7109,12 +7112,12 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
   function stop(){for(const source of voices){try{source.stop();}catch{}source.disconnect();}voices.clear();}
   async function unlock(){
     try{
-      if(!ctx){ctx=contextFactory();master=ctx.createGain();master.connect(ctx.destination);master.gain.value=muted?0:volume;}
+      if(!ctx){ctx=contextFactory();master=ctx.createGain();const limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-12;limiter.knee.value=8;limiter.ratio.value=8;limiter.attack.value=.003;limiter.release.value=.08;master.connect(limiter);limiter.connect(ctx.destination);master.gain.value=muted?0:volume;}
       // Resume immediately in the trusted click; no delayed impacts are queued.
       await ctx.resume();unlocked=ctx.state==='running';
       if(!loading){error=false;loading=Promise.all(Object.values(impactSamples).flat().map(async name=>{
         if(buffers.has(name))return;
-        const response=await fetchAudio(assetBase+'assets/audio/kenney/'+name+'.ogg');
+        const response=await fetchAudio(assetBase+'assets/audio/'+name+'.ogg');
         if(!response.ok)throw Error('Audio load failed');
         buffers.set(name,await ctx.decodeAudioData(await response.arrayBuffer()));
       })).then(()=>{ready=true;error=false;report();}).catch(()=>{loading=null;error=true;report();});}
@@ -7125,12 +7128,33 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
     const cue=impactCue(event);
     if(!cue||!ready||muted||volume===0||ctx?.state!=='running')return false;
     const choices=impactSamples[cue],index=(cursor[cue]||0)%choices.length;cursor[cue]=index+1;
-    while(voices.size>=4){const oldest=voices.values().next().value;oldest.stop();voices.delete(oldest);}
-    const source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffers.get(choices[index]);
-    gain.gain.value=cue==='critical'?.95:cue==='block'?.58:cue==='dodge'?.6:.82;
-    source.connect(gain);gain.connect(master);voices.add(source);
-    source.onended=()=>{voices.delete(source);source.disconnect();gain.disconnect();};
-    source.start();played++;lastCue=cue;report();return true;
+    while(voices.size>=4){const oldest=voices.values().next().value;oldest.stop();oldest.disconnect();voices.delete(oldest);}
+    const sources=[],nodes=[];let remaining=0,closed=false;
+    const voice={stop(){for(const s of sources){try{s.stop();}catch{}}},disconnect(){if(closed)return;closed=true;for(const n of [...sources,...nodes])n.disconnect();voices.delete(voice);}};
+    voices.add(voice);
+    function track(source){sources.push(source);remaining++;source.onended=()=>{if(--remaining===0)voice.disconnect();};return source;}
+    function gainNode(amount){const gain=ctx.createGain();gain.gain.value=amount;nodes.push(gain);gain.connect(master);return gain;}
+    function sample(name,amount,rate=1,delay=0,cutoff=0,length){
+      const source=track(ctx.createBufferSource()),gain=gainNode(amount);source.buffer=buffers.get(name);source.playbackRate.value=rate;
+      if(cutoff){const filter=ctx.createBiquadFilter();filter.type='highpass';filter.frequency.value=cutoff;nodes.push(filter);source.connect(filter);filter.connect(gain);}else source.connect(gain);
+      source.start(ctx.currentTime+delay,0,length);
+    }
+    function tone(type,from,to,amount,length,delay=0){
+      const source=track(ctx.createOscillator()),gain=gainNode(0),time=ctx.currentTime+delay;source.type=type;
+      source.frequency.setValueAtTime(from,time);source.frequency.exponentialRampToValueAtTime(to,time+length);
+      gain.gain.setValueAtTime(.0001,time);gain.gain.exponentialRampToValueAtTime(amount,time+.004);gain.gain.exponentialRampToValueAtTime(.0001,time+length);
+      source.connect(gain);source.start(time);source.stop(time+length+.01);
+    }
+    if(cue==='hit'||cue==='critical'){
+      const critical=cue==='critical',name=choices[index];
+      // Faster blade, cutting-air accent and pitched shimmer make a fantasy game slash.
+      sample(name,critical?.70:.62,critical?1.12:1.35,0,critical?280:500);
+      sample(impactSamples.dodge[index%2],critical?.32:.24,critical?1.45:1.8,0,1100,.18);
+      sample(name,critical?.15:.09,1.65,critical?.075:.045,1600,.20);
+      tone('triangle',critical?2300:1900,critical?850:1100,critical?.07:.045,critical?.14:.085);
+      if(critical)tone('sine',110,46,.16,.15);
+    }else sample(choices[index],cue==='block'?.58:cue==='dodge'?.6:.82);
+    played++;lastCue=cue;report();return true;
   }
   function setMuted(value){muted=!!value;if(muted)stop();if(master)master.gain.value=muted?0:volume;save();report();}
   function setVolume(value){volume=Math.max(0,Math.min(1,Number(value)||0));if(master)master.gain.value=muted?0:volume;if(volume===0)stop();save();report();}

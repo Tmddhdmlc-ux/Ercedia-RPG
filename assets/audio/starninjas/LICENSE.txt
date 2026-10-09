@@ -1,0 +1,16 @@
+20 Sword Sound Effects (Attacks and Clashes)
+Author: StarNinjas
+Author profile: https://opengameart.org/users/starninjas
+Source: https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes
+Download: https://opengameart.org/sites/default/files/sword_-_starninjas_1.zip
+License: CC0 1.0 Universal
+License URL: https://creativecommons.org/publicdomain/zero/1.0/
+Retrieved: 2026-10-09
+
+The source page labels these recordings CC0. Credit is appreciated by the author.
+Included files are unchanged audio, with filenames normalized:
+sword.1.ogg -> sword_1.ogg
+sword.2.ogg -> sword_2.ogg
+sword.3.ogg -> sword_3.ogg
+sword.4.ogg -> sword_4.ogg
+sword.6.ogg -> sword_6.ogg
