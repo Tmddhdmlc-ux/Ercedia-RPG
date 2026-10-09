@@ -23,7 +23,10 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     if(chat.isPending())return false;
     await readSettings();
     if(!state.introDraft||restart)state.introDraft=normalizeIntroDraft({step:'name',previousView:state.introDraft?.previousView||{page:state.page,mapView:state.mapView,region:state.region}});
-    save();render();return true;
+    save();render();
+    document.dispatchEvent(new CustomEvent('ercedia:new-game-started',{detail:{settings}}));
+    if(embedded)chat.sendSettings?.(settings);
+    return true;
   }
   function cancel(){
     if(!state.introDraft)return;
@@ -57,6 +60,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     }
   }
   async function complete(){
+    if(chat.isPending()){$('intro-map-error').textContent='ChatGPT의 설정 읽기 응답을 기다리고 있습니다.';return;}
     try{
       if(!settings){$('intro-map-next').disabled=true;await readSettings();}
       const draft=state.introDraft,fields=creationFields(draft),passive=introData.passives.find(p=>p.id===fields.starting_passive_id);
@@ -139,5 +143,5 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
   $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
   $('intro-map-next').onclick=()=>state.introDraft.step==='confirmation'?complete():go('confirmation');
   $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
-  return {render:refresh,syncMap,begin,isStarting:()=>starting};
+  return {render:refresh,syncMap,begin,isStarting:()=>starting,setSettings:snapshot=>{settings=snapshot;}};
 }
