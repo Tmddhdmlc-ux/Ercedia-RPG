@@ -1,13 +1,13 @@
 import {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility} from './engine-model.js';
 import {applyItemRarity} from './item-rarity.js';
-import {itemIconURL} from './item-catalog.js';
+import {appendItemIcon} from './item-art-ui.js';
 import {mountItemLibrary} from './item-library-ui.js';
 export function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
   let preview=null,gearPreview=null,message='';
   const library=mountItemLibrary(state,{assetBase});
-  const icon=(parent,item)=>{const image=new Image();image.loading='lazy';image.className='engine-item-icon';image.src=itemIconURL(item,assetBase);image.alt=item.name;image.onerror=()=>{image.hidden=true;};parent.append(image);};
+  const icon=(parent,item)=>appendItemIcon(parent,item,assetBase);
   const button=(label,action,disabled=false)=>{const b=document.createElement('button');b.type='button';b.textContent=label;b.disabled=disabled;b.onclick=()=>{try{action();}catch(e){message=e.message;refresh();}};return b;};
   const line=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
   const busy=()=>isPending?.()||!!state.introDraft||!!state.battlePlayback&&!state.battlePlayback.done;

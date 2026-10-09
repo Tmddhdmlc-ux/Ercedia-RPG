@@ -1,8 +1,11 @@
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
-export function mountBattleUI(state,{render,persist,chat,assetBase}){
+import {resolveBackground,backgroundURL} from './location-art.js';
+import {appendItemIcon} from './item-art-ui.js';
+export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
+  const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
   const duration=e=>e.kind==='unique'?1800:e.result==='critical'?1300:1000;
@@ -68,12 +71,15 @@ export function mountBattleUI(state,{render,persist,chat,assetBase}){
   }
   function refresh(){
     const p=state.battlePlayback,active=battleIsActive(state);game.dataset.battle=active?'active':'none';
+    overlay.hidden=!active;if(active&&!overlay.getAttribute('src'))overlay.src=backgroundURL('IMG-SHARED-11',assetBase);overlay.onerror=()=>{overlay.hidden=true;};
+    const result=$('battle-result');result.hidden=!(p?.done&&state.scene?.scene_id===p.scene.scene_id);result.replaceChildren();
+    if(!result.hidden){renderBackground('IMG-SHARED-12');const summary=document.createElement('p');summary.textContent=p.scene.battle.outcome.reason+' · 획득 경험치 '+p.scene.battle.outcome.xp_gain;result.append(summary);for(const reward of p.scene.battle.outcome.items_added){const row=document.createElement('div'),label=document.createElement('span');row.className='battle-loot-row';appendItemIcon(row,reward,assetBase);label.textContent=reward.name+' × '+reward.quantity;row.append(label);result.append(row);}}
     $('battle-hud').hidden=!active;$('battle-arena').hidden=!active;$('battle-controls').hidden=!active;$('battle-replay').hidden=!p?.done;
     $('battle-replay').disabled=chat.isPending();
     for(const id of ['story-tab','map-tab','status-tab','inventory-tab','quests-tab','new-game','continue-game','restore-previous-game','hud-player'])$(id).disabled=active||!!state.introDraft;
     if(!active){stop();identity=null;return;}
     // During playback the current battle background is shown without exposing the aftermath.
-    $('background').hidden=p.scene.background_id===null;
+    renderBackground(resolveBackground(p.scene,state));
     $('battle-speed').value=String(p.speed);$('battle-pause').textContent=p.paused?'재개':'일시정지';$('battle-mode').textContent=p.manual===false?'자동 재생 중':'한 턴씩 읽기';$('battle-mode').setAttribute('aria-pressed',String(p.manual!==false));
     if(identity!==p){stop();identity=p;cards=new Map();$('battle-hud').replaceChildren();
       for(const participant of p.scene.battle.participants){const root=document.createElement('article'),title=document.createElement('strong'),meta=document.createElement('span'),hp=document.createElement('span'),bar=document.createElement('progress'),mp=document.createElement('span'),mpBar=document.createElement('progress');root.className='battle-participant '+participant.side;title.textContent=participant.name;meta.textContent=`Lv.${participant.level} · ${participant.rank} · 속도 ${participant.speed} · ×${({none:1,basic:1,expert:1.25,hyper:1.65,master:2.2})[participant.realm]*(participant.creature_multiplier??1)}`;bar.className='battle-hp-bar';mpBar.className='battle-mp-bar';bar.setAttribute('aria-label',participant.name+' 체력');mpBar.setAttribute('aria-label',participant.name+' 마나');root.append(title,meta,hp,bar,mp,mpBar);$('battle-hud').append(root);cards.set(participant.id,{root,hp,bar,mp,mpBar});}

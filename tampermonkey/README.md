@@ -55,7 +55,7 @@ UI v1.1.2에서 보내기는 sandbox가 차단하는 기본 폼 제출 대신 �
 
 ## 데이터와 브리지 규격
 
-장면 스키마 v1: `schema_version:1`, `type:"ercedia_scene"`, 매 턴 고유 `scene_id`, `location`, `time`, `background_id`, `npc`, `dialogue`, `choices`. 요청에 응답할 때는 요청문의 `reply_to` 값을 그대로 출력합니다. 대사는 1~60개, 선택지는 0개 또는 2~4개입니다. 등록된 NPC는 `serin`과 신규 138명입니다. 세린은 armor/casual/nightwear 복장과 기존 9표정, 신규 인물은 none 복장과 base 표정을 지원합니다. 배경은 sunny_village_day입니다. 미등록 자산은 적용하지 않습니다.
+장면 스키마 v1: `schema_version:1`, `type:"ercedia_scene"`, 매 턴 고유 `scene_id`, `location`, `time`, `background_id`, `npc`, `dialogue`, `choices`. 요청에 응답할 때는 요청문의 `reply_to` 값을 그대로 출력합니다. 대사는 1~60개, 선택지는 0개 또는 2~4개입니다. 등록된 NPC는 `serin`과 신규 138명입니다. 세린은 armor/casual/nightwear 복장과 기존 9표정, 신규 인물은 none 복장과 base 표정을 지원합니다. UI 2.1.4부터 배경은 sunny_village_day 또는 location_image_manifest.json의 등록 IMG- ID이며 원화 없는 장면은 null입니다. [671개 이미지 연결](../IMAGE_ENGINE_CONNECTION.md)을 참조하세요. 미등록 자산은 적용하지 않습니다.
 
 `player`와 `inventory`가 생략되면 기존 정보를 유지하며, 포함될 때는 전체 새 스냅샷으로 갱신합니다. `inventory:[]`는 빈 가방입니다. `game_state`에는 date/time/region/place 문자열과 quests/relationships/events/recent_dialogue 문자열 배열(각 30개 이하)을 보낼 수 있습니다. 장면 적용으로 현재 지도 확대·열린 탭을 바꾸지 않습니다.
 

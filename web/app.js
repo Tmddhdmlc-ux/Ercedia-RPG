@@ -2,6 +2,7 @@ import {mountNPCArt} from './npc-art-ui.js';
 import {mountSceneCast} from './scene-cast.js';
 import {mountChatConnection} from './chat-connection-ui.js';
 import {mountWorldUI} from './world-ui.js';
+import {mountBackground,resolveBackground} from './location-art.js';
 import {mountRemasterUI} from './remaster-ui.js';
 import {createGameBridge} from '../integration/game-bridge.js';
 import {mountChatUI} from './chat-ui.js';
@@ -98,22 +99,22 @@ for(const expression of Object.keys(labels)){
   faces.set(expression,img);faceLayer.append(img);
   trackImage(img,`assets/characters/main/serin/faces/${expression}.png`,img.alt);
 }
-trackImage($('background'),'assets/locations/towns/sunny_village/town_day.png','솔브린 마을');
+const backgroundUI=mountBackground({image:$('background'),status:$('expression-status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
+  backgroundUI.render(resolveBackground(state.scene,state),state.background);
   if(state.scene?.cast){
-    $('characters').hidden=true;sceneCast.render();$('background').hidden=!state.background;
+    $('characters').hidden=true;sceneCast.render();
     document.querySelectorAll('[data-outfit]').forEach(b=>b.disabled=true);$('expression').disabled=true;npcInfo.refresh();return;
   }
   $('characters').hidden=false;sceneCast.hide();
   const generic=state.scene?.npc&&state.scene.npc.id!=='serin';
   document.querySelectorAll('[data-outfit]').forEach(b=>b.disabled=!!generic);$('expression').disabled=!!generic;
-  if(generic){for(const img of images.values())img.hidden=true;faceLayer.hidden=true;$('background').hidden=!state.background;
+  if(generic){for(const img of images.values())img.hidden=true;faceLayer.hidden=true;
     npcArt.render(state.scene.npc,state.character);$('show-background').checked=state.background;$('show-character').checked=state.character;npcInfo.refresh();return;}
   npcArt.hide();
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
-  $('background').hidden=!state.background;
   const current=images.get(key);
   const face=faces.get(state.expression);
   faceLayer.hidden=!state.character || current.dataset.status!=='ready';
@@ -150,7 +151,7 @@ function renderDialogue(){
     const scene=state.scene;
     $('scene-location').textContent=canonicalLocationLabel(scene.location);$('scene-time').textContent=scene.time;
     state.character=!!scene.npc||!!scene.cast?.length;
-    state.background=scene.background_id!==null;
+    state.background=!!resolveBackground(scene,state);
     if(scene.npc?.id==='serin'){state.outfit=scene.npc.outfit;state.expression=scene.npc.emotion;
       for(let i=0;i<=index;i++)if(list[i].emotion)state.expression=list[i].emotion;
     }
@@ -242,12 +243,12 @@ mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:mess
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),getNPC:()=>npcInfo.current()});
 engineUI=mountEngineUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 introUI=mountNewGame(state,{render:renderAll,persist:saveGame,chat:chatUI,embedded});
-battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
+battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,assetBase:window.__ERCEDIA_CONFIG__?.assetBase,renderBackground:id=>backgroundUI.render(id)});
 catalogUI=mountCatalogUI(state,{onShow:()=>switchTo('status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase,request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 questUI=mountQuestUI(state,{chat:chatUI,switchTo,persist:saveGame,showMap:point=>{state.region=point.id;state.mapView=point.region;state.mapFaction=null;switchTo('map');renderRegion();saveGame();}});
 titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
-worldUI=mountWorldUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
+worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 remasterUI=mountRemasterUI(state);
 renderAll();
 

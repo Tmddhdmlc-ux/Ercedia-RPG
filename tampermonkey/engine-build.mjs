@@ -18,5 +18,5 @@ for(const record of records){
   const bytes=await readFile(path.join(root,entry.path));if(createHash('sha256').update(bytes).digest('hex')!==entry.sha256)throw Error('Item artwork checksum mismatch: '+entry.id);
 }
 const assets=await read('integration/assets.json');await writeFile(path.join(root,'integration/assets.json'),JSON.stringify([...new Set([...assets,...records.map(p=>p.icon_path)])],null,2)+'\n');
-const data={equipment:equipment.items,books:books.books,loot,assetCommit:'2b77c2496e38a3699ae4b0e2e658e548c2295ad6'};
+const data={equipment:equipment.items,books:books.books,loot,assetCommit:'149bdf6155dcabf3474271144fd139d129c5e3c5'};
 await writeFile(path.join(root,'web/engine-data.js'),'// Generated from approved mechanical catalogs.\nexport const engineData='+JSON.stringify(data)+';\n');

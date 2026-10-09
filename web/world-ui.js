@@ -1,8 +1,9 @@
 import {worldData} from './world-data.js';
 import {emptyWorld,kingdomOf} from './world-engine.js';
 import {catalogItem} from './item-catalog.js';
+import {appendItemIcon} from './item-art-ui.js';
 import {findNPC} from './npc-model.js';
-export function mountWorldUI(state,{submit,isPending}){
+export function mountWorldUI(state,{submit,isPending,assetBase}){
   const $=id=>document.getElementById(id),roots={};
   for(const [key,parent,title]of [['country','status-panel','국가 명성·통행'],['party','status-panel','동료·파티'],['explore','map-sidebar','던전·지역 시설'],['trade','inventory-panel','상점·경매'],['calendar','quests-panel','달력·지역 소식']]){
     const details=document.createElement('details'),summary=document.createElement('summary'),body=document.createElement('div');details.className='world-system';summary.textContent=title;details.append(summary,body);$(parent).append(details);roots[key]={details,body};details.ontoggle=()=>{if(details.open)draw(key);};
@@ -37,11 +38,11 @@ export function mountWorldUI(state,{submit,isPending}){
       line(root,`보유 재화 · ${(state.currency||0).toLocaleString()} · 실제 현지 거래만 가능`);
       for(const o of Object.values(w.offers).filter(o=>o.region_id===region)){
         line(root,`${o.venue_name} · 견적 ${o.id} · ${o.valid_until}까지`);
-        for(const r of o.items){line(root,`${catalogItem(r.id)?.name} · 재고 ${r.stock} · 구매 ${r.buy_price} / 판매 ${r.sell_price}`);request(root,'1개 구매',`견적 ${o.id}에서 ${r.id} 1개를 ${r.buy_price} 재화로 구매한다. 현재 장소·재고·재화·허가를 검사한다.`,!r.stock);request(root,'1개 판매',`견적 ${o.id}에서 소유한 ${r.id} 1개를 ${r.sell_price} 재화에 판매한다. 장착된 물품은 판매하지 않는다.`);}
+        for(const r of o.items){appendItemIcon(root,r,assetBase);line(root,`${catalogItem(r.id)?.name} · 재고 ${r.stock} · 구매 ${r.buy_price} / 판매 ${r.sell_price}`);request(root,'1개 구매',`견적 ${o.id}에서 ${r.id} 1개를 ${r.buy_price} 재화로 구매한다. 현재 장소·재고·재화·허가를 검사한다.`,!r.stock);request(root,'1개 판매',`견적 ${o.id}에서 소유한 ${r.id} 1개를 ${r.sell_price} 재화에 판매한다. 장착된 물품은 판매하지 않는다.`);}
         for(const service of o.services||[]){line(root,`${service.service} · 비용 ${service.cost}${service.xp?' · 확인된 훈련 XP '+service.xp:''}${service.hp_restore?' · HP +'+service.hp_restore:''}${service.mp_restore?' · MP +'+service.mp_restore:''}`);request(root,'서비스 요청',`견적 ${o.id}의 ${service.id} 서비스를 ${service.cost} 재화와 견적의 입력 재료로 이용한다. 견적의 산출물만 지급하며 경지를 자동 돌파하지 않는다.`);}
       }
       for(const a of Object.values(w.auctions).filter(a=>a.region_id===region)){
-        line(root,`${catalogItem(a.item_id)?.name} · ${a.status} · 내 입찰 ${a.bid} · 예치 ${a.escrow} · 마감 ${a.closes_at}`);
+        appendItemIcon(root,{id:a.item_id},assetBase);line(root,`${catalogItem(a.item_id)?.name} · ${a.status} · 내 입찰 ${a.bid} · 예치 ${a.escrow} · 마감 ${a.closes_at}`);
         if(a.status==='open'){const input=document.createElement('input');input.type='number';input.min=String(Math.max(a.reserve,a.bid+1));input.value=input.min;input.setAttribute('aria-label',catalogItem(a.item_id)?.name+' 입찰액');root.append(input);const button=document.createElement('button');button.type='button';button.textContent='입찰 요청';button.disabled=isPending();button.onclick=()=>{const amount=Number(input.value);if(Number.isSafeInteger(amount)&&amount>0)submit(`${a.id} 경매에 ${amount} 재화를 입찰한다. 참가 자격·시간·자금을 검사하고 bid로 확인하며 마감 전에는 물품을 지급하지 않는다.`);};root.append(button);request(root,'마감 결과 확인',`${a.id} 경매의 실제 마감 시각·다른 입찰·진품 판정을 확인하고 auction_result로 낙찰 또는 예치금 환급을 처리한다.`);}
       }
       request(root,'현지 상점·경매 문의',`${region||'현재 지역'}의 실제 상인 또는 게시된 경매를 알아본다. 가격·재고·참가 자격을 현재 경제·명성·시점에 맞춰 offer 또는 auction으로 제시한다. 존재하지 않는 공식 길드나 고정 가격을 발명하지 않는다.`);
