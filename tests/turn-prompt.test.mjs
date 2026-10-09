@@ -11,11 +11,11 @@ function saved(){
   state.scene={schema_version:1,type:'ercedia_scene',scene_id:'initial',location:'솔브린 마을',time:'09:00',background_id:'sunny_village_day',npc:null,dialogue:[{speaker:'나레이션',text:'마을에 도착했다.'}],choices:[{id:'talk',kind:'dialogue',text:'안부를 묻는다.'},{id:'shop',kind:'trade',text:'물품을 본다.'}]};
   return state;
 }
-test('ordinary continuation is at least 80% smaller and preserves authoritative live state',()=>{
+test('ordinary continuation remains under 8000 characters and at least 75% smaller with approved story rules',()=>{
   const state=saved();state.intro_completed=true;state.journey_goal='가족을 찾는다';
   const original=structuredClone(state),action='안부를 묻는다.';
   const full=actionPrompt(state,action,'request-1'),short=actionPrompt(state,action,'request-1',{compact:true,choiceId:'talk'});
-  assert.ok(short.length<full.length*.2);assert.ok(short.endsWith(action));assert.match(short,/reply_to="request-1"/);
+  assert.ok(short.length<8000);assert.ok(short.length<full.length*.25);assert.ok(short.endsWith(action));assert.match(short,/reply_to="request-1"/);
   const context=turnContext(state,turnDomains(state,action,'talk'));
   for(const key of ['player','inventory','quest_log','engine','game_state','npc_life','background_registry','skill_loadout'])assert.deepEqual(context[key],contextSummary(state)[key]);
   assert.equal(context.character_creation.journey_goal,state.journey_goal);

@@ -16,6 +16,7 @@
 추가 세계 엔진 사건은 [tampermonkey/WORLD_ENGINE_SCHEMA.md](tampermonkey/WORLD_ENGINE_SCHEMA.md)를 따른다. 사용자 지정 13개 개발 순서와 기존 구현 판정은 [patches/README.md](patches/README.md)에 기록한다. 설정 데이터와 실제 실행 성공을 구분한다.
 
 ## A. 시작 시 읽는 순서
+의뢰·사건의 필수 위협과 대응·후일담은 [QUEST_STORY_RULES.md](QUEST_STORY_RULES.md)를 함께 읽고 적용한다. 모든 의뢰·사건 에피소드에 실제 전투 또는 평화를 위협하는 돌발 사건을 최소 한 번 반드시 구성한다.
 **게임적 허용:** [GM_DISCRETION_RULES.md](GM_DISCRETION_RULES.md)를 적용한다. 확정 조건은 지키되 비어 있는 전직 방법·현지 접촉·수련 경로는 GM이 구성한다. 방법 미정만으로 진행을 거부하지 않고 캠페인별 판정은 gm_rulings에 기록한다.
 첫 마을 안내·모험 순환·4칸 스킬 장착은 [RPG_ADVENTURE_LOOP.md](RPG_ADVENTURE_LOOP.md)를 따른다. 마을 행동 UI도 기존 엔진 사건으로 실제 진행을 확인하며 장착하지 않은 기술의 효과를 적용하지 않는다.
 궁극기의 발동 조건과 최종 세린 컷신은 [ULTIMATE_SYSTEM.md](ULTIMATE_SYSTEM.md)를 읽고 적용한다. 자신의 행동 3회 완료 후 4번째 행동부터, 기술에 맞는 기회·최대 MP 30% 비용·인물당 전투 1회 제한을 모두 확인한다.
