@@ -1,10 +1,11 @@
 export const musicTracks=Object.fromEntries([
   ['title','타이틀 · 에르세디아의 서막'],
+  ['norvalt','노르발트 · 노르발트의 설원'],
   ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
 ].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
-export function sceneMusic({battle=false,title=false,intro=false,background='',place='',time=''}={}){
+export function sceneMusic({battle=false,title=false,intro=false,background='',region='',place='',time=''}={}){
   if(title||intro)return 'title';
   if(battle&&!title)return 'battle';
   if(!title){
@@ -12,6 +13,7 @@ export function sceneMusic({battle=false,title=false,intro=false,background='',p
     if(background==='IMG-SHARED-09'||/국왕실|왕실|왕궁|알현실/.test(place))return 'royal';
     if(/극동/.test(place))return 'farEast';
     if(/미탐색|미개척|미탐사/.test(place))return 'unexplored';
+    if(region==='W1'||background?.startsWith('IMG-W1-')||/노르발트/.test(place))return 'norvalt';
   }
   const hour=String(time).match(/(?:^|\s)(\d{1,2}):\d{2}/);
   return /밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6))?'night':'village';
@@ -52,13 +54,13 @@ export function createBackgroundMusic({tracks=musicTracks,initialVolume=.22,asse
   function setVolume(value){volume=Math.max(0,Math.min(.7,Number(value)||0));if(master)master.gain.value=volume;report();}
   return {select,enable,pause,setVolume,status};
 }
-export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage}={}){
+export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage,audioFactory=createBackgroundMusic}={}){
   const controls=[];let mode='auto',wanted=true,saved={};
   try{saved=JSON.parse(storage?.getItem('ercedia.bgm.preferences')||'{}');}catch{}
   if(saved.enabled===false)wanted=false;
   if(saved.mode==='auto'||musicTracks[saved.mode])mode=saved.mode;
   function persist(){try{storage?.setItem('ercedia.bgm.preferences',JSON.stringify({enabled:wanted,mode,volume:music.status().volume}));}catch{}}
-  const music=createBackgroundMusic({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled?'BGM · '+musicTracks[s.active||s.desired].name.split(' · ')[0]:'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
+  const music=audioFactory({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled&&s.volume===0?'BGM 음소거':s.enabled?'BGM · '+musicTracks[s.active||s.desired].name.split(' · ')[0]:'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
   function sync(){void music.select(mode==='auto'?sceneMusic({...getScene(),battle:root.dataset.battle==='active',title:root.dataset.title==='active'}):mode);}
   for(const host of [root.querySelector('.title-content'),root.querySelector('.tabs')]){
     if(!host)continue;const details=document.createElement('details'),summary=document.createElement('summary'),panel=document.createElement('div'),button=document.createElement('button'),select=document.createElement('select'),volume=document.createElement('input');details.className='music-controls';panel.className='music-settings';summary.textContent='BGM 끔';button.type='button';button.textContent='BGM 켜기';
@@ -68,7 +70,7 @@ export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storag
     button.onclick=()=>{wanted=!music.status().enabled;if(wanted)void music.enable();else music.pause();persist();};select.onchange=()=>{mode=select.value;sync();persist();};volume.oninput=()=>{music.setVolume(Number(volume.value)/100);persist();};
   }
   if(Number.isFinite(saved.volume))music.setVolume(saved.volume);
-  function activate(event){if(!event.isTrusted)return;root.removeEventListener('pointerdown',activate);root.removeEventListener('keydown',activate);if(wanted&&!event.target.closest('.music-controls'))void music.enable();}
-  root.addEventListener('pointerdown',activate);root.addEventListener('keydown',activate);
+  function activate(event){if(!event.isTrusted||event.target.closest?.('.music-controls'))return;if(wanted&&(!music.status().enabled||music.status().error)&&!music.status().loading)void music.enable();}
+  document.addEventListener('pointerdown',activate,{capture:true});document.addEventListener('keydown',activate,{capture:true});document.addEventListener('click',activate,{capture:true});
   new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['data-battle','data-title']});sync();return {...music,sync};
 }

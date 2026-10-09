@@ -5,6 +5,7 @@ export const introData = {
     "black_intro",
     "identity_questions",
     "passive_result",
+    "journey_goal",
     "kingdom_selection",
     "lordship_selection",
     "confirmation",
@@ -98,6 +99,12 @@ export const introData = {
           "passive": "craftsman"
         }
       ]
+    },
+    {
+      "id": "goal",
+      "text": "이번 여정에서 이루고 싶은 것이 있느냐?",
+      "type": "text",
+      "required": true
     }
   ],
   "passives": [
@@ -179,7 +186,8 @@ export const introData = {
     "starting_passive_id",
     "starting_kingdom",
     "starting_lordship_id",
-    "intro_completed"
+    "intro_completed",
+    "journey_goal"
   ],
   "strict_rules": [
     "No enlightenment, knight rank or magic circle awarded during character creation.",

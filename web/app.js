@@ -11,7 +11,7 @@ import {mountSceneCast} from './scene-cast.js';
 import {mountChatConnection} from './chat-connection-ui.js';
 import {mountTradeUI} from './trade-ui.js';
 import {mountWorldUI} from './world-ui.js';
-import {mountBackground,resolveBackground} from './location-art.js';
+import {mountBackground,resolveBackground,backgroundArt} from './location-art.js';
 import {mountRemasterUI} from './remaster-ui.js';
 import {createGameBridge} from '../integration/game-bridge.js';
 import {mountChatUI} from './chat-ui.js';
@@ -73,7 +73,7 @@ try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(stora
 const state=restored.state;
 // Embedded storage writes whole saves. Keep audio preferences inside that save.
 const musicStorage={getItem:()=>JSON.stringify(state.uiPreferences?.music||{}),setItem:(key,value)=>{state.uiPreferences={...state.uiPreferences,music:JSON.parse(value)};saveGame();}};
-const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({intro:!!state.introDraft,background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
+const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({intro:!!state.introDraft,region:backgroundArt(resolveBackground(state.scene,state))?.region_id||'',background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
 const ambience=mountAmbience(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame});
 const voiceAudio=mountVoiceAudio(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame,getScene:()=>state.scene||{npc:{id:'serin',speaker:'세린',emotion:'base'},dialogue:dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}))},getIndex:()=>state.scene?state.sceneIndex:state.index});
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null,chatUI=null;
@@ -271,7 +271,7 @@ battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,asse
 catalogUI=mountCatalogUI(state,{onShow:()=>switchTo('status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase,request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 questUI=mountQuestUI(state,{chat:chatUI,switchTo,persist:saveGame,showMap:point=>{state.region=point.id;state.mapView=point.region;state.mapFaction=null;switchTo('map');renderRegion();saveGame();}});
-titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
+titleUI=mountTitleMenu(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
 worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 tradeUI=mountTradeUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,isPending:()=>chatUI.isPending(),submit:(...args)=>chatUI.submit(...args),render:renderAll,persistCandidate:candidate=>storage.setItem(KEY,JSON.stringify(candidate)),returnToStory:()=>{switchTo('story');renderAll();saveGame();}});
 remasterUI=mountRemasterUI(state);

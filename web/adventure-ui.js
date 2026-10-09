@@ -3,14 +3,17 @@ import {formatCopper} from './wallet.js';
 import {catalogItem as engineItem} from './item-catalog.js';
 export function mountAdventureUI(state,{submit,isPending,switchTo}){
  const game=document.querySelector('.game'),toolbar=document.createElement('div'),open=document.createElement('button'),hint=document.createElement('span');
- toolbar.className='adventure-toolbar';open.type='button';open.textContent='마을·모험';toolbar.append(open,hint);document.getElementById('story').prepend(toolbar);
+ toolbar.className='adventure-toolbar';open.type='button';open.textContent='마을·모험';toolbar.append(open,hint);document.getElementById('play-hud').after(toolbar);
+ const headers=[document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
+ function measureHeader(){if(!game.getBoundingClientRect)return;const top=game.getBoundingClientRect().top,bottom=Math.max(top,...headers.map(el=>el.getBoundingClientRect().bottom));game.style.setProperty('--story-header-height',Math.ceil(bottom-top)+'px');}
+ if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(measureHeader);for(const el of headers)observer.observe(el);}
  const panel=document.createElement('section');panel.className='adventure-modal';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','마을과 모험 행동');game.append(panel);
  let tab='home';const busy=()=>isPending()||!!state.introDraft||!!state.battlePlayback&&!state.battlePlayback.done;
  const add=(parent,tag,text,cls)=>{const el=document.createElement(tag);el.textContent=text;if(cls)el.className=cls;parent.append(el);return el;};
  const button=(parent,label,action,disabled=false)=>{const b=add(parent,'button',label);b.type='button';b.disabled=disabled;b.onclick=action;return b;};
  function close(){panel.hidden=true;open.setAttribute('aria-expanded','false');open.focus({preventScroll:true});}
  function ask(action){if(busy())return;close();switchTo('story');const {region,place}=actualPlace(state);submit(`[마을·모험 행동] 현재 실제 위치 ${region||'미확인'} · ${place}. ${action} 장소 클릭은 이동·획득·회복 성공을 뜻하지 않습니다. 실제 접근 조건·시간·비용·위험을 확인하고 판정된 변경만 기존 engine_events/system_events/world_events/life_events/quest_events로 기록하세요.`);}
- function refresh(){const creating=!!state.introDraft,location=actualPlace(state),guide=adventureGuide(state);toolbar.hidden=creating||!state.player.name||!!state.battlePlayback&&!state.battlePlayback.done;open.disabled=busy();hint.textContent=guide.title;
+ function refresh(){const creating=!!state.introDraft,location=actualPlace(state),guide=adventureGuide(state);toolbar.hidden=state.page!=='story'||creating||!state.player.name||!!state.battlePlayback&&!state.battlePlayback.done;open.disabled=busy();hint.textContent=guide.title;measureHeader();
   if(panel.hidden)return;if(creating||game.dataset.title==='active'){panel.hidden=true;return;}
   const options=adventureOptions(state);panel.replaceChildren();const header=add(panel,'div','','adventure-heading');add(header,'h2',location.place);button(header,'닫기',close);
   const nav=add(panel,'nav','','adventure-tabs');for(const [key,label]of [['home','다음 목표'],['people','주변 인물'],['board','일자리·의뢰'],['shop','상점'],['training','수련'],['rest','휴식'],['travel','마을 밖으로']]){const b=button(nav,label,()=>{tab=key;refresh();});b.setAttribute('aria-pressed',String(tab===key));}

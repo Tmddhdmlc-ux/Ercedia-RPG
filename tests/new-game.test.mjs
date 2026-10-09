@@ -48,3 +48,11 @@ test('legacy player updates preserve new optional attributes and chosen name',()
   assert.equal(state.player.name,'테스트');assert.equal(state.player.hp,90);assert.equal(state.player.constitution,10);assert.equal(state.player.manaStat,10);
   bridge.updatePlayer({...state.player,constitution:12,manaStat:13});assert.equal(state.player.constitution,12);assert.equal(state.player.manaStat,13);
 });
+
+test('journey persona survives campaign save and reaches GPT without granting skills or stats',()=>{
+ const draft={name:'모험가',appearance:'여성',goal:'최고의 대장장이가 된다',answers:{calling:'artisan',response:'prepare'},passive:'craftsman',kingdom:'west',lordship:'W1'};
+ const s={...defaults(),...creationFields(draft),player:initialPlayer(draft.name)};
+ const restored=normalize(s);assert.equal(restored.journey_goal,draft.goal);
+ assert.match(actionPrompt(restored,'첫 장면','goal-request'),/최고의 대장장이가 된다/);
+ assert.equal(restored.player.level,1);assert.deepEqual(restored.player.skills,[]);
+});

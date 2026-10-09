@@ -1,6 +1,7 @@
 export function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
-export function mountTitleMenu(state,{newGame,render,isPending}){
+export function mountTitleMenu(state,{newGame,render,isPending,assetBase=''}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
+  const art=$('title-art');if(art)art.src=assetBase+'assets/title/title-ensemble-v1.png';
   let active=true,startedFromTitle=false,loading=false,error='';
   function refresh(){
     screen.hidden=!active;screen.inert=!active;game.dataset.title=active?'active':'closed';document.body.classList.toggle('title-screen-active',active);

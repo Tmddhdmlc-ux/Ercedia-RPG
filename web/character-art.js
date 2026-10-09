@@ -6,8 +6,9 @@ export const heraldry=characterArtData.symbols;
 export function artBase(base){return base||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@'+characterArtData.asset_commit+'/';}
 export function characterVisual(id,outfit='none',emotion='base'){
   if(id==='serin'&&['armor','casual','nightwear'].includes(outfit))return {path:'assets/characters/main/serin/standing/'+(outfit==='armor'?'base.png':`outfits/${outfit}/base.png`),kind:'human',emotion};
-  const art=registeredArt[id];if(!art||!art.outfits.includes(outfit))return null;
-  return {path:art.standing||art.portrait,portrait:art.portrait,kind:art.kind,emotion:'base'};
+  const art=registeredArt[id];if(!art||!art.outfits.includes(outfit)||!art.expressions.includes(emotion))return null;
+  const portrait=art.expression_portraits?.[emotion]||art.portrait;
+  return {path:art.expression_portraits?portrait:art.standing||portrait,portrait,kind:art.kind,emotion};
 }
 export function registeredNPCArt(id){return id==='serin'?{id,outfit:'armor',emotion:'base'}:registeredArt[id]?{id,outfit:'none',emotion:'base'}:null;}
 export function placementFor(id){return npcPlacements.find(p=>p.id===id)||null;}

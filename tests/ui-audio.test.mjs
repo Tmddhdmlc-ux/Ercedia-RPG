@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createUIAudio,uiSoundTarget} from '../web/ui-audio.js';
+import {createUIAudio,uiSoundTarget,mountUIAudio} from '../web/ui-audio.js';
 function fixture(){
   let time=0;const sources=[];
   const ctx={state:'suspended',destination:{},resume:async()=>{ctx.state='running';},decodeAudioData:async()=>({}),createGain:()=>({gain:{value:0},connect(){},disconnect(){}}),createBufferSource:()=>{const s={playbackRate:{value:1},connect(){},disconnect(){},start(){s.started=true;},stop(){s.stopped=true;}};sources.push(s);return s;}};
@@ -21,4 +21,11 @@ test('child-to-child moves and disabled controls do not create a hover sound',()
 test('failed UI audio remains nonfatal and retryable',async()=>{
   const audio=createUIAudio({contextFactory:()=>{throw Error('Unsupported');},storage:()=>{throw Error('Sandbox');}});
   assert.equal(await audio.prepare(),false);assert.equal(await audio.unlock(),false);assert.equal(audio.play('click'),false);assert.equal(audio.status().error,true);
+});
+
+test('legacy mute preferences do not silence the default UI and the title gets no toggle',()=>{
+ const audio=createUIAudio({storage:()=>({getItem:()=> 'true'})});assert.equal(audio.status().muted,false);
+ const hosts={'.title-menu':{append(){throw Error('title toggle must not be created');}},'.tabs':{append(){}}},root={dataset:{},querySelector:k=>hosts[k],addEventListener(){}};
+ const old=globalThis.document;globalThis.document={createElement:()=>({setAttribute(){}}),addEventListener(){}};
+ try{mountUIAudio(root,{audioFactory:()=>({status:()=>({muted:false}),prepare:async()=>true})});}finally{globalThis.document=old;}
 });

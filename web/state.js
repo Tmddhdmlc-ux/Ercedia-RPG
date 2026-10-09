@@ -39,7 +39,7 @@ export function normalize(raw) {
   if(raw.npcStates&&typeof raw.npcStates==='object'&&!Array.isArray(raw.npcStates)){s.npcStates={};for(const [id,p] of Object.entries(raw.npcStates).slice(0,256)){if(findNPC(id)){try{s.npcStates[id]=normalizeNPCProfile(p);}catch{}}}}
   if(raw.introDraft){const draft=normalizeIntroDraft(raw.introDraft);if(draft)s.introDraft=draft;}
   if(raw.intro_completed===true){
-    try{Object.assign(s,creationFields({name:raw.character_name,appearance:raw.gender_or_appearance||'',answers:raw.chosen_answers||{},passive:raw.starting_passive_id,kingdom:({벨로아:'west',드라켄:'east',루메린:'south'})[raw.starting_kingdom],lordship:raw.starting_lordship_id}));}catch{}
+    try{Object.assign(s,creationFields({name:raw.character_name,goal:raw.journey_goal,appearance:raw.gender_or_appearance||'',answers:raw.chosen_answers||{},passive:raw.starting_passive_id,kingdom:({벨로아:'west',드라켄:'east',루메린:'south'})[raw.starting_kingdom],lordship:raw.starting_lordship_id}));}catch{}
   }
   if(raw.previousGame&&typeof raw.previousGame==='object'&&raw.previousGame.version===1)s.previousGame=JSON.parse(JSON.stringify(raw.previousGame));
   // Optional until the player chooses a name: legacy launchers compare exact saved keys.
