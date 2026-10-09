@@ -60,7 +60,7 @@ export function mountInventory(state,{assetBase}={}){
     $('inventory-preview').textContent=preview?'미리보기 종료':'아이템 미리보기';$('inventory-preview').setAttribute('aria-pressed',String(preview));
     $('inventory-note').textContent=preview?'설명 확인용 예시입니다. 실제 보유 아이템이나 저장 데이터에 포함되지 않습니다.':'아이템을 누르면 상세 정보를 확인합니다. 장착과 기술서 학습은 아래 장비 메뉴에서 진행합니다.';
     for(const button of $('inventory-categories').children)button.setAttribute('aria-pressed',String(button.dataset.category===filter));
-    slots.forEach((slot,i)=>{const item=shown[i],data=catalog(item);slot.hidden=!item&&i>=Math.max(8,Math.ceil(shown.length/4)*4);slot.classList.toggle('occupied',!!item);applyItemRarity(slot,data||item);slot.dataset.kind=item?.category||'';
+    slots.forEach((slot,i)=>{const item=shown[i],data=catalog(item);slot.hidden=false;slot.classList.toggle('occupied',!!item);applyItemRarity(slot,data||item);slot.dataset.kind=item?.category||'';
       if(data?.icon_path){let img=slot.firstChild.querySelector('img');if(!img){img=document.createElement('img');img.alt='';img.loading='lazy';img.onerror=()=>{slot.firstChild.textContent=symbols[item.category]||'◇';};slot.firstChild.replaceChildren(img);}const url=itemIconURL(data,assetBase);if(img.getAttribute('src')!==url)img.src=url;}else slot.firstChild.textContent=item?symbols[item.category]:'';
       slot.lastChild.textContent=item&&item.quantity>1?item.quantity.toLocaleString('ko-KR'):'';slot.setAttribute('aria-label',item?`${item.name}${item.rarity?`, ${item.rarity}`:''}, ${item.quantity}개`:`빈 슬롯 ${i+1}`);
     });

@@ -3052,3 +3052,110 @@ input[type=range] {
  .game:not([data-battle=active]) #stage .dialog::before{top:5px;left:5px;border-width:1px 0 0 1px}
  .game:not([data-battle=active]) #stage .dialog::after{bottom:5px;right:5px;border-width:0 1px 1px 0}
 }
+/* Ivory journal panels: gameplay scenery and title keep their own palette. */
+@media (min-width:701px) {
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) {--text:#37312B;--muted:#766C5D;--surface:#F3EBDD;--line:#D7C9B4;--gold:#916A32;color:var(--text);background:var(--surface)}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests])>.game-navigation {background:#213D35!important;color:#FFF5DF;border-bottom:1px solid #B88C4D}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .game-navigation :is(button,summary) {color:#F8EFD9;background:#213D35;border-color:#536C5C}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .play-hud {background:#EBE2D2!important;color:#37312B;border-color:#CDBB9D}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .hud-date {color:#674D2B;background:#FFF9EC;border-color:#CDBB9D}
+ #status-panel,#inventory-panel,#quests-panel {background:linear-gradient(135deg,#F9F3E8,#EFE4D2);color:#37312B;padding:24px 32px 32px}
+ :is(#status-panel,#inventory-panel,#quests-panel) :is(button,input,select,summary) {color:#37312B;background:#FFF9ED;border-color:#CEBFA5}
+ :is(#status-panel,#inventory-panel,#quests-panel) button:not([disabled]):hover {background:#F0E2C8;border-color:#B88C4D}
+ :is(#status-panel,#inventory-panel,#quests-panel) button[aria-pressed=true] {background:#29473B;color:#FFF3D8;border-color:#B88C4D}
+ :is(#status-panel,#inventory-panel,#quests-panel) button:focus-visible {outline:3px solid #488B86;outline-offset:3px}
+ :is(#status-panel,#inventory-panel,#quests-panel) :is(h2,h3,h4,strong,b,legend) {color:#37312B}
+ :is(#status-panel,#inventory-panel,#quests-panel) :is(p,li,small) {line-height:1.65}
+ :is(#status-panel,#inventory-panel,#quests-panel) .panel-close {float:none;display:block;margin:0 0 16px auto}
+ .panel-paper {background:#FFF9EF;border:1px solid #D7C9B4;border-radius:14px;padding:24px;box-shadow:0 4px 16px #6B50340C}
+ #status-panel .player-content {max-width:1480px;margin:0 auto}
+ #status-panel .panel-subnav {display:flex;gap:8px;margin:0 0 20px}
+ .status-dashboard {display:grid;grid-template-columns:minmax(230px,.9fr) minmax(280px,1.15fr) minmax(240px,1fr);gap:22px;align-items:start}
+ .status-dashboard[hidden] {display:none}
+ .status-identity .player-heading {margin:0 0 24px;padding:0 0 20px;border-color:#D7C9B4}
+ .status-identity .player-heading h2 {font-size:32px;color:#264638}
+ .status-identity .resource {margin:22px 0}
+ .status-identity .resource progress {height:12px;background:#E4DACA}
+ .status-identity .resource.experience progress {accent-color:#B88C4D}
+ .status-identity #xp-bar::-webkit-progress-value {background:#B88C4D}
+ .status-identity #xp-bar::-moz-progress-bar {background:#B88C4D}
+ .status-dashboard .attributes {display:none}
+ .status-abilities>h3 {margin:0 0 16px;font-size:22px}
+ #status-panel #engine-growth {padding:0;margin:0;border:0;background:none}
+ #status-panel #engine-growth>p {font-size:15px;margin:8px 0;color:#766C5D}
+ #status-panel #engine-growth .engine-row {display:flex;justify-content:space-between;align-items:center;padding:12px 0;border-bottom:1px solid #E4DACA;gap:12px}
+ #status-panel #engine-growth .engine-row p {font-size:18px;font-weight:600;margin:0;color:#37312B}
+ #status-panel #engine-growth .engine-row button {min-width:40px;min-height:40px;background:#EEE2CC}
+ #status-panel .status-equipment {margin:0;background:#FFF9EF}
+ #status-panel .equipment-slots {gap:12px;max-width:none}
+ #status-panel .equipment-detail {background:#F1E8D9;border-color:#D7C9B4}
+ #status-panel :is(.status-skills,.npc-catalog,.world-system) {background:#FFF9EF;border-color:#D7C9B4;margin-top:20px;padding:20px;border-radius:12px}
+ #status-panel .skill-loadout {background:#F6EEE0;border-color:#D7C9B4}
+ #inventory-panel {display:block}
+ #inventory-panel[hidden] {display:none}
+ #inventory-panel .inventory-heading {display:flex;align-items:center;gap:16px;margin-bottom:22px}
+ #inventory-panel .inventory-heading h2 {font-size:30px;color:#264638}
+ #inventory-panel .inventory-heading>span {font-size:18px}
+ #inventory-panel .inventory-workspace {display:grid;grid-template-columns:minmax(0,1.8fr) minmax(260px,1fr);gap:24px;align-items:start}
+ #inventory-panel .inventory-items {min-width:0}
+ #inventory-panel .inventory-categories {display:flex;flex-wrap:wrap;gap:8px;margin:0 0 24px}
+ #inventory-panel .inventory-grid {max-width:none;grid-template-columns:repeat(8,minmax(0,1fr));gap:10px}
+ #inventory-panel .inventory-slot {background:#F3EBDD;box-shadow:inset 0 1px 3px #6B503412;border-color:#D7C9B4}
+ #inventory-panel .inventory-slot.occupied {background:#FFFCF5}
+ #inventory-panel .inventory-empty {background:transparent;color:#766C5D;border:0;margin:16px 0 0;padding:8px;text-align:center}
+ #inventory-panel .inventory-detail {min-height:300px}
+ #inventory-panel .inventory-detail>h3 {margin:0 0 20px;color:#264638;font-size:22px}
+ #inventory-panel .item-detail-empty {padding:40px 10px;text-align:center;color:#766C5D}
+ #inventory-panel .inventory-detail:has(#item-tooltip:not([hidden])) .item-detail-empty {display:none}
+ #inventory-panel #item-tooltip {position:static;inset:auto;width:auto;padding:0;border:0;background:none;box-shadow:none}
+ #inventory-panel #item-tooltip h3 {font-size:25px;color:#264638}
+ #inventory-panel #item-tooltip #item-effect {color:#526F5B;border-color:#D7C9B4}
+ #inventory-panel .inventory-note {font-size:14px;border-color:#D7C9B4;margin:20px 0 0}
+ .panel-tools {display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:24px}
+ :is(#inventory-panel,#quests-panel) .panel-tools>details {margin:0;padding:18px 20px;border:1px solid #D7C9B4;border-radius:12px;background:#FFF9EF;min-width:0;align-self:start}
+ :is(#inventory-panel,#quests-panel) .panel-tools summary {padding:4px 0;background:transparent;font-size:17px}
+ #inventory-panel :is(.engine-card,.item-library,.trade-panel,.world-system,.shop-ui) {background:#FFF9EF;border-color:#D7C9B4}
+ #inventory-panel :is(.engine-owned,.library-item,.shop-item) {background:#F5EDDF;color:#37312B}
+ #quests-panel .quest-workspace {display:grid;grid-template-columns:minmax(0,1.7fr) minmax(280px,1fr);gap:24px;align-items:start}
+ #quests-panel .quest-heading {display:flex;flex-wrap:wrap;align-items:center;gap:12px;margin:0 0 20px}
+ #quests-panel .quest-heading>div {flex:1 1 100%;}
+ #quests-panel .quest-heading h2 {font-size:30px;margin:0 0 8px;color:#264638}
+ #quests-panel .quest-heading p {margin:0;color:#766C5D}
+ #quests-panel #quest-to-story {display:none}
+ #quests-panel .quest-filters {display:flex;flex-wrap:wrap;gap:8px;margin-bottom:22px}
+ #quests-panel .quest-layout {display:grid;grid-template-columns:1fr;gap:20px}
+ #quests-panel .quest-card {background:#F5EDDF;border-color:#D7C9B4;padding:20px;text-align:left}
+ #quests-panel .quest-card strong {font-size:21px;color:#264638}
+ #quests-panel .quest-card[aria-pressed=true] {background:#E8EDDF;color:#37312B}
+ #quests-panel .quest-card :is(span,.quest-card-reward) {color:#766C5D}
+ #quests-panel .quest-card-reward {color:#916A32!important}
+ #quests-panel #quest-empty {background:#F5EDDF;border-color:#D7C9B4;color:#766C5D;min-height:130px;display:grid;place-items:center;padding:24px;text-align:center}
+ #quests-panel #quest-empty[hidden] {display:none}
+ #quests-panel .quest-detail {background:#FAF3E6;border-color:#D7C9B4}
+ #quests-panel .regional-epics {background:#ECE7F0;border-color:#C7B4D3;margin:0;padding:24px;border-radius:14px}
+ #quests-panel .regional-epics h3 {margin:0 0 20px;color:#705481;font-size:25px}
+ #quests-panel .regional-epics article {background:#F9F5FC;border-color:#D6C9DE;padding:20px;margin:0 0 16px}
+ #quests-panel .regional-epics strong {color:#634674;font-size:21px}
+ #quests-panel .regional-epics p {font-size:15px;color:#887392;margin:10px 0}
+ .epic-requirement {display:grid;gap:8px;margin:14px 0;font-size:15px;color:#705481}
+ .epic-requirement progress {width:100%;height:9px;accent-color:#9975A8}
+ .epic-requirement progress::-webkit-progress-value {background:#9975A8}
+ .epic-requirement progress::-moz-progress-bar {background:#9975A8}
+ #quests-panel .quest-preview {background:#FFF9EF;color:#37312B;border-color:#B88C4D;box-shadow:0 8px 28px #4F39282B}
+ :is(#status-panel,#inventory-panel) .wallet-balance {color:#916A32;margin:0 0 18px;font-weight:600}
+}
+@media (min-width:701px) and (max-width:1100px) {
+ .status-dashboard {grid-template-columns:minmax(0,1fr) minmax(0,1fr)}
+ .status-dashboard>.status-equipment {grid-column:1/-1}
+ #inventory-panel .inventory-grid {grid-template-columns:repeat(4,minmax(0,1fr))}
+ #quests-panel .quest-workspace {grid-template-columns:minmax(0,1.25fr) minmax(250px,1fr)}
+}
+@media (min-width:701px) {
+ #status-panel .status-page-title {font-size:30px;color:#264638;margin:0 0 20px}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .hud-game-time {color:#674D2B;background:#FFF9EC;border-color:#CDBB9D}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .utility-actions {background:#FFF9EF;color:#37312B;border-color:#D7C9B4}
+ .game:is([data-page=status],[data-page=inventory],[data-page=quests]) .tabs button.active {color:#F0CC8D;border-color:#B88C4D}
+ #status-panel :is(.starting-passive,.skill-card,.skill-loadout fieldset,#npc-catalog-card) {background:#F5EDDF;color:#37312B;border-color:#D7C9B4}
+ #inventory-panel .item-library-card {background:#F5EDDF;color:#37312B}
+ :is(#status-panel,#quests-panel) progress::-webkit-progress-bar {background:#E4DACA}
+}

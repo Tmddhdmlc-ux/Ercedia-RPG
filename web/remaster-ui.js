@@ -1,3 +1,4 @@
+import {mountStatusDashboard} from './panel-layout.js';
 import {mountNavigationLayout} from './navigation-layout.js';
 // Presentation only: reuse existing controls and keep all game state in its owners.
 export function mountRemasterUI(state){
@@ -16,6 +17,7 @@ export function mountRemasterUI(state){
   for(const id of ['starting-passive','skills-empty','skill-list'])skill.append($(id));
   skill.prepend(content.querySelector('.skill-heading'));content.append(skill);
   const people=content.querySelector('.npc-catalog');people.open=false;
+  mountStatusDashboard(content,growth);
   const stats=[...content.children].filter(n=>n!==skill&&n!==people);
   function select(key){for(const node of stats)node.hidden=key!=='stats';skill.hidden=key!=='skills';people.hidden=key!=='people';if(key==='people')people.open=true;for(const b of stateNav.children)b.setAttribute('aria-pressed',String(b.dataset.section===key));}
   for(const [key,label] of [['stats','능력치'],['skills','스킬·패시브'],['people','인물 정보']]){const b=document.createElement('button');b.type='button';b.textContent=label;b.dataset.section=key;b.onclick=()=>select(key);stateNav.append(b);}
