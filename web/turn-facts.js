@@ -1,10 +1,12 @@
+import {narrativeFocus} from './narrative-context.js';
 import {itemCatalog,catalogItem} from './item-catalog.js';
 import {currencyRules} from './economy.js';
 import {npcSnapshot} from './npc-model.js';
 
 // Send the small, relevant canonical records themselves, not only file names/counts.
 export function turnFacts(state,domains,action='',nearbyActors=[]){
- const facts={};
+ const facts={},focus=narrativeFocus(state);
+ if(Object.keys(focus).length)facts.narrative_focus=focus;
  if(domains.crafting||domains.trade||/장비|무기|검|스태프|기술서|카탈로그/.test(action)){
   const owned=new Set((state.inventory||[]).map(i=>i.catalog_id||i.id));
   const named=itemCatalog.filter(i=>action.includes(i.id)||action.includes(i.name));

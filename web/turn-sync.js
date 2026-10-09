@@ -1,3 +1,4 @@
+import {narrativeInstruction} from './narrative-context.js';
 import {outcomeInstruction} from './turn-facts.js';
 import {questStoryInstruction,hasActiveQuestStory} from './quest-story.js';
 import {craftingAttemptInstruction,isCraftingAttempt} from './crafting-policy.js';
@@ -52,5 +53,5 @@ export function incrementalPrompt(state,action,id,packet){
  if(d.trade)rules+='거래는 SHOP_TRADE_SCHEMA/ECONOMY_SCHEMA의 실제 재고·가격·예산으로 확인하세요. 동화100=은화1, 은화100=금화1, wallet_copper는 엔진 원장입니다. UI 정산 거래를 스냅샷으로 재지급하지 마세요. ';
  if(d.growth||d.crafting)rules+='실제 수련·제작·학습 결과와 시간을 이번 턴에 판정하세요. 실제 연습 성과는 practice, 그 외 경험치는 engine_events xp, 학습은 learn_book/learn_custom_skill, 경지 승급은 실제 깨달음과 기존 최소 레벨을 확인하세요. ';
  if(d.quest)rules+='의뢰는 quest_updates/quest_events/world_events의 실제 증거로 처리하고 보고 보상은 UI에 맡기세요. ';
- return rules+outcomeInstruction+'\n현재 상태:\n'+JSON.stringify(packet.payload)+'\n\n플레이어의 자유 행동(그대로 반영):\n'+action;
+ return narrativeInstruction+rules+outcomeInstruction+'\n현재 상태:\n'+JSON.stringify(packet.payload)+'\n\n플레이어의 자유 행동(그대로 반영):\n'+action;
 }
