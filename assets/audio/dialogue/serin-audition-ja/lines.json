@@ -1,0 +1,79 @@
+{
+  "status": "audition_only",
+  "provider": "Microsoft Edge online TTS via edge-tts",
+  "tool_reference": "https://github.com/rany2/edge-tts",
+  "voice": "ja-JP-NanamiNeural",
+  "language": "ja",
+  "synthetic": true,
+  "revision": 1,
+  "direction": "Bright, light, cute adult character voice audition",
+  "notes": "A new spoken voice candidate, not the same performer as existing reaction clips. Rate and pitch adjustments are not emotion-directed acting. Not connected to live dialogue or combat.",
+  "processing": "85 Hz high-pass, gentle 220 Hz reduction and 3 kHz presence; loudness normalization to -18 LUFS, -1.5 dBTP; mono 48 kHz MP3.",
+  "lines": [
+    {
+      "id": "greeting",
+      "situation": "첫 만남",
+      "text": "セリンです。これからよろしくお願いしますね。",
+      "voice": "ja-JP-NanamiNeural",
+      "language": "ja",
+      "korean_text": "세린입니다. 앞으로 잘 부탁드려요.",
+      "rate": "+4%",
+      "pitch": "+22Hz",
+      "intended_direction": "밝고 귀여운 인사",
+      "path": "assets/audio/dialogue/serin-audition-ja/greeting.mp3",
+      "sha256": "c826da9beb5097bb036e05f7b489424b3f7fe7f1d99e1f59efa7121fb73ae84d"
+    },
+    {
+      "id": "concern",
+      "situation": "걱정",
+      "text": "怪我はしていませんか？ちょっと見せてください。",
+      "voice": "ja-JP-NanamiNeural",
+      "language": "ja",
+      "korean_text": "다치신 건 아니죠? 잠깐만 보여주세요.",
+      "rate": "+8%",
+      "pitch": "+24Hz",
+      "intended_direction": "가볍고 다급한 걱정",
+      "path": "assets/audio/dialogue/serin-audition-ja/concern.mp3",
+      "sha256": "be1be1c7fa7806533d7f5045876e4839e4eae871274fb94d4e6df1451a9ea644"
+    },
+    {
+      "id": "battle",
+      "situation": "전투 시작",
+      "text": "私の後ろにいてください。前は私が守ります。",
+      "voice": "ja-JP-NanamiNeural",
+      "language": "ja",
+      "korean_text": "제 뒤에 계세요. 제가 앞을 맡겠습니다.",
+      "rate": "+4%",
+      "pitch": "+14Hz",
+      "intended_direction": "또렷한 결의",
+      "path": "assets/audio/dialogue/serin-audition-ja/battle.mp3",
+      "sha256": "4525ecbc12023df09b8076a00b0f4177e51622b9a091398f6b4fdcee9f46e352"
+    },
+    {
+      "id": "ultimate",
+      "situation": "궁극기",
+      "text": "ここは……私が守ります！",
+      "voice": "ja-JP-NanamiNeural",
+      "language": "ja",
+      "korean_text": "이곳은… 제가 지킵니다!",
+      "rate": "-4%",
+      "pitch": "+18Hz",
+      "intended_direction": "맑고 단단한 결의",
+      "path": "assets/audio/dialogue/serin-audition-ja/ultimate.mp3",
+      "sha256": "47e00a3b85c6e2d810bd9d1f56d8c51fdc0c82bf1d44e2a4183651fd413227c7"
+    },
+    {
+      "id": "victory",
+      "situation": "승리",
+      "text": "終わりましたね……みんな無事で、よかったです。",
+      "voice": "ja-JP-NanamiNeural",
+      "language": "ja",
+      "korean_text": "끝났네요… 모두 무사해서 다행이에요.",
+      "rate": "-2%",
+      "pitch": "+22Hz",
+      "intended_direction": "밝고 가벼운 안도",
+      "path": "assets/audio/dialogue/serin-audition-ja/victory.mp3",
+      "sha256": "065af4f7b94da6bdaedfdf2813a75eacaab3e39a2f9dac9bccf39aea41544c8f"
+    }
+  ]
+}
