@@ -17,22 +17,46 @@ export function isCampaignSetting(path){
 export function repositoryIndex(tree){
   return tree.filter(p=>p.type==='blob').map(p=>({path:p.path,size:p.size||0,sha:p.sha||null,kind:isCampaignSetting(p.path)?'setting':/\.(png|jpe?g|webp|gif|svg|mp[34]|wav|ogg)$/i.test(p.path)?'asset':'reference'})).sort((a,b)=>a.path.localeCompare(b.path));
 }
+const campaignCache=new WeakMap();
+function completePackedFiles(pack,inventory){
+  if(pack?.schema_version!==1||!pack.entries)return null;
+  const settings=inventory.filter(p=>p.kind==='setting');
+  if(Object.keys(pack.entries).length!==settings.length)return null;
+  const files={};let total=0;
+  for(const setting of settings){
+    const entry=pack.entries[setting.path];
+    if(!/^[a-f0-9]{40}$/.test(setting.sha||'')||entry?.sha!==setting.sha||typeof entry.content!=='string'||entry.content.length>1500000)return null;
+    const content=/\.json$/i.test(setting.path)?JSON.stringify(JSON.parse(entry.content)):entry.content;
+    total+=content.length;if(total>6000000)return null;
+    files[setting.path]=content;
+  }
+  validateConvenienceRules(files);return files;
+}
 export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=()=>{}}={}){
-  async function read(url,json=false){
-    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),25000);
-    try{const r=await fetcher(url,{cache:'no-store',signal:controller.signal});if(!r.ok)throw Error('GitHub 설정 읽기 실패 ('+r.status+')');return json?await r.json():await r.text();}finally{clearTimeout(timer);}
+  async function read(url,json=false,immutable=false,timeout=25000){
+    const controller=new AbortController(),timer=setTimeout(()=>controller.abort(),timeout);
+    try{const r=await fetcher(url,{cache:immutable?'force-cache':'no-store',signal:controller.signal});if(!r.ok)throw Error('GitHub 설정 읽기 실패 ('+r.status+')');return json?await r.json():await r.text();}finally{clearTimeout(timer);}
   }
   onProgress('GitHub 최신 main 확인 중…');
   const ref=await read(`https://api.github.com/repos/${REPO}/git/ref/heads/main`,true),sha=ref.object?.sha;
   if(!/^[a-f0-9]{40}$/.test(sha||''))throw Error('GitHub 설정 버전을 확인할 수 없습니다.');
-  const tree=await read(`https://api.github.com/repos/${REPO}/git/trees/${sha}?recursive=1`,true);
+  const cached=campaignCache.get(fetcher);
+  if(cached?.sha===sha){onProgress(`최신 설정 ${cached.paths.length}개 · 이미 읽은 원문 재사용`);return structuredClone(cached);}
+  const tree=await read(`https://api.github.com/repos/${REPO}/git/trees/${sha}?recursive=1`,true,true);
   if(tree.truncated||!Array.isArray(tree.tree))throw Error('GitHub 설정 목록이 불완전합니다. 다시 시도하세요.');
   const inventory=repositoryIndex(tree.tree),paths=inventory.filter(p=>p.kind==='setting').map(p=>p.path).sort();
   for(const required of ['BOOTSTRAP.md',conveniencePath,'WORLD.md','characters/player_default.json','characters/serin.json'])if(!paths.includes(required))throw Error('필수 설정 누락: '+required);
   if(paths.length>2000)throw Error('설정 파일 수가 지원 범위(2,000개)를 초과했습니다.');
+  onProgress(`최신 설정 ${paths.length}개 · 묶음 다운로드 중…`);
+  try{
+    const pack=await read(`https://raw.githubusercontent.com/${REPO}/${sha}/integration/campaign-settings.json`,true,true,8000);
+    const files=completePackedFiles(pack,inventory);
+    if(files){const snapshot={sha,paths,files,repository_index:inventory};campaignCache.set(fetcher,structuredClone(snapshot));onProgress(`전체 설정 ${paths.length}개 · 묶음 읽기 완료`);return snapshot;}
+  }catch{}
+  onProgress('설정 묶음을 확인할 수 없어 개별 원문으로 읽습니다…');
   const files={};let index=0,done=0,total=0,failed=false;
   await Promise.all(Array.from({length:6},async()=>{
-    while(!failed&&index<paths.length){try{const path=paths[index++],raw=await read(`https://raw.githubusercontent.com/${REPO}/${sha}/${path.split('/').map(encodeURIComponent).join('/')}`);
+    while(!failed&&index<paths.length){try{const path=paths[index++],raw=await read(`https://raw.githubusercontent.com/${REPO}/${sha}/${path.split('/').map(encodeURIComponent).join('/')}`,false,true);
       if(raw.length>1500000)throw Error('설정 파일이 너무 큽니다: '+path);
       const content=/\.json$/i.test(path)?JSON.stringify(JSON.parse(raw)):raw;
       total+=content.length;if(total>6000000)throw Error('전체 설정이 전송 지원 범위(600만자)를 초과했습니다. 일부만 읽고 시작하지 않습니다.');
@@ -41,7 +65,7 @@ export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=
   }));
   validateConvenienceRules(files);
   onProgress(`저장소 ${inventory.length}개 파일 탐색 · 게임 설정 ${paths.length}개 읽기 완료`);
-  return {sha,paths,files,repository_index:inventory};
+  const snapshot={sha,paths,files,repository_index:inventory};campaignCache.set(fetcher,structuredClone(snapshot));return snapshot;
 }
 export function campaignSettingsPrompt(snapshot){
   validateConvenienceRules(snapshot.files);
