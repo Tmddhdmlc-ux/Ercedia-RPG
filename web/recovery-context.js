@@ -2,7 +2,7 @@ import {worldData} from './world-data.js';
 import {currencyRules} from './economy.js';
 
 // Select request facts only; this never heals, spends money, or clears an injury.
-export const isRecoveryAction=action=>/치료|진료|응급\s*처치|휴식|숙박|여관|하룻밤|잠을|잠든|잠잔다|쉰다|쉬겠|쉬어|쉬고/.test(String(action));
+export const isRecoveryAction=action=>/치료|진료|(?:응급|유료|약초|의료|상처|붕대)\s*처치|처치비|휴식|숙박|여관|하룻밤|잠을|잠든|잠잔다|쉰다|쉬겠|쉬어|쉬고/.test(String(action));
 export function recoveryFacts(state){
  const region=state.gameState?.region;
  return {

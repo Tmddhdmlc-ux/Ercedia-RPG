@@ -47,3 +47,8 @@ test('misrouted appended rulings normalize to canonical scene records without al
  assert.throws(()=>normalizeScene({...raw,appended:{gm_rulings:Array.from({length:9},(_,i)=>({...next,id:'n'+i}))}}),/한도/);
  assert.throws(()=>mergeRulings(s,normalizeScene({...raw,appended:{gm_rulings:[{...prior,decision:'마음대로 변경'}]}})),/임의로/);
 });
+
+test('medical treatment requests omit combat facts without suppressing a real enemy kill in the same action',()=>{
+ const s=start();for(const a of ['진료 공간에서 유료 처치 비용을 묻는다.','마야에게 약초 처치와 의료 처치를 문의한다.','왼팔 치료와 특별한 처치가 필요한지 묻는다.','진료 후 추가 처치를 받기 전에 처치비를 확인한다.']){const p=createTurnSync().prepare(s,a);assert.equal(p.domains.combat,false,a);assert.equal(p.payload.state.turn_facts.battle_wire,undefined,a);assert.equal(p.domains.trade,true,a);assert.ok(p.payload.state.turn_facts.recovery_wire,a);}
+ for(const a of ['늑대를 처치한다.','궁극기로 적을 공격한다. 치료는 이후에 받는다.','늑대를 처치한 뒤 마야에게 유료 처치를 받는다.']){const p=createTurnSync().prepare(s,a);assert.equal(p.domains.combat,true,a);assert.ok(p.payload.state.turn_facts.battle_wire,a);}
+});

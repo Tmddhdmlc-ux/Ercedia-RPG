@@ -104,3 +104,7 @@ test('departure participant and intermediate location errors explain the valid s
   const t=setup();try{const before=structuredClone(t.state);t.reply(t.actions()[0].requestId,extra);assert.deepEqual(t.state,before);assert.equal(t.saves(),0);const repair=t.actions()[1];assert.match(repair.text,/장소 기록 규격/);assert.match(repair.text,/다른 장소에서 한 일을 최종 장소에서 한 것처럼 바꾸지/);assert.match(repair.text,/목표 검증에 필요한 중간 장소 사건은 생략하지/);t.reply(repair.requestId);assert.equal(t.saves(),1);assert.equal(t.actions().length,2);}finally{t.h.close();}
  }
 });
+
+test('oversized public ruling repairs identify the exact field and limit without weakening validation',()=>{
+ const t=setup();try{const before=structuredClone(t.state);t.reply(t.actions()[0].requestId,{gm_rulings:[{id:'long',topic:'실제 재진',decision:'가'.repeat(801)}]});assert.deepEqual(t.state,before);assert.equal(t.saves(),0);const repair=t.actions()[1];assert.match(repair.text,/decision는 빈 문자열이 아닌 800자 이하/);t.reply(repair.requestId,{gm_rulings:[{id:'short',topic:'실제 재진',decision:'회복 중이며 무거운 활동은 제한한다.'}]});assert.equal(t.saves(),1);assert.equal(t.state.gm_rulings.at(-1).id,'short');}finally{t.h.close();}
+});
