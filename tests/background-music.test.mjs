@@ -51,7 +51,7 @@ test('Norvalt uses its quiet snow theme while title, creation and combat keep pr
   assert.equal(sceneMusic({place:'노르발트 변경백령 · 안전한 정착지'}),'norvalt');
   assert.equal(sceneMusic({background:'IMG-W1-HUB',time:'밤'}),'norvalt');
   assert.equal(sceneMusic({region:'W1',place:'북방 여관'}),'norvalt');
-  assert.equal(sceneMusic({region:'W2',place:'여관'}),'village');
+  assert.equal(sceneMusic({region:'W2',place:'여관'}),'veloa');
   assert.equal(sceneMusic({background:null,place:'노르발트 정착지'}),'norvalt');
   assert.equal(sceneMusic({background:null,place:'일반 마을'}),'village');
   assert.equal(sceneMusic({region:'W1',place:'국경 검문소'}),'border');
@@ -59,4 +59,19 @@ test('Norvalt uses its quiet snow theme while title, creation and combat keep pr
   assert.equal(sceneMusic({region:'W1',battle:true}),'battle');
   assert.equal(sceneMusic({region:'W1',intro:true}),'title');
   assert.equal(sceneMusic({region:'W1',title:true}),'title');
+});
+
+test('three kingdom themes cover all actual lordships and capitals without changing special scenes',()=>{
+  for(const region of ['W2','W3','W4','W5','CW','west'])assert.equal(sceneMusic({region}),'veloa');
+  for(const region of ['E1','E2','E3','E4','CE','east'])assert.equal(sceneMusic({region}),'draken');
+  for(const region of ['S1','S2','S3','S4','CS','south'])assert.equal(sceneMusic({region}),'lumerin');
+  for(const [place,wanted] of [['엘름베르크 백작령','veloa'],['칼트하임 변경백령','draken'],['아쿠아렌 항구','lumerin']])assert.equal(sceneMusic({background:null,place}),wanted);
+  assert.equal(sceneMusic({background:'IMG-E2-HUB'}),'draken');
+  assert.equal(sceneMusic({region:'S1',time:'밤'}),'night');
+  assert.equal(sceneMusic({region:'E1',battle:true}),'battle');
+  assert.equal(sceneMusic({region:'E1',place:'국왕실'}),'royal');
+  assert.equal(sceneMusic({region:'S1',place:'국경 검문소'}),'border');
+  assert.equal(sceneMusic({region:'W3',place:'솔브린 마을'}),'village');
+  assert.equal(sceneMusic({region:'S1',intro:true}),'title');
+  assert.equal(sceneMusic({region:'S1',title:true}),'title');
 });
