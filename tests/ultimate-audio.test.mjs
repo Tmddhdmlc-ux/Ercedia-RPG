@@ -19,7 +19,7 @@ test('pause cancels all layers; resume restores sustained light without repeatin
  f.audio.reset();f.audio.advance(0);assert.equal(f.audio.status().played,1);
 });
 test('speed clips cue tails to the phase boundary while keeping natural playback pitch',async()=>{
- const f=fixture();await f.audio.unlock();f.audio.advance(0,{speed:2});assert.equal(f.sources[0].args[2],.225);assert.equal(f.sources[0].playbackRate,undefined);
+ const f=fixture();await f.audio.unlock();f.audio.advance(0,{speed:2});assert.equal(f.sources[0].args[2],.725);assert.equal(f.sources[0].playbackRate,undefined);
  f.audio.stop();f.audio.advance(5000);assert.equal(f.audio.status().active,0);
 });
 test('muted, zero-volume and late loading never queue an abandoned cinematic',async()=>{
@@ -31,6 +31,6 @@ test('failed cinematic loads are retryable and cannot stop visual playback',asyn
 });
 test('cutscene cues are registered real Ogg files with CC0 provenance',async()=>{
  const manifest=JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url)));for(const path of ultimateSamplePaths){assert.ok(manifest.includes(path));const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),'OggS');assert.ok(bytes.length>3000);}
- const credits=JSON.parse(await readFile(new URL('../assets/audio/ultimate/recipes.json',import.meta.url)));assert.equal(credits.license,'CC0-1.0');assert.equal(credits.sources.length,5);
+ const credits=JSON.parse(await readFile(new URL('../assets/audio/ultimate/recipes.json',import.meta.url)));assert.equal(credits.license,'CC0-1.0');assert.equal(credits.sources.length,5);assert.equal(credits.orchestration.samples.length,3);assert.equal(credits.orchestration.license,'CC0-1.0');
  const script=await readFile(new URL('./serin-ultimate-preview.js',import.meta.url),'utf8');assert.match(script,/ticket!==runRevision/);assert.match(script,/audio\.advance\(elapsed/);assert.doesNotMatch(script,/audio\.play\(/);
 });
