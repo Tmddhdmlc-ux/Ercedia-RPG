@@ -195,3 +195,7 @@
 ## PATCH 5 NPC 생활·기억 연동 (UI 1.8.1)
 현재 런처/장면/저장 v1을 유지한다. [tampermonkey/NPC_LIFE_SCHEMA.md](tampermonkey/NPC_LIFE_SCHEMA.md)의 life_events로 일정·이동·호감도·기억·소문·지역 영향을 기록한다. NPC는 자기 기억과 실제 도착한 정보만 알고 국가 의무를 개인 호감도로 무시하지 않는다. 선행 PATCH1~4의 미완성 범위와 검증 한계는 [tests/PATCH5_VERIFICATION.md](tests/PATCH5_VERIFICATION.md)를 확인한다.
 
+
+## AB. ChatGPT GM 균형형 서술 규칙 (2026-10-09 최종 확정)
+- `NARRATION_RULES.md` 필독: **NPC 대화 약 60% / 상황·행동 묘사 약 40%**. 장면의 자연스러운 균형 기준이며 강제 문장 수 제한은 아님. NPC 개성·자율성, 플레이어 행동 대리 확정 금지, 2~4개 주요 선택지+자유 입력, 장면 급종결 금지.
+- 전투는 AI가 계산하고 UI가 스탠딩 자동전투를 한 줄씩 재생하므로 일반 채팅 서술에서 결말을 미리 공개하거나 HP/보상을 중복 지급하지 않는다. 상태 수치와 깨달음/관계 판정은 기존 공식 유지.
