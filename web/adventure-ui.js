@@ -3,9 +3,9 @@ import {characterVisual} from './character-art.js';
 import {formatCopper} from './wallet.js';
 import {catalogItem as engineItem} from './item-catalog.js';
 export function mountAdventureUI(state,{submit,isPending,switchTo,assetBase=''}){
- const game=document.querySelector('.game'),toolbar=document.createElement('div'),open=document.createElement('button'),hint=document.createElement('span');
- toolbar.className='adventure-toolbar';open.type='button';open.textContent='마을·모험';toolbar.append(open,hint);document.getElementById('play-hud').after(toolbar);
- const headers=[document.querySelector('.game-navigation')||document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
+ const game=document.querySelector('.game'),open=document.createElement('button');
+ open.type='button';open.textContent='마을·모험';document.querySelector('.utility-actions').append(open);
+ const headers=[document.querySelector('.game-navigation')||document.querySelector('.tabs'),document.getElementById('play-hud')];
  function measureHeader(){if(!game.getBoundingClientRect)return;const top=game.getBoundingClientRect().top,bottom=Math.max(top,...headers.map(el=>el.getBoundingClientRect().bottom));game.style.setProperty('--story-header-height',Math.ceil(bottom-top)+'px');}
  if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(measureHeader);for(const el of headers)observer.observe(el);}
  const panel=document.createElement('section');panel.className='adventure-modal';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','마을과 모험 행동');game.append(panel);
@@ -14,7 +14,7 @@ export function mountAdventureUI(state,{submit,isPending,switchTo,assetBase=''})
  const button=(parent,label,action,disabled=false)=>{const b=add(parent,'button',label);b.type='button';b.disabled=disabled;b.onclick=action;return b;};
  function close(){panel.hidden=true;open.setAttribute('aria-expanded','false');open.focus({preventScroll:true});}
  function ask(action){if(busy())return;close();switchTo('story');const {region,place}=actualPlace(state);submit(`[마을·모험 행동] 현재 실제 위치 ${region||'미확인'} · ${place}. ${action} 장소 클릭은 이동·획득·회복 성공을 뜻하지 않습니다. 실제 접근 조건·시간·비용·위험을 확인하고 판정된 변경만 기존 engine_events/system_events/world_events/life_events/quest_events로 기록하세요.`);}
- function refresh(){const creating=!!state.introDraft,location=actualPlace(state),guide=adventureGuide(state);toolbar.hidden=state.page!=='story'||creating||!state.player.name||!!state.battlePlayback&&!state.battlePlayback.done;open.disabled=busy();hint.textContent=guide.title;measureHeader();
+ function refresh(){const creating=!!state.introDraft,location=actualPlace(state),guide=adventureGuide(state);open.hidden=creating||!state.player.name||game.dataset.title==='active';open.disabled=busy();measureHeader();
   if(panel.hidden)return;if(creating||game.dataset.title==='active'){panel.hidden=true;return;}
   const options=adventureOptions(state);panel.replaceChildren();const header=add(panel,'div','','adventure-heading');add(header,'h2',location.place);button(header,'닫기',close);
   const nav=add(panel,'nav','','adventure-tabs');for(const [key,label]of [['home','다음 목표'],['people','주변 인물'],['board','일자리·의뢰'],['shop','상점'],['training','수련'],['rest','휴식'],['travel','마을 밖으로']]){const b=button(nav,label,()=>{tab=key;refresh();});b.setAttribute('aria-pressed',String(tab===key));}
@@ -30,7 +30,7 @@ export function mountAdventureUI(state,{submit,isPending,switchTo,assetBase=''})
   if(tab==='rest'){add(body,'h3','안전한 곳에서 휴식');add(body,'p',`HP ${state.player.hp??'—'}/${state.player.maxHp??'—'} · MP ${state.player.mp??'—'}/${state.player.maxMp??'—'} · 부상과 휴식 장소에 따라 회복이 달라집니다.`);button(body,'휴식 조건 확인',()=>ask('현재 장소에서 안전하게 쉴 수 있는 곳과 숙박·치료 비용 및 필요한 시간을 확인한다. 부상·피로·현재 HP/MP를 바탕으로 회복 가능한 범위를 설명하고 무조건 완전 회복하지 않는다.'),busy());}
   if(tab==='travel'){add(body,'p',`실제 출발지 ${location.region||'미확인'} · 지도 열람으로 위치는 바뀌지 않습니다.`);for(const d of options.dungeons){const card=add(body,'article','','adventure-card');add(card,'h3',d.name);add(card,'p',`권장 Lv.${d.level_range.join('–')} · ${d.danger_rank}`);const rewards=state.world_engine?.dungeons?.[d.id]?.claimed?'최초 보상 수령 완료 · 반복 보상은 재출현 확인 필요':'최초 보상은 실제 클리어 후 지급';add(card,'p',rewards);add(card,'p',dungeonRewardPreview(d,state));button(card,'경로·시간·보상 확인',()=>ask(`${d.id} ${d.name}으로 향하는 현지 경로·이동 시간·입구 조건·위험·승인된 보상과 재료를 확인한다. 첫 방문이나 보스는 생략하지 않고 아직 출정하지 않는다.`),busy());button(card,'탐험·출정 요청',()=>ask(`${d.id} ${d.name}으로 출정한다. 장비·HP/MP·진입 조건·국경·이동 시간·습격 위험을 실제 판정하고 도착 후에만 던전 사건을 확인한다.`),busy());}button(body,'안전한 주변 탐색 요청',()=>ask('현 위치 주변에서 현재 능력으로 접근 가능한 길과 장소를 탐색한다. 경로·시간·위험을 확인하고 실제 이동 결과를 기록한다.'),busy());button(body,'세계지도에서 목적지 확인',()=>{close();switchTo('map');});}
  }
- open.onclick=()=>{panel.hidden=false;open.setAttribute('aria-expanded','true');tab='home';refresh();panel.querySelector('button')?.focus();};
+ open.onclick=()=>{const menu=document.querySelector('.game-utility');if(menu)menu.open=false;panel.hidden=false;open.setAttribute('aria-expanded','true');tab='home';refresh();panel.querySelector('button')?.focus();};
  panel.addEventListener('keydown',e=>{if(e.key==='Escape'){e.stopPropagation();close();}if(e.key==='Tab'){const list=[...panel.querySelectorAll('button,summary')].filter(b=>!b.disabled);if(!list.length)return;const first=list[0],last=list.at(-1);if(e.shiftKey&&document.activeElement===first){e.preventDefault();last.focus();}else if(!e.shiftKey&&document.activeElement===last){e.preventDefault();first.focus();}}});
  return {render:refresh};
 }

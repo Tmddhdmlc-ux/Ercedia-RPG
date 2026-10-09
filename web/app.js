@@ -1,3 +1,4 @@
+import {mountPanelLayouts} from './panel-layout.js';
 import {mountSceneComposer} from './scene-composer.js';
 import {mountSaveUI} from './save-ui.js';
 import {mountAmbience} from './ambience.js';
@@ -281,6 +282,7 @@ remasterUI=mountRemasterUI(state);
 saveUI=mountSaveUI(state,{storage,isPending:()=>chatUI.isPending(),restore:chatUI.restore,enter:()=>titleUI.enter()});
 adventureUI=mountAdventureUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),switchTo});
 skillLoadoutUI=mountSkillLoadout(state,{persist:()=>{saveGame();playerUI.render();},isPending:()=>chatUI.isPending()});
+mountPanelLayouts();
 renderAll();
 
 const game=document.querySelector('.game');
