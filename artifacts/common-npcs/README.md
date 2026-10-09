@@ -2,6 +2,8 @@
 
 `characters/common_npc_roster.json`의 ER-COM-001~024를 기준으로 각 인물의 반신 초상화와 전신 스탠딩을 제작한다. 능력치·소속·지역·공식 설정을 추가하지 않는다.
 
+제작 완료: 24명, 반신 24장 + 전신 24장 = 48장. 파일 규격·RGBA 투명도·전신 안전 여백 검사 48/48 통과. 이미지 커밋 `53782e9a2b37a55c774538697597f23f298c48c0`의 GitHub raw CDN 48/48에서 HTTP 200, PNG 디코딩, 크기·알파·원본 파일 해시 일치를 확인했다. 상세 결과는 `cdn-validation.json`에 보존한다.
+
 ## 결과 구조
 
 - `assets/characters/common/drafts/[ID]/portrait.png`: 1086×1448 RGBA 투명 반신.
