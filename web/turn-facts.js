@@ -5,8 +5,8 @@ import {currencyRules} from './economy.js';
 import {npcSnapshot} from './npc-model.js';
 
 // Send the small, relevant canonical records themselves, not only file names/counts.
-export function turnFacts(state,domains,action='',nearbyActors=[]){
- const facts={},focus=narrativeFocus(state);
+export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
+ const facts={},focus=narrativeFocus(state,action,questId);
  if(Object.keys(focus).length)facts.narrative_focus=focus;
  if(isRecoveryAction(action))facts.recovery_wire=recoveryFacts(state);
  if(domains.crafting||domains.trade||/장비|무기|검|스태프|기술서|카탈로그/.test(action)){

@@ -7,7 +7,7 @@ const clone=x=>JSON.parse(JSON.stringify(x));
 const same=(a,b)=>JSON.stringify(a)===JSON.stringify(b);
 function difference(value,old,removed=[],path=''){if(same(value,old))return undefined;if(value&&old&&typeof value==='object'&&typeof old==='object'&&!Array.isArray(value)&&!Array.isArray(old)){const result={};for(const [k,v]of Object.entries(value)){const changed=difference(v,old[k],removed,path+'/'+k.replaceAll('~','~0').replaceAll('/','~1'));if(changed!==undefined)result[k]=changed;}for(const k of Object.keys(old))if(!Object.hasOwn(value,k))removed.push(path+'/'+k.replaceAll('~','~0').replaceAll('/','~1'));return Object.keys(result).length?result:undefined;}return value;}
 export function syncContext(state,action,choiceId){
- const domains=turnDomains(state,action,choiceId),c=clone(turnContext(state,domains,action));
+ const domains=turnDomains(state,action,choiceId),c=clone(turnContext(state,domains,action,choiceId));
  if(c.npc_catalog&&!state.scene?.npc&&!state.scene?.cast?.length)c.npc_catalog.current_npc=null;
  delete c.item_registry;if(!domains.relationship)delete c.relationship_network;
  if(c.adventure)for(const k of ['guide','loop','rules','resident_rules'])delete c.adventure[k];
