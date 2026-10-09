@@ -2955,6 +2955,16 @@ input[type=range] {
 .adventure-toolbar{display:flex;gap:16px;align-items:center;padding:8px 18px;background:#12232dcc;border-bottom:1px solid #49616b;z-index:15;position:relative}.adventure-toolbar button{font-size:18px;white-space:nowrap;color:#ffe3a6;border:1px solid #c2a36c;padding:8px 16px;border-radius:7px;background:#1b303b}.adventure-toolbar span{font-size:16px;color:#bfd2dd}.adventure-modal{position:absolute;inset:70px 4% 30px;z-index:150;background:#101e2bf5;border:1px solid #b99a65;border-radius:14px;box-shadow:0 20px 70px #000b;padding:22px;overflow:auto;overscroll-behavior:contain;font-size:18px;backdrop-filter:blur(12px)}.adventure-modal[hidden],.adventure-toolbar[hidden]{display:none!important}.adventure-heading{display:flex;justify-content:space-between;align-items:center;gap:20px}.adventure-heading h2{margin:0 0 16px;font-size:26px}.adventure-tabs{display:flex;gap:8px;flex-wrap:wrap;border-bottom:1px solid #49616b;padding-bottom:16px}.adventure-modal button{font-size:18px;border:1px solid #57727e;border-radius:7px;background:#213643;color:#edf4fa;padding:10px 16px;margin:4px;cursor:pointer}.adventure-modal button:disabled{opacity:.5;cursor:default}.adventure-tabs button[aria-pressed=true]{border-color:#e3c184;color:#ffe3a6}.adventure-body{padding-top:16px}.adventure-body p{line-height:1.65;color:#bfd2dd}.adventure-card{padding:16px 20px;margin:12px 0;border:1px solid #4a6573;border-radius:9px;background:#1a2c37}.adventure-card h3{margin:0;color:#ffe0a0;font-size:22px}.adventure-card details{margin:12px 0}.adventure-loop{padding:14px;background:#122430;border-left:3px solid #d9b575}.skill-loadout{padding:18px;margin:16px 0;background:#152633;border:1px solid #627681;border-radius:10px}.skill-loadout h3{font-size:22px}.skill-loadout p{font-size:17px;line-height:1.6;color:#b9d0df}.skill-loadout fieldset{margin:14px 0;border:1px solid #526f7b;padding:14px;display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:12px}.skill-loadout legend{font-size:18px;color:#f4d7a0}.skill-loadout label{display:flex;align-items:center;gap:10px;font-size:17px}.skill-loadout select{min-width:0;width:100%;padding:10px;background:#10212a;color:#e8f2f9;border:1px solid #54737e;font-size:17px}.game[data-title=active] .adventure-toolbar,.game[data-title=active] .adventure-modal{display:none!important}.adventure-modal button:focus-visible,.skill-loadout select:focus-visible{outline:2px solid #ffe2a4;outline-offset:3px}
 
 #intro-goal{width:100%;min-height:150px;resize:vertical;font:inherit;line-height:1.6;padding:14px;}
+
+/* Approved ensemble key art; keep artwork and UI on separate layers. */
+.title-art{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:50% 50%;z-index:-2;pointer-events:none;}
+.title-screen::before{inset:0;border:0;transform:none;background:radial-gradient(ellipse at 50% 35%,#09132175,transparent 58%),linear-gradient(180deg,#06101b25,transparent 60%,#06101b50);}
+.title-content{align-self:start;margin-top:clamp(16px,5vh,64px);position:relative;}
+.title-logo{color:#fff5df;text-shadow:0 3px 8px #071321,0 0 28px #071321cc;}
+.title-logo span{color:#f1d5a1;text-shadow:0 2px 5px #071321;}
+.title-kicker,.title-load-note{color:#f1e8d7;text-shadow:0 1px 5px #071321,0 0 12px #071321;}
+.title-menu{margin:24px auto;}
+.title-menu button{background:#101d2ae8;box-shadow:0 4px 18px #06101b55;}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -2963,7 +2973,7 @@ input[type=range] {
   <div class="intro"><div><span class="eyebrow">A MOMENT IN ERCEDIA</span><h1>솔브린 마을에서의 만남</h1><p>익숙한 풍경, 그리고 다시 만난 세린.</p></div><span class="chapter">SCENE <b>01</b></span></div>
   <div class="workspace">
     <article class="game" data-title="active">
-      <section id="title-screen" class="title-screen" aria-label="아르세디아RPG 메인 메뉴"><div class="title-aura" aria-hidden="true"></div><div class="title-stars" aria-hidden="true"></div><div class="title-content"><p class="title-kicker" aria-hidden="true">A NEW JOURNEY AWAITS</p><h1 class="title-logo" tabindex="-1">아르세디아<span>RPG</span></h1><div class="title-rule" aria-hidden="true"></div><nav class="title-menu" aria-label="메인 메뉴"><button id="title-new-game" type="button">새게임 시작</button><button id="title-load-game" type="button">불러오기</button></nav><p id="title-load-note" class="title-load-note" role="status"></p></div></section>
+      <section id="title-screen" class="title-screen" aria-label="아르세디아RPG 메인 메뉴"><img id="title-art" class="title-art" src="assets/title/title-ensemble-v1.png" alt="" aria-hidden="true" decoding="async" fetchpriority="high"><div class="title-content"><p class="title-kicker" aria-hidden="true">A NEW JOURNEY AWAITS</p><h1 class="title-logo" tabindex="-1">아르세디아<span>RPG</span></h1><div class="title-rule" aria-hidden="true"></div><nav class="title-menu" aria-label="메인 메뉴"><button id="title-new-game" type="button">새게임 시작</button><button id="title-load-game" type="button">불러오기</button></nav><p id="title-load-note" class="title-load-note" role="status"></p></div></section>
       <button id="title-return" class="title-return" type="button">메인 메뉴</button>
       <div class="new-game-actions"><button id="new-game" type="button">새 게임</button><button id="sync-settings" type="button" title="진행 기록을 유지하고 최신 GitHub 설정을 GPT에 전달">설정 동기화</button><button id="continue-game" type="button" hidden>이어하기 · 생성 계속</button><button id="restore-previous-game" type="button" hidden>이전 세이브 복구</button></div>
       <section id="intro-screen" class="intro-screen" aria-label="새 게임 프롤로그" hidden><div class="intro-card"><p id="intro-progress"></p><h2 id="intro-title" tabindex="-1"></h2><p id="intro-description"></p><label id="intro-input-label" for="intro-input">이름</label><input id="intro-input" autocomplete="off"><textarea id="intro-goal" maxlength="1000" rows="5" aria-label="이번 여정의 목표와 페르소나" hidden></textarea><div id="intro-options" class="intro-options"></div><p id="intro-error" role="alert"></p><div class="intro-buttons"><button id="intro-back" type="button" hidden>← 뒤로</button><button id="intro-skip" type="button" hidden>건너뛰기</button><button id="intro-next" type="button" class="primary">다음</button><button id="intro-cancel" type="button" hidden>기존 게임으로 돌아가기</button></div></div></section>
@@ -10685,8 +10695,9 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 return {mountCatalogUI};})();
 const module98=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
-function mountTitleMenu(state,{newGame,render,isPending}){
+function mountTitleMenu(state,{newGame,render,isPending,assetBase=''}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
+  const art=$('title-art');if(art)art.src=assetBase+'assets/title/title-ensemble-v1.png';
   let active=true,startedFromTitle=false,loading=false,error='';
   function refresh(){
     screen.hidden=!active;screen.inert=!active;game.dataset.title=active?'active':'closed';document.body.classList.toggle('title-screen-active',active);
@@ -11110,7 +11121,7 @@ battleUI=mountBattleUI(state,{render:renderAll,persist:saveGame,chat:chatUI,asse
 catalogUI=mountCatalogUI(state,{onShow:()=>switchTo('status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase,request:action=>{switchTo('story');chatUI.submit(action);catalogUI.refresh();},isPending:()=>chatUI.isPending()});
 window.gameBridge=createGameBridge(state,{apply:chatUI.apply,restore:chatUI.restore,render:renderAll,persist:saveGame});
 questUI=mountQuestUI(state,{chat:chatUI,switchTo,persist:saveGame,showMap:point=>{state.region=point.id;state.mapView=point.region;state.mapFaction=null;switchTo('map');renderRegion();saveGame();}});
-titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
+titleUI=mountTitleMenu(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',newGame:introUI,render:renderAll,isPending:()=>chatUI.isPending()});
 worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 tradeUI=mountTradeUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,isPending:()=>chatUI.isPending(),submit:(...args)=>chatUI.submit(...args),render:renderAll,persistCandidate:candidate=>storage.setItem(KEY,JSON.stringify(candidate)),returnToStory:()=>{switchTo('story');renderAll();saveGame();}});
 remasterUI=mountRemasterUI(state);

@@ -1,0 +1,13 @@
+{
+  "status": "approved",
+  "usage": "Approved by user; installed in main title UI.",
+  "image": "assets/title/drafts/title-ensemble-v1.png",
+  "references": [
+    "assets/characters/main/serin/standing/base.png",
+    "assets/characters/batches/core_batch_01/standing_comparison.jpg"
+  ],
+  "composition": "Human ensemble looks upward; symbolic deity silhouettes in upper left, demon king silhouettes in upper right. Center reserved for title overlay.",
+  "canon": "Supernatural silhouettes have no established names or identities; ensemble is symbolic, not a recorded in-world meeting.",
+  "text_baked_in": false,
+  "approved_image": "assets/title/title-ensemble-v1.png"
+}
