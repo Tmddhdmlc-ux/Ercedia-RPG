@@ -1,0 +1,268 @@
+{
+  "source": "https://opengameart.org/content/monster-sound-effects-pack",
+  "author": "Ogrebane",
+  "license": "CC0-1.0",
+  "families": {
+    "canine": {
+      "label": "짐승 · 송곳니",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/canine/base.wav",
+          "source_member": "monster_sfx_pack/monster-1.wav",
+          "rate": 0.9,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/canine/attack.wav",
+          "source_member": "monster_sfx_pack/monster-2.wav",
+          "rate": 1.08,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/canine/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-3.wav",
+          "rate": 1.25,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/canine/death.wav",
+          "source_member": "monster_sfx_pack/monster-4.wav",
+          "rate": 0.72,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "horned": {
+      "label": "뿔짐승 · 울림",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/horned/base.wav",
+          "source_member": "monster_sfx_pack/monster-6.wav",
+          "rate": 0.738,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/horned/attack.wav",
+          "source_member": "monster_sfx_pack/monster-7.wav",
+          "rate": 0.8856,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/horned/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-8.wav",
+          "rate": 1.025,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/horned/death.wav",
+          "source_member": "monster_sfx_pack/monster-9.wav",
+          "rate": 0.5904,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "boar": {
+      "label": "멧돼지 · 거친 숨",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/boar/base.wav",
+          "source_member": "monster_sfx_pack/monster-8.wav",
+          "rate": 0.648,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/boar/attack.wav",
+          "source_member": "monster_sfx_pack/monster-9.wav",
+          "rate": 0.7776,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/boar/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-10.wav",
+          "rate": 0.9,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/boar/death.wav",
+          "source_member": "monster_sfx_pack/monster-1.wav",
+          "rate": 0.5184,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "small": {
+      "label": "작은 생물 · 날카로운 소리",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/small/base.wav",
+          "source_member": "monster_sfx_pack/monster-2.wav",
+          "rate": 1.62,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/small/attack.wav",
+          "source_member": "monster_sfx_pack/monster-3.wav",
+          "rate": 1.944,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/small/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-4.wav",
+          "rate": 2.25,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/small/death.wav",
+          "source_member": "monster_sfx_pack/monster-5.wav",
+          "rate": 1.296,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "reptile": {
+      "label": "파충류 · 쉿소리",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/reptile/base.wav",
+          "source_member": "monster_sfx_pack/monster-4.wav",
+          "rate": 1.125,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/reptile/attack.wav",
+          "source_member": "monster_sfx_pack/monster-5.wav",
+          "rate": 1.35,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/reptile/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-6.wav",
+          "rate": 1.5625,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/reptile/death.wav",
+          "source_member": "monster_sfx_pack/monster-7.wav",
+          "rate": 0.9,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "winged": {
+      "label": "날개 생물 · 울음",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/winged/base.wav",
+          "source_member": "monster_sfx_pack/monster-3.wav",
+          "rate": 1.44,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/winged/attack.wav",
+          "source_member": "monster_sfx_pack/monster-4.wav",
+          "rate": 1.728,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/winged/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-5.wav",
+          "rate": 2.0,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/winged/death.wav",
+          "source_member": "monster_sfx_pack/monster-6.wav",
+          "rate": 1.152,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "insect": {
+      "label": "벌레 · 기괴한 진동",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/insect/base.wav",
+          "source_member": "monster_sfx_pack/monster-7.wav",
+          "rate": 1.71,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/insect/attack.wav",
+          "source_member": "monster_sfx_pack/monster-8.wav",
+          "rate": 2.052,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/insect/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-9.wav",
+          "rate": 2.375,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/insect/death.wav",
+          "source_member": "monster_sfx_pack/monster-10.wav",
+          "rate": 1.368,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "aquatic": {
+      "label": "수중 생물 · 젖은 울림",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/aquatic/base.wav",
+          "source_member": "monster_sfx_pack/monster-9.wav",
+          "rate": 0.828,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/aquatic/attack.wav",
+          "source_member": "monster_sfx_pack/monster-10.wav",
+          "rate": 0.9936,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/aquatic/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-1.wav",
+          "rate": 1.15,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/aquatic/death.wav",
+          "source_member": "monster_sfx_pack/monster-2.wav",
+          "rate": 0.6624,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    },
+    "spectral": {
+      "label": "영체 · 낮은 신음",
+      "cues": {
+        "base": {
+          "path": "assets/audio/monsters/spectral/base.wav",
+          "source_member": "monster_sfx_pack/monster-10.wav",
+          "rate": 0.585,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "attack": {
+          "path": "assets/audio/monsters/spectral/attack.wav",
+          "source_member": "monster_sfx_pack/monster-1.wav",
+          "rate": 0.702,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "hurt": {
+          "path": "assets/audio/monsters/spectral/hurt.wav",
+          "source_member": "monster_sfx_pack/monster-2.wav",
+          "rate": 0.8125,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        },
+        "death": {
+          "path": "assets/audio/monsters/spectral/death.wav",
+          "source_member": "monster_sfx_pack/monster-3.wav",
+          "rate": 0.468,
+          "processing": "mono, trim, pitch/rate, family filter/modulation, normalize, fades"
+        }
+      }
+    }
+  }
+}

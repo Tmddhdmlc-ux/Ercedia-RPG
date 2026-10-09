@@ -1,0 +1,11 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>에르세디아 · 몬스터 음향 20종</title><style>body{margin:0;padding:24px;background:#101920;color:#eee;font:16px system-ui}main{display:grid;grid-template-columns:repeat(auto-fit,minmax(260px,1fr));gap:16px}article{padding:18px;background:#192b36;border:1px solid #716342;border-radius:12px}button{background:#283f4b;color:#eee;border:1px solid #ad9874;border-radius:6px;padding:10px;margin:3px;font:inherit}small{display:block;color:#c5b18c}a{color:#d7c095}</style><h1>몬스터 음향 · 20종</h1><p>9가지 계열의 게임용 발성. 공격·피격·쓰러짐이 실제 전투 시점에 연결됩니다.</p><p id="status" role="status">버튼을 누르면 재생됩니다.</p><p><a href="battle-demo.html">실제 전투 엔진에서 확인</a> · <a href="voice-engine-demo.html">왕족·주민 성우 확인</a> · <a href="https://opengameart.org/content/monster-sound-effects-pack">원음: Ogrebane · CC0</a></p><main></main><script type="module">
+import {npcCatalog} from '../web/npc-model.js';
+import {npcVoiceDefaults,voiceBanks} from '../web/voice-data.js';
+import {createBattleAudio} from '../web/battle-audio.js';
+const audio=createBattleAudio({assetBase:location.origin+'/'}),status=document.getElementById('status');
+for(const p of npcCatalog.filter(p=>p.role==='monster')){const card=document.createElement('article'),name=document.createElement('h2'),style=document.createElement('small');name.textContent=p.name;style.textContent=voiceBanks[npcVoiceDefaults[p.id]].label;card.append(name,style);
+ for(const [phase,label] of [['attack','공격'],['hurt','피격'],['death','쓰러짐']]){const button=document.createElement('button');button.textContent=label;button.setAttribute('aria-label',p.name+' '+label);button.onclick=async()=>{audio.stop();audio.setMuted(false);const ready=await audio.unlock();if(ready&&audio.playMonster(p,phase)){status.textContent=p.name+' · '+label+' 재생';status.dataset.character=p.id;status.dataset.phase=phase;}else status.textContent='음원 준비 실패 · 다시 눌러주세요.';};card.append(button);}
+ document.querySelector('main').append(card);
+}
+document.addEventListener('visibilitychange',()=>{if(document.hidden)audio.stop();});
+</script></html>

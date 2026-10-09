@@ -1,13 +1,20 @@
 <!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>에르세디아 · 엔진 성우 연결</title>
 <style>body{height:100dvh;display:flex;flex-direction:column;margin:0;background:#101920;color:#eee;font:16px system-ui}header{padding:12px;display:flex;gap:12px;align-items:center}button{padding:10px;background:#213540;color:#eee;border:1px solid #ad9874;border-radius:5px}iframe{width:100%;flex:1;border:0;min-height:0}</style>
-<header><strong>성우 연결 · 실제 게임 엔진</strong><button id="start">세린 표정 대화 시작</button><span id="result" role="status">대화 시작 후 장면을 눌러 진행하세요.</span></header>
+<header><strong>성우 연결 · 실제 게임 엔진</strong><select id="character" aria-label="대화 캐릭터"></select><button id="start">표정 대화 시작</button><span id="result" role="status">163명 모두 음향 배정 · 대화 시작 후 장면을 눌러 진행하세요.</span></header>
 <iframe id="game" title="성우 리액션 게임 화면" sandbox="allow-scripts"></iframe>
 <script type="module">
 import {battleFixture} from './battle-fixtures.js';
+import {npcCatalog} from '../web/npc-model.js';
+import {npcVoiceDefaults,voiceBanks} from '../web/voice-data.js';
 const frame=document.getElementById('game'),result=document.getElementById('result'),token='local-voice-engine',conversation='voice-engine-demo';let saved=battleFixture().state;
 const scene={schema_version:1,type:'ercedia_scene',scene_id:'voice-engine-serin',location:'솔브린 마을',time:'아침',background_id:'sunny_village_day',npc:{id:'serin',speaker:'세린',outfit:'casual',emotion:'base'},dialogue:[{speaker:'나레이션',text:'표정 리액션 연결 시연입니다. 실제 GPT 대사가 아닌 검증용 장면입니다.'},{speaker:'세린',emotion:'smile',text:'아, 여행자님! 반가워요.'},{speaker:'세린',emotion:'angry',text:'그런 장난은 안 돼요! 정말 화났어요!'},{speaker:'세린',emotion:'surprised',text:'앗! 깜짝 놀랐잖아요.'},{speaker:'세린',emotion:'sad',text:'조금 속상하네요…'},{speaker:'나레이션',text:'대화 종료. 성우 메뉴에서 현재 화자의 음색과 음량을 바꿀 수 있습니다.'}],choices:[]};
 window.addEventListener('message',e=>{const d=e.data;if(e.source!==frame.contentWindow||d?.token!==token)return;if(d.type==='save'){saved=d.payload;result.textContent='장면 '+((saved.sceneIndex||0)+1)+' · 설정 저장됨';}if(d.type==='parse-error'||d.type==='boot-error')result.textContent=JSON.stringify(d.payload);});
-document.getElementById('start').onclick=()=>frame.contentWindow.postMessage({channel:'ercedia',token,conversation,type:'scene',payload:JSON.stringify(scene)},'*');
+const select=document.getElementById('character');
+for(const p of [...npcCatalog].sort((a,b)=>(a.id==='serin'?-1:b.id==='serin'?1:0))){const option=document.createElement('option');option.value=p.id;option.textContent=p.name+' · '+voiceBanks[npcVoiceDefaults[p.id]].label;select.append(option);}
+document.getElementById('start').onclick=()=>{const p=npcCatalog.find(p=>p.id===select.value),demo=structuredClone(scene);demo.scene_id='voice-engine-'+p.id+'-'+Date.now();demo.npc={id:p.id,speaker:p.name,outfit:p.id==='serin'?'casual':'none',emotion:'base'};
+ if(p.id!=='serin'){demo.dialogue=[{speaker:'나레이션',text:'등록 캐릭터의 음색·표정 연결 검증입니다. 대사는 시연용입니다.'},...['base','smile','angry','surprised','sad'].map(emotion=>({speaker:p.name,emotion,text:'표정 리액션 검증 · '+emotion})),{speaker:'나레이션',text:'검증 종료.'}];}
+ if(/^ER-CORE-00[1-3]$/.test(p.id)){demo.location='왕궁 · 음성 검증';demo.background_id='IMG-SHARED-09';}
+ frame.contentWindow.postMessage({channel:'ercedia',token,conversation,type:'scene',payload:JSON.stringify(demo)},'*');};
 const config={token,conversation,saved,assetBase:location.origin+'/'};
 const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config)};window.__ERCEDIA_STORAGE__={getItem:()=>JSON.stringify(window.__ERCEDIA_CONFIG__.saved),setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:'${token}',conversation:'${conversation}',type:'save',payload:state},'*');}};`;
 frame.srcdoc=(await (await fetch('../integration/game.html')).text()).replace('/*__ERCEDIA_BOOTSTRAP__*/',bootstrap);

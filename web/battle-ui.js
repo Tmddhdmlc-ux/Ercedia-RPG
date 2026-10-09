@@ -1,4 +1,5 @@
 import {mountBattleAudio} from './battle-audio.js';
+import {monsterBattleReactions} from './monster-audio.js';
 import {mountBattleVFX,battleEffectTiming} from './battle-vfx.js';
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
 import {characterVisual,artBase} from './character-art.js';
@@ -48,7 +49,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
   function impact(){
-    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden)audio.play(e);showResources(battleFrame(b,playback.index+1));
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden){audio.play(e);for(const reaction of monsterBattleReactions(e,b.participants,'impact'))audio.playMonster(reaction.participant,reaction.phase);}showResources(battleFrame(b,playback.index+1));
     const target=slots.find(s=>s.id===e.target);
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
@@ -62,7 +63,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden)audio.play(e,'cast');}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden){audio.play(e,'cast');for(const reaction of monsterBattleReactions(e,p.scene.battle.participants,'cast'))audio.playMonster(reaction.participant,reaction.phase);}}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){

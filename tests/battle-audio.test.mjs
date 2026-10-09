@@ -4,6 +4,7 @@ import {readFile} from 'node:fs/promises';
 import {skillAudioProfiles,skillSamplePaths} from '../web/skill-audio-profiles.js';
 import {engineData} from '../web/engine-data.js';
 import {uiSamples} from '../web/ui-audio.js';
+import {monsterSamplePaths} from '../web/voice-data.js';
 import {createBattleAudio,impactCue,impactSamples} from '../web/battle-audio.js';
 const hit={kind:'attack',result:'hit',damage:18};
 function harness(fetchAudio=async()=>({ok:true,arrayBuffer:async()=>new ArrayBuffer(8)})){
@@ -20,10 +21,10 @@ test('only adjudicated impacts sound, without modifying the event',()=>{
   for(const [event,cue] of [[{...hit,result:'critical'},'critical'],[{...hit,result:'block',damage:0},'block'],[{...hit,result:'dodge',damage:0},'dodge'],[{...hit,damage:0},null],[{kind:'defeat',result:'none',damage:0},null],[{kind:'heal',damage:20},null]])assert.equal(impactCue(event),cue);
 });
 test('locked, muted and paused-context audio is silent; loading never queues a stale hit',async()=>{
-  const h=harness();assert.equal(h.audio.play(hit),false);await h.audio.unlock();assert.equal(h.sources.length,0);assert.equal(h.requests(),new Set([...Object.values(impactSamples).flat(),...skillSamplePaths]).size);
+  const h=harness();assert.equal(h.audio.play(hit),false);await h.audio.unlock();assert.equal(h.sources.length,0);assert.equal(h.requests(),new Set([...Object.values(impactSamples).flat(),...skillSamplePaths,...monsterSamplePaths]).size);
   assert.equal(h.audio.play(hit),true);assert.equal(h.sources.length,4);h.audio.stop();assert.ok(h.sources.every(s=>s.stopped));
   h.audio.setMuted(true);assert.equal(h.audio.play(hit),false);h.audio.setMuted(false);h.audio.setVolume(0);assert.equal(h.audio.play(hit),false);
-  h.audio.setVolume(.6);h.ctx.state='suspended';assert.equal(h.audio.play(hit),false);await h.audio.unlock();assert.equal(h.requests(),new Set([...Object.values(impactSamples).flat(),...skillSamplePaths]).size);assert.equal(h.audio.play(hit),true);
+  h.audio.setVolume(.6);h.ctx.state='suspended';assert.equal(h.audio.play(hit),false);await h.audio.unlock();assert.equal(h.requests(),new Set([...Object.values(impactSamples).flat(),...skillSamplePaths,...monsterSamplePaths]).size);assert.equal(h.audio.play(hit),true);
 });
 test('sample failures remain nonfatal and can be retried; voice count is bounded',async()=>{
   let fail=true;const h=harness(async()=>({ok:!fail,arrayBuffer:async()=>new ArrayBuffer(8)}));
@@ -32,8 +33,13 @@ test('sample failures remain nonfatal and can be retried; voice count is bounded
 });
 test('all registered samples are real Ogg assets and match the bundle audio list',async()=>{
   const paths=[...new Set([...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').concat(skillSamplePaths,['female_laugh','female_gasp','male_attack','male_hurt','male_jump'].map(n=>'assets/audio/voices/'+n+'.wav').concat(JSON.parse(await readFile(new URL('../assets/audio/voices/voice-banks.json',import.meta.url))).banks.flatMap(b=>Object.values(b.cues).map(c=>c.path)))))].sort();
-  assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>!p.endsWith('.mp3')),paths);
+  paths.push(...monsterSamplePaths);paths.sort();assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>!p.endsWith('.mp3')),paths);
   for(const path of paths){const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),path.endsWith('.wav')?'RIFF':'OggS');assert.ok(bytes.length>1000);}
+});
+test('creature battle playback uses loaded attack/hurt/death clips and shares pause/mute cancellation',async()=>{
+ const h=harness(),monster={id:'wolf-one',catalog_id:'ER-NPC-081',role:'monster'};assert.equal(h.audio.playMonster(monster,'attack'),false);await h.audio.unlock();
+ for(const phase of ['attack','hurt','death']){assert.equal(h.audio.playMonster(monster,phase),true);assert.equal(h.audio.status().lastCue,'monster:'+phase);}
+ h.audio.stop();assert.ok(h.sources.every(s=>s.stopped));h.audio.setMuted(true);assert.equal(h.audio.playMonster(monster,'attack'),false);assert.equal(h.audio.playMonster({id:'serin',role:'npc'},'attack'),false);
 });
 
 test('all 70 skills sound at cast and effect phases, including zero-damage support, without changing outcomes',async()=>{
