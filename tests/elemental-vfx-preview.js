@@ -1,19 +1,21 @@
-import {elementalSamples,palettes,createElementalRenderer} from './elemental-vfx-renderer.js';
+import {elementalSamples,palettes,createElementalRenderer,sampleTiming} from './elemental-vfx-renderer.js';
 // Standalone approval preview. Nothing is sent to ChatGPT and nothing enters the game's save.
-const $=id=>document.getElementById(id),renderer=createElementalRenderer($('vfx')),duration=3600,labels={water:'물',fire:'불',wind:'바람',electricity:'전기',light:'빛',darkness:'어둠'};
+const $=id=>document.getElementById(id),renderer=createElementalRenderer($('vfx')),labels={water:'물',fire:'불',wind:'바람',electricity:'전기',light:'빛',darkness:'어둠'};
 let books=[],selected=0,running=false,paused=false,last=0,elapsed=0,raf=0,impact=false;
 const current=()=>elementalSamples[selected],book=()=>books.find(b=>b.skill_id===current().id),reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
-function resize(){const r=$('stage').getBoundingClientRect();renderer.resize(r.width,r.height,devicePixelRatio);if(running)draw(elapsed/duration);}
+const revised=()=>!$('original').checked,timing=()=>sampleTiming(current(),revised());
+function resize(){const r=$('stage').getBoundingClientRect();renderer.resize(r.width,r.height,devicePixelRatio);if(running)draw(elapsed/timing().duration);}
 function updateResources(after=false){const b=book(),mpMax=Math.max(100,b.base_mp_cost);$('mana').max=mpMax;$('mana').value=mpMax-(after?b.base_mp_cost:0);$('mana-text').textContent=`MP ${$('mana').value} / ${mpMax}`;$('health').value=100-(after?current().damage:0);$('health-text').textContent=`HP ${$('health').value} / 100`;}
 function draw(t){
- const s=current();renderer.draw(s,reduced?(t<.42?0:t<.88?.6:0):t);
- const titleAlpha=t<.3?Math.min(1,t/.05,Math.max(0,(.3-t)/.08)):0;$('skill').style.opacity=titleAlpha;
- const q=Math.max(0,(t-.42)/.58),numberAlpha=s.damage&&t>=.42?Math.min(1,q/.07,Math.max(0,(.82-t)/.15)):0;$('damage').style.opacity=numberAlpha;$('damage').style.marginTop=(reduced?0:-q*45)+'px';
+ const s=current(),hit=timing().impact;renderer.draw(s,reduced?(t<hit?0:t<.88?.6:0):t,{revised:revised()});
+ const titleEnd=Math.min(.26,hit-.05),titleAlpha=t<titleEnd?Math.min(1,t/.035,Math.max(0,(titleEnd-t)/.06)):0;$('skill').style.opacity=titleAlpha;
+ const q=Math.max(0,(t-hit)/(1-hit)),numberAlpha=s.damage&&t>=hit?Math.min(1,q/.045,Math.max(0,(.82-t)/.15)):0;$('damage').style.opacity=numberAlpha;$('damage').style.marginTop=(reduced?0:-q*45)+'px';
  $('enemy').style.transform=!reduced&&s.damage&&q>0&&q<.23?`scale(${1-Math.sin(q/.23*Math.PI)*.025})`:'scale(1)';
 }
 function start(index=selected){cancelAnimationFrame(raf);selected=index;elapsed=0;last=0;running=true;paused=false;impact=false;renderer.clear();const b=book(),s=current();updateResources();$('name').textContent=b.skill_name;$('description').textContent=s.description;$('skill').textContent=b.skill_name;$('damage').textContent=s.damage?'−'+s.damage:'';$('phase').textContent='마나 응축';$('status').textContent=b.skill_name+' 재생 중';$('pause').disabled=false;$('pause').textContent='일시정지';$('stage').style.setProperty('--element-color',palettes[s.element][1]);for(const button of document.querySelectorAll('[data-sample]'))button.setAttribute('aria-pressed',String(Number(button.dataset.sample)===index));resize();draw(0);raf=requestAnimationFrame(tick);}
-function tick(now){if(!running)return;if(!paused){if(last)elapsed+=(now-last)*Number($('speed').value);const t=Math.min(1,elapsed/duration);if(t>=.42&&!impact){impact=true;updateResources(true);}$('phase').textContent=t<.18?'마나 응축':t<.42?'기술 전개':t<.75?'적중·효과 전개':'잔광';draw(t);if(t>=1){running=false;renderer.clear();$('pause').disabled=true;$('phase').textContent='재생 완료';$('status').textContent=book().skill_name+' · 다시 재생하거나 다음 기술을 선택하세요.';if($('loop').checked)start((selected+1)%elementalSamples.length);return;}}last=now;raf=requestAnimationFrame(tick);}
+function tick(now){if(!running)return;if(!paused){if(last)elapsed+=(now-last)*Number($('speed').value);const schedule=timing(),t=Math.min(1,elapsed/schedule.duration);if(t>=schedule.impact&&!impact){impact=true;updateResources(true);}$('phase').textContent=t<schedule.charge?'마나 응축':t<schedule.impact?'기술 전개':t<.75?'적중·효과 전개':'잔광';draw(t);if(t>=1){running=false;renderer.clear();$('pause').disabled=true;$('phase').textContent='재생 완료';$('status').textContent=book().skill_name+' · 다시 재생하거나 다음 기술을 선택하세요.';if($('loop').checked)start((selected+1)%elementalSamples.length);return;}}last=now;raf=requestAnimationFrame(tick);}
 $('play').onclick=()=>start();$('next').onclick=()=>start((selected+1)%elementalSamples.length);
+$('original').onchange=()=>start();
 $('pause').onclick=()=>{if(!running)return;paused=!paused;last=0;$('pause').textContent=paused?'재개':'일시정지';$('status').textContent=paused?'일시정지':book().skill_name+' 재생 중';};
 $('speed').onchange=()=>{last=0;};$('fullscreen').onclick=async()=>{try{if(document.fullscreenElement)await document.exitFullscreen();else await document.body.requestFullscreen();}catch{$('status').textContent='이 브라우저에서는 전체화면 전환을 사용할 수 없습니다.';}};
 document.addEventListener('fullscreenchange',()=>{$('fullscreen').textContent=document.fullscreenElement?'전체화면 해제':'전체화면';resize();});
