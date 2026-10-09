@@ -1,3 +1,4 @@
+import {validateLootRolls} from './loot-model.js';
 import {bindWallet,wallet} from './wallet.js';
 import {registerShop,updateShop} from './trade-model.js';
 import {tradeItem,tradeCategory} from './economy.js';
@@ -63,8 +64,9 @@ function assertOfferLocation(w,offer,scene,date){
   const region=scene.game_state?.region;check(offer.region_id===region,'현재 지역에서만 이용할 수 있습니다.');check([offer.venue_id,offer.venue_name].includes(scene.game_state?.place||scene.location),'실제 거래/시설 장소 진입 필요');legalVisit(w,region,date);
   check(day(date)<=day(offer.valid_until),'견적 기한 만료');
 }
-function rewardPack(table,run,e){
+function rewardPack(table,run,e,perKill=false){
   const first=!run.claimed,rows=table.first_clear.guaranteed,xp=rows.find(r=>r.type==='xp')?.amount||0,bundle=rows.find(r=>r.type==='material_bundle');
+  if(perKill){check(!e.optional_item_id&&!e.material_id,'처치별 전리품을 클리어 패키지에 재지급하지 마세요.');return {xp:first?xp:Math.floor(xp*table.repeat_clear.xp_fraction_of_first_clear),items:[]};}
   const material=e.material_id;check(bundle?.source_material_ids.includes(material),'지역 재료 묶음 후보에서 선택하세요.');
   const result={xp:first?xp:Math.floor(xp*table.repeat_clear.xp_fraction_of_first_clear),items:[{id:material,quantity:first?bundle.quantity:table.repeat_clear.material_quantity}]};
   if(e.optional_item_id){const pool=table.first_clear.optional_reward_pool;check(first&&[...pool.equipment_ids,...pool.book_ids].includes(e.optional_item_id)&&text(e.optional_reason),'최초 선택 보상 후보/획득 근거');result.items.push({id:e.optional_item_id,quantity:1});}return result;
@@ -86,10 +88,14 @@ export function advanceCalendar(w,date){
 // The returned scene carries only engine-generated deltas. Caller still validates the whole turn.
 export function planWorldScene(state,scene){
   const events=validateSystemEvents(scene.system_events),date=scene.game_state?.date||state.gameState?.date;
-  if(!state.world_engine&&!events.length)return null;
+  if(!state.world_engine&&!events.length&&!scene.battle?.outcome.loot_rolls)return null;
   const next=clone(state);next.player={...next.player,...scene.player};next.inventory=clone(scene.inventory||next.inventory);next.gameState={...next.gameState,...scene.game_state};
   const w=state.world_engine?normalizeWorld(state.world_engine,state):emptyWorld(state);next.world_engine=w;prepareEconomy(w);
   if(date)advanceCalendar(w,date);check(date||!events.length,'세계 사건의 현재 날짜 필요');
+  if(scene.battle?.outcome.loot_rolls){
+    validateLootRolls(scene.battle);check(!events.some(e=>e.kind==='loot'),'자동 처치 전리품과 기존 loot 사건 중복');
+    for(const receipt of scene.battle.outcome.loot_rolls){const key=scene.battle.battle_id+':'+receipt.participant_id;check(!w.loot_claims[key],'이미 정산한 처치 전리품');w.loot_claims[key]={...clone(receipt),battle_id:scene.battle.battle_id,date:date||null};}
+  }
   const generated=[],originalBag=clone(next.inventory),originalPlayer=clone(next.player);let reward=false;
   for(const e of events){
     const digest=JSON.stringify(e);if(Object.hasOwn(w.applied,e.event_id)){check(w.applied[e.event_id]===digest,'같은 사건 ID의 내용 변경');continue;}check(Object.keys(w.applied).length<10000,'중복 방지 기록 한도');
@@ -131,7 +137,7 @@ export function planWorldScene(state,scene){
           else if(e.kind==='clear_dungeon'){
             check(e.battle_id===run.boss_battle_id,'실제 보스 전투 참조 필요');check(d.zones.filter(z=>!z.optional).every(z=>run.resolved.includes(z.id)),'필수 구역과 보스 미해결');check(!w.loot_claims[e.battle_id+':dungeon'],'이미 정산한 보스 패키지');
             const table=lootCatalog.dungeon_rewards.find(t=>t.dungeon_id===d.id);check(!run.claimed||table.repeatable,'재클리어 불가');
-            const pack=rewardPack(table,run,e);check(!events.some(v=>v.kind==='loot'&&v.battle_id===e.battle_id),'보스 패키지와 개별 전리품 중복 금지');
+            const pack=rewardPack(table,run,e,resolvedBattle(state,scene,e.battle_id).outcome.loot_mode==='per_kill_v1');check(!events.some(v=>v.kind==='loot'&&v.battle_id===e.battle_id),'보스 패키지와 개별 전리품 중복 금지');
             if(scene.battle){check(scene.battle.battle_id===e.battle_id&&pack.xp===scene.battle.outcome.xp_gain,'보스 최초 패키지 XP 정산 불일치');for(const r of pack.items)check(scene.battle.outcome.items_added.some(i=>i.name===catalogItem(r.id).name&&i.quantity===r.quantity),'보스 패키지 보상 불일치');}
             else {const boss=resolvedBattle(state,scene,e.battle_id);check(!boss.outcome.xp_gain&&!boss.outcome.items_added.length,'보스 보상은 최초 클리어 패키지로 통합하세요.');check(!scene.player&&!scene.inventory&&!scene.engine_events?.some(v=>v.kind==='xp')&&!scene.quest_events?.some(v=>v.kind==='report'),'던전 보상 스냅샷/XP 중복 금지');awardXP(next,pack.xp);for(const r of pack.items)give(next,r.id,r.quantity);reward=true;}
             w.loot_claims[e.battle_id+':dungeon']={event_id:e.event_id,date};run.claimed=true;run.clears++;run.cleared_at=date;run.history.push({run_id:run.run_id,event_id:e.event_id,date,rewards:pack});w.active_dungeon=null;

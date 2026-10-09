@@ -1,4 +1,5 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
+import {validateLootRolls} from './loot-model.js';
 import {characterVisual,registeredNPCArt} from './character-art.js';
 import {equippedSkills} from './skill-loadout.js';
 import {resolveNPC,findNPC} from './npc-model.js';
@@ -117,14 +118,15 @@ export function normalizeBattle(raw){
   equal(b.initiative.actor_id,b.events[0].actor,'선공/첫 행동');const first=byId.get(b.initiative.actor_id),opponents=b.participants.filter(p=>p.side!==first.side);
   if(opponents.some(p=>p.speed>=first.speed)&&!b.initiative.reason.trim())fail('동시 대응/기습/속도 역전 근거 필요');
   const o=raw.outcome;if(!o||!['allied','enemy','draw','escape'].includes(o.winner)||!['defeat','surrender','draw','escape'].includes(o.termination))fail('최종 승패');
-  b.outcome={winner:o.winner,termination:o.termination,reason:str(o.reason,'결과 근거',1000),xp_gain:num(o.xp_gain,'경험치 보상'),items_added:[],items_consumed:[],injuries:[],resources:[]};
-  for(const key of ['items_added','items_consumed']){if(!Array.isArray(o[key])||o[key].length>32)fail('아이템 보상/소비');b.outcome[key]=o[key].map(item=>({name:str(item.name,'아이템 이름',60),quantity:num(item.quantity,'아이템 수량',1)}));}
+  if(o.loot_mode!==undefined&&o.loot_mode!=='per_kill_v1')fail('전리품 판정 방식');
+  b.outcome={...(o.loot_mode?{loot_mode:o.loot_mode}:{}),...(o.loot_rolls!==undefined?{loot_rolls:JSON.parse(JSON.stringify(o.loot_rolls))}:{}),winner:o.winner,termination:o.termination,reason:str(o.reason,'결과 근거',1000),xp_gain:num(o.xp_gain,'경험치 보상'),items_added:[],items_consumed:[],injuries:[],resources:[]};
+  for(const key of ['items_added','items_consumed']){if(!Array.isArray(o[key])||o[key].length>32)fail('아이템 보상/소비');b.outcome[key]=o[key].map(item=>({name:str(item.name,'아이템 이름',60),quantity:num(item.quantity,'아이템 수량',1),...(typeof item.id==='string'?{id:str(item.id,'아이템 ID',100)}:{}),...(typeof item.rarity==='string'?{rarity:str(item.rarity,'아이템 등급',20)}:{})}));}
   if(!Array.isArray(o.injuries)||o.injuries.length>20)fail('부상 목록');b.outcome.injuries=o.injuries.map(s=>str(s,'부상',500));
   if(!Array.isArray(o.resources)||o.resources.length!==byId.size||new Set(o.resources.map(p=>p.id)).size!==byId.size)fail('최종 자원 목록');
   b.outcome.resources=o.resources.map(r=>{if(!live[r.id])fail('최종 자원 ID');equal(r.hp,live[r.id].hp,'최종 HP');equal(r.mp,live[r.id].mp,'최종 MP');return {id:r.id,hp:r.hp,mp:r.mp};});
   if(o.termination==='defeat'){if(!['allied','enemy'].includes(o.winner))fail('전멸 승패');const losers=b.participants.filter(p=>p.side!==o.winner),winners=b.participants.filter(p=>p.side===o.winner);if(losers.some(p=>live[p.id].hp>0)||!winners.some(p=>live[p.id].hp>0))fail('전멸 결과/생존자');}
   if((o.termination==='draw')!==(o.winner==='draw')||(o.termination==='escape')!==(o.winner==='escape'))fail('종료 방식/승패');
-  return b;
+  validateLootRolls(b);return b;
 }
 export function battleFrame(battle,count){const resources=Object.fromEntries(battle.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}]));for(const e of battle.events.slice(0,count)){resources[e.actor]={hp:e.actor_hp_after,mp:e.actor_mp_after};resources[e.target]={hp:e.target_hp_after,mp:e.target_mp_after};}return resources;}
 export function validateBattleSettlement(scene,state){

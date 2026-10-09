@@ -1,0 +1,13 @@
+{
+  "version":1,
+  "tiers":[
+    {"rarity":"하급","common_quantity":3,"special_quantity":0,"cost_copper":50,"minutes":60,"craftsman":"견습 이상"},
+    {"rarity":"중급","common_quantity":6,"special_quantity":1,"cost_copper":200,"minutes":120,"craftsman":"숙련 이상"},
+    {"rarity":"고급","common_quantity":10,"special_quantity":3,"cost_copper":800,"minutes":360,"craftsman":"전문 이상"},
+    {"rarity":"유니크","common_quantity":15,"special_quantity":5,"cost_copper":3000,"minutes":720,"craftsman":"대가 이상","requires_recipe_proof":true},
+    {"rarity":"에픽","common_quantity":20,"special_quantity":8,"cost_copper":10000,"minutes":1440,"craftsman":"극의","requires_recipe_proof":true}
+  ],
+  "success":"confirmed_materials_recipe_craftsman_and_work_completion; no random failure added",
+  "outputs":"existing 300 equipment IDs only; books and divine artifacts excluded",
+  "note":"제작비는 초기 적용 밸런스이며 장인이 공급하는 철·목재·접합재 등 기본 소재와 공임을 포함한다. 수집 재료는 강화·세공용. 실제 기본 소재 재고·장인 숙련·제작법·작업 완료는 GM이 사건 근거로 확인한다. 스태프·악세사리는 마나 세공 협력도 필요. 소유 재료·현재 장소·견적·금액·산출물은 엔진이 검증한다."
+}

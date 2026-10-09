@@ -1,4 +1,4 @@
-import {bindWallet} from './wallet.js';
+import {bindWallet,wallet} from './wallet.js';
 import {choicePresentation} from './choice-presentation.js';
 import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
@@ -9,6 +9,7 @@ import {updateNPC,findNPC} from './npc-model.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {campaignSettingsAttachment,legacyCampaignPrompt,loadCampaignSettings} from './campaign-settings.js';
 import {settleQuests} from './quest-model.js';
+import {prepareBattleLoot,makeLootPopup} from './loot-model.js';
 import {planEngineScene} from './engine-model.js';
 import {planWorldScene} from './world-engine.js';
 import {planNPCLife} from './npc-life.js';
@@ -97,6 +98,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   function submit(action,choiceId=null,recovery=null,setupOnly=false){
     const settingsRefresh=setupOnly==='refresh'||recovery?.settingsRefresh===true;
     setupOnly=setupOnly||recovery?.setupOnly===true;
+    if(state.lootPopup?.pending)return status('전리품 획득 팝업의 확인 버튼을 누른 뒤 진행하세요.');
     if(pending)return status('이전 요청의 응답을 기다리고 있습니다. 응답이 멈췄다면 대기 해제 후 다시 보내세요.');
     if(!setupOnly&&(state.introDraft||getIntro?.()?.isStarting()))return status('새 게임 준비가 끝난 뒤 보내주세요.');
     if(battleIsActive(state))return status('전투 결과를 확인하거나 즉시 종료한 뒤 보내주세요.');
@@ -127,7 +129,8 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(!reply&&typeof source==='string')reply=source.match(/"reply_to"\s*:\s*"([A-Za-z0-9_-]{1,100})"/)?.[1];
       if(!manual&&!commitBattle&&reply&&retiredRequests.has(reply))return status('종료한 요청의 늦은 응답입니다. 적용하지 않았습니다.');
       if(!manual&&pending&&reply&&reply!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
-      let scene=parseScene(source);
+      let scene=parseScene(source);const lootBalanceBefore=wallet(state);
+      if(!commitBattle&&scene.battle?.outcome.loot_rolls!==undefined)throw Error('처치별 전리품 난수는 UI 엔진이 생성합니다. GM 응답에는 loot_rolls를 넣지 마세요.');
       if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
       if(fromHost&&pending&&scene.reply_to!==pending.requestId)throw Error('현재 요청의 reply_to가 누락되었습니다.');
       if(campaignSettings&&state.campaign_id&&scene.player){const fresh=state.player;for(const key of ['name','level','xp','strength','dexterity','intelligence','constitution','manaStat','hp','maxHp','mp','maxMp'])if(scene.player[key]!==fresh[key])throw Error(`새 게임 첫 응답의 ${key} 불일치: 현재 ${fresh[key]}, 응답 ${scene.player[key]}. 현재 초기 주인공을 유지하세요.`);}
@@ -147,7 +150,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
         if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events)settleQuests(questBase,scene);
         planEngineScene(questBase,scene,null);
         planNPCLife(state,scene,null);
-        validateBattleSettlement(scene,state);mutationBegan=true;
+        validateBattleSettlement(scene,state);scene=prepareBattleLoot(state,scene);validateBattleSettlement(scene,state);planWorldScene(state,scene);mutationBegan=true;
         getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
       const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events)?settleQuests(questBase,scene):null;
@@ -172,11 +175,12 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(lifeResult)Object.assign(state,lifeResult);
       if(worldResult||questResult)bindWallet(state);
       if(state.chosenName)state.player.name=state.chosenName;
+      if(commitBattle&&scene.battle)state.lootPopup=makeLootPopup(state,scene,lootBalanceBefore);
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;
       $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
       if(!marketOnly)state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
-      requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
+      requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;if(!state.lootPopup?.pending)line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
       const rejected=pending;
       if(!mutationBegan&&rejected&&fromHost&&!manual&&!commitBattle){
@@ -254,3 +258,4 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
   controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,refreshSettings,reportStatus:status,sendSettings:snapshot=>{campaignSettings=snapshot;submit('새 게임 설정 읽기',null,null,true);},setCampaignSettings:snapshot=>{campaignSettings=snapshot?.sha===loadedSettingsCommit?null:snapshot;},isPending:()=>!!pending||settingsRefreshing||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
 }
+

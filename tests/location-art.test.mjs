@@ -67,10 +67,12 @@ test('all registered item icons use canonical identity and rarity, preserving un
 });
 test('battle overlay and completed loot art never award or reveal loot early and later scenes clear results',()=>{
   const h=uiHarness(),f=battleFixture();let ui;const backgrounds=[];
-  try{ui=mountBattleUI(f.state,{render:()=>ui.render(),persist(){},chat:{controls(){},isPending(){return false;},apply(){f.state.scene=f.scene;ui.render();}},assetBase:'/',renderBackground:id=>backgrounds.push(id)});
+  try{ui=mountBattleUI(f.state,{render:()=>ui.render(),persist(){},chat:{controls(){},isPending(){return false;},apply(){f.state.scene=f.scene;f.state.lootPopup={battle_id:f.scene.battle.battle_id,copper:0,items:f.scene.battle.outcome.items_added,pending:true};ui.render();}},assetBase:'/',renderBackground:id=>backgrounds.push(id)});
     ui.start(f.scene);assert.equal(h.get('battle-result').hidden,true);assert.equal(backgrounds.at(-1),f.scene.background_id);
     const item=itemCatalog[0];f.scene.battle.outcome.items_added=[{name:item.name,quantity:1}];
-    h.get('battle-skip').onclick();assert.equal(h.get('battle-result').hidden,false);assert.equal(backgrounds.at(-1),'IMG-SHARED-12');assert.equal(h.get('battle-result').children[1].children[0].children[0].src,'/'+item.icon_path);
+    const popup=h.get('stage').children.find(n=>n.id==='loot-popup');assert.equal(popup.hidden,true);
+    h.get('battle-skip').onclick();assert.equal(h.get('battle-result').hidden,false);assert.equal(backgrounds.at(-1),'IMG-SHARED-12');assert.equal(popup.hidden,false);assert.equal(popup.children[0].children[1].children[0].children[0].children[0].src,'/'+item.icon_path);
+    popup.children[0].children[2].onclick();assert.equal(popup.hidden,true);
     f.state.scene={...f.scene,scene_id:'next-scene'};ui.render();assert.equal(h.get('battle-result').hidden,true);
   }finally{h.close();}
 });

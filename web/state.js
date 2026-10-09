@@ -70,6 +70,7 @@ export function normalize(raw) {
   }
   if(['world',...mapViews.map(r=>r.id)].includes(raw.mapView))s.mapView=raw.mapView;
   if(Object.hasOwn(raw,'mapFaction'))s.mapFaction=null;
+  if(raw.lootPopup&&typeof raw.lootPopup.battle_id==='string'&&raw.lootPopup.battle_id.length<=100&&Number.isSafeInteger(raw.lootPopup.copper)&&raw.lootPopup.copper>=0&&Array.isArray(raw.lootPopup.items)&&raw.lootPopup.items.length<=32&&raw.lootPopup.items.every(i=>typeof i.name==='string'&&i.name.length<=60&&Number.isInteger(i.quantity)&&i.quantity>0&&i.quantity<=999999))s.lootPopup={battle_id:raw.lootPopup.battle_id,copper:raw.lootPopup.copper,items:raw.lootPopup.items.map(i=>({id:typeof i.id==='string'?i.id.slice(0,100):null,name:i.name,quantity:i.quantity,...(typeof i.rarity==='string'?{rarity:i.rarity}: {})})),pending:raw.lootPopup.pending===true};
   if(Array.isArray(raw.battleApplied))s.battleApplied=raw.battleApplied.filter(id=>typeof id==='string'&&id.length<=100).slice(-100);
   if(raw.battlePlayback){try{const b=raw.battlePlayback,scene=normalizeScene(b.scene);if(!scene.battle)throw Error('battle absent');s.battlePlayback={scene,index:num(b.index,0,scene.battle.events.length,0),speed:[.5,1,2].includes(b.speed)?b.speed:1,paused:b.paused===true,done:b.done===true,replay:b.replay===true,...(typeof b.manual==='boolean'?{manual:b.manual}:{})};}catch{}}
   const faction=factionLocations.find(p=>p.id===raw.mapFaction);
