@@ -11,6 +11,8 @@ test('scene music prioritizes combat and actual places, with game-time night fal
   assert.equal(sceneMusic({time:'아침 08:30'}),'village');
   assert.equal(sceneMusic({place:'묵은 왕가 납골묘'}),'village');
   assert.equal(sceneMusic({battle:true,title:true,place:'왕궁',time:'밤'}),'title');
+  assert.equal(sceneMusic({intro:true,battle:true,place:'국경',time:'밤'}),'title');
+  assert.equal(sceneMusic({intro:false,title:false,place:'솔브린 마을',time:'09:00'}),'village');
 });
 function fixture(fetchAudio=async()=>({ok:true,arrayBuffer:async()=>new ArrayBuffer(8)})){
   const sources=[],param=()=>({value:0,cancelScheduledValues(){},setValueAtTime(v){this.value=v;},linearRampToValueAtTime(v){this.value=v;}});

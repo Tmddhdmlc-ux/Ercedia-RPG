@@ -4316,8 +4316,8 @@ const musicTracks=Object.fromEntries([
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
 ].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
-function sceneMusic({battle=false,title=false,background='',place='',time=''}={}){
-  if(title)return 'title';
+function sceneMusic({battle=false,title=false,intro=false,background='',place='',time=''}={}){
+  if(title||intro)return 'title';
   if(battle&&!title)return 'battle';
   if(!title){
     if(background==='IMG-SHARED-05'||/국경|검문소/.test(place))return 'border';
@@ -10871,7 +10871,7 @@ try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(stora
 const state=restored.state;
 // Embedded storage writes whole saves. Keep audio preferences inside that save.
 const musicStorage={getItem:()=>JSON.stringify(state.uiPreferences?.music||{}),setItem:(key,value)=>{state.uiPreferences={...state.uiPreferences,music:JSON.parse(value)};saveGame();}};
-const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
+const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({intro:!!state.introDraft,background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
 const ambience=mountAmbience(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame});
 const voiceAudio=mountVoiceAudio(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame,getScene:()=>state.scene||{npc:{id:'serin',speaker:'세린',emotion:'base'},dialogue:dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}))},getIndex:()=>state.scene?state.sceneIndex:state.index});
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null,chatUI=null;
