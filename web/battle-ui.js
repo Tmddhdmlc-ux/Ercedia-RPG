@@ -5,6 +5,7 @@ import {mountBattleVFX,battleEffectTiming} from './battle-vfx.js';
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
+import {mountCharacterFit} from './character-layout.js';
 import {resolveBackground,backgroundURL} from './location-art.js';
 import {battleCommentary} from './battle-presentation.js';
 import {renderDialogueTerms} from './dialogue-glossary.js';
@@ -23,6 +24,8 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   function art(slot,p){
     slot.id=p.id;slot.root.hidden=p.id==='player';slot.root.dataset.participant=p.id;slot.missing.textContent=p.name+' · 스탠딩 미등록';slot.missing.hidden=!!p.art;slot.visual.hidden=!p.art;
     if(!p.art)return;
+    if(!slot.sizing)slot.sizing=mountCharacterFit(slot.root,[slot.visual],{mode:'battle'});
+    slot.sizing.set(p.art.id,characterVisual(p.art.id,p.art.outfit,p.art.emotion));
     if(!slot.body){slot.body=new Image();slot.face=new Image();slot.body.className='battle-body';slot.face.className='battle-face';slot.visual.append(slot.body,slot.face);slot.body.onerror=()=>{slot.visual.hidden=true;slot.missing.hidden=false;slot.missing.textContent=p.name+' · 원화 로드 실패';};slot.face.onerror=()=>{slot.face.hidden=true;slot.missing.hidden=false;slot.missing.textContent='표정 로드 실패 · 원본 얼굴 유지';};}
     if(p.id!=='serin'){const art=characterVisual(p.art.id,p.art.outfit,p.art.emotion);slot.face.hidden=true;slot.body.alt=p.name+' '+(art.kind==='monster'?'마수 초상화':'스탠딩');slot.root.classList.toggle('monster-art',art.kind==='monster');const url=artBase(assetBase)+art.path;if(slot.body.getAttribute('src')!==url)slot.body.src=url;return;}
     slot.root.classList.remove('monster-art');
