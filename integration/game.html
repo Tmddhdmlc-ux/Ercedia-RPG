@@ -2834,6 +2834,9 @@ input[type=range] {
 }
 
 .chat-connection{margin:12px 0;padding:12px;border:1px solid #c9ad6655;border-radius:8px;display:flex;align-items:center;gap:12px;flex-wrap:wrap}.chat-connection:has(button[hidden]){display:none}.chat-connection p{width:100%;margin:0;font-size:15px}.chat-connection a{color:#e1bf75}.chat-connection button{min-height:44px}
+
+/* Equipped slots share the inventory icon and rarity treatment. */
+.status-equipment{margin:20px 0;padding:18px;border:1px solid var(--line);border-radius:10px;background:#10182055}.status-equipment h3{margin:0 0 14px}.equipment-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:460px}.equipment-slot-wrap{min-width:0;display:grid;justify-items:center;gap:9px;text-align:center}.equipment-slot-wrap>span{font-size:16px;color:var(--gold)}.equipment-slot-wrap small{font-size:13px;line-height:1.45;overflow-wrap:anywhere}.equipment-slot{width:100%;max-width:120px;aspect-ratio:1;display:grid;place-items:center}.equipment-slot .registered-item-icon{position:absolute;inset:8%;width:84%;height:84%;display:grid;place-items:center;border:0!important;box-shadow:none!important;background:transparent}.equipment-slot .registered-item-icon img{width:100%;height:100%;object-fit:contain}.equipment-empty-symbol{font-size:clamp(24px,6vw,40px);color:var(--muted);opacity:.55}.equipment-detail{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:8px;background:#101820}.equipment-detail h4{margin:8px 0;color:var(--gold);font-size:18px}.equipment-detail p{white-space:pre-line;margin:10px 0;font-size:15px;line-height:1.6}.equipment-detail button{margin-right:10px;min-height:44px}.equipment-detail>span{font-size:13px;color:var(--muted)}@media(max-width:480px){.equipment-slots{gap:10px}.status-equipment{padding:12px}.equipment-slot-wrap small{font-size:12px}}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -2892,6 +2895,7 @@ input[type=range] {
         <div class="resource mana"><div><b>마나 <small>MP</small></b><span id="mp-text">— / —</span></div><progress id="mp-bar" value="0" max="100" aria-label="마나"></progress></div>
         <div class="resource experience"><div><b>경험치 <small>EXP</small></b><span id="xp-text">— / —</span></div><progress id="xp-bar" value="0" max="100" aria-label="경험치"></progress><p id="xp-remaining">경험치 정보 미정</p></div>
         <div class="attributes"><div><span>근력 <small>STR</small></span><strong id="strength-text">—</strong></div><div><span>민첩 <small>DEX</small></span><strong id="dexterity-text">—</strong></div><div><span>지능 <small>INT</small></span><strong id="intelligence-text">—</strong></div><div><span>체력 <small>CON</small></span><strong id="constitution-text">—</strong></div><div><span>마나 <small>MANA</small></span><strong id="manaStat-text">—</strong></div></div>
+        <section id="status-equipment" class="status-equipment" aria-label="장착 장비"><h3>장착 장비</h3><div id="equipment-slots" class="equipment-slots"></div><section id="equipment-detail" class="equipment-detail" aria-label="장착 아이템 정보" hidden><span id="equipment-detail-rarity"></span><h4 id="equipment-detail-name"></h4><p id="equipment-detail-description"></p><p id="equipment-detail-stats"></p><button id="equipment-unequip" type="button">장착 해제</button><button id="equipment-detail-close" type="button">닫기</button></section></section>
         <section id="starting-passive" class="starting-passive" hidden><span>시작 패시브</span><h3 id="starting-passive-name"></h3><p id="starting-passive-description"></p></section>
         <div class="skill-heading"><h3>사용 가능 스킬 <span id="skill-count">0</span></h3></div>
         <p id="skills-empty" class="skills-empty">사용 가능한 스킬이 없습니다.</p>
@@ -4121,7 +4125,9 @@ const playerTemplate = {
     "base_attack_max": 28
   },
   "state": "template_not_active_save",
-  "rules_reference": "COMBAT_GROWTH.md"
+  "rules_reference": "COMBAT_GROWTH.md",
+  "starting_wallet_copper": 500,
+  "currency_rules_reference": "CURRENCY_ECONOMY.md"
 };
 
 return {introData,playerTemplate};})();
@@ -6241,11 +6247,47 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
+const module58=(()=>{
+const {engineItem}=module17;
+const {appendItemIcon}=module37;
+const {applyItemRarity}=module25;
+const {itemDescription,itemDetails}=module15;
+function mountEquipmentSlots({assetBase,unequip,isBusy}){
+  const $=id=>document.getElementById(id),detail=$('equipment-detail'),views=[];let selected=null,pinned=false;
+  function hide(){selected=null;pinned=false;detail.hidden=true;for(const v of views)v.button.removeAttribute('aria-describedby');}
+  function show(view){
+    if(!view.item)return hide();selected=view;detail.hidden=false;
+    for(const v of views)v.button.removeAttribute('aria-describedby');view.button.setAttribute('aria-describedby','equipment-detail');
+    $('equipment-detail-name').textContent=view.item.name;$('equipment-detail-rarity').textContent=view.label+' · '+view.item.rarity;
+    $('equipment-detail-description').textContent=itemDescription(view.item);$('equipment-detail-stats').textContent=itemDetails(view.item);
+    $('equipment-unequip').disabled=isBusy();
+  }
+  for(const [slot,label,symbol]of [['weapon','무기','⚔'],['armor','방어구','♜'],['accessory','악세서리','◇']]){
+    const root=document.createElement('div'),heading=document.createElement('span'),button=document.createElement('button'),name=document.createElement('small');
+    root.className='equipment-slot-wrap';heading.textContent=label;button.type='button';button.className='inventory-slot equipment-slot';button.dataset.slot=slot;name.textContent='미장착';
+    root.append(heading,button,name);$('equipment-slots').append(root);const view={slot,label,symbol,button,name,item:null,id:null};views.push(view);
+    button.onpointerenter=button.onfocus=()=>{if(!pinned)show(view);};button.onpointerleave=event=>{if(!pinned&&!detail.contains(event.relatedTarget))hide();};
+    button.onblur=event=>{if(!pinned&&!detail.contains(event.relatedTarget))hide();};button.onclick=()=>{if(pinned&&selected===view)return hide();show(view);pinned=!!view.item;};
+  }
+  $('equipment-unequip').onclick=()=>{if(selected&&!isBusy())unequip(selected.slot);};$('equipment-detail-close').onclick=hide;
+  $('status-equipment').addEventListener('keydown',event=>{if(event.key==='Escape')hide();});
+  detail.onpointerleave=()=>{if(!pinned)hide();};
+  return {render(engine){
+    for(const view of views){const owned=engine.instances.find(i=>i.instance_id===engine.equipped[view.slot]),item=engineItem(owned?.catalog_id);view.item=item;
+      const id=item?.id||'';if(view.id!==id){view.id=id;view.button.replaceChildren();if(item)appendItemIcon(view.button,item,assetBase);else{const empty=document.createElement('span');empty.className='equipment-empty-symbol';empty.textContent=view.symbol;view.button.append(empty);}}
+      applyItemRarity(view.button,item);view.button.classList.toggle('occupied',!!item);view.button.setAttribute('aria-label',view.label+' · '+(item?item.name+' · '+item.rarity:'미장착'));view.name.textContent=item?.name||'미장착';
+    }
+    if(selected){if(selected.item)show(selected);else hide();}
+  }};
+}
+
+return {mountEquipmentSlots};})();
 const module56=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module17;
 const {applyItemRarity}=module25;
 const {appendItemIcon}=module37;
 const {mountItemLibrary}=module57;
+const {mountEquipmentSlots}=module58;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -6256,6 +6298,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const line=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
   const busy=()=>isPending?.()||!!state.introDraft||!!state.battlePlayback&&!state.battlePlayback.done;
   const commit=action=>{if(busy())throw Error('현재 응답 또는 전투가 끝난 뒤 변경하세요.');const next=copyEngine(state);action(next);state.player=next.player;state.engine=next.engine;message='변경을 저장했습니다.';preview=null;gearPreview=null;render();persist();refresh();};
+  const equipment=mountEquipmentSlots({assetBase,isBusy:busy,unequip:slot=>commit(s=>unequipItem(s,slot))});
   function refresh(){
     library.render();
     growth.replaceChildren();gear.replaceChildren();line(growth,'능력치 투자 · 미사용 포인트 '+(state.player.unspentStatPoints||0));
@@ -6263,7 +6306,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
     if(preview){const {before:a,after:b}=preview;line(growth,`${statLabels[preview.key]} +1 · 비용 ${preview.cost} · 남은 포인트 ${preview.remaining}`);line(growth,`최대 HP ${a.hp} → ${b.hp} / MP ${a.mp} → ${b.mp} / 물리 공격 ${a.attack.join('~')} → ${b.attack.join('~')} / 속도 ${a.speed} → ${b.speed}`);growth.append(button('투자 확정',()=>commit(s=>investStat(s,preview.key)),busy()),button('취소',()=>{preview=null;refresh();}));}
     line(gear,'장비 · 기술서');const next=copyEngine(state),e=ensureEngine(next),p=combatPreview(state);line(gear,`물리 공격 ${p.attack.join('~')} · 속도 ${p.speed} · 방어 ${p.defense} · 저항 ${p.resistance} · 주문 보정 ${p.spell_power}`);
     if(gearPreview){const a=gearPreview.before,b=gearPreview.after;line(gear,`${gearPreview.name} · ${gearPreview.equipped?'해제':'장착'} 미리보기: HP ${a.hp} → ${b.hp} · MP ${a.mp} → ${b.mp} · 공격 ${a.attack.join('~')} → ${b.attack.join('~')} · 속도 ${a.speed} → ${b.speed} · 방어 ${a.defense} → ${b.defense}`);}
-    for(const [slot,label]of [['weapon','무기'],['armor','방어구'],['accessory','악세사리']]){const owned=e.instances.find(i=>i.instance_id===e.equipped[slot]),cat=engineItem(owned?.catalog_id),row=document.createElement('div');row.className='engine-row';line(row,label+' · '+(cat?.name||'미장착'));if(cat){icon(row,cat);applyItemRarity(row,cat);row.append(button('해제',()=>commit(s=>unequipItem(s,slot)),busy()));}gear.append(row);}
+    equipment.render(e);
     for(const owned of e.instances){const cat=engineItem(owned.catalog_id),row=document.createElement('article');row.className='engine-owned';icon(row,cat);applyItemRarity(row,cat);line(row,cat.name+' · '+cat.rarity+' · Lv.'+cat.required_level);line(row,cat.slot?Object.entries(cat.stats).filter(([,v])=>v).map(([k,v])=>k+' +'+v).join(' / '):cat.effect_summary);if(cat.slot){row.append(button('능력치 비교',()=>{const next=copyEngine(state),equipped=e.equipped[cat.slot]===owned.instance_id;const before=combatPreview(state);if(equipped)unequipItem(next,cat.slot);else equipItem(next,owned.instance_id);gearPreview={name:cat.name,equipped,before,after:combatPreview(next)};refresh();}));for(const potential of cat.potentials)line(row,potential.name+' · '+potential.description);row.append(button(e.equipped[cat.slot]===owned.instance_id?'장착 중':'장착',()=>commit(s=>equipItem(s,owned.instance_id)),busy()||e.equipped[cat.slot]===owned.instance_id));}else{const why=bookEligibility(state,cat.id);if(why)line(row,why);row.append(button(e.learned.includes(cat.id)?'학습 완료':'읽기·학습 요청',()=>submit?.(`${cat.id} ${cat.name}을 읽고 학습한다. 소유·직업·레벨·선행 기술·연습 및 연구 조건을 검사하고 실제 학습이 끝났을 때만 engine_events learn_book으로 확인해 주세요.`),busy()||!!why||e.learned.includes(cat.id)));}gear.append(row);}
     if(!e.instances.length)line(gear,'소유한 등록 장비와 기술서가 없습니다. 거래나 의뢰에서 획득하면 이곳에 표시됩니다.');if(message){line(growth,message);line(gear,message);}
   }
@@ -6271,7 +6314,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module58=(()=>{
+const module59=(()=>{
 const {publicLife,lifeRole}=module33;
 const {findNPC}=module19;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -6324,7 +6367,7 @@ const {locationLabel:canonicalLocationLabel}=module29;
 const {mountTitleMenu}=module54;
 const {mountQuestUI}=module55;
 const {mountEngineUI}=module56;
-const {mountNPCLifeUI}=module58;
+const {mountNPCLifeUI}=module59;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module34;
 const $=id=>document.getElementById(id);
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';

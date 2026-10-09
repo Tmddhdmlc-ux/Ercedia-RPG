@@ -2,6 +2,7 @@ import {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,comb
 import {applyItemRarity} from './item-rarity.js';
 import {appendItemIcon} from './item-art-ui.js';
 import {mountItemLibrary} from './item-library-ui.js';
+import {mountEquipmentSlots} from './equipment-slots.js';
 export function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -12,6 +13,7 @@ export function mountEngineUI(state,{render,persist,submit,isPending,assetBase})
   const line=(parent,text)=>{const p=document.createElement('p');p.textContent=text;parent.append(p);return p;};
   const busy=()=>isPending?.()||!!state.introDraft||!!state.battlePlayback&&!state.battlePlayback.done;
   const commit=action=>{if(busy())throw Error('현재 응답 또는 전투가 끝난 뒤 변경하세요.');const next=copyEngine(state);action(next);state.player=next.player;state.engine=next.engine;message='변경을 저장했습니다.';preview=null;gearPreview=null;render();persist();refresh();};
+  const equipment=mountEquipmentSlots({assetBase,isBusy:busy,unequip:slot=>commit(s=>unequipItem(s,slot))});
   function refresh(){
     library.render();
     growth.replaceChildren();gear.replaceChildren();line(growth,'능력치 투자 · 미사용 포인트 '+(state.player.unspentStatPoints||0));
@@ -19,7 +21,7 @@ export function mountEngineUI(state,{render,persist,submit,isPending,assetBase})
     if(preview){const {before:a,after:b}=preview;line(growth,`${statLabels[preview.key]} +1 · 비용 ${preview.cost} · 남은 포인트 ${preview.remaining}`);line(growth,`최대 HP ${a.hp} → ${b.hp} / MP ${a.mp} → ${b.mp} / 물리 공격 ${a.attack.join('~')} → ${b.attack.join('~')} / 속도 ${a.speed} → ${b.speed}`);growth.append(button('투자 확정',()=>commit(s=>investStat(s,preview.key)),busy()),button('취소',()=>{preview=null;refresh();}));}
     line(gear,'장비 · 기술서');const next=copyEngine(state),e=ensureEngine(next),p=combatPreview(state);line(gear,`물리 공격 ${p.attack.join('~')} · 속도 ${p.speed} · 방어 ${p.defense} · 저항 ${p.resistance} · 주문 보정 ${p.spell_power}`);
     if(gearPreview){const a=gearPreview.before,b=gearPreview.after;line(gear,`${gearPreview.name} · ${gearPreview.equipped?'해제':'장착'} 미리보기: HP ${a.hp} → ${b.hp} · MP ${a.mp} → ${b.mp} · 공격 ${a.attack.join('~')} → ${b.attack.join('~')} · 속도 ${a.speed} → ${b.speed} · 방어 ${a.defense} → ${b.defense}`);}
-    for(const [slot,label]of [['weapon','무기'],['armor','방어구'],['accessory','악세사리']]){const owned=e.instances.find(i=>i.instance_id===e.equipped[slot]),cat=engineItem(owned?.catalog_id),row=document.createElement('div');row.className='engine-row';line(row,label+' · '+(cat?.name||'미장착'));if(cat){icon(row,cat);applyItemRarity(row,cat);row.append(button('해제',()=>commit(s=>unequipItem(s,slot)),busy()));}gear.append(row);}
+    equipment.render(e);
     for(const owned of e.instances){const cat=engineItem(owned.catalog_id),row=document.createElement('article');row.className='engine-owned';icon(row,cat);applyItemRarity(row,cat);line(row,cat.name+' · '+cat.rarity+' · Lv.'+cat.required_level);line(row,cat.slot?Object.entries(cat.stats).filter(([,v])=>v).map(([k,v])=>k+' +'+v).join(' / '):cat.effect_summary);if(cat.slot){row.append(button('능력치 비교',()=>{const next=copyEngine(state),equipped=e.equipped[cat.slot]===owned.instance_id;const before=combatPreview(state);if(equipped)unequipItem(next,cat.slot);else equipItem(next,owned.instance_id);gearPreview={name:cat.name,equipped,before,after:combatPreview(next)};refresh();}));for(const potential of cat.potentials)line(row,potential.name+' · '+potential.description);row.append(button(e.equipped[cat.slot]===owned.instance_id?'장착 중':'장착',()=>commit(s=>equipItem(s,owned.instance_id)),busy()||e.equipped[cat.slot]===owned.instance_id));}else{const why=bookEligibility(state,cat.id);if(why)line(row,why);row.append(button(e.learned.includes(cat.id)?'학습 완료':'읽기·학습 요청',()=>submit?.(`${cat.id} ${cat.name}을 읽고 학습한다. 소유·직업·레벨·선행 기술·연습 및 연구 조건을 검사하고 실제 학습이 끝났을 때만 engine_events learn_book으로 확인해 주세요.`),busy()||!!why||e.learned.includes(cat.id)));}gear.append(row);}
     if(!e.instances.length)line(gear,'소유한 등록 장비와 기술서가 없습니다. 거래나 의뢰에서 획득하면 이곳에 표시됩니다.');if(message){line(growth,message);line(gear,message);}
   }
