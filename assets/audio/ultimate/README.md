@@ -1,21 +1,19 @@
-# 세린 · 결의의 일섬 컷씬 음향
+# 결의의 일섬 · 비장한 금속 공명 버전 (revision 6)
 
-확정된 5초 연출에 맞춘 CC0 외부 원음 기반 7개 믹스. 원본 이미지·컷씬 시간·전투 수치·습득 조건을 바꾸지 않는다.
+확정된 5초 컷씬에 연결되는 7단계 효과음. 화려한 장조 금관 팡파르를 빼고, 저음 압력·불협화 금속 공명·역검풍·날카로운 검격을 중심으로 다시 설계했다.
 
-| 게임 연출 시간 | 음향 |
-| --- | --- |
-| 0.00초 | 암전의 낮은 울림과 검광 응축 |
-| 0.45초 | 사선 얼굴 컷인의 날카로운 검풍 |
-| 1.45초 | 전신 개방의 광휘와 낮은 펄스 |
-| 1.80초 | 기술명과 함께 올라가는 힘 |
-| 3.07초 | 일격 직전의 역방향 검풍 |
-| 3.45초 | 여러 검격·공기 가름·저음·금속성 고음을 겹친 일섬 |
-| 3.90초 | 빛과 금속의 잔향, 전투 복귀 |
+- 0초: 어둡고 낮은 현악 질감과 금속 공명으로 검광 응축.
+- 0.45초: 짧고 빠른 검풍과 높은 금속성 절단음.
+- 1.45초: 전신 개방의 저음 압력과 거친 금속 울림.
+- 1.8초: 불협화 공명과 역방향 심벌이 치솟는 긴장감.
+- 3.07–3.33초: 강하게 압축된 역검풍. **3.33–3.45초는 모든 앞 단계가 끝난 120ms 정적**.
+- 3.45초: 과장한 외부 검격, 날카로운 금속 파열, 내려가는 서브 저음, 짧은 노이즈 충격을 함께 재생.
+- 3.9–5초: 금속 파편처럼 흩어지는 잔향. 원본 컷씬의 타격 순간은 변경하지 않는다.
 
-`web/ultimate-audio.js`는 공용 재생 모듈이고 `tests/serin-ultimate-preview.js`가 실제 확정 컷씬의 재생 시간에 연결한다. 최초 재생 입력에서 필요한 7개 파일만 준비한다. 로딩 중 건너뛰거나 화면이 숨겨지면 나중에 컷씬이 시작되지 않는다. 배속은 발동 시간과 단계의 끝에 적용하며 음원의 음높이는 그대로 유지한다. 일시정지 시 모든 소리를 정지하고, 재개 시 지속음만 남은 부분에서 이어간다. 일격은 중복 재생하지 않는다. 음소거·음량 조절·재시작·건너뛰기를 지원한다. 로딩 실패 시 연출은 재생 가능하며 다음 재생으로 음원을 다시 시도할 수 있다.
+참고: Riot 공식 [파이크 제작기](https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/)의 워터폰 가공과 긴장감 설계, [그웬 제작기](https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/)의 평범한 금속 도구 원음을 강하게 가공하는 방식. 그 게임의 녹음이나 곡은 포함하지 않는다. 금속의 비정수 배음·서브 저음·노이즈 충격은 자체 합성이며 실제 워터폰 녹음이라고 주장하지 않는다.
 
-실전 전투의 궁극기 분류와 최종 컷씬 자동 호출은 `ULTIMATE_SYSTEM.md`의 별도 엔진 연결 범위다. 기존 `kind="unique"` 이벤트를 궁극기로 바꾸거나 세린에게 기술을 자동 지급하지 않는다. 이번 변경은 확정 컷씬의 음향과 재사용 가능한 모듈·등록 자산을 완성한다.
+외부 원음: 기존 StarNinjas·Kenney·rubberduck·JaggedStone의 CC0 검격/마법 음원, VSCO 2 CE의 실제 심벌·팀파니·바이올린 합주 3개 원음. [VSCO 2 CE](https://versilian-studios.com/vsco-community/) — Versilian Studios / Sam Gossner and contributors, CC0. source/Readme.txt와 source/instruments.json에 고정 원본 경로·라이선스·SHA-256을 남겼다. 레시피와 가공 비율은 recipes.json에 기록한다.
 
-원음은 기존 등록 자산의 Kenney, StarNinjas, rubberduck, JaggedStone CC0 자료를 재사용했다. `recipes.json`에 출처·원본 파일·가공 비율을 기록했다. 역방향 재생·음높이·필터·시간차·메아리·페이드·피크 제한을 오프라인 적용한다. 대사 성우는 추가 생성하지 않았다.
+Python numpy와 imageio-ffmpeg를 설치한 뒤 저장소 루트에서 `python tools/build-ultimate-audio.py`로 재생성한다. 재생은 web/ultimate-audio.js와 tests/serin-ultimate-preview.js의 컷씬 시간으로 연결되며, 일시정지·음소거·건너뛰기·배속·재시작을 지원한다. 음높이는 배속에 따라 바뀌지 않는다.
 
-Python `imageio-ffmpeg` 설치 후 저장소 루트에서 `python tools/build-ultimate-audio.py`로 재생성한다. 미리보기: `/tests/serin-ultimate-preview.html?revision=4`. 실제 ChatGPT/Tampermonkey 전투 플레이 검증과는 별개다.
+미리보기: /tests/serin-ultimate-preview.html?revision=6 . 실전 자동 발동과 최종 컷씬 자동 호출은 ULTIMATE_SYSTEM.md의 별도 엔진 연결 범위다. 기존 unique 이벤트나 세린의 습득 기록을 변경하지 않는다. 실제 ChatGPT/Tampermonkey 전투 플레이를 검증한 것으로 간주하지 않는다.

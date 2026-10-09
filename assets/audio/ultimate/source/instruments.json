@@ -1,0 +1,27 @@
+{
+  "library": "VSCO 2 Community Edition",
+  "author": "Versilian Studios / Sam Gossner and contributors",
+  "license": "CC0-1.0",
+  "page": "https://versilian-studios.com/vsco-community/",
+  "commit": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+  "samples": [
+    {
+      "id": "stringsD",
+      "path": "Strings/Violin Section/susVib/VlnEns_susVib_D3_v2.wav",
+      "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v2.wav",
+      "sha256": "77893dbf1ea1be8c40ad756d16b916298e6b1b0742495e9853e020375592357c"
+    },
+    {
+      "id": "timpani",
+      "path": "Percussion/Timpani/Timpani2_Hit_v3_rr1_Sum.wav",
+      "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Timpani/Timpani2_Hit_v3_rr1_Sum.wav",
+      "sha256": "69e5d604effd3f29c86117d22ad2335f73e43f5d47868dc57d8fa593975ee241"
+    },
+    {
+      "id": "cymbal",
+      "path": "VSCO 1 Percussion/varMetal/Cymbals/clash/crash_hit_ff_loose.wav",
+      "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/VSCO%201%20Percussion/varMetal/Cymbals/clash/crash_hit_ff_loose.wav",
+      "sha256": "6df0292c3988665e9a4b35aabbc44699a9849d2df5bce8b835b0f1b2529381f9"
+    }
+  ]
+}

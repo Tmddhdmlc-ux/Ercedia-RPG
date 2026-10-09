@@ -1,11 +1,11 @@
 // The approved five-second Serin cutscene. Audio changes presentation only.
 export const ultimateAudioCues=[
- {id:'prepare',at:0,end:450,label:'검광 응축'},
+ {id:'prepare',at:0,end:1450,label:'검광 응축'},
  {id:'face',at:450,end:1250,label:'얼굴 컷인 · 검풍'},
- {id:'reveal',at:1450,end:2800,label:'전신 개방 · 광휘'},
+ {id:'reveal',at:1450,end:3070,label:'전신 개방 · 광휘'},
  {id:'charge',at:1800,end:3070,label:'힘의 상승'},
- {id:'anticipation',at:3070,end:3450,label:'일격 직전 · 역검풍'},
- {id:'strike',at:3450,end:4700,label:'결의의 일섬'},
+ {id:'anticipation',at:3070,end:3330,label:'일격 직전 · 역검풍'},
+ {id:'strike',at:3450,end:5000,label:'결의의 일섬'},
  {id:'afterglow',at:3900,end:5000,label:'빛의 잔향'}
 ].map(c=>({...c,path:`assets/audio/ultimate/${c.id}.ogg`}));
 export const ultimateSamplePaths=ultimateAudioCues.map(c=>c.path);
