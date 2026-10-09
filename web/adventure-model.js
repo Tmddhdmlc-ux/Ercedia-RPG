@@ -2,12 +2,14 @@ import {worldData} from './world-data.js';
 import {findNPC} from './npc-model.js';
 import {publicLife} from './npc-life.js';
 import {calendarDay} from './quest-model.js';
+import {lootCatalog,catalogItem} from './item-catalog.js';
 export function actualPlace(state){return {region:state.gameState?.region||state.scene?.game_state?.region||null,place:state.gameState?.place||state.scene?.location||'위치 미확인'};}
 export function nearbyPeople(state){const {region,place}=actualPlace(state),present=state.scene?.cast||(state.scene?.npc?[state.scene.npc]:[]),ids=new Set(present.map(p=>p.id));
  for(const [id,p]of Object.entries(state.npc_life?.npcs||{}))if(p.known&&p.region===region&&(p.place===place||p.accompanying))ids.add(id);
  return [...ids].map(id=>{const npc=findNPC(id),life=publicLife(state,id),record=state.npc_life?.npcs?.[id];if(record?.location_confirmed&&!record.accompanying&&(record.region!==region||record.place!==place&&record.place!==region))return null;return npc?{id,name:npc.name,activity:life.activity,place:record?.place||place,accompanying:life.accompanying}:null;}).filter(Boolean);
 }
 export function adventureOptions(state){const {region}=actualPlace(state);return {dungeons:worldData.dungeons.filter(d=>d.region_id===region),facilities:worldData.facilities.filter(f=>f.region_id===region),people:nearbyPeople(state)};}
+export function dungeonRewardPreview(d,state){const reward=lootCatalog.dungeon_rewards.find(r=>r.dungeon_id===d.id),claimed=!!state.world_engine?.dungeons?.[d.id]?.claimed;if(!reward)return '승인 보상은 현지 조사에서 확인하세요.';const guaranteed=reward.first_clear?.guaranteed||[],xp=guaranteed.find(r=>r.type==='xp')?.amount,materials=guaranteed.filter(r=>r.type==='material_bundle').flatMap(r=>r.source_material_ids||[]).map(id=>catalogItem(id)?.name||id);return `${claimed?'반복':'최초 클리어'} 보상 · ${xp===undefined?'XP 미정':claimed?'XP 최초의 '+Math.round((reward.repeat_clear?.xp_fraction_of_first_clear||0)*100)+'%':'EXP +'+xp} · 재료 후보: ${materials.join(', ')||'승인 목록 확인'}${claimed?' · 실제 재출현 필요':' · 선택 장비·기술서는 조건 충족 시에만'}`;}
 export function questPreview(q,state){const today=calendarDay(state.gameState?.date),deadline=calendarDay(q.deadline_at),objectives=q.objectives||[];
  return {title:q.title,description:q.summary||'',reward:q.reward||{},days:today!==null&&deadline!==null?deadline-today:null,progress:objectives.length?Math.round(100*objectives.reduce((sum,o)=>sum+Math.min(1,(o.current||0)/Math.max(1,o.target||1)),0)/objectives.length):0};}
 export function adventureGuide(state){const log=state.quest_log||[],ready=log.filter(q=>q.status==='ready_to_report'),active=log.filter(q=>['accepted','active'].includes(q.status));

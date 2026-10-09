@@ -28,6 +28,7 @@ test('starting passive needs a selected slot; disabled and unlearned book skills
 test('battle rejects an unselected learned attack and a fifth skill while retaining basic attacks',()=>{
  const f=battleFixture('unique'),scene=normalizeScene(f.scene);assert.equal(validateBattleSettlement(scene,f.state),true);f.state.skill_loadout={version:1,battle:[],dialogue:[]};assert.throws(()=>validateBattleSettlement(scene,f.state),/장착 기술/);
  const plain=battleFixture();plain.state.skill_loadout={version:1,battle:[],dialogue:[]};assert.equal(validateBattleSettlement(normalizeScene(plain.scene),plain.state),true);
+ delete f.state.skill_loadout;f.state.battlePlayback={scene,done:false};assert.equal(validateBattleSettlement(scene,f.state),true);
 });
 test('map browsing never changes actual region or reveals absent and secret NPCs',()=>{
  const s=start();s.region='E1';s.mapView='east';assert.equal(actualPlace(s).region,'W3');assert.ok(adventureOptions(s).dungeons.every(d=>d.region_id==='W3'));
