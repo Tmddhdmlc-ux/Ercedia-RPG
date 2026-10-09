@@ -28,3 +28,11 @@ test('failed treatment payment cannot heal or partially register an offer',()=>{
  const s=economyState();s.player.hp=69;const before=structuredClone(s),o=offer();o.services=[{id:'care',service:'herbal_treatment',cost:501,basis:'합성 검사 진료 견적',hp_restore:10}];
  assert.throws(()=>apply(s,scene(s,[event('offer',{offer:o}),event('service',{offer_id:o.id,service_id:'care'})])),/부족/);assert.deepEqual(s,before);
 });
+
+test('clinic service needs its actual venue and a corrected scene settles atomically',()=>{
+ const s=economyState();s.player.hp=69;const before=structuredClone(s),o=offer();o.venue_name='검증 장터 임시 진료소';o.items=[];o.services=[{id:'care',service:'herbal_treatment',cost:80,basis:'합성 진료 견적',hp_restore:20}];
+ const events=[event('offer',{offer:o}),event('service',{offer_id:o.id,service_id:'care'})];
+ assert.throws(()=>apply(s,scene(s,events)),/실제 거래\/시설 장소 진입 필요/);assert.deepEqual(s,before);
+ const corrected=scene(s,events,{location:o.venue_name,game_state:{...s.gameState,place:o.venue_name}});apply(s,corrected);assert.equal(s.player.hp,89);assert.equal(s.wallet_copper,420);assert.equal(s.world_engine.transactions.length,1);
+ const p=createTurnSync().prepare(s,'상처를 치료받는다.');assert.ok(p.payload.state.turn_facts.recovery_wire.completion.includes('game_state.place와 scene.location은 offer.venue_name 또는 venue_id와 정확히 일치'));
+});

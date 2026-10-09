@@ -3,9 +3,9 @@ import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';
 import {initialPlayer} from '../web/intro-model.js';
 import {narrativeFocus} from '../web/narrative-context.js';
-import {createTurnSync} from '../web/turn-sync.js';
+import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';
 import {turnFacts} from '../web/turn-facts.js';
-import {actionPrompt} from '../web/scene.js';
+import {actionPrompt,normalizeScene} from '../web/scene.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
@@ -42,4 +42,12 @@ test('resolved response remains available and explicitly revisited completed que
  const s=start(),story=[{event_id:'threat',kind:'threat',description:'수레가 무너진다',protected:'주민'},{event_id:'rescue',kind:'resolve',threat_id:'threat',description:'주민을 끌어올렸고 수레는 손상됐다',protected:'주민'}];s.quest_log=[{id:'rescue-job',title:'수레 복구',status:'completed',story_required:true,story}];
  assert.equal(narrativeFocus(s).threads,undefined);
  const f=narrativeFocus(s,'수레 복구 뒤 주민에게 안부를 묻는다.');assert.equal(f.threads[0].phase,'completed_aftermath');assert.deepEqual(f.threads[0].verified_aftermath,[{event_id:'rescue',threat_id:'threat',description:'주민을 끌어올렸고 수레는 손상됐다',protected:'주민'}]);assert.equal(f.threads[0].pending_threats,undefined);assert.equal(s.quest_log[0].status,'completed');assert.equal(s.quest_log[0].story.length,2);
+});
+
+test('departure dialogue must register its actual speaker without weakening participant validation',()=>{
+ const s=start(),raw={schema_version:1,type:'ercedia_scene',scene_id:'farewell-fixture',location:'휴식 공간',time:'21:00',background_id:null,npc:null,dialogue:[{speaker:'마야 로웬',speaker_id:'ER-NPC-057',text:'붕대는 그대로 두시고 쉬세요.'}],choices:[]};
+ assert.throws(()=>normalizeScene(raw),/speaker_id는 현재 대화 참가자/);
+ const cast=[{id:'ER-NPC-057',speaker:'마야 로웬',outfit:'none',emotion:'smile'}];assert.equal(normalizeScene({...raw,cast}).dialogue[0].speaker_id,'ER-NPC-057');
+ for(const compact of [true,false])assert.ok(actionPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',{compact}).includes('이동 직전 작별 대사도 화자를 포함'));
+ const p=createTurnSync().prepare(s,'마야에게 인사하고 쉬러 간다.');assert.ok(incrementalPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',p).includes('speaker_id는 npc 또는 cast에 포함'));
 });
