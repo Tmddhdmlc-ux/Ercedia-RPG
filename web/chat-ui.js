@@ -22,7 +22,7 @@ function newRequestId(){
   return `action-${Date.now()}-${++requestSequence}`;
 }
 export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{}}){
-  let loadedSettingsCommit=null;
+  let loadedSettingsCommit=null,hasTurnContext=false;
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   let failedRequest=null;
@@ -111,7 +111,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const request={requestId,choiceId,action,...(setupOnly?{setupOnly:true}:{}),...(settingsRefresh?{settingsRefresh:true}:{}),rootRequestId:recovery?.rootRequestId||requestId,repairAttempt:recovery?.repairAttempt||0};
     const supportsAttachment=!embedded||window.__ERCEDIA_CONFIG__?.features?.includes('settings-attachment');
     requireSettingsConfirmation=!!settings&&supportsAttachment;
-    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):actionPrompt(state,action,requestId))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
+    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):actionPrompt(state,action,requestId,{compact:!campaignSettings&&(!!loadedSettingsCommit||hasTurnContext),choiceId}))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
     if(settings){if(settingsURL)URL.revokeObjectURL(settingsURL);settingsURL=URL.createObjectURL(new Blob([settings.file.content],{type:'text/plain;charset=utf-8'}));$('settings-download').href=settingsURL;$('settings-download').download=settings.file.name;$('settings-download').hidden=false;}
     failedRequest=null;pending=request;
     controls();status(embedded?(settings&&!supportsAttachment?'이전 런처로 요청을 전송합니다. GPT가 GitHub 원문을 직접 읽도록 요청했습니다. 전체 파일 자동 첨부는 런처 1.1.7에서 지원합니다.':'상대의 반응을 기다리는 중…'):'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
@@ -179,7 +179,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;
       $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
-      if(!marketOnly)state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
+      if(!marketOnly)state.page='story';render();controls();persist();hasTurnContext=true;notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;if(!state.lootPopup?.pending)line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
       const rejected=pending;
@@ -218,7 +218,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const next=prepared?saved:normalize(saved);
     if(saved?.scene&&!next.scene||saved?.battlePlayback&&!next.battlePlayback)throw Error('저장된 장면을 읽지 못했습니다. 현재 여정을 유지합니다.');
     const candidate=next===state?JSON.parse(JSON.stringify(next)):next;
-    settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;
+    settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;hasTurnContext=false;
     failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,candidate);
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);

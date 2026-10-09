@@ -25,6 +25,11 @@ test('running campaign settings refresh discovers new rules, requires matching c
     const retry=t.actions()[1];assert.match(retry.text,/현재 캠페인/);
     t.h.reply('scene',JSON.stringify(ack(retry.requestId)));
     assert.deepEqual(t.state,before);assert.equal(t.chat.isPending(),false);assert.match(t.h.get('connection-status').textContent,/동기화 완료/);
+    t.chat.submit('안부를 묻는다.');
+    const continuation=t.actions().at(-1);
+    assert.equal(continuation.settingsFile,undefined);
+    assert.ok(!continuation.text.includes('"dungeon_pools"'));
+    assert.match(continuation.text,/확인한 BOOTSTRAP.md/);
   }finally{t.close();}
 });
 test('refresh acknowledgement cannot grant items or advance the world, including manually applied JSON',async()=>{
