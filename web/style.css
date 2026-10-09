@@ -2963,3 +2963,11 @@ input[type=range] {
 .title-kicker,.title-load-note{color:#f1e8d7;text-shadow:0 1px 5px #071321,0 0 12px #071321;}
 .title-menu{margin:24px auto;}
 .title-menu button{background:#101d2ae8;box-shadow:0 4px 18px #06101b55;}
+
+/* Adventure controls occupy their own header row, outside the absolute VN stage. */
+.game>.adventure-toolbar{flex-shrink:0;min-width:0;flex-wrap:wrap;z-index:10;}
+.adventure-toolbar button{flex-shrink:0;}
+.adventure-toolbar span{flex:1 1 220px;min-width:0;overflow-wrap:anywhere;line-height:1.4;}
+@media(min-width:701px){
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) :is(.location,.scene-tag){top:calc(var(--story-header-height,190px) + 16px);}
+}
