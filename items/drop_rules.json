@@ -1,0 +1,27 @@
+{
+  "version": 1,
+  "unit": "one_defeated_enemy_monster",
+  "mode": "per_kill_v1",
+  "roll_max": 10000,
+  "categories": [
+    {"id":"common","label":"일반 전리품","min":1,"max":6000,"percent":60},
+    {"id":"special","label":"특수 전리품","min":6001,"max":7000,"percent":10},
+    {"id":"lower","label":"하급 장비·기술서","rarity":"하급","min":7001,"max":7600,"percent":6},
+    {"id":"middle","label":"중급 장비·기술서","rarity":"중급","min":7601,"max":7800,"percent":2},
+    {"id":"high","label":"고급 장비·기술서","rarity":"고급","min":7801,"max":7900,"percent":1},
+    {"id":"unique","label":"유니크 장비·기술서","rarity":"유니크","min":7901,"max":7970,"percent":0.7},
+    {"id":"epic","label":"에픽 장비·기술서","rarity":"에픽","min":7971,"max":8000,"percent":0.3},
+    {"id":"none","label":"전리품 없음","min":8001,"max":10000,"percent":20}
+  ],
+  "rank_limits": {
+    "하급":{"max_rarity":"중급","max_item_level":25},
+    "중급":{"max_rarity":"고급","max_item_level":45},
+    "상급":{"max_rarity":"유니크","max_item_level":65},
+    "엘리트":{"max_rarity":"에픽","max_item_level":85},
+    "미스틱":{"max_rarity":"에픽","max_item_level":100}
+  },
+  "unavailable_pool": "no_drop_without_reroll",
+  "currency_policy": "actual_verified_bounty_treasure_or_carried_money_only; no automatic coins in animal bodies",
+  "divine_artifacts": "excluded",
+  "note": "완제품의 등급 확률은 전체 처치 판정 기준. 하급 적에게 높은 등급 후보를 강제 생성하지 않는다. 보스도 개체 판정 1회만 하며 같은 전리품을 클리어 패키지에 재지급하지 않는다."
+}

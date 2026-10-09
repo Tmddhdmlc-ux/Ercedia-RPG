@@ -1,3 +1,6 @@
+import {craftingData} from './crafting-data.js';
+import {catalogItem} from './item-catalog.js';
+import {formatCopper} from './wallet.js';
 import {worldData} from './world-data.js';
 import {emptyWorld,kingdomOf} from './world-engine.js';
 import {mountShopUI} from './shop-ui.js';
@@ -30,7 +33,7 @@ export function mountWorldUI(state,{submit,isPending,assetBase}){
         request(root,'퇴각 요청',`${active.id}에서 안전하게 퇴각을 시도한다. 부상·소모 자원과 복귀 장소를 기록하며 자동 회복하지 않는다.`);
         if(active.zones.filter(z=>!z.optional).every(z=>run.resolved.includes(z.id)))request(root,'클리어 확인·보상',`${active.id} 필수 구역과 실제 보스 ${run.boss_battle_id} 결과를 확인하고 clear_dungeon 보상 패키지를 한 번만 정산한다.`);
       }else for(const d of worldData.dungeons.filter(d=>d.region_id===region)){const run=w.dungeons[d.id];line(root,`${d.name} · 권장 Lv.${d.level_range.join('–')} · ${d.danger_rank}${run?.claimed?' · 최초 보상 수령함':''}`);request(root,run?.discovered?'탐험 요청':'입구 조사',`${d.id} ${d.name}의 현지 소문·입구·진입 조건을 조사하고 ${run?.discovered?'실제 던전 진입':'발견한 경우에만 discover_dungeon'}을 판정한다. 반복 탐험은 실제 재출현 증거가 있어야 한다.`);}
-      for(const f of worldData.facilities.filter(f=>f.region_id===region)){line(root,f.name+' · '+f.description);request(root,'시설 방문·견적',`${f.id} ${f.name}에 실제 방문하여 ${f.service.join(', ')} 서비스의 현재 조건·비용·재료·산출물을 문의한다. 시설에 맞는 offer를 제시하되 거래·훈련은 아직 실행하지 않는다.`);}
+      for(const f of worldData.facilities.filter(f=>f.region_id===region)){line(root,f.name+' · '+f.description);request(root,'시설 방문·견적',`${f.id} ${f.name}에 실제 방문하여 ${f.service.join(', ')} 서비스의 현재 조건·비용·재료·산출물을 문의한다. 시설에 맞는 offer를 제시하되 거래·훈련은 아직 실행하지 않는다.`);if(f.service.includes('smithing')){const list=document.createElement('details'),label=document.createElement('summary');label.textContent='제작 가능한 장비 · 재료와 비용';list.append(label);for(const recipe of craftingData.recipes){const row=document.createElement('article');line(row,recipe.name+' · '+recipe.rarity+' · '+recipe.craftsman);line(row,recipe.inputs.map(i=>catalogItem(i.id).name+' × '+i.quantity).join(' / ')+' · '+formatCopper(recipe.cost_copper));request(row,'제작 견적 요청',`${f.id} ${f.name}에 실제 방문하여 ${recipe.id} ${recipe.name}의 장인 숙련·기본 소재 재고·제작법과 필요한 마나 세공 협력을 확인하고 등록 재료와 비용으로 견적만 요청한다. 아직 재료나 돈을 소모하지 않는다.`);list.append(row);}root.append(list);}}
       if(!worldData.dungeons.some(d=>d.region_id===region))line(root,'이 지역의 등록된 던전·시설이 없습니다. 지도 열람은 실제 이동이 아닙니다.');
     }
     if(key==='trade')shop.render(root,w,region,date);

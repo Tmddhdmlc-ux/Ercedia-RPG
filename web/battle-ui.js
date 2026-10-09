@@ -1,3 +1,4 @@
+import {mountLootPopup} from './loot-popup.js';
 import {mountBattleAudio} from './battle-audio.js';
 import {monsterBattleReactions} from './monster-audio.js';
 import {mountBattleVFX,battleEffectTiming} from './battle-vfx.js';
@@ -5,13 +6,13 @@ import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-mode
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
 import {resolveBackground,backgroundURL} from './location-art.js';
-import {appendItemIcon} from './item-art-ui.js';
 import {battleCommentary} from './battle-presentation.js';
 import {renderDialogueTerms} from './dialogue-glossary.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
   const vfx=mountBattleVFX(stage);
+  const lootPopup=mountLootPopup(state,{persist,render,assetBase});
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,charged=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
@@ -78,13 +79,14 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     state.battlePlayback={scene,index:0,speed:1,paused:false,done:false,replay:false,manual:true};state.page='story';identity=null;save();render();
   }
   function refresh(){
+    lootPopup.render();
     const p=state.battlePlayback,active=battleIsActive(state);game.dataset.battle=active?'active':'none';
     overlay.hidden=!active;if(active&&!overlay.getAttribute('src'))overlay.src=backgroundURL('IMG-SHARED-11',assetBase);overlay.onerror=()=>{overlay.hidden=true;};
     const result=$('battle-result');result.hidden=!(p?.done&&state.scene?.scene_id===p.scene.scene_id);result.replaceChildren();
-    if(!result.hidden){renderBackground('IMG-SHARED-12');const summary=document.createElement('p');summary.textContent=p.scene.battle.outcome.reason+' · 획득 경험치 '+p.scene.battle.outcome.xp_gain;result.append(summary);for(const reward of p.scene.battle.outcome.items_added){const row=document.createElement('div'),label=document.createElement('span');row.className='battle-loot-row';appendItemIcon(row,reward,assetBase);label.textContent=reward.name+' × '+reward.quantity;row.append(label);result.append(row);}}
+    if(!result.hidden){renderBackground('IMG-SHARED-12');const summary=document.createElement('p');summary.textContent=p.scene.battle.outcome.reason+' · 획득 경험치 '+p.scene.battle.outcome.xp_gain;result.append(summary);}
     $('battle-hud').hidden=!active;$('battle-arena').hidden=!active;$('battle-controls').hidden=!active;$('battle-replay').hidden=!p?.done;
-    $('battle-replay').disabled=chat.isPending();
-    for(const id of ['story-tab','map-tab','status-tab','inventory-tab','quests-tab','new-game','continue-game','restore-previous-game','hud-player'])$(id).disabled=active||!!state.introDraft;
+    $('battle-replay').disabled=chat.isPending()||state.lootPopup?.pending===true;
+    for(const id of ['story-tab','map-tab','status-tab','inventory-tab','quests-tab','new-game','continue-game','restore-previous-game','hud-player'])$(id).disabled=active||!!state.introDraft||state.lootPopup?.pending===true;
     if(!active){stop();identity=null;return;}
     // During playback the current battle background is shown without exposing the aftermath.
     renderBackground(resolveBackground(p.scene,state));
@@ -103,7 +105,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;if(p.paused)audio.stop();for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
   $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
   $('battle-skip').onclick=finish;
-  $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.manual=true;p.replay=true;identity=null;state.page='story';save();render();};
+  $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending()||state.lootPopup?.pending)return;p.index=0;p.done=false;p.paused=false;p.manual=true;p.replay=true;identity=null;state.page='story';save();render();};
   document.addEventListener('ercedia:title-closed',()=>{lastTime=0;for(const a of animations)if(!state.battlePlayback?.paused)a.play();});
   return {start,render:refresh,next,active:()=>battleIsActive(state)};
 }
