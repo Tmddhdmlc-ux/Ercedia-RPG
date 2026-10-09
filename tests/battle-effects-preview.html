@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="battle-effects-preview.css">
 </head>
 <body>
-<header><div><strong>70종 기술 이펙트 미리보기</strong><p>등록 기술의 이름·설명 사용 · 실제 전투와 같은 연출 · 미리보기 피해 수치는 예시입니다.</p></div><a href="battle-demo.html">현재 전투 화면</a></header>
+<header><div><strong>70종 기술 이펙트·음향 미리보기</strong><p>등록 기술의 이름·설명에 맞춘 외부 효과음 · 실제 전투와 같은 연출 · 미리보기 피해 수치는 예시입니다.</p></div><a href="battle-demo.html">현재 전투 화면</a></header>
 <main>
 <section id="stage" aria-label="전투 연출 미리보기">
   <img class="background" src="../assets/locations/towns/sunny_village/town_day.png" alt="" id="background">
@@ -24,7 +24,7 @@
   <div class="library"><label>분류 <select id="category"><option value="all">전체 70종</option><option value="sword_manual">검술 30종</option><option value="fire">불 7종</option><option value="water">물 7종</option><option value="wind">바람 7종</option><option value="electricity">전기 7종</option><option value="darkness">어둠 6종</option><option value="light">빛 6종</option></select></label><label>기술 <select id="skill-list" aria-label="재생할 기술"></select></label><span id="count"></span></div>
   <div class="skill-detail"><strong id="selected-name"></strong><span id="source-summary"></span><p id="visual-summary"></p></div>
   <div class="playback"><button id="play">▶ 다시 재생</button><button id="pause" disabled>일시정지</button><button id="next">다음 이펙트 →</button><label>속도 <select id="speed"><option value="0.5">0.5배</option><option value="1" selected>1배</option><option value="2">2배</option></select></label><label><input type="checkbox" id="autoplay"> 연속 재생</label><span id="status" role="status">검격 선택</span></div>
-  <p class="note">실제 원본 70종을 골라 재생합니다. 다단 궤적은 시각적 표현이며 실제 타수·데미지를 정하지 않습니다. 방어·기동·표식 시안은 피해를 표시하지 않습니다. 기존 게임·세이브는 변경하지 않습니다.</p>
+  <p class="note">처음 클릭하면 전투음이 준비됩니다. 70종 기술에 시전·전개 음향을 연결했습니다. 외부 음원을 조합하므로 70개의 별도 원음은 아닙니다. 다단 궤적은 시각적 표현이며 실제 타수·데미지를 정하지 않습니다. 방어·기동·표식 시안은 피해를 표시하지 않습니다. 기존 게임·세이브는 변경하지 않습니다.</p>
 </section>
 </main>
 <script type="module" src="battle-effects-preview.js"></script>

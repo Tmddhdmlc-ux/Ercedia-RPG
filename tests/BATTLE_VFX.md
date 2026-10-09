@@ -26,3 +26,9 @@
 
 검술만 보기: /tests/battle-effects-preview.html?category=sword&revision=4
 자동 검증: 검술 원본 30종 연결, 화살촉 제거, 검광 시간차, 준비·방어의 타격 섬광 억제, 유한 좌표와 그리기 작업량, 기존 피해/MP/다시보기/일시정지 테스트. 실제 브라우저 시각 검증과 ChatGPT 플레이는 사용자 확인 대상으로 남긴다.
+
+## Skill audio
+
+All 70 skill effects now use explicit external sample recipes (24 additional samples plus existing sword layers). battle-effects-preview.html uses the same battle audio player and charge/impact timing as the game. First trusted interaction unlocks audio; mute, volume, pause, hidden-tab and skill-switch cancellation stop the whole layered voice. Support effects can sound at zero damage; dodge/block retains adjudicated result audio. Names and mappings are in web/skill-audio-profiles.js; sources and modification notices are in assets/audio/skills/CREDITS.md and the visible battle sound credits. WAV assets are served with CORS and included in the release audio digest.
+
+Verified all 70 effect-phase playback statuses in the local browser, all 24 downloaded assets decoded, and registered fireball audio triggered in the bundled battle UI. Browser playback verification does not claim a subjective listening review or actual ChatGPT/Tampermonkey gameplay verification.

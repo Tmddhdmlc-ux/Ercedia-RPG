@@ -12,7 +12,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
   const vfx=mountBattleVFX(stage);
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
-  let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
+  let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,charged=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
   const duration=e=>battleEffectTiming(e).duration;
   function clearAnimation(){vfx.clear();audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
@@ -33,7 +33,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused||document.querySelector('.game').dataset.title==='active')a.pause();}
   function eventStart(){
     const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];if(!e)return finish();
-    clearAnimation();elapsed=0;impacted=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
+    clearAnimation();elapsed=0;impacted=false;charged=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
     const actor=b.participants.find(p=>p.id===e.actor),target=b.participants.find(p=>p.id===e.target),allied=actor.side==='allied'?actor:target.side==='allied'?target:b.participants.find(p=>p.side==='allied'),enemy=actor.side==='enemy'?actor:target.side==='enemy'?target:b.participants.find(p=>p.side==='enemy');
     art(slots[0],allied);art(slots[1],enemy);
     const effectTarget=slots.find(s=>s.id===e.target);vfx.start(e,effectTarget?.root.hidden?null:effectTarget?.root,e.target==='player');
@@ -62,7 +62,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden)audio.play(e,'cast');}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){

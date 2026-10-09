@@ -7255,8 +7255,2116 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
+const module72=(()=>{
+// External sample recipes matched to all registered skill names. Presentation only.
+const skillAudioProfiles={
+  "skill_swd_001": {
+    "name": "기초 횡베기",
+    "element": null,
+    "shape": "slash",
+    "description": "넓게 휘어지는 초승달 검광과 짧은 타격 불꽃",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 날카로운 검광 · 겹쳐지는 잔향"
+  },
+  "skill_swd_002": {
+    "name": "일직선 찌르기",
+    "element": null,
+    "shape": "thrust",
+    "description": "검끝이 한 점에서 번쩍이는 가늘고 긴 찌르기 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 빠른 검끝 · 겹쳐지는 잔향"
+  },
+  "skill_swd_003": {
+    "name": "낮은 자세",
+    "element": null,
+    "shape": "shield",
+    "description": "낮은 자세를 드러내는 작은 은빛 가드 잔광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 금속 가드 · 짧은 여운"
+  },
+  "skill_swd_004": {
+    "name": "단단한 방어",
+    "element": null,
+    "shape": "shield",
+    "description": "두 겹의 은빛 가드가 순간 펼쳐짐",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/metal_02.ogg",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 강철 공명 · 짧은 여운"
+  },
+  "skill_swd_005": {
+    "name": "되받아치기",
+    "element": null,
+    "shape": "counter",
+    "description": "가드 직후 짧고 빠르게 돌아 나오는 역베기",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_03.ogg",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 넓은 강검 · 겹쳐지는 잔향"
+  },
+  "skill_swd_006": {
+    "name": "발목 스텝",
+    "element": null,
+    "shape": "dash",
+    "description": "발밑에 짧게 겹치는 부드러운 스텝 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 빠른 검끝 · 짧은 여운"
+  },
+  "skill_swd_007": {
+    "name": "손목 흘리기",
+    "element": null,
+    "shape": "parry",
+    "description": "비스듬히 흘리는 검광과 작은 금속 불꽃",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 금속 가드 · 짧은 여운"
+  },
+  "skill_swd_008": {
+    "name": "연속 두 번 베기",
+    "element": null,
+    "shape": "slash",
+    "description": "서로 엇갈리는 두 검광이 시간차로 교차",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      },
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.22,
+        "rate": 1.375,
+        "delay": 0.105,
+        "length": 0.22
+      }
+    ],
+    "soundDescription": "시전음 → 날카로운 검광 · 겹쳐지는 잔향"
+  },
+  "skill_swd_009": {
+    "name": "긴 검끝",
+    "element": null,
+    "shape": "thrust",
+    "description": "가늘게 뻗는 검끝의 은빛 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 빠른 검끝 · 겹쳐지는 잔향"
+  },
+  "skill_swd_010": {
+    "name": "차분한 칼끝",
+    "element": null,
+    "shape": "focus",
+    "description": "작은 은빛 기운이 칼끝의 한 점으로 모임",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/item_gem_01.ogg",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.14,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.35
+      }
+    ],
+    "soundDescription": "시전음 → 영롱한 집중음 · 겹쳐지는 잔향"
+  },
+  "skill_swd_011": {
+    "name": "협곡 내려베기",
+    "element": null,
+    "shape": "slash",
+    "description": "굵은 사선 검광이 내리꽂히고 불꽃이 퍼짐",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_03.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 넓은 강검 · 겹쳐지는 잔향"
+  },
+  "skill_swd_012": {
+    "name": "강철 접전",
+    "element": null,
+    "shape": "shield",
+    "description": "무기 접점에서 짧게 부딪치는 금속 섬광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/metal_02.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.62
+      }
+    ],
+    "soundDescription": "시전음 → 강철 공명 · 짧은 여운"
+  },
+  "skill_swd_013": {
+    "name": "방패 빈틈 찌르기",
+    "element": null,
+    "shape": "thrust",
+    "description": "가는 찌르기 두 잔상이 틈을 향해 응축",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 빠른 검끝 · 겹쳐지는 잔향"
+  },
+  "skill_swd_014": {
+    "name": "물러나며 베기",
+    "element": null,
+    "shape": "counter",
+    "description": "먼저 멀어지는 검광 뒤 짧은 퇴각 베기",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 날카로운 검광 · 겹쳐지는 잔향"
+  },
+  "skill_swd_015": {
+    "name": "붉은 장미 검식",
+    "element": null,
+    "shape": "petal",
+    "description": "장미빛 두 곡선 검광이 엇갈림",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_2.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 꽃잎 같은 잔향 · 겹쳐지는 잔향"
+  },
+  "skill_swd_016": {
+    "name": "서리 검무",
+    "element": null,
+    "shape": "dash",
+    "description": "차가운 은빛 세 곡선이 가볍게 겹치는 검무 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/ice.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.62
+      }
+    ],
+    "soundDescription": "시전음 → 얼음 파열 · 짧은 여운"
+  },
+  "skill_swd_017": {
+    "name": "단호한 역베기",
+    "element": null,
+    "shape": "counter",
+    "description": "아래에서 치솟는 역방향 검광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_03.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 넓은 강검 · 겹쳐지는 잔향"
+  },
+  "skill_swd_018": {
+    "name": "유연한 측면 검격",
+    "element": null,
+    "shape": "dash",
+    "description": "상대 근처에 짧게 나타나는 비스듬한 검광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.62
+      }
+    ],
+    "soundDescription": "시전음 → 빠른 검끝 · 짧은 여운"
+  },
+  "skill_swd_019": {
+    "name": "사자의 세 번 호흡",
+    "element": null,
+    "shape": "slash",
+    "description": "세 번의 호흡을 표현하는 시간차 검로",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      },
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.22,
+        "rate": 1.3200000000000003,
+        "delay": 0.105,
+        "length": 0.22
+      },
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.22,
+        "rate": 1.4500000000000002,
+        "delay": 0.21,
+        "length": 0.22
+      }
+    ],
+    "soundDescription": "시전음 → 날카로운 검광 · 겹쳐지는 잔향"
+  },
+  "skill_swd_020": {
+    "name": "기둥 깨는 강검",
+    "element": null,
+    "shape": "break",
+    "description": "넓고 묵직한 내려베기와 퍼지는 타격 불꽃",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/earth.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.62
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      },
+      {
+        "path": "assets/audio/skills/stones_01.ogg",
+        "gain": 0.2,
+        "rate": 0.95,
+        "delay": 0.03,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 묵직한 균열 · 겹쳐지는 잔향"
+  },
+  "skill_swd_021": {
+    "name": "검날의 선율",
+    "element": null,
+    "shape": "focus",
+    "description": "흐르는 세 검로가 약한 은빛으로 호흡함",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.14,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.35
+      }
+    ],
+    "soundDescription": "시전음 → 맑은 마력 · 겹쳐지는 잔향"
+  },
+  "skill_swd_022": {
+    "name": "유성 찌르기",
+    "element": null,
+    "shape": "thrust",
+    "description": "칼끝의 응축 후 길게 번쩍이는 유성 같은 검광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 응축된 마력 · 겹쳐지는 잔향"
+  },
+  "skill_swd_023": {
+    "name": "호위의 원형 검식",
+    "element": null,
+    "shape": "shield",
+    "description": "아군을 감싸는 낮고 넓은 은빛 보호 궤적",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/metal_02.ogg",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 강철 공명 · 짧은 여운"
+  },
+  "skill_swd_024": {
+    "name": "은매 그림자 검",
+    "element": null,
+    "shape": "dash",
+    "description": "은매 깃처럼 짧게 겹치는 기습 발놀림 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.5
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 짧은 여운"
+  },
+  "skill_swd_025": {
+    "name": "적장미 선봉의 문장",
+    "element": null,
+    "shape": "break",
+    "description": "굵은 장미빛 돌파 검광과 순간 타격 섬광",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 불꽃 폭발 · 겹쳐지는 잔향"
+  },
+  "skill_swd_026": {
+    "name": "바람을 가르는 일섬",
+    "element": null,
+    "shape": "slash",
+    "description": "길게 남기지 않는 한 번의 날카로운 일섬",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 겹쳐지는 잔향"
+  },
+  "skill_swd_027": {
+    "name": "파도 위 반격",
+    "element": null,
+    "shape": "counter",
+    "description": "물결처럼 휘어져 돌아 나오는 두 반격 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/metal_01.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.5
+      },
+      {
+        "path": "assets/audio/starninjas/sword_3.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 겹쳐지는 잔향"
+  },
+  "skill_swd_028": {
+    "name": "끝없는 검의 궤적",
+    "element": null,
+    "shape": "slash",
+    "description": "각도를 바꾸며 이어지는 네 검로 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/blade_03.ogg",
+        "gain": 0.535,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.86
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      },
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.22,
+        "rate": 1.375,
+        "delay": 0.105,
+        "length": 0.22
+      },
+      {
+        "path": "assets/audio/skills/blade_01.ogg",
+        "gain": 0.22,
+        "rate": 1.5050000000000001,
+        "delay": 0.21,
+        "length": 0.22
+      }
+    ],
+    "soundDescription": "시전음 → 넓은 강검 · 겹쳐지는 잔향"
+  },
+  "skill_swd_029": {
+    "name": "검왕의 빈자리",
+    "element": null,
+    "shape": "focus",
+    "description": "작고 조용한 은빛 윤곽이 좁혀지는 검리 연출",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_7.ogg",
+        "gain": 0.535,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.86
+      },
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.14,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.35
+      }
+    ],
+    "soundDescription": "시전음 → 밝은 빛의 잔향 · 겹쳐지는 잔향"
+  },
+  "skill_swd_030": {
+    "name": "별이 가르는 경계",
+    "element": null,
+    "shape": "star",
+    "description": "한 번의 긴 검광과 별빛 같은 타격 파편",
+    "cast": [
+      {
+        "path": "assets/audio/skills/blade_02.ogg",
+        "gain": 0.15,
+        "rate": 1.65,
+        "delay": 0,
+        "length": 0.16
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.56,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.98
+      },
+      {
+        "path": "assets/audio/starninjas/sword_4.ogg",
+        "gain": 0.34,
+        "rate": 1.3,
+        "delay": 0,
+        "length": 0.26
+      }
+    ],
+    "soundDescription": "시전음 → 응축된 마력 · 겹쳐지는 잔향"
+  },
+  "spell_001": {
+    "name": "화염탄",
+    "element": "fire",
+    "shape": "orb",
+    "description": "작은 화염탄이 날아가 터짐",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 불꽃 폭발 · 짧은 여운"
+  },
+  "spell_002": {
+    "name": "물구슬",
+    "element": "water",
+    "shape": "orb",
+    "description": "물구슬과 둥근 물방울 파문",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 짧은 여운"
+  },
+  "spell_003": {
+    "name": "미풍 장막",
+    "element": "wind",
+    "shape": "veil",
+    "description": "얇고 흐르는 바람 장막",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 짧은 여운"
+  },
+  "spell_004": {
+    "name": "정전기 손끝",
+    "element": "electricity",
+    "shape": "bolt",
+    "description": "손끝 크기의 짧은 전격",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 짧은 여운"
+  },
+  "spell_005": {
+    "name": "그림자 가림",
+    "element": "darkness",
+    "shape": "mist",
+    "description": "시야를 가리는 얇은 그림자",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/poison.wav",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 어둡게 번지는 기운 · 짧은 여운"
+  },
+  "spell_006": {
+    "name": "빛의 표식",
+    "element": "light",
+    "shape": "mark",
+    "description": "대상 위에 남는 빛의 표식",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 맑은 마력 · 짧은 여운"
+  },
+  "spell_007": {
+    "name": "작은 불꽃 고리",
+    "element": "fire",
+    "shape": "ring",
+    "description": "작은 불꽃 고리가 퍼짐",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/spell_fire_01.ogg",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.65
+      },
+      {
+        "path": "assets/audio/skills/spell_fire_01.ogg",
+        "gain": 0.2,
+        "rate": 1.3328000000000002,
+        "delay": 0.14,
+        "length": 0.45
+      }
+    ],
+    "soundDescription": "시전음 → 퍼지는 불꽃 · 겹쳐지는 잔향"
+  },
+  "spell_008": {
+    "name": "정수의 막",
+    "element": "water",
+    "shape": "shield",
+    "description": "투명한 수막이 자리 잡음",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 짧은 여운"
+  },
+  "spell_009": {
+    "name": "바람발걸음",
+    "element": "wind",
+    "shape": "dash",
+    "description": "발밑을 스치는 바람 잔상",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 짧은 여운"
+  },
+  "spell_010": {
+    "name": "전류 고리",
+    "element": "electricity",
+    "shape": "ring",
+    "description": "전류가 원형으로 순환",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.65
+      },
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.2,
+        "rate": 1.2712,
+        "delay": 0.14,
+        "length": 0.45
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 겹쳐지는 잔향"
+  },
+  "spell_011": {
+    "name": "희미한 그림자",
+    "element": "darkness",
+    "shape": "mist",
+    "description": "윤곽이 겹쳐 보이는 그림자",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 그림자 공명 · 짧은 여운"
+  },
+  "spell_012": {
+    "name": "찬란한 섬광",
+    "element": "light",
+    "shape": "burst",
+    "description": "짧게 피어나는 눈부신 빛",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_7.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 밝은 빛의 잔향 · 짧은 여운"
+  },
+  "spell_013": {
+    "name": "불꽃 궤적",
+    "element": "fire",
+    "shape": "trail",
+    "description": "휘어진 경로에 불꽃이 남음",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/spell_fire_04.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 지속하는 화염 · 짧은 여운"
+  },
+  "spell_014": {
+    "name": "얼음 결정창",
+    "element": "water",
+    "shape": "spear",
+    "description": "결정 모양 얼음창과 파편",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/ice.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 얼음 파열 · 짧은 여운"
+  },
+  "spell_015": {
+    "name": "돌풍 화살",
+    "element": "wind",
+    "shape": "spear",
+    "description": "가는 바람 화살과 회오리 꼬리",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 짧은 여운"
+  },
+  "spell_016": {
+    "name": "청뢰 사슬",
+    "element": "electricity",
+    "shape": "chain",
+    "description": "갈라지며 이어지는 푸른 전격",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.77
+      },
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.2,
+        "rate": 1.3944000000000003,
+        "delay": 0.14,
+        "length": 0.45
+      },
+      {
+        "path": "assets/audio/skills/chain_01.ogg",
+        "gain": 0.16,
+        "rate": 1.3,
+        "delay": 0.07,
+        "length": 0.3
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 겹쳐지는 잔향"
+  },
+  "spell_017": {
+    "name": "먹빛 안개",
+    "element": "darkness",
+    "shape": "mist",
+    "description": "넓고 짙은 먹빛 안개",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/poison.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 어둡게 번지는 기운 · 짧은 여운"
+  },
+  "spell_018": {
+    "name": "광휘 보호막",
+    "element": "light",
+    "shape": "shield",
+    "description": "금빛 테두리의 보호막",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.48500000000000004,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 맑은 마력 · 짧은 여운"
+  },
+  "spell_019": {
+    "name": "열풍 폭발",
+    "element": "fire",
+    "shape": "burst",
+    "description": "안에서 밖으로 터지는 화염",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.77
+      }
+    ],
+    "soundDescription": "시전음 → 불꽃 폭발 · 짧은 여운"
+  },
+  "spell_020": {
+    "name": "소용돌이 방패",
+    "element": "water",
+    "shape": "vortex",
+    "description": "회전하는 둥근 수막",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.48500000000000004,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.77
+      },
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.2,
+        "rate": 1.3944000000000003,
+        "delay": 0.14,
+        "length": 0.45
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 겹쳐지는 잔향"
+  },
+  "spell_021": {
+    "name": "칼바람 결계",
+    "element": "wind",
+    "shape": "cage",
+    "description": "칼날 같은 기류가 영역을 둘러쌈",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 짧은 여운"
+  },
+  "spell_022": {
+    "name": "번개 투창",
+    "element": "electricity",
+    "shape": "spear",
+    "description": "번개 모양의 긴 관통 궤적",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 짧은 여운"
+  },
+  "spell_023": {
+    "name": "암막 침묵",
+    "element": "darkness",
+    "shape": "cage",
+    "description": "빛을 흡수하는 어두운 외곽",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 그림자 공명 · 짧은 여운"
+  },
+  "spell_024": {
+    "name": "해돋이 파장",
+    "element": "light",
+    "shape": "wave",
+    "description": "넓게 퍼지는 해돋이 파장",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_7.ogg",
+        "gain": 0.46,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 0.65
+      },
+      {
+        "path": "assets/audio/skills/magical_7.ogg",
+        "gain": 0.2,
+        "rate": 1.3944000000000003,
+        "delay": 0.14,
+        "length": 0.45
+      }
+    ],
+    "soundDescription": "시전음 → 밝은 빛의 잔향 · 겹쳐지는 잔향"
+  },
+  "spell_025": {
+    "name": "홍염 장벽",
+    "element": "fire",
+    "shape": "wall",
+    "description": "세로로 솟아오르는 붉은 방벽",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/spell_fire_04.ogg",
+        "gain": 0.46,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 지속하는 화염 · 짧은 여운"
+  },
+  "spell_026": {
+    "name": "물의 거울",
+    "element": "water",
+    "shape": "mirror",
+    "description": "반사면과 굴절되는 물결",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.46,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 0.65
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 짧은 여운"
+  },
+  "spell_027": {
+    "name": "폭풍나선",
+    "element": "wind",
+    "shape": "vortex",
+    "description": "여러 겹이 감기는 폭풍 나선",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.46,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 0.65
+      },
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.2,
+        "rate": 1.3328000000000002,
+        "delay": 0.14,
+        "length": 0.45
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 겹쳐지는 잔향"
+  },
+  "spell_028": {
+    "name": "청동뢰 폭진",
+    "element": "electricity",
+    "shape": "burst",
+    "description": "넓은 전격 파열과 뻗는 가지",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.535,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 겹쳐지는 잔향"
+  },
+  "spell_029": {
+    "name": "그림자 회랑",
+    "element": "darkness",
+    "shape": "corridor",
+    "description": "깊이 겹쳐지는 그림자 회랑",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_02.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/poison.wav",
+        "gain": 0.535,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 어둡게 번지는 기운 · 겹쳐지는 잔향"
+  },
+  "spell_030": {
+    "name": "백일 광탄",
+    "element": "light",
+    "shape": "orb",
+    "description": "응축된 큰 광탄과 긴 꼬리",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.535,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 응축된 마력 · 겹쳐지는 잔향"
+  },
+  "spell_031": {
+    "name": "진홍 폭우",
+    "element": "fire",
+    "shape": "rain",
+    "description": "위에서 차례로 떨어지는 붉은 불꽃",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.535,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.2,
+        "rate": 1.3328000000000002,
+        "delay": 0.14,
+        "length": 0.45
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 불꽃 폭발 · 겹쳐지는 잔향"
+  },
+  "spell_032": {
+    "name": "만조 포위",
+    "element": "water",
+    "shape": "wave",
+    "description": "양옆에서 밀려드는 큰 물결",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.535,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.2,
+        "rate": 1.3944000000000003,
+        "delay": 0.14,
+        "length": 0.45
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 겹쳐지는 잔향"
+  },
+  "spell_033": {
+    "name": "하늘갈림",
+    "element": "wind",
+    "shape": "split",
+    "description": "양쪽으로 갈라지는 기류",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.535,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 겹쳐지는 잔향"
+  },
+  "spell_034": {
+    "name": "폭뢰 결정",
+    "element": "electricity",
+    "shape": "crystal",
+    "description": "전격 결정이 응축된 뒤 폭발",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.535,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 겹쳐지는 잔향"
+  },
+  "spell_035": {
+    "name": "흑월 장막",
+    "element": "darkness",
+    "shape": "moon",
+    "description": "검은 달을 감싸는 그림자 장막",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_4.ogg",
+        "gain": 0.535,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 그림자 공명 · 겹쳐지는 잔향"
+  },
+  "spell_036": {
+    "name": "광휘의 선",
+    "element": "light",
+    "shape": "beam",
+    "description": "좁고 긴 직선 광선",
+    "cast": [
+      {
+        "path": "assets/audio/skills/magical_1.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/magical_7.ogg",
+        "gain": 0.535,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 밝은 빛의 잔향 · 겹쳐지는 잔향"
+  },
+  "spell_037": {
+    "name": "천화의 원",
+    "element": "fire",
+    "shape": "ring",
+    "description": "여러 겹으로 넓어지는 고온 화염장",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.535,
+        "rate": 1.08,
+        "delay": 0,
+        "length": 1.01
+      },
+      {
+        "path": "assets/audio/skills/fire.wav",
+        "gain": 0.2,
+        "rate": 1.2096000000000002,
+        "delay": 0.14,
+        "length": 0.45
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 불꽃 폭발 · 겹쳐지는 잔향"
+  },
+  "spell_038": {
+    "name": "심해의 장벽",
+    "element": "water",
+    "shape": "wall",
+    "description": "깊은 푸른빛의 두꺼운 방벽",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/water.wav",
+        "gain": 0.56,
+        "rate": 1.135,
+        "delay": 0,
+        "length": 1.13
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 물결과 파문 · 겹쳐지는 잔향"
+  },
+  "spell_039": {
+    "name": "진공의 눈",
+    "element": "wind",
+    "shape": "eye",
+    "description": "회오리가 중심의 한 점으로 모임",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 1.1,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/wind.wav",
+        "gain": 0.56,
+        "rate": 1.1900000000000002,
+        "delay": 0,
+        "length": 1.13
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 휘감는 바람 · 겹쳐지는 잔향"
+  },
+  "spell_040": {
+    "name": "천뢰 심판",
+    "element": "electricity",
+    "shape": "bolt",
+    "description": "위에서 떨어지는 굵고 긴 낙뢰",
+    "cast": [
+      {
+        "path": "assets/audio/skills/spell_01.ogg",
+        "gain": 0.18,
+        "rate": 0.9,
+        "delay": 0,
+        "length": 0.28
+      }
+    ],
+    "impact": [
+      {
+        "path": "assets/audio/skills/thunder.wav",
+        "gain": 0.56,
+        "rate": 1.245,
+        "delay": 0,
+        "length": 1.13
+      },
+      {
+        "path": "assets/audio/skills/charge.wav",
+        "gain": 0.16,
+        "rate": 0.8,
+        "delay": 0.04,
+        "length": 0.6
+      }
+    ],
+    "soundDescription": "시전음 → 번개와 천둥 · 겹쳐지는 잔향"
+  }
+};
+const skillSamplePaths=[...new Set(Object.values(skillAudioProfiles).flatMap(p=>[...p.cast,...p.impact].map(l=>l.path)))];
+
+return {skillAudioProfiles,skillSamplePaths};})();
 const module71=(()=>{
-// External CC0 samples. Audio is presentation only and never changes combat data.
+// External licensed samples (CC0 / CC BY 4.0; see skills/CREDITS.md). Audio is presentation only and never changes combat data.
+const {skillAudioProfiles,skillSamplePaths}=module72;
 const impactSamples={
   hit:['starninjas/sword_3','starninjas/sword_4','starninjas/sword_6'],
   critical:['starninjas/sword_1','starninjas/sword_2'],
@@ -7275,7 +9383,7 @@ function impactCue(event){
 }
 function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),storage=()=>window.localStorage}={}){
   let ctx,master,loading,ready=false,unlocked=false,muted=false,volume=.65,error=false,played=0,lastCue=null;
-  const buffers=new Map(),voices=new Set(),cursor={};
+  const buffers=new Map(),sampleGain=new Map(),voices=new Set(),cursor={};
   try{const saved=JSON.parse(storage().getItem('ercedia-impact-audio')||'null');if(saved){muted=saved.muted===true;if(Number.isFinite(saved.volume))volume=Math.max(0,Math.min(1,saved.volume));}}catch{}
   const status=()=>({ready,unlocked,muted,volume,error,played,lastCue,active:voices.size});
   const report=()=>onStatus(status());
@@ -7286,19 +9394,23 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
       if(!ctx){ctx=contextFactory();master=ctx.createGain();const limiter=ctx.createDynamicsCompressor();limiter.threshold.value=-12;limiter.knee.value=8;limiter.ratio.value=8;limiter.attack.value=.003;limiter.release.value=.08;master.connect(limiter);limiter.connect(ctx.destination);master.gain.value=muted?0:volume;}
       // Resume immediately in the trusted click; no delayed impacts are queued.
       await ctx.resume();unlocked=ctx.state==='running';
-      if(!loading){error=false;loading=Promise.all(Object.values(impactSamples).flat().map(async name=>{
+      if(!loading){error=false;loading=Promise.all([...new Set([...Object.values(impactSamples).flat(),...skillSamplePaths])].map(async name=>{
         if(buffers.has(name))return;
-        const response=await fetchAudio(assetBase+'assets/audio/'+name+'.ogg');
+        const response=await fetchAudio(assetBase+(name.startsWith('assets/')?name:'assets/audio/'+name+'.ogg'));
         if(!response.ok)throw Error('Audio load failed');
-        buffers.set(name,await ctx.decodeAudioData(await response.arrayBuffer()));
+        const buffer=await ctx.decodeAudioData(await response.arrayBuffer());
+        if(name.startsWith('assets/audio/skills/')&&buffer.getChannelData){let peak=0;for(let c=0;c<buffer.numberOfChannels;c++)for(const value of buffer.getChannelData(c))peak=Math.max(peak,Math.abs(value));sampleGain.set(name,peak>.001?Math.min(3,.7/peak):1);}
+        buffers.set(name,buffer);
       })).then(()=>{ready=true;error=false;report();}).catch(()=>{loading=null;error=true;report();});}
       report();await loading;return ready&&unlocked;
     }catch{error=true;report();return false;}
   }
-  function play(event){
-    const cue=impactCue(event);
+  function play(event,phase='impact'){
+    const profile=skillAudioProfiles[event.skill_id],eligible=['attack','counter','magic','unique','defend'].includes(event.kind);
+    const layers=eligible&&profile&&(phase==='cast'||!['dodge','block'].includes(event.result))?profile[phase]:null;
+    const cue=layers?event.skill_id+':'+phase:phase==='impact'?impactCue(event):null;
     if(!cue||!ready||muted||volume===0||ctx?.state!=='running')return false;
-    const choices=impactSamples[cue],index=(cursor[cue]||0)%choices.length;cursor[cue]=index+1;
+    const choices=impactSamples[cue]||[],index=choices.length?(cursor[cue]||0)%choices.length:0;cursor[cue]=index+1;
     while(voices.size>=4){const oldest=voices.values().next().value;oldest.stop();oldest.disconnect();voices.delete(oldest);}
     const sources=[],nodes=[];let remaining=0,closed=false;
     const voice={stop(){for(const s of sources){try{s.stop();}catch{}}},disconnect(){if(closed)return;closed=true;for(const n of [...sources,...nodes])n.disconnect();voices.delete(voice);}};
@@ -7306,9 +9418,12 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
     function track(source){sources.push(source);remaining++;source.onended=()=>{if(--remaining===0)voice.disconnect();};return source;}
     function gainNode(amount){const gain=ctx.createGain();gain.gain.value=amount;nodes.push(gain);gain.connect(master);return gain;}
     function sample(name,amount,rate=1,delay=0,cutoff=0,length){
+      amount*=sampleGain.get(name)||1;
       const source=track(ctx.createBufferSource()),gain=gainNode(amount);source.buffer=buffers.get(name);source.playbackRate.value=rate;
       if(cutoff){const filter=ctx.createBiquadFilter();filter.type='highpass';filter.frequency.value=cutoff;nodes.push(filter);source.connect(filter);filter.connect(gain);}else source.connect(gain);
-      source.start(ctx.currentTime+delay,0,length);
+      const time=ctx.currentTime+delay,duration=Math.min(length||source.buffer.duration,source.buffer.duration);
+      gain.gain.setValueAtTime(0,time);gain.gain.linearRampToValueAtTime(amount,time+.008);gain.gain.setValueAtTime(amount,time+Math.max(.008,duration/rate-.035));gain.gain.linearRampToValueAtTime(0,time+duration/rate);
+      source.start(time,0,duration);
     }
     function tone(type,from,to,amount,length,delay=0){
       const source=track(ctx.createOscillator()),gain=gainNode(0),time=ctx.currentTime+delay;source.type=type;
@@ -7316,7 +9431,8 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
       gain.gain.setValueAtTime(.0001,time);gain.gain.exponentialRampToValueAtTime(amount,time+.004);gain.gain.exponentialRampToValueAtTime(.0001,time+length);
       source.connect(gain);source.start(time);source.stop(time+length+.01);
     }
-    if(cue==='hit'||cue==='critical'){
+    if(layers){for(const l of layers)sample(l.path,l.gain,l.rate,l.delay,0,l.length);}
+    else if(cue==='hit'||cue==='critical'){
       const critical=cue==='critical',name=choices[index];
       // Faster blade, cutting-air accent and pitched shimmer make a fantasy game slash.
       sample(name,critical?.70:.62,critical?1.12:1.35,0,critical?280:500);
@@ -7334,18 +9450,18 @@ function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new 
 function mountBattleAudio(controls,assetBase){
   const button=document.createElement('button'),label=document.createElement('label'),slider=document.createElement('input'),note=document.createElement('span');
   button.type='button';button.id='battle-sound';slider.type='range';slider.min='0';slider.max='100';slider.step='5';slider.id='battle-volume';slider.setAttribute('aria-label','타격음 음량');
-  label.style.whiteSpace='nowrap';label.textContent='타격음 ';label.append(slider);note.id='battle-audio-status';note.setAttribute('role','status');note.style.fontSize='12px';
+  label.style.whiteSpace='nowrap';label.textContent='전투음 ';label.append(slider);note.id='battle-audio-status';note.setAttribute('role','status');note.style.fontSize='12px';
   const audio=createBattleAudio({assetBase,onStatus:s=>{note.dataset.played=String(s.played);note.dataset.cue=s.lastCue||'';button.textContent=s.muted?'소리 켜기':s.unlocked?'소리 끄기':'소리 켜기';button.setAttribute('aria-pressed',String(s.unlocked&&!s.muted));slider.value=String(Math.round(s.volume*100));note.textContent=s.error?'음원 로드 실패 · 다시 켜기':s.ready?(s.muted?'음소거':'타격음 준비됨'):s.unlocked?'음원 준비 중':'클릭하면 타격음이 켜집니다';}});
   slider.value=String(Math.round(audio.status().volume*100));button.textContent='소리 켜기';note.textContent='클릭하면 타격음이 켜집니다';
   button.onclick=async()=>{const s=audio.status();if(s.unlocked&&!s.muted&&!s.error){audio.setMuted(true);return;}audio.setMuted(false);await audio.unlock();};
   slider.oninput=()=>audio.setVolume(Number(slider.value)/100);
-  controls.append(button,label,note);
+  const credit=document.createElement('details'),summary=document.createElement('summary'),sources=document.createElement('span');summary.textContent='효과음 출처';sources.innerHTML='<a href="https://opengameart.org/node/138619" target="_blank" rel="noopener">8 Magic Attacks · leohpaz</a> · <a href="https://creativecommons.org/licenses/by/4.0/" target="_blank" rel="noopener">CC BY 4.0</a> (재생 시 길이·음높이·믹스 조정) / <a href="https://opengameart.org/node/86018" target="_blank" rel="noopener">rubberduck</a> · <a href="https://opengameart.org/content/magic-spell-sfx" target="_blank" rel="noopener">JaggedStone</a> · Kenney · StarNinjas (CC0)';credit.append(summary,sources);controls.append(button,label,note,credit);
   document.addEventListener('visibilitychange',()=>{if(document.hidden)audio.stop();});
   return audio;
 }
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
-const module73=(()=>{
+const module74=(()=>{
 // Original target-local blade trails, inspired by real-time ribbon VFX. Visuals only.
 // The number of visual trails is not a new damage event or a combat hit calculation.
 const specs=[
@@ -7394,7 +9510,7 @@ function createSwordRenderer(canvas){const ctx=canvas.getContext('2d');let w=100
 }
 
 return {swordProfiles,swordTiming,swordFrame,swordFallbackSVG,createSwordRenderer};})();
-const module74=(()=>{
+const module75=(()=>{
 // Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
 const elementalSamples=[
  {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
@@ -7506,8 +9622,8 @@ function createElementalRenderer(canvas,{createCanvas=()=>document.createElement
 }
 
 return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
-const module75=(()=>{
-const {swordProfiles,swordFallbackSVG}=module73;
+const module76=(()=>{
+const {swordProfiles,swordFallbackSVG}=module74;
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -7592,10 +9708,10 @@ function skillEffectSVG(p){
 }
 
 return {effectProfiles,elementColors,skillEffectSVG};})();
-const module72=(()=>{
-const {swordProfiles,swordTiming,createSwordRenderer}=module73;
-const {createElementalRenderer,palettes,sampleTiming}=module74;
-const {effectProfiles,skillEffectSVG}=module75;
+const module73=(()=>{
+const {swordProfiles,swordTiming,createSwordRenderer}=module74;
+const {createElementalRenderer,palettes,sampleTiming}=module75;
+const {effectProfiles,skillEffectSVG}=module76;
 const {engineData}=module19;
 // A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
 const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
@@ -7625,7 +9741,7 @@ function mountBattleVFX(stage){
 }
 
 return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
-const module76=(()=>{
+const module77=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -7634,7 +9750,7 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module77=(()=>{
+const module78=(()=>{
 const {mapData}=module12;
 const {lordships}=module62;
 const {factionLocations}=module49;
@@ -7718,20 +9834,20 @@ function mountDialogueGlossary(element){
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
 const module70=(()=>{
 const {mountBattleAudio}=module71;
-const {mountBattleVFX,battleEffectTiming}=module72;
+const {mountBattleVFX,battleEffectTiming}=module73;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module9;
 const {characterVisual,artBase}=module10;
 const {faceFit}=module28;
 const {resolveBackground,backgroundURL}=module21;
 const {appendItemIcon}=module51;
-const {battleCommentary}=module76;
-const {renderDialogueTerms}=module77;
+const {battleCommentary}=module77;
+const {renderDialogueTerms}=module78;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
   const vfx=mountBattleVFX(stage);
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
-  let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
+  let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,charged=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
   const duration=e=>battleEffectTiming(e).duration;
   function clearAnimation(){vfx.clear();audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
@@ -7752,7 +9868,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
   function animate(node,keyframes,ms){if(matchMedia('(prefers-reduced-motion: reduce)').matches)return;const a=node.animate(keyframes,{duration:ms,easing:'ease-in-out'});a.playbackRate=state.battlePlayback.speed;animations.push(a);if(state.battlePlayback.paused||document.querySelector('.game').dataset.title==='active')a.pause();}
   function eventStart(){
     const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];if(!e)return finish();
-    clearAnimation();elapsed=0;impacted=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
+    clearAnimation();elapsed=0;impacted=false;charged=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
     const actor=b.participants.find(p=>p.id===e.actor),target=b.participants.find(p=>p.id===e.target),allied=actor.side==='allied'?actor:target.side==='allied'?target:b.participants.find(p=>p.side==='allied'),enemy=actor.side==='enemy'?actor:target.side==='enemy'?target:b.participants.find(p=>p.side==='enemy');
     art(slots[0],allied);art(slots[1],enemy);
     const effectTarget=slots.find(s=>s.id===e.target);vfx.start(e,effectTarget?.root.hidden?null:effectTarget?.root,e.target==='player');
@@ -7781,7 +9897,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!charged&&elapsed>=duration(e)*battleEffectTiming(e).charge){charged=true;if(!document.hidden)audio.play(e,'cast');}if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){
@@ -7827,7 +9943,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module79=(()=>{
+const module80=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module10;
 const {findNPC}=module13;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -7856,8 +9972,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module78=(()=>{
-const {mountNPCLocations}=module79;
+const module79=(()=>{
+const {mountNPCLocations}=module80;
 const {registeredArt,artBase,placementLabel}=module10;
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module13;
@@ -7898,7 +10014,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module80=(()=>{
+const module81=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -7920,7 +10036,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module82=(()=>{
+const module83=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module18;
 const {applyItemRarity}=module17;
 const {appendItemIcon}=module51;
@@ -7954,7 +10070,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module83=(()=>{
+const module84=(()=>{
 const {engineItem}=module38;
 const {appendItemIcon}=module51;
 const {applyItemRarity}=module17;
@@ -7989,12 +10105,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module81=(()=>{
+const module82=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module38;
 const {applyItemRarity}=module17;
 const {appendItemIcon}=module51;
-const {mountItemLibrary}=module82;
-const {mountEquipmentSlots}=module83;
+const {mountItemLibrary}=module83;
+const {mountEquipmentSlots}=module84;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -8021,7 +10137,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module84=(()=>{
+const module85=(()=>{
 const {publicLife,lifeRole}=module47;
 const {findNPC}=module13;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -8073,15 +10189,15 @@ const {mountNPCInfo}=module65;
 const {mountPlayHUD}=module66;
 const {mountNewGame}=module67;
 const {mountBattleUI}=module70;
-const {dialogueVoice}=module76;
-const {renderDialogueTerms,mountDialogueGlossary}=module77;
-const {mountCatalogUI}=module78;
+const {dialogueVoice}=module77;
+const {renderDialogueTerms,mountDialogueGlossary}=module78;
+const {mountCatalogUI}=module79;
 const {initializeNameOnlyPlayer}=module60;
 const {locationLabel:canonicalLocationLabel}=module43;
-const {mountTitleMenu}=module80;
+const {mountTitleMenu}=module81;
 const {mountQuestUI}=module58;
-const {mountEngineUI}=module81;
-const {mountNPCLifeUI}=module84;
+const {mountEngineUI}=module82;
+const {mountNPCLifeUI}=module85;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module48;
 const $=id=>document.getElementById(id);
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
