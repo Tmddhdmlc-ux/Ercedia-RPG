@@ -93,7 +93,8 @@ export function normalizeScene(raw){
   if(raw.engine_events!==undefined)scene.engine_events=validateEngineEvents(raw.engine_events);
   if(raw.system_events!==undefined)scene.system_events=validateSystemEvents(raw.system_events);
   if(raw.life_events!==undefined)scene.life_events=validateLifeEvents(raw.life_events);
-  if(raw.gm_rulings!==undefined)scene.gm_rulings=normalizeRulings(raw.gm_rulings,8);
+  if(raw.appended!==undefined){if(!raw.appended||typeof raw.appended!=='object'||Array.isArray(raw.appended)||Object.keys(raw.appended).some(k=>k!=='gm_rulings')||!Object.hasOwn(raw.appended,'gm_rulings'))throw Error('응답 appended는 새 gm_rulings만 포함할 수 있습니다. 다른 변경은 장면의 정식 필드를 사용하세요.');scene.gm_rulings=normalizeRulings([...(raw.gm_rulings===undefined?[]:normalizeRulings(raw.gm_rulings,8)),...normalizeRulings(raw.appended.gm_rulings,8)],8);}
+  else if(raw.gm_rulings!==undefined)scene.gm_rulings=normalizeRulings(raw.gm_rulings,8);
   return scene;
 }
 export function parseScene(source){

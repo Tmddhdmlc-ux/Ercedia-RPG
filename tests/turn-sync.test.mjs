@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains} from '../web/scene.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
+import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
 test('remembered learning in thanks or rest is not training; actual practice and training choices keep mechanics',()=>{
@@ -35,3 +35,15 @@ test('nested clock changes omit repeated logs and removed equipment effects are 
 test('forging, studying and learning requests carry unchanged current stats as mechanics context',()=>{const s=start(),sync=createTurnSync();sync.acknowledge(sync.prepare(s,'인사한다.'));for(const action of ['광산에서 단조 기술을 배운다.','장인에게 배우고 연습한다.','마법 원리를 공부한다.'])assert.deepEqual(sync.prepare(s,action).payload.state.player,s.player);});
 
 test('an incapacitation guard is not interpreted as a combat request',()=>{const p=createTurnSync().prepare(start(),'기초 단련 1회. 전투불능이면 실행하지 않는다.');assert.equal(p.domains.growth,true);assert.equal(p.domains.combat,false);});
+
+
+test('misrouted appended rulings normalize to canonical scene records without allowing arbitrary state patches',()=>{
+ const raw={schema_version:1,type:'ercedia_scene',scene_id:'ruling-alias',location:'장터',time:'09:05',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'목재 묶음이 흔들린다.'}],choices:[]},prior={id:'prior',topic:'계약',decision:'정해진 보수'},next={id:'next',topic:'현장 위험',decision:'주민 대피가 필요하다.'};
+ const s=start();s.gm_rulings=[prior];const before=JSON.stringify(s),scene=normalizeScene({...raw,appended:{gm_rulings:[next]}});assert.deepEqual(scene.gm_rulings,[next]);assert.equal(scene.appended,undefined);assert.deepEqual(mergeRulings(s,scene),[prior,next]);assert.equal(JSON.stringify(s),before);
+ assert.deepEqual(normalizeScene({...raw,gm_rulings:[prior],appended:{gm_rulings:[next]}}).gm_rulings,[prior,next]);
+ assert.throws(()=>normalizeScene({...raw,gm_rulings:[next],appended:{gm_rulings:[next]}}),/중복/);
+ assert.throws(()=>normalizeScene({...raw,appended:{gm_rulings:[{...next,decision:123}]}}),/형식/);
+ assert.throws(()=>normalizeScene({...raw,appended:{gm_rulings:[next],player:{hp:999}}}),/정식 필드/);
+ assert.throws(()=>normalizeScene({...raw,appended:{gm_rulings:Array.from({length:9},(_,i)=>({...next,id:'n'+i}))}}),/한도/);
+ assert.throws(()=>mergeRulings(s,normalizeScene({...raw,appended:{gm_rulings:[{...prior,decision:'마음대로 변경'}]}})),/임의로/);
+});

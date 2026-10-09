@@ -8,6 +8,7 @@ import {turnFacts} from '../web/turn-facts.js';
 import {actionPrompt,normalizeScene} from '../web/scene.js';
 import {npcContext} from '../web/npc-model.js';
 import {townPeople} from '../web/town-people.js';
+import {planNPCLife} from '../web/npc-life.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
@@ -63,10 +64,12 @@ test('resolved response remains available and explicitly revisited completed que
  const f=narrativeFocus(s,'수레 복구 뒤 주민에게 안부를 묻는다.');assert.equal(f.threads[0].phase,'completed_aftermath');assert.deepEqual(f.threads[0].verified_aftermath,[{event_id:'rescue',threat_id:'threat',description:'주민을 끌어올렸고 수레는 손상됐다',protected:'주민'}]);assert.equal(f.threads[0].pending_threats,undefined);assert.equal(s.quest_log[0].status,'completed');assert.equal(s.quest_log[0].story.length,2);
 });
 
-test('departure dialogue must register its actual speaker without weakening participant validation',()=>{
+test('arrival scenes retain farewell context without moving its speaker or weakening participant validation',()=>{
  const s=start(),raw={schema_version:1,type:'ercedia_scene',scene_id:'farewell-fixture',location:'휴식 공간',time:'21:00',background_id:null,npc:null,dialogue:[{speaker:'마야 로웬',speaker_id:'ER-NPC-057',text:'붕대는 그대로 두시고 쉬세요.'}],choices:[]};
  assert.throws(()=>normalizeScene(raw),/speaker_id는 현재 대화 참가자/);
  const cast=[{id:'ER-NPC-057',speaker:'마야 로웬',outfit:'none',emotion:'smile'}];assert.equal(normalizeScene({...raw,cast}).dialogue[0].speaker_id,'ER-NPC-057');
- for(const compact of [true,false])assert.ok(actionPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',{compact}).includes('이동 직전 작별 대사도 화자를 포함'));
+ for(const compact of [true,false])assert.ok(actionPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',{compact}).includes('출발지 인물을 npc/cast에 넣지'));
  const p=createTurnSync().prepare(s,'마야에게 인사하고 쉬러 간다.');assert.ok(incrementalPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',p).includes('speaker_id는 npc 또는 cast에 포함'));
+ const source=normalizeScene({...raw,scene_id:'at-gate',location:'초소',npc:cast[0],dialogue:[{speaker:'마야 로웬',speaker_id:'ER-NPC-057',text:'붕대는 그대로 두시고 쉬세요.'}],game_state:{date:'650-07-01',region:'W1',place:'초소'}});Object.assign(s,planNPCLife(s,source));s.scene=source;s.gameState={...s.gameState,...source.game_state};
+ const arrival=normalizeScene({...raw,dialogue:[{speaker:'나레이션',text:'마야는 붕대를 그대로 두고 쉬라고 당부했다. 민하는 작별하고 휴식 공간으로 돌아왔다.'}],game_state:{date:'650-07-01',region:'W1',place:'휴식 공간'}});Object.assign(s,planNPCLife(s,arrival));s.scene=arrival;s.gameState={...s.gameState,...arrival.game_state};assert.equal(s.npc_life.npcs['ER-NPC-057'].place,'초소');assert.equal(s.npc_life.npcs['ER-NPC-057'].last_meeting.place,'초소');assert.equal(townPeople(s).some(n=>n.id==='ER-NPC-057'),false);assert.equal(s.npc_life.memories.filter(m=>m.npc_id==='ER-NPC-057'&&m.action==='첫 만남').length,1);
 });
