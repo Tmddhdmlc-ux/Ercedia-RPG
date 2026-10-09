@@ -2084,6 +2084,11 @@ input[type=range] {
   min-height:52px;
   padding:16px
 }
+.intro-options button[aria-pressed=true] {
+  border-color:var(--gold,#C9A66B);
+  background:#25231D;
+  box-shadow:inset 4px 0 #C9A66B
+}
 .intro-options strong,.intro-options span,.intro-options small {
   display:block
 }
@@ -2092,7 +2097,8 @@ input[type=range] {
   margin-top:8px
 }
 .intro-options small {
-  font-size:13px;
+  font-size:16px;
+  line-height:1.65;
   margin-top:10px
 }
 .intro-buttons {

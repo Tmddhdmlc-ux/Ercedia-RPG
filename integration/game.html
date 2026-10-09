@@ -2086,6 +2086,11 @@ input[type=range] {
   min-height:52px;
   padding:16px
 }
+.intro-options button[aria-pressed=true] {
+  border-color:var(--gold,#C9A66B);
+  background:#25231D;
+  box-shadow:inset 4px 0 #C9A66B
+}
 .intro-options strong,.intro-options span,.intro-options small {
   display:block
 }
@@ -2094,7 +2099,8 @@ input[type=range] {
   margin-top:8px
 }
 .intro-options small {
-  font-size:13px;
+  font-size:16px;
+  line-height:1.65;
   margin-top:10px
 }
 .intro-buttons {
@@ -5572,7 +5578,7 @@ const {freshCampaign}=module45;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
-  let lastStep='',starting=false,settings=null;
+  let lastStep='',starting=false,settings=null,editingAppearance=false;
   async function readSettings(){
     starting=true;chat.controls();
     try{settings=await loadCampaignSettings({onProgress:message=>{$('title-load-note').textContent=message;chat.reportStatus(message);}});return settings;}
@@ -5605,6 +5611,7 @@ function mountNewGame(state,{render,persist,chat,embedded}){
   function next(){
     const draft=state.introDraft;if(!draft)return;
     if(draft.step==='name'&&!draft.name.trim()){ $('intro-error').textContent='이름을 입력해주세요.';$('intro-input').focus();return; }
+    if(['calling','response'].includes(draft.step)&&!introData.questions.find(q=>q.id===draft.step).options.some(o=>o.id===draft.answers[draft.step])){ $('intro-error').textContent='원하는 답변 하나를 선택한 뒤 다음을 눌러주세요.';return; }
     if(draft.step==='passive'&&!passiveCandidates(draft.answers).includes(draft.passive)){ $('intro-error').textContent='두 후보 중 패시브 하나를 선택해주세요.';return; }
     if(draft.step==='lordship'&&!draft.lordship)return;
     go(introSteps[introSteps.indexOf(draft.step)+1]);
@@ -5660,19 +5667,31 @@ function mountNewGame(state,{render,persist,chat,embedded}){
       return;
     }
     const question=introData.questions.find(q=>q.id===draft.step),candidates=passiveCandidates(draft.answers);
-    $('intro-progress').textContent=`캐릭터 생성 ${introSteps.indexOf(draft.step)+1} / 5`;
-    $('intro-title').textContent=question?.text||'당신에게 남은 작은 힘';
-    $('intro-description').textContent=draft.step==='passive'?(candidates.length===1?'두 답변이 같은 방향을 가리킵니다. 아래 패시브 하나를 얻습니다.':'두 답변의 방향이 달라 동률입니다. 아래 두 후보 중 하나를 직접 고르세요.'):'이 대답은 당신의 여정에 작은 흔적을 남깁니다.';
-    const input=$('intro-input'),typing=['name','gender'].includes(draft.step);input.hidden=!typing;$('intro-input-label').hidden=!typing;
-    input.maxLength=draft.step==='name'?40:200;input.placeholder=draft.step==='name'?'이름을 입력하세요':'성별이나 모습을 자유롭게 적거나 건너뛰세요';
+    const labels={name:'이름',gender:'모습 · 선택 사항',calling:'배경 선택',response:'행동 성향',passive:'패시브 확인'};
+    if(lastStep!==draft.step)editingAppearance=!!draft.appearance;
+    $('intro-progress').textContent=`캐릭터 생성 ${introSteps.indexOf(draft.step)+1} / 5 · ${labels[draft.step]} → 이후 시작 지역 선택`;
+    const titles={name:'주인공의 이름을 정해주세요',gender:'모습을 지금 정할까요?',calling:'어떤 배경의 주인공으로 시작할까요?',response:'위험을 만나면 먼저 무엇을 할까요?',passive:'선택한 성향으로 얻는 패시브'};
+    $('intro-title').textContent=titles[draft.step];
+    const descriptions={name:'게임에서 사용할 이름만 입력하면 됩니다. 실제 이름이나 자기소개는 필요하지 않습니다.',gender:'선택 사항입니다. 버튼으로 고르거나 나중에 정해도 됩니다. 직접 적기는 원하는 경우에만 사용하며, 능력치와 주인공 이미지에는 영향을 주지 않습니다.',calling:'실제 자신의 경험을 쓰는 질문이 아닙니다. 만들고 싶은 주인공의 배경 하나를 선택하세요. 직업·장비가 확정되는 것은 아니며 작은 패시브의 후보를 정합니다.',response:'주인공이 취했으면 하는 행동 하나를 선택하세요. 앞선 배경과 함께 패시브 1개를 결정하며, 답변은 뒤로 가서 바꿀 수 있습니다.'};
+    $('intro-description').textContent=draft.step==='passive'?(candidates.length===1?'두 선택이 같은 패시브를 가리켰습니다. 아래 효과를 확인하고 시작 지역을 고르세요.':'두 선택이 서로 다른 패시브를 가리켰습니다. 원하는 효과 하나를 선택하세요. 둘 다 얻는 것은 아닙니다.'):descriptions[draft.step];
+    const input=$('intro-input'),typing=draft.step==='name'||draft.step==='gender'&&editingAppearance;input.hidden=!typing;$('intro-input-label').hidden=!typing;
+    input.maxLength=draft.step==='name'?40:200;input.placeholder=draft.step==='name'?'예: 청명':'예: 검은 머리의 여행자 (선택 사항, 200자 이내)';
     if(lastStep!==draft.step)input.value=draft.step==='name'?draft.name:draft.appearance;
-    $('intro-input-label').textContent=draft.step==='name'?'이름':'성별·모습 (선택)';
-    $('intro-skip').hidden=draft.step!=='gender';$('intro-next').hidden=['calling','response'].includes(draft.step);$('intro-next').textContent=draft.step==='passive'?'이 패시브로 시작 위치 선택':'다음';
-    $('intro-next').disabled=draft.step==='passive'&&!candidates.includes(draft.passive);
+    $('intro-input-label').textContent=draft.step==='name'?'주인공 이름 (필수)':'성별·모습 직접 입력 (선택)';
+    $('intro-skip').hidden=draft.step!=='gender'||!editingAppearance;$('intro-skip').textContent='모습은 나중에 정하기';
+    $('intro-next').hidden=draft.step==='gender'&&!editingAppearance;$('intro-next').textContent=draft.step==='passive'?'이 패시브로 시작 지역 선택':draft.step==='response'?'패시브 확인':'다음';
+    $('intro-next').disabled=draft.step==='passive'&&!candidates.includes(draft.passive)||['calling','response'].includes(draft.step)&&!question.options.some(o=>o.id===draft.answers[draft.step]);
     options.replaceChildren();
+    if(draft.step==='gender'){
+      for(const [label,value] of [['남성','남성'],['여성','여성'],['나중에 정하기','']]){
+        const button=text('button',label,options);button.type='button';button.onclick=()=>{draft.appearance=value;next();};
+      }
+      const edit=text('button','직접 적기 · 선택 사항',options);edit.type='button';edit.setAttribute('aria-expanded',String(editingAppearance));edit.onclick=()=>{editingAppearance=!editingAppearance;refresh();if(editingAppearance)input.focus();};
+    }
     if(question?.options)for(const option of question.options){
-      const button=text('button',option.label,options);button.type='button';button.setAttribute('aria-pressed',String(draft.answers[draft.step]===option.id));
-      button.onclick=()=>{draft.answers[draft.step]=option.id;if(draft.step==='response'){const ids=passiveCandidates(draft.answers);draft.passive=ids.length===1?ids[0]:'';}else draft.passive='';next();};
+      const button=document.createElement('button'),passive=introData.passives.find(p=>p.id===option.passive);button.type='button';button.setAttribute('aria-pressed',String(draft.answers[draft.step]===option.id));
+      text('strong',option.label,button);text('span',`패시브 후보: ${passive.name}`,button);text('small',passive.description,button);options.append(button);
+      button.onclick=()=>{draft.answers[draft.step]=option.id;if(draft.step==='response'){const ids=passiveCandidates(draft.answers);draft.passive=ids.length===1?ids[0]:'';}else draft.passive='';save();refresh();$('intro-next').focus();};
     }
     if(draft.step==='passive')for(const id of candidates){
       const passive=introData.passives.find(p=>p.id===id),button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed',String(draft.passive===id));text('strong',passive.name,button);text('span',passive.description,button);text('small','제한: '+passiveLimits[id],button);text('small','능력치 증가·기사 경지·마법 서클·깨달음 지급 없음',button);options.append(button);
