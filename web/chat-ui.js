@@ -1,5 +1,6 @@
 import {mergeRulings} from './gm-rulings.js';
 import {bindWallet,wallet} from './wallet.js';
+import {validateCraftingAttempt} from './crafting-policy.js';
 import {choicePresentation} from './choice-presentation.js';
 import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
@@ -146,6 +147,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       }
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      if(pending&&!pending.setupOnly&&!commitBattle)validateCraftingAttempt(state,pending.action,scene);
       const rulings=mergeRulings(state,scene);
       const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
       const marketOnly=scene.system_events?.length&&scene.system_events.every(e=>['shop_update','market'].includes(e.kind))&&!scene.player&&!scene.inventory&&!scene.battle&&!scene.engine_events?.length&&!scene.quest_events?.length&&!scene.life_events?.length&&scene.location===state.scene?.location&&scene.npc?.id===state.scene?.npc?.id&&['region','place','date','time'].every(k=>scene.game_state?.[k]===undefined||scene.game_state[k]===state.gameState[k]);

@@ -1,5 +1,7 @@
 # 에르세디아 RPG — 새 채팅 시작 필독 (BOOTSTRAP)
 
+**게임적 성사·빠른 진행:** [NARRATION_RULES.md](NARRATION_RULES.md)의 사용자 변경 원칙을 최우선으로 적용한다. 일반 행동에 현실적 결격 조건을 나열하며 안 된다고 종료하지 않고 GM이 방법을 마련해 같은 응답에서 성사시킨다. 하급 검 등 단독·독학 기본 제작은 준비·작업·완성·획득을 한 응답으로 처리한다. [CRAFTING_SYSTEM.md](CRAFTING_SYSTEM.md)의 정식 대장간 조건은 장인 위탁 정산용이며 단독 기본 제작 전체에 강제하지 않는다.
+
 **인물·세력 관계:** [CHARACTER_RELATIONSHIPS.md](CHARACTER_RELATIONSHIPS.md)를 적용한다. 상세 원문 [CHARACTER_RELATIONSHIPS_GM.md](CHARACTER_RELATIONSHIPS_GM.md)와 characters/relationship_graph_gm.json은 GM용이며 속마음·미발견 관계를 일반 NPC·도감에 공개하지 않는다. 현재 플레이의 실제 기록이 초기 관계를 우선한다. 왕실 후계자 3명은 새 이름·관계 설정이고 전투 수치·원화·등록 장면 ID는 미정이다.
 
 **지역 던전 필수:** [DUNGEON_ENCOUNTERS.md](DUNGEON_ENCOUNTERS.md)의 26개 던전별 환경·탐색 대응과 보스·정예 52종을 적용한다. 최신 locations/dungeon_layouts.json의 encounter_profile 및 encounter_ids, locations/dungeon_encounters.json의 수치를 사용한다. 정예 역할은 마수 위협등급 ‘엘리트’와 별개다. 새 보스와 미지 구역의 중요한 선택은 요약 생략하지 않는다.
