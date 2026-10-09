@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {uiSamples} from '../web/ui-audio.js';
 import {createBattleAudio,impactCue,impactSamples} from '../web/battle-audio.js';
 const hit={kind:'attack',result:'hit',damage:18};
 function harness(fetchAudio=async()=>({ok:true,arrayBuffer:async()=>new ArrayBuffer(8)})){
@@ -28,7 +29,7 @@ test('sample failures remain nonfatal and can be retried; voice count is bounded
   fail=false;assert.equal(await h.audio.unlock(),true);for(let i=0;i<12;i++)h.audio.play(hit);assert.equal(h.audio.status().active,4);h.audio.stop();assert.equal(h.audio.status().active,0);
 });
 test('all registered samples are real Ogg assets and match the bundle audio list',async()=>{
-  const paths=Object.values(impactSamples).flat().map(n=>'assets/audio/'+n+'.ogg').sort();
+  const paths=[...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').sort();
   assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))),paths);
   for(const path of paths){const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),'OggS');assert.ok(bytes.length>1000);}
 });

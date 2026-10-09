@@ -1744,7 +1744,7 @@ input[type=range] {
  .game[data-battle=active] .game-utility,.game[data-battle=active] .play-hud,.game[data-battle=active] #characters,.game[data-battle=active] .location,.game[data-battle=active] .npc-info-button,.game[data-battle=active] .portrait-hint,.game[data-battle=active] .npc-action-menu,.game[data-battle=active] .npc-info-card,.game[data-battle=active] .tap-hint,.game[data-battle=active] .story-controls,.game[data-battle=active] .chat-runtime {
   display:none!important
 }
-.game[data-battle=active] .tabs button:not(#fullscreen) {
+.game[data-battle=active] .tabs button:not(#fullscreen):not(.ui-sound-toggle) {
   display:none
 }
 .game[data-battle=active] .tabs {
@@ -2186,7 +2186,7 @@ input[type=range] {
 .game[data-intro-phase=map] .map-regions button:not([data-map-view=west]):not([data-map-view=east]):not([data-map-view=south]) {
   display:none!important
 }
-.game[data-intro-phase=map] .tabs button:not(#fullscreen) {
+.game[data-intro-phase=map] .tabs button:not(#fullscreen):not(.ui-sound-toggle) {
   pointer-events:none;
   opacity:.4
 }
