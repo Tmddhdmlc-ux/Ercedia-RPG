@@ -8,6 +8,7 @@
 추가 세계 엔진 사건은 [tampermonkey/WORLD_ENGINE_SCHEMA.md](tampermonkey/WORLD_ENGINE_SCHEMA.md)를 따른다. 사용자 지정 13개 개발 순서와 기존 구현 판정은 [patches/README.md](patches/README.md)에 기록한다. 설정 데이터와 실제 실행 성공을 구분한다.
 
 ## A. 시작 시 읽는 순서
+**새 게임 필수:** BOOTSTRAP 직후 [GAMEPLAY_CONVENIENCE_RULES.md](GAMEPLAY_CONVENIENCE_RULES.md) v1.1 이상의 원문을 읽고 아래 모든 턴에 적용한다. 예시는 한정 목록이 아니다. GM은 매 장면 불필요한 확인 질문을 선제적으로 생략하고, 일반 이동·치료·귀환·휴식·반복 절차를 실제 조건에 맞게 자동 후처리한다. 중요한 선택만 질문한다. 파일이 없거나 v1.1의 포괄적 선제 후처리 규칙을 읽지 못했다면 설정 읽기 완료를 주장하거나 첫 GM 장면을 시작하지 않는다.
 전투 UI와 전투 장면 출력은 [BATTLE_SYSTEM.md](BATTLE_SYSTEM.md)를 함께 읽는다. 전투 수치는 COMBAT_GROWTH.md, 성장은 PROGRESSION.md, 마수 등급은 MONSTER_RANKS.md를 따른다. UI는 GM이 사전 판정한 전체 사건을 재생하며 추가 판정·재추첨을 하지 않는다.
 1. **BOOTSTRAP.md (현재 파일)**: 진행 방식, 세계관 요약, 정보 접근 등급, 금지사항.
 2. **WORLD.md**: 일반 세계의 마나, 전력, 세력 및 공개 지식. *이후 추가된 세부 전문 문서가 낡은 WORLD.md 문장보다 우선한다.*

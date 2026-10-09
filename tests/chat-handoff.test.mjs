@@ -1,3 +1,5 @@
+import {readFileSync} from 'node:fs';
+const convenienceRules=readFileSync(new URL('../GAMEPLAY_CONVENIENCE_RULES.md',import.meta.url),'utf8');
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {validateChatHandoff,installLocalHandoff,readChatHandoff} from '../web/chat-handoff.js';
@@ -6,7 +8,7 @@ import {mountChatUI} from '../web/chat-ui.js';
 import {uiHarness} from './ui-harness.mjs';
 import {defaults,normalize} from '../web/state.js';
 import {mountNewGame} from '../web/new-game.js';
-const settings=()=>({sha:'a'.repeat(40),paths:['BOOTSTRAP.md','WORLD.md'],files:{'BOOTSTRAP.md':'GM 안내 원문','WORLD.md':'공식 세계관 원문'}});
+const settings=()=>({sha:'a'.repeat(40),paths:['BOOTSTRAP.md','GAMEPLAY_CONVENIENCE_RULES.md','WORLD.md'],files:{'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'GM 안내 원문','WORLD.md':'공식 세계관 원문'}});
 const packet=()=>{const state=defaults();state.player.name='검증';return {state,settings:settings(),action:'첫 GM 장면을 시작하세요.'};};
 const id='aaaaaaaa-aaaa-aaaa-aaaa-aaaaaaaaaaaa';
 test('handoff contains complete settings and a named save, and rejects missing settings or an unfinished intro',()=>{
@@ -46,7 +48,7 @@ test('settings are sent before entering a name, and the acknowledgement cannot m
     window.__ERCEDIA_CONFIG__.features=['settings-attachment'];const state=defaults();state.introDraft={step:'name'};const original=structuredClone(state);
     const chat=mountChatUI(state,{render(){},persist(){},storage:{},embedded:true});chat.sendSettings(settings());
     const action=h.messages.find(m=>m.type==='action');assert.ok(action);assert.match(action.payload.text,/이름·성별·직업·시작 지역은 아직 선택 전/);assert.ok(action.payload.settingsFile);assert.equal(state.player.name,'');
-    const ack={schema_version:1,type:'ercedia_scene',scene_id:'settings-ready',reply_to:action.payload.requestId,location:'캐릭터 생성 준비',time:'시작 전',background_id:null,npc:null,dialogue:[{speaker:'시스템',text:'설정 읽기 완료'}],choices:[],settings_loaded:{commit:settings().sha,file_count:2}};
+    const ack={schema_version:1,type:'ercedia_scene',scene_id:'settings-ready',reply_to:action.payload.requestId,location:'캐릭터 생성 준비',time:'시작 전',background_id:null,npc:null,dialogue:[{speaker:'시스템',text:'설정 읽기 완료'}],choices:[],settings_loaded:{commit:settings().sha,file_count:3}};
     h.reply('scene',JSON.stringify(ack));assert.equal(chat.isPending(),false);assert.deepEqual(state,original);assert.match(h.get('connection-status').textContent,/설정 읽기 확인 완료/);
     delete state.introDraft;state.player.name='이후 선택한 이름';chat.setCampaignSettings(settings());chat.submit('첫 게임 장면을 시작한다');
     const second=h.messages.filter(m=>m.type==='action').at(-1);assert.equal(second.payload.settingsFile,undefined);
@@ -54,7 +56,7 @@ test('settings are sent before entering a name, and the acknowledgement cannot m
 });
 test('starting the new-game controller sends settings while the first name step is still empty',async()=>{
   const h=uiHarness(),oldFetch=globalThis.fetch;try{
-    const sha='b'.repeat(40),files={'BOOTSTRAP.md':'시작 규칙','WORLD.md':'세계관','characters/player_default.json':'{}','characters/serin.json':'{}'},events=[],requests=[];
+    const sha='b'.repeat(40),files={'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'시작 규칙','WORLD.md':'세계관','characters/player_default.json':'{}','characters/serin.json':'{}'},events=[],requests=[];
     globalThis.fetch=async url=>({ok:true,json:async()=>url.includes('/git/ref/')?{object:{sha}}:{tree:Object.keys(files).map(path=>({path,type:'blob'}))},text:async()=>files[url.split('/'+sha+'/')[1]]});
     document.dispatchEvent=event=>{events.push(event.type);return true;};const state=defaults();
     const controller=mountNewGame(state,{embedded:true,render(){},persist(){},chat:{controls(){},reportStatus(){},isPending:()=>false,sendSettings:s=>requests.push(s)}});

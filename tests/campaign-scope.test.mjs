@@ -1,10 +1,12 @@
+import {readFileSync} from 'node:fs';
+const convenienceRules=readFileSync(new URL('../GAMEPLAY_CONVENIENCE_RULES.md',import.meta.url),'utf8');
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {loadCampaignSettings,campaignSettingsAttachment,isCampaignSetting} from '../web/campaign-settings.js';
 import {validateChatHandoff} from '../web/chat-handoff.js';
 import {defaults} from '../web/state.js';
 const sha='b'.repeat(40);
-const base={'BOOTSTRAP.md':'GM rules','WORLD.md':'World rules','characters/player_default.json':'{}','characters/serin.json':'{}'};
+const base={'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'GM rules','WORLD.md':'World rules','characters/player_default.json':'{}','characters/serin.json':'{}'};
 function source(files,{fail}={}){
   const requests=[];
   const fetcher=async url=>{
@@ -25,13 +27,13 @@ test('more than 200 settings and 1.5 million characters reach the attachment and
   const files={...base,'lore/세계 설정.md':'설정'.repeat(400000),'economy/history.md':'x'.repeat(800000)};
   for(let i=0;i<215;i++)files[`lore/nested/rule-${i}.md`]='Approved rule';
   const {fetcher,requests}=source(files),snapshot=await loadCampaignSettings({fetcher});
-  assert.equal(snapshot.paths.length,221);
-  assert.equal(snapshot.repository_index.length,223);
+  assert.equal(snapshot.paths.length,222);
+  assert.equal(snapshot.repository_index.length,224);
   assert.ok(requests.some(url=>url.includes(encodeURIComponent('세계 설정.md'))));
   assert.ok(requests.slice(2).every(url=>url.includes(sha)));
   const attachment=campaignSettingsAttachment(snapshot);
   assert.ok(attachment.file.content.length>1500000);
-  assert.match(attachment.instruction,/file_count:221/);
+  assert.match(attachment.instruction,/file_count:222/);
   assert.ok(attachment.file.content.includes('<<<GITHUB_SETTING lore/세계 설정.md>>>'));
   assert.ok(!attachment.file.content.includes('<<<GITHUB_SETTING assets/characters/portrait.png>>>'));
   const state=defaults();state.introDraft={step:'name'};

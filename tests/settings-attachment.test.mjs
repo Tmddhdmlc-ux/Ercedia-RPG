@@ -1,9 +1,11 @@
+import {readFileSync} from 'node:fs';
+const convenienceRules=readFileSync(new URL('../GAMEPLAY_CONVENIENCE_RULES.md',import.meta.url),'utf8');
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {attachCampaignSettings} from '../web/settings-attachment.js';
 import {campaignSettingsAttachment} from '../web/campaign-settings.js';
 test('full settings travel in a file while the composer receives a bounded bootstrap request',()=>{
-  const snapshot={sha:'a'.repeat(40),paths:['BOOTSTRAP.md'],files:{'BOOTSTRAP.md':'source rules '.repeat(10000)}},a=campaignSettingsAttachment(snapshot);
+  const snapshot={sha:'a'.repeat(40),paths:['BOOTSTRAP.md','GAMEPLAY_CONVENIENCE_RULES.md'],files:{'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'source rules '.repeat(10000)}},a=campaignSettingsAttachment(snapshot);
   assert.ok(a.instruction.length<1500);assert.ok(a.file.content.length>100000);assert.ok(a.instruction.includes('settings_loaded'));assert.ok(a.file.name.endsWith('.txt'));
 });
 test('attachment without an available public file input fails before sending the request',async()=>{
