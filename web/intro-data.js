@@ -204,5 +204,7 @@ export const playerTemplate = {
     "base_attack_max": 28
   },
   "state": "template_not_active_save",
-  "rules_reference": "COMBAT_GROWTH.md"
+  "rules_reference": "COMBAT_GROWTH.md",
+  "starting_wallet_copper": 500,
+  "currency_rules_reference": "CURRENCY_ECONOMY.md"
 };

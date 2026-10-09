@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.2.1
+// @version      1.2.2
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -40,7 +40,7 @@ function extractSceneJSON(source){
 
   // Uses only ChatGPT's public file input and visible attachment confirmation.
 async function attachCampaignSettings(file,{roots,isCurrent,wait}){
-  if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>1500000)throw Error('설정 첨부 파일 형식 오류');
+  if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>8000000)throw Error('설정 첨부 파일 형식 오류');
   const findInputs=()=>roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
   const suitable=node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim())));
   let inputs=findInputs(),input=inputs.find(suitable);
@@ -66,10 +66,10 @@ async function attachCampaignSettings(file,{roots,isCurrent,wait}){
 }
 
   function validateChatHandoff(payload){
-  if(!payload||typeof payload!=='object'||JSON.stringify(payload).length>4000000)throw Error('게임 전달 데이터가 너무 크거나 올바르지 않습니다.');
+  if(!payload||typeof payload!=='object'||JSON.stringify(payload).length>16000000)throw Error('게임 전달 데이터가 너무 크거나 올바르지 않습니다.');
   const s=payload.settings;
-  if(!/^[a-f0-9]{40}$/.test(s?.sha||'')||!Array.isArray(s.paths)||s.paths.length>500||new Set(s.paths).size!==s.paths.length||!s.paths.includes('BOOTSTRAP.md')||!s.paths.includes('WORLD.md'))throw Error('전체 GitHub 설정이 필요합니다.');
-  let size=0;for(const path of s.paths){if(typeof path!=='string'||typeof s.files?.[path]!=='string')throw Error('누락된 설정 원문이 있습니다.');size+=s.files[path].length;}if(size>1500000)throw Error('설정 원문이 전송 한도를 초과했습니다.');
+  if(!/^[a-f0-9]{40}$/.test(s?.sha||'')||!Array.isArray(s.paths)||s.paths.length>2000||new Set(s.paths).size!==s.paths.length||!s.paths.includes('BOOTSTRAP.md')||!s.paths.includes('WORLD.md'))throw Error('전체 GitHub 설정이 필요합니다.');
+  let size=0;for(const path of s.paths){if(typeof path!=='string'||typeof s.files?.[path]!=='string')throw Error('누락된 설정 원문이 있습니다.');size+=s.files[path].length;}if(size>6000000)throw Error('설정 원문이 전송 한도를 초과했습니다.');
   const setup=payload.stage==='setup'&&payload.state?.introDraft?.step==='name';
   if(payload.state?.version!==1||(!setup&&(!payload.state.player?.name?.trim()||payload.state.introDraft))||typeof payload.action!=='string'||!payload.action.trim()||payload.action.length>2000)throw Error('새 게임 설정 또는 현재 게임 상태가 올바르지 않습니다.');
   return payload;
@@ -87,7 +87,7 @@ function installLocalHandoff({scope,write,openTab,now=Date.now}){
   const handled=new Set();
   scope.addEventListener('message',event=>{
     const d=event.data;if(event.source!==scope||event.origin!==scope.location.origin||d?.channel!=='ercedia-handoff')return;
-    if(d.type==='probe'){reply('ready',d.id,{version:'1.2.1'});return;}
+    if(d.type==='probe'){reply('ready',d.id,{version:'1.2.2'});return;}
     if(d.type!=='start'||!/^[a-f0-9-]{36}$/.test(d.id||'')||handled.has(d.id))return;
     try{validateChatHandoff(d.payload);handled.add(d.id);const key='ercedia.handoff.v1:'+d.id;write(key,{...d.payload,created:now()});openTab('https://chatgpt.com/#ercedia-handoff='+d.id);reply('opened',d.id,'새 ChatGPT 채팅에서 설정과 게임 상태를 전달하고 있습니다.');}
     catch(error){reply('error',d.id,error.message);}
@@ -191,8 +191,9 @@ function installLocalHandoff({scope,write,openTab,now=Date.now}){
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.2.1 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.2 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
+      if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
     finally{switching=false;update.disabled=false;rollback.disabled=!previous;}
@@ -203,10 +204,10 @@ function installLocalHandoff({scope,write,openTab,now=Date.now}){
     try{
       const commit=JSON.parse(await request(`https://api.github.com/repos/${REPO}/commits/main?check=${Date.now()}`));
       if(!/^[a-f0-9]{40}$/.test(commit.sha))throw Error('커밋 식별자가 올바르지 않습니다.');
-      if(commit.sha===active?.release.sha||commit.sha===prepared?.sha){if(force)tell('현재 확인된 최신 UI입니다.');return;}
+      if(commit.sha===active?.release.sha||commit.sha===prepared?.sha){if(force){tell('현재 확인된 최신 UI입니다. GitHub 게임 설정도 확인합니다.');if(active)send('sync-settings',null);}return;}
       const base=`https://raw.githubusercontent.com/${REPO}/${commit.sha}/integration/`;
       const manifest=JSON.parse(await request(base+'update-manifest.json'));
-      if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force)tell('게임 UI 변경이 없습니다.');return;}
+      if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force){tell('게임 UI 변경이 없습니다. 최신 GitHub 설정을 동기화합니다.');send('sync-settings',null);}return;}
       const release=await verify({sha:commit.sha,manifest,html:await request(base+'game.html')});
       if(!active)return await activate(release,true);
       prepared=release;update.hidden=false;tell(`새 UI 발견 · 현재 v${active.release.manifest.version} → v${manifest.version} (${commit.sha.slice(0,7)}). 진행 상태를 유지한 채 업데이트 적용을 누르세요.`);

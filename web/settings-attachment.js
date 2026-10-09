@@ -1,6 +1,6 @@
 // Uses only ChatGPT's public file input and visible attachment confirmation.
 export async function attachCampaignSettings(file,{roots,isCurrent,wait}){
-  if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>1500000)throw Error('설정 첨부 파일 형식 오류');
+  if(!/^ercedia-settings-[a-f0-9]{40}\.txt$/.test(file?.name||'')||typeof file.content!=='string'||file.content.length>8000000)throw Error('설정 첨부 파일 형식 오류');
   const findInputs=()=>roots().flatMap(root=>[...root.querySelectorAll('input[type="file"]')]);
   const suitable=node=>!node.disabled&&(!node.accept||node.accept.split(',').some(t=>/^(?:\.txt|text\/.*|application\/.*|\*|\*\/\*)$/i.test(t.trim())));
   let inputs=findInputs(),input=inputs.find(suitable);
