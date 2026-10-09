@@ -7085,6 +7085,72 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 
 return {mountNewGame};})();
 const module68=(()=>{
+// External CC0 samples. Audio is presentation only and never changes combat data.
+const impactSamples={
+  hit:['impactPunch_medium_000','impactPunch_medium_001','impactPunch_medium_002'],
+  critical:['impactPunch_heavy_000','impactPunch_heavy_001'],
+  block:['impactMetal_medium_000','impactMetal_medium_001'],
+  dodge:['knifeSlice','knifeSlice2']
+};
+function impactCue(event){
+  if(!['attack','counter','magic','unique','defend'].includes(event.kind))return null;
+  if(event.result==='dodge')return 'dodge';
+  if(event.result==='block'||event.kind==='defend')return 'block';
+  if(!(event.damage>0))return null;
+  return event.result==='critical'?'critical':'hit';
+}
+function createBattleAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),storage=()=>window.localStorage}={}){
+  let ctx,master,loading,ready=false,unlocked=false,muted=false,volume=.65,error=false,played=0,lastCue=null;
+  const buffers=new Map(),voices=new Set(),cursor={};
+  try{const saved=JSON.parse(storage().getItem('ercedia-impact-audio')||'null');if(saved){muted=saved.muted===true;if(Number.isFinite(saved.volume))volume=Math.max(0,Math.min(1,saved.volume));}}catch{}
+  const status=()=>({ready,unlocked,muted,volume,error,played,lastCue,active:voices.size});
+  const report=()=>onStatus(status());
+  function save(){try{storage().setItem('ercedia-impact-audio',JSON.stringify({muted,volume}));}catch{}}
+  function stop(){for(const source of voices){try{source.stop();}catch{}source.disconnect();}voices.clear();}
+  async function unlock(){
+    try{
+      if(!ctx){ctx=contextFactory();master=ctx.createGain();master.connect(ctx.destination);master.gain.value=muted?0:volume;}
+      // Resume immediately in the trusted click; no delayed impacts are queued.
+      await ctx.resume();unlocked=ctx.state==='running';
+      if(!loading){error=false;loading=Promise.all(Object.values(impactSamples).flat().map(async name=>{
+        if(buffers.has(name))return;
+        const response=await fetchAudio(assetBase+'assets/audio/kenney/'+name+'.ogg');
+        if(!response.ok)throw Error('Audio load failed');
+        buffers.set(name,await ctx.decodeAudioData(await response.arrayBuffer()));
+      })).then(()=>{ready=true;error=false;report();}).catch(()=>{loading=null;error=true;report();});}
+      report();await loading;return ready&&unlocked;
+    }catch{error=true;report();return false;}
+  }
+  function play(event){
+    const cue=impactCue(event);
+    if(!cue||!ready||muted||volume===0||ctx?.state!=='running')return false;
+    const choices=impactSamples[cue],index=(cursor[cue]||0)%choices.length;cursor[cue]=index+1;
+    while(voices.size>=4){const oldest=voices.values().next().value;oldest.stop();voices.delete(oldest);}
+    const source=ctx.createBufferSource(),gain=ctx.createGain();source.buffer=buffers.get(choices[index]);
+    gain.gain.value=cue==='critical'?.95:cue==='block'?.58:cue==='dodge'?.6:.82;
+    source.connect(gain);gain.connect(master);voices.add(source);
+    source.onended=()=>{voices.delete(source);source.disconnect();gain.disconnect();};
+    source.start();played++;lastCue=cue;report();return true;
+  }
+  function setMuted(value){muted=!!value;if(muted)stop();if(master)master.gain.value=muted?0:volume;save();report();}
+  function setVolume(value){volume=Math.max(0,Math.min(1,Number(value)||0));if(master)master.gain.value=muted?0:volume;if(volume===0)stop();save();report();}
+  return {unlock,play,stop,setMuted,setVolume,status};
+}
+function mountBattleAudio(controls,assetBase){
+  const button=document.createElement('button'),label=document.createElement('label'),slider=document.createElement('input'),note=document.createElement('span');
+  button.type='button';button.id='battle-sound';slider.type='range';slider.min='0';slider.max='100';slider.step='5';slider.id='battle-volume';slider.setAttribute('aria-label','타격음 음량');
+  label.style.whiteSpace='nowrap';label.textContent='타격음 ';label.append(slider);note.id='battle-audio-status';note.setAttribute('role','status');note.style.fontSize='12px';
+  const audio=createBattleAudio({assetBase,onStatus:s=>{note.dataset.played=String(s.played);note.dataset.cue=s.lastCue||'';button.textContent=s.muted?'소리 켜기':s.unlocked?'소리 끄기':'소리 켜기';button.setAttribute('aria-pressed',String(s.unlocked&&!s.muted));slider.value=String(Math.round(s.volume*100));note.textContent=s.error?'음원 로드 실패 · 다시 켜기':s.ready?(s.muted?'음소거':'타격음 준비됨'):s.unlocked?'음원 준비 중':'클릭하면 타격음이 켜집니다';}});
+  slider.value=String(Math.round(audio.status().volume*100));button.textContent='소리 켜기';note.textContent='클릭하면 타격음이 켜집니다';
+  button.onclick=async()=>{const s=audio.status();if(s.unlocked&&!s.muted&&!s.error){audio.setMuted(true);return;}audio.setMuted(false);await audio.unlock();};
+  slider.oninput=()=>audio.setVolume(Number(slider.value)/100);
+  controls.append(button,label,note);
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)audio.stop();});
+  return audio;
+}
+
+return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
+const module69=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -7093,7 +7159,7 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module69=(()=>{
+const module70=(()=>{
 const {mapData}=module5;
 const {lordships}=module59;
 const {factionLocations}=module46;
@@ -7176,20 +7242,22 @@ function mountDialogueGlossary(element){
 
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
 const module67=(()=>{
+const {mountBattleAudio}=module68;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module27;
 const {characterVisual,artBase}=module3;
 const {faceFit}=module9;
 const {resolveBackground,backgroundURL}=module37;
 const {appendItemIcon}=module48;
-const {battleCommentary}=module68;
-const {renderDialogueTerms}=module69;
+const {battleCommentary}=module69;
+const {renderDialogueTerms}=module70;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
+  const audio=mountBattleAudio($('battle-controls'),assetBase||'');
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
   const duration=e=>e.kind==='unique'?2200:e.skill_id?1600:e.result==='critical'?1300:1000;
-  function clearAnimation(){for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
+  function clearAnimation(){audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
   function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
   function save(){persist();chat.controls();}
   function art(slot,p){
@@ -7222,7 +7290,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
   function impact(){
-    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;showResources(battleFrame(b,playback.index+1));
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden)audio.play(e);showResources(battleFrame(b,playback.index+1));
     const target=slots.find(s=>s.id===e.target);
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
@@ -7234,7 +7302,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
   }
   function tick(now){
     if(!battleIsActive(state)){stop();return;}
-    if(document.querySelector('.game').dataset.title==='active'){lastTime=0;raf=requestAnimationFrame(tick);return;}
+    if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
     if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)*.8)$('battle-cutin').hidden=true;if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
@@ -7273,7 +7341,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
   function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}
   $('battle-next').onclick=next;
   $('battle-mode').onclick=()=>{if(!battleIsActive(state))return;const p=state.battlePlayback;p.manual=p.manual===false;if(!p.manual&&waiting){waiting=false;p.paused=false;for(const a of animations)a.play();}save();refresh();};
-  $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
+  $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;if(p.paused)audio.stop();for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
   $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
   $('battle-skip').onclick=finish;
   $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.manual=true;p.replay=true;identity=null;state.page='story';save();render();};
@@ -7282,7 +7350,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module71=(()=>{
+const module72=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module3;
 const {findNPC}=module28;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -7311,8 +7379,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module70=(()=>{
-const {mountNPCLocations}=module71;
+const module71=(()=>{
+const {mountNPCLocations}=module72;
 const {registeredArt,artBase,placementLabel}=module3;
 const {catalogData}=module29;
 const {npcCatalog,resolveNPC,npcRankLabel}=module28;
@@ -7353,7 +7421,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module72=(()=>{
+const module73=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -7375,7 +7443,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module74=(()=>{
+const module75=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module20;
 const {applyItemRarity}=module33;
 const {appendItemIcon}=module48;
@@ -7409,7 +7477,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module75=(()=>{
+const module76=(()=>{
 const {engineItem}=module26;
 const {appendItemIcon}=module48;
 const {applyItemRarity}=module33;
@@ -7444,12 +7512,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module73=(()=>{
+const module74=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module26;
 const {applyItemRarity}=module33;
 const {appendItemIcon}=module48;
-const {mountItemLibrary}=module74;
-const {mountEquipmentSlots}=module75;
+const {mountItemLibrary}=module75;
+const {mountEquipmentSlots}=module76;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -7476,7 +7544,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module76=(()=>{
+const module77=(()=>{
 const {publicLife,lifeRole}=module44;
 const {findNPC}=module28;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -7525,15 +7593,15 @@ const {mountNPCInfo}=module62;
 const {mountPlayHUD}=module63;
 const {mountNewGame}=module64;
 const {mountBattleUI}=module67;
-const {dialogueVoice}=module68;
-const {renderDialogueTerms,mountDialogueGlossary}=module69;
-const {mountCatalogUI}=module70;
+const {dialogueVoice}=module69;
+const {renderDialogueTerms,mountDialogueGlossary}=module70;
+const {mountCatalogUI}=module71;
 const {initializeNameOnlyPlayer}=module57;
 const {locationLabel:canonicalLocationLabel}=module40;
-const {mountTitleMenu}=module72;
+const {mountTitleMenu}=module73;
 const {mountQuestUI}=module55;
-const {mountEngineUI}=module73;
-const {mountNPCLifeUI}=module76;
+const {mountEngineUI}=module74;
+const {mountNPCLifeUI}=module77;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module45;
 const $=id=>document.getElementById(id);
 mountDialogueGlossary($('line'));

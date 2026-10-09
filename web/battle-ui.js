@@ -1,3 +1,4 @@
+import {mountBattleAudio} from './battle-audio.js';
 import {battleIsActive,battleFrame,validateBattleSettlement} from './battle-model.js';
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
@@ -7,11 +8,12 @@ import {battleCommentary} from './battle-presentation.js';
 import {renderDialogueTerms} from './dialogue-glossary.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
+  const audio=mountBattleAudio($('battle-controls'),assetBase||'');
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
   const duration=e=>e.kind==='unique'?2200:e.skill_id?1600:e.result==='critical'?1300:1000;
-  function clearAnimation(){for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
+  function clearAnimation(){audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
   function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
   function save(){persist();chat.controls();}
   function art(slot,p){
@@ -44,7 +46,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
   function impact(){
-    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;showResources(battleFrame(b,playback.index+1));
+    const playback=state.battlePlayback,b=playback.scene.battle,e=b.events[playback.index];impacted=true;if(!document.hidden)audio.play(e);showResources(battleFrame(b,playback.index+1));
     const target=slots.find(s=>s.id===e.target);
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
@@ -56,7 +58,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   }
   function tick(now){
     if(!battleIsActive(state)){stop();return;}
-    if(document.querySelector('.game').dataset.title==='active'){lastTime=0;raf=requestAnimationFrame(tick);return;}
+    if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
     if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)*.8)$('battle-cutin').hidden=true;if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
@@ -95,7 +97,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
   function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}
   $('battle-next').onclick=next;
   $('battle-mode').onclick=()=>{if(!battleIsActive(state))return;const p=state.battlePlayback;p.manual=p.manual===false;if(!p.manual&&waiting){waiting=false;p.paused=false;for(const a of animations)a.play();}save();refresh();};
-  $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
+  $('battle-pause').onclick=()=>{const p=state.battlePlayback;if(!battleIsActive(state))return;p.paused=!p.paused;if(p.paused)audio.stop();for(const a of animations)p.paused?a.pause():a.play();$('battle-pause').textContent=p.paused?'재개':'일시정지';lastTime=0;save();};
   $('battle-speed').onchange=e=>{if(!battleIsActive(state))return;state.battlePlayback.speed=Number(e.target.value);for(const a of animations)a.playbackRate=state.battlePlayback.speed;lastTime=0;save();};
   $('battle-skip').onclick=finish;
   $('battle-replay').onclick=()=>{const p=state.battlePlayback;if(!p?.done||chat.isPending())return;p.index=0;p.done=false;p.paused=false;p.manual=true;p.replay=true;identity=null;state.page='story';save();render();};
