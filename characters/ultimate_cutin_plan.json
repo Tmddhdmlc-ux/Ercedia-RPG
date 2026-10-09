@@ -1502,8 +1502,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-014/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -1511,12 +1511,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-014/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.54,
+            "y": 0.01,
+            "width": 0.24,
+            "height": 0.38
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-014/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -1524,10 +1535,21 @@
             "effect": "같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-014/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.3,
+            "y": 0.01,
+            "width": 0.22,
+            "height": 0.33
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "서고 등불 · 결전식",
       "element": "빛",
       "composition": {
@@ -1588,8 +1610,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-015/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -1597,12 +1619,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-015/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.38,
+            "y": 0.01,
+            "width": 0.29,
+            "height": 0.41
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-015/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -1610,10 +1643,21 @@
             "effect": "같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-015/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.62,
+            "y": 0.03,
+            "width": 0.2,
+            "height": 0.31
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "뇌명 분할 · 결전식",
       "element": "전기",
       "composition": {
@@ -1674,8 +1718,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-016/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -1683,12 +1727,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-016/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.48,
+            "y": 0.01,
+            "width": 0.27,
+            "height": 0.41
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-016/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -1696,10 +1751,21 @@
             "effect": "같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-016/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0.04,
+            "width": 0.2,
+            "height": 0.32
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "공방 도통 · 결전식",
       "element": "전기",
       "composition": {
