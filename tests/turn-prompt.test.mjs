@@ -69,3 +69,9 @@ test('failed responses do not cause automatic settings retransmission',()=>{
     const actions=h.messages.filter(m=>m.type==='action');assert.ok(!actions.at(-1).payload.text.includes("[대장간 제작]"));assert.equal(actions.at(-1).payload.settingsFile,undefined);
   }finally{h.close();}
 });
+
+
+test('execution requests delegate routine timing and outcomes while preserving information-only and progression safeguards',()=>{
+ const s=saved();for(const compact of [true,false]){const prompt=actionPrompt(s,'개인 기초 단련 1회를 실행한다.','training-r',{compact});assert.match(prompt,/통상적인 소요 시간/);assert.match(prompt,/이번 응답에서 사건과 시각/);assert.match(prompt,/정보 문의는 실행 동의가 아니며/);assert.match(prompt,/큰 위험/);assert.match(prompt,/반복 안전 활동/);assert.match(prompt,/능력치 포인트 배분/);assert.match(prompt,/경지 돌파는 자동 확정하지/);}
+ const compact=actionPrompt(s,'안부를 묻는다.','r',{compact:true});assert.match(compact,/kind는 dialogue\/travel\/quest\/investigate\/trade\/training\/action/);
+});

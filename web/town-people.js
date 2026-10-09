@@ -18,10 +18,14 @@ export function townPeople(state){
     people.set(p.id,{...p,job:findNPC(p.id)?.duty||'직업 미확인',confirmed:true});
   }
   for(const p of regionalCommonNPCs(state))if(!people.has(p.id))people.set(p.id,{...p,activity:'활동 확인 필요',confirmed:p.presence_confirmed});
-  return [...people.values()].sort((a,b)=>Number(b.confirmed)-Number(a.confirmed));
+  return [...people.values()].map(p=>{
+    const moving=state.npc_life?.npcs?.[p.id]?.activity==='이동 중';
+    const canTalk=p.confirmed&&!moving;
+    return {...p,canTalk,unavailableReason:moving?'이동 중이라 지금 만날 수 없습니다.':p.confirmed?'':'현재 위치가 확인되지 않아 직접 만날 수 없습니다.'};
+  }).sort((a,b)=>Number(b.confirmed)-Number(a.confirmed));
 }
 export function townConversation(state,id){
-  const person=townPeople(state).find(p=>p.id===id);if(!person)return null;
+  const person=townPeople(state).find(p=>p.id===id);if(!person?.canTalk)return null;
   const {region,place}=actualPlace(state);
   return `[현지 인물 방문] 실제 출발지 ${region} · ${place}. ${person.name}(${id})을 ${person.confirmed?'찾아가 대화를 시도한다':'현지에서 찾아 위치를 확인한 뒤 대화를 시도한다'}. 현재 위치·일정·직무·접근 경로·이동 시간과 만남 가능 여부를 확인한다. 다른 곳으로 이동했다면 소환하지 말고 부재와 확인 가능한 행방을 안내한다. 실제 만남이 성립할 때만 npc 또는 cast에 등록 ID=${id}, 등록 의상·표정을 넣고 해당 인물의 말투로 dialogue를 출력한다. 처음 만남과 재회는 기존 life_events와 기억을 따른다. 클릭만으로 위치·만남·호감도·의뢰·거래 성공이나 보상을 확정하지 않는다.`;
 }
@@ -37,23 +41,24 @@ export function mountTownPeople(state,{submit,isPending}){
   function render(){
     panel.hidden=state.page!=='story'||!!state.introDraft||!state.player.name||document.querySelector('.game').dataset.title==='active'||!!state.battlePlayback&&!state.battlePlayback.done||!!state.world_engine?.active_dungeon;
     if(panel.hidden)return;
-    const people=townPeople(state);heading.textContent=`현지 인물 · ${people.length} ${collapsed?'＋':'−'}`;heading.setAttribute('aria-expanded',String(!collapsed));list.hidden=collapsed;list.replaceChildren();
+    const origin=actualPlace(state),people=townPeople(state);heading.textContent=`현지 인물 · ${people.length} ${collapsed?'＋':'−'}`;heading.setAttribute('aria-expanded',String(!collapsed));list.hidden=collapsed;list.replaceChildren();
     if(!people.some(p=>p.id===selected))selected=null;
-    for(const [confirmed,label] of [[true,'위치 확인'],[false,'찾아볼 주민']]){
+    for(const [confirmed,label] of [[true,'위치 확인'],[false,'지역 주민 · 위치 미확인']]){
       const group=people.filter(p=>p.confirmed===confirmed);if(!group.length)continue;
       const title=document.createElement('p');title.className='town-people-group';title.textContent=label;list.append(title);
       for(const person of group){
         const row=document.createElement('article');row.className='town-person';row.classList.toggle('is-open',selected===person.id);
         const name=document.createElement('button');name.type='button';name.className='town-person-name';name.setAttribute('aria-expanded',String(selected===person.id));
         const label=document.createElement('strong'),job=document.createElement('small');label.textContent=person.name;job.textContent=person.job;name.append(label,job);
+        const availability=document.createElement('p');availability.className='town-person-availability';availability.dataset.available=String(person.canTalk);availability.textContent=person.canTalk?'대화 가능':person.confirmed?'이동 중 · 대화 불가':'위치 미확인 · 대화 불가';name.title=person.unavailableReason||'현재 위치가 확인된 인물입니다.';
         const detail=document.createElement('div');detail.className='town-person-detail';detail.id='town-person-'+person.id;name.setAttribute('aria-controls',detail.id);
-        const activity=document.createElement('p'),place=document.createElement('p'),talk=document.createElement('button');activity.textContent=person.confirmed?(person.accompanying?'동행 중':person.activity):'현재 위치와 활동을 확인해보세요.';place.textContent=person.confirmed?(person.place||actualPlace(state).place):'이 지역에서 찾아볼 수 있는 주민';talk.type='button';talk.textContent=person.confirmed?'대화하러 가기':'찾아가서 대화';talk.disabled=busy();
-        talk.onclick=()=>{if(busy())return;const request=townConversation(state,person.id);if(request)submit(request);};
+        const activity=document.createElement('p'),place=document.createElement('p'),talk=document.createElement('button');activity.textContent=person.confirmed?(person.accompanying?'동행 중':person.activity):person.unavailableReason;place.textContent=person.confirmed?(person.place||actualPlace(state).place):'이 지역에서 찾아볼 수 있는 주민';talk.type='button';talk.textContent=person.canTalk?'대화하러 가기':'지금은 만날 수 없음';talk.disabled=busy()||!person.canTalk;talk.title=person.unavailableReason;
+        talk.onclick=()=>{const current=actualPlace(state);if(busy()||current.region!==origin.region||current.place!==origin.place)return;const request=townConversation(state,person.id);if(request)submit(request);};
         name.onclick=()=>{selected=selected===person.id?null:person.id;for(const other of list.querySelectorAll('.town-person')){const active=other===row&&selected!==null;other.classList.toggle('is-open',active);other.querySelector('button').setAttribute('aria-expanded',String(active));}};
         row.onpointerenter=name.onfocus=()=>name.setAttribute('aria-expanded','true');
         row.onpointerleave=()=>{if(selected!==person.id&&!row.contains(document.activeElement))name.setAttribute('aria-expanded','false');};
         name.onblur=e=>{if(selected!==person.id&&!row.contains(e.relatedTarget))name.setAttribute('aria-expanded','false');};
-        detail.append(activity,place,talk);row.append(name,detail);list.append(row);
+        detail.append(activity,place,talk);row.append(name,availability,detail);list.append(row);
       }
     }
     if(!people.length){const empty=document.createElement('p');empty.className='town-people-empty';empty.textContent='현재 확인된 현지 인물이 없습니다.';list.append(empty);}

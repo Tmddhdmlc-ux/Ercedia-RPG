@@ -3202,3 +3202,6 @@ input[type=range] {
 .title-menu{margin:16px auto;gap:9px;}
 .title-menu button{min-height:48px;font-size:19px;}
 #title-register-settings{font-size:16px;letter-spacing:0;}
+
+.town-person-availability{margin:3px 10px 7px;font-size:11px;color:#D6BB92;line-height:1.4;}
+.town-person-availability[data-available=true]{color:#A9D3B6;}
