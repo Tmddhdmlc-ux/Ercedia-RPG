@@ -1,0 +1,98 @@
+{
+  "id": "serin",
+  "name": "세린",
+  "source": "characters/serin.json",
+  "source_rank": "베이직 나이트",
+  "ability_name": "결의의 일섬",
+  "ability_status": "approved_cinematic_name_not_learned",
+  "runtime_usable": false,
+  "user_approved": false,
+  "generation_tool": "built-in image_gen",
+  "expert": {
+    "image": "assets/characters/cutins/drafts/serin/expert_ultimate_v1.png",
+    "element": "neutral_sword_glint",
+    "element_status": "non_elemental_visual_only",
+    "element_source": "ULTIMATE_CUTIN_ART_RULES.md §5: pending element may use neutral glint; no Serin element awarded",
+    "prompt": "Create one fully finished cinematic Ercedia RPG anime/cartoon fantasy ultimate skill cutscene illustration. Reference 1 fixes Serin's EXACT face, adult woman, blue eyes, blond high ponytail and black hair tie; reference 2 fixes her exact silver-white armor with gold decoration, navy cape with gold motifs, black gloves and ornate sword. Keep her same identity and armor. This is an EXPERT KNIGHT hypothetical visual proposal, NOT the hyper version. Proposed skill '결의의 일섬' only in metadata, NO words in image. Dynamic rising diagonal sword slash from low right toward upper left, three-quarter camera slightly ABOVE, character on RIGHT half of frame, readable stern concentrated face near upper right, turned hips and a forward braced leg, both gloved hands properly gripping one sword, no duplicate weapons. Single narrow SILVERY NEUTRAL sword glint concentrated on blade tip and short slash arc, a few small metal sparks ONLY. NO elemental magic, full-body glow, enormous light beams, aura, energy storm, floating destruction or lightning. Grounded ruined stone courtyard at dusk with intact low stone walls, natural subdued background, no other people. The character and physical sword action dominate. Show expression, eyes, both hands and weapon clearly; sword tip inside canvas. Sophisticated clean 2D linework and softly rendered anime illustration in Serin's art quality. NEW action and camera, do not copy standing or hyper horizontal sweep. OPAQUE PNG, landscape exactly 16:9 ideally 1920x1080 or larger. Background and restrained effects painted IN image. No transparent background, text, numbers, logos, UI, border, panel layout. No seductive expression, no smile.",
+    "reference_art": [
+      "assets/characters/main/serin/base_transparent.png",
+      "assets/characters/main/serin/standing/base.png"
+    ],
+    "composition": {
+      "camera": "slightly high three-quarter",
+      "pose": "braced rising diagonal slash, right-side subject",
+      "focal_action": "two-handed single sword rising to upper left",
+      "effect_origin": "blade tip and narrow slash arc"
+    },
+    "face_crop": {
+      "x": 0.6,
+      "y": 0.15,
+      "width": 0.29,
+      "height": 0.32,
+      "coordinate_system": "normalized top-left x/y/width/height",
+      "status": "manual_visual_review"
+    },
+    "image_metrics": {
+      "source_size": [
+        1672,
+        941
+      ],
+      "size": [
+        1664,
+        936
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "aspect_ratio": "16:9",
+      "sha256": "ae255485bca94101d6eac2915297655fbf9838e70d9a8f84afed650e5c1aa494",
+      "processing": "Minimal symmetric edge trim to exact16:9; no resizing, background removal, transparency or relighting."
+    }
+  },
+  "hyper": {
+    "image": "assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+    "image_status": "existing_reference_preserved",
+    "element": "light_visual_proposal",
+    "element_status": "hypothetical_reference_only",
+    "element_source": "ULTIMATE_CUTIN_ART_RULES.md §3 existing hyper visual reference, not gameplay canon",
+    "face_image": "assets/characters/cutins/drafts/serin/hyper_face_v1.png",
+    "reference_art": [
+      "assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+      "assets/characters/main/serin/base_transparent.png"
+    ],
+    "composition": {
+      "camera": "low three-quarter",
+      "pose": "two-handed horizontal sweep",
+      "focal_action": "large crossing luminous blade arc",
+      "effect_origin": "body, armor, sword and surrounding space"
+    },
+    "face_image_metrics": {
+      "source_size": [
+        1672,
+        941
+      ],
+      "size": [
+        1664,
+        936
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "aspect_ratio": "16:9",
+      "sha256": "232b41aa29ec90f50a87932227c75d9362f6ff4ee3803ba6061d494768b11e61",
+      "processing": "Minimal symmetric edge trim to exact16:9; no resizing, background removal, transparency or relighting."
+    },
+    "image_metrics": {
+      "size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "sha256": "c9fbbc27e699dc6dfd022ad71b07224e3f791c77989d6c2bda39c84fd106a4f2",
+      "preserved_original": true,
+      "note": "Existing approximate16:9 reference preserved at original resolution."
+    },
+    "image_user_approved": true,
+    "image_approval_source": "ULTIMATE_SYSTEM.md final adopted Serin cinematic",
+    "face_user_approved": false
+  },
+  "ability_source": "ULTIMATE_SYSTEM.md: final Serin cinematic name"
+}
