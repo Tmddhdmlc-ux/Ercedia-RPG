@@ -1,3 +1,4 @@
+import {mountMapContext} from './map-context.js';
 import {mountTownPeople} from './town-people.js';
 import {mountPanelLayouts} from './panel-layout.js';
 import {mountSceneComposer} from './scene-composer.js';
@@ -89,6 +90,7 @@ const timeUI=mountGameTime(state);
 const playHUD=mountPlayHUD(state,{persist:saveGame});
 const walletUI=mountWalletUI(state);
 const factionUI=mountFactionMap(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
+const mapContextUI=mountMapContext(state,{selectCurrent:p=>{state.mapFaction=null;state.region=p.id;state.mapView=p.region;renderRegion();dirty();}});
 $('save-status').textContent=restored.message;
 const npcArt=mountNPCArt({assetBase:window.__ERCEDIA_CONFIG__?.assetBase,status:$('expression-status')});
 const images=new Map();
@@ -238,7 +240,7 @@ function renderRegion(){
   for(const [name,value] of info?.fields||[]){const term=document.createElement('dt'),detail=document.createElement('dd');term.textContent=name;detail.textContent=value;fields.append(term,detail);}
   fields.hidden=!info?.fields.length;
   $('region-note').textContent=info?.note||'';$('region-note').hidden=!info?.note;
-  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();introUI?.syncMap();catalogUI?.region();
+  document.querySelectorAll('[data-region]').forEach(el=>{el.classList.toggle('selected',el.dataset.region===state.region);el.setAttribute('aria-pressed',String(el.dataset.region===state.region));});renderMapView();mapContextUI.render();introUI?.syncMap();catalogUI?.region();
 }
 document.querySelectorAll('[data-region]').forEach(el=>{el.setAttribute('role','button');el.setAttribute('tabindex','0');el.setAttribute('aria-label',regions[el.dataset.region][0]);const select=()=>{state.mapFaction=null;state.region=el.dataset.region;state.mapView=viewForSelection(state.region);renderRegion();dirty();};el.addEventListener('click',select);if(el.tagName.toLowerCase()!=='button')el.addEventListener('keydown',e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();select();}});});
 document.querySelectorAll('[data-map-view]').forEach(el=>el.onclick=()=>{state.mapFaction=null;state.mapView=el.dataset.mapView;state.region=state.mapView;renderRegion();dirty();});

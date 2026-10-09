@@ -3184,3 +3184,12 @@ input[type=range] {
  .town-people-list {min-height:0;flex:1 1 auto}
  #stage:has(.quest-proposals:not([hidden])) .town-people {display:none}
 }
+.map-current-position circle {fill:#FFE6A622;stroke:#FFE1A0;stroke-width:3;vector-effect:non-scaling-stroke;r:calc(var(--map-pin-radius,16px) * 1.6)}
+.map-current-position text {fill:#FFF1C4;font-size:var(--map-label-font,16px);font-weight:700;stroke:#10202B;stroke-width:var(--map-label-stroke,2px);paint-order:stroke}
+.map-locate-current {margin-left:auto;max-width:60%;white-space:normal;overflow-wrap:anywhere;font-size:15px;color:#F0CC8D;border-color:#B88C4D}
+.map-region-preview {position:fixed;z-index:250;width:min(360px,calc(100vw - 24px));max-height:70vh;overflow:auto;padding:18px 20px;border:1px solid #B88C4D;border-radius:10px;background:#10232BF5;color:#F2EFE5;box-shadow:0 8px 28px #0006;font-size:15px;line-height:1.55;overscroll-behavior:contain}
+.map-region-preview[hidden] {display:none!important}
+.map-region-preview h3 {margin:0 0 14px;font-size:21px;color:#E9C589}
+.map-region-preview strong {display:block;color:#B9DFFD;margin:12px 0 4px;font-size:15px}
+.map-region-preview ul {padding-left:18px;margin:5px 0 12px}
+.map-region-preview li {margin:4px 0;overflow-wrap:anywhere}
