@@ -47,7 +47,7 @@ export function settleQuests(state,scene){
     else {if(quests.length>=100)fail('의뢰 기록은 최대 100개');const q=normalizeQuest(raw);if(q.status!=='offered')fail('새 의뢰는 offered');q.objectives=q.objectives.map(o=>({...o,current:0,evidence_ids:[]}));q.claim_event_id=null;quests.push(q);}
   }
   const events=[];
-  if(scene.battle&&scene.battle.outcome.winner==='allied')for(const p of scene.battle.participants.filter(p=>p.side==='enemy'&&scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0))events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}`,kind:'battle_win',target_id:p.catalog_id||p.id,location,proof:'확정된 전투 종료',quantity:1});
+  if(scene.battle&&scene.battle.outcome.winner==='allied')for(const p of scene.battle.participants.filter(p=>p.side==='enemy'&&scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0)){events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}`,kind:'battle_win',target_id:p.catalog_id||p.id,location,proof:'확정된 전투 종료',quantity:1});if(p.dungeon_foe_id)events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}:foe`,kind:'battle_win',target_id:p.dungeon_foe_id,location,proof:'등록 던전 보스·정예의 실제 처치',quantity:1});}
   for(const e of scene.world_events||[]){
     if(e.kind==='battle_win')fail('토벌 증거는 전투 정산에서만 생성');
     if(e.location!==location&&e.location!==scene.location)fail('사건 장소와 실제 위치 불일치');

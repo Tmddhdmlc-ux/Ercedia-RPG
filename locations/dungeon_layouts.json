@@ -35,7 +35,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 눈바람과 숨결 추적. 위험: 얼음 발판의 미끄러짐. 탐색 대응: 발자국과 바람을 읽어 안전한 발판을 확보."
         },
         {
           "id": "DUN-W1-01-Z02",
@@ -51,7 +51,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 눈바람과 숨결 추적. 위험: 얼음 발판의 미끄러짐. 탐색 대응: 발자국과 바람을 읽어 안전한 발판을 확보.",
+          "encounter_ids": [
+            "ER-NPC-081",
+            "DUN-W1-01-ELITE"
+          ]
         },
         {
           "id": "DUN-W1-01-Z03",
@@ -68,7 +72,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '서리 송곳길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W1의 '흰숨 동굴' 내부 '서리 송곳길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 눈바람과 숨결 추적. 위험: 얼음 발판의 미끄러짐. 탐색 대응: 발자국과 바람을 읽어 안전한 발판을 확보.",
+          "encounter_ids": [
+            "DUN-W1-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W1-01-Z01",
@@ -78,7 +85,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W1-01",
+        "theme": "눈바람과 숨결 추적",
+        "hazard": "얼음 발판의 미끄러짐",
+        "exploration": "발자국과 바람을 읽어 안전한 발판을 확보",
+        "boss_id": "DUN-W1-01-BOSS",
+        "elite_id": "DUN-W1-01-ELITE",
+        "base_monster_id": "ER-NPC-081"
+      }
     },
     {
       "id": "DUN-W1-02",
@@ -103,7 +119,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 눈 아래 묻힌 둥지. 위험: 눈처마와 좁은 굴목. 탐색 대응: 지지대를 점검하고 눈처마 아래에 밀집하지 않는다."
         },
         {
           "id": "DUN-W1-02-Z02",
@@ -119,7 +135,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 눈 아래 묻힌 둥지. 위험: 눈처마와 좁은 굴목. 탐색 대응: 지지대를 점검하고 눈처마 아래에 밀집하지 않는다.",
+          "encounter_ids": [
+            "ER-NPC-082",
+            "DUN-W1-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W1-02-Z03",
@@ -134,7 +154,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '서리 송곳길'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '서리 송곳길'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 눈 아래 묻힌 둥지. 위험: 눈처마와 좁은 굴목. 탐색 대응: 지지대를 점검하고 눈처마 아래에 밀집하지 않는다."
         },
         {
           "id": "DUN-W1-02-Z04",
@@ -151,7 +171,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '깊은 눈 웅덩이'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W1의 '설벽 밑 구혈' 내부 '깊은 눈 웅덩이'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 눈 아래 묻힌 둥지. 위험: 눈처마와 좁은 굴목. 탐색 대응: 지지대를 점검하고 눈처마 아래에 밀집하지 않는다.",
+          "encounter_ids": [
+            "DUN-W1-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W1-02-Z01",
@@ -161,7 +184,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W1-02",
+        "theme": "눈 아래 묻힌 둥지",
+        "hazard": "눈처마와 좁은 굴목",
+        "exploration": "지지대를 점검하고 눈처마 아래에 밀집하지 않는다",
+        "boss_id": "DUN-W1-02-BOSS",
+        "elite_id": "DUN-W1-02-ELITE",
+        "base_monster_id": "ER-NPC-082"
+      }
     },
     {
       "id": "DUN-W2-01",
@@ -186,7 +218,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 납골묘의 정적과 소리. 위험: 석관 사이의 메아리. 탐색 대응: 소음으로 무리를 깨우지 않고 석관 틈을 조사."
         },
         {
           "id": "DUN-W2-01-Z02",
@@ -202,7 +234,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 납골묘의 정적과 소리. 위험: 석관 사이의 메아리. 탐색 대응: 소음으로 무리를 깨우지 않고 석관 틈을 조사.",
+          "encounter_ids": [
+            "ER-NPC-084",
+            "DUN-W2-01-ELITE"
+          ]
         },
         {
           "id": "DUN-W2-01-Z03",
@@ -219,7 +255,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '검은 묘지 경사로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W2의 '묵은 왕가 납골묘' 내부 '검은 묘지 경사로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 납골묘의 정적과 소리. 위험: 석관 사이의 메아리. 탐색 대응: 소음으로 무리를 깨우지 않고 석관 틈을 조사.",
+          "encounter_ids": [
+            "DUN-W2-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W2-01-Z01",
@@ -229,7 +268,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W2-01",
+        "theme": "납골묘의 정적과 소리",
+        "hazard": "석관 사이의 메아리",
+        "exploration": "소음으로 무리를 깨우지 않고 석관 틈을 조사",
+        "boss_id": "DUN-W2-01-BOSS",
+        "elite_id": "DUN-W2-01-ELITE",
+        "base_monster_id": "ER-NPC-084"
+      }
     },
     {
       "id": "DUN-W2-02",
@@ -254,7 +302,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 왕가 지하실의 중량 장치. 위험: 균형추와 꺼진 승강대. 탐색 대응: 추를 고정해 우회로를 열고 바닥 하중을 분산."
         },
         {
           "id": "DUN-W2-02-Z02",
@@ -270,7 +318,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 왕가 지하실의 중량 장치. 위험: 균형추와 꺼진 승강대. 탐색 대응: 추를 고정해 우회로를 열고 바닥 하중을 분산.",
+          "encounter_ids": [
+            "ER-NPC-083",
+            "DUN-W2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W2-02-Z03",
@@ -285,7 +337,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '검은 묘지 경사로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '검은 묘지 경사로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 왕가 지하실의 중량 장치. 위험: 균형추와 꺼진 승강대. 탐색 대응: 추를 고정해 우회로를 열고 바닥 하중을 분산."
         },
         {
           "id": "DUN-W2-02-Z04",
@@ -300,7 +352,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '봉인된 비문실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '봉인된 비문실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 왕가 지하실의 중량 장치. 위험: 균형추와 꺼진 승강대. 탐색 대응: 추를 고정해 우회로를 열고 바닥 하중을 분산.",
+          "encounter_ids": [
+            "DUN-W2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W2-02-Z05",
@@ -317,7 +372,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '사자상 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W2의 '사자의 폐지하실' 내부 '사자상 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 왕가 지하실의 중량 장치. 위험: 균형추와 꺼진 승강대. 탐색 대응: 추를 고정해 우회로를 열고 바닥 하중을 분산.",
+          "encounter_ids": [
+            "DUN-W2-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W2-02-Z01",
@@ -327,7 +385,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W2-02",
+        "theme": "왕가 지하실의 중량 장치",
+        "hazard": "균형추와 꺼진 승강대",
+        "exploration": "추를 고정해 우회로를 열고 바닥 하중을 분산",
+        "boss_id": "DUN-W2-02-BOSS",
+        "elite_id": "DUN-W2-02-ELITE",
+        "base_monster_id": "ER-NPC-083"
+      }
     },
     {
       "id": "DUN-W3-01",
@@ -352,7 +419,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 식량을 지키는 곡창 탐사. 위험: 곡물 분진과 무너진 선반. 탐색 대응: 화염 사용 전 분진을 가라앉히고 남은 식량을 보존."
         },
         {
           "id": "DUN-W3-01-Z02",
@@ -368,7 +435,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 식량을 지키는 곡창 탐사. 위험: 곡물 분진과 무너진 선반. 탐색 대응: 화염 사용 전 분진을 가라앉히고 남은 식량을 보존.",
+          "encounter_ids": [
+            "ER-NPC-084",
+            "DUN-W3-01-ELITE"
+          ]
         },
         {
           "id": "DUN-W3-01-Z03",
@@ -385,7 +456,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '낡은 풍차 통로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W3의 '잿빛 곡창' 내부 '낡은 풍차 통로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 식량을 지키는 곡창 탐사. 위험: 곡물 분진과 무너진 선반. 탐색 대응: 화염 사용 전 분진을 가라앉히고 남은 식량을 보존.",
+          "encounter_ids": [
+            "DUN-W3-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W3-01-Z01",
@@ -395,7 +469,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W3-01",
+        "theme": "식량을 지키는 곡창 탐사",
+        "hazard": "곡물 분진과 무너진 선반",
+        "exploration": "화염 사용 전 분진을 가라앉히고 남은 식량을 보존",
+        "boss_id": "DUN-W3-01-BOSS",
+        "elite_id": "DUN-W3-01-ELITE",
+        "base_monster_id": "ER-NPC-084"
+      }
     },
     {
       "id": "DUN-W3-02",
@@ -420,7 +503,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 농로의 함정과 식량 흔적. 위험: 진흙 구덩이와 쓰러진 울타리. 탐색 대응: 식량 흔적을 따라 함정을 찾고 우회 발판을 만든다."
         },
         {
           "id": "DUN-W3-02-Z02",
@@ -436,7 +519,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 농로의 함정과 식량 흔적. 위험: 진흙 구덩이와 쓰러진 울타리. 탐색 대응: 식량 흔적을 따라 함정을 찾고 우회 발판을 만든다.",
+          "encounter_ids": [
+            "ER-NPC-083",
+            "DUN-W3-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W3-02-Z03",
@@ -451,7 +538,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '낡은 풍차 통로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '낡은 풍차 통로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 농로의 함정과 식량 흔적. 위험: 진흙 구덩이와 쓰러진 울타리. 탐색 대응: 식량 흔적을 따라 함정을 찾고 우회 발판을 만든다."
         },
         {
           "id": "DUN-W3-02-Z04",
@@ -468,7 +555,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '곡창 경비 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W3의 '이삭길 약탈굴' 내부 '곡창 경비 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 농로의 함정과 식량 흔적. 위험: 진흙 구덩이와 쓰러진 울타리. 탐색 대응: 식량 흔적을 따라 함정을 찾고 우회 발판을 만든다.",
+          "encounter_ids": [
+            "DUN-W3-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W3-02-Z01",
@@ -478,7 +568,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W3-02",
+        "theme": "농로의 함정과 식량 흔적",
+        "hazard": "진흙 구덩이와 쓰러진 울타리",
+        "exploration": "식량 흔적을 따라 함정을 찾고 우회 발판을 만든다",
+        "boss_id": "DUN-W3-02-BOSS",
+        "elite_id": "DUN-W3-02-ELITE",
+        "base_monster_id": "ER-NPC-083"
+      }
     },
     {
       "id": "DUN-W4-01",
@@ -503,7 +602,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 참호의 엄폐와 잔불. 위험: 사각의 잿더미와 불씨. 탐색 대응: 참호 모서리마다 사각을 확인하고 잔불을 격리."
         },
         {
           "id": "DUN-W4-01-Z02",
@@ -519,7 +618,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 참호의 엄폐와 잔불. 위험: 사각의 잿더미와 불씨. 탐색 대응: 참호 모서리마다 사각을 확인하고 잔불을 격리.",
+          "encounter_ids": [
+            "ER-NPC-085",
+            "DUN-W4-01-ELITE"
+          ]
         },
         {
           "id": "DUN-W4-01-Z03",
@@ -534,7 +637,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 참호의 엄폐와 잔불. 위험: 사각의 잿더미와 불씨. 탐색 대응: 참호 모서리마다 사각을 확인하고 잔불을 격리."
         },
         {
           "id": "DUN-W4-01-Z04",
@@ -551,7 +654,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '녹슨 전투 관측대'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W4의 '붉은 참호' 내부 '녹슨 전투 관측대'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 참호의 엄폐와 잔불. 위험: 사각의 잿더미와 불씨. 탐색 대응: 참호 모서리마다 사각을 확인하고 잔불을 격리.",
+          "encounter_ids": [
+            "DUN-W4-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W4-01-Z01",
@@ -561,7 +667,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W4-01",
+        "theme": "참호의 엄폐와 잔불",
+        "hazard": "사각의 잿더미와 불씨",
+        "exploration": "참호 모서리마다 사각을 확인하고 잔불을 격리",
+        "boss_id": "DUN-W4-01-BOSS",
+        "elite_id": "DUN-W4-01-ELITE",
+        "base_monster_id": "ER-NPC-085"
+      }
     },
     {
       "id": "DUN-W4-02",
@@ -586,7 +701,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 폐요새의 방어선 돌파. 위험: 무너진 성문과 좁은 통로. 탐색 대응: 폐쇄문을 우회하고 철제 장애물을 엄폐로 활용."
         },
         {
           "id": "DUN-W4-02-Z02",
@@ -602,7 +717,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 폐요새의 방어선 돌파. 위험: 무너진 성문과 좁은 통로. 탐색 대응: 폐쇄문을 우회하고 철제 장애물을 엄폐로 활용.",
+          "encounter_ids": [
+            "ER-NPC-083",
+            "DUN-W4-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W4-02-Z03",
@@ -617,7 +736,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 폐요새의 방어선 돌파. 위험: 무너진 성문과 좁은 통로. 탐색 대응: 폐쇄문을 우회하고 철제 장애물을 엄폐로 활용."
         },
         {
           "id": "DUN-W4-02-Z04",
@@ -632,7 +751,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '녹슨 전투 관측대'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '녹슨 전투 관측대'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 폐요새의 방어선 돌파. 위험: 무너진 성문과 좁은 통로. 탐색 대응: 폐쇄문을 우회하고 철제 장애물을 엄폐로 활용.",
+          "encounter_ids": [
+            "DUN-W4-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W4-02-Z05",
@@ -649,7 +771,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '성벽 마지막 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W4의 '전쟁 잔해 요새' 내부 '성벽 마지막 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 폐요새의 방어선 돌파. 위험: 무너진 성문과 좁은 통로. 탐색 대응: 폐쇄문을 우회하고 철제 장애물을 엄폐로 활용.",
+          "encounter_ids": [
+            "DUN-W4-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W4-02-Z01",
@@ -659,7 +784,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W4-02",
+        "theme": "폐요새의 방어선 돌파",
+        "hazard": "무너진 성문과 좁은 통로",
+        "exploration": "폐쇄문을 우회하고 철제 장애물을 엄폐로 활용",
+        "boss_id": "DUN-W4-02-BOSS",
+        "elite_id": "DUN-W4-02-ELITE",
+        "base_monster_id": "ER-NPC-083"
+      }
     },
     {
       "id": "DUN-W5-01",
@@ -684,7 +818,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 교역 잔해의 회수와 조사. 위험: 굴러가는 마차와 끊긴 밧줄. 탐색 대응: 바퀴를 고정하고 상인의 유실품을 구분해 회수."
         },
         {
           "id": "DUN-W5-01-Z02",
@@ -700,7 +834,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 교역 잔해의 회수와 조사. 위험: 굴러가는 마차와 끊긴 밧줄. 탐색 대응: 바퀴를 고정하고 상인의 유실품을 구분해 회수.",
+          "encounter_ids": [
+            "ER-NPC-083",
+            "DUN-W5-01-ELITE"
+          ]
         },
         {
           "id": "DUN-W5-01-Z03",
@@ -717,7 +855,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '깎인 바위 틈'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W5의 '마차무덤' 내부 '깎인 바위 틈'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 교역 잔해의 회수와 조사. 위험: 굴러가는 마차와 끊긴 밧줄. 탐색 대응: 바퀴를 고정하고 상인의 유실품을 구분해 회수.",
+          "encounter_ids": [
+            "DUN-W5-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W5-01-Z01",
@@ -727,7 +868,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W5-01",
+        "theme": "교역 잔해의 회수와 조사",
+        "hazard": "굴러가는 마차와 끊긴 밧줄",
+        "exploration": "바퀴를 고정하고 상인의 유실품을 구분해 회수",
+        "boss_id": "DUN-W5-01-BOSS",
+        "elite_id": "DUN-W5-01-ELITE",
+        "base_monster_id": "ER-NPC-083"
+      }
     },
     {
       "id": "DUN-W5-02",
@@ -752,7 +902,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 협곡 고저차와 바람. 위험: 낙석과 상승기류. 탐색 대응: 위쪽 둥지를 정찰하고 밧줄을 바람 반대편에 고정."
         },
         {
           "id": "DUN-W5-02-Z02",
@@ -768,7 +918,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 협곡 고저차와 바람. 위험: 낙석과 상승기류. 탐색 대응: 위쪽 둥지를 정찰하고 밧줄을 바람 반대편에 고정.",
+          "encounter_ids": [
+            "ER-NPC-086",
+            "DUN-W5-02-ELITE"
+          ]
         },
         {
           "id": "DUN-W5-02-Z03",
@@ -783,7 +937,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '깎인 바위 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '깎인 바위 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 협곡 고저차와 바람. 위험: 낙석과 상승기류. 탐색 대응: 위쪽 둥지를 정찰하고 밧줄을 바람 반대편에 고정."
         },
         {
           "id": "DUN-W5-02-Z04",
@@ -800,7 +954,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '무너진 갈림길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "벨로아 W5의 '돌문 협곡길' 내부 '무너진 갈림길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 협곡 고저차와 바람. 위험: 낙석과 상승기류. 탐색 대응: 위쪽 둥지를 정찰하고 밧줄을 바람 반대편에 고정.",
+          "encounter_ids": [
+            "DUN-W5-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-W5-02-Z01",
@@ -810,7 +967,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-W5-02",
+        "theme": "협곡 고저차와 바람",
+        "hazard": "낙석과 상승기류",
+        "exploration": "위쪽 둥지를 정찰하고 밧줄을 바람 반대편에 고정",
+        "boss_id": "DUN-W5-02-BOSS",
+        "elite_id": "DUN-W5-02-ELITE",
+        "base_monster_id": "ER-NPC-086"
+      }
     },
     {
       "id": "DUN-E1-01",
@@ -835,7 +1001,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 안개 속 청각 탐색. 위험: 시야 단절과 울음 반향. 탐색 대응: 표식을 남기고 울음의 반향으로 길을 확인."
         },
         {
           "id": "DUN-E1-01-Z02",
@@ -851,7 +1017,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 안개 속 청각 탐색. 위험: 시야 단절과 울음 반향. 탐색 대응: 표식을 남기고 울음의 반향으로 길을 확인.",
+          "encounter_ids": [
+            "ER-NPC-090",
+            "DUN-E1-01-ELITE"
+          ]
         },
         {
           "id": "DUN-E1-01-Z03",
@@ -866,7 +1036,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 안개 속 청각 탐색. 위험: 시야 단절과 울음 반향. 탐색 대응: 표식을 남기고 울음의 반향으로 길을 확인."
         },
         {
           "id": "DUN-E1-01-Z04",
@@ -883,7 +1053,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '버려진 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E1의 '회안개 초소' 내부 '버려진 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 안개 속 청각 탐색. 위험: 시야 단절과 울음 반향. 탐색 대응: 표식을 남기고 울음의 반향으로 길을 확인.",
+          "encounter_ids": [
+            "DUN-E1-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E1-01-Z01",
@@ -893,7 +1066,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E1-01",
+        "theme": "안개 속 청각 탐색",
+        "hazard": "시야 단절과 울음 반향",
+        "exploration": "표식을 남기고 울음의 반향으로 길을 확인",
+        "boss_id": "DUN-E1-01-BOSS",
+        "elite_id": "DUN-E1-01-ELITE",
+        "base_monster_id": "ER-NPC-090"
+      }
     },
     {
       "id": "DUN-E1-02",
@@ -918,7 +1100,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과."
         },
         {
           "id": "DUN-E1-02-Z02",
@@ -934,7 +1116,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과.",
+          "encounter_ids": [
+            "ER-NPC-089",
+            "DUN-E1-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E1-02-Z03",
@@ -949,7 +1135,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과."
         },
         {
           "id": "DUN-E1-02-Z04",
@@ -964,7 +1150,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '버려진 초소'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '버려진 초소'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과.",
+          "encounter_ids": [
+            "DUN-E1-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E1-02-Z05",
@@ -981,7 +1170,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '깊은 동토 격리실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '깊은 동토 격리실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과.",
+          "encounter_ids": [
+            "DUN-E1-02-BOSS"
+          ]
         },
         {
           "id": "DUN-E1-02-Z06",
@@ -997,7 +1189,7 @@
             "rare_material",
             "manual_fragment_candidate"
           ],
-          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '반사광 폐쇄구역'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+          "scene_prompt": "드라켄 E1의 '시린 균열 동굴' 내부 '반사광 폐쇄구역'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다. 지역 특색: 차가운 균열의 정전기. 위험: 간헐적인 마나 맥동. 탐색 대응: 맥동 간격을 관찰해 차폐 구간을 통과."
         }
       ],
       "entrance_zone_id": "DUN-E1-02-Z01",
@@ -1007,7 +1199,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E1-02",
+        "theme": "차가운 균열의 정전기",
+        "hazard": "간헐적인 마나 맥동",
+        "exploration": "맥동 간격을 관찰해 차폐 구간을 통과",
+        "boss_id": "DUN-E1-02-BOSS",
+        "elite_id": "DUN-E1-02-ELITE",
+        "base_monster_id": "ER-NPC-089"
+      }
     },
     {
       "id": "DUN-E2-01",
@@ -1032,7 +1233,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 도체 회로와 진동. 위험: 금속 바닥에 이어진 전류. 탐색 대응: 절연 발판을 고르고 회로 연결을 끊는다."
         },
         {
           "id": "DUN-E2-01-Z02",
@@ -1048,7 +1249,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 도체 회로와 진동. 위험: 금속 바닥에 이어진 전류. 탐색 대응: 절연 발판을 고르고 회로 연결을 끊는다.",
+          "encounter_ids": [
+            "ER-NPC-088",
+            "DUN-E2-01-ELITE"
+          ]
         },
         {
           "id": "DUN-E2-01-Z03",
@@ -1063,7 +1268,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 도체 회로와 진동. 위험: 금속 바닥에 이어진 전류. 탐색 대응: 절연 발판을 고르고 회로 연결을 끊는다."
         },
         {
           "id": "DUN-E2-01-Z04",
@@ -1080,7 +1285,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '청동 제어실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E2의 '청동 도체 회랑' 내부 '청동 제어실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 도체 회로와 진동. 위험: 금속 바닥에 이어진 전류. 탐색 대응: 절연 발판을 고르고 회로 연결을 끊는다.",
+          "encounter_ids": [
+            "DUN-E2-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E2-01-Z01",
@@ -1090,7 +1298,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E2-01",
+        "theme": "도체 회로와 진동",
+        "hazard": "금속 바닥에 이어진 전류",
+        "exploration": "절연 발판을 고르고 회로 연결을 끊는다",
+        "boss_id": "DUN-E2-01-BOSS",
+        "elite_id": "DUN-E2-01-ELITE",
+        "base_monster_id": "ER-NPC-088"
+      }
     },
     {
       "id": "DUN-E2-02",
@@ -1115,7 +1332,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다."
         },
         {
           "id": "DUN-E2-02-Z02",
@@ -1131,7 +1348,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다.",
+          "encounter_ids": [
+            "ER-NPC-087",
+            "DUN-E2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E2-02-Z03",
@@ -1146,7 +1367,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다."
         },
         {
           "id": "DUN-E2-02-Z04",
@@ -1161,7 +1382,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '청동 제어실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '청동 제어실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다.",
+          "encounter_ids": [
+            "DUN-E2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E2-02-Z05",
@@ -1178,7 +1402,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '불안정한 동력핵'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '불안정한 동력핵'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다.",
+          "encounter_ids": [
+            "DUN-E2-02-BOSS"
+          ]
         },
         {
           "id": "DUN-E2-02-Z06",
@@ -1194,7 +1421,7 @@
             "rare_material",
             "manual_fragment_candidate"
           ],
-          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '암호화된 기록실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+          "scene_prompt": "드라켄 E2의 '폐전류 연구구역' 내부 '암호화된 기록실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다. 지역 특색: 폐연구실의 빛과 잔류 전류. 위험: 차단기의 역류와 눈부신 결정. 탐색 대응: 전원 흐름을 조사해 구역별로 차단한다."
         }
       ],
       "entrance_zone_id": "DUN-E2-02-Z01",
@@ -1204,7 +1431,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E2-02",
+        "theme": "폐연구실의 빛과 잔류 전류",
+        "hazard": "차단기의 역류와 눈부신 결정",
+        "exploration": "전원 흐름을 조사해 구역별로 차단한다",
+        "boss_id": "DUN-E2-02-BOSS",
+        "elite_id": "DUN-E2-02-ELITE",
+        "base_monster_id": "ER-NPC-087"
+      }
     },
     {
       "id": "DUN-E3-01",
@@ -1229,7 +1465,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 수정 갱도의 구조 안전. 위험: 낙석과 균열 확산. 탐색 대응: 지주와 균열을 확인하고 강한 충격을 줄인다."
         },
         {
           "id": "DUN-E3-01-Z02",
@@ -1245,7 +1481,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 수정 갱도의 구조 안전. 위험: 낙석과 균열 확산. 탐색 대응: 지주와 균열을 확인하고 강한 충격을 줄인다.",
+          "encounter_ids": [
+            "ER-NPC-087",
+            "DUN-E3-01-ELITE"
+          ]
         },
         {
           "id": "DUN-E3-01-Z03",
@@ -1260,7 +1500,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 수정 갱도의 구조 안전. 위험: 낙석과 균열 확산. 탐색 대응: 지주와 균열을 확인하고 강한 충격을 줄인다."
         },
         {
           "id": "DUN-E3-01-Z04",
@@ -1277,7 +1517,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '초석 방벽 진지'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E3의 '붕락 수정 갱도' 내부 '초석 방벽 진지'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 수정 갱도의 구조 안전. 위험: 낙석과 균열 확산. 탐색 대응: 지주와 균열을 확인하고 강한 충격을 줄인다.",
+          "encounter_ids": [
+            "DUN-E3-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E3-01-Z01",
@@ -1287,7 +1530,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E3-01",
+        "theme": "수정 갱도의 구조 안전",
+        "hazard": "낙석과 균열 확산",
+        "exploration": "지주와 균열을 확인하고 강한 충격을 줄인다",
+        "boss_id": "DUN-E3-01-BOSS",
+        "elite_id": "DUN-E3-01-ELITE",
+        "base_monster_id": "ER-NPC-087"
+      }
     },
     {
       "id": "DUN-E3-02",
@@ -1312,7 +1564,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 지하 방벽의 마나 연결. 위험: 방벽과 거미줄의 공명. 탐색 대응: 연결된 결정을 찾아 방벽을 순서대로 해제."
         },
         {
           "id": "DUN-E3-02-Z02",
@@ -1328,7 +1580,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 지하 방벽의 마나 연결. 위험: 방벽과 거미줄의 공명. 탐색 대응: 연결된 결정을 찾아 방벽을 순서대로 해제.",
+          "encounter_ids": [
+            "ER-NPC-088",
+            "DUN-E3-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E3-02-Z03",
@@ -1343,7 +1599,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 지하 방벽의 마나 연결. 위험: 방벽과 거미줄의 공명. 탐색 대응: 연결된 결정을 찾아 방벽을 순서대로 해제."
         },
         {
           "id": "DUN-E3-02-Z04",
@@ -1358,7 +1614,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '초석 방벽 진지'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '초석 방벽 진지'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 지하 방벽의 마나 연결. 위험: 방벽과 거미줄의 공명. 탐색 대응: 연결된 결정을 찾아 방벽을 순서대로 해제.",
+          "encounter_ids": [
+            "DUN-E3-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E3-02-Z05",
@@ -1375,7 +1634,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '심층 수정 정맥'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E3의 '잿빛 방벽 지하층' 내부 '심층 수정 정맥'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 지하 방벽의 마나 연결. 위험: 방벽과 거미줄의 공명. 탐색 대응: 연결된 결정을 찾아 방벽을 순서대로 해제.",
+          "encounter_ids": [
+            "DUN-E3-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E3-02-Z01",
@@ -1385,7 +1647,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E3-02",
+        "theme": "지하 방벽의 마나 연결",
+        "hazard": "방벽과 거미줄의 공명",
+        "exploration": "연결된 결정을 찾아 방벽을 순서대로 해제",
+        "boss_id": "DUN-E3-02-BOSS",
+        "elite_id": "DUN-E3-02-ELITE",
+        "base_monster_id": "ER-NPC-088"
+      }
     },
     {
       "id": "DUN-E4-01",
@@ -1410,7 +1681,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 교량 아래의 바람길. 위험: 횡풍과 끊긴 발판. 탐색 대응: 밧줄을 고정하고 바람의 약한 구간을 골라 이동."
         },
         {
           "id": "DUN-E4-01-Z02",
@@ -1426,7 +1697,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 교량 아래의 바람길. 위험: 횡풍과 끊긴 발판. 탐색 대응: 밧줄을 고정하고 바람의 약한 구간을 골라 이동.",
+          "encounter_ids": [
+            "ER-NPC-086",
+            "DUN-E4-01-ELITE"
+          ]
         },
         {
           "id": "DUN-E4-01-Z03",
@@ -1443,7 +1718,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '산안개 분기점'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E4의 '바람깎인 교량굴' 내부 '산안개 분기점'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 교량 아래의 바람길. 위험: 횡풍과 끊긴 발판. 탐색 대응: 밧줄을 고정하고 바람의 약한 구간을 골라 이동.",
+          "encounter_ids": [
+            "DUN-E4-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E4-01-Z01",
@@ -1453,7 +1731,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E4-01",
+        "theme": "교량 아래의 바람길",
+        "hazard": "횡풍과 끊긴 발판",
+        "exploration": "밧줄을 고정하고 바람의 약한 구간을 골라 이동",
+        "boss_id": "DUN-E4-01-BOSS",
+        "elite_id": "DUN-E4-01-ELITE",
+        "base_monster_id": "ER-NPC-086"
+      }
     },
     {
       "id": "DUN-E4-02",
@@ -1478,7 +1765,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 유지보수 통로의 문과 접지. 위험: 젖은 사다리와 좁은 교각. 탐색 대응: 사다리를 고정하고 젖은 금속과 충전을 피한다."
         },
         {
           "id": "DUN-E4-02-Z02",
@@ -1494,7 +1781,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 유지보수 통로의 문과 접지. 위험: 젖은 사다리와 좁은 교각. 탐색 대응: 사다리를 고정하고 젖은 금속과 충전을 피한다.",
+          "encounter_ids": [
+            "ER-NPC-089",
+            "DUN-E4-02-ELITE"
+          ]
         },
         {
           "id": "DUN-E4-02-Z03",
@@ -1509,7 +1800,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '산안개 분기점'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '산안개 분기점'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 유지보수 통로의 문과 접지. 위험: 젖은 사다리와 좁은 교각. 탐색 대응: 사다리를 고정하고 젖은 금속과 충전을 피한다."
         },
         {
           "id": "DUN-E4-02-Z04",
@@ -1526,7 +1817,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '교량 아래 경비실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "드라켄 E4의 '교량 아래 폐통로' 내부 '교량 아래 경비실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 유지보수 통로의 문과 접지. 위험: 젖은 사다리와 좁은 교각. 탐색 대응: 사다리를 고정하고 젖은 금속과 충전을 피한다.",
+          "encounter_ids": [
+            "DUN-E4-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-E4-02-Z01",
@@ -1536,7 +1830,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-E4-02",
+        "theme": "유지보수 통로의 문과 접지",
+        "hazard": "젖은 사다리와 좁은 교각",
+        "exploration": "사다리를 고정하고 젖은 금속과 충전을 피한다",
+        "boss_id": "DUN-E4-02-BOSS",
+        "elite_id": "DUN-E4-02-ELITE",
+        "base_monster_id": "ER-NPC-089"
+      }
     },
     {
       "id": "DUN-S1-01",
@@ -1561,7 +1864,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 수문 조작과 얕은 물길. 위험: 조수와 미끄러운 수로. 탐색 대응: 수위를 확인하고 잠기기 전 복귀 경로를 확보."
         },
         {
           "id": "DUN-S1-01-Z02",
@@ -1577,7 +1880,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 수문 조작과 얕은 물길. 위험: 조수와 미끄러운 수로. 탐색 대응: 수위를 확인하고 잠기기 전 복귀 경로를 확보.",
+          "encounter_ids": [
+            "ER-NPC-092",
+            "DUN-S1-01-ELITE"
+          ]
         },
         {
           "id": "DUN-S1-01-Z03",
@@ -1594,7 +1901,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '해수 유입 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S1의 '진주 수로굴' 내부 '해수 유입 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 수문 조작과 얕은 물길. 위험: 조수와 미끄러운 수로. 탐색 대응: 수위를 확인하고 잠기기 전 복귀 경로를 확보.",
+          "encounter_ids": [
+            "DUN-S1-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S1-01-Z01",
@@ -1604,7 +1914,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S1-01",
+        "theme": "수문 조작과 얕은 물길",
+        "hazard": "조수와 미끄러운 수로",
+        "exploration": "수위를 확인하고 잠기기 전 복귀 경로를 확보",
+        "boss_id": "DUN-S1-01-BOSS",
+        "elite_id": "DUN-S1-01-ELITE",
+        "base_monster_id": "ER-NPC-092"
+      }
     },
     {
       "id": "DUN-S1-02",
@@ -1629,7 +1948,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 기울어진 화물창의 탐사. 위험: 밀려오는 물과 떠다니는 화물. 탐색 대응: 문을 고정하고 적재물을 옮겨 발판을 만든다."
         },
         {
           "id": "DUN-S1-02-Z02",
@@ -1645,7 +1964,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 기울어진 화물창의 탐사. 위험: 밀려오는 물과 떠다니는 화물. 탐색 대응: 문을 고정하고 적재물을 옮겨 발판을 만든다.",
+          "encounter_ids": [
+            "ER-NPC-094",
+            "DUN-S1-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S1-02-Z03",
@@ -1660,7 +1983,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '해수 유입 방'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '해수 유입 방'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 기울어진 화물창의 탐사. 위험: 밀려오는 물과 떠다니는 화물. 탐색 대응: 문을 고정하고 적재물을 옮겨 발판을 만든다."
         },
         {
           "id": "DUN-S1-02-Z04",
@@ -1677,7 +2000,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '그물 매듭 창고'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S1의 '유실 선박 화물창' 내부 '그물 매듭 창고'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 기울어진 화물창의 탐사. 위험: 밀려오는 물과 떠다니는 화물. 탐색 대응: 문을 고정하고 적재물을 옮겨 발판을 만든다.",
+          "encounter_ids": [
+            "DUN-S1-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S1-02-Z01",
@@ -1687,7 +2013,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S1-02",
+        "theme": "기울어진 화물창의 탐사",
+        "hazard": "밀려오는 물과 떠다니는 화물",
+        "exploration": "문을 고정하고 적재물을 옮겨 발판을 만든다",
+        "boss_id": "DUN-S1-02-BOSS",
+        "elite_id": "DUN-S1-02-ELITE",
+        "base_monster_id": "ER-NPC-094"
+      }
     },
     {
       "id": "DUN-S2-01",
@@ -1712,7 +2047,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 역참의 추적과 보급. 위험: 모래 덮인 표식과 미끼 흔적. 탐색 대응: 옛 표식을 복원하고 서로 다른 발자국을 비교."
         },
         {
           "id": "DUN-S2-01-Z02",
@@ -1728,7 +2063,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 역참의 추적과 보급. 위험: 모래 덮인 표식과 미끼 흔적. 탐색 대응: 옛 표식을 복원하고 서로 다른 발자국을 비교.",
+          "encounter_ids": [
+            "ER-NPC-096",
+            "DUN-S2-01-ELITE"
+          ]
         },
         {
           "id": "DUN-S2-01-Z03",
@@ -1743,7 +2082,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 역참의 추적과 보급. 위험: 모래 덮인 표식과 미끼 흔적. 탐색 대응: 옛 표식을 복원하고 서로 다른 발자국을 비교."
         },
         {
           "id": "DUN-S2-01-Z04",
@@ -1760,7 +2099,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '오래된 보급 막사'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S2의 '세르반 잊힌 역참' 내부 '오래된 보급 막사'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 역참의 추적과 보급. 위험: 모래 덮인 표식과 미끼 흔적. 탐색 대응: 옛 표식을 복원하고 서로 다른 발자국을 비교.",
+          "encounter_ids": [
+            "DUN-S2-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S2-01-Z01",
@@ -1770,7 +2112,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S2-01",
+        "theme": "역참의 추적과 보급",
+        "hazard": "모래 덮인 표식과 미끼 흔적",
+        "exploration": "옛 표식을 복원하고 서로 다른 발자국을 비교",
+        "boss_id": "DUN-S2-01-BOSS",
+        "elite_id": "DUN-S2-01-ELITE",
+        "base_monster_id": "ER-NPC-096"
+      }
     },
     {
       "id": "DUN-S2-02",
@@ -1795,7 +2146,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 요새의 병참과 열기. 위험: 건조한 적재물과 잔불. 탐색 대응: 급수로를 찾아 불길이 이어지는 적재물을 분리."
         },
         {
           "id": "DUN-S2-02-Z02",
@@ -1811,7 +2162,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 요새의 병참과 열기. 위험: 건조한 적재물과 잔불. 탐색 대응: 급수로를 찾아 불길이 이어지는 적재물을 분리.",
+          "encounter_ids": [
+            "ER-NPC-085",
+            "DUN-S2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S2-02-Z03",
@@ -1826,7 +2181,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 요새의 병참과 열기. 위험: 건조한 적재물과 잔불. 탐색 대응: 급수로를 찾아 불길이 이어지는 적재물을 분리."
         },
         {
           "id": "DUN-S2-02-Z04",
@@ -1841,7 +2196,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '오래된 보급 막사'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '오래된 보급 막사'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 요새의 병참과 열기. 위험: 건조한 적재물과 잔불. 탐색 대응: 급수로를 찾아 불길이 이어지는 적재물을 분리.",
+          "encounter_ids": [
+            "DUN-S2-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S2-02-Z05",
@@ -1858,7 +2216,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '철문 지하방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S2의 '황금길 폐요새' 내부 '철문 지하방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 요새의 병참과 열기. 위험: 건조한 적재물과 잔불. 탐색 대응: 급수로를 찾아 불길이 이어지는 적재물을 분리.",
+          "encounter_ids": [
+            "DUN-S2-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S2-02-Z01",
@@ -1868,7 +2229,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S2-02",
+        "theme": "요새의 병참과 열기",
+        "hazard": "건조한 적재물과 잔불",
+        "exploration": "급수로를 찾아 불길이 이어지는 적재물을 분리",
+        "boss_id": "DUN-S2-02-BOSS",
+        "elite_id": "DUN-S2-02-ELITE",
+        "base_monster_id": "ER-NPC-085"
+      }
     },
     {
       "id": "DUN-S3-01",
@@ -1893,7 +2263,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 암초의 조수와 소굴 흔적. 위험: 밀물과 젖은 암반. 탐색 대응: 썰물 시간을 확인하고 높은 퇴로를 표시한다."
         },
         {
           "id": "DUN-S3-01-Z02",
@@ -1909,7 +2279,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 암초의 조수와 소굴 흔적. 위험: 밀물과 젖은 암반. 탐색 대응: 썰물 시간을 확인하고 높은 퇴로를 표시한다.",
+          "encounter_ids": [
+            "ER-NPC-091",
+            "DUN-S3-01-ELITE"
+          ]
         },
         {
           "id": "DUN-S3-01-Z03",
@@ -1926,7 +2300,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '밀물 함정굴'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S3의 '암초 해적 소굴' 내부 '밀물 함정굴'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 암초의 조수와 소굴 흔적. 위험: 밀물과 젖은 암반. 탐색 대응: 썰물 시간을 확인하고 높은 퇴로를 표시한다.",
+          "encounter_ids": [
+            "DUN-S3-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S3-01-Z01",
@@ -1936,7 +2313,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S3-01",
+        "theme": "암초의 조수와 소굴 흔적",
+        "hazard": "밀물과 젖은 암반",
+        "exploration": "썰물 시간을 확인하고 높은 퇴로를 표시한다",
+        "boss_id": "DUN-S3-01-BOSS",
+        "elite_id": "DUN-S3-01-ELITE",
+        "base_monster_id": "ER-NPC-091"
+      }
     },
     {
       "id": "DUN-S3-02",
@@ -1961,7 +2347,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 배수로의 압력과 암수역. 위험: 수압과 검은 물의 시야. 탐색 대응: 배수 밸브를 열고 안전한 공기 공간을 확보."
         },
         {
           "id": "DUN-S3-02-Z02",
@@ -1977,7 +2363,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 배수로의 압력과 암수역. 위험: 수압과 검은 물의 시야. 탐색 대응: 배수 밸브를 열고 안전한 공기 공간을 확보.",
+          "encounter_ids": [
+            "ER-NPC-093",
+            "DUN-S3-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S3-02-Z03",
@@ -1992,7 +2382,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '밀물 함정굴'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '밀물 함정굴'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 배수로의 압력과 암수역. 위험: 수압과 검은 물의 시야. 탐색 대응: 배수 밸브를 열고 안전한 공기 공간을 확보."
         },
         {
           "id": "DUN-S3-02-Z04",
@@ -2007,7 +2397,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '부서진 선박 갑판'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '부서진 선박 갑판'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 배수로의 압력과 암수역. 위험: 수압과 검은 물의 시야. 탐색 대응: 배수 밸브를 열고 안전한 공기 공간을 확보.",
+          "encounter_ids": [
+            "DUN-S3-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S3-02-Z05",
@@ -2024,7 +2417,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '해적 수장 선실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S3의 '심해 배수동굴' 내부 '해적 수장 선실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 배수로의 압력과 암수역. 위험: 수압과 검은 물의 시야. 탐색 대응: 배수 밸브를 열고 안전한 공기 공간을 확보.",
+          "encounter_ids": [
+            "DUN-S3-02-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S3-02-Z01",
@@ -2034,7 +2430,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S3-02",
+        "theme": "배수로의 압력과 암수역",
+        "hazard": "수압과 검은 물의 시야",
+        "exploration": "배수 밸브를 열고 안전한 공기 공간을 확보",
+        "boss_id": "DUN-S3-02-BOSS",
+        "elite_id": "DUN-S3-02-ELITE",
+        "base_monster_id": "ER-NPC-093"
+      }
     },
     {
       "id": "DUN-S4-01",
@@ -2059,7 +2464,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 금고의 반사광과 잠금장치. 위험: 흑유리 반사와 밝은 미끼. 탐색 대응: 빛을 가려 실제 통로와 반사상을 구분한다."
         },
         {
           "id": "DUN-S4-01-Z02",
@@ -2075,7 +2480,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 금고의 반사광과 잠금장치. 위험: 흑유리 반사와 밝은 미끼. 탐색 대응: 빛을 가려 실제 통로와 반사상을 구분한다.",
+          "encounter_ids": [
+            "ER-NPC-095",
+            "DUN-S4-01-ELITE"
+          ]
         },
         {
           "id": "DUN-S4-01-Z03",
@@ -2090,7 +2499,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 금고의 반사광과 잠금장치. 위험: 흑유리 반사와 밝은 미끼. 탐색 대응: 빛을 가려 실제 통로와 반사상을 구분한다."
         },
         {
           "id": "DUN-S4-01-Z04",
@@ -2107,7 +2516,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금빛 계약 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S4의 '흑유리 지하금고' 내부 '금빛 계약 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 금고의 반사광과 잠금장치. 위험: 흑유리 반사와 밝은 미끼. 탐색 대응: 빛을 가려 실제 통로와 반사상을 구분한다.",
+          "encounter_ids": [
+            "DUN-S4-01-BOSS"
+          ]
         }
       ],
       "entrance_zone_id": "DUN-S4-01-Z01",
@@ -2117,7 +2529,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S4-01",
+        "theme": "금고의 반사광과 잠금장치",
+        "hazard": "흑유리 반사와 밝은 미끼",
+        "exploration": "빛을 가려 실제 통로와 반사상을 구분한다",
+        "boss_id": "DUN-S4-01-BOSS",
+        "elite_id": "DUN-S4-01-ELITE",
+        "base_monster_id": "ER-NPC-095"
+      }
     },
     {
       "id": "DUN-S4-02",
@@ -2142,7 +2563,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다."
         },
         {
           "id": "DUN-S4-02-Z02",
@@ -2158,7 +2579,11 @@
             "xp",
             "material"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다.",
+          "encounter_ids": [
+            "ER-NPC-098",
+            "DUN-S4-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S4-02-Z03",
@@ -2173,7 +2598,7 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다."
         },
         {
           "id": "DUN-S4-02-Z04",
@@ -2188,7 +2613,10 @@
           "reward_tags": [
             "clue_or_resource"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금빛 계약 제단'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '금빛 계약 제단'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다.",
+          "encounter_ids": [
+            "DUN-S4-02-ELITE"
+          ]
         },
         {
           "id": "DUN-S4-02-Z05",
@@ -2205,7 +2633,10 @@
             "regional_material",
             "dungeon_clear_reward"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '잊힌 지하 예배실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '잊힌 지하 예배실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다.",
+          "encounter_ids": [
+            "DUN-S4-02-BOSS"
+          ]
         },
         {
           "id": "DUN-S4-02-Z06",
@@ -2221,7 +2652,7 @@
             "rare_material",
             "manual_fragment_candidate"
           ],
-          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '숨겨진 비밀 장부실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."
+          "scene_prompt": "루메린 S4의 '달그림자 폐예배당' 내부 '숨겨진 비밀 장부실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다. 지역 특색: 폐예배당의 달빛과 발자국. 위험: 움직이는 그림자와 갈라진 바닥. 탐색 대응: 달빛 각도를 관찰하고 돌아오는 발자국을 추적한다."
         }
       ],
       "entrance_zone_id": "DUN-S4-02-Z01",
@@ -2231,7 +2662,16 @@
       ],
       "exit_policy": "retreat_to_region_with_consequences",
       "respawn_policy": "no_immediate_instant_reset",
-      "map_coordinates_status": "not_fixed"
+      "map_coordinates_status": "not_fixed",
+      "encounter_profile": {
+        "dungeon_id": "DUN-S4-02",
+        "theme": "폐예배당의 달빛과 발자국",
+        "hazard": "움직이는 그림자와 갈라진 바닥",
+        "exploration": "달빛 각도를 관찰하고 돌아오는 발자국을 추적한다",
+        "boss_id": "DUN-S4-02-BOSS",
+        "elite_id": "DUN-S4-02-ELITE",
+        "base_monster_id": "ER-NPC-098"
+      }
     }
   ]
 }
