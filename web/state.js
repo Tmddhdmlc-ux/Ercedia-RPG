@@ -1,3 +1,4 @@
+import {normalizeAmbiencePreferences} from './ambience.js';
 import {normalizeLocalReputation} from './epic-model.js';
 import {normalizeVoicePreferences} from './voice-audio.js';
 import {bindWallet} from './wallet.js';
@@ -46,6 +47,7 @@ export function normalize(raw) {
   // Keep new preferences absent from old saves until the user changes them.
   if(raw.uiPreferences&&typeof raw.uiPreferences==='object'){
     s.uiPreferences={};
+    if(raw.uiPreferences.ambience)s.uiPreferences.ambience=normalizeAmbiencePreferences(raw.uiPreferences.ambience);
     if(raw.uiPreferences.voice)s.uiPreferences.voice=normalizeVoicePreferences(raw.uiPreferences.voice);
     if(raw.uiPreferences.music){const m=raw.uiPreferences.music;s.uiPreferences.music={enabled:m.enabled!==false,mode:['auto','village','night','battle','border','royal','farEast','unexplored','boss'].includes(m.mode)?m.mode:'auto',volume:Number.isFinite(m.volume)?Math.max(0,Math.min(.7,m.volume)):.22};}
     if(['normal','large','largest'].includes(raw.uiPreferences.textSize))s.uiPreferences.textSize=raw.uiPreferences.textSize;

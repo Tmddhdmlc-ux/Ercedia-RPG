@@ -1,6 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
+import {ambienceTracks} from '../web/ambience.js';
 import {skillAudioProfiles,skillSamplePaths} from '../web/skill-audio-profiles.js';
 import {engineData} from '../web/engine-data.js';
 import {uiSamples} from '../web/ui-audio.js';
@@ -33,7 +34,7 @@ test('sample failures remain nonfatal and can be retried; voice count is bounded
 });
 test('all registered samples are real Ogg assets and match the bundle audio list',async()=>{
   const paths=[...new Set([...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').concat(skillSamplePaths,['female_laugh','female_gasp','male_attack','male_hurt','male_jump'].map(n=>'assets/audio/voices/'+n+'.wav').concat(JSON.parse(await readFile(new URL('../assets/audio/voices/voice-banks.json',import.meta.url))).banks.flatMap(b=>Object.values(b.cues).map(c=>c.path)))))].sort();
-  paths.push(...monsterSamplePaths);paths.sort();assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>!p.endsWith('.mp3')),paths);
+  paths.push(...monsterSamplePaths,...Object.values(ambienceTracks).map(t=>t.path));paths.sort();assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>!p.endsWith('.mp3')),paths);
   for(const path of paths){const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),path.endsWith('.wav')?'RIFF':'OggS');assert.ok(bytes.length>1000);}
 });
 test('creature battle playback uses loaded attack/hurt/death clips and shares pause/mute cancellation',async()=>{

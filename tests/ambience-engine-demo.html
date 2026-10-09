@@ -1,0 +1,19 @@
+<!doctype html><html lang="ko"><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>에르세디아 · 엔진 환경음 연결</title>
+<style>body{height:100dvh;display:flex;flex-direction:column;margin:0;background:#101920;color:#eee;font:16px system-ui}header{padding:12px;display:flex;gap:12px;align-items:center}button{padding:10px;background:#213540;color:#eee;border:1px solid #ad9874;border-radius:5px}iframe{width:100%;flex:1;border:0;min-height:0}</style>
+<header><strong>지역 환경음 · 실제 게임 엔진</strong><select id="place" aria-label="환경음 장소"></select><select id="time" aria-label="게임 시간"><option>08:00</option><option>23:00</option></select><button id="start">장소 이동</button><span id="result" role="status">장소를 고르고 이동한 뒤 게임 화면을 눌러 환경음을 들어보세요.</span></header><iframe id="game" title="지역 환경음 게임 화면" sandbox="allow-scripts"></iframe>
+<script type="module">
+import {battleFixture} from './battle-fixtures.js';
+import {locationArt} from '../web/location-art.js';
+const frame=document.getElementById('game'),result=document.getElementById('result'),token='local-ambience-engine',conversation='ambience-engine-demo';let saved=battleFixture().state;
+saved.uiPreferences={music:{enabled:false},voice:{enabled:false}};
+const select=document.getElementById('place');
+const choices=[...locationArt.filter(a=>a.id==='sunny_village_day'||a.category==='shared_background'&&!['IMG-SHARED-11','IMG-SHARED-12'].includes(a.id)||a.category==='region_hub'),{id:null,name:'극동 지역'},{id:null,name:'미탐색 지역'}];
+for(const [index,place] of choices.entries()){const option=document.createElement('option');option.value=String(index);option.textContent=place.name;select.append(option);}
+window.addEventListener('message',e=>{const d=e.data;if(e.source!==frame.contentWindow||d?.token!==token)return;if(d.type==='save')saved=d.payload;if(d.type==='parse-error'||d.type==='boot-error')result.textContent=JSON.stringify(d.payload);});
+document.getElementById('start').onclick=()=>{const p=choices[Number(select.value)],time=document.getElementById('time').value;
+ const scene={schema_version:1,type:'ercedia_scene',scene_id:'ambience-'+Date.now(),location:p.name,time,background_id:p.id,npc:{id:'serin',speaker:'세린',outfit:'casual',emotion:'base'},dialogue:[{speaker:'나레이션',text:p.name+' · '+time+' · 지역 환경음 연결 확인용 장면입니다.'},{speaker:'세린',text:'잠시 주변 소리에 귀를 기울여 볼까요?'}],choices:[],game_state:{place:p.name,time}};
+ frame.contentWindow.postMessage({channel:'ercedia',token,conversation,type:'scene',payload:JSON.stringify(scene)},'*');result.textContent=p.name+' · '+time+' 이동';};
+const config={token,conversation,saved,assetBase:location.origin+'/'};
+const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config)};window.__ERCEDIA_STORAGE__={getItem:()=>JSON.stringify(window.__ERCEDIA_CONFIG__.saved),setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:'${token}',conversation:'${conversation}',type:'save',payload:state},'*');}};`;
+frame.srcdoc=(await (await fetch('../integration/game.html')).text()).replace('/*__ERCEDIA_BOOTSTRAP__*/',bootstrap);
+</script></html>

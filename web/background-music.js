@@ -14,19 +14,19 @@ export function sceneMusic({battle=false,title=false,background='',place='',time
   const hour=String(time).match(/(?:^|\s)(\d{1,2}):\d{2}/);
   return /밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6))?'night':'village';
 }
-export function createBackgroundMusic({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url)}={}){
-  let ctx,master,enabled=false,desired='village',active=null,volume=.22,error=false,loading=false,revision=0,activation=0;
+export function createBackgroundMusic({tracks=musicTracks,initialVolume=.22,assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url)}={}){
+  let ctx,master,enabled=false,desired=Object.keys(tracks)[0],active=null,volume=initialVolume,error=false,loading=false,revision=0,activation=0;
   const buffers=new Map(),loads=new Map(),voices=new Set();
   const status=()=>({enabled,desired,active,volume,error,loading});
   const report=()=>onStatus(status());
   function retire(fade=.8){const time=ctx?.currentTime||0;for(const voice of voices){voice.retired=true;voice.gain.gain.cancelScheduledValues(time);voice.gain.gain.setValueAtTime(voice.gain.gain.value,time);voice.gain.gain.linearRampToValueAtTime(0,time+fade);try{voice.source.stop(time+fade+.02);}catch{}}active=null;}
   async function load(name){
     if(buffers.has(name))return buffers.get(name);
-    if(!loads.has(name))loads.set(name,(async()=>{const response=await fetchAudio(assetBase+musicTracks[name].path);if(!response.ok)throw Error('Music load failed');const buffer=await ctx.decodeAudioData(await response.arrayBuffer());if(buffer.duration<3)throw Error('Music too short');buffers.set(name,buffer);return buffer;})().catch(error=>{loads.delete(name);throw error;}));
+    if(!loads.has(name))loads.set(name,(async()=>{const response=await fetchAudio(assetBase+tracks[name].path);if(!response.ok)throw Error('Music load failed');const buffer=await ctx.decodeAudioData(await response.arrayBuffer());if(buffer.duration<3)throw Error('Music too short');buffers.set(name,buffer);return buffer;})().catch(error=>{loads.delete(name);throw error;}));
     return loads.get(name);
   }
   async function select(name){
-    if(!musicTracks[name])return false;desired=name;error=false;if(enabled&&active===name){report();return true;}const ticket=++revision;
+    if(!tracks[name])return false;desired=name;error=false;if(enabled&&active===name){report();return true;}const ticket=++revision;
     if(!enabled){report();return true;}if(active===name){report();return true;}
     loading=true;report();
     try{
