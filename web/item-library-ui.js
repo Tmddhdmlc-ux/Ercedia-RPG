@@ -1,5 +1,6 @@
-import {itemCatalog,lootCatalog,itemCategory,itemIconURL,itemDescription,itemDetails} from './item-catalog.js';
+import {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails} from './item-catalog.js';
 import {applyItemRarity} from './item-rarity.js';
+import {appendItemIcon} from './item-art-ui.js';
 export function mountItemLibrary(state,{assetBase}={}){
   const root=document.createElement('details');root.className='item-library';
   const title=document.createElement('summary');title.textContent='장비 · 책 · 전리품 도감';root.append(title);
@@ -17,7 +18,7 @@ export function mountItemLibrary(state,{assetBase}={}){
       const card=document.createElement('article'),heading=document.createElement('h4'),description=document.createElement('p'),detail=document.createElement('p');card.className='item-library-card';
       heading.textContent=p.name||p.monster_name;
       if(group!=='loot'){
-        const image=new Image();image.loading='lazy';image.src=itemIconURL(p,assetBase);image.alt=p.name;image.onerror=()=>{image.hidden=true;};card.append(image);applyItemRarity(card,p);
+        appendItemIcon(card,p,assetBase);applyItemRarity(card,p);
         description.textContent=p.id+' · '+(p.rarity||'전리품')+' · '+itemDescription(p);detail.textContent=itemDetails(p);
       }else if(p.monster_id){description.textContent=p.monster_id+' · '+p.region_id;detail.textContent=p.roll_table.map(entry=>{const item=itemCatalog.find(i=>i.id===entry.item_id);return item.name+' · 성공 후 상대 가중치 '+entry.weight+' · '+entry.min_qty+'~'+entry.max_qty+'개';}).join('\n')+'\n드롭 성공률은 미확정이며 재료가 나오지 않을 수 있습니다.';}
       else {description.textContent=p.dungeon_id+' · '+p.region_id+' · 권장 Lv.'+p.recommended_levels.join('~');detail.textContent=p.first_clear.guaranteed.map(r=>r.type==='xp'?'첫 클리어 XP '+r.amount:r.type==='material_bundle'?'재료 후보 '+r.source_material_ids.join(', ')+' · '+r.quantity+'개':'최초 클리어 기록 '+r.id).join('\n')+'\n선택 장비 '+p.first_clear.optional_reward_pool.equipment_ids.join(', ')+'\n선택 책 '+p.first_clear.optional_reward_pool.book_ids.join(', ')+'\n추가 보상은 실제 사건에 따라 판정합니다. '+(p.repeatable?'재출현 확인 후 반복 보상 제한 적용.':'반복 클리어 보상 없음.');}

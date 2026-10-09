@@ -30,7 +30,7 @@
         <div class="story-controls"><button id="previous" class="text-button">← 이전</button><span id="count" aria-live="polite"></span><button id="next" class="text-button">다음 →</button></div>
         <div id="battle-controls" class="battle-controls" hidden aria-label="전투 관전 제어"><span id="battle-progress"></span><button id="battle-next" type="button">다음 턴 →</button><button id="battle-mode" type="button" aria-pressed="true">한 턴씩 읽기</button><button id="battle-pause" type="button">일시정지</button><label>속도 <select id="battle-speed"><option value="0.5">0.5배속</option><option value="1" selected>1배속</option><option value="2">2배속</option></select></label><button id="battle-skip" type="button">즉시 종료</button></div>
         <div id="battle-recovery" class="battle-recovery" role="alert" hidden><p id="battle-error"></p><button id="battle-retry" type="button">수정 요청 보내기</button><button id="battle-recover-close" type="button">기존 장면 유지</button></div>
-        <button id="battle-replay" class="battle-replay" type="button" hidden>전투 다시보기</button>
+        <section id="battle-result" class="battle-result" hidden aria-label="전투 결과와 전리품"></section><button id="battle-replay" class="battle-replay" type="button" hidden>전투 다시보기</button>
       </section>
       <section id="map-panel" aria-label="세계지도 화면" hidden>
         <div class="map-navigation"><span id="map-breadcrumb">세계지도</span><button id="map-overview" disabled>← 전체 지도</button></div>

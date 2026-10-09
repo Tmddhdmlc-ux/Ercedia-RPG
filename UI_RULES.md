@@ -1,5 +1,10 @@
 # 에르세디아 RPG — 공식 대화 UI 규칙 v0.2
 
+## 이미지 엔진 연결 — UI 2.1.4
+- [IMAGE_ENGINE_CONNECTION.md](IMAGE_ENGINE_CONNECTION.md): 아이콘 410개와 장소 261개를 연결했다. 신규 장소 background_id는 정확한 IMG- ID이며 기존 sunny_village_day와 null도 호환한다.
+- 실제 장면·던전 구역을 기준으로 배경을 바꾸고 지도 조회는 이동으로 취급하지 않는다. 신규 배경은 전체 그림을 보존하는 contain 표시다.
+- 상점·경매·전투 완료 전리품도 같은 아이콘·희귀도 색상을 사용한다. 오버레이와 결과 배경은 전투 UI가 선택한다.
+
 ## 아이템 희귀도 테두리 — 2026-10-09 추가 확정
 - 인벤토리·장비창·전리품창·상점·경매장·도감 아이콘은 [ITEM_RARITY_RULES.md](ITEM_RARITY_RULES.md)의 공통 기준을 따른다.
 - `rarity` 기준 테두리: 하급 `#FFFFFF`, 중급 `#26B75A`, 고급 `#3489FF`, 유니크 `#A35CF0`, 에픽 `#E64444`.

@@ -493,6 +493,12 @@ input[type=range] {
   inset:0;
   pointer-events:none
 }
+.background[data-art-fit=contain] {object-fit:contain;}
+.battle-transition-overlay {position:absolute;inset:0;width:100%;height:100%;object-fit:contain;pointer-events:none;opacity:.4;}
+.registered-item-icon {display:inline-flex;align-items:center;justify-content:center;width:48px;height:48px;flex-shrink:0;background:#101820;border-radius:6px;overflow:hidden;}
+.registered-item-icon img {width:100%;height:100%;object-fit:contain;}
+.battle-result {padding:12px 22px;background:var(--surface);}
+.battle-loot-row {display:flex;align-items:center;gap:12px;margin:8px 0;}
 .person {
   position:absolute;
   width:auto;
@@ -2733,6 +2739,7 @@ input[type=range] {
   height:90px;
   object-fit:contain
 }
+.item-library-card .registered-item-icon {width:90px;height:90px;}
 .item-library-card p {
   white-space:pre-line;
   font-size:15px

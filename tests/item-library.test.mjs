@@ -32,7 +32,7 @@ test('library is deferred and paginated, switches to loot and never changes the 
   const h=uiHarness();try{
     const original=document.createElement;document.createElement=(...args)=>{const p=original(...args);p.style={setProperty(){},removeProperty(){}};return p;};
     const state=defaults(),before=structuredClone(state),library=mountItemLibrary(state,{assetBase:'/'}),root=h.get('inventory-panel').children[0];
-    assert.equal(root.children[4].children.length,0);root.open=true;root.ontoggle();assert.equal(root.children[4].children.length,24);assert.equal(root.children[4].children[0].children[0].src,'/assets/items/equipment/ER-EQ-001.png');
+    assert.equal(root.children[4].children.length,0);root.open=true;root.ontoggle();assert.equal(root.children[4].children.length,24);assert.equal(root.children[4].children[0].children[0].children[0].src,'/assets/items/equipment/ER-EQ-001.png');
     const filter=root.children[2].children[0];filter.value='book';filter.onchange();assert.equal(root.children[4].children.length,24);filter.value='loot';filter.onchange();assert.match(root.children[4].children[0].children[2].textContent,/성공 후 상대 가중치/);
     library.render();assert.deepEqual(state,before);
   }finally{h.close();}

@@ -1,4 +1,5 @@
 import {introData} from './intro-data.js';
+import {regionBackground} from './location-art.js';
 import {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits} from './intro-model.js';
 import {defaults,normalize} from './state.js';
 import {mapData} from './map-data.js';
@@ -63,7 +64,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
       const fresh=freshCampaign(state,draft,settings,globalThis.crypto?.randomUUID?.()||'campaign-'+Date.now());
       for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
       save();render();
-      const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
+      const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:regionBackground(fields.starting_lordship_id),npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
       chat.setCampaignSettings(null);chat.apply(JSON.stringify(scene));
       chat.setCampaignSettings(settings);
       document.dispatchEvent(new CustomEvent('ercedia:intro-completed',{detail:{settings}}));

@@ -5,10 +5,13 @@ import {npcCatalog,npcSnapshot,updateNPC} from '../web/npc-model.js';
 import {settleQuests} from '../web/quest-model.js';
 import {publicLife,regionImpact} from '../web/npc-life.js';
 import {itemCatalog,catalogItem,lootCatalog} from '../web/item-catalog.js';
+import {locationArt} from '../web/location-art.js';
 // Public bridge v1. UI classes and character coordinates are intentionally absent.
 export function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
+    getBackgroundCatalog:()=>JSON.parse(JSON.stringify(locationArt.filter(a=>a.category!=='legacy'))),
+    getBackground:id=>{const art=locationArt.find(a=>a.id===id);return art?JSON.parse(JSON.stringify(art)):null;},
     getWorldEngine:()=>JSON.parse(JSON.stringify(state.world_engine||null)),
     getParty:()=>[...(state.world_engine?.party||[])],
     getDungeonProgress:()=>JSON.parse(JSON.stringify(state.world_engine?.dungeons||{})),
