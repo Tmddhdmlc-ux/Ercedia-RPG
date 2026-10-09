@@ -8,6 +8,7 @@
 추가 세계 엔진 사건은 [tampermonkey/WORLD_ENGINE_SCHEMA.md](tampermonkey/WORLD_ENGINE_SCHEMA.md)를 따른다. 사용자 지정 13개 개발 순서와 기존 구현 판정은 [patches/README.md](patches/README.md)에 기록한다. 설정 데이터와 실제 실행 성공을 구분한다.
 
 ## A. 시작 시 읽는 순서
+궁극기의 발동 조건과 최종 세린 컷신은 [ULTIMATE_SYSTEM.md](ULTIMATE_SYSTEM.md)를 읽고 적용한다. 자신의 행동 3회 완료 후 4번째 행동부터, 기술에 맞는 기회·최대 MP 30% 비용·인물당 전투 1회 제한을 모두 확인한다.
 궁극기 사용 시작 단계는 기사 익스퍼트 나이트·마법사 3서클이다. 강대한 컷신 제작 기준은 하이퍼 나이트·6서클이며, 도달만으로 기술을 자동 습득하지 않는다. 전 캐릭터 이미지 제작은 [ULTIMATE_CUTIN_ART_RULES.md](ULTIMATE_CUTIN_ART_RULES.md)와 [제작 대장](characters/ultimate_cutin_plan.json)을 따른다.
 **새 게임 필수:** BOOTSTRAP 직후 [GAMEPLAY_CONVENIENCE_RULES.md](GAMEPLAY_CONVENIENCE_RULES.md) v1.1 이상의 원문을 읽고 아래 모든 턴에 적용한다. 예시는 한정 목록이 아니다. GM은 매 장면 불필요한 확인 질문을 선제적으로 생략하고, 일반 이동·치료·귀환·휴식·반복 절차를 실제 조건에 맞게 자동 후처리한다. 중요한 선택만 질문한다. 파일이 없거나 v1.1의 포괄적 선제 후처리 규칙을 읽지 못했다면 설정 읽기 완료를 주장하거나 첫 GM 장면을 시작하지 않는다.
 전투 UI와 전투 장면 출력은 [BATTLE_SYSTEM.md](BATTLE_SYSTEM.md)를 함께 읽는다. 전투 수치는 COMBAT_GROWTH.md, 성장은 PROGRESSION.md, 마수 등급은 MONSTER_RANKS.md를 따른다. UI는 GM이 사전 판정한 전체 사건을 재생하며 추가 판정·재추첨을 하지 않는다.
