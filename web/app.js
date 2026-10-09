@@ -20,6 +20,7 @@ import {mountPlayHUD} from './play-hud.js';
 import {mountNewGame} from './new-game.js';
 import {mountBattleUI} from './battle-ui.js';
 import {dialogueVoice} from './battle-presentation.js';
+import {renderDialogueTerms,mountDialogueGlossary} from './dialogue-glossary.js';
 import {mountCatalogUI} from './catalog-ui.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {locationLabel as canonicalLocationLabel} from './location-label.js';
@@ -29,6 +30,7 @@ import {mountEngineUI} from './engine-ui.js';
 import {mountNPCLifeUI} from './npc-life-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
+mountDialogueGlossary($('line'));
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
 const standing='assets/characters/main/serin/standing/';
@@ -148,7 +150,7 @@ function renderLayout(){
 function renderDialogue(){
   const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
   const index=state.scene?state.sceneIndex:state.index,d=list[index];
-  $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';$('line').textContent=d.text;$('line').dataset.voice=dialogueVoice(d.speaker);
+  $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';renderDialogueTerms($('line'),d.text,state.scene||{npc:{id:'serin',speaker:'세린'}});$('line').dataset.voice=dialogueVoice(d.speaker);
   $('count').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
   $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
   if(state.scene){

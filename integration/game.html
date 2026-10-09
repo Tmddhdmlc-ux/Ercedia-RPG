@@ -2911,6 +2911,12 @@ input[type=range] {
 #speaker[data-voice=character],#line[data-voice=character],.battle-participant>strong{color:#86C9FF}
 #speaker[data-voice=narration]{color:var(--gold)}
 #line[data-voice=narration]{color:var(--text)}
+@media (hover:hover) and (pointer:fine){
+  #line .dialogue-term{color:#8CE2AB;cursor:help;text-decoration:underline dotted #8CE2AB80;text-underline-offset:4px;border-radius:2px}
+  #line .dialogue-term:focus-visible{outline:2px solid #8CE2AB;outline-offset:3px}
+}
+.dialogue-term-tooltip{position:fixed;z-index:500;max-width:min(380px,calc(100vw - 16px));padding:12px 16px;background:#111D26;color:#F0EDE5;border:1px solid #8CE2AB;border-radius:9px;box-shadow:0 8px 24px #0008;font-size:15px;line-height:1.6;white-space:pre-line;pointer-events:none}
+.dialogue-term-tooltip[hidden]{display:none}
 .battle-cutin{inset:35% 8% auto;font-size:clamp(32px,4.5vw,68px);font-weight:800;line-height:1.2;letter-spacing:.05em;padding:20px 26px;color:#FFF0CB;text-shadow:0 3px 6px #000,0 0 24px #C9A66B88;background:linear-gradient(90deg,transparent,#101820EE 20%,#101820EE 80%,transparent);border-color:#C9A66B99;pointer-events:none}
 .battle-cutin[data-kind=unique]{color:#FFE3A0;border-color:#FFDA89;box-shadow:0 0 32px #D4AC5B44}
 .battle-participant{position:relative}
@@ -7087,6 +7093,88 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
+const module69=(()=>{
+const {mapData}=module5;
+const {lordships}=module59;
+const {factionLocations}=module46;
+
+// Only public map facts and people explicitly present in the current scene.
+function dialogueGlossary(scene=null){
+  const terms=new Map();
+  const add=(name,description)=>{if(name&&description&&!terms.has(name))terms.set(name,{name,description});};
+  add('에르세디아','북부 미개척지와 중남부 인간 문명권, 주변 군도가 있는 대륙.');
+  for(const [name,description] of [['벨로아','서부 왕국. 평야와 농경지, 기사·기병 문화가 발달한 인간 국가.'],['드라켄','동부 왕국. 고원·산맥과 마나 광산, 마법 연구가 특징인 인간 국가.'],['루메린','남부 왕국. 해안과 항구를 중심으로 해상 무역이 발달한 인간 국가.']]){
+    add(name+' 왕국',description);add(name,description);
+  }
+  for(const p of mapData.locations){
+    if(p.kind!=='lordship')continue;
+    const l=lordships[p.id];
+    add(p.label,`${p.kingdom} 왕국의 영주령. 영주: ${p.lord}. ${l?.terrain||''}`);
+    add(p.lord,`${p.label}의 현직 영주. 소속: ${p.kingdom} 왕국.`);
+  }
+  for(const p of factionLocations){
+    add(p.name,`${p.group}. ${p.detail}${p.leader?' 대표 인물: '+p.leader+'.':''}`);
+    add(p.group,`${p.detail}${p.leader?' 대표 인물: '+p.leader+'.':''}`);
+    if(p.leader)add(p.leader,`${p.group}의 공개 대표 인물.`);
+  }
+  for(const p of scene?.cast||[scene?.npc].filter(Boolean)){
+    add(p.speaker,p.id==='serin'?'세린. 현재 장면에 등장한 베이직 나이트.':`현재 장면의 대화 참가자.${p.profile?.affiliation?' 소속: '+p.profile.affiliation+'.':''}`);
+  }
+  return [...terms.values()];
+}
+
+function splitDialogueTerms(text,terms){
+  const byName=new Map(terms.filter(t=>t.name&&t.description).map(t=>[t.name,t]));
+  if(!byName.size)return [{text}];
+  const escape=s=>s.replace(/[.*+?^${}()|[\]\\]/g,'\\</body>');
+  const pattern=new RegExp([...byName.keys()].sort((a,b)=>b.length-a.length).map(escape).join('|'),'gu');
+  const parts=[];let end=0;
+  for(const match of text.matchAll(pattern)){
+    // Prevent a name from highlighting inside a longer unrelated word.
+    if(match.index>0&&/[\p{L}\p{N}_]/u.test(text[match.index-1]))continue;
+    if(/[A-Za-z0-9_]/.test(text[match.index+match[0].length]||''))continue;
+    if(match.index>end)parts.push({text:text.slice(end,match.index)});
+    parts.push({text:match[0],term:byName.get(match[0])});end=match.index+match[0].length;
+  }
+  if(end<text.length)parts.push({text:text.slice(end)});
+  return parts.length?parts:[{text}];
+}
+
+function renderDialogueTerms(element,text,scene=null){
+  const doc=element.ownerDocument;
+  // Desktop enhancement only; mobile dialogue rendering stays unchanged.
+  if(!doc?.defaultView?.matchMedia?.('(hover: hover) and (pointer: fine)').matches){element.textContent=text;return;}
+  element.replaceChildren();
+  for(const part of splitDialogueTerms(text,dialogueGlossary(scene))){
+    if(!part.term){element.append(doc.createTextNode(part.text));continue;}
+    const word=doc.createElement('span');word.className='dialogue-term';word.textContent=part.text;
+    word.tabIndex=0;word.dataset.description=part.term.description;word.setAttribute('aria-label',part.term.name+' — '+part.term.description);
+    element.append(word);
+  }
+}
+
+function mountDialogueGlossary(element){
+  const doc=element.ownerDocument,win=doc.defaultView;
+  const tip=doc.createElement('div');tip.id='dialogue-term-tooltip';tip.className='dialogue-term-tooltip';tip.setAttribute('role','tooltip');tip.hidden=true;
+  (element.closest('.game')||doc.body).append(tip);
+  let active=null;
+  const hide=()=>{active?.removeAttribute('aria-describedby');active=null;tip.hidden=true;};
+  const show=word=>{
+    hide();if(!word?.classList.contains('dialogue-term'))return;
+    active=word;tip.textContent=word.dataset.description;tip.hidden=false;word.setAttribute('aria-describedby',tip.id);
+    const b=word.getBoundingClientRect(),width=tip.offsetWidth,height=tip.offsetHeight;
+    tip.style.left=Math.max(8,Math.min(win.innerWidth-width-8,b.left))+'px';
+    tip.style.top=Math.max(8,b.top-height-10>=8?b.top-height-10:Math.min(win.innerHeight-height-8,b.bottom+10))+'px';
+  };
+  element.addEventListener('mouseover',e=>show(e.target.closest?.('.dialogue-term')));
+  element.addEventListener('mouseout',hide);
+  element.addEventListener('focusin',e=>show(e.target));element.addEventListener('focusout',hide);
+  doc.addEventListener('keydown',e=>{if(e.key==='Escape')hide();});
+  win.addEventListener('resize',hide);doc.addEventListener('scroll',hide,true);
+  new win.MutationObserver(hide).observe(element,{childList:true});
+}
+
+return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
 const module67=(()=>{
 const {battleIsActive,battleFrame,validateBattleSettlement}=module27;
 const {characterVisual,artBase}=module3;
@@ -7094,6 +7182,7 @@ const {faceFit}=module9;
 const {resolveBackground,backgroundURL}=module37;
 const {appendItemIcon}=module48;
 const {battleCommentary}=module68;
+const {renderDialogueTerms}=module69;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
@@ -7123,7 +7212,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     art(slots[0],allied);art(slots[1],enemy);
     for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
     for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
-    $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);
+    $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),playback.scene);
     const skill=actor.skills.find(s=>s.id===e.skill_id);if(skill){$('battle-cutin').hidden=false;$('battle-cutin').textContent=skill.name;$('battle-cutin').dataset.kind=e.kind;animate($('battle-cutin'),[{opacity:0,transform:'translateY(10px) scale(.9)'},{opacity:1,transform:'translateY(0) scale(1)',offset:.15},{opacity:1,offset:.65},{opacity:0,transform:'translateY(-8px) scale(1.03)'}],duration(e)*.8);}
     $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
     const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
@@ -7178,7 +7267,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
       eventStart();lastTime=0;raf=requestAnimationFrame(tick);
     }else{
       // Other UI updates must not overwrite the one-line commentary.
-      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);}
+      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),p.scene);}
     }
   }
   function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}
@@ -7193,7 +7282,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module70=(()=>{
+const module71=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module3;
 const {findNPC}=module28;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -7222,8 +7311,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module69=(()=>{
-const {mountNPCLocations}=module70;
+const module70=(()=>{
+const {mountNPCLocations}=module71;
 const {registeredArt,artBase,placementLabel}=module3;
 const {catalogData}=module29;
 const {npcCatalog,resolveNPC,npcRankLabel}=module28;
@@ -7264,7 +7353,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module71=(()=>{
+const module72=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -7286,7 +7375,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module73=(()=>{
+const module74=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module20;
 const {applyItemRarity}=module33;
 const {appendItemIcon}=module48;
@@ -7320,7 +7409,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module74=(()=>{
+const module75=(()=>{
 const {engineItem}=module26;
 const {appendItemIcon}=module48;
 const {applyItemRarity}=module33;
@@ -7355,12 +7444,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module72=(()=>{
+const module73=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module26;
 const {applyItemRarity}=module33;
 const {appendItemIcon}=module48;
-const {mountItemLibrary}=module73;
-const {mountEquipmentSlots}=module74;
+const {mountItemLibrary}=module74;
+const {mountEquipmentSlots}=module75;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -7387,7 +7476,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module75=(()=>{
+const module76=(()=>{
 const {publicLife,lifeRole}=module44;
 const {findNPC}=module28;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -7437,15 +7526,17 @@ const {mountPlayHUD}=module63;
 const {mountNewGame}=module64;
 const {mountBattleUI}=module67;
 const {dialogueVoice}=module68;
-const {mountCatalogUI}=module69;
+const {renderDialogueTerms,mountDialogueGlossary}=module69;
+const {mountCatalogUI}=module70;
 const {initializeNameOnlyPlayer}=module57;
 const {locationLabel:canonicalLocationLabel}=module40;
-const {mountTitleMenu}=module71;
+const {mountTitleMenu}=module72;
 const {mountQuestUI}=module55;
-const {mountEngineUI}=module72;
-const {mountNPCLifeUI}=module75;
+const {mountEngineUI}=module73;
+const {mountNPCLifeUI}=module76;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module45;
 const $=id=>document.getElementById(id);
+mountDialogueGlossary($('line'));
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
 const MAP_CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2117dcd5f2f61dbe4c9de3452a255d2c22403d1b/';
 const standing='assets/characters/main/serin/standing/';
@@ -7565,7 +7656,7 @@ function renderLayout(){
 function renderDialogue(){
   const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
   const index=state.scene?state.sceneIndex:state.index,d=list[index];
-  $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';$('line').textContent=d.text;$('line').dataset.voice=dialogueVoice(d.speaker);
+  $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';renderDialogueTerms($('line'),d.text,state.scene||{npc:{id:'serin',speaker:'세린'}});$('line').dataset.voice=dialogueVoice(d.speaker);
   $('count').textContent=`${String(index+1).padStart(2,'0')} / ${String(list.length).padStart(2,'0')}`;
   $('previous').disabled=index===0;$('next').disabled=index===list.length-1;$('stage').setAttribute('aria-label',index===list.length-1?'마지막 대사':'장면을 눌러 다음 대사 보기');
   if(state.scene){
