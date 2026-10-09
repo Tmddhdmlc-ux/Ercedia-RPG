@@ -9,5 +9,5 @@
 - 사용자가 직접 실행·확인하므로 별도 요청이 없으면 브라우저를 조작해 시연하거나 클릭 테스트하지 않는다. 필요한 코드 검증 후 실행 링크를 제공한다.
 - 기존 세계관과 이미지 파일을 임의 변경하지 않는다. UI_RULES.md, PORTRAIT_RULES.md, STANDING_ART_RULES.md를 따른다.
 - Tampermonkey 런처는 UI와 분리한다. 일반 UI 수정에서 런처 재설치를 요구하지 않는다. integration/game-bridge.js v1, 장면 스키마 v1, 저장 버전 1의 호환성을 유지한다.
-- UI 또는 등록 이미지 수정 후 integration/version.json 및 integration/assets.json을 확인하고 node tampermonkey/build.mjs로 integration/game.html과 update-manifest.json을 생성해 GitHub에 함께 반영한다. 런처는 승인된 업데이트 적용 시에만 엔진을 교체하며 대화 중 업데이트를 보류한다.
+- UI 또는 등록 이미지 수정 후 integration/version.json 및 integration/assets.json을 확인하고 빌드 의존성을 `npm ci --ignore-scripts`로 준비한 뒤 node tampermonkey/build.mjs로 integration/game.html과 update-manifest.json을 생성해 GitHub에 함께 반영한다. 런처는 승인된 업데이트 적용 시에만 엔진을 교체하며 대화 중 업데이트를 보류한다.
 - 실제 ChatGPT/Tampermonkey 실행, 20턴 플레이 및 업데이트 시나리오를 확인하지 않았다면 성공 검증으로 기록하지 않는다. 사용자가 검증을 생략하도록 요청하면 구현과 배포만 진행하고 미검증 범위를 명시한다.

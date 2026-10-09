@@ -88,7 +88,7 @@ gameBridge.restoreGameState(savedState);
 ## 이후 Work 개발
 
 - UI 수정은 `index.html`, `web/`, 등록 자산에서 진행합니다. 장면·브리지·저장 규격을 유지합니다. 새 NPC는 캐릭터 자산/얼굴 설정과 스키마 허용 목록을 확장하고 `integration/assets.json`에 승인 자산을 추가합니다.
-- `integration/version.json`에서 UI 버전을 올리고 `node tampermonkey/build.mjs`로 번들을 생성해 함께 커밋합니다. 이 명령은 외부 빌드 패키지 없이 현재 모듈의 named import/export를 연결하며, 지원하지 않는 구문은 오류로 중단합니다.
+- `integration/version.json`에서 UI 버전을 올리고 `node tampermonkey/build.mjs`로 번들을 생성해 함께 커밋합니다. 첫 빌드 전 `npm ci --ignore-scripts`로 고정된 빌드 의존성을 준비합니다. 현재 모듈의 named import/export를 연결하고 Terser로 식별자와 공백을 압축합니다. 원본 코드는 유지하고 런타임 의존성은 추가하지 않습니다. 설치된 런처의 2,000,000자 제한을 넘거나 지원하지 않는 구문이면 빌드를 중단합니다.
 - GitHub Actions도 `main`의 UI·등록 자산 변경 시 번들을 생성합니다. 저장소의 Actions 실행 및 쓰기 권한/브랜치 정책이 허용되어야 자동 생성 커밋이 가능합니다. 제한된 저장소에서는 Work가 번들을 함께 커밋합니다. [사용한 공식 checkout](https://github.com/actions/checkout), [setup-node](https://github.com/actions/setup-node)
 - 일반 UI 패치는 런처 코드를 변경하거나 유저스크립트를 재설치할 필요가 없습니다. 런처의 전송 방식이나 브리지 규격을 바꾸면 런처 버전 업데이트가 필요합니다. v1.1.2부터 updateURL/downloadURL이 등록되어 Tampermonkey의 업데이트 확인 주기·사용자 설정에 따라 새 런처를 받을 수 있습니다. GitHub 수정 즉시 실행 중인 코드가 바뀌는 것은 아니며 업데이트 후 ChatGPT 페이지를 새로고침합니다. 이전 버전을 직접 붙여넣어 설치했다면 이번에 한 번 새 설치 파일로 교체하세요.
 
