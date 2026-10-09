@@ -52,13 +52,13 @@ export function createBackgroundMusic({tracks=musicTracks,initialVolume=.22,asse
   function setVolume(value){volume=Math.max(0,Math.min(.7,Number(value)||0));if(master)master.gain.value=volume;report();}
   return {select,enable,pause,setVolume,status};
 }
-export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage}={}){
+export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage,audioFactory=createBackgroundMusic}={}){
   const controls=[];let mode='auto',wanted=true,saved={};
   try{saved=JSON.parse(storage?.getItem('ercedia.bgm.preferences')||'{}');}catch{}
   if(saved.enabled===false)wanted=false;
   if(saved.mode==='auto'||musicTracks[saved.mode])mode=saved.mode;
   function persist(){try{storage?.setItem('ercedia.bgm.preferences',JSON.stringify({enabled:wanted,mode,volume:music.status().volume}));}catch{}}
-  const music=createBackgroundMusic({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled?'BGM · '+musicTracks[s.active||s.desired].name.split(' · ')[0]:'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
+  const music=audioFactory({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled&&s.volume===0?'BGM 음소거':s.enabled?'BGM · '+musicTracks[s.active||s.desired].name.split(' · ')[0]:'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
   function sync(){void music.select(mode==='auto'?sceneMusic({...getScene(),battle:root.dataset.battle==='active',title:root.dataset.title==='active'}):mode);}
   for(const host of [root.querySelector('.title-content'),root.querySelector('.tabs')]){
     if(!host)continue;const details=document.createElement('details'),summary=document.createElement('summary'),panel=document.createElement('div'),button=document.createElement('button'),select=document.createElement('select'),volume=document.createElement('input');details.className='music-controls';panel.className='music-settings';summary.textContent='BGM 끔';button.type='button';button.textContent='BGM 켜기';
@@ -68,7 +68,7 @@ export function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storag
     button.onclick=()=>{wanted=!music.status().enabled;if(wanted)void music.enable();else music.pause();persist();};select.onchange=()=>{mode=select.value;sync();persist();};volume.oninput=()=>{music.setVolume(Number(volume.value)/100);persist();};
   }
   if(Number.isFinite(saved.volume))music.setVolume(saved.volume);
-  function activate(event){if(!event.isTrusted)return;root.removeEventListener('pointerdown',activate);root.removeEventListener('keydown',activate);if(wanted&&!event.target.closest('.music-controls'))void music.enable();}
-  root.addEventListener('pointerdown',activate);root.addEventListener('keydown',activate);
+  function activate(event){if(!event.isTrusted||event.target.closest?.('.music-controls'))return;if(wanted&&(!music.status().enabled||music.status().error)&&!music.status().loading)void music.enable();}
+  document.addEventListener('pointerdown',activate,{capture:true});document.addEventListener('keydown',activate,{capture:true});document.addEventListener('click',activate,{capture:true});
   new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['data-battle','data-title']});sync();return {...music,sync};
 }

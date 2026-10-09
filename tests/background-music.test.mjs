@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createBackgroundMusic,sceneMusic} from '../web/background-music.js';
+import {createBackgroundMusic,sceneMusic,mountBackgroundMusic} from '../web/background-music.js';
 test('scene music prioritizes combat and actual places, with game-time night fallback',()=>{
   assert.equal(sceneMusic({battle:true,place:'왕궁',time:'밤'}),'battle');
   assert.equal(sceneMusic({background:'IMG-SHARED-05',time:'밤'}),'border');
@@ -30,4 +30,16 @@ test('music load errors are nonfatal, retry works and volume is capped',async()=
 });
 test('stopping during audio-context activation cancels the pending start',async()=>{
   const f=fixture();let resume;f.ctx.resume=()=>new Promise(resolve=>{resume=resolve;});const start=f.music.enable();f.music.pause();resume();assert.equal(await start,false);assert.equal(f.music.status().enabled,false);assert.equal(f.sources.length,0);
+});
+
+test('music activation survives settings clicks and failed loads, but respects manual mute',()=>{
+ const oldDoc=globalThis.document,oldObserver=globalThis.MutationObserver,listeners={};
+ globalThis.document={addEventListener:(name,fn)=>listeners[name]=fn};globalThis.MutationObserver=class{observe(){}};
+ try{let enabled=false,error=false,calls=0;const root={dataset:{},querySelector:()=>null};
+ mountBackgroundMusic(root,{audioFactory:()=>({select(){},status:()=>({enabled,error,loading:false,volume:.22}),enable(){calls++;enabled=true;error=false;}})});
+ listeners.pointerdown({isTrusted:true,target:{closest:()=>true}});assert.equal(calls,0);
+ const gesture={isTrusted:true,target:{closest:()=>null}};listeners.pointerdown(gesture);assert.equal(calls,1);
+ listeners.click(gesture);assert.equal(calls,1);error=true;listeners.click(gesture);assert.equal(calls,2);
+ mountBackgroundMusic(root,{storage:{getItem:()=>JSON.stringify({enabled:false})},audioFactory:()=>({select(){},status:()=>({enabled:false,volume:.22}),enable(){throw Error('manual mute');}})});listeners.click(gesture);
+ }finally{globalThis.document=oldDoc;globalThis.MutationObserver=oldObserver;}
 });

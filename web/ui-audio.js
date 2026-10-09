@@ -10,7 +10,7 @@ export function uiSoundTarget(target,relatedTarget=null){
 export function createUIAudio({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),storage=()=>window.localStorage,now=()=>performance.now()}={}){
   let ctx,master,loading,ready=false,muted=false,error=false,lastHover=-Infinity,lastClick=-Infinity,played=0,hoverPlayed=0,clickPlayed=0,lastCue='';
   const buffers=new Map(),voices=new Set(),cursor={};
-  try{muted=storage().getItem('ercedia-ui-muted')==='true';}catch{}
+  // UI feedback starts enabled on every launch.
   const status=()=>({ready,muted,error,played,hoverPlayed,clickPlayed,lastCue});
   const report=()=>onStatus(status());
   function stop(){for(const s of voices){try{s.stop();}catch{}s.disconnect();}voices.clear();}
@@ -36,13 +36,7 @@ export function createUIAudio({assetBase='',onStatus=()=>{},contextFactory=()=>n
   return {prepare,unlock,play,setMuted,stop,status};
 }
 export function mountUIAudio(root,{assetBase='',audioFactory=createUIAudio}={}){
-  const buttons=[];
-  const audio=audioFactory({assetBase,onStatus:s=>{root.dataset.uiSoundPlayed=String(s.played);root.dataset.uiSoundCue=s.lastCue;root.dataset.uiHoverPlayed=String(s.hoverPlayed);root.dataset.uiClickPlayed=String(s.clickPlayed);for(const button of buttons){button.textContent=s.muted?'UI 소리 꺼짐':'UI 소리 켜짐';button.setAttribute('aria-pressed',String(!s.muted));button.title=s.error?'소리 준비 실패 · 다시 켜기':'메뉴에 올리면 가벼운 소리, 누르면 확인음';}}});
-  for(const host of [root.querySelector('.title-menu'),root.querySelector('.tabs'),root.querySelector('.ui-preview-controls')]){
-    if(!host)continue;const button=document.createElement('button');button.type='button';button.className='ui-sound-toggle';buttons.push(button);host.append(button);
-    button.onclick=async()=>{const s=audio.status();audio.setMuted(s.error?false:!s.muted);if(!audio.status().muted)await audio.unlock();};
-  }
-  const s=audio.status();for(const b of buttons){b.textContent=s.muted?'UI 소리 꺼짐':'UI 소리 켜짐';b.setAttribute('aria-pressed',String(!s.muted));}
+  const audio=audioFactory({assetBase,onStatus:s=>{root.dataset.uiSoundPlayed=String(s.played);root.dataset.uiSoundCue=s.lastCue;root.dataset.uiHoverPlayed=String(s.hoverPlayed);root.dataset.uiClickPlayed=String(s.clickPlayed);}});
   // Load once while the title is shown. Hover starts after the first trusted gesture.
   void audio.prepare();
   root.addEventListener('pointerdown',()=>{void audio.unlock();},{capture:true});

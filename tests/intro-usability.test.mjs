@@ -49,6 +49,10 @@ test('background and response require explicit selection and Next without alteri
     assert.deepEqual(passiveCandidates(t.state.introDraft.answers),['steadfast','traveler']);
     assert.equal(t.state.introDraft.passive,'');assert.equal(t.h.get('intro-next').disabled,true);assert.equal(t.h.get('intro-options').children[0].children[0].textContent,'굳센 마음');assert.ok(t.h.get('intro-options').children[0].children[1].textContent.length>0);
     t.h.get('intro-options').children[1].onclick();t.h.get('intro-next').onclick();
-    assert.equal(t.state.introDraft.step,'kingdom');assert.equal(t.state.introDraft.passive,'traveler');
+    assert.equal(t.state.introDraft.step,'goal');assert.equal(t.state.introDraft.passive,'traveler');
+    t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'goal');
+    const persona='최고의 대장장이가 되어 여행자들의 검을 만들어주겠다.';
+    t.h.get('intro-goal').oninput({target:{value:persona}});assert.equal(normalize(t.state).introDraft.goal,persona);
+    t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'kingdom');
   }finally{t.h.close();}
 });
