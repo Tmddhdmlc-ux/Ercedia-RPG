@@ -21,22 +21,24 @@ function newRequestId(){
   if(typeof globalThis.crypto?.getRandomValues==='function')return [...globalThis.crypto.getRandomValues(new Uint8Array(16))].map(v=>v.toString(16).padStart(2,'0')).join('');
   return `action-${Date.now()}-${++requestSequence}`;
 }
-export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{}}){
+export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{},onStatus=()=>{}}){
   let loadedSettingsCommit=null,hasTurnContext=false;
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   let failedRequest=null;
-  let settingsRefreshing=false,settingsEpoch=0;
+  let settingsRefreshing=false,settingsEpoch=0,lastStatus='';
   const retiredRequests=new Set();
   function retire(id){if(!id)return;retiredRequests.add(id);if(retiredRequests.size>100)retiredRequests.delete(retiredRequests.values().next().value);}
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
   const choicePreview=document.createElement('aside');choicePreview.id='choice-preview';choicePreview.className='choice-preview';choicePreview.hidden=true;choicePreview.setAttribute('role','tooltip');$('stage').append(choicePreview);
   const status=message=>{
+    lastStatus=message;
     $('connection-detail').textContent=message;
     const problem=/실패|못했|못한|못해|오류|시간.*지났|다른 요청|달라|초과|거절|전송 확인|네트워크|불일치|대기.*해제|원본.*확인|지정한 뒤|준비가 끝난|종료한 뒤/.test(message);
     const row=$('connection-status').parentElement;
     row.hidden=!pending&&!problem&&!settingsRefreshing;row.dataset.phase=(pending||settingsRefreshing)&&!problem?'waiting':problem?'error':'idle';
     $('connection-status').textContent=pending?.repairAttempt&&!problem?`응답 수정 중 (${pending.repairAttempt}/${MAX_AUTO_REPAIRS})…`:pending&&!problem?'상대의 반응을 기다리는 중…':message;
+    onStatus(message);
   };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
@@ -245,7 +247,9 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
     }
     if(data.conversation!==conversation)return;
-    if(data.type==='sync-settings'){refreshSettings();return;}
+    // Older installed launchers send this automatically after updates/version checks.
+    // Registration is initiated exclusively by the in-game registration buttons.
+    if(data.type==='sync-settings')return;
     if(data.type==='bootstrap-campaign'){
       notify('bootstrap-started',{requestId:data.requestId,started:false,message:'자동 설정 전송은 중지되었습니다. 메뉴의 새 채팅방 설정 등록을 눌러주세요.'});return;
     }
@@ -261,6 +265,5 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   });
   if(embedded){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;notify('ready',{bridgeVersion:1,stateVersion:1});}
   else if(new URLSearchParams(location.search).has('game')){document.body.classList.add('embedded-game');$('chat-runtime').hidden=false;}
-  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,refreshSettings,reportStatus:status,sendSettings:snapshot=>{campaignSettings=snapshot;submit('새 채팅방 설정 등록',null,null,'refresh');},setCampaignSettings:snapshot=>{campaignSettings=snapshot?.sha===loadedSettingsCommit?null:snapshot;},isPending:()=>!!pending||settingsRefreshing||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
+  controls();status('게임 준비 완료');return {controls,apply,restore,notify,submit,refreshSettings,reportStatus:status,settingsStatus:()=>({busy:settingsRefreshing||!!pending?.settingsRefresh,message:lastStatus,registered:!!loadedSettingsCommit}),sendSettings:snapshot=>{campaignSettings=snapshot;submit('새 채팅방 설정 등록',null,null,'refresh');},setCampaignSettings:snapshot=>{campaignSettings=snapshot?.sha===loadedSettingsCommit?null:snapshot;},isPending:()=>!!pending||settingsRefreshing||battleIsActive(state)||!!getIntro?.()?.isStarting(),conversation:()=>conversation};
 }
-

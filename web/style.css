@@ -3193,3 +3193,12 @@ input[type=range] {
 .map-region-preview strong {display:block;color:#B9DFFD;margin:12px 0 4px;font-size:15px}
 .map-region-preview ul {padding-left:18px;margin:5px 0 12px}
 .map-region-preview li {margin:4px 0;overflow-wrap:anywhere}
+
+/* Keep all three title actions accessible inside short launcher frames. */
+.title-screen{overflow-y:auto;padding:20px 24px;}
+.title-content{margin-top:clamp(8px,2vh,24px);}
+.title-kicker{margin-bottom:14px;}
+.title-rule{margin:18px auto;}
+.title-menu{margin:16px auto;gap:9px;}
+.title-menu button{min-height:48px;font-size:19px;}
+#title-register-settings{font-size:16px;letter-spacing:0;}

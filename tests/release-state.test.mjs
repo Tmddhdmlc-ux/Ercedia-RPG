@@ -55,3 +55,9 @@ test('release migration rejects changed balances, player records, scenes, invent
   assert.equal(sameReleaseState({...before,currency:-1},after),false);
   assert.equal(sameReleaseState(before,{...after,version:2}),false);
 });
+
+
+test('launcher update, rollback and latest-version checks never initiate settings registration',()=>{
+ const source=readFileSync(new URL('../tampermonkey/host.template.js',import.meta.url),'utf8');
+ assert.doesNotMatch(source,/send\('sync-settings'/);
+});

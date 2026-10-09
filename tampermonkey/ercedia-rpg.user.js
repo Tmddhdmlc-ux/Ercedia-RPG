@@ -291,7 +291,6 @@ function persistSavedGame(key,state,{read,write}){
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
       version.textContent=`런처 1.2.5 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
-      if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
     }catch(error){record?.frame.remove();candidate=null;tell(`${error.message} · 마지막 정상 화면과 저장 상태를 유지합니다.`);if(initial)loading.textContent='GitHub UI를 시작하지 못했습니다. 최신 버전 확인으로 재시도하거나 localhost 수동 게임 화면을 사용하세요.';}
     finally{switching=false;update.disabled=false;rollback.disabled=!previous;}
@@ -303,10 +302,10 @@ function persistSavedGame(key,state,{read,write}){
       const commit=JSON.parse(await request(`https://api.github.com/repos/${REPO}/commits/main?check=${Date.now()}`));
       if(!/^[a-f0-9]{40}$/.test(commit.sha))throw Error('커밋 식별자가 올바르지 않습니다.');
       if(commit.sha===prepared?.sha){update.hidden=false;tell(`새 UI v${prepared.manifest.version} 다운로드 완료 · 현재 적용된 UI는 v${active?.release.manifest.version||'없음'}입니다. 업데이트 적용을 누르세요.`);return;}
-      if(commit.sha===active?.release.sha){if(force){tell('현재 확인된 최신 UI입니다. GitHub 게임 설정도 확인합니다.');if(active)send('sync-settings',null);}return;}
+      if(commit.sha===active?.release.sha){if(force){tell('현재 확인된 최신 UI입니다. 설정 등록은 타이틀의 새 채팅방 설정 등록을 이용하세요.');}return;}
       const base=`https://raw.githubusercontent.com/${REPO}/${commit.sha}/integration/`;
       const manifest=JSON.parse(await request(base+'update-manifest.json'));
-      if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force){tell('게임 UI 변경이 없습니다. 최신 GitHub 설정을 동기화합니다.');send('sync-settings',null);}return;}
+      if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force){tell('게임 UI 변경이 없습니다. 설정 등록은 타이틀의 새 채팅방 설정 등록을 이용하세요.');}return;}
       const release=await verify({sha:commit.sha,manifest,html:await request(base+'game.html')});
       if(!active)return await activate(release,true);
       prepared=release;update.hidden=false;tell(`새 UI 발견 · 현재 v${active.release.manifest.version} → v${manifest.version} (${commit.sha.slice(0,7)}). 진행 상태를 유지한 채 업데이트 적용을 누르세요.`);
