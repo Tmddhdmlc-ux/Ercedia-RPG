@@ -34,14 +34,16 @@ PC1280×900과 모바일390×844에서 상품 상세, 수량2 입력, 소유량/
 
 재현: `node tampermonkey/build.mjs`, `node tests/build-economy-preview.mjs`, `node server.mjs` 실행 후 `/artifacts/economy/preview-host.html`. 검증 페이지는 실제 배포 번들에 합성 시작 상태와 메모리 저장만 제공하며 사용자 실제 세이브에 쓰지 않는다. 생성한 대형 HTML 두 개는 Git 추적에서 제외한다.
 
+GitHub 배포 확인: 엔진 커밋 `4b768b08edf6870c9be6c003175002625992ced9`, 고정 커밋의 원격 game.html은 update-manifest.json의 SHA-256과 일치하며 UI버전2.1.10을 확인했다.
+
 ## 기존 저장 호환성
 기존 currency의 유효한 정수는 같은 숫자의 동화로 보존한다. wallet_copper가 이미 있으면 그 값(0 포함)이 우선. 잔액이 없는 구형 저장은 추가 시작금을 받지 않는다. 잘못된 금액은 거절하며 음수·소수·범위 밖 값을 반올림하지 않는다. 구형 견적의 미확인 매입 예산은0, 상인 판매대금 범위에서 매입. 구형 경매는 공고별 외부판매자 원장을 사용하고 신규 공고는 실제 판매자·소유 개체·증가액을 요구한다.
 
 ## 변경 파일
 - 원장/경제: web/wallet.js, web/economy.js, web/economy-data.js, web/economy-engine.js, web/world-engine.js, web/state.js, web/new-game-state.js, web/quest-model.js, web/engine-model.js, web/inventory.js.
-- UI/요청: web/wallet-ui.js, web/shop-ui.js, web/world-ui.js, web/quest-ui.js, web/app.js, web/style.css, web/scene.js, web/chat-ui.js, web/campaign-settings.js, index.html.
+- UI/요청: web/wallet-ui.js, web/shop-ui.js, web/world-ui.js, web/quest-ui.js, web/app.js, web/style.css, web/scene.js, web/chat-ui.js, index.html.
 - 연동/빌드: integration/game-bridge.js, integration/version.json, integration/game.html, integration/update-manifest.json, tampermonkey/build.mjs, tampermonkey/economy-build.mjs.
-- 규격/검사: CURRENCY_ECONOMY.md, tampermonkey/ENGINE_SCHEMA.md, tampermonkey/WORLD_ENGINE_SCHEMA.md, tampermonkey/ECONOMY_SCHEMA.md, tests/economy-fixtures.js, tests/economy.test.mjs, tests/build-economy-preview.mjs, tests/location-art.test.mjs, tests/quests.test.mjs, 이 문서, 캡처3개, .gitignore.
+- 규격/검사: CURRENCY_ECONOMY.md, tampermonkey/ENGINE_SCHEMA.md, tampermonkey/WORLD_ENGINE_SCHEMA.md, tampermonkey/ECONOMY_SCHEMA.md, tests/economy-fixtures.js, tests/economy.test.mjs, tests/build-economy-preview.mjs, tests/location-art.test.mjs, tests/quests.test.mjs, tests/vn-usability.test.mjs, 이 문서, 캡처3개, .gitignore.
 
 ## 남은 검증과 한계
 실제 ChatGPT 웹사이트 및 설치된 Tampermonkey의 로그인 세션은 이번 도구 환경에 노출되지 않았다. 실제 서비스에서 AI가 작성한 경제 응답의 자동 송수신, 장기 플레이, 업데이트 적용은 미검증이다. 위15번은 배포용 실제 브리지와 ChatGPT 메시지 채널을 합성 호스트/응답으로 검증한 결과이며 실제 ChatGPT 서비스 플레이 성공을 뜻하지 않는다. 매월 사건·소식·가격 인과관계는 GM이 실제 조건을 판정해야 하며 예정 달력이나 클릭만으로 재난/보상을 자동 생성하지 않는다.
