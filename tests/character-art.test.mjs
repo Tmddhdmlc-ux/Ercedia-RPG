@@ -16,9 +16,9 @@ import {uiHarness} from './ui-harness.mjs';
 test('all 162 portraits, 142 human standings and 24 unique symbols exist and are staged assets',()=>{
   const assets=JSON.parse(readFileSync('integration/assets.json')),paths=[];
   assert.equal(Object.keys(registeredArt).length,162);assert.equal(Object.values(registeredArt).filter(p=>p.standing).length,142);
-  for(const a of Object.values(registeredArt)){paths.push(a.portrait,...(a.standing?[a.standing]:[]));assert.deepEqual(a.expressions,['base']);}
+  for(const a of Object.values(registeredArt)){paths.push(a.portrait,...(a.standing?[a.standing]:[]));assert.ok(a.expressions.includes('base'));paths.push(...Object.values(a.expression_portraits||{}));}
   const symbols=new Set(Object.values(heraldry).flatMap(group=>Object.values(group)));assert.equal(symbols.size,24);paths.push(...symbols);
-  assert.equal(new Set(paths).size,328);for(const p of paths){assert.ok(existsSync(p));assert.ok(assets.includes(p));}
+  assert.equal(new Set(paths).size,328+Object.values(registeredArt).reduce((n,a)=>n+Object.keys(a.expression_portraits||{}).length,0));for(const p of paths){assert.ok(existsSync(p));assert.ok(assets.includes(p));}
 });
 test('163 placements keep source parent regions and public faction or regional anchors, without new geography',()=>{
   assert.equal(npcPlacements.length,163);assert.equal(new Set(npcPlacements.map(p=>p.id)).size,163);
