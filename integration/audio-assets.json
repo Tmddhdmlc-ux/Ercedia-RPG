@@ -48,5 +48,10 @@
   "assets/audio/starninjas/sword_2.ogg",
   "assets/audio/starninjas/sword_3.ogg",
   "assets/audio/starninjas/sword_4.ogg",
-  "assets/audio/starninjas/sword_6.ogg"
+  "assets/audio/starninjas/sword_6.ogg",
+  "assets/audio/voices/female_gasp.wav",
+  "assets/audio/voices/female_laugh.wav",
+  "assets/audio/voices/male_attack.wav",
+  "assets/audio/voices/male_hurt.wav",
+  "assets/audio/voices/male_jump.wav"
 ]

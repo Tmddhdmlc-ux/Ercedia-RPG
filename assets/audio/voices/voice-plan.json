@@ -1,0 +1,85 @@
+{
+  "status": "awaiting_voice_generation_connection",
+  "format": "short_nonverbal_reactions",
+  "voice_duration_seconds": [
+    0.4,
+    1.4
+  ],
+  "takes_per_emotion": 2,
+  "voices": [
+    {
+      "id": "female",
+      "label": "여성",
+      "direction": "An original adult feminine voice, clear warm mid-high register, expressive fantasy game acting, consistent speaker throughout all takes."
+    },
+    {
+      "id": "male",
+      "label": "남성",
+      "direction": "An original adult masculine voice, warm mid-low register, expressive fantasy game acting, consistent speaker throughout all takes."
+    }
+  ],
+  "emotions": [
+    {
+      "id": "base",
+      "label": "기본",
+      "guide": "응?",
+      "direction": "A short relaxed curious hmm, conversational and neutral."
+    },
+    {
+      "id": "smile",
+      "label": "기쁨",
+      "guide": "후후",
+      "direction": "A light warm joyful chuckle, naturally smiling."
+    },
+    {
+      "id": "angry",
+      "label": "분노",
+      "guide": "흠!",
+      "direction": "A firm irritated hmpf with controlled anger, no shouting."
+    },
+    {
+      "id": "surprised",
+      "label": "놀람",
+      "guide": "아!",
+      "direction": "A quick surprised gasp, sudden but not a scream."
+    },
+    {
+      "id": "sad",
+      "label": "슬픔",
+      "guide": "하…",
+      "direction": "A soft dejected sigh with restrained sadness."
+    },
+    {
+      "id": "embarrassed",
+      "label": "부끄러움",
+      "guide": "어…",
+      "direction": "A hesitant breathy uh with shy nervousness."
+    },
+    {
+      "id": "afraid",
+      "label": "두려움",
+      "guide": "헉…",
+      "direction": "A short fearful gasp with a tremble in the breath."
+    },
+    {
+      "id": "annoyed",
+      "label": "짜증",
+      "guide": "쯧…",
+      "direction": "A dry disapproving tongue click with an annoyed sigh."
+    },
+    {
+      "id": "love",
+      "label": "애정",
+      "guide": "음…",
+      "direction": "A gentle warm affectionate hum, subtle and tender."
+    }
+  ],
+  "notes": [
+    "Same speaker identity for all emotions in each voice bank.",
+    "Clean dry mono voice only; no music, effects, room noise or reverb.",
+    "No real-person imitation or voice cloning.",
+    "Guide syllables communicate delivery; no sentences or English phrases.",
+    "Generate/record 18 main cues first. Two variants per emotion can follow after audition.",
+    "No NPC gender inferred from names. Auditions are not applied to the game."
+  ]
+}
