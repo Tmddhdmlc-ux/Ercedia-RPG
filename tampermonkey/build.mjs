@@ -17,6 +17,7 @@ import './loot-build.mjs';
 import './crafting-build.mjs';
 import './relationship-build.mjs';
 await import('./shop-build.mjs');
+await import('./character-layout-build.mjs');
 // Run after the other registries finish updating the shared asset list.
 await import('./location-art-build.mjs');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');

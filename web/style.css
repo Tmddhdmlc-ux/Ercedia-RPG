@@ -519,11 +519,9 @@ input[type=range] {
 }
 .cast-canvas {
   position:absolute;
-  height:140%;
-  aspect-ratio:2/3;
-  top:-6%;
-  left:50%;
-  transform:translateX(-50%);
+  height:90%;
+  width:auto;
+  top:6%;
   filter:brightness(.72);
   transition:filter 160ms ease-out
 }
@@ -536,7 +534,6 @@ input[type=range] {
   object-fit:contain;
   animation:none
 }
-.cast-canvas[data-kind=monster] {height:80%;top:8%;aspect-ratio:1}
 .cast-face {position:absolute;height:auto;pointer-events:none}
 .cast-name {
   position:absolute;
@@ -595,17 +592,9 @@ input[type=range] {
   visibility:visible
 }
 .npc-standing {
-  height:410px;
+  height:90%;
   left:50%;
-  top:-120px;
-  transform:translateX(-50%) scale(2.6)
-}
-.npc-standing.npc-monster {
-  height:65%;
-  max-width:85%;
-  left:50%;
-  top:auto;
-  bottom:22%;
+  top:6%;
   transform:translateX(-50%)
 }
 .shade {
@@ -1828,9 +1817,8 @@ input[type=range] {
   display:none!important
 }
 .battle-visual {
-  height:100%;
-  aspect-ratio:2/3;
-  position:relative;
+  height:88%;
+  position:absolute;
   width:auto;
   max-width:none
 }
@@ -1844,9 +1832,6 @@ input[type=range] {
 .battle-face {
   position:absolute;
   height:auto
-}
-.battle-slot.monster-art .battle-body {
-  height:85%
 }
 .battle-missing {
   height:60%;

@@ -1,5 +1,6 @@
 import {characterVisual,artBase} from './character-art.js';
 import {faceFit} from './face-fit.js';
+import {mountCharacterFit} from './character-layout.js';
 export function castFrame(scene,index){
   const cast=scene?.cast||[],lines=scene?.dialogue||[],current=lines[index];
   const speaker=line=>line?.speaker_id||cast.find(p=>p.speaker===line?.speaker)?.id||null;
@@ -21,7 +22,8 @@ export function mountSceneCast(state,{assetBase,onSelect}){
     face.onload=()=>{face.dataset.ready='true';face.hidden=slot.dataset.npcId!=='serin'||!body.classList.contains('ready');};face.onerror=()=>{face.dataset.ready='false';face.hidden=true;};
     const select=event=>{event.stopPropagation();onSelect(slot.dataset.npcId,event);};
     body.onclick=name.onclick=select;body.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select(event);}};
-    canvas.append(body,face);slot.append(canvas,name);root.append(slot);return {slot,canvas,body,face,name};
+    canvas.append(body,face);slot.append(canvas,name);root.append(slot);
+    const sizing=mountCharacterFit(slot,[canvas]);return {slot,canvas,body,face,name,sizing};
   });
   return {hide(){root.hidden=true;},render(){
     const frame=castFrame(state.scene,state.sceneIndex);root.hidden=!frame.length||!state.character;root.dataset.count=frame.length;
@@ -35,6 +37,7 @@ export function mountSceneCast(state,{assetBase,onSelect}){
       s.body.hidden=false;const base=artBase(assetBase),url=base+art.path;
       if(s.body.getAttribute('src')!==url){s.body.classList.remove('ready');s.slot.dataset.failed='false';s.body.src=url;}
       s.canvas.dataset.kind=art.kind;
+      s.sizing.set(p.id,art);
       if(p.id==='serin'){
         const fit=faceFit[p.outfit];s.face.style.left=fit.x/1024*100+'%';s.face.style.top=fit.y/1536*100+'%';s.face.style.width=fit.size/1024*100+'%';
         const faceURL=base+`assets/characters/main/serin/faces/${p.emotion}.png`;

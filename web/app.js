@@ -19,6 +19,8 @@ import {mountChatUI} from './chat-ui.js';
 import {mountInventory,normalizeInventory} from './inventory.js';
 import {KEY,defaultLayout,load} from './state.js';
 import {faceFit} from './face-fit.js';
+import {characterVisual} from './character-art.js';
+import {mountCharacterFit} from './character-layout.js';
 import {mapData} from './map-data.js';
 import {mapSelectionInfo} from './map-info.js';
 import {mountFactionMap,factionInfo} from './faction-map.js';
@@ -115,6 +117,7 @@ for (const [outfit,data] of Object.entries(outfits)) {
   }
 }
 $('characters').append(faceLayer);
+const serinSizing=mountCharacterFit($('characters'),[...images.values(),faceLayer]);
 for(const expression of Object.keys(labels)){
   const img=new Image();img.alt=`세린 공통 얼굴 · ${labels[expression]}`;img.className='face-image';img.draggable=false;img.hidden=true;
   faces.set(expression,img);faceLayer.append(img);
@@ -155,8 +158,7 @@ function renderAppearance(){
 function renderLayout(){
   const l=state.layouts[state.outfit];
   for(const k of ['scale','x','y']) {$(k).value=l[k];$(k+'-value').textContent=l[k]+(k==='y'?'px':'%');}
-  for(const [key,img] of images) if(key.startsWith(state.outfit+':')) {img.style.left=l.x+'%';img.style.top=l.y+'px';img.style.transform=`translateX(-50%) scale(${l.scale/100})`;}
-  faceLayer.style.left=l.x+'%';faceLayer.style.top=l.y+'px';faceLayer.style.transform=`translateX(-50%) scale(${l.scale/100})`;
+  serinSizing.set('serin',characterVisual('serin',state.outfit,state.expression),l);
   const fit=faceFit[state.outfit];
   faceLayer.style.setProperty('--face-left',`${fit.x/1024*100}%`);
   faceLayer.style.setProperty('--face-top',`${fit.y/1536*100}%`);
