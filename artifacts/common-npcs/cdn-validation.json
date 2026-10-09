@@ -1,0 +1,873 @@
+{
+  "checked_at": "2026-10-09T04:24:16.753842+00:00",
+  "base_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0",
+  "count": 48,
+  "all_passed": true,
+  "files": [
+    {
+      "id": "ER-COM-001",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-001/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "05cf3712d566e6a577683c2098163916790026b9278f75537061b454d1d4157b",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-001",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-001/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "d535f0add4d1cae60d32e1f8c86b02bf6ba8985f76fed25ae31ad22d0b020914",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-002",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-002/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "9372462a7c482a2aa68399200efc469d20cebb0af9febefe65f863a451f23756",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-002",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-002/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "fc2b65e657cd8cf6becc3b0fc850cb659ca9a2d118d3501dce0dfaa12cee3a84",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-003",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-003/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "aa01e251c1f386e858283676565bb9e919f0da16eed8358a2296c757375cbb0f",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-003",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-003/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "429d0a336f7c57a69728f0cf2c4c4bb57696e5055703b026279f0fd3d26e1109",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-004",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-004/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "08775a6a953151e1c499102dbdcdc3bade35b94e65e5e5d5b3e38b1c20f1dfc9",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-004",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-004/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8b81d834fc00dbd5f2411dce90b5b73efbc4f6cd04af01f3a9dae4d1dcec2a01",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-005",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-005/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "64660127deb00718297fb02decf40fcfd84e8cc6db04185d092c91b8b2cc8089",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-005",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-005/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "00a975d753f6d26634f6cc5853da4ab405a3b842a0287ca72ee16c7a6813625b",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-006",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-006/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "a89d40456c303ed23969158175373b802ab77348a827c7ded770e20c6c0a9e6f",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-006",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-006/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "e07537a66304531aba928e900986521d8779b1752f6ff6325653b87d9f75b44a",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-007",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-007/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "28bdaaf6da76b6b02128416a92e59e1c215e2b351f45043a725e0834b48008aa",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-007",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-007/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "494c8ea7447c4847d4417554486208c62bd00ea02381092b29bbca7277f5a59f",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-008",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-008/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "92c0b0f7b5763a71320662ab03d807078ebdde8b953dab071d17b18f0b441b64",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-008",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-008/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "434021a28fc727240dfd67c741a0dd93e875d4522b4d80b2ea3d71644374cce2",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-009",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-009/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "e83f653c045cd91f1d1264025c1c4cedf8a6c8cdbeab3f8156f877225e5b878d",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-009",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-009/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "e5941fca8a304810769bb46122053cf4398c0f2002ef62c06fb22cb34963e3b0",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-010",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-010/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "bae21bc19ed7f8db7c209b4d39cf88e64985bb849a86c2463cdd252928e3e051",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-010",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-010/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "7a04b284111522b9eae1bde91a19a9df18772a9271fdec14806a22594761be6a",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-011",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-011/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "8df5564bdeb2b7fc11ad94e41ecc5ae779e3ffa1f92835bf800bbe94ef25ea15",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-011",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-011/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "fba1ea0fbde224d760ea1fa5ba0225fd4818c51ada0e313b08b5d34ff02656c9",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-012",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-012/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "d4dacd816fb139793d65fe205371a392d6c8e0d020897d2afa5e8f39621bde38",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-012",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-012/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "3318a97a6751a75cbdb41ac5a5e6a9b32d554461ea242a7163be7d3c17939234",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-013",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-013/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ef7f26c9006af9109f5daee9087d93e5052e07ae93e7ad25ffa17a175b788a37",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-013",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-013/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "fc02a00fe41a9c754c7baadfdde762dda9e14082401f37b43b0cfb7cb488cde8",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-014",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-014/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "ca1bf1af398e9017b1c874b5546a9bb7d2949b719c2942547f2d70b90d334333",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-014",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-014/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "c0ccf83b52ab942740712c70bfcbfece453439433c33c44dcfba9c9d077c5fbe",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-015",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-015/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "210f120762c610fdeed9b5dfd053d84af8d453a09bb5bcabbe2976eafc1c0dfd",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-015",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-015/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b27ca4710f4c471a515d2bf3d4992d0ac68fa207b71415e4e0ff89e1c58deb14",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-016",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-016/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "64705685f15091bec3bc346786990d783d2997229c6a2a10a6fbbbfc488e6c27",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-016",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-016/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "30c0af7fecfa14afc8367971fa8776cb692926102dfe51c440059807d57adfb8",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-017",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-017/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "156cdb12fcd7d247ed34d4b85e60f1cc16c2955df5bd5afa831771f32ffb348f",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-017",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-017/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "84fa193bf4ec2287ce8276e002e4e52162d9384cbf3ffaa74c487e39b7c636bc",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-018",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-018/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "42c1c4553c07979885526fa52887abd9df8134a03ebbfeb4fde7c88d2efa4074",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-018",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-018/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "a575908c28bc945b7f72ebacb714616485eb9b51e97566d69aceb5ae499001e3",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-019",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-019/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b1abe442931031774a333346e6adfd7353a1eee738b6a0abd51f13af7359c61b",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-019",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-019/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "4b5aad4c3db853e2d874c5b28284e78343f057cb3ebd2da1bdd1a1e473ab2d95",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-020",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-020/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "fcfe9c7d18018ffea975063fb7c07c59eb4e6a0e76e7c26259f3e89aa20cf708",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-020",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-020/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "e937fff70c648e8ffb3fbf46b6be5a111905f6e93ad5202f857831df5d18e07f",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-021",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-021/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "bfa344efc3f6e2302a723d2fef2aee632f570c234d92108f396f32949bdcebb6",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-021",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-021/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b170f49f659334b58b5ae43ce2010348afe6e316e0eb58b8a2bc81710bede023",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-022",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-022/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "9dd192e4e1fe7bb68b8477faf6746667a67e032a0a2f5bccccc31d43e77175a9",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-022",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-022/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "b665fb8452cd3fe361c24a96b4d74aefadea2c747584db353d677ad6ba99d141",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-023",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-023/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "f38438a185b728e3e48e7b4344246ea5e53d0fe3895b8bdbf4eb4e2085fdff1d",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-023",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-023/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "20ad75d75504aaf63e4dd150bda8ea927e8612aaaa092ac440063b2e935c2849",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-024",
+      "kind": "portrait",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-024/portrait.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1086,
+        1448
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "74cebe8d9283fe6812f5cf562a23539dd530fa32b4b002940005ea1bcaadd2c9",
+      "passed": true
+    },
+    {
+      "id": "ER-COM-024",
+      "kind": "standing",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/53782e9a2b37a55c774538697597f23f298c48c0/assets/characters/common/drafts/ER-COM-024/standing.png",
+      "http_status": 200,
+      "content_type": "image/png",
+      "size": [
+        1024,
+        1536
+      ],
+      "mode": "RGBA",
+      "alpha_extrema": [
+        0,
+        255
+      ],
+      "sha256": "12c2fb0d75b094562e629851a93a618b5b08feca3853e3e11eb08fb256946a58",
+      "passed": true
+    }
+  ],
+  "scope": "HTTP response, image decode, size, RGBA/alpha and exact file hash; does not assert browser UI or game integration."
+}
