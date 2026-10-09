@@ -12,14 +12,14 @@ function start(id=selected){const d=books.find(b=>b.skill_id===id);if(!d)return;
  $('selected-name').textContent=d.skill_name;$('source-summary').textContent=d.rarity+' · '+d.effect_summary;$('visual-summary').textContent='연출: '+p.description;$('speaker').textContent='주인공';$('line').textContent=d.skill_name+' — '+d.effect_summary;$('phase').textContent=p.illustrativeDamage?'공격 준비':'기술 전개';$('status').textContent=d.skill_name+' 재생 중';$('pause').disabled=false;$('pause').textContent='일시정지';
  for(const b of document.querySelectorAll('[data-skill]'))b.setAttribute('aria-pressed',String(b.dataset.skill===id));
  const color=elementColors[d.element]||(p.shape==='petal'||id==='skill_swd_025'?'#ffb0bd':id==='skill_swd_016'?'#bbebff':'#ffe0a7');fx.style.color=color;hudFX.style.color=color;stage.style.setProperty('--projectile-color',color);
- // Protect/support effects appear around the unseen caster's HUD. Attacks and marks stay on the visible target.
+ // First-person view: caster effects fill the centered foreground; attacks converge on the visible target.
  const onPlayer=!p.illustrativeDamage&&!['mark','mist','cage','corridor','eye','focus','parry'].includes(p.shape);fx.innerHTML=onPlayer?'':skillEffectSVG(p);hudFX.innerHTML=onPlayer?skillEffectSVG(p):'';stage.dataset.effectTarget=onPlayer?'player':'enemy';
  $('skill').hidden=false;$('skill').textContent=d.skill_name;animate($('skill'),[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.15},{opacity:1,offset:.72},{opacity:0}],1100);
  if(d.category==='spellbook')animate($('cast'),[{opacity:0,transform:'scale(.6)'},{opacity:.9,offset:.5},{opacity:0,transform:'scale(1.15)'}],1000);
  if(['orb','spear','thrust','trail','beam'].includes(p.shape)&&p.illustrativeDamage&&!reduced()){
-  const rect=stage.getBoundingClientRect(),target=enemy.getBoundingClientRect(),sx=rect.width*.18,sy=rect.height*.52,tx=target.left-rect.left+target.width*.5,ty=target.top-rect.top+target.height*.48;
-  $('projectile').style.left=sx+'px';$('projectile').style.top=sy+'px';$('projectile').style.width=p.shape==='orb'?(36+p.variant*12)+'px':'90px';$('projectile').style.height=p.shape==='orb'?(36+p.variant*12)+'px':'14px';
-  animate($('projectile'),[{opacity:0,transform:'translate(0,0)',offset:0},{opacity:0,transform:'translate(0,0)',offset:.48},{opacity:1,offset:.56},{opacity:1,transform:`translate(${tx-sx}px,${ty-sy}px)`,offset:.98},{opacity:0,transform:`translate(${tx-sx}px,${ty-sy}px)`}],impactTime);
+  const rect=stage.getBoundingClientRect(),target=enemy.getBoundingClientRect(),x=target.left-rect.left+target.width*.5,fromY=rect.height*.86,toY=target.top-rect.top+target.height*.48,size=p.shape==='orb'?36+p.variant*12:64;
+  $('projectile').style.left=(x-size/2)+'px';$('projectile').style.top=(fromY-size/2)+'px';$('projectile').style.width=size+'px';$('projectile').style.height=size+'px';
+  animate($('projectile'),[{opacity:0,transform:'translateY(0) scale(1.8)',offset:0},{opacity:0,transform:'translateY(0) scale(1.8)',offset:.48},{opacity:1,offset:.56},{opacity:1,transform:`translateY(${toY-fromY}px) scale(.55)`,offset:.98},{opacity:0,transform:`translateY(${toY-fromY}px) scale(.55)`}],impactTime);
  }
  raf=requestAnimationFrame(tick);
 }
@@ -31,9 +31,9 @@ function impact(){impacted=true;const d=books.find(b=>b.skill_id===selected),p=e
   if(['vortex','ring','eye'].includes(p.shape)){const group=node.querySelector('svg>g');animate(group,[{transform:'rotate(0deg)'},{transform:`rotate(${p.shape==='eye'?-100:140}deg)`}],1400);}
   if(p.shape==='rain')animate(node,[{transform:'translateY(-80px)'},{transform:'translateY(30px)'}],1200);
  }
- if(p.illustrativeDamage){$('damage').textContent='−24';animate($('damage'),[{opacity:0,transform:'translate(-50%,12px)'},{opacity:1,offset:.15},{opacity:1,offset:.65},{opacity:0,transform:reduced()?'translateX(-50%)':'translate(-50%,-44px)'}],1400);if(!reduced())animate(enemy,[{transform:'translateX(0)'},{transform:'translateX(18px)',offset:.2},{transform:'translateX(0)'}],450);}
- if(p.shape==='dash'&&!reduced())animate(node,[{opacity:0,transform:'translateX(-55px)'},{opacity:1,offset:.3},{opacity:0,transform:'translateX(45px)'}],1000);
- if(p.shape==='break'&&!reduced())animate(stage,[{transform:'translateX(0)'},{transform:'translateX(-5px)'},{transform:'translateX(5px)'},{transform:'translateX(0)'}],260);
+ if(p.illustrativeDamage){$('damage').textContent='−24';animate($('damage'),[{opacity:0,transform:'translate(-50%,12px)'},{opacity:1,offset:.15},{opacity:1,offset:.65},{opacity:0,transform:reduced()?'translateX(-50%)':'translate(-50%,-44px)'}],1400);if(!reduced())animate(enemy,[{transform:'scale(1)'},{transform:'scale(.97) translateY(5px)',offset:.2},{transform:'scale(1)'}],450);}
+ if(p.shape==='dash'&&!reduced())animate(node,[{opacity:0,transform:'translateY(65px) scale(1.25)'},{opacity:1,offset:.3},{opacity:0,transform:'translateY(-15px) scale(.75)'}],1000);
+ if(p.shape==='break'&&!reduced())animate(stage,[{transform:'translateY(0)'},{transform:'translateY(-5px)'},{transform:'translateY(5px)'},{transform:'translateY(0)'}],260);
 }
 function next(){const i=visible.findIndex(b=>b.skill_id===selected);start(visible[(i+1)%visible.length]?.skill_id);}
 function tick(now){if(!running)return;if(!paused){if(last)elapsed+=(now-last)*Number($('speed').value);if(elapsed>=impactTime&&!impacted)impact();if(elapsed>=total){running=false;$('pause').disabled=true;$('phase').textContent='재생 완료';$('status').textContent=books.find(b=>b.skill_id===selected).skill_name+' 재생 완료';if($('autoplay').checked)next();return;}}last=now;raf=requestAnimationFrame(tick);}

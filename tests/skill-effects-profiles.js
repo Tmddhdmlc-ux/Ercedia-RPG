@@ -50,21 +50,21 @@ export function skillEffectSVG(p){
  case 'slash': for(let i=0;i<(v===4?1:Math.min(v,4));i++)paths.push(slash(a+i*78,i));break;
  case 'petal':paths.push(slash(a),...[-1,1].map(n=>path(`M200 270 Q${200+n*160} 90 ${200+n*110} 290 Q200 340 200 270`,6)));break;
  case 'star':paths.push(slash(a),path('M200 140L218 215L285 250L218 270L200 345L182 270L115 250L182 215Z',3));break;
- case 'thrust':case 'spear':paths.push(path(`M20 250H${330+v*10}L285 ${225-v*5} M${330+v*10} 250L285 ${275+v*5}`,12),path('M0 237H235 M0 263H235',3));if(p.shape==='spear')paths.push(path('M255 250L300 190L350 250L300 310Z',4));break;
+ case 'thrust':case 'spear':paths.push(path(`M200 470V${180-v*12}L${175-v*4} 260 M200 ${180-v*12}L${225+v*4} 260`,12),path('M95 480L175 270 M305 480L225 270',3));if(p.shape==='spear')paths.push(path('M200 170L245 245L200 310L155 245Z',4));break;
  case 'shield': paths.push(v===4?circle(165):path(`M200 ${140-v*8}L${295+v*6} 190V285Q290 345 200 390Q110 345 105 285V190Z`,6),circle(110+v*8),path('M200 195V335 M135 250H265',2));break;
  case 'counter':paths.push(`<g class="guard-part">${circle(80+v*8)}</g>`,slash(a,1));break;
  case 'parry':paths.push(path('M75 165L290 330 M115 345L315 150',7),path('M180 220L160 180 M230 260L290 270 M220 220L255 180',5));break;
- case 'dash': for(let i=0;i<v+2;i++)paths.push(path(`M${30+i*15} ${190+i*25}Q170 ${140+i*27} ${280-i*15} ${190+i*25}`,4+i,'opacity=".65"'));break;
+ case 'dash': for(let i=0;i<v+2;i++){const x=45+i*310/(v+1);paths.push(path(`M${x} 440Q${(x+200)/2} 330 200 ${230-i*10}`,4+i,'opacity=".65"'));}break;
  case 'focus':paths.push(circle(140-v*12),circle(55+v*4),path('M200 120V200 M200 300V380 M70 250H150 M250 250H330',3));break;
  case 'break':paths.push(slash(a),path(`M200 250L150 295L175 320L90 410 M200 250L265 310L250 340L330 420 M200 250L200 390`,4+v));break;
- case 'orb':paths.push(`<circle cx="200" cy="250" r="${35+v*18}" fill="currentColor" opacity=".35"/>`,circle(35+v*18),circle(20),path('M50 225Q110 235 145 250 M50 275Q110 265 145 250',5));break;
+ case 'orb':paths.push(`<circle cx="200" cy="250" r="${35+v*18}" fill="currentColor" opacity=".35"/>`,circle(35+v*18),circle(20),path('M100 430L170 315 M300 430L230 315',5));break;
  case 'ring': for(let i=0;i<v+1;i++)paths.push(circle(60+i*34,`class="stroke-part" style="--order:${i}"`));break;
  case 'veil':case 'wall':case 'mirror': for(let i=0;i<4+v;i++)paths.push(path(`M${80+i*42} 120Q${40+i*42} 240 ${90+i*42} 380`,p.shape==='wall'?12:4));if(p.shape==='mirror')paths.push(path('M105 140H305V360H105Z',5));break;
  case 'bolt':case 'chain': paths.push(path(`M${160-v*8} 80L230 170L175 225L250 285L170 410`,4+v*3));if(p.shape==='chain'||v>2)paths.push(path('M210 200L295 160L270 250L350 295 M205 270L110 250L130 340L65 380',4));break;
  case 'mist': for(let i=0;i<4+v;i++)paths.push(`<ellipse cx="${95+(i%3)*85}" cy="${190+Math.floor(i/3)*85}" rx="${65+v*8}" ry="55" fill="currentColor" opacity=".28"/>`);break;
  case 'mark':paths.push(circle(65),path('M200 140V215 M200 285V360 M90 250H165 M235 250H310',5),path('M185 250L200 235L215 250L200 265Z',4));break;
  case 'burst': paths.push(circle(55+v*15));for(let i=0;i<8+v*2;i++){const angle=i*360/(8+v*2);paths.push(`<g transform="rotate(${angle} 200 250)">${path(`M200 150V${95-v*8}`,5)}</g>`);}break;
- case 'trail':paths.push(path('M30 335Q60 120 200 245T370 155',14),path('M35 355Q60 150 200 275T370 185',4));break;
+ case 'trail':paths.push(path('M200 480Q120 395 200 330T200 190',14),path('M220 480Q140 395 220 330T220 190',4));break;
  case 'vortex':for(let i=0;i<3+v;i++)paths.push(`<g transform="rotate(${i*70} 200 250)">${path('M200 130Q365 160 300 325Q235 420 120 300Q70 200 190 210',5)}</g>`);break;
  case 'cage':paths.push(circle(140),path(`M70 160L330 160L355 340L45 340Z`,5),path('M95 130V370 M150 100V400 M250 100V400 M305 130V370',3));break;
  case 'wave':for(let i=0;i<3+v;i++)paths.push(path(`M35 ${180+i*44}Q110 ${105+i*44} 200 ${180+i*44}T365 ${180+i*44}`,5+i));break;
@@ -73,7 +73,7 @@ export function skillEffectSVG(p){
  case 'split':paths.push(path('M180 110Q80 190 40 370 M220 110Q320 190 360 370',12),path('M170 120Q70 200 30 370 M230 120Q330 200 370 370',3));break;
  case 'crystal':paths.push(path('M200 100L290 200L270 330L200 400L115 295L110 200Z',5),path('M200 100V400 M110 200L270 330 M290 200L115 295',3));break;
  case 'moon':paths.push('<path d="M250 100A150 150 0 1 0 250 400A120 150 0 0 1 250 100" fill="currentColor" opacity=".5"/>',circle(160));break;
- case 'beam':paths.push(path('M0 250H400',20),path('M0 250H400',5,'stroke="#fff"'),path('M0 220H400 M0 280H400',3));break;
+ case 'beam':paths.push(path('M200 500V190',20),path('M200 500V190',5,'stroke="#fff"'),path('M90 500L180 190 M310 500L220 190',3));break;
  case 'eye':paths.push(circle(135),circle(95),path('M45 250Q200 90 355 250Q200 410 45 250Z',5),circle(25));break;
  }
  return `<svg viewBox="0 0 400 500" aria-hidden="true"><g transform="rotate(${['slash','counter','star','petal','break'].includes(p.shape)?0:a} 200 250)">${paths.join('')}</g></svg>`;
