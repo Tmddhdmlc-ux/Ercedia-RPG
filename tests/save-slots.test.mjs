@@ -1,7 +1,7 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {defaults,normalize,load,KEY} from '../web/state.js';
-import {writeSlot,saveSnapshot,slotCandidate,normalizeSlots,saveSummary} from '../web/save-slots.js';
+import {writeSlot,saveSnapshot,slotCandidate,normalizeSlots,slotRecords,saveSummary} from '../web/save-slots.js';
 import {freshCampaign} from '../web/new-game-state.js';
 import {initialPlayer} from '../web/intro-model.js';
 const game=()=>({...defaults(),campaign_id:'old-campaign',player:initialPlayer('청명'),gameState:{date:'650-07-03',place:'곡창길',events:['만남']},inventory:[{name:'곡식',quantity:2}],relationships:{serin:{affection:24,flags:['첫 만남'],interaction_history:['인사'],last_interaction_day:'650-07-03'}},battleApplied:['battle-1']});
@@ -31,7 +31,7 @@ function uiHarness(s,store){
  class Node{constructor(tag){this.tag=tag;this.children=[];this.dataset={};this.attrs={};this.textContent='';this.disabled=false;this.listeners={};}append(...nodes){for(const n of nodes){if(n.parent)n.parent.children=n.parent.children.filter(c=>c!==n);n.parent=this;this.children.push(n);}}prepend(n){this.children.unshift(n);}replaceChildren(){this.children=[];}setAttribute(k,v){this.attrs[k]=v;}addEventListener(k,f){this.listeners[k]=f;}showModal(){this.open=true;}close(){this.open=false;}focus(){}}
  const old=globalThis.document,game=new Node('main'),title=new Node('section'),actions=new Node('div'),utility=new Node('details');game.dataset.title='closed';const listeners={};
  globalThis.document={createElement:t=>new Node(t),querySelector:q=>q==='.game'?game:q==='.utility-actions'?actions:utility,getElementById:()=>title,activeElement:new Node('button'),addEventListener:(k,f)=>listeners[k]=f};
- let pending=false,entered=0,restored=0;const ui=mountSaveUI(s,{storage:store,isPending:()=>pending,restore(candidate){restored++;for(const k of Object.keys(s))delete s[k];Object.assign(s,candidate);},enter(){entered++;game.dataset.title='closed';}});
+ let pending=false,entered=0,restored=0;const ui=mountSaveUI(s,{storage:store,isPending:()=>pending,restore(candidate,options){assert.deepEqual(options,{prepared:true,deferRender:true});restored++;for(const k of Object.keys(s))delete s[k];Object.assign(s,candidate);},enter(){entered++;game.dataset.title='closed';}});
  const dialog=()=>[...game.children,...title.children].find(n=>n.tag==='dialog');
  return {ui,game,title,dialog,pending:v=>pending=v,entered:()=>entered,restored:()=>restored,listeners,close:()=>globalThis.document=old};
 }
@@ -47,4 +47,13 @@ test('title load dialog and automatic continue are accessible; failed slot loadi
  try{h.game.dataset.title='active';h.ui.open('load');const d=h.dialog();assert.equal(d.parent,h.title);assert.equal(d.children[1].children[0].disabled,true);d.children[3].children[1].onclick();store.setItem=()=>{throw Error('quota');};d.children[5].onclick();assert.equal(s.player.hp,10);assert.equal(h.restored(),0);assert.match(d.children[4].textContent,/불러오기 실패/);
  d.children[3].children[0].onclick();d.children[5].onclick();assert.equal(h.entered(),1);assert.equal(h.restored(),0);assert.equal(s.player.hp,10);
  }finally{h.close();}
+});
+
+test('slot listing never reads histories; only the selected game is copied and normalized',()=>{
+ const selected=game(),other=game();Object.defineProperty(other,'longHistory',{enumerable:true,get(){throw Error('unselected history traversed');}});
+ const state={...game(),save_slots:[{id:1,state:selected},{id:2,state:other}]};
+ assert.equal(slotRecords(state.save_slots)[1].state,other);let calls=0;
+ const restored=slotCandidate(state,1,s=>{calls++;return normalize(s);});assert.equal(calls,1);assert.equal(restored.save_slots[1].state,other);
+ restored.player.hp=2;assert.equal(selected.player.hp,100);assert.equal(saveSnapshot(state).save_slots,undefined);
+ const h=uiHarness(state,memory());try{h.ui.open('load');h.ui.refresh();assert.equal(h.ui.hasSlots(),true);h.dialog().children[3].children[1].onclick();assert.equal(h.dialog().children[5].disabled,false);}finally{h.close();}
 });

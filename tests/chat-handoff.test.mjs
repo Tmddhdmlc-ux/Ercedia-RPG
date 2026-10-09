@@ -63,3 +63,12 @@ test('new-game controller immediately opens the region question and never sends 
     assert.equal(await controller.begin(),true);assert.equal(requests.length,0);assert.equal(state.introDraft.step,'origin');assert.equal(state.player.name,'');assert.deepEqual(events,['ercedia:new-game-started']);
   }finally{globalThis.fetch=oldFetch;h.close();}
 });
+
+test('slot restore accepts an already validated candidate without another normalization or render; bridge restores retain defaults',()=>{
+ const h=uiHarness();let renders=0;try{
+  const state=defaults(),chat=mountChatUI(state,{embedded:true,render(){renders++;},persist(){},storage:{}});
+  const prepared=normalize({...defaults(),player:{name:'새 여정'}});
+  chat.restore(prepared,{prepared:true,deferRender:true});assert.equal(renders,0);assert.equal(state.player,prepared.player);assert.equal(state.player.name,'새 여정');
+  chat.restore({version:1,player:{name:'기존 브리지'}});assert.equal(renders,1);assert.equal(state.player.name,'기존 브리지');assert.equal(state.scene,null);
+ }finally{h.close();}
+});
