@@ -1,7 +1,8 @@
 const $=id=>document.getElementById(id);
 const metadata=await fetch('../assets/characters/cutins/drafts/serin/metadata.json').then(r=>r.json());
-const audit=await fetch('../artifacts/ultimate-cutins/settings-audit.json').then(r=>r.json());
-for(const item of audit.deferred){const tr=document.createElement('tr');for(const value of [item.id,item.name,item.reason]){const td=document.createElement('td');td.textContent=value;tr.append(td);}$('holds').append(tr);}
+const settings=await fetch('../characters/combat_profiles.json').then(r=>r.json());
+const classNames={knight:'기사',mage:'마법사',cleric:'성직',civilian:'생활인',martial:'일반 무예',monster:'마수'};
+for(const item of settings.characters){const s=item.stats,tr=document.createElement('tr');for(const value of [item.id,item.name,classNames[item.combat_class],item.combat_rank,`Lv.${item.level} · ${s.strength}/${s.agility}/${s.intelligence}/${s.constitution}/${s.mana}`,item.main_skill.name+' · '+(item.main_skill.element||'비원소'),item.ultimate_design?'설정 준비 · 원화/학습은 별도':'해당 계열 궁극기 제외']){const td=document.createElement('td');td.textContent=value;tr.append(td);}tr.title=item.main_skill.action+' '+item.main_skill.limits;$('holds').append(tr);}
 let elapsed=0,last=null,running=false,paused=false,raf=0;
 const total=()=>$('tier').value==='expert'?3000:3800;
 function draw(){
