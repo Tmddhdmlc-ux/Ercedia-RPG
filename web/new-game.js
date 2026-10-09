@@ -11,7 +11,7 @@ import {startRegionInfo,automaticStartLordship} from './start-regions.js';
 export function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
-  let lastStep='',starting=false,settings=null,editingAppearance=false;
+  let lastStep='',starting=false,settings=null;
   async function readSettings(){
     starting=true;chat.controls();
     try{settings=await loadCampaignSettings({onProgress:message=>{$('title-load-note').textContent=message;chat.reportStatus(message);}});return settings;}
@@ -47,9 +47,9 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
   }
   function next(){
     const draft=state.introDraft;if(!draft)return;
-    if(draft.step==='name'&&!draft.name.trim()){ $('intro-error').textContent='이름을 입력해주세요.';$('intro-input').focus();return; }
-    if(['calling','response'].includes(draft.step)&&!introData.questions.find(q=>q.id===draft.step).options.some(o=>o.id===draft.answers[draft.step])){ $('intro-error').textContent='원하는 답변 하나를 선택한 뒤 다음을 눌러주세요.';return; }
-    if(draft.step==='passive'&&!passiveCandidates(draft.answers).includes(draft.passive)){ $('intro-error').textContent='두 후보 중 패시브 하나를 선택해주세요.';return; }
+    if(draft.step==='name'&&!draft.name.trim()){ $('intro-error').textContent='너의 이름을 먼저 들려다오.';$('intro-input').focus();return; }
+    if(['calling','response'].includes(draft.step)&&!introData.questions.find(q=>q.id===draft.step).options.some(o=>o.id===draft.answers[draft.step])){ $('intro-error').textContent='마음과 가까운 답 하나를 골라다오.';return; }
+    if(draft.step==='passive'&&!passiveCandidates(draft.answers).includes(draft.passive)){ $('intro-error').textContent='네 여정에 함께할 기질 하나를 골라다오.';return; }
     if(draft.step==='lordship'&&!draft.lordship)return;
     go(introSteps[introSteps.indexOf(draft.step)+1]);
   }
@@ -70,11 +70,11 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
       const fresh=freshCampaign(state,draft,settings,globalThis.crypto?.randomUUID?.()||'campaign-'+Date.now());
       for(const key of Object.keys(state))delete state[key];Object.assign(state,fresh);lastStep='';
       save();render();
-      const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:'시작 시점',background_id:regionBackground(fields.starting_lordship_id),npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
+      const scene={schema_version:1,type:'ercedia_scene',scene_id:'new-game-'+Date.now()+'-'+Math.random().toString(36).slice(2),location:fresh.gameState.place,time:fresh.gameState.time,background_id:regionBackground(fields.starting_lordship_id),npc:null,dialogue:[{speaker:'나레이션',text:`${fields.character_name}, ${fields.starting_kingdom}의 ${place.label}에서 당신의 여정이 시작된다.`},{speaker:'나레이션',text:`당신은 영주령 안의 안전한 정착지에 도착했다. 아직 이름이 확정되지 않은 임시 시작점이다. ${passive.name}을 품고, 이제 첫걸음을 내딛는다.`}],choices:[]};
       chat.setCampaignSettings(null);chat.apply(JSON.stringify(scene));
       chat.setCampaignSettings(settings);
       document.dispatchEvent(new CustomEvent('ercedia:intro-completed',{detail:{settings}}));
-      if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
+      if(embedded)chat.submit('새 게임의 첫 GM 장면을 생성해주세요. 저장된 시작 왕국과 영주령 안의 안전한 임시 정착지에서 시작하고, 미확정 마을 이름을 공식 설정으로 고정하지 마세요. 에르세디아력 650년 7월 1일 오전 09:00부터 시작하세요. Lv1/HP100/MP100/기본 능력치 5종 10과 선택한 패시브 하나를 유지하세요. 세린이나 써니 빌리지를 이 지역으로 임의 이동시키지 마세요. 등록된 해당 지역 배경이 없으면 background_id=null, NPC 원화가 없으면 npc=null로 진행해주세요.');
     }catch(error){$('intro-map-error').textContent=error.message;$('intro-map-next').disabled=false;}
   }
   function refresh(){
@@ -84,8 +84,8 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     for(const button of document.querySelectorAll('.tabs button'))button.disabled=!!draft&&button.id!=='fullscreen';
     $('new-game').disabled=chat.isPending();$('hud-player').disabled=!!draft;
     $('continue-game').hidden=!draft&&!state.player.name&&!state.scene;$('continue-game').textContent=draft?'이어하기 · 생성 계속':'이어하기';
-    $('restore-previous-game').hidden=!state.previousGame;
-    $('intro-cancel').hidden=$('intro-map-cancel').hidden=!state.player.name.trim()&&!state.scene;
+    $('restore-previous-game').hidden=!!draft||!state.previousGame;
+    for(const id of ['intro-back','intro-map-back','intro-cancel','intro-map-cancel'])$(id).hidden=true;
     const allowed=new Set();
     document.querySelectorAll('[data-region]').forEach(node=>{const eligible=allowed.has(node.dataset.region)||introData.start_regions.some(r=>r.id===node.dataset.region);node.dataset.startEligible=String(eligible);node.inert=!!isMap&&!eligible;});
     document.querySelectorAll('.map-detail-label').forEach(node=>node.dataset.startEligible=String(allowed.has(node.dataset.location)));
@@ -94,7 +94,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     $('intro-back').disabled=draft.step==='name';$('intro-error').textContent='';
     if(isMap){
       if(draft.kingdom){draft.lordship=automaticStartLordship(draft.kingdom,draft.lordship);if(draft.step==='lordship')draft.step='confirmation';}
-      $('intro-map-title').textContent=draft.kingdom?'이 왕국에서 시작하시겠습니까?':'어느 왕국에서 시작할까요?';
+      $('intro-map-title').textContent=draft.kingdom?'이 왕국에 첫발을 내딛겠느냐?':'어느 왕국으로 향하겠느냐?';
       const kingdomOptions=$('intro-kingdom-options');kingdomOptions.replaceChildren();
       for(const r of introData.start_regions){const button=text('button',startRegionInfo[r.id].title,kingdomOptions);button.type='button';button.setAttribute('aria-pressed',String(draft.kingdom===r.id));button.onclick=()=>{draft.kingdom=r.id;draft.lordship=automaticStartLordship(r.id,draft.kingdom===r.id?draft.lordship:null);go('confirmation');};}
       const place=mapData.locations.find(p=>p.id===draft.lordship),region=introData.start_regions.find(r=>r.id===draft.kingdom),passive=introData.passives.find(p=>p.id===draft.passive);
@@ -107,30 +107,25 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
       return;
     }
     const question=introData.questions.find(q=>q.id===draft.step),candidates=passiveCandidates(draft.answers);
-    const labels={name:'이름',gender:'모습 · 선택 사항',calling:'배경 선택',response:'행동 성향',passive:'패시브 확인'};
-    if(lastStep!==draft.step)editingAppearance=!!draft.appearance;
-    $('intro-progress').textContent=`캐릭터 생성 ${introSteps.indexOf(draft.step)+1} / 5 · ${labels[draft.step]} → 이후 시작 지역 선택`;
-    const titles={name:'주인공의 이름을 정해주세요',gender:'모습을 지금 정할까요?',calling:'어떤 배경의 주인공으로 시작할까요?',response:'위험을 만나면 먼저 무엇을 할까요?',passive:'선택한 성향으로 얻는 패시브'};
-    $('intro-title').textContent=titles[draft.step];
-    const descriptions={name:'게임에서 사용할 이름만 입력하면 됩니다. 실제 이름이나 자기소개는 필요하지 않습니다.',gender:'선택 사항입니다. 버튼으로 고르거나 나중에 정해도 됩니다. 직접 적기는 원하는 경우에만 사용하며, 능력치와 주인공 이미지에는 영향을 주지 않습니다.',calling:'실제 자신의 경험을 쓰는 질문이 아닙니다. 만들고 싶은 주인공의 배경 하나를 선택하세요. 직업·장비가 확정되는 것은 아니며 작은 패시브의 후보를 정합니다.',response:'주인공이 취했으면 하는 행동 하나를 선택하세요. 앞선 배경과 함께 패시브 1개를 결정하며, 답변은 뒤로 가서 바꿀 수 있습니다.'};
-    $('intro-description').textContent=draft.step==='passive'?(candidates.length===1?'두 선택이 같은 패시브를 가리켰습니다. 아래 효과를 확인하고 시작 지역을 고르세요.':'두 선택이 서로 다른 패시브를 가리켰습니다. 원하는 효과 하나를 선택하세요. 둘 다 얻는 것은 아닙니다.'):descriptions[draft.step];
-    const input=$('intro-input'),typing=draft.step==='name'||draft.step==='gender'&&editingAppearance;input.hidden=!typing;$('intro-input-label').hidden=!typing;
-    input.maxLength=draft.step==='name'?40:200;input.placeholder=draft.step==='name'?'예: 청명':'예: 검은 머리의 여행자 (선택 사항, 200자 이내)';
-    if(lastStep!==draft.step)input.value=draft.step==='name'?draft.name:draft.appearance;
-    $('intro-input-label').textContent=draft.step==='name'?'주인공 이름 (필수)':'성별·모습 직접 입력 (선택)';
-    $('intro-skip').hidden=draft.step!=='gender'||!editingAppearance;$('intro-skip').textContent='모습은 나중에 정하기';
-    $('intro-next').hidden=draft.step==='gender'&&!editingAppearance;$('intro-next').textContent=draft.step==='passive'?'이 패시브로 시작 지역 선택':draft.step==='response'?'패시브 확인':'다음';
+    const labels={name:'이름',gender:'성별',calling:'성격',response:'위험 앞의 선택',passive:'너의 기질'};
+    $('intro-progress').textContent=draft.step==='passive'?'문답을 마치고 · 너의 기질':`여정의 문답 ${introSteps.indexOf(draft.step)+1} / 4 · ${labels[draft.step]}`;
+    $('intro-title').textContent=question?.text||'네 대답 속에서 이런 기질이 느껴지는구나.';
+    const descriptions={name:'이 여정에서 불리고 싶은 이름을 들려다오. 긴 자기소개는 하지 않아도 된다.',gender:'모습은 나중에 그려도 좋다. 지금은 성별만 답해다오.',calling:'옳고 그른 답은 없단다. 네 마음과 가장 가까운 말을 골라보거라.',response:'네가 그 자리에 있다고 생각하고, 마음이 가는 대로 답해보거라.'};
+    $('intro-description').textContent=draft.step==='passive'?(candidates.length===1?'이 기질이 앞으로 네 여정에 작은 힘이 되어줄 것이다.':'두 가지 기질이 느껴지는구나. 그중 네 여정에 함께할 하나를 골라보거라.'):descriptions[draft.step];
+    const input=$('intro-input'),typing=draft.step==='name';input.hidden=!typing;$('intro-input-label').hidden=!typing;
+    input.maxLength=40;input.placeholder='여정에서 불릴 이름';
+    if(lastStep!==draft.step)input.value=draft.name;
+    $('intro-input-label').textContent='너의 이름';
+    $('intro-skip').hidden=true;
+    $('intro-next').hidden=draft.step==='gender';$('intro-next').textContent=draft.step==='passive'?'이 기질과 함께 떠난다':draft.step==='response'?'대답을 마친다':draft.step==='name'?'이 이름으로 답한다':'답을 전한다';
     $('intro-next').disabled=draft.step==='passive'&&!candidates.includes(draft.passive)||['calling','response'].includes(draft.step)&&!question.options.some(o=>o.id===draft.answers[draft.step]);
     options.replaceChildren();
-    if(draft.step==='gender'){
-      for(const [label,value] of [['남성','남성'],['여성','여성'],['나중에 정하기','']]){
-        const button=text('button',label,options);button.type='button';button.onclick=()=>{draft.appearance=value;next();};
-      }
-      const edit=text('button','직접 적기 · 선택 사항',options);edit.type='button';edit.setAttribute('aria-expanded',String(editingAppearance));edit.onclick=()=>{editingAppearance=!editingAppearance;refresh();if(editingAppearance)input.focus();};
+    if(draft.step==='gender')for(const option of question.options){
+      const button=text('button',option.label,options);button.type='button';button.onclick=()=>{draft.appearance=option.value;next();};
     }
-    if(question?.options)for(const option of question.options){
-      const button=document.createElement('button'),passive=introData.passives.find(p=>p.id===option.passive);button.type='button';button.setAttribute('aria-pressed',String(draft.answers[draft.step]===option.id));
-      text('strong',option.label,button);text('span',`패시브 후보: ${passive.name}`,button);text('small',passive.description,button);options.append(button);
+    if(['calling','response'].includes(draft.step))for(const option of question.options){
+      const button=document.createElement('button');button.type='button';button.setAttribute('aria-pressed',String(draft.answers[draft.step]===option.id));
+      text('strong',option.label,button);options.append(button);
       button.onclick=()=>{draft.answers[draft.step]=option.id;if(draft.step==='response'){const ids=passiveCandidates(draft.answers);draft.passive=ids.length===1?ids[0]:'';}else draft.passive='';save();refresh();$('intro-next').focus();};
     }
     if(draft.step==='passive')for(const id of candidates){

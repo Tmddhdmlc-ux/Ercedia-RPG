@@ -94,5 +94,18 @@
     "tempo_hint_bpm": 111,
     "key_hint": "E minor",
     "requested_style": "Instrumental overwhelming epic fantasy boss battle music, monumental terrifying power, thunderous taiko and timpani, massive low brass, pipe organ, ferocious string ostinatos, dramatic dark minor melody, 154 BPM, relentless intense rhythm and towering climaxes, no vocals."
+  },
+  "title": {
+    "title": "에르세디아의 서막",
+    "path": "assets\\audio\\music\\title_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 178,
+    "tempo_hint_bpm": 111,
+    "key_hint": "D minor",
+    "requested_style": "Instrumental orchestral medieval fantasy title screen theme, noble adventurous and wistful atmosphere, memorable rising lyrical theme, delicate harp arpeggios and solo wooden flute in the opening, broad soaring violin melody with warm French horns and resonant cello counterpoint, stately timpani and orchestral bass drum only in the majestic central passage, 84 BPM flowing 6/8 feel, minor-key mystery resolving into luminous hopeful modal harmony, elegant spacious concert-hall reverb, polished acoustic orchestral timbres, high melodic register with grounded bass, gradual development from intimate prologue to sweeping epic main theme then gentle harp and strings reprise, no singing, no choir, no bell chimes, no electronic dance beat, no cinematic sound effects, recurring melodic phrases and soft sustained closing texture for game-menu crossfade looping.",
+    "sha256": "f3c924b75afb3866629521b13dcb05deb590abd462eaadfa6070bcd5aa8d0269"
   }
 }

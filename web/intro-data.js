@@ -18,46 +18,63 @@ export const introData = {
   "questions": [
     {
       "id": "name",
-      "text": "사람들은 너를 무엇이라 부르는가?",
+      "text": "아르세디아 대륙에 어서 오거라! 너의 이름은 무엇이냐?",
       "type": "text",
       "required": true
     },
     {
       "id": "gender",
-      "text": "어떤 모습으로 살아갈 것인가?",
-      "type": "free_or_selection",
-      "required": false
+      "text": "그래, 너의 성별도 알려주겠느냐?",
+      "type": "choice",
+      "required": false,
+      "options": [
+        {
+          "id": "male",
+          "label": "남성이다",
+          "value": "남성"
+        },
+        {
+          "id": "female",
+          "label": "여성이다",
+          "value": "여성"
+        },
+        {
+          "id": "private",
+          "label": "밝히지 않겠다",
+          "value": "밝히지 않음"
+        }
+      ]
     },
     {
       "id": "calling",
-      "text": "어떤 삶을 살아왔는가?",
+      "text": "너는 스스로 어떤 성격이라 생각하느냐?",
       "type": "choice",
       "options": [
         {
           "id": "guard",
-          "label": "누군가를 지키며 살았다",
+          "label": "소중한 사람을 쉽게 외면하지 않는다",
           "passive": "steadfast"
         },
         {
           "id": "wanderer",
-          "label": "길 위에서 배웠다",
+          "label": "낯선 길을 보면 먼저 걸어보고 싶다",
           "passive": "traveler"
         },
         {
           "id": "scholar",
-          "label": "책과 관찰로 세상을 알았다",
+          "label": "작은 변화도 유심히 살펴보는 편이다",
           "passive": "observant"
         },
         {
           "id": "artisan",
-          "label": "손으로 무언가를 만들어 왔다",
+          "label": "손으로 해결할 방법을 찾는 편이다",
           "passive": "craftsman"
         }
       ]
     },
     {
       "id": "response",
-      "text": "낯선 위험 앞에서 너는 무엇을 먼저 하는가?",
+      "text": "그렇다면 낯선 위험을 만났을 때, 무엇을 먼저 하겠느냐?",
       "type": "choice",
       "options": [
         {
@@ -170,7 +187,12 @@ export const introData = {
     "No random passive rolls or hidden percentages.",
     "Only show publicly knowable map locations; no secret god/demon lore.",
     "New Game opens prologue. Continue existing saves bypasses prologue."
-  ]
+  ],
+  "start_calendar": {
+    "era": "에르세디아력",
+    "date": "650-07-01",
+    "time": "09:00"
+  }
 };
 export const playerTemplate = {
   "schema_version": 1,

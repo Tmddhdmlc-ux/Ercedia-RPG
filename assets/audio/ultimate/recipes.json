@@ -7,8 +7,7 @@
       "files": [
         "spell_01.ogg",
         "spell_02.ogg",
-        "blade_03.ogg",
-        "metal_01.ogg"
+        "blade_03.ogg"
       ]
     },
     {
@@ -79,7 +78,6 @@
     "https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/",
     "https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/"
   ],
-  "direction": "No charging riser in prepare/reveal/charge. Short unsheathing metal and static decaying blade resonance replace it; 120ms pre-strike silence remains.",
   "polish": "Reduced saturated high partials and flutter, quicker high-frequency decay, denser softer stereo reflections, 28 Hz cleanup, mild 3.4 kHz harshness reduction and 15.5 kHz rolloff. Preserves the 120 ms pre-strike silence and attack timing.",
   "processing": "Reversed risers, pitched and filtered external CC0 layers, timing offsets, echo tails, fades and peak limiting. No voice line or combat decision is generated.",
   "recipes": {
@@ -87,18 +85,18 @@
       1.45,
       [
         [
-          "skills/metal_01.ogg",
-          0.5,
+          "skills/spell_02.ogg",
+          0.35,
           1.0,
           0,
-          "highpass=f=450,lowpass=f=6500"
+          "areverse,lowpass=f=1100"
         ],
         [
-          "starninjas/sword_3.ogg",
-          0.12,
-          1.2,
-          0.025,
-          "highpass=f=1200"
+          "kenney/impactPunch_heavy_000.ogg",
+          0.14,
+          0.6,
+          0,
+          "lowpass=f=240"
         ]
       ]
     ],
@@ -151,18 +149,18 @@
       1.55,
       [
         [
-          "skills/metal_01.ogg",
-          0.38,
-          1.1,
+          "skills/magical_4.ogg",
+          0.45,
+          0.7,
           0,
-          "highpass=f=700,lowpass=f=7200"
+          "areverse,highpass=f=500"
         ],
         [
-          "starninjas/sword_3.ogg",
-          0.1,
-          1.35,
-          0.025,
-          "highpass=f=1600"
+          "skills/spell_02.ogg",
+          0.23,
+          0.6,
+          0,
+          "areverse,lowpass=f=2800"
         ]
       ]
     ],

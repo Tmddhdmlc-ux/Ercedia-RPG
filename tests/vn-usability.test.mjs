@@ -17,12 +17,12 @@ test('three kingdom buttons explain each region, automatically assign an approve
     for(const [index,id,origin] of [[0,'west','W1'],[1,'east','E1'],[2,'south','S1']]){
       h.get('intro-kingdom-options').children[index].onclick();
       assert.equal(state.introDraft.kingdom,id);assert.equal(state.introDraft.lordship,origin);assert.equal(state.introDraft.step,'confirmation');
-      assert.match(h.get('intro-map-title').textContent,/시작하시겠습니까/);
+      assert.match(h.get('intro-map-title').textContent,/첫발을 내딛겠느냐/);
       assert.ok(h.get('intro-map-summary').children.some(p=>p.textContent.includes('보너스는 없습니다')));
       assert.equal(normalize(state).introDraft.lordship,origin);
     }
     state.introDraft.lordship='S4';ui.render();assert.equal(state.introDraft.lordship,'S4');
-    state.player.name='기존 인물';ui.render();assert.equal(h.get('intro-map-cancel').hidden,false);
+    state.player.name='기존 인물';ui.render();assert.equal(h.get('intro-map-cancel').hidden,true);
     assert.equal(automaticStartLordship('east','W3'),'E1');assert.equal(automaticStartLordship('west','W3'),'W3');
   }finally{h.close();}
 });

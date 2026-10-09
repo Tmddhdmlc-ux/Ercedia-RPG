@@ -8,9 +8,9 @@ test('game clock recognizes five phases and Korean AM/PM without inventing minut
  assert.equal(parseGameTime('오후').clock,'');assert.equal(parseGameTime('시작 시점').phase,'unknown');assert.equal(parseGameTime('24:00').clock,'');
 });
 test('360-day date and old saves remain unchanged; new scene phase prevents stale stored time',()=>{
- const s={campaign_id:'a',gameState:{date:'1-12-30',time:'14:30'},scene:{time:'오후'}},before=JSON.stringify(s);assert.equal(gameTimeView(s).clock,'14:30');assert.equal(gameTimeView(s).dateLabel,'1년 12월 30일');assert.equal(JSON.stringify(s),before);
+ const s={campaign_id:'a',gameState:{date:'1-12-30',time:'14:30'},scene:{time:'오후'}},before=JSON.stringify(s);assert.equal(gameTimeView(s).clock,'14:30');assert.equal(gameTimeView(s).dateLabel,'에르세디아력 1년 12월 30일');assert.equal(JSON.stringify(s),before);
  s.scene.time='밤';assert.equal(gameTimeView(s).phase,'night');assert.equal(gameTimeView(s).clock,'');
- s.scene.game_state={date:'2-01-01',time:'05:10'};assert.equal(gameTimeView(s).dateLabel,'2년 1월 1일');assert.equal(gameTimeView(s).phase,'dawn');
+ s.scene.game_state={date:'2-01-01',time:'05:10'};assert.equal(gameTimeView(s).dateLabel,'에르세디아력 2년 1월 1일');assert.equal(gameTimeView(s).phase,'dawn');
  assert.equal(gameTimeView({}).label,'시간 미정');
 });
 test('only outdoor art receives time tint; explicit rainy-night art and absent art remain intact',()=>{
