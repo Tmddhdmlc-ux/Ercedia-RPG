@@ -3036,3 +3036,19 @@ input[type=range] {
  .game:not([data-battle=active]) #stage .choice-kind{display:none}
 }
 @media(prefers-reduced-motion:reduce){#stage .scene-choice,#chat-runtime textarea#free-action{transition:none}}
+
+/* The input shares the scene background; measured height reserves each overlay. */
+@media(min-width:701px){
+ .game:not([data-battle=active]) #stage[data-composer=inside] #chat-runtime{position:absolute;left:4%;right:4%;bottom:52px;z-index:12;padding:0;margin:0;background:transparent;border:0;max-height:30%;overflow:auto;scrollbar-width:thin}
+ .game:not([data-battle=active]) #stage[data-composer=inside] .dialog{bottom:calc(var(--vn-composer-height,76px) + 70px)}
+ .game:not([data-battle=active]) #stage[data-composer=inside] .scene-action-overlay{bottom:calc(var(--vn-composer-height,76px) + var(--vn-dialog-height) + 88px);max-height:max(50px,calc(100% - var(--vn-composer-height,76px) - var(--vn-dialog-height) - 150px))}
+ .game:not([data-battle=active]) #stage[data-composer=inside] .quest-proposals{max-height:max(50px,calc(100% - var(--vn-composer-height,76px) - var(--vn-dialog-height) - 150px))}
+ .game:not([data-battle=active]) #stage #free-action{background:#101E29D9;border:1px solid #B79A6466;color:#F4EFE4;box-shadow:0 4px 18px #0003}
+ .game:not([data-battle=active]) #stage #free-action::placeholder{color:#B8C5CD}
+ .game:not([data-battle=active]) #stage #send-action{background:#132632E6;box-shadow:0 4px 18px #0003}
+ .game:not([data-battle=active]) #stage :is(.connection-row,#connection-tools){background:#101E29EB;border:1px solid #B79A6440;border-radius:8px;padding:6px 12px}
+ .game:not([data-battle=active]) #stage #connection-tools[open]{padding:12px}
+ .game:not([data-battle=active]) #stage .dialog::before,.game:not([data-battle=active]) #stage .dialog::after{content:'';position:absolute;width:20px;height:20px;border-color:#C5A66D;border-style:solid;pointer-events:none}
+ .game:not([data-battle=active]) #stage .dialog::before{top:5px;left:5px;border-width:1px 0 0 1px}
+ .game:not([data-battle=active]) #stage .dialog::after{bottom:5px;right:5px;border-width:0 1px 1px 0}
+}

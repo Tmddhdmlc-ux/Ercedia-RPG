@@ -1,3 +1,4 @@
+import {mountSceneComposer} from './scene-composer.js';
 import {mountSaveUI} from './save-ui.js';
 import {mountAmbience} from './ambience.js';
 import {mountGameTime} from './game-time.js';
@@ -264,8 +265,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
 let remasterUI=null,worldUI=null,tradeUI=null,adventureUI=null,skillLoadoutUI=null;
 function renderAll(){ambience.sync();backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();timeUI.render();adventureUI?.render();skillLoadoutUI?.render();saveUI?.refresh();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
-// Keep the full-scene background above the actual composer, including connection feedback.
-if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));
+mountSceneComposer($('stage'),$('chat-runtime'));
 mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:message=>chatUI.reportStatus(message)});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),getNPC:()=>npcInfo.current()});
 engineUI=mountEngineUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
