@@ -7291,6 +7291,55 @@ function mountBattleAudio(controls,assetBase){
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
 const module72=(()=>{
+// Original target-local blade trails, inspired by real-time ribbon VFX. Visuals only.
+// The number of visual trails is not a new damage event or a combat hit calculation.
+const specs=[
+ ['cut',-18,1,'#ffe5bd'],['pierce',0,1,'#dcefff'],['guard',0,1,'#dce8f3'],['guard',0,2,'#deebff'],
+ ['counter',-38,1,'#fff0ca'],['step',0,1,'#c9d9e7'],['parry',28,1,'#fff2cb'],['cut',-25,2,'#ffead0'],
+ ['reach',0,1,'#e3f0ff'],['focus',0,1,'#eaf5ff'],['heavy',72,1,'#ffe7be'],['clash',35,1,'#fff2d0'],
+ ['pierce',-16,2,'#f0f4ff'],['retreat',22,1,'#dceaff'],['rose',-30,2,'#ff91a2'],['dance',0,3,'#b7e6f4'],
+ ['counter',145,2,'#fff1d6'],['side',-55,1,'#d9f0ff'],['combo',-28,3,'#ffd8a1'],['heavy',83,2,'#ffd29a'],
+ ['rhythm',0,3,'#dcefff'],['meteor',-20,1,'#d7e8ff'],['protect',0,1,'#d6edff'],['feather',-55,2,'#edf8ff'],
+ ['break',-15,2,'#ff9aa4'],['flash',-8,1,'#e8fff7'],['wave',-68,2,'#c1e4ff'],['flow',32,4,'#dbeaff'],
+ ['read',0,1,'#e7e3ff'],['star',-38,1,'#e5ecff']
+];
+const swordProfiles=Object.fromEntries(specs.map(([form,angle,count,color],i)=>{const id='skill_swd_'+String(i+1).padStart(3,'0');return [id,{id,form,angle,count,color}];}));
+const clamp=x=>Math.max(0,Math.min(1,x));
+const support=new Set(['guard','step','reach','focus','clash','dance','rhythm','protect','feather','read','parry']);
+function swordTiming(p){return {duration:p.form==='flash'?1000:p.form==='meteor'?2000:p.form==='star'?1900:p.count>=3?1800:1450,impact:p.form==='meteor' ? .48 : p.form==='flash' ? .25 : .32,charge:.08};}
+function cutPoints(angle,progress,wide=false){const r=angle*Math.PI/180,c=Math.cos(r),s=Math.sin(r),out=[];
+ for(let i=0;i<=30;i++){const u=i/30,t=-2.55+u*2.6*clamp(progress),x=Math.cos(t)*(wide?190:165),y=Math.sin(t)*(wide?90:65);out.push([200+x*c-y*s,250+x*s+y*c,Math.sin(Math.PI*u)*(wide?21:14)]);}return out;}
+function swordFrame(p,t){const hit=swordTiming(p).impact,q=(t-hit)/(1-hit),trails=[],rings=[],specks=[];
+ if(t<hit){if(['focus','reach','read','meteor'].includes(p.form))rings.push({r:18+55*(1-t/hit),alpha:.2});return {trails,rings,specks,flash:0,support:support.has(p.form)};}
+ if(t>=1)return {trails,rings,specks,flash:0,support:support.has(p.form)};
+ const isSupport=support.has(p.form),max=isSupport?p.count:Math.min(p.count,4);
+ for(let i=0;i<max;i++){const u=q-i*.15,fade=clamp((.55-u)/.25);if(u<0||!fade)continue;
+  const progress=clamp(u/.1),alpha=clamp(u/.018)*fade;
+  if(['pierce','meteor','reach'].includes(p.form)){
+   const length=p.form==='meteor'?185:130,pts=[];for(let n=0;n<=24;n++){const v=n/24,yy=250+(v-.5)*length*2*progress,xx=200+(yy-250)*Math.sin(p.angle*Math.PI/180);pts.push([xx,yy,Math.sin(Math.PI*v)*(p.form==='meteor'?10:5)]);}trails.push({points:pts,alpha,order:i});
+  }else if(['guard','protect','read','focus'].includes(p.form)){rings.push({r:(p.form==='protect'?110:65)+i*18+progress*8,alpha:alpha*.55});
+  }else{const a=p.angle+(p.form==='combo'||p.form==='cut'?i*78:p.form==='flow'?i*53:p.form==='dance'?i*110:i*24);const points=cutPoints(a,progress,['heavy','break','star'].includes(p.form));if(p.form==='flash')for(const point of points)point[2]*=.4;trails.push({points,alpha:isSupport?alpha*.45:alpha,order:i});}
+ }
+ const flash=isSupport?0:clamp((.15-q)/.15);
+ if(q>=0&&q<.68){for(let i=0;i<(isSupport?8:24);i++){const a=i*2.399+Number(p.id.slice(-3))*.39,r=12+q*(100+(i%5)*42),len=(isSupport?5:12)*(1-q);specks.push({x:200+Math.cos(a)*r,y:250+Math.sin(a)*r*.7,dx:Math.cos(a)*len,dy:Math.sin(a)*len,alpha:clamp((.68-q)/.5)});}}
+ return {trails,rings,specks,flash,support:isSupport};
+}
+function swordFallbackSVG(p){const f=swordFrame(p,.48);return `<svg viewBox="0 0 400 500" aria-hidden="true"><g>${f.trails.map((trail,i)=>`<path class="stroke-part" style="--order:${i}" d="${trail.points.map(([x,y],n)=>(n?'L':'M')+x.toFixed(2)+' '+y.toFixed(2)).join(' ')}" fill="none" stroke="currentColor" stroke-width="${p.form==='meteor'?8:5}" stroke-linecap="round"/>`).join('')}${f.rings.map(r=>`<ellipse cx="200" cy="250" rx="${r.r}" ry="${r.r*.65}" fill="none" stroke="currentColor" stroke-width="2"/>`).join('')}${f.specks.map(s=>`<path d="M${s.x} ${s.y}l${s.dx} ${s.dy}" stroke="currentColor" stroke-width="2"/>`).join('')}</g></svg>`;}
+function createSwordRenderer(canvas){const ctx=canvas.getContext('2d');let w=1000,h=600,dpr=1;
+ function resize(width,height,ratio=1){w=width;h=height;dpr=Math.min(1.5,ratio);canvas.width=Math.round(w*dpr);canvas.height=Math.round(h*dpr);ctx.setTransform(dpr,0,0,dpr,0,0);}
+ function clear(){ctx.clearRect(0,0,w,h);}
+ function draw(p,t,{targetX=w*.5,targetY=h*.43,reducedMotion=false}={}){clear();if(t<0||t>=1)return;const f=swordFrame(p,reducedMotion?(t<swordTiming(p).impact?0:.48):t),scale=Math.min(w/850,h/540),xy=(x,y)=>[targetX+(x-200)*scale,targetY+(y-250)*scale];ctx.globalCompositeOperation='lighter';
+  function ribbon(points,alpha,core=false){ctx.globalAlpha=alpha;ctx.fillStyle=core?'#fffaf0':p.color;ctx.shadowColor=p.color;ctx.shadowBlur=core?0:14;ctx.beginPath();for(let n=0;n<points.length;n++){const [x,y,width]=points[n],[nx,ny]=points[Math.min(n+1,points.length-1)],a=Math.atan2(ny-y,nx-x)+Math.PI/2,v=width*(core ? .2 : 1),pos=xy(x+Math.cos(a)*v,y+Math.sin(a)*v);n?ctx.lineTo(...pos):ctx.moveTo(...pos);}for(let n=points.length-1;n>=0;n--){const [x,y,width]=points[n],[nx,ny]=points[Math.min(n+1,points.length-1)],a=Math.atan2(ny-y,nx-x)+Math.PI/2,v=width*(core ? .2 : 1);ctx.lineTo(...xy(x-Math.cos(a)*v,y-Math.sin(a)*v));}ctx.closePath();ctx.fill();}
+  for(const trail of f.trails){ribbon(trail.points,trail.alpha*.6);ribbon(trail.points,trail.alpha,true);}
+  ctx.shadowBlur=0;ctx.strokeStyle=p.color;ctx.lineWidth=2*scale;for(const r of f.rings){ctx.globalAlpha=r.alpha;ctx.beginPath();ctx.ellipse(targetX,targetY,r.r*scale,r.r*.65*scale,0,0,Math.PI*2);ctx.stroke();}
+  for(const s of f.specks){ctx.globalAlpha=s.alpha;ctx.beginPath();ctx.moveTo(...xy(s.x,s.y));ctx.lineTo(...xy(s.x+s.dx,s.y+s.dy));ctx.stroke();}
+  if(f.flash){ctx.globalAlpha=f.flash;ctx.fillStyle='#fff4d9';ctx.beginPath();ctx.ellipse(targetX,targetY,(4+f.flash*9)*scale,(8+f.flash*20)*scale,p.angle*Math.PI/180,0,Math.PI*2);ctx.fill();}ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+ }
+ return {resize,clear,draw};
+}
+
+return {swordProfiles,swordTiming,swordFrame,swordFallbackSVG,createSwordRenderer};})();
+const module73=(()=>{
 // Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
 const elementalSamples=[
  {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
@@ -7402,7 +7451,8 @@ function createElementalRenderer(canvas,{createCanvas=()=>document.createElement
 }
 
 return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
-const module73=(()=>{
+const module74=(()=>{
+const {swordProfiles,swordFallbackSVG}=module72;
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -7445,8 +7495,10 @@ const spells=[
 ];
 const nonDamage=new Set(['skill_swd_003','skill_swd_004','skill_swd_006','skill_swd_007','skill_swd_009','skill_swd_010','skill_swd_012','skill_swd_016','skill_swd_021','skill_swd_023','skill_swd_024','skill_swd_029','spell_003','spell_005','spell_006','spell_008','spell_009','spell_010','spell_011','spell_017','spell_018','spell_020','spell_021','spell_023','spell_025','spell_026','spell_029','spell_032','spell_035','spell_038','spell_039']);
 const effectProfiles=Object.fromEntries([...sword.map((v,i)=>['skill_swd_'+String(i+1).padStart(3,'0'),v]),...spells.map((v,i)=>['spell_'+String(i+1).padStart(3,'0'),v])].map(([id,[shape,angle,variant,description]])=>[id,{id,shape,angle,variant,description,illustrativeDamage:!nonDamage.has(id)}]));
+for(const [i,description] of ["넓게 휘어지는 초승달 검광과 짧은 타격 불꽃","검끝이 한 점에서 번쩍이는 가늘고 긴 찌르기 잔상","낮은 자세를 드러내는 작은 은빛 가드 잔광","두 겹의 은빛 가드가 순간 펼쳐짐","가드 직후 짧고 빠르게 돌아 나오는 역베기","발밑에 짧게 겹치는 부드러운 스텝 잔상","비스듬히 흘리는 검광과 작은 금속 불꽃","서로 엇갈리는 두 검광이 시간차로 교차","가늘게 뻗는 검끝의 은빛 잔상","작은 은빛 기운이 칼끝의 한 점으로 모임","굵은 사선 검광이 내리꽂히고 불꽃이 퍼짐","무기 접점에서 짧게 부딪치는 금속 섬광","가는 찌르기 두 잔상이 틈을 향해 응축","먼저 멀어지는 검광 뒤 짧은 퇴각 베기","장미빛 두 곡선 검광이 엇갈림","차가운 은빛 세 곡선이 가볍게 겹치는 검무 잔상","아래에서 치솟는 역방향 검광","상대 근처에 짧게 나타나는 비스듬한 검광","세 번의 호흡을 표현하는 시간차 검로","넓고 묵직한 내려베기와 퍼지는 타격 불꽃","흐르는 세 검로가 약한 은빛으로 호흡함","칼끝의 응축 후 길게 번쩍이는 유성 같은 검광","아군을 감싸는 낮고 넓은 은빛 보호 궤적","은매 깃처럼 짧게 겹치는 기습 발놀림 잔상","굵은 장미빛 돌파 검광과 순간 타격 섬광","길게 남기지 않는 한 번의 날카로운 일섬","물결처럼 휘어져 돌아 나오는 두 반격 잔상","각도를 바꾸며 이어지는 네 검로 잔상","작고 조용한 은빛 윤곽이 좁혀지는 검리 연출","한 번의 긴 검광과 별빛 같은 타격 파편"].entries())effectProfiles['skill_swd_'+String(i+1).padStart(3,'0')].description=description;
 const elementColors={fire:'#ff965b',water:'#8adfff',wind:'#b0f7d5',electricity:'#beaaff',darkness:'#aa85d5',light:'#fff3b4'};
 function skillEffectSVG(p){
+ if(swordProfiles[p.id])return swordFallbackSVG(swordProfiles[p.id]);
  const v=p.variant,a=p.angle,stroke='stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"',paths=[];
  const path=(d,width=5,extra='')=>`<path d="${d}" ${stroke} stroke-width="${width}" fill="none" ${extra}/>`;
  const circle=(r,extra='')=>`<circle cx="200" cy="250" r="${r}" ${stroke} stroke-width="4" fill="none" ${extra}/>`;
@@ -7486,8 +7538,9 @@ function skillEffectSVG(p){
 
 return {effectProfiles,elementColors,skillEffectSVG};})();
 const module71=(()=>{
-const {createElementalRenderer,palettes,sampleTiming}=module72;
-const {effectProfiles,skillEffectSVG}=module73;
+const {swordProfiles,swordTiming,createSwordRenderer}=module72;
+const {createElementalRenderer,palettes,sampleTiming}=module73;
+const {effectProfiles,skillEffectSVG}=module74;
 const {engineData}=module23;
 // A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
 const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
@@ -7495,29 +7548,29 @@ const aliases={electric:'electricity',dark:'darkness'},fallback={water:'water-or
 function battleEffectProfile(event){const book=engineData.books.find(b=>b.skill_id===event.skill_id),profile=effectProfiles[event.skill_id],element=aliases[event.element]||event.element||book?.element;
  const isMagic=event.kind==='magic'||book?.category==='spellbook';
  if(isMagic&&palettes[element]){const n=Number((event.skill_id||'').replace('spell_',''));return {id:event.skill_id||'generic-'+element,element,form:book?magicFamilies[n-1]:fallback[element],shape:profile||effectProfiles.spell_001,intensity:book?.rarity==='에픽'?1.2:book?.rarity==='유니크'?1.1:.9,magic:true};}
- return {id:event.skill_id||event.kind,shape:profile||effectProfiles[event.kind==='unique'?'skill_swd_030':event.kind==='defend'?'skill_swd_003':event.kind==='counter'?'skill_swd_005':'skill_swd_001'],magic:false};}
-function battleEffectTiming(event){const profile=battleEffectProfile(event);if(profile.magic)return sampleTiming(profile);return {duration:event.kind==='unique'?2200:event.skill_id?1500:event.result==='critical'?1300:1000,impact:.4,charge:.08};}
+ return {id:event.skill_id||event.kind,shape:profile||effectProfiles[event.kind==='unique'?'skill_swd_030':event.kind==='defend'?'skill_swd_003':event.kind==='counter'?'skill_swd_005':'skill_swd_001'],sword:swordProfiles[event.skill_id]||swordProfiles[event.kind==='unique'?'skill_swd_030':event.kind==='defend'?'skill_swd_004':event.kind==='counter'?'skill_swd_005':'skill_swd_001'],magic:false};}
+function battleEffectTiming(event){const profile=battleEffectProfile(event);if(profile.magic)return sampleTiming(profile);if(event.skill_id&&profile.sword)return swordTiming(profile.sword);return {duration:event.kind==='unique'?2200:event.skill_id?1500:event.result==='critical'?1300:1000,impact:.4,charge:.08};}
 function mountBattleVFX(stage){
  const canvas=document.createElement('canvas'),vector=document.createElement('div');canvas.className='battle-vfx-canvas';vector.className='battle-vfx-vector';canvas.setAttribute('aria-hidden','true');vector.setAttribute('aria-hidden','true');stage.append(canvas,vector);
- let renderer=null,profile=null,w=1000,h=600,x=500,y=258,event=null,target=null,foreground=false,signature='';
- try{if(canvas.getContext?.('2d'))renderer=createElementalRenderer(canvas);}catch{/* Keep vector effects if Canvas is unavailable. */}
- function resize(){const rect=stage.getBoundingClientRect?.();w=rect?.width||1000;h=rect?.height||600;const next=w+':'+h;if(next!==signature){signature=next;renderer?.resize(w,h,globalThis.devicePixelRatio||1);}
+ let renderer=null,swordRenderer=null,profile=null,w=1000,h=600,x=500,y=258,event=null,target=null,foreground=false,signature='';
+ try{if(canvas.getContext?.('2d')){renderer=createElementalRenderer(canvas);swordRenderer=createSwordRenderer(canvas);}}catch{/* Keep vector effects if Canvas is unavailable. */}
+ function resize(){const rect=stage.getBoundingClientRect?.();w=rect?.width||1000;h=rect?.height||600;const next=w+':'+h;if(next!==signature){signature=next;renderer?.resize(w,h,globalThis.devicePixelRatio||1);swordRenderer?.resize(w,h,globalThis.devicePixelRatio||1);}
   const r=target?.getBoundingClientRect?.();x=r&&rect?r.left-rect.left+r.width*.5:w*.5;y=r&&rect?r.top-rect.top+r.height*.43:h*(foreground ? .62 : .43);vector.style.left=(x-180)+'px';vector.style.top=(y-200)+'px';}
  function clear(){renderer?.clear();vector.style.opacity=0;canvas.hidden=true;vector.hidden=true;}
- function start(e,node,front=false){event=e;target=node;foreground=front;profile=battleEffectProfile(e);resize();const shape=e.result==='block'||e.kind==='defend'?effectProfiles.skill_swd_004:profile.shape;vector.innerHTML=skillEffectSVG(shape);vector.style.color=profile.magic?palettes[profile.element][1]:'#ffe0af';canvas.hidden=false;vector.hidden=false;vector.style.opacity=0;}
+ function start(e,node,front=false){event=e;target=node;foreground=front;profile=battleEffectProfile(e);resize();const shape=e.result==='block'||e.kind==='defend'?effectProfiles.skill_swd_004:profile.shape;vector.innerHTML=skillEffectSVG(shape);vector.style.color=profile.magic?palettes[profile.element][1]:profile.sword.color;canvas.hidden=false;vector.hidden=false;vector.style.opacity=0;}
  function draw(t){if(!profile)return;resize();const hit=battleEffectTiming(event).impact,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
   // A missed or fully blocked attack does not produce a successful elemental explosion.
   const success=event.result!=='dodge'&&!(event.result==='block'&&event.damage===0);
-  if(profile.magic&&success)renderer?.draw(profile,reduced?(t<hit?0:t<.9?.6:0):t,{targetX:x,targetY:y,intensity:profile.intensity});else renderer?.clear();
+  if(profile.magic&&success)renderer?.draw(profile,reduced?(t<hit?0:t<.9?.6:0):t,{targetX:x,targetY:y,intensity:profile.intensity});else if(!profile.magic&&event.result!=='dodge'&&swordRenderer){const blade=event.result==='block'||event.kind==='defend'?swordProfiles.skill_swd_004:profile.sword,bladeHit=swordTiming(blade).impact,visualTime=t<hit?t/hit*bladeHit:bladeHit+(t-hit)/(1-hit)*(1-bladeHit);swordRenderer.draw(blade,visualTime,{targetX:x,targetY:y,reducedMotion:reduced});}else renderer?.clear();
   const q=Math.max(0,(t-hit)/(1-hit)),visible=t>=hit&&t<.94;vector.style.opacity=visible?Math.min(1,q/.08,Math.max(0,(.94-t)/.25))*(profile.magic ? .55 : 1):0;
   for(const part of vector.querySelectorAll?.('.stroke-part')||[]){const order=Number(part.style.getPropertyValue('--order')||0),u=q-order*.14;part.style.opacity=reduced?1:u<0?0:Math.min(1,u/.07,Math.max(0,(.5-u)/.2));}
-  vector.style.transform=reduced?'none':`scale(${.75+q*.45})`;if(event.result==='dodge')vector.style.opacity=0;
+  vector.style.transform=reduced?'none':`scale(${.75+q*.45})`;if(event.result==='dodge'||(!profile.magic&&swordRenderer))vector.style.opacity=0;
  }
  clear();return {start,draw,clear};
 }
 
 return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
-const module74=(()=>{
+const module75=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -7526,7 +7579,7 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module75=(()=>{
+const module76=(()=>{
 const {mapData}=module7;
 const {lordships}=module61;
 const {factionLocations}=module48;
@@ -7616,8 +7669,8 @@ const {characterVisual,artBase}=module5;
 const {faceFit}=module11;
 const {resolveBackground,backgroundURL}=module39;
 const {appendItemIcon}=module50;
-const {battleCommentary}=module74;
-const {renderDialogueTerms}=module75;
+const {battleCommentary}=module75;
+const {renderDialogueTerms}=module76;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
@@ -7719,7 +7772,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module77=(()=>{
+const module78=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module5;
 const {findNPC}=module30;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -7748,8 +7801,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module76=(()=>{
-const {mountNPCLocations}=module77;
+const module77=(()=>{
+const {mountNPCLocations}=module78;
 const {registeredArt,artBase,placementLabel}=module5;
 const {catalogData}=module31;
 const {npcCatalog,resolveNPC,npcRankLabel}=module30;
@@ -7790,7 +7843,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module78=(()=>{
+const module79=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -7812,7 +7865,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module80=(()=>{
+const module81=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module22;
 const {applyItemRarity}=module35;
 const {appendItemIcon}=module50;
@@ -7846,7 +7899,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module81=(()=>{
+const module82=(()=>{
 const {engineItem}=module28;
 const {appendItemIcon}=module50;
 const {applyItemRarity}=module35;
@@ -7881,12 +7934,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module79=(()=>{
+const module80=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module28;
 const {applyItemRarity}=module35;
 const {appendItemIcon}=module50;
-const {mountItemLibrary}=module80;
-const {mountEquipmentSlots}=module81;
+const {mountItemLibrary}=module81;
+const {mountEquipmentSlots}=module82;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -7913,7 +7966,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module82=(()=>{
+const module83=(()=>{
 const {publicLife,lifeRole}=module46;
 const {findNPC}=module30;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -7964,15 +8017,15 @@ const {mountNPCInfo}=module64;
 const {mountPlayHUD}=module65;
 const {mountNewGame}=module66;
 const {mountBattleUI}=module69;
-const {dialogueVoice}=module74;
-const {renderDialogueTerms,mountDialogueGlossary}=module75;
-const {mountCatalogUI}=module76;
+const {dialogueVoice}=module75;
+const {renderDialogueTerms,mountDialogueGlossary}=module76;
+const {mountCatalogUI}=module77;
 const {initializeNameOnlyPlayer}=module59;
 const {locationLabel:canonicalLocationLabel}=module42;
-const {mountTitleMenu}=module78;
+const {mountTitleMenu}=module79;
 const {mountQuestUI}=module57;
-const {mountEngineUI}=module79;
-const {mountNPCLifeUI}=module82;
+const {mountEngineUI}=module80;
+const {mountNPCLifeUI}=module83;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module47;
 const $=id=>document.getElementById(id);
 mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});

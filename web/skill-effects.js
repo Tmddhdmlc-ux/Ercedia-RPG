@@ -1,3 +1,4 @@
+import {swordProfiles,swordFallbackSVG} from './sword-vfx.js';
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -40,8 +41,10 @@ const spells=[
 ];
 const nonDamage=new Set(['skill_swd_003','skill_swd_004','skill_swd_006','skill_swd_007','skill_swd_009','skill_swd_010','skill_swd_012','skill_swd_016','skill_swd_021','skill_swd_023','skill_swd_024','skill_swd_029','spell_003','spell_005','spell_006','spell_008','spell_009','spell_010','spell_011','spell_017','spell_018','spell_020','spell_021','spell_023','spell_025','spell_026','spell_029','spell_032','spell_035','spell_038','spell_039']);
 export const effectProfiles=Object.fromEntries([...sword.map((v,i)=>['skill_swd_'+String(i+1).padStart(3,'0'),v]),...spells.map((v,i)=>['spell_'+String(i+1).padStart(3,'0'),v])].map(([id,[shape,angle,variant,description]])=>[id,{id,shape,angle,variant,description,illustrativeDamage:!nonDamage.has(id)}]));
+for(const [i,description] of ["넓게 휘어지는 초승달 검광과 짧은 타격 불꽃","검끝이 한 점에서 번쩍이는 가늘고 긴 찌르기 잔상","낮은 자세를 드러내는 작은 은빛 가드 잔광","두 겹의 은빛 가드가 순간 펼쳐짐","가드 직후 짧고 빠르게 돌아 나오는 역베기","발밑에 짧게 겹치는 부드러운 스텝 잔상","비스듬히 흘리는 검광과 작은 금속 불꽃","서로 엇갈리는 두 검광이 시간차로 교차","가늘게 뻗는 검끝의 은빛 잔상","작은 은빛 기운이 칼끝의 한 점으로 모임","굵은 사선 검광이 내리꽂히고 불꽃이 퍼짐","무기 접점에서 짧게 부딪치는 금속 섬광","가는 찌르기 두 잔상이 틈을 향해 응축","먼저 멀어지는 검광 뒤 짧은 퇴각 베기","장미빛 두 곡선 검광이 엇갈림","차가운 은빛 세 곡선이 가볍게 겹치는 검무 잔상","아래에서 치솟는 역방향 검광","상대 근처에 짧게 나타나는 비스듬한 검광","세 번의 호흡을 표현하는 시간차 검로","넓고 묵직한 내려베기와 퍼지는 타격 불꽃","흐르는 세 검로가 약한 은빛으로 호흡함","칼끝의 응축 후 길게 번쩍이는 유성 같은 검광","아군을 감싸는 낮고 넓은 은빛 보호 궤적","은매 깃처럼 짧게 겹치는 기습 발놀림 잔상","굵은 장미빛 돌파 검광과 순간 타격 섬광","길게 남기지 않는 한 번의 날카로운 일섬","물결처럼 휘어져 돌아 나오는 두 반격 잔상","각도를 바꾸며 이어지는 네 검로 잔상","작고 조용한 은빛 윤곽이 좁혀지는 검리 연출","한 번의 긴 검광과 별빛 같은 타격 파편"].entries())effectProfiles['skill_swd_'+String(i+1).padStart(3,'0')].description=description;
 export const elementColors={fire:'#ff965b',water:'#8adfff',wind:'#b0f7d5',electricity:'#beaaff',darkness:'#aa85d5',light:'#fff3b4'};
 export function skillEffectSVG(p){
+ if(swordProfiles[p.id])return swordFallbackSVG(swordProfiles[p.id]);
  const v=p.variant,a=p.angle,stroke='stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"',paths=[];
  const path=(d,width=5,extra='')=>`<path d="${d}" ${stroke} stroke-width="${width}" fill="none" ${extra}/>`;
  const circle=(r,extra='')=>`<circle cx="200" cy="250" r="${r}" ${stroke} stroke-width="4" fill="none" ${extra}/>`;

@@ -13,3 +13,16 @@
 - /tests/elemental-vfx-preview.html?revision=3
 - /tests/battle-effects-preview.html?skills=70&revision=3
 - /tests/battle-demo.html
+
+## 검술 리마스터 2.1.23
+
+검술 30종을 화살표·조준선 위주 SVG에서 대상 위치의 점점 가늘어지는 검격 리본, 백색 검날 핵심광, 금속 불꽃으로 교체했다. 등록된 기술 이름과 설명에 맞춰 횡베기·찌르기·시간차 연속 검로·역베기·내려베기·가드·자세를 구분한다. 일섬은 1초의 빠른 단일 검광, 유성 찌르기는 준비가 긴 2초 연출이다. 서리 검무의 은빛 잔상은 냉기 피해를 추가하지 않는다. 검격 잔상 개수는 판정 횟수·피해량을 바꾸지 않는다. 회피는 타격 섬광을 표시하지 않고 방어는 가드 연출을 사용한다.
+
+원본 캐릭터 이미지 및 기술 데이터는 변경하지 않았다. Canvas 미지원 시 화살촉 없는 SVG 검광을 사용한다. 물·불·바람·전기·빛·어둠 연출은 유지한다.
+
+참고 자료(연출 방식 참고, 외부 에셋 복제·다운로드 없음):
+- Hovl Studio의 Sword Slashes PRO Niagara 제작자 소개: https://forums.unrealengine.com/t/hovl-studio-sword-slashes-pro-niagara/2701625
+- Riot의 공격 식별·중요도·시각적 잡음 원칙: https://www.leagueoflegends.com/en-us/news/dev/clarity-in-league/
+
+검술만 보기: /tests/battle-effects-preview.html?category=sword&revision=4
+자동 검증: 검술 원본 30종 연결, 화살촉 제거, 검광 시간차, 준비·방어의 타격 섬광 억제, 유한 좌표와 그리기 작업량, 기존 피해/MP/다시보기/일시정지 테스트. 실제 브라우저 시각 검증과 ChatGPT 플레이는 사용자 확인 대상으로 남긴다.
