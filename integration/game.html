@@ -2934,7 +2934,7 @@ input[type=range] {
 /* Background music controls stay available during combat. */
 .music-controls{position:relative;font-size:13px;color:var(--gold);flex-shrink:0}.music-controls summary{cursor:pointer;padding:10px;white-space:nowrap;list-style:none}.music-settings{position:absolute;right:0;top:100%;z-index:140;width:210px;background:#14232e;border:1px solid #C9A66B;border-radius:9px;padding:12px;display:grid;gap:12px;box-shadow:0 8px 24px #0008}.music-settings label{display:grid;gap:6px}.music-settings select,.music-settings button{width:100%}.title-content>.music-controls{display:inline-block;margin-top:12px}.title-content .music-settings{top:auto;bottom:100%}.game[data-battle=active] .tabs .music-settings button{display:block!important}.tabs{height:auto;min-height:64px;flex-wrap:wrap}
 
-.tabs:has(.music-controls[open]){position:relative;z-index:150}
+.game .tabs:has(.music-controls[open]){position:relative;z-index:150!important}
 
 .hud-game-time{font-size:16px;font-weight:600;color:#f1d4a0;white-space:nowrap;font-variant-numeric:tabular-nums;padding:6px 10px;background:#0b1721cc;border:1px solid #c9a66b55;border-radius:8px}.background{transition:filter 1.2s ease}.background[data-time-atmosphere=dawn]{filter:brightness(.8) saturate(.75) sepia(.12) hue-rotate(160deg)}.background[data-time-atmosphere=morning]{filter:brightness(1.06) saturate(.95)}.background[data-time-atmosphere=day],.background[data-time-atmosphere=neutral]{filter:none}.background[data-time-atmosphere=evening]{filter:brightness(.85) sepia(.38) saturate(1.25)}.background[data-time-atmosphere=night]{filter:brightness(.46) saturate(.65) sepia(.28) hue-rotate(165deg)}.time-notice{position:absolute;top:20%;left:50%;transform:translateX(-50%);z-index:12;pointer-events:none;color:#fff0d0;background:#0c1c2bed;border:1px solid #c9a66b99;border-radius:10px;padding:12px 24px;font-size:20px;box-shadow:0 5px 24px #0006}.time-notice[hidden]{display:none}@media(prefers-reduced-motion:reduce){.background{transition:none}}
 </style></head>
@@ -3809,7 +3809,128 @@ function mountGameTime(state){const $=id=>document.getElementById(id),stage=$('s
 }
 
 return {parseGameTime,gameTimeView,timeAtmosphere,mountGameTime};})();
+const module24=(()=>{
+// Generated from voice-banks.json and explicit roster gender/age; audio style cutoff: 30.
+const voiceBanks={"female_young":{"label":"여성 · 어린","cues":{"base":"assets/audio/voices/female_young/base.wav","smile":"assets/audio/voices/female_young/smile.wav","angry":"assets/audio/voices/female_young/angry.wav","surprised":"assets/audio/voices/female_young/surprised.wav","sad":"assets/audio/voices/female_young/sad.wav","embarrassed":"assets/audio/voices/female_young/embarrassed.wav","afraid":"assets/audio/voices/female_young/afraid.wav","annoyed":"assets/audio/voices/female_young/annoyed.wav","love":"assets/audio/voices/female_young/love.wav"}},"female_mature":{"label":"여성 · 중후","cues":{"base":"assets/audio/voices/female_mature/base.wav","smile":"assets/audio/voices/female_mature/smile.wav","angry":"assets/audio/voices/female_mature/angry.wav","surprised":"assets/audio/voices/female_mature/surprised.wav","sad":"assets/audio/voices/female_mature/sad.wav","embarrassed":"assets/audio/voices/female_mature/embarrassed.wav","afraid":"assets/audio/voices/female_mature/afraid.wav","annoyed":"assets/audio/voices/female_mature/annoyed.wav","love":"assets/audio/voices/female_mature/love.wav"}},"male_young":{"label":"남성 · 어린","cues":{"base":"assets/audio/voices/male_young/base.wav","smile":"assets/audio/voices/male_young/smile.wav","angry":"assets/audio/voices/male_young/angry.wav","surprised":"assets/audio/voices/male_young/surprised.wav","sad":"assets/audio/voices/male_young/sad.wav","embarrassed":"assets/audio/voices/male_young/embarrassed.wav","afraid":"assets/audio/voices/male_young/afraid.wav","annoyed":"assets/audio/voices/male_young/annoyed.wav","love":"assets/audio/voices/male_young/love.wav"}},"male_mature":{"label":"남성 · 중후","cues":{"base":"assets/audio/voices/male_mature/base.wav","smile":"assets/audio/voices/male_mature/smile.wav","angry":"assets/audio/voices/male_mature/angry.wav","surprised":"assets/audio/voices/male_mature/surprised.wav","sad":"assets/audio/voices/male_mature/sad.wav","embarrassed":"assets/audio/voices/male_mature/embarrassed.wav","afraid":"assets/audio/voices/male_mature/afraid.wav","annoyed":"assets/audio/voices/male_mature/annoyed.wav","love":"assets/audio/voices/male_mature/love.wav"}}};
+const npcVoiceDefaults={"serin":"female_young","ER-NPC-001":"male_mature","ER-NPC-002":"female_young","ER-NPC-003":"male_mature","ER-NPC-004":"female_young","ER-NPC-005":"male_mature","ER-NPC-006":"female_young","ER-NPC-007":"female_mature","ER-NPC-008":"male_young","ER-NPC-009":"male_mature","ER-NPC-010":"female_young","ER-NPC-011":"male_mature","ER-NPC-012":"female_young","ER-NPC-013":"male_mature","ER-NPC-014":"female_young","ER-NPC-015":"male_mature","ER-NPC-016":"female_young","ER-NPC-017":"female_mature","ER-NPC-018":"male_young","ER-NPC-019":"male_mature","ER-NPC-020":"female_young","ER-NPC-021":"male_mature","ER-NPC-022":"female_young","ER-NPC-023":"female_mature","ER-NPC-024":"male_mature","ER-NPC-025":"female_mature","ER-NPC-026":"male_mature","ER-NPC-027":"female_young","ER-NPC-028":"male_mature","ER-NPC-029":"female_young","ER-NPC-030":"male_mature","ER-NPC-031":"female_mature","ER-NPC-032":"male_mature","ER-NPC-033":"female_mature","ER-NPC-034":"male_mature","ER-NPC-035":"female_young","ER-NPC-036":"female_mature","ER-NPC-037":"male_young","ER-NPC-038":"male_mature","ER-NPC-039":"female_young","ER-NPC-040":"male_mature","ER-NPC-041":"female_young","ER-NPC-042":"male_mature","ER-NPC-043":"female_mature","ER-NPC-044":"male_mature","ER-NPC-045":"male_young","ER-NPC-046":"female_mature","ER-NPC-047":"male_mature","ER-NPC-048":"female_mature","ER-NPC-049":"male_mature","ER-NPC-050":"female_mature","ER-NPC-051":"male_mature","ER-NPC-052":"female_young","ER-NPC-053":"male_mature","ER-NPC-054":"female_mature","ER-NPC-055":"male_mature","ER-NPC-056":"male_mature","ER-NPC-057":"female_mature","ER-NPC-058":"male_young","ER-NPC-059":"female_young","ER-NPC-060":"male_mature","ER-NPC-061":"male_mature","ER-NPC-062":"female_young","ER-NPC-063":"male_mature","ER-NPC-064":"female_mature","ER-NPC-065":"male_young","ER-NPC-066":"male_mature","ER-NPC-067":"male_young","ER-NPC-068":"female_mature","ER-NPC-069":"male_mature","ER-NPC-070":"female_mature","ER-NPC-071":"male_mature","ER-NPC-072":"female_young","ER-NPC-073":"male_mature","ER-NPC-074":"male_young","ER-NPC-075":"female_mature","ER-NPC-076":"male_mature","ER-NPC-077":"female_young","ER-NPC-078":"male_mature","ER-NPC-079":"male_mature","ER-NPC-080":"female_mature"};
+
+return {voiceBanks,npcVoiceDefaults};})();
+const module26=(()=>{
+// Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
+// Armor follows faces/manifest.json's source crop and render frame exactly.
+// Casual/nightwear use hair-aligned placement against their existing head artwork.
+// All 9 faces share the same mask and anchor, so each outfit uses one fit.
+const faceFit={
+  armor:{x:461.521739,y:261.521739,size:166.956522},
+  casual:{x:461,y:261,size:168},
+  nightwear:{x:461,y:261,size:168}
+};
+
+return {faceFit};})();
+const module25=(()=>{
+const {characterVisual,artBase}=module10;
+const {faceFit}=module26;
+function castFrame(scene,index){
+  const cast=scene?.cast||[],lines=scene?.dialogue||[],current=lines[index];
+  const speaker=line=>line?.speaker_id||cast.find(p=>p.speaker===line?.speaker)?.id||null;
+  const active=speaker(current);
+  return cast.map(p=>{
+    let emotion=p.emotion;
+    for(const line of lines.slice(0,index+1))if(speaker(line)===p.id&&line.emotion)emotion=line.emotion;
+    return {...p,emotion,active:p.id===active};
+  });
+}
+function mountSceneCast(state,{assetBase,onSelect}){
+  const root=document.getElementById('scene-cast');
+  const slots=Array.from({length:3},()=>{
+    const slot=document.createElement('div'),canvas=document.createElement('div'),body=new Image(),face=new Image(),name=document.createElement('button');
+    slot.className='cast-slot';canvas.className='cast-canvas';body.className='person cast-body';face.className='cast-face';name.className='cast-name';name.type='button';face.hidden=true;
+    body.draggable=face.draggable=false;body.setAttribute('role','button');body.tabIndex=0;
+    body.onload=()=>{body.classList.add('ready');slot.dataset.failed='false';face.hidden=slot.dataset.npcId!=='serin'||face.dataset.ready!=='true';};
+    body.onerror=()=>{body.classList.remove('ready');slot.dataset.failed='true';face.hidden=true;};
+    face.onload=()=>{face.dataset.ready='true';face.hidden=slot.dataset.npcId!=='serin'||!body.classList.contains('ready');};face.onerror=()=>{face.dataset.ready='false';face.hidden=true;};
+    const select=event=>{event.stopPropagation();onSelect(slot.dataset.npcId,event);};
+    body.onclick=name.onclick=select;body.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select(event);}};
+    canvas.append(body,face);slot.append(canvas,name);root.append(slot);return {slot,canvas,body,face,name};
+  });
+  return {hide(){root.hidden=true;},render(){
+    const frame=castFrame(state.scene,state.sceneIndex);root.hidden=!frame.length||!state.character;root.dataset.count=frame.length;
+    slots.forEach((s,i)=>{
+      const p=frame[i];s.slot.hidden=!p;if(!p)return;
+      s.slot.dataset.npcId=p.id;s.slot.dataset.active=String(p.active);s.name.textContent=p.speaker+(p.active?' · 대화 중':'');
+      s.body.dataset.npcId=p.id;
+      s.body.setAttribute('aria-label',`${p.speaker} 초상화 · 메뉴 열기`);s.body.alt=p.speaker+' 스탠딩';
+      const art=characterVisual(p.id,p.outfit,p.emotion);
+      if(!art){s.body.hidden=true;s.slot.dataset.failed='true';s.face.hidden=true;return;}
+      s.body.hidden=false;const base=artBase(assetBase),url=base+art.path;
+      if(s.body.getAttribute('src')!==url){s.body.classList.remove('ready');s.slot.dataset.failed='false';s.body.src=url;}
+      s.canvas.dataset.kind=art.kind;
+      if(p.id==='serin'){
+        const fit=faceFit[p.outfit];s.face.style.left=fit.x/1024*100+'%';s.face.style.top=fit.y/1536*100+'%';s.face.style.width=fit.size/1024*100+'%';
+        const faceURL=base+`assets/characters/main/serin/faces/${p.emotion}.png`;
+        if(s.face.getAttribute('src')!==faceURL){s.face.hidden=true;s.face.dataset.ready='false';s.face.src=faceURL;}
+      }else s.face.hidden=true;
+    });
+  }};
+}
+
+return {castFrame,mountSceneCast};})();
 const module23=(()=>{
+const {voiceBanks,npcVoiceDefaults}=module24;
+const {castFrame}=module25;
+function normalizeVoicePreferences(raw={}){
+  const banks={};for(const [id,bank] of Object.entries(raw.banks||{}).slice(0,256))if(Object.hasOwn(npcVoiceDefaults,id)&&voiceBanks[bank])banks[id]=bank;
+  return {enabled:raw.enabled!==false,volume:Number.isFinite(raw.volume)?Math.max(0,Math.min(1,raw.volume)):.55,banks};
+}
+function dialogueReaction(scene,index,preferences={}){
+  const line=scene?.dialogue?.[index];if(!line||/^(나레이션|내레이션|narrator)$/i.test(line.speaker||'')||scene.battle)return null;
+  const actor=scene.cast?castFrame(scene,index).find(p=>p.active):scene.npc;
+  if(!actor||(line.speaker_id?line.speaker_id!==actor.id:line.speaker!==actor.speaker))return null;
+  const bank=preferences.banks?.[actor.id]||npcVoiceDefaults[actor.id];if(!voiceBanks[bank])return null;
+  let emotion=actor.emotion||'base';
+  if(!scene.cast)for(const d of scene.dialogue.slice(0,index+1))if((d.speaker_id?d.speaker_id===actor.id:d.speaker===actor.speaker)&&d.emotion)emotion=d.emotion;
+  const path=voiceBanks[bank].cues[emotion];if(!path)return null;
+  return {id:actor.id,speaker:actor.speaker,bank,emotion,path,key:JSON.stringify([scene.scene_id||scene.id||scene,index,line,actor.id,bank,emotion])};
+}
+function createVoiceAudio({assetBase='',contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url),onStatus=()=>{}}={}){
+  let ctx,ready=null,revision=0,source=null,enabled=true,volume=.55,last=null;const cache=new Map();
+  function stop(){revision++;if(source){try{source.stop();}catch{}source.disconnect();source=null;}onStatus({playing:false});}
+  function unlock(){if(!ready)try{ctx=contextFactory();ready=Promise.resolve(ctx.resume()).then(()=>true).catch(()=>{ready=null;return false;});}catch{return Promise.resolve(false);}return ready;}
+  async function play(cue){
+    if(cue?.key===last)return false;last=cue?.key;stop();if(!cue||!enabled||!ready)return false;const ticket=revision;
+    try{
+      if(!await ready)return false;
+      if(!cache.has(cue.path))cache.set(cue.path,(async()=>{const r=await fetchAudio(assetBase+cue.path);if(!r.ok)throw Error('Voice load failed');return ctx.decodeAudioData(await r.arrayBuffer());})().catch(e=>{cache.delete(cue.path);throw e;}));
+      const buffer=await cache.get(cue.path);if(ticket!==revision||!enabled)return false;
+      source=ctx.createBufferSource();source.buffer=buffer;const gain=ctx.createGain(),active=source;gain.gain.value=volume;source.connect(gain);gain.connect(ctx.destination);
+      source.onended=()=>{active.disconnect();gain.disconnect();if(source===active){source=null;onStatus({playing:false});}};source.start();onStatus({playing:true,...cue});return true;
+    }catch{if(ticket===revision)onStatus({playing:false,error:true});return false;}
+  }
+  function configure(p){enabled=p.enabled;volume=p.volume;if(!enabled)stop();}
+  return {play,stop,unlock,configure};
+}
+function mountVoiceAudio(root,{state,assetBase='',persist=()=>{},getScene=()=>state.scene,getIndex=()=>state.sceneIndex}={}){
+  let current=null;const preferences=()=>normalizeVoicePreferences(state.uiPreferences?.voice);
+  const audio=createVoiceAudio({assetBase,onStatus:s=>{root.dataset.voicePlaying=String(s.playing);root.dataset.voiceBank=s.playing?s.bank:'';root.dataset.voiceEmotion=s.playing?s.emotion:'';status.textContent=s.error?'음성을 불러오지 못했어요.':s.playing?`${s.speaker} · ${voiceBanks[s.bank].label}`:'표정에 맞춰 짧은 리액션이 재생됩니다.';}});
+  const details=document.createElement('details'),summary=document.createElement('summary'),panel=document.createElement('div'),button=document.createElement('button'),select=document.createElement('select'),volume=document.createElement('input'),status=document.createElement('span');
+  details.className='music-controls';panel.className='music-settings';summary.textContent='성우 리액션';button.type='button';select.setAttribute('aria-label','현재 화자 음색');
+  for(const [id,label] of [['auto','기본 음색'],...Object.entries(voiceBanks).map(([id,b])=>[id,b.label])]){const option=document.createElement('option');option.value=id;option.textContent=label;select.append(option);}
+  const label=document.createElement('label');label.textContent='성우 음량 ';volume.type='range';volume.min='0';volume.max='100';volume.setAttribute('aria-label','성우 음량');label.append(volume);status.setAttribute('role','status');status.textContent='표정에 맞춰 짧은 리액션이 재생됩니다.';
+  panel.append(button,select,label,status);details.append(summary,panel);root.querySelector('.tabs')?.append(details);
+  const blocked=()=>document.hidden||state.page!=='story'||root.dataset.title==='active'||root.dataset.battle==='active'||['black','map'].includes(root.dataset.introPhase);
+  function refresh(){const p=preferences();audio.configure(p);button.textContent=p.enabled?'성우 끄기':'성우 켜기';volume.value=String(Math.round(p.volume*100));select.disabled=!current;select.value=current?(p.banks[current.id]||'auto'):'auto';select.title=current?current.speaker+'의 음색':'NPC 대사에서 선택하세요.';}
+  function sync(){current=dialogueReaction(getScene(),getIndex(),preferences());refresh();if(blocked()){audio.stop();return;}void audio.play(current);}
+  function save(p){state.uiPreferences={...state.uiPreferences,voice:p};persist();refresh();}
+  button.onclick=()=>{const p=preferences();p.enabled=!p.enabled;save(p);};volume.oninput=()=>{const p=preferences();p.volume=Number(volume.value)/100;save(p);};
+  select.onchange=()=>{if(!current)return;const p=preferences();if(select.value==='auto')delete p.banks[current.id];else p.banks[current.id]=select.value;save(p);sync();};
+  for(const event of ['pointerdown','keydown'])document.addEventListener(event,e=>{if(e.isTrusted)void audio.unlock();},{capture:true});
+  document.addEventListener('visibilitychange',()=>{if(document.hidden)audio.stop();});
+  new MutationObserver(()=>{if(blocked())audio.stop();}).observe(root,{attributes:true,attributeFilter:['data-title','data-battle','data-page','data-intro-phase']});
+  refresh();return {sync,stop:audio.stop};
+}
+
+return {normalizeVoicePreferences,dialogueReaction,createVoiceAudio,mountVoiceAudio};})();
+const module27=(()=>{
 const musicTracks=Object.fromEntries([
   ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
@@ -3884,7 +4005,7 @@ function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage}={}){
 }
 
 return {musicTracks,sceneMusic,createBackgroundMusic,mountBackgroundMusic};})();
-const module24=(()=>{
+const module28=(()=>{
 // Kenney Interface Sounds (CC0). Cosmetic feedback, independent of game saves.
 const uiSamples={hover:['interface/tick_001','interface/tick_002'],click:['interface/select_001','interface/select_002']};
 const controls='button,a[href],summary,select,[role="button"],[role="tab"],input[type="checkbox"],input[type="radio"]';
@@ -3941,7 +4062,7 @@ function mountUIAudio(root,{assetBase='',audioFactory=createUIAudio}={}){
 }
 
 return {uiSamples,uiSoundTarget,createUIAudio,mountUIAudio};})();
-const module25=(()=>{
+const module29=(()=>{
 const {characterVisual,artBase}=module10;
 function mountNPCArt({assetBase,status}){
   const image=new Image();image.className='person npc-standing';image.hidden=true;image.draggable=false;
@@ -3960,7 +4081,7 @@ function mountNPCArt({assetBase,status}){
 }
 
 return {mountNPCArt};})();
-const module26=(()=>{
+const module30=(()=>{
 const {wallet,formatCopper}=module7;
 function mountWalletUI(state){
   const nodes=[];
@@ -3979,67 +4100,7 @@ function mountWalletUI(state){
 }
 
 return {mountWalletUI};})();
-const module28=(()=>{
-// Coordinates in the original 1024×1536 outfit canvas; face images are 512×512.
-// Armor follows faces/manifest.json's source crop and render frame exactly.
-// Casual/nightwear use hair-aligned placement against their existing head artwork.
-// All 9 faces share the same mask and anchor, so each outfit uses one fit.
-const faceFit={
-  armor:{x:461.521739,y:261.521739,size:166.956522},
-  casual:{x:461,y:261,size:168},
-  nightwear:{x:461,y:261,size:168}
-};
-
-return {faceFit};})();
-const module27=(()=>{
-const {characterVisual,artBase}=module10;
-const {faceFit}=module28;
-function castFrame(scene,index){
-  const cast=scene?.cast||[],lines=scene?.dialogue||[],current=lines[index];
-  const speaker=line=>line?.speaker_id||cast.find(p=>p.speaker===line?.speaker)?.id||null;
-  const active=speaker(current);
-  return cast.map(p=>{
-    let emotion=p.emotion;
-    for(const line of lines.slice(0,index+1))if(speaker(line)===p.id&&line.emotion)emotion=line.emotion;
-    return {...p,emotion,active:p.id===active};
-  });
-}
-function mountSceneCast(state,{assetBase,onSelect}){
-  const root=document.getElementById('scene-cast');
-  const slots=Array.from({length:3},()=>{
-    const slot=document.createElement('div'),canvas=document.createElement('div'),body=new Image(),face=new Image(),name=document.createElement('button');
-    slot.className='cast-slot';canvas.className='cast-canvas';body.className='person cast-body';face.className='cast-face';name.className='cast-name';name.type='button';face.hidden=true;
-    body.draggable=face.draggable=false;body.setAttribute('role','button');body.tabIndex=0;
-    body.onload=()=>{body.classList.add('ready');slot.dataset.failed='false';face.hidden=slot.dataset.npcId!=='serin'||face.dataset.ready!=='true';};
-    body.onerror=()=>{body.classList.remove('ready');slot.dataset.failed='true';face.hidden=true;};
-    face.onload=()=>{face.dataset.ready='true';face.hidden=slot.dataset.npcId!=='serin'||!body.classList.contains('ready');};face.onerror=()=>{face.dataset.ready='false';face.hidden=true;};
-    const select=event=>{event.stopPropagation();onSelect(slot.dataset.npcId,event);};
-    body.onclick=name.onclick=select;body.onkeydown=event=>{if(event.key==='Enter'||event.key===' '){event.preventDefault();select(event);}};
-    canvas.append(body,face);slot.append(canvas,name);root.append(slot);return {slot,canvas,body,face,name};
-  });
-  return {hide(){root.hidden=true;},render(){
-    const frame=castFrame(state.scene,state.sceneIndex);root.hidden=!frame.length||!state.character;root.dataset.count=frame.length;
-    slots.forEach((s,i)=>{
-      const p=frame[i];s.slot.hidden=!p;if(!p)return;
-      s.slot.dataset.npcId=p.id;s.slot.dataset.active=String(p.active);s.name.textContent=p.speaker+(p.active?' · 대화 중':'');
-      s.body.dataset.npcId=p.id;
-      s.body.setAttribute('aria-label',`${p.speaker} 초상화 · 메뉴 열기`);s.body.alt=p.speaker+' 스탠딩';
-      const art=characterVisual(p.id,p.outfit,p.emotion);
-      if(!art){s.body.hidden=true;s.slot.dataset.failed='true';s.face.hidden=true;return;}
-      s.body.hidden=false;const base=artBase(assetBase),url=base+art.path;
-      if(s.body.getAttribute('src')!==url){s.body.classList.remove('ready');s.slot.dataset.failed='false';s.body.src=url;}
-      s.canvas.dataset.kind=art.kind;
-      if(p.id==='serin'){
-        const fit=faceFit[p.outfit];s.face.style.left=fit.x/1024*100+'%';s.face.style.top=fit.y/1536*100+'%';s.face.style.width=fit.size/1024*100+'%';
-        const faceURL=base+`assets/characters/main/serin/faces/${p.emotion}.png`;
-        if(s.face.getAttribute('src')!==faceURL){s.face.hidden=true;s.face.dataset.ready='false';s.face.src=faceURL;}
-      }else s.face.hidden=true;
-    });
-  }};
-}
-
-return {castFrame,mountSceneCast};})();
-const module30=(()=>{
+const module32=(()=>{
 const {normalizeNPCProfile}=module14;
 const REPO='Tmddhdmlc-ux/Ercedia-RPG';
 const conveniencePath='GAMEPLAY_CONVENIENCE_RULES.md';
@@ -4109,7 +4170,7 @@ function campaignSettingsAttachment(snapshot){
 }
 
 return {isCampaignSetting,repositoryIndex,loadCampaignSettings,campaignSettingsPrompt,legacyCampaignPrompt,campaignNPCStates,campaignSettingsAttachment};})();
-const module34=(()=>{
+const module36=(()=>{
 // Generated from economy/currency_rules.json and canonical non-tradeable divine IDs.
 const economyData = {
   "rules": {
@@ -4224,8 +4285,8 @@ const economyData = {
 };
 
 return {economyData};})();
-const module33=(()=>{
-const {economyData}=module34;
+const module35=(()=>{
+const {economyData}=module36;
 const {catalogItem,itemCategory}=module18;
 const {copper}=module7;
 const currencyRules=economyData.rules;
@@ -4242,7 +4303,7 @@ function priceAt(world,offer,row,direction,dateDay){
 }
 
 return {currencyRules,provisions,tradeItem,tradeCategory,tradable,priceAt};})();
-const module37=(()=>{
+const module39=(()=>{
 // Product eligibility, not a promise that every shop has these products in stock.
 const shopTypes={
   general:{name:'잡화점',categories:['consumable','misc','material']},
@@ -4272,7 +4333,7 @@ function shopAccepts(type,item){
 }
 
 return {shopTypes,regionalShops,shopAccepts};})();
-const module38=(()=>{
+const module40=(()=>{
 const {engineData}=module19;
 const {battleGrowth}=module9;
 const statKeys=['strength','dexterity','intelligence','constitution','manaStat'];
@@ -4353,7 +4414,7 @@ function planEngineScene(state,scene,questResult){
 }
 
 return {statKeys,statLabels,copyEngine,engineItem,normalizeEngine,ensureEngine,equippedCatalog,equipmentBonuses,recalculateEquipment,combatPreview,statCost,investStat,equipItem,unequipItem,bookEligibility,learnBook,usableSkills,awardXP,validateEngineEvents,applyEngineEvent,planEngineScene};})();
-const module39=(()=>{
+const module41=(()=>{
 const {wallet:canonicalWallet,copper,bindWallet,splitCopper}=module7;
 // Shop display helpers delegate to the existing economy's single wallet.
 function wallet(state){
@@ -4367,15 +4428,15 @@ function coins(value){
 }
 
 return {wallet,setWallet,coins};})();
-const module36=(()=>{
+const module38=(()=>{
 const {itemDescription}=module18;
-const {tradeItem:catalogItem,tradeCategory:itemCategory,priceAt,tradable}=module33;
+const {tradeItem:catalogItem,tradeCategory:itemCategory,priceAt,tradable}=module35;
 const {bindWallet}=module7;
-const {shopTypes,shopAccepts}=module37;
-const {ensureEngine,engineItem}=module38;
+const {shopTypes,shopAccepts}=module39;
+const {ensureEngine,engineItem}=module40;
 const {findNPC,resolveNPC}=module13;
 const {calendarDay}=module3;
-const {wallet,setWallet}=module39;
+const {wallet,setWallet}=module41;
 const copy=v=>JSON.parse(JSON.stringify(v));
 const check=(ok,message)=>{if(!ok)throw Error(message);};
 const safe=(v,min=0,max=Number.MAX_SAFE_INTEGER)=>Number.isSafeInteger(v)&&v>=min&&v<=max;
@@ -4562,10 +4623,10 @@ function commitTrade(state,draft,{persist}={}){
 }
 
 return {merchantFunds,marketSignature,pricesChanged,tradeQuote,marketPrice,tradeAllowed,registerShop,updateShop,playerTradeRows,newTrade,reserveTrade,cancelReservation,cancelTrade,tradeTotals,validateTrade,commitTrade};})();
-const module40=(()=>{
-const {newTrade,reserveTrade,commitTrade,playerTradeRows}=module36;
+const module42=(()=>{
+const {newTrade,reserveTrade,commitTrade,playerTradeRows}=module38;
 const {copper,wallet,addCopper,totalCopper}=module7;
-const {tradeItem,tradeCategory,tradable,priceAt,currencyRules}=module33;
+const {tradeItem,tradeCategory,tradable,priceAt,currencyRules}=module35;
 const {findNPC}=module13;
 const {calendarDay}=module3;
 const check=(v,m)=>{if(!v)throw Error('경제 검증 · '+m);};
@@ -4684,20 +4745,20 @@ function applyEconomyEvent(next,scene,e,date,ctx){
 }
 
 return {economyKinds,prepareEconomy,applyMarket,applyEconomyEvent};})();
-const module41=(()=>{
+const module43=(()=>{
 // Approved public catalogs; no invented prices or coordinates.
 const worldData={"dungeons":[{"id":"DUN-W1-01","name":"흰숨 동굴","region_id":"W1","danger_rank":"하급","level_range":[6,19],"zones":[{"id":"DUN-W1-01-Z01","order":1,"name":"얼어붙은 비탈 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["서리갈기 늑대"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W1의 '흰숨 동굴' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W1-01-Z02","order":2,"name":"하얀 숨결 통로 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["서리갈기 늑대"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W1의 '흰숨 동굴' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W1-01-Z03","order":3,"name":"서리 송곳길 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["서리갈기 늑대"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W1의 '흰숨 동굴' 내부 '서리 송곳길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W1-01-Z01","boss_zone_id":"DUN-W1-01-Z03","monster_examples":["서리갈기 늑대"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W1-02","name":"설벽 밑 구혈","region_id":"W1","danger_rank":"중급","level_range":[14,19],"zones":[{"id":"DUN-W1-02-Z01","order":1,"name":"얼어붙은 비탈 · 안쪽","type":"entrance","optional":false,"encounter_pool":["백각 설산사슴"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W1의 '설벽 밑 구혈' 내부 '얼어붙은 비탈'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W1-02-Z02","order":2,"name":"하얀 숨결 통로 · 안쪽","type":"combat","optional":false,"encounter_pool":["백각 설산사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W1의 '설벽 밑 구혈' 내부 '하얀 숨결 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W1-02-Z03","order":3,"name":"서리 송곳길 · 안쪽","type":"event","optional":false,"encounter_pool":["백각 설산사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W1의 '설벽 밑 구혈' 내부 '서리 송곳길'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W1-02-Z04","order":4,"name":"깊은 눈 웅덩이 · 안쪽","type":"boss","optional":false,"encounter_pool":["백각 설산사슴"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W1의 '설벽 밑 구혈' 내부 '깊은 눈 웅덩이'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W1-02-Z01","boss_zone_id":"DUN-W1-02-Z04","monster_examples":["백각 설산사슴"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W2-01","name":"묵은 왕가 납골묘","region_id":"W2","danger_rank":"하급","level_range":[13,26],"zones":[{"id":"DUN-W2-01-Z01","order":1,"name":"무너진 문장석 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W2의 '묵은 왕가 납골묘' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W2-01-Z02","order":2,"name":"낡은 조문회랑 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W2의 '묵은 왕가 납골묘' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W2-01-Z03","order":3,"name":"검은 묘지 경사로 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W2의 '묵은 왕가 납골묘' 내부 '검은 묘지 경사로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W2-01-Z01","boss_zone_id":"DUN-W2-01-Z03","monster_examples":["곡창 그림자쥐"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W2-02","name":"사자의 폐지하실","region_id":"W2","danger_rank":"상급","level_range":[21,31],"zones":[{"id":"DUN-W2-02-Z01","order":1,"name":"무너진 문장석 · 안쪽","type":"entrance","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W2의 '사자의 폐지하실' 내부 '무너진 문장석'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W2-02-Z02","order":2,"name":"낡은 조문회랑 · 안쪽","type":"combat","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W2의 '사자의 폐지하실' 내부 '낡은 조문회랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W2-02-Z03","order":3,"name":"검은 묘지 경사로 · 안쪽","type":"event","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W2의 '사자의 폐지하실' 내부 '검은 묘지 경사로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W2-02-Z04","order":4,"name":"봉인된 비문실 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W2의 '사자의 폐지하실' 내부 '봉인된 비문실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-W2-02-Z05","order":5,"name":"사자상 제단 · 안쪽","type":"boss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W2의 '사자의 폐지하실' 내부 '사자상 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W2-02-Z01","boss_zone_id":"DUN-W2-02-Z05","monster_examples":["철가죽 멧돼지"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W3-01","name":"잿빛 곡창","region_id":"W3","danger_rank":"하급","level_range":[1,14],"zones":[{"id":"DUN-W3-01-Z01","order":1,"name":"불탄 곡물 더미 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W3의 '잿빛 곡창' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W3-01-Z02","order":2,"name":"뒤틀린 쥐굴 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W3의 '잿빛 곡창' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W3-01-Z03","order":3,"name":"낡은 풍차 통로 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["곡창 그림자쥐"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W3의 '잿빛 곡창' 내부 '낡은 풍차 통로'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W3-01-Z01","boss_zone_id":"DUN-W3-01-Z03","monster_examples":["곡창 그림자쥐"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W3-02","name":"이삭길 약탈굴","region_id":"W3","danger_rank":"중급","level_range":[9,15],"zones":[{"id":"DUN-W3-02-Z01","order":1,"name":"불탄 곡물 더미 · 안쪽","type":"entrance","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W3의 '이삭길 약탈굴' 내부 '불탄 곡물 더미'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W3-02-Z02","order":2,"name":"뒤틀린 쥐굴 · 안쪽","type":"combat","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W3의 '이삭길 약탈굴' 내부 '뒤틀린 쥐굴'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W3-02-Z03","order":3,"name":"낡은 풍차 통로 · 안쪽","type":"event","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W3의 '이삭길 약탈굴' 내부 '낡은 풍차 통로'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W3-02-Z04","order":4,"name":"곡창 경비 초소 · 안쪽","type":"boss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W3의 '이삭길 약탈굴' 내부 '곡창 경비 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W3-02-Z01","boss_zone_id":"DUN-W3-02-Z04","monster_examples":["철가죽 멧돼지"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W4-01","name":"붉은 참호","region_id":"W4","danger_rank":"중급","level_range":[22,35],"zones":[{"id":"DUN-W4-01-Z01","order":1,"name":"붉은 흙 입구 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W4의 '붉은 참호' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W4-01-Z02","order":2,"name":"침수된 참호 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W4의 '붉은 참호' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W4-01-Z03","order":3,"name":"망가진 창고 · 바깥쪽","type":"event","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W4의 '붉은 참호' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W4-01-Z04","order":4,"name":"녹슨 전투 관측대 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W4의 '붉은 참호' 내부 '녹슨 전투 관측대'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W4-01-Z01","boss_zone_id":"DUN-W4-01-Z04","monster_examples":["잿불 송곳도마뱀"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W4-02","name":"전쟁 잔해 요새","region_id":"W4","danger_rank":"상급","level_range":[30,46],"zones":[{"id":"DUN-W4-02-Z01","order":1,"name":"붉은 흙 입구 · 안쪽","type":"entrance","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W4의 '전쟁 잔해 요새' 내부 '붉은 흙 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W4-02-Z02","order":2,"name":"침수된 참호 · 안쪽","type":"combat","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W4의 '전쟁 잔해 요새' 내부 '침수된 참호'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W4-02-Z03","order":3,"name":"망가진 창고 · 안쪽","type":"event","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W4의 '전쟁 잔해 요새' 내부 '망가진 창고'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W4-02-Z04","order":4,"name":"녹슨 전투 관측대 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W4의 '전쟁 잔해 요새' 내부 '녹슨 전투 관측대'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-W4-02-Z05","order":5,"name":"성벽 마지막 방 · 안쪽","type":"boss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W4의 '전쟁 잔해 요새' 내부 '성벽 마지막 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W4-02-Z01","boss_zone_id":"DUN-W4-02-Z05","monster_examples":["철가죽 멧돼지"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W5-01","name":"마차무덤","region_id":"W5","danger_rank":"하급","level_range":[10,23],"zones":[{"id":"DUN-W5-01-Z01","order":1,"name":"뒤집힌 마차길 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W5의 '마차무덤' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W5-01-Z02","order":2,"name":"도난 화물 통로 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W5의 '마차무덤' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W5-01-Z03","order":3,"name":"깎인 바위 틈 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["철가죽 멧돼지"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W5의 '마차무덤' 내부 '깎인 바위 틈'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W5-01-Z01","boss_zone_id":"DUN-W5-01-Z03","monster_examples":["철가죽 멧돼지"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-W5-02","name":"돌문 협곡길","region_id":"W5","danger_rank":"중급","level_range":[18,27],"zones":[{"id":"DUN-W5-02-Z01","order":1,"name":"뒤집힌 마차길 · 안쪽","type":"entrance","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W5의 '돌문 협곡길' 내부 '뒤집힌 마차길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-W5-02-Z02","order":2,"name":"도난 화물 통로 · 안쪽","type":"combat","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"벨로아 W5의 '돌문 협곡길' 내부 '도난 화물 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-W5-02-Z03","order":3,"name":"깎인 바위 틈 · 안쪽","type":"event","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"벨로아 W5의 '돌문 협곡길' 내부 '깎인 바위 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-W5-02-Z04","order":4,"name":"무너진 갈림길 · 안쪽","type":"boss","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"벨로아 W5의 '돌문 협곡길' 내부 '무너진 갈림길'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-W5-02-Z01","boss_zone_id":"DUN-W5-02-Z04","monster_examples":["뿔돌 협곡독수리"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E1-01","name":"회안개 초소","region_id":"E1","danger_rank":"중급","level_range":[26,39],"zones":[{"id":"DUN-E1-01-Z01","order":1,"name":"회빛 서릿길 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["회안개 박쥐"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E1의 '회안개 초소' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E1-01-Z02","order":2,"name":"무너진 감시 통로 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["회안개 박쥐"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E1의 '회안개 초소' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E1-01-Z03","order":3,"name":"불규칙한 마나 균열 · 바깥쪽","type":"event","optional":false,"encounter_pool":["회안개 박쥐"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E1의 '회안개 초소' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E1-01-Z04","order":4,"name":"버려진 초소 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["회안개 박쥐"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E1의 '회안개 초소' 내부 '버려진 초소'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E1-01-Z01","boss_zone_id":"DUN-E1-01-Z04","monster_examples":["회안개 박쥐"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E1-02","name":"시린 균열 동굴","region_id":"E1","danger_rank":"엘리트","level_range":[42,62],"zones":[{"id":"DUN-E1-02-Z01","order":1,"name":"회빛 서릿길 · 안쪽","type":"entrance","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '회빛 서릿길'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E1-02-Z02","order":2,"name":"무너진 감시 통로 · 안쪽","type":"combat","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '무너진 감시 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E1-02-Z03","order":3,"name":"불규칙한 마나 균열 · 안쪽","type":"event","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '불규칙한 마나 균열'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E1-02-Z04","order":4,"name":"버려진 초소 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '버려진 초소'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-E1-02-Z05","order":5,"name":"깊은 동토 격리실 · 안쪽","type":"boss","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '깊은 동토 격리실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."},{"id":"DUN-E1-02-Z06","order":6,"name":"반사광 폐쇄구역 · 안쪽","type":"hidden_optional","optional":true,"encounter_pool":["청전기 산양"],"entry_rule":"discover_clue","reward_tags":["rare_material","manual_fragment_candidate"],"scene_prompt":"드라켄 E1의 '시린 균열 동굴' 내부 '반사광 폐쇄구역'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."}],"entrance_zone_id":"DUN-E1-02-Z01","boss_zone_id":"DUN-E1-02-Z05","monster_examples":["청전기 산양"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E2-01","name":"청동 도체 회랑","region_id":"E2","danger_rank":"중급","level_range":[20,33],"zones":[{"id":"DUN-E2-01-Z01","order":1,"name":"도체 장치 입구 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E2의 '청동 도체 회랑' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E2-01-Z02","order":2,"name":"잔류 전류 도랑 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E2의 '청동 도체 회랑' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E2-01-Z03","order":3,"name":"파손된 전원판 · 바깥쪽","type":"event","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E2의 '청동 도체 회랑' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E2-01-Z04","order":4,"name":"청동 제어실 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E2의 '청동 도체 회랑' 내부 '청동 제어실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E2-01-Z01","boss_zone_id":"DUN-E2-01-Z04","monster_examples":["공명 수정거미"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E2-02","name":"폐전류 연구구역","region_id":"E2","danger_rank":"엘리트","level_range":[48,68],"zones":[{"id":"DUN-E2-02-Z01","order":1,"name":"도체 장치 입구 · 안쪽","type":"entrance","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '도체 장치 입구'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E2-02-Z02","order":2,"name":"잔류 전류 도랑 · 안쪽","type":"combat","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '잔류 전류 도랑'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E2-02-Z03","order":3,"name":"파손된 전원판 · 안쪽","type":"event","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '파손된 전원판'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E2-02-Z04","order":4,"name":"청동 제어실 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '청동 제어실'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-E2-02-Z05","order":5,"name":"불안정한 동력핵 · 안쪽","type":"boss","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '불안정한 동력핵'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."},{"id":"DUN-E2-02-Z06","order":6,"name":"암호화된 기록실 · 안쪽","type":"hidden_optional","optional":true,"encounter_pool":["수정굴 광충"],"entry_rule":"discover_clue","reward_tags":["rare_material","manual_fragment_candidate"],"scene_prompt":"드라켄 E2의 '폐전류 연구구역' 내부 '암호화된 기록실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."}],"entrance_zone_id":"DUN-E2-02-Z01","boss_zone_id":"DUN-E2-02-Z05","monster_examples":["수정굴 광충"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E3-01","name":"붕락 수정 갱도","region_id":"E3","danger_rank":"중급","level_range":[24,37],"zones":[{"id":"DUN-E3-01-Z01","order":1,"name":"갱도 안전 문 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E3의 '붕락 수정 갱도' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E3-01-Z02","order":2,"name":"수정 부산물 길 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E3의 '붕락 수정 갱도' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E3-01-Z03","order":3,"name":"무너진 채굴 틈 · 바깥쪽","type":"event","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E3의 '붕락 수정 갱도' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E3-01-Z04","order":4,"name":"초석 방벽 진지 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["수정굴 광충"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E3의 '붕락 수정 갱도' 내부 '초석 방벽 진지'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E3-01-Z01","boss_zone_id":"DUN-E3-01-Z04","monster_examples":["수정굴 광충"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E3-02","name":"잿빛 방벽 지하층","region_id":"E3","danger_rank":"상급","level_range":[34,54],"zones":[{"id":"DUN-E3-02-Z01","order":1,"name":"갱도 안전 문 · 안쪽","type":"entrance","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E3의 '잿빛 방벽 지하층' 내부 '갱도 안전 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E3-02-Z02","order":2,"name":"수정 부산물 길 · 안쪽","type":"combat","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E3의 '잿빛 방벽 지하층' 내부 '수정 부산물 길'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E3-02-Z03","order":3,"name":"무너진 채굴 틈 · 안쪽","type":"event","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E3의 '잿빛 방벽 지하층' 내부 '무너진 채굴 틈'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E3-02-Z04","order":4,"name":"초석 방벽 진지 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E3의 '잿빛 방벽 지하층' 내부 '초석 방벽 진지'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-E3-02-Z05","order":5,"name":"심층 수정 정맥 · 안쪽","type":"boss","optional":false,"encounter_pool":["공명 수정거미"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E3의 '잿빛 방벽 지하층' 내부 '심층 수정 정맥'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E3-02-Z01","boss_zone_id":"DUN-E3-02-Z05","monster_examples":["공명 수정거미"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E4-01","name":"바람깎인 교량굴","region_id":"E4","danger_rank":"하급","level_range":[8,21],"zones":[{"id":"DUN-E4-01-Z01","order":1,"name":"절벽 망루 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E4의 '바람깎인 교량굴' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E4-01-Z02","order":2,"name":"기울어진 바람다리 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E4의 '바람깎인 교량굴' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E4-01-Z03","order":3,"name":"산안개 분기점 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["뿔돌 협곡독수리"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E4의 '바람깎인 교량굴' 내부 '산안개 분기점'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E4-01-Z01","boss_zone_id":"DUN-E4-01-Z03","monster_examples":["뿔돌 협곡독수리"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-E4-02","name":"교량 아래 폐통로","region_id":"E4","danger_rank":"중급","level_range":[16,26],"zones":[{"id":"DUN-E4-02-Z01","order":1,"name":"절벽 망루 · 안쪽","type":"entrance","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E4의 '교량 아래 폐통로' 내부 '절벽 망루'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-E4-02-Z02","order":2,"name":"기울어진 바람다리 · 안쪽","type":"combat","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"드라켄 E4의 '교량 아래 폐통로' 내부 '기울어진 바람다리'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-E4-02-Z03","order":3,"name":"산안개 분기점 · 안쪽","type":"event","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"드라켄 E4의 '교량 아래 폐통로' 내부 '산안개 분기점'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-E4-02-Z04","order":4,"name":"교량 아래 경비실 · 안쪽","type":"boss","optional":false,"encounter_pool":["청전기 산양"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"드라켄 E4의 '교량 아래 폐통로' 내부 '교량 아래 경비실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-E4-02-Z01","boss_zone_id":"DUN-E4-02-Z04","monster_examples":["청전기 산양"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S1-01","name":"진주 수로굴","region_id":"S1","danger_rank":"하급","level_range":[3,16],"zones":[{"id":"DUN-S1-01-Z01","order":1,"name":"잠긴 선착장 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["암초 부리게"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S1의 '진주 수로굴' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S1-01-Z02","order":2,"name":"진주 조개 통로 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["암초 부리게"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S1의 '진주 수로굴' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S1-01-Z03","order":3,"name":"해수 유입 방 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["암초 부리게"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S1의 '진주 수로굴' 내부 '해수 유입 방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S1-01-Z01","boss_zone_id":"DUN-S1-01-Z03","monster_examples":["암초 부리게"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S1-02","name":"유실 선박 화물창","region_id":"S1","danger_rank":"중급","level_range":[11,22],"zones":[{"id":"DUN-S1-02-Z01","order":1,"name":"잠긴 선착장 · 안쪽","type":"entrance","optional":false,"encounter_pool":["은비늘 물갈퀴어"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S1의 '유실 선박 화물창' 내부 '잠긴 선착장'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S1-02-Z02","order":2,"name":"진주 조개 통로 · 안쪽","type":"combat","optional":false,"encounter_pool":["은비늘 물갈퀴어"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S1의 '유실 선박 화물창' 내부 '진주 조개 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S1-02-Z03","order":3,"name":"해수 유입 방 · 안쪽","type":"event","optional":false,"encounter_pool":["은비늘 물갈퀴어"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S1의 '유실 선박 화물창' 내부 '해수 유입 방'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S1-02-Z04","order":4,"name":"그물 매듭 창고 · 안쪽","type":"boss","optional":false,"encounter_pool":["은비늘 물갈퀴어"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S1의 '유실 선박 화물창' 내부 '그물 매듭 창고'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S1-02-Z01","boss_zone_id":"DUN-S1-02-Z04","monster_examples":["은비늘 물갈퀴어"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S2-01","name":"세르반 잊힌 역참","region_id":"S2","danger_rank":"중급","level_range":[17,30],"zones":[{"id":"DUN-S2-01-Z01","order":1,"name":"황금길 폐문 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["사막색 모래여우"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S2의 '세르반 잊힌 역참' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S2-01-Z02","order":2,"name":"말발굽 안뜰 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["사막색 모래여우"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S2의 '세르반 잊힌 역참' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S2-01-Z03","order":3,"name":"붕괴된 역참 · 바깥쪽","type":"event","optional":false,"encounter_pool":["사막색 모래여우"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S2의 '세르반 잊힌 역참' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S2-01-Z04","order":4,"name":"오래된 보급 막사 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["사막색 모래여우"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S2의 '세르반 잊힌 역참' 내부 '오래된 보급 막사'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S2-01-Z01","boss_zone_id":"DUN-S2-01-Z04","monster_examples":["사막색 모래여우"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S2-02","name":"황금길 폐요새","region_id":"S2","danger_rank":"상급","level_range":[29,49],"zones":[{"id":"DUN-S2-02-Z01","order":1,"name":"황금길 폐문 · 안쪽","type":"entrance","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S2의 '황금길 폐요새' 내부 '황금길 폐문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S2-02-Z02","order":2,"name":"말발굽 안뜰 · 안쪽","type":"combat","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S2의 '황금길 폐요새' 내부 '말발굽 안뜰'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S2-02-Z03","order":3,"name":"붕괴된 역참 · 안쪽","type":"event","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S2의 '황금길 폐요새' 내부 '붕괴된 역참'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S2-02-Z04","order":4,"name":"오래된 보급 막사 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S2의 '황금길 폐요새' 내부 '오래된 보급 막사'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-S2-02-Z05","order":5,"name":"철문 지하방 · 안쪽","type":"boss","optional":false,"encounter_pool":["잿불 송곳도마뱀"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S2의 '황금길 폐요새' 내부 '철문 지하방'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S2-02-Z01","boss_zone_id":"DUN-S2-02-Z05","monster_examples":["잿불 송곳도마뱀"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S3-01","name":"암초 해적 소굴","region_id":"S3","danger_rank":"하급","level_range":[14,27],"zones":[{"id":"DUN-S3-01-Z01","order":1,"name":"암초 수문 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["해풍 날개뱀"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S3의 '암초 해적 소굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S3-01-Z02","order":2,"name":"물비린내 해적 통로 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["해풍 날개뱀"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S3의 '암초 해적 소굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S3-01-Z03","order":3,"name":"밀물 함정굴 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["해풍 날개뱀"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S3의 '암초 해적 소굴' 내부 '밀물 함정굴'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S3-01-Z01","boss_zone_id":"DUN-S3-01-Z03","monster_examples":["해풍 날개뱀"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S3-02","name":"심해 배수동굴","region_id":"S3","danger_rank":"상급","level_range":[27,47],"zones":[{"id":"DUN-S3-02-Z01","order":1,"name":"암초 수문 · 안쪽","type":"entrance","optional":false,"encounter_pool":["흑진주 먹장어"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S3의 '심해 배수동굴' 내부 '암초 수문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S3-02-Z02","order":2,"name":"물비린내 해적 통로 · 안쪽","type":"combat","optional":false,"encounter_pool":["흑진주 먹장어"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S3의 '심해 배수동굴' 내부 '물비린내 해적 통로'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S3-02-Z03","order":3,"name":"밀물 함정굴 · 안쪽","type":"event","optional":false,"encounter_pool":["흑진주 먹장어"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S3의 '심해 배수동굴' 내부 '밀물 함정굴'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S3-02-Z04","order":4,"name":"부서진 선박 갑판 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["흑진주 먹장어"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S3의 '심해 배수동굴' 내부 '부서진 선박 갑판'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-S3-02-Z05","order":5,"name":"해적 수장 선실 · 안쪽","type":"boss","optional":false,"encounter_pool":["흑진주 먹장어"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S3의 '심해 배수동굴' 내부 '해적 수장 선실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S3-02-Z01","boss_zone_id":"DUN-S3-02-Z05","monster_examples":["흑진주 먹장어"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S4-01","name":"흑유리 지하금고","region_id":"S4","danger_rank":"중급","level_range":[29,42],"zones":[{"id":"DUN-S4-01-Z01","order":1,"name":"검은 유리 문 · 바깥쪽","type":"entrance","optional":false,"encounter_pool":["밤등불 나방"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S4의 '흑유리 지하금고' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S4-01-Z02","order":2,"name":"거울 그림자 복도 · 바깥쪽","type":"combat","optional":false,"encounter_pool":["밤등불 나방"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S4의 '흑유리 지하금고' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S4-01-Z03","order":3,"name":"금고 기계장치 · 바깥쪽","type":"event","optional":false,"encounter_pool":["밤등불 나방"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S4의 '흑유리 지하금고' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S4-01-Z04","order":4,"name":"금빛 계약 제단 · 바깥쪽","type":"boss","optional":false,"encounter_pool":["밤등불 나방"],"entry_rule":"clear_previous_required","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S4의 '흑유리 지하금고' 내부 '금빛 계약 제단'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."}],"entrance_zone_id":"DUN-S4-01-Z01","boss_zone_id":"DUN-S4-01-Z04","monster_examples":["밤등불 나방"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"},{"id":"DUN-S4-02","name":"달그림자 폐예배당","region_id":"S4","danger_rank":"엘리트","level_range":[46,66],"zones":[{"id":"DUN-S4-02-Z01","order":1,"name":"검은 유리 문 · 안쪽","type":"entrance","optional":false,"encounter_pool":["심연고리 사슴"],"entry_rule":"dungeon_enter","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '검은 유리 문'. 전투 전 위험 징후와 되돌아갈 길을 확인한다."},{"id":"DUN-S4-02-Z02","order":2,"name":"거울 그림자 복도 · 안쪽","type":"combat","optional":false,"encounter_pool":["심연고리 사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","material"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '거울 그림자 복도'. 주변 생태에 맞는 마수·적대 인간과 교전할 수 있다."},{"id":"DUN-S4-02-Z03","order":3,"name":"금고 기계장치 · 안쪽","type":"event","optional":false,"encounter_pool":["심연고리 사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '금고 기계장치'. 함정·기록·환경 변화를 조사하며 분기를 판정한다."},{"id":"DUN-S4-02-Z04","order":4,"name":"금빛 계약 제단 · 안쪽","type":"miniboss","optional":false,"encounter_pool":["심연고리 사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["clue_or_resource"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '금빛 계약 제단'. 경계력이 강한 개체 또는 정예 적대자의 강력한 저항을 마주한다."},{"id":"DUN-S4-02-Z05","order":5,"name":"잊힌 지하 예배실 · 안쪽","type":"boss","optional":false,"encounter_pool":["심연고리 사슴"],"entry_rule":"clear_previous_or_resolve_event","reward_tags":["xp","regional_material","dungeon_clear_reward"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '잊힌 지하 예배실'. 던전의 마지막 장애물과 의뢰의 핵심 목표를 마주한다."},{"id":"DUN-S4-02-Z06","order":6,"name":"숨겨진 비밀 장부실 · 안쪽","type":"hidden_optional","optional":true,"encounter_pool":["심연고리 사슴"],"entry_rule":"discover_clue","reward_tags":["rare_material","manual_fragment_candidate"],"scene_prompt":"루메린 S4의 '달그림자 폐예배당' 내부 '숨겨진 비밀 장부실'. 분명한 조사 근거가 있을 때만 비밀 구역을 발견한다."}],"entrance_zone_id":"DUN-S4-02-Z01","boss_zone_id":"DUN-S4-02-Z05","monster_examples":["심연고리 사슴"],"exit_policy":"retreat_to_region_with_consequences","respawn_policy":"no_immediate_instant_reset","map_coordinates_status":"not_fixed"}],"facilities":[{"id":"FAC-W1-01","name":"설벽 수비대장간","region_id":"W1","kingdom":"벨로아","type":"equipment","exclusive_specialty":true,"description":"겨울철 검과 방한 방어구 제작","accessible_to":["검사","마법사"],"service":["sword_trade","armor_trade","smithing","repair"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-W1-02","name":"노르발트 장인 재료상","region_id":"W1","kingdom":"벨로아","type":"support","exclusive_specialty":false,"description":"재료 구매·장비 수리·감정","service":["materials","repair"],"coordinates_status":"region_marker_only"},{"id":"FAC-W2-01","name":"사자문장 명검공방","region_id":"W2","kingdom":"벨로아","type":"equipment","exclusive_specialty":true,"description":"귀족 검 감정 및 장비 강화","accessible_to":["검사","마법사"],"service":["sword_trade","armor_trade","smithing","repair"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-W2-02","name":"발렌하르트 장인 재료상","region_id":"W2","kingdom":"벨로아","type":"support","exclusive_specialty":false,"description":"재료 구매·장비 수리·감정","service":["materials","repair"],"coordinates_status":"region_marker_only"},{"id":"FAC-W3-01","name":"황금이삭 농기구대장간","region_id":"W3","kingdom":"벨로아","type":"equipment","exclusive_specialty":true,"description":"초보자 검·경갑 및 저가 수리","accessible_to":["검사","마법사"],"service":["sword_trade","armor_trade","smithing","repair"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-W3-02","name":"엘름베르크 장인 재료상","region_id":"W3","kingdom":"벨로아","type":"support","exclusive_specialty":false,"description":"재료 구매·장비 수리·감정","service":["materials","repair"],"coordinates_status":"region_marker_only"},{"id":"FAC-W4-01","name":"적장미 전장병기소","region_id":"W4","kingdom":"벨로아","type":"equipment","exclusive_specialty":true,"description":"검과 전쟁 방어구 공급","accessible_to":["검사","마법사"],"service":["sword_trade","armor_trade","smithing","repair"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-W4-02","name":"로젠펠트 장인 재료상","region_id":"W4","kingdom":"벨로아","type":"support","exclusive_specialty":false,"description":"재료 구매·장비 수리·감정","service":["materials","repair"],"coordinates_status":"region_marker_only"},{"id":"FAC-W5-01","name":"은매 교역제련소","region_id":"W5","kingdom":"벨로아","type":"equipment","exclusive_specialty":true,"description":"상단 재료 거래·검·방어구 감정","accessible_to":["검사","마법사"],"service":["sword_trade","armor_trade","smithing","repair"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-W5-02","name":"아르덴슈타인 장인 재료상","region_id":"W5","kingdom":"벨로아","type":"support","exclusive_specialty":false,"description":"재료 구매·장비 수리·감정","service":["materials","repair"],"coordinates_status":"region_marker_only"},{"id":"FAC-E1-01","name":"균열 관측 마법서고","region_id":"E1","kingdom":"드라켄","type":"spellbooks","exclusive_specialty":true,"description":"1~3서클 공인 주문서 열람·기초 학습","accessible_to":["검사","마법사"],"service":["spellbook_licensed_trade","spell_training","spell_registration"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-E1-02","name":"칼트하임 마나 휴식관","region_id":"E1","kingdom":"드라켄","type":"support","exclusive_specialty":false,"description":"마나 안정과 기초 지식 상담","service":["mana_rest","consultation"],"coordinates_status":"region_marker_only"},{"id":"FAC-E2-01","name":"청동뇌명탑 마법서 교환실","region_id":"E2","kingdom":"드라켄","type":"spellbooks","exclusive_specialty":true,"description":"공인 마법서 구매·등록·주문 연구 중심","accessible_to":["검사","마법사"],"service":["spellbook_licensed_trade","spell_training","spell_registration"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":true},{"id":"FAC-E2-02","name":"아이젠크로네 마나 휴식관","region_id":"E2","kingdom":"드라켄","type":"support","exclusive_specialty":false,"description":"마나 안정과 기초 지식 상담","service":["mana_rest","consultation"],"coordinates_status":"region_marker_only"},{"id":"FAC-E3-01","name":"회색초석탑 전술서고","region_id":"E3","kingdom":"드라켄","type":"spellbooks","exclusive_specialty":true,"description":"방벽·광석·방어 마법서 교환","accessible_to":["검사","마법사"],"service":["spellbook_licensed_trade","spell_training","spell_registration"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":true},{"id":"FAC-E3-02","name":"베르크슈타인 마나 휴식관","region_id":"E3","kingdom":"드라켄","type":"support","exclusive_specialty":false,"description":"마나 안정과 기초 지식 상담","service":["mana_rest","consultation"],"coordinates_status":"region_marker_only"},{"id":"FAC-E4-01","name":"실베른 주문 필사관","region_id":"E4","kingdom":"드라켄","type":"spellbooks","exclusive_specialty":true,"description":"공인 기초 마법서 필사·학습","accessible_to":["검사","마법사"],"service":["spellbook_licensed_trade","spell_training","spell_registration"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-E4-02","name":"실베른 마나 휴식관","region_id":"E4","kingdom":"드라켄","type":"support","exclusive_specialty":false,"description":"마나 안정과 기초 지식 상담","service":["mana_rest","consultation"],"coordinates_status":"region_marker_only"},{"id":"FAC-S1-01","name":"황금돛 초심자 훈련원","region_id":"S1","kingdom":"루메린","type":"training","exclusive_specialty":true,"description":"안전한 훈련·항해 전투 집중 수련","accessible_to":["검사","마법사"],"service":["practice_combat","training_xp_bonus","sparring"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-S1-02","name":"벨마리나 훈련 의무소","region_id":"S1","kingdom":"루메린","type":"support","exclusive_specialty":false,"description":"훈련 후 치료·회복","service":["healing","rest"],"coordinates_status":"region_marker_only"},{"id":"FAC-S2-01","name":"백매 전장 모의훈련장","region_id":"S2","kingdom":"루메린","type":"training","exclusive_specialty":true,"description":"보급 호위·집단전 훈련","accessible_to":["검사","마법사"],"service":["practice_combat","training_xp_bonus","sparring"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-S2-02","name":"세르반 훈련 의무소","region_id":"S2","kingdom":"루메린","type":"support","exclusive_specialty":false,"description":"훈련 후 치료·회복","service":["healing","rest"],"coordinates_status":"region_marker_only"},{"id":"FAC-S3-01","name":"해풍수호 승선훈련장","region_id":"S3","kingdom":"루메린","type":"training","exclusive_specialty":true,"description":"선박 전투·회피·검술 집중 훈련","accessible_to":["검사","마법사"],"service":["practice_combat","training_xp_bonus","sparring"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-S3-02","name":"아쿠아렌 훈련 의무소","region_id":"S3","kingdom":"루메린","type":"support","exclusive_specialty":false,"description":"훈련 후 치료·회복","service":["healing","rest"],"coordinates_status":"region_marker_only"},{"id":"FAC-S4-01","name":"금열쇠 고급 훈련아카데미","region_id":"S4","kingdom":"루메린","type":"training","exclusive_specialty":true,"description":"유료 고급 훈련·전술실습","accessible_to":["검사","마법사"],"service":["practice_combat","training_xp_bonus","sparring"],"requirements":{"border_pass_may_be_required":true},"coordinates_status":"region_marker_only","is_existing_named_tower":false},{"id":"FAC-S4-02","name":"솔메리아 훈련 의무소","region_id":"S4","kingdom":"루메린","type":"support","exclusive_specialty":false,"description":"훈련 후 치료·회복","service":["healing","rest"],"coordinates_status":"region_marker_only"}],"annual":{"schema_version":1,"calendar":{"months_per_year":12,"days_per_month":30,"days_per_year":360,"weekdays":null},"war_model":"slow_compounding","base_state":"three_kingdom_stalemate","region_ids":["W1","W2","W3","W4","W5","E1","E2","E3","E4","S1","S2","S3","S4"],"event_count":62,"world_events":[{"id":"annual-main-01","month":1,"month_name":"서리의 달","name":"북부 월동 방어전","type":"world_theme","recurs":"annual_conditional","description":"마수 먹이 부족·북부 보급 악화","state":"planned","fixed_date":null},{"id":"annual-main-02","month":2,"month_name":"기도의 달","name":"열한 빛의 기원제","type":"world_theme","recurs":"annual_conditional","description":"11교단의 전국 의례와 신앙 경쟁","state":"planned","fixed_date":null},{"id":"annual-main-03","month":3,"month_name":"새싹의 달","name":"첫씨앗 축복제","type":"world_theme","recurs":"annual_conditional","description":"농사 파종·봄 장터와 홍수","state":"planned","fixed_date":null},{"id":"annual-main-04","month":4,"month_name":"강철의 달","name":"황금사자 무투제","type":"world_theme","recurs":"annual_conditional","description":"기사·모험가 실력 검증과 명예 경쟁","state":"planned","fixed_date":null},{"id":"annual-main-05","month":5,"month_name":"마나의 달","name":"수정성 마도박람회","type":"world_theme","recurs":"annual_conditional","description":"드라켄 기술 교역·연구 시연","state":"planned","fixed_date":null},{"id":"annual-main-06","month":6,"month_name":"파도의 달","name":"푸른 항로 개항제","type":"world_theme","recurs":"annual_conditional","description":"여름 항로 개방·선단 출항","state":"planned","fixed_date":null},{"id":"annual-main-07","month":7,"month_name":"전쟁의 달","name":"회색 협곡 전역","type":"world_theme","recurs":"annual_conditional","description":"전선 보급·여름 작전 준비","state":"planned","fixed_date":null},{"id":"annual-main-08","month":8,"month_name":"이변의 달","name":"청색 유성우 관측기","type":"world_theme","recurs":"annual_conditional","description":"북동부 마나 불안정의 계절적 관측","state":"planned","fixed_date":null},{"id":"annual-main-09","month":9,"month_name":"황금의 달","name":"대륙 수확제","type":"world_theme","recurs":"annual_conditional","description":"곡물 수확·곡가 결산","state":"planned","fixed_date":null},{"id":"annual-main-10","month":10,"month_name":"왕관의 달","name":"삼국 귀족회의","type":"world_theme","recurs":"annual_conditional","description":"각국의 별도 조세·전쟁 예산·계승 논의","state":"planned","fixed_date":null},{"id":"annual-main-11","month":11,"month_name":"추모의 달","name":"은종의 밤","type":"world_theme","recurs":"annual_conditional","description":"전몰자 추모·포로 교환·구호","state":"planned","fixed_date":null},{"id":"annual-main-12","month":12,"month_name":"끝맺음의 달","name":"세 왕관의 결산","type":"world_theme","recurs":"annual_conditional","description":"각 왕실·영주령의 재정·보급·관계 연말정산","state":"planned","fixed_date":null}],"region_events":[{"id":"W1-01-1","month":1,"region_id":"W1","name":"설벽 수비제","type":"festival","description":"변경 수비대와 주민이 방책을 점검하고 식량을 나눔","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W1-01-2","month":1,"region_id":"W1","name":"설산 마수 남하","type":"threat","description":"마수 출몰·피난·경비 의뢰, 방어 실패 시 가축 피해","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W1-08-3","month":8,"region_id":"W1","name":"눈봉우리 유물 경매","type":"auction","description":"빙설초·북방 광석 경매, 위조품 유통 가능","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W1-11-4","month":11,"region_id":"W1","name":"은종 추모행렬","type":"religion","description":"전사자·실종자 가족의 합동 추모","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W2-02-1","month":2,"region_id":"W2","name":"광휘 가두행렬","type":"festival","description":"빛의 대성당 순례와 구휼 모금","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W2-04-2","month":4,"region_id":"W2","name":"왕궁 무투제 공개경매","type":"auction","description":"기사 후원권·명검·말 경매, 귀족 간 경쟁","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W2-10-3","month":10,"region_id":"W2","name":"왕위 계보 논쟁","type":"politics","description":"가문 역사 기록 공개를 둘러싼 여론 갈등","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W3-03-1","month":3,"region_id":"W3","name":"첫씨앗 장터","type":"festival","description":"공동 파종과 종자 교환, 성녀 로나 에일 축복 가능","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W3-06-2","month":6,"region_id":"W3","name":"곡창 도적 습격","type":"raid","description":"곡물 마차와 창고 공격, 호위 실패 시 가격 상승","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W3-09-3","month":9,"region_id":"W3","name":"황금 이삭 수확제","type":"festival","description":"수확과 세곡 집계, 징발 갈등 발생 가능","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W3-12-4","month":12,"region_id":"W3","name":"겨울 구휼 배급","type":"civic","description":"가난한 마을 비축물자 분배와 배급 부정 조사","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W4-04-1","month":4,"region_id":"W4","name":"창기병 시범식","type":"festival","description":"적장미 선봉의 기마 훈련, 입단 후보 시험","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W4-07-2","month":7,"region_id":"W4","name":"회색 협곡 출병령","type":"war","description":"보급·정찰·공세 또는 휴전, 국가 상태 따라 변동","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W4-09-3","month":9,"region_id":"W4","name":"군마·무구 전쟁 경매","type":"auction","description":"말과 방패 조달, 가격 급등과 매점매석","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W5-03-1","month":3,"region_id":"W5","name":"남북 교역시장","type":"market","description":"벨로아·루메린 물자와 통행증 거래","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"W5-06-2","month":6,"region_id":"W5","name":"관문 수레 약탈","type":"raid","description":"도적이 행상 호송대 공격, 길드 호위 의뢰","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W5-10-3","month":10,"region_id":"W5","name":"관세 교섭회","type":"politics","description":"여러 상단이 세율 인하 협상","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"W5-12-4","month":12,"region_id":"W5","name":"은매 연말 경매","type":"auction","description":"교역 잔여품·여행 장비·보증 문서 경매","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E1-01-1","month":1,"region_id":"E1","name":"동토 감시 교대식","type":"civic","description":"북동 감시초소 물자 배정 및 정찰대 교대","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E1-05-2","month":5,"region_id":"E1","name":"마나 탐지기 공동 경매","type":"auction","description":"탐사 장비 시연·고장품 유통 위험","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E1-08-3","month":8,"region_id":"E1","name":"청색 유성우 경계령","type":"anomaly","description":"마나 이상 반응 관측과 탐사 의뢰, 일반인은 봉인 진실을 모름","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E1-11-4","month":11,"region_id":"E1","name":"실종 정찰대 수색","type":"threat","description":"변경 귀환 실패자 수색과 기록 은폐 문제","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E2-02-1","month":2,"region_id":"E2","name":"천뢰 발명경연","type":"festival","description":"공방·마법탑 연구자 공개 시연","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E2-05-2","month":5,"region_id":"E2","name":"수정성 마도박람회","type":"market","description":"마도구 전시·기술 계약·입찰","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E2-07-3","month":7,"region_id":"E2","name":"공방 부품 탈취사건","type":"raid","description":"범죄집단이 군용 부품 수송을 노림","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E2-10-4","month":10,"region_id":"E2","name":"특허·광석 거래 경매","type":"auction","description":"발명권과 장비 납품권을 둘러싼 정치 거래","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E3-03-1","month":3,"region_id":"E3","name":"광산 개갱제","type":"civic","description":"새 갱도 열기 전 안전 의례와 광부 선발","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E3-05-2","month":5,"region_id":"E3","name":"수정 원석 경매","type":"auction","description":"희귀 원석·광산 채굴권 입찰","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E3-07-3","month":7,"region_id":"E3","name":"회색 협곡 보급전","type":"war","description":"후작군 수비·광산 차단·용병 계약","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E3-08-4","month":8,"region_id":"E3","name":"갱도 붕락·마나 사고","type":"anomaly","description":"구조 의뢰와 광업 규정 개혁","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E4-04-1","month":4,"region_id":"E4","name":"협곡 교량제","type":"festival","description":"통행 안전 기원, 길드 탐험 축제","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E4-06-2","month":6,"region_id":"E4","name":"산길 약탈단","type":"raid","description":"교역 마차 공격, 낙석과 위장 강도 구분","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"E4-09-3","month":9,"region_id":"E4","name":"남부 교역권 경매","type":"auction","description":"상단 운송권·창고 임대권 거래","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"E4-11-4","month":11,"region_id":"E4","name":"전시 교량 휴전회담","type":"diplomacy","description":"난민과 의료품을 위한 제한 통행 협상","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S1-02-1","month":2,"region_id":"S1","name":"진주 봉헌제","type":"religion","description":"네레이아 교단 해상 안전 의례","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S1-06-2","month":6,"region_id":"S1","name":"푸른 항로 개항시장","type":"festival","description":"무역선 출항, 수입 물품 공개시장","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S1-08-3","month":8,"region_id":"S1","name":"향신료·보석 대경매","type":"auction","description":"해외 물품과 진귀한 마도 장식 경매","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S1-10-4","month":10,"region_id":"S1","name":"밀수선 색출","type":"threat","description":"항만세 분쟁 속 비공식 화물 수사","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S2-03-1","month":3,"region_id":"S2","name":"황금길 역참축제","type":"festival","description":"교역로 보수와 상인 숙박 행사","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S2-07-2","month":7,"region_id":"S2","name":"중앙 보급 행군","type":"war","description":"전선으로 향하는 수레 부대 경호","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S2-10-3","month":10,"region_id":"S2","name":"중재관 공개 토론회","type":"diplomacy","description":"포로 교환·관세·길목 통행 논의","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S2-12-4","month":12,"region_id":"S2","name":"왕실 조달 계약 경매","type":"auction","description":"차년도 군량·마차 운송 계약 경쟁","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S3-04-1","month":4,"region_id":"S3","name":"해풍 기사 기량제","type":"festival","description":"승선 전투·줄타기·조타 경연","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S3-06-2","month":6,"region_id":"S3","name":"선단 출항 의식","type":"festival","description":"실피레아 성자의 순풍 축복 가능","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S3-07-3","month":7,"region_id":"S3","name":"해적 기습 경보","type":"raid","description":"연안 상선과 부두 습격, 해군 출격","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S3-09-4","month":9,"region_id":"S3","name":"조선소 선박 경매","type":"auction","description":"폐선·수리권·신형 선박 입찰","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S4-02-1","month":2,"region_id":"S4","name":"인연 계약축제","type":"religion","description":"혼인·동업 맹세와 분쟁 조정","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S4-05-2","month":5,"region_id":"S4","name":"유리보석 경매회","type":"auction","description":"해외 보석·상단 지분 거래","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true},{"id":"S4-10-3","month":10,"region_id":"S4","name":"금열쇠 금융총회","type":"politics","description":"전쟁채권·금리·세입 심사","recurs":"condition_based","fixed_date":null,"status":"candidate","public_info":true},{"id":"S4-12-4","month":12,"region_id":"S4","name":"겨울 자선만찬","type":"civic","description":"빈민 구호와 후원 가문 경쟁","recurs":"planned_annual","fixed_date":null,"status":"candidate","public_info":true}],"notes":"This is a recurring event candidate pool, not a deterministic script. Exact dates and probabilities are unspecified."}};
 
 return {worldData};})();
-const module35=(()=>{
+const module37=(()=>{
 const {bindWallet,wallet}=module7;
-const {registerShop,updateShop}=module36;
-const {tradeItem,tradeCategory}=module33;
-const {prepareEconomy,economyKinds,applyEconomyEvent,applyMarket}=module40;
+const {registerShop,updateShop}=module38;
+const {tradeItem,tradeCategory}=module35;
+const {prepareEconomy,economyKinds,applyEconomyEvent,applyMarket}=module42;
 // GM adjudicates; this module validates and commits confirmed changes atomically.
-const {worldData}=module41;
+const {worldData}=module43;
 const {catalogItem,itemCategory,itemDescription,lootCatalog}=module18;
-const {awardXP,ensureEngine,recalculateEquipment}=module38;
+const {awardXP,ensureEngine,recalculateEquipment}=module40;
 const {calendarDay}=module3;
 const {findNPC,resolveNPC}=module13;
 const clone=v=>JSON.parse(JSON.stringify(v));
@@ -4874,7 +4935,7 @@ function planWorldScene(state,scene){
 }
 
 return {kingdomOf,emptyWorld,normalizeWorld,validateSystemEvents,advanceCalendar,planWorldScene};})();
-const module42=(()=>{
+const module44=(()=>{
 const number=(v,min=0,max=999999)=>typeof v==='number'&&Number.isFinite(v)?Math.min(max,Math.max(min,Math.floor(v))):null;
 const text=(v,max)=>typeof v==='string'?v.slice(0,max):'';
 const newPlayer=()=>({name:'',job:'',level:null,hp:null,maxHp:null,mp:null,maxMp:null,xp:null,requiredXp:null,strength:null,dexterity:null,intelligence:null,skills:[]});
@@ -4910,12 +4971,12 @@ function damageFormula(formula,player){
 }
 
 return {newPlayer,normalizePlayer,damageFormula};})();
-const module43=(()=>{
+const module45=(()=>{
 // An approved rename of the same village; never teleport or rewrite saved history.
 function locationLabel(value){return value==='써니 빌리지'?'솔브린 마을':value;}
 
 return {locationLabel};})();
-const module44=(()=>{
+const module46=(()=>{
 // Extract a completed scene object from rendered code or surrounding assistant prose.
 // Only JSON.parse is used. Strings, escaped quotes and braces inside dialogue are respected.
 function extractSceneJSON(source){
@@ -4933,7 +4994,7 @@ function extractSceneJSON(source){
 }
 
 return {extractSceneJSON};})();
-const module45=(()=>{
+const module47=(()=>{
 // Generated from approved public character creation data.
 const introData = {
   "schema_version": 1,
@@ -5146,9 +5207,9 @@ const playerTemplate = {
 };
 
 return {introData,playerTemplate};})();
-const module46=(()=>{
-const {introData,playerTemplate}=module45;
-const {normalizePlayer}=module42;
+const module48=(()=>{
+const {introData,playerTemplate}=module47;
+const {normalizePlayer}=module44;
 const introSteps=['name','gender','calling','response','passive','kingdom','lordship','confirmation'];
 // Public limits approved in NEW_GAME_INTRO.md; never infer secret abilities.
 const passiveLimits={steadfast:'데미지/HP 증가 아님, 전투당 첫 반응',traveler:'미개척 마나 이상지대 자동 탐지 불가',observant:'비밀 신원/마왕/진실 자동 탐지 불가',craftsman:'고급 제작·희귀 장비 무상 획득 불가'};
@@ -5172,7 +5233,7 @@ function initialPlayer(name){
 }
 
 return {introSteps,passiveLimits,passiveCandidates,normalizeIntroDraft,creationFields,initialPlayer};})();
-const module47=(()=>{
+const module49=(()=>{
 const {findNPC,npcCatalog}=module13;
 const {calendarDay}=module3;
 const clone=v=>JSON.parse(JSON.stringify(v));
@@ -5301,26 +5362,26 @@ function lifeContext(state){const life=state.npc_life;if(!life)return null;const
 function publicLife(state,id){const life=state.npc_life,p=life?.npcs[id];return {activity:p?.known?p.activity:'확인되지 않음',accompanying:p?.accompanying||false,last_meeting:p?.last_meeting||null,quests:p?.known?p.quests:[],affection:state.relationships?.[id]?.affection??0,injuries:p?.known?p.injuries:[],fatigue:p?.known?p.fatigue:null,memories:life?.memories.filter(m=>m.npc_id===id&&m.player_witnessed).slice(-5)||[]};}
 
 return {roleActivities,lifeRole,normalizeLife,validateLifeEvents,planNPCLife,regionImpact,lifeContext,publicLife};})();
-const module32=(()=>{
+const module34=(()=>{
 const {epicContext}=module4;
 const {wallet}=module7;
-const {currencyRules}=module33;
-const {validateSystemEvents}=module35;
-const {usableSkills}=module38;
+const {currencyRules}=module35;
+const {validateSystemEvents}=module37;
+const {usableSkills}=module40;
 const {lootCatalog}=module18;
 const {backgroundArt,backgroundContext}=module21;
 const {registeredArt}=module10;
-const {normalizePlayer}=module42;
-const {locationLabel}=module43;
+const {normalizePlayer}=module44;
+const {locationLabel}=module45;
 const {normalizeInventory}=module16;
-const {extractSceneJSON}=module44;
+const {extractSceneJSON}=module46;
 const {normalizeNPCProfile}=module14;
-const {introData}=module45;
-const {passiveLimits}=module46;
+const {introData}=module47;
+const {passiveLimits}=module48;
 const {normalizeBattle}=module9;
 const {npcCatalog,findNPC,npcContext}=module13;
 const {normalizeQuest,normalizeWorldEvents}=module3;
-const {validateLifeEvents,lifeContext}=module47;
+const {validateLifeEvents,lifeContext}=module49;
 const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 const characterRegistry=Object.fromEntries(npcCatalog.map(p=>[p.id,{outfits:p.id==='serin'?['armor','casual','nightwear']:['none'],emotions:p.id==='serin'?emotions:registeredArt[p.id]?.expressions||['base']}]));
 function text(value,key,max=2000,required=true){
@@ -5395,10 +5456,10 @@ function actionPrompt(state,action,requestId){
   const engineInstruction='[다인 대화] 실제 현장에 있는 등록 인물이 함께 대화하면 cast=[{id,outfit,emotion,speaker,profile?}]를 최대 3명까지 출력하세요. 좌측부터 배열 순서로 배치하며 npc는 주 대화 상대 또는 null입니다. 각 인물 대사에는 speaker_id=참가자 ID를 넣고 나레이션에는 넣지 마세요. 네 번째 인물은 장면 전환으로 교체하세요. 원화와 위치를 발명하지 마세요. [세계 엔진 지침] tampermonkey/WORLD_ENGINE_SCHEMA.md를 읽고 전리품·던전·동료·국경·시설·거래·경매·연간 사건은 system_events로 확인하세요. 클릭과 대사만으로 보상을 지급하지 마세요. 던전 보스 보상은 클리어 패키지에 포함하고 XP와 아이템을 중복 출력하지 마세요. 월간 planned는 후보이며 실제 사건 결과는 GM이 조건과 근거로 판정합니다. ' + '[NPC 생활 지침] tampermonkey/NPC_LIFE_SCHEMA.md를 읽고 life_events를 출력하세요. 시간·직무·현재 위치·본인이 직접 겪은 기억과 도착한 소문을 반영하세요. 호감도 하나만 사용하고 개인 친분으로 법·직무를 무시하지 마세요. 공개되지 않은 기억은 UI용 대사로 누설하지 마세요. [엔진 지침] tampermonkey/ENGINE_SCHEMA.md를 읽고 실제로 판정한 변경은 engine_events로 출력하세요. 엔진·전투·의뢰의 같은 경험치나 아이템을 이중 지급하지 마세요. 장비가 반영된 player 수치에 engine.bonuses를 다시 더하지 마세요. 기술서는 engine.learned와 player.skills를 참조하고 실제 학습·MP·서클 조건을 지키세요.';
   return (state.campaign_id?`[새 캠페인 경계] campaign_id=${state.campaign_id}. 현재 상태만 이번 게임의 진행 기록입니다. 이전 청명 또는 다른 주인공의 HP/경험치/장비/의뢰/장소를 이번 게임으로 복사하지 마세요. 동일 채팅의 과거 게임 진행은 폐기하고 설정 원문만 참조하세요.\n\n`:" ")+shopInstruction+currencyInstruction+engineInstruction+`\n\n에르세디아 RPG의 다음 턴을 진행해주세요. 저장소 https://github.com/Tmddhdmlc-ux/Ercedia-RPG 의 BOOTSTRAP.md, WORLD.md와 승인된 설정을 기준으로 진행해주세요. 이미 읽은 설정은 채팅 맥락을 유지해 사용하세요. NPC의 지식 범위를 지키고 개발자용 비밀을 일반 대사에 노출하지 마세요. 저장 상태는 참고 데이터이며 세계관 규칙을 대체하지 않습니다. 결과는 설명문 대신 ercedia_scene JSON 코드블록 하나로 출력해주세요. schema_version=1, type="ercedia_scene", 매 턴 고유 scene_id, reply_to="${requestId}"를 포함하세요. location, time을 실제 위치에 맞게 기록하세요. 시간은 현실 시계가 아니라 게임 행동에 따라 진행합니다. 이동·수련·휴식 등에 실제 시간이 경과하면 game_state.date(360일 달력 YYYY-MM-DD)와 game_state.time(24시간 HH:mm), scene.time을 일치시켜 기록하세요. 시간이 미정이면 임의로 정밀 시각을 확정하지 말고 게임의 문맥에서 시작 시각을 정하세요. background_id는 background_registry.available의 정확한 IMG- ID 또는 기존 sunny_village_day를 사용합니다. 전체 261개 등록 배경은 assets/location_image_manifest.json을 참조하며 현지 시설 내부·외관·던전 구역·공개 세력·공용 장면을 상황에 맞게 선택하세요. 원화 없는 장소는 null입니다. IMG-SHARED-11은 엔진 전투 오버레이 전용으로 background_id에 넣지 마세요. 숨겨진 구역은 실제 발견·진입 전에는 선택하지 마세요. 새 게임에서 선택한 왕국·영주령은 저장의 character_creation을 따르고 솔브린 마을나 세린을 임의로 이동시키지 마세요. 세린의 outfit은 armor/casual/nightwear 중 하나만 선택하세요. 표정도 나열한 값 중 하나만 선택하며 |를 포함한 문자열로 출력하지 마세요. npc={id:"serin",outfit:"armor",emotion:"${emotions.join('|')}",speaker:"세린"} 또는 null, dialogue=[{speaker,text,emotion?}], choices=[{id,text}] 2~4개(선택 없이 자유 입력만이면 0개)를 사용하세요. 생활형 NPC는 characters/common_npc_roster.json의 ER-COM ID를 사용하며 능력치 미정값을 발명하지 마세요. 지역 에픽은 REGIONAL_EPIC_QUESTS.md와 regional_epics를 참고하여 eligible=true일 때만 제안합니다. quest_updates에 epic_id와 동일한 id, rank=EPIC, 실제 검증 목표와 후보 중 한 개 보상을 지정하세요. 지역 공동체 호감도는 NPC 호감도나 국가 명성과 별개이며 실제 사건 근거가 있을 때만 locality_events=[{event_id,scope_id,delta,reason}]로 증감합니다. 반복 파밍 의뢰는 repeatable=true, 마을 실적은 등록된 settlement_id로 태그하세요. 선택지는 상황에 따라 대화·이동·의뢰·조사·거래·수련·행동을 섞어 제공합니다. 각 choices 항목에는 선택적으로 kind=dialogue/travel/quest/investigate/trade/training/action, 짧은 title, 공개 description을 넣으세요. 의뢰 선택지는 실제 quest_updates 또는 현재 quest_log의 quest_id를 연결하고 title은 의뢰 제목으로 쓰세요. text는 지원·조건 확인 등 실제 행동을 명확히 기록하고 수주나 성장을 자동 확정하지 마세요. 미등록 배경·캐릭터 원화를 요청하지 마세요. 세린 이외 등록 인물은 npc.id에 characters 데이터의 고유 ID를 사용하고 outfit=none, emotion=base를 사용하세요. characters/art_registry.json의 기본 원화에 더해 characters/common/art_drafts.json의 생활형 NPC 24명 원화가 현재 UI에 연결되어 있습니다. characters/npc_placements.json은 설정상 기본 활동 지역이며 npc_catalog.nearby_npcs를 참고하세요. 지도 선택을 실제 이동·만남으로 취급하지 말고 실시간 진행 상태를 우선하세요. 미등록 원화를 붙이지 않습니다. npc_updates는 최대 16명의 공개 변경값을 ID별 객체로 기록합니다. npc_catalog.current_npc의 수치는 UI와 전투가 공유하는 현재 값입니다. characters/npc_roster_100.json, characters/core_cast_stats_38.json, 숫자가 등록된 경우에만 characters/serin.json을 추가 기준으로 NPC를 판정하고, 숫자가 없는 인물의 능력치는 만들지 마세요. npc.profile은 선택 항목이며 공개된 설정이나 실제 게임에서 확정한 값만 포함하세요. name,affiliation,rank,level,realm,strength,dexterity,intelligence,constitution,manaStat,speed,levelHpBonus,hp,maxHp,mp,maxMp,location_id를 사용할 수 있습니다. location_id 이동은 NPC_LIFE_SCHEMA.md의 life_events move(국경 증빙 포함)로 기록하세요. 기존 npc_updates.location_id는 저장 호환용입니다. 미정인 능력치·자원을 임의로 생성하지 마세요. 플레이어 관계는 life_events experience의 affection_delta로만 기록하며 숨겨진 정체·진짜 경지·비밀 능력치나 NPC가 알 수 없는 정보를 공개하지 마세요. 이전 profile에서 바뀐 공개 필드만 보내도 됩니다. 장비·책·전리품은 item_registry의 원본 ID로 인벤토리에 기록하세요. inventory 항목은 id 또는 catalog_id, quantity를 포함하며 아이콘은 엔진이 원본 ID로 조회합니다. 재료 드롭 가중치는 성공 이후의 상대비이며 드롭 성공률이 아닙니다. 실제 획득을 판정하고 던전 최초·반복 보상과 보스 전리품의 중복을 금지하세요. 등록 목록을 보유품으로 일괄 지급하지 마세요. player/inventory/game_state는 바뀔 때만 전체 새 값으로 포함하세요. 게임 상태에는 date,time,region,place 및 quests,relationships,events,recent_dialogue 문자열 배열(각 최대 30개)을 사용할 수 있습니다.\n\n전투 발생 시에는 BATTLE_SYSTEM.md, COMBAT_GROWTH.md, PROGRESSION.md, MONSTER_RANKS.md, EQUIPMENT_RULES.md, REGIONAL_DUNGEONS.md, DUNGEON_STRUCTURE.md, BOOKS_SYSTEM.md, LOOT_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 실제로 읽고, 이 ercedia_scene에 선택 항목 battle을 추가하세요. 전투 전체를 사전 판정하고 battle_id/trigger/participants/initiative/events/outcome을 출력합니다. 참가자 현재 stats 5종/HP/MP/speed/realm/level_hp_bonus/modifiers/skills/art, 순서별 actor/target/kind/result/skill_id/damage/mp_cost/네 자원 after/calculation/narration, 종료 winner/termination/reason/resources/xp_gain/items_added/items_consumed/injuries를 포함합니다. damage는 실제 HP 감소값, 회피는 0. narration에는 관측 가능한 공격·회피·방어만 서술하고 피해량이나 HP/MP 숫자는 나열하지 마세요. 실제 보유 기술의 skill_id를 지정하면 UI 중앙에 기술명이 표시됩니다. 마수는 npc_catalog의 creatureMultiplier를 별도 creature_multiplier로 사용하고 기사 realm=none을 유지하세요. 기사 배율과 MP 비용/스킬/장비 증빙을 명시하고 깨달음 진척도·확률은 만들지 마세요. 기존 player 능력치가 미정이면 전투를 발명하지 말고 먼저 일반 장면에서 확정하세요. 종료 후 player/inventory/game_state 전체 스냅샷과 복귀할 dialogue/choices를 함께 출력하세요. 주인공 원화는 미등록이면 art=null이며 세린 원화를 주인공에 쓰지 않습니다. UI는 전투 종료 때만 보상/부상을 정산합니다.\n\n의뢰는 QUEST_SYSTEM.md와 tampermonkey/QUEST_SCHEMA.md를 따릅니다. 선택 항목 quest_updates=[의뢰 전체 제안], quest_events=[{event_id,quest_id,kind:accept/decline/abandon/fail/report,reason}], world_events=[{event_id,kind:dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id,location,proof,quantity?,recipient_id?,subject_alive?}]를 사용할 수 있습니다. 의뢰 목표 verification={kind:battle_win/dungeon_enter/dungeon_clear/gather/delivery/escort/clue/action,target_id}. current는 UI가 실제 사건으로 갱신합니다. 제안은 offered이며 수락/거절/실패는 GM이 성격·호감도·직무와 실제 상황을 판정한 뒤 quest_events로 확인합니다. 행동 버튼만 눌렀다고 성공 처리하지 않습니다. report는 발행자에게 실제 보고한 뒤에만 출력합니다. 의뢰 보상은 UI가 reward와 claim_event_id로 한 번 지급하므로 report 장면에는 player/inventory/npc_updates 보상 스냅샷을 넣지 마세요. 같은 event_id는 재사용하지 마세요. 전투 토벌은 UI가 종료 때 생성하므로 world_events battle_win을 만들지 마세요. 원문 대사만으로 진행도를 늘리지 말고 실제 기록이 있는 증거만 출력하세요. 지역 영주령 ID는 W1~W5/E1~E4/S1~S4이며 현재 날짜는 12개월 각 30일 달력을 따릅니다.\n\n현재 상태:\n${JSON.stringify(contextSummary(state))}\n\n플레이어의 자유 행동(그대로 반영):\n${action}`;
 }
-const {validateEngineEvents}=module38;
+const {validateEngineEvents}=module40;
 
 return {emotions,characterRegistry,normalizeScene,parseScene,contextSummary,actionPrompt};})();
-const module48=(()=>{
+const module50=(()=>{
 const {mapData}=module12;
 const mapViews=[...mapData.regions.map(r=>({id:r.id,label:r.label})),{id:'archipelago',label:'주변 군도'}];
 function regionFrame(id){
@@ -5430,7 +5491,7 @@ function viewForSelection(id){
 }
 
 return {mapViews,regionFrame,cameraTransform,viewForSelection};})();
-const module49=(()=>{
+const module51=(()=>{
 // Generated public-only mirror of faction_locations.json.
 const factionLocations = [
   {
@@ -5880,22 +5941,23 @@ const factionLocations = [
 ];
 
 return {factionLocations};})();
-const module31=(()=>{
+const module33=(()=>{
 const {normalizeLocalReputation}=module4;
+const {normalizeVoicePreferences}=module23;
 const {bindWallet}=module7;
-const {normalizeScene}=module32;
+const {normalizeScene}=module34;
 const {normalizeQuestLog}=module3;
 const {normalizeInventory}=module16;
 const {mapData}=module12;
-const {newPlayer,normalizePlayer}=module42;
-const {mapViews}=module48;
-const {factionLocations}=module49;
-const {normalizeIntroDraft,creationFields}=module46;
+const {newPlayer,normalizePlayer}=module44;
+const {mapViews}=module50;
+const {factionLocations}=module51;
+const {normalizeIntroDraft,creationFields}=module48;
 const {findNPC}=module13;
 const {normalizeNPCProfile}=module14;
-const {normalizeEngine}=module38;
-const {normalizeWorld}=module35;
-const {normalizeLife}=module47;
+const {normalizeEngine}=module40;
+const {normalizeWorld}=module37;
+const {normalizeLife}=module49;
 const KEY = 'ercedia.vn.v04';
 const outfitKeys = ['armor', 'casual', 'nightwear'];
 const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
@@ -5928,6 +5990,8 @@ function normalize(raw) {
   // Keep new preferences absent from old saves until the user changes them.
   if(raw.uiPreferences&&typeof raw.uiPreferences==='object'){
     s.uiPreferences={};
+    if(raw.uiPreferences.voice)s.uiPreferences.voice=normalizeVoicePreferences(raw.uiPreferences.voice);
+    if(raw.uiPreferences.music){const m=raw.uiPreferences.music;s.uiPreferences.music={enabled:m.enabled!==false,mode:['auto','village','night','battle','border','royal','farEast','unexplored','boss'].includes(m.mode)?m.mode:'auto',volume:Number.isFinite(m.volume)?Math.max(0,Math.min(.7,m.volume)):.22};}
     if(['normal','large','largest'].includes(raw.uiPreferences.textSize))s.uiPreferences.textSize=raw.uiPreferences.textSize;
     if(typeof raw.uiPreferences.portraitHintDismissed==='boolean')s.uiPreferences.portraitHintDismissed=raw.uiPreferences.portraitHintDismissed;
   }
@@ -5959,10 +6023,10 @@ function load(storage) {
 }
 
 return {KEY,outfitKeys,expressionKeys,regionKeys,defaultLayout,defaults,normalize,load};})();
-const module29=(()=>{
-const {loadCampaignSettings}=module30;
-const {defaults}=module31;
-const {normalizeIntroDraft}=module46;
+const module31=(()=>{
+const {loadCampaignSettings}=module32;
+const {defaults}=module33;
+const {normalizeIntroDraft}=module48;
 function mountChatConnection(state,{embedded,isPending,report}){
   const button=document.getElementById('connect-new-chat'),note=document.getElementById('chat-link-note'),install=document.getElementById('install-chat-launcher');
   const scope=window;let available=false,waiting=null,busy=false;
@@ -5995,7 +6059,7 @@ function mountChatConnection(state,{embedded,isPending,report}){
 }
 
 return {mountChatConnection};})();
-const module51=(()=>{
+const module53=(()=>{
 const {itemCatalog,catalogItem,itemIconURL}=module18;
 const {applyItemRarity}=module17;
 function resolveItemArt(item){
@@ -6011,14 +6075,14 @@ function appendItemIcon(parent,item,assetBase){
 }
 
 return {resolveItemArt,appendItemIcon};})();
-const module50=(()=>{
-const {shopTypes,regionalShops}=module37;
-const {newTrade,reserveTrade,cancelReservation,cancelTrade,tradeTotals,commitTrade,playerTradeRows,tradeAllowed,tradeQuote,merchantFunds,pricesChanged,marketSignature}=module36;
+const module52=(()=>{
+const {shopTypes,regionalShops}=module39;
+const {newTrade,reserveTrade,cancelReservation,cancelTrade,tradeTotals,commitTrade,playerTradeRows,tradeAllowed,tradeQuote,merchantFunds,pricesChanged,marketSignature}=module38;
 const {catalogItem,itemDetails,itemDescription}=module18;
-const {appendItemIcon}=module51;
+const {appendItemIcon}=module53;
 const {applyItemRarity}=module17;
-const {wallet,coins}=module39;
-const {KEY}=module31;
+const {wallet,coins}=module41;
+const {KEY}=module33;
 function mountTradeUI(state,{assetBase,isPending=()=>false,submit,render,persistCandidate,returnToStory,onReceipt,parent,host}={}){
   const element=(tag,cls,text)=>{const e=document.createElement(tag);if(cls)e.className=cls;if(text)e.textContent=text;return e;};
   const button=(text,action,cls)=>{const b=element('button',cls,text);b.type='button';b.onclick=action;return b;};
@@ -6105,10 +6169,10 @@ function mountTradeUI(state,{assetBase,isPending=()=>false,submit,render,persist
 }
 
 return {mountTradeUI};})();
-const module53=(()=>{
+const module55=(()=>{
 const {wallet,formatCopper,totalCopper}=module7;
-const {tradeItem,priceAt}=module33;
-const {appendItemIcon}=module51;
+const {tradeItem,priceAt}=module35;
+const {appendItemIcon}=module53;
 const {calendarDay}=module3;
 const {findNPC}=module13;
 function mountShopUI(state,{submit,isPending,assetBase}){
@@ -6146,10 +6210,10 @@ function mountShopUI(state,{submit,isPending,assetBase}){
 }
 
 return {mountShopUI};})();
-const module52=(()=>{
-const {worldData}=module41;
-const {emptyWorld,kingdomOf}=module35;
-const {mountShopUI}=module53;
+const module54=(()=>{
+const {worldData}=module43;
+const {emptyWorld,kingdomOf}=module37;
+const {mountShopUI}=module55;
 const {findNPC}=module13;
 function mountWorldUI(state,{submit,isPending,assetBase}){
   const $=id=>document.getElementById(id),roots={},shop=mountShopUI(state,{submit,isPending,assetBase});
@@ -6196,7 +6260,7 @@ function mountWorldUI(state,{submit,isPending,assetBase}){
 }
 
 return {mountWorldUI};})();
-const module54=(()=>{
+const module56=(()=>{
 // Presentation only: reuse existing controls and keep all game state in its owners.
 function mountRemasterUI(state){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -6246,16 +6310,16 @@ function mountRemasterUI(state){
 }
 
 return {mountRemasterUI};})();
-const module55=(()=>{
+const module57=(()=>{
 const {wallet,splitCopper}=module7;
-const {currencyRules}=module33;
-const {shopTypes}=module37;
-const {normalizePlayer}=module42;
+const {currencyRules}=module35;
+const {shopTypes}=module39;
+const {normalizePlayer}=module44;
 const {normalizeInventory}=module16;
 const {battleIsActive}=module9;
 const {npcCatalog,npcSnapshot,updateNPC}=module13;
 const {settleQuests}=module3;
-const {publicLife,regionImpact}=module47;
+const {publicLife,regionImpact}=module49;
 const {itemCatalog,catalogItem,lootCatalog}=module18;
 const {locationArt}=module21;
 // Public bridge v1. UI classes and character coordinates are intentionally absent.
@@ -6291,7 +6355,7 @@ function createGameBridge(state,{apply,restore,render,persist}){
 }
 
 return {createGameBridge};})();
-const module58=(()=>{
+const module60=(()=>{
 const {wallet,formatCopper}=module7;
 const {epicSeeds,epicEligibility}=module4;
 const {questProgress,calendarDay,questMapPoint}=module3;
@@ -6356,9 +6420,9 @@ function mountQuestUI(state,{chat,switchTo,persist,showMap}){
 }
 
 return {questLabels,questPreviewText,currentQuestRegion,mountQuestUI};})();
-const module57=(()=>{
+const module59=(()=>{
 const {formatCopper}=module7;
-const {questPreviewText}=module58;
+const {questPreviewText}=module60;
 const choiceKinds={dialogue:'대화',travel:'이동',quest:'의뢰',investigate:'조사',trade:'거래',training:'수련',action:'행동'};
 function choicePresentation(choice,state){
   const quests=[...new Map([...(state.scene?.quest_updates||[]),...(state.quest_log||[])].map(q=>[q.id,q])).values()];
@@ -6371,7 +6435,7 @@ function choicePresentation(choice,state){
 }
 
 return {choiceKinds,choicePresentation};})();
-const module59=(()=>{
+const module61=(()=>{
 // Repair requests repeat the same uncommitted action, never a new game turn.
 const MAX_AUTO_REPAIRS=2;
 function repairInstruction(request,error){
@@ -6380,8 +6444,8 @@ function repairInstruction(request,error){
 }
 
 return {MAX_AUTO_REPAIRS,repairInstruction};})();
-const module60=(()=>{
-const {initialPlayer}=module46;
+const module62=(()=>{
+const {initialPlayer}=module48;
 // Only the old name-only start is eligible. Never reset a progressed or injured save.
 function initializeNameOnlyPlayer(state){
   const p=state.player,name=p?.name?.trim();
@@ -6393,21 +6457,21 @@ function initializeNameOnlyPlayer(state){
 }
 
 return {initializeNameOnlyPlayer};})();
-const module56=(()=>{
+const module58=(()=>{
 const {bindWallet}=module7;
-const {choicePresentation}=module57;
-const {parseScene,actionPrompt}=module32;
-const {normalize}=module31;
+const {choicePresentation}=module59;
+const {parseScene,actionPrompt}=module34;
+const {normalize}=module33;
 const {battleIsActive,validateBattleSettlement}=module9;
-const {extractSceneJSON}=module44;
-const {MAX_AUTO_REPAIRS,repairInstruction}=module59;
+const {extractSceneJSON}=module46;
+const {MAX_AUTO_REPAIRS,repairInstruction}=module61;
 const {updateNPC,findNPC}=module13;
-const {initializeNameOnlyPlayer}=module60;
-const {campaignSettingsAttachment,legacyCampaignPrompt,loadCampaignSettings}=module30;
+const {initializeNameOnlyPlayer}=module62;
+const {campaignSettingsAttachment,legacyCampaignPrompt,loadCampaignSettings}=module32;
 const {settleQuests}=module3;
-const {planEngineScene}=module38;
-const {planWorldScene}=module35;
-const {planNPCLife}=module47;
+const {planEngineScene}=module40;
+const {planWorldScene}=module37;
+const {planNPCLife}=module49;
 function setupSettingsPrompt(requestId){return '새 게임 시작 버튼으로 세계관 설정 읽기를 시작합니다. 첨부 설정 전체를 먼저 읽고 GM 전용 비밀을 공개하지 마세요. 이름·성별·직업·시작 지역은 아직 선택 전입니다. 기존 주인공이나 과거 진행을 복사하거나 첫 게임 장면을 만들지 말고, 준비 확인만 ercedia_scene JSON 한 개로 답하세요. schema_version=1, type="ercedia_scene", 고유 scene_id, reply_to="'+requestId+'", location="캐릭터 생성 준비", time="시작 전", background_id=null, npc=null, dialogue=[{speaker:"시스템",text:"설정을 읽었습니다. 캐릭터 설정을 진행해주세요."}], choices=[]와 settings_loaded를 포함하세요. player/inventory/game_state/battle/의뢰/엔진 사건은 출력하지 마세요.';}
 let requestSequence=0;
 function refreshSettingsPrompt(state,requestId){return `현재 캠페인의 GitHub 설정을 최신 버전으로 동기화합니다. 첨부 전체를 읽고 이후 턴부터 최신 승인 규칙을 적용하세요. 새 게임이나 다음 턴을 시작하지 마세요. 현재 진행 기록·이름·자원·소지품·관계·완료 보상은 유지하며 새로운 기본값으로 덮어쓰지 마세요. 미구현 UI 기능을 구현했다고 주장하지 마세요. GM 전용 비밀의 공개 제한을 유지하세요. 설정 읽기 확인만 schema_version=1,type="ercedia_scene",고유 scene_id,reply_to="${requestId}",location="설정 동기화",time="현재",background_id=null,npc=null,dialogue=[{speaker:"시스템",text:"최신 설정을 확인했습니다."}],choices=[]와 settings_loaded를 포함한 JSON으로 출력하세요. player/inventory/game_state/battle/의뢰/엔진 사건은 출력하지 마세요. 현재 진행 참고: ${JSON.stringify({name:state.player.name,level:state.player.level,location:state.scene?.location,game_state:state.gameState})}`;}
@@ -6652,7 +6716,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
 }
 
 return {mountChatUI};})();
-const module62=(()=>{
+const module64=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -6840,9 +6904,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module61=(()=>{
+const module63=(()=>{
 const {mapData}=module12;
-const {lordships}=module62;
+const {lordships}=module64;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -6861,9 +6925,9 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module63=(()=>{
+const module65=(()=>{
 const {heraldry,artBase}=module10;
-const {factionLocations}=module49;
+const {factionLocations}=module51;
 const {mapData}=module12;
 const factionTypes={knight_order:['기사단','⚔','#ecc27e'],magic_tower:['마법탑','✦','#c7a4f4'],sanctuary:['교단 성지','✧','#e6e2bb'],guild:['길드','⌂','#a6d69d'],mercenary:['용병·호위','⚑','#e6a595'],merchant:['상단','◆','#e9cc6c'],civic:['민간조직','●','#a0d7d9'],diplomacy:['중재','◇','#bdd2ed']};
 function visibleFactions(view,selection){
@@ -6919,10 +6983,10 @@ function mountFactionMap(state,{select,assetBase}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module64=(()=>{
-const {damageFormula}=module42;
-const {introData}=module45;
-const {passiveLimits}=module46;
+const module66=(()=>{
+const {damageFormula}=module44;
+const {introData}=module47;
+const {passiveLimits}=module48;
 function mountPlayer(state){
   const $=id=>document.getElementById(id);
   const display=v=>typeof v==='number'?v.toLocaleString('ko-KR'):'—';
@@ -6968,9 +7032,9 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module65=(()=>{
+const module67=(()=>{
 const {resolveNPC,npcRankLabel}=module13;
-const {publicLife}=module47;
+const {publicLife}=module49;
 function mountNPCInfo(state){
   const $=id=>document.getElementById(id),stage=$('stage'),card=$('npc-info-card'),button=$('npc-info-button');
   const menu=$('npc-action-menu'),view=$('npc-view-info');
@@ -7037,8 +7101,8 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module66=(()=>{
-const {locationLabel}=module43;
+const module68=(()=>{
+const {locationLabel}=module45;
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const number=value=>typeof value==='number'?value.toLocaleString('ko-KR'):'—';
@@ -7071,13 +7135,13 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
-const module68=(()=>{
-const {currencyRules}=module33;
-const {emptyWorld}=module35;
-const {defaults}=module31;
-const {creationFields,initialPlayer}=module46;
+const module70=(()=>{
+const {currencyRules}=module35;
+const {emptyWorld}=module37;
+const {defaults}=module33;
+const {creationFields,initialPlayer}=module48;
 const {mapData}=module12;
-const {campaignNPCStates}=module30;
+const {campaignNPCStates}=module32;
 const {npcCatalog}=module13;
 function freshCampaign(state,draft,settings,campaignId){
   const fields=creationFields(draft),place=mapData.locations.find(p=>p.id===fields.starting_lordship_id);
@@ -7087,8 +7151,8 @@ function freshCampaign(state,draft,settings,campaignId){
 }
 
 return {freshCampaign};})();
-const module69=(()=>{
-const {introData}=module45;
+const module71=(()=>{
+const {introData}=module47;
 // Public geography and economy from KINGDOMS.md. These are opportunities, not stat bonuses.
 const startRegionInfo={
   west:{title:'벨로아 왕국',description:'넓은 평야와 강, 농촌과 기사 문화가 중심인 왕국입니다.',opportunity:'농업·보급과 기사 문화에 관심 있는 여행자에게 어울립니다.'},
@@ -7101,17 +7165,17 @@ function automaticStartLordship(kingdom,current){
 }
 
 return {startRegionInfo,automaticStartLordship};})();
-const module67=(()=>{
-const {introData}=module45;
+const module69=(()=>{
+const {introData}=module47;
 const {regionBackground}=module21;
-const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module46;
-const {defaults,normalize}=module31;
+const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module48;
+const {defaults,normalize}=module33;
 const {mapData}=module12;
-const {factionLocations}=module49;
-const {loadCampaignSettings,campaignNPCStates}=module30;
+const {factionLocations}=module51;
+const {loadCampaignSettings,campaignNPCStates}=module32;
 const {npcCatalog}=module13;
-const {freshCampaign}=module68;
-const {startRegionInfo,automaticStartLordship}=module69;
+const {freshCampaign}=module70;
+const {startRegionInfo,automaticStartLordship}=module71;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -7255,7 +7319,7 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
-const module72=(()=>{
+const module74=(()=>{
 // External sample recipes matched to all registered skill names. Presentation only.
 const skillAudioProfiles={
   "skill_swd_001": {
@@ -9362,9 +9426,9 @@ const skillAudioProfiles={
 const skillSamplePaths=[...new Set(Object.values(skillAudioProfiles).flatMap(p=>[...p.cast,...p.impact].map(l=>l.path)))];
 
 return {skillAudioProfiles,skillSamplePaths};})();
-const module71=(()=>{
+const module73=(()=>{
 // External licensed samples (CC0 / CC BY 4.0; see skills/CREDITS.md). Audio is presentation only and never changes combat data.
-const {skillAudioProfiles,skillSamplePaths}=module72;
+const {skillAudioProfiles,skillSamplePaths}=module74;
 const impactSamples={
   hit:['starninjas/sword_3','starninjas/sword_4','starninjas/sword_6'],
   critical:['starninjas/sword_1','starninjas/sword_2'],
@@ -9461,7 +9525,7 @@ function mountBattleAudio(controls,assetBase){
 }
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
-const module74=(()=>{
+const module76=(()=>{
 // Original target-local blade trails, inspired by real-time ribbon VFX. Visuals only.
 // The number of visual trails is not a new damage event or a combat hit calculation.
 const specs=[
@@ -9510,7 +9574,7 @@ function createSwordRenderer(canvas){const ctx=canvas.getContext('2d');let w=100
 }
 
 return {swordProfiles,swordTiming,swordFrame,swordFallbackSVG,createSwordRenderer};})();
-const module75=(()=>{
+const module77=(()=>{
 // Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
 const elementalSamples=[
  {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
@@ -9622,8 +9686,8 @@ function createElementalRenderer(canvas,{createCanvas=()=>document.createElement
 }
 
 return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
-const module76=(()=>{
-const {swordProfiles,swordFallbackSVG}=module74;
+const module78=(()=>{
+const {swordProfiles,swordFallbackSVG}=module76;
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -9708,10 +9772,10 @@ function skillEffectSVG(p){
 }
 
 return {effectProfiles,elementColors,skillEffectSVG};})();
-const module73=(()=>{
-const {swordProfiles,swordTiming,createSwordRenderer}=module74;
-const {createElementalRenderer,palettes,sampleTiming}=module75;
-const {effectProfiles,skillEffectSVG}=module76;
+const module75=(()=>{
+const {swordProfiles,swordTiming,createSwordRenderer}=module76;
+const {createElementalRenderer,palettes,sampleTiming}=module77;
+const {effectProfiles,skillEffectSVG}=module78;
 const {engineData}=module19;
 // A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
 const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
@@ -9741,7 +9805,7 @@ function mountBattleVFX(stage){
 }
 
 return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
-const module77=(()=>{
+const module79=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -9750,10 +9814,10 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module78=(()=>{
+const module80=(()=>{
 const {mapData}=module12;
-const {lordships}=module62;
-const {factionLocations}=module49;
+const {lordships}=module64;
+const {factionLocations}=module51;
 
 // Only public map facts and people explicitly present in the current scene.
 function dialogueGlossary(scene=null){
@@ -9832,16 +9896,16 @@ function mountDialogueGlossary(element){
 }
 
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
-const module70=(()=>{
-const {mountBattleAudio}=module71;
-const {mountBattleVFX,battleEffectTiming}=module73;
+const module72=(()=>{
+const {mountBattleAudio}=module73;
+const {mountBattleVFX,battleEffectTiming}=module75;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module9;
 const {characterVisual,artBase}=module10;
-const {faceFit}=module28;
+const {faceFit}=module26;
 const {resolveBackground,backgroundURL}=module21;
-const {appendItemIcon}=module51;
-const {battleCommentary}=module77;
-const {renderDialogueTerms}=module78;
+const {appendItemIcon}=module53;
+const {battleCommentary}=module79;
+const {renderDialogueTerms}=module80;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
@@ -9943,7 +10007,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module80=(()=>{
+const module82=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module10;
 const {findNPC}=module13;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -9972,8 +10036,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module79=(()=>{
-const {mountNPCLocations}=module80;
+const module81=(()=>{
+const {mountNPCLocations}=module82;
 const {registeredArt,artBase,placementLabel}=module10;
 const {catalogData}=module8;
 const {npcCatalog,resolveNPC,npcRankLabel}=module13;
@@ -10014,7 +10078,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module81=(()=>{
+const module83=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -10036,10 +10100,10 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module83=(()=>{
+const module85=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module18;
 const {applyItemRarity}=module17;
-const {appendItemIcon}=module51;
+const {appendItemIcon}=module53;
 function mountItemLibrary(state,{assetBase}={}){
   const root=document.createElement('details');root.className='item-library';
   const title=document.createElement('summary');title.textContent='장비 · 책 · 전리품 도감';root.append(title);
@@ -10070,9 +10134,9 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module84=(()=>{
-const {engineItem}=module38;
-const {appendItemIcon}=module51;
+const module86=(()=>{
+const {engineItem}=module40;
+const {appendItemIcon}=module53;
 const {applyItemRarity}=module17;
 const {itemDescription,itemDetails}=module18;
 function mountEquipmentSlots({assetBase,unequip,isBusy}){
@@ -10105,12 +10169,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module82=(()=>{
-const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module38;
+const module84=(()=>{
+const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module40;
 const {applyItemRarity}=module17;
-const {appendItemIcon}=module51;
-const {mountItemLibrary}=module83;
-const {mountEquipmentSlots}=module84;
+const {appendItemIcon}=module53;
+const {mountItemLibrary}=module85;
+const {mountEquipmentSlots}=module86;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -10137,8 +10201,8 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module85=(()=>{
-const {publicLife,lifeRole}=module47;
+const module87=(()=>{
+const {publicLife,lifeRole}=module49;
 const {findNPC}=module13;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
   const $=id=>document.getElementById(id),info=document.createElement('section'),actions=document.createElement('div'),journal=document.createElement('details'),summary=document.createElement('summary');
@@ -10166,39 +10230,40 @@ function mountNPCLifeUI(state,{submit,isPending,getNPC}){
 return {mountNPCLifeUI};})();
 const module1=(()=>{
 const {mountGameTime}=module2;
-const {mountBackgroundMusic}=module23;
-const {mountUIAudio}=module24;
-const {mountNPCArt}=module25;
-const {mountWalletUI}=module26;
-const {mountSceneCast}=module27;
-const {mountChatConnection}=module29;
-const {mountTradeUI}=module50;
-const {mountWorldUI}=module52;
+const {mountVoiceAudio}=module23;
+const {mountBackgroundMusic}=module27;
+const {mountUIAudio}=module28;
+const {mountNPCArt}=module29;
+const {mountWalletUI}=module30;
+const {mountSceneCast}=module25;
+const {mountChatConnection}=module31;
+const {mountTradeUI}=module52;
+const {mountWorldUI}=module54;
 const {mountBackground,resolveBackground}=module21;
-const {mountRemasterUI}=module54;
-const {createGameBridge}=module55;
-const {mountChatUI}=module56;
+const {mountRemasterUI}=module56;
+const {createGameBridge}=module57;
+const {mountChatUI}=module58;
 const {mountInventory,normalizeInventory}=module16;
-const {KEY,defaultLayout,load}=module31;
-const {faceFit}=module28;
+const {KEY,defaultLayout,load}=module33;
+const {faceFit}=module26;
 const {mapData}=module12;
-const {mapSelectionInfo}=module61;
-const {mountFactionMap,factionInfo}=module63;
-const {mountPlayer}=module64;
-const {mountNPCInfo}=module65;
-const {mountPlayHUD}=module66;
-const {mountNewGame}=module67;
-const {mountBattleUI}=module70;
-const {dialogueVoice}=module77;
-const {renderDialogueTerms,mountDialogueGlossary}=module78;
-const {mountCatalogUI}=module79;
-const {initializeNameOnlyPlayer}=module60;
-const {locationLabel:canonicalLocationLabel}=module43;
-const {mountTitleMenu}=module81;
-const {mountQuestUI}=module58;
-const {mountEngineUI}=module82;
-const {mountNPCLifeUI}=module85;
-const {mapViews,regionFrame,cameraTransform,viewForSelection}=module48;
+const {mapSelectionInfo}=module63;
+const {mountFactionMap,factionInfo}=module65;
+const {mountPlayer}=module66;
+const {mountNPCInfo}=module67;
+const {mountPlayHUD}=module68;
+const {mountNewGame}=module69;
+const {mountBattleUI}=module72;
+const {dialogueVoice}=module79;
+const {renderDialogueTerms,mountDialogueGlossary}=module80;
+const {mountCatalogUI}=module81;
+const {initializeNameOnlyPlayer}=module62;
+const {locationLabel:canonicalLocationLabel}=module45;
+const {mountTitleMenu}=module83;
+const {mountQuestUI}=module60;
+const {mountEngineUI}=module84;
+const {mountNPCLifeUI}=module87;
+const {mapViews,regionFrame,cameraTransform,viewForSelection}=module50;
 const $=id=>document.getElementById(id);
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
 mountDialogueGlossary($('line'));
@@ -10234,7 +10299,10 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.time||state.gameState?.time||''})});
+// Embedded storage writes whole saves. Keep audio preferences inside that save.
+const musicStorage={getItem:()=>JSON.stringify(state.uiPreferences?.music||{}),setItem:(key,value)=>{state.uiPreferences={...state.uiPreferences,music:JSON.parse(value)};saveGame();}};
+const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
+const voiceAudio=mountVoiceAudio(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame,getScene:()=>state.scene||{npc:{id:'serin',speaker:'세린',emotion:'base'},dialogue:dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}))},getIndex:()=>state.scene?state.sceneIndex:state.index});
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null,chatUI=null;
 const npcInfo=mountNPCInfo(state);
 const sceneCast=mountSceneCast(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,onSelect:(id,event)=>npcInfo.select(id,event)});
@@ -10321,6 +10389,7 @@ function renderLayout(){
   faceLayer.style.setProperty('--face-size',`${fit.size/1024*100}%`);
 }
 function renderDialogue(){
+  voiceAudio.sync();
   const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
   const index=state.scene?state.sceneIndex:state.index,d=list[index];
   $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';renderDialogueTerms($('line'),d.text,state.scene||{npc:{id:'serin',speaker:'세린'}});$('line').dataset.voice=dialogueVoice(d.speaker);

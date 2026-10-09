@@ -89,6 +89,6 @@
     "Emotion labels on existing effort samples are editorial candidates, not newly recorded acting.",
     "Young/mature indicate voice styling, not actor birth age.",
     "Current bright female laughter and gasp remain byte-identical.",
-    "No NPC autoplay; Serin is registered for the bright female bank for future attachment."
+    "NPC expression reactions are attached to the game engine. Serin defaults to the bright female bank; canonical explicit gender/age supplies other defaults with editable per-NPC overrides."
   ]
 }

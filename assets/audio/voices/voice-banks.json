@@ -288,6 +288,6 @@
   "notes": [
     "Four voice styles are audition directions, not verified actor ages.",
     "Emotion labels on effort/breath samples are editorial candidates, not newly acted emotional performances.",
-    "Only the two approved bright female cues are kept byte-for-byte. No NPC auto-play is added by this build."
+    "Only the two approved bright female cues are kept byte-for-byte. The game engine plays short reactions for the current NPC speaker and expression after user interaction."
   ]
 }
