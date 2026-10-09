@@ -212,12 +212,12 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   $('apply-scene').onclick=()=>apply($('scene-json').value,{manual:true});
   $('cancel-wait').onclick=()=>{failedRequest=null;cancel();};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
-  function restore(saved){
+  function restore(saved,{prepared=false,deferRender=false}={}){
     settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;
-    failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,normalize(saved));
+    failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,prepared?saved:normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
-    render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
+    if(!deferRender)render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
   }
   async function refreshSettings(){
     if(pending||settingsRefreshing||battleIsActive(state)||state.introDraft||getIntro?.()?.isStarting())return status('진행 중인 응답·전투·새 게임 준비를 완료한 뒤 설정 동기화를 누르세요.');

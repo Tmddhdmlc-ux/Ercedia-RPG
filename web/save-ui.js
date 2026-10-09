@@ -1,5 +1,5 @@
 import {KEY,normalize} from './state.js';
-import {SLOT_COUNT,normalizeSlots,writeSlot,slotCandidate,saveSummary} from './save-slots.js';
+import {SLOT_COUNT,slotRecords,writeSlot,slotCandidate,saveSummary} from './save-slots.js';
 import {hasGameSave} from './title-menu.js';
 export function mountSaveUI(state,{storage,isPending,restore,enter}){
   const game=document.querySelector('.game'),dialog=document.createElement('dialog');
@@ -20,7 +20,7 @@ export function mountSaveUI(state,{storage,isPending,restore,enter}){
     saveTab.setAttribute('aria-pressed',String(mode==='save'));loadTab.setAttribute('aria-pressed',String(mode==='load'));
     saveTab.disabled=game.dataset.title==='active'||!hasGameSave(state);
     hint.textContent=mode==='save'?'슬롯을 선택해 현재 여정을 보관하세요. 자동 저장과 별도로 유지됩니다.':'저장된 여정을 선택하세요. 불러오면 현재 진행이 선택한 시점으로 돌아갑니다.';
-    list.replaceChildren();const slots=normalizeSlots(state.save_slots);
+    list.replaceChildren();const slots=slotRecords(state.save_slots);
     function card(id,record,automatic=false){
       const button=node('button','','save-slot');button.type='button';button.dataset.slot=String(id);button.setAttribute('aria-pressed',String(selected===id));
       const saved=automatic?(hasGameSave(state)?state:null):record?.state;
@@ -42,15 +42,15 @@ export function mountSaveUI(state,{storage,isPending,restore,enter}){
     if(selected===null||confirm.disabled||isPending()&&selected!=='auto')return;
     try{
       if(mode==='save'){
-        if(normalizeSlots(state.save_slots).some(s=>s.id===selected)&&!overwrite){overwrite=true;message.textContent='이 슬롯의 기존 저장을 덮어씁니다. 계속하려면 아래 버튼을 다시 누르세요.';refresh();return;}
+        if(slotRecords(state.save_slots).some(s=>s.id===selected)&&!overwrite){overwrite=true;message.textContent='이 슬롯의 기존 저장을 덮어씁니다. 계속하려면 아래 버튼을 다시 누르세요.';refresh();return;}
         writeSlot(state,storage,KEY,selected);overwrite=false;message.textContent=`슬롯 ${selected}에 저장했습니다.`;refresh();
       }else{
         if(selected==='auto'){finish();enter();return;}
-        const candidate=slotCandidate(state,selected,normalize);storage.setItem(KEY,JSON.stringify(candidate));finish();restore(candidate);enter();
+        const candidate=slotCandidate(state,selected,normalize);storage.setItem(KEY,JSON.stringify(candidate));finish();restore(candidate,{prepared:true,deferRender:true});enter();
       }
     }catch(error){message.textContent=`${mode==='save'?'저장':'불러오기'} 실패 · ${error.message} · 현재 여정과 기존 슬롯은 유지됩니다.`;}
   };
   const actions=document.querySelector('.utility-actions');
   for(const [kind,label] of [['save','저장하기'],['load','불러오기']]){const button=node('button',label);button.type='button';button.id=`menu-${kind}-game`;button.onclick=()=>{document.querySelector('.game-utility').open=false;open(kind);};actions.prepend(button);}
-  return {open,hasSlots:()=>normalizeSlots(state.save_slots).length>0,refresh(){if(dialog.open){dialog.inert=false;refresh();}}};
+  return {open,hasSlots:()=>slotRecords(state.save_slots).length>0,refresh(){if(dialog.open){dialog.inert=false;refresh();}}};
 }
