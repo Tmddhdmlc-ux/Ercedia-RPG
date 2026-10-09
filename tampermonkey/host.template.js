@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.2.2
+// @version      1.2.3
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -25,6 +25,7 @@
   /*__RESPONSE_READER__*/
   /*__SETTINGS_ATTACHMENT__*/
   /*__CHAT_HANDOFF__*/
+  /*__RELEASE_STATE__*/
   if(['127.0.0.1','localhost'].includes(location.hostname)){
     installLocalHandoff({scope:window,write:(key,value)=>GM_setValue(key,value),openTab:url=>GM_openInTab(url,{active:true,insert:true})});return;
   }
@@ -93,7 +94,6 @@
   function frameRequest(record,type,payload){
     const requestId=crypto.randomUUID();return new Promise((resolve,reject)=>{const timer=setTimeout(()=>{waiters.delete(requestId);reject(Error('상태 확인 시간 초과'));},10000);waiters.set(requestId,{record,resolve:value=>{clearTimeout(timer);resolve(value);}});post(record,type,payload,requestId);});
   }
-  function canonical(value){if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';if(value&&typeof value==='object')return '{'+Object.keys(value).sort().map(k=>JSON.stringify(k)+':'+canonical(value[k])).join(',')+'}';return JSON.stringify(value);}
   function createFrame(release,saved){
     const token=crypto.randomUUID(),config={token,conversation,saved,features:['settings-attachment'],assetBase:`https://raw.githubusercontent.com/${REPO}/${release.sha}/`};
     const bootstrap=`window.__ERCEDIA_CONFIG__=${JSON.stringify(config).replaceAll('<','\\u003c')};window.__ERCEDIA_STORAGE__={getItem:()=>window.__ERCEDIA_CONFIG__.saved?JSON.stringify(window.__ERCEDIA_CONFIG__.saved):null,setItem:(key,value)=>{const state=JSON.parse(value);window.__ERCEDIA_CONFIG__.saved=state;parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation:window.__ERCEDIA_CONFIG__.conversation,type:'save',payload:state},'*');}};`;
@@ -116,13 +116,13 @@
       if(route!==conversation)throw Error('채팅이 전환되어 업데이트 적용을 취소했습니다.');
       if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=fresh.state;}
       const restored=await frameRequest(record,'restore',snapshot);
-      if(snapshot&&canonical(restored.state)!==canonical(snapshot))throw Error('상태 구조가 호환되지 않아 적용을 취소했습니다.');
+      if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('상태 구조가 호환되지 않아 적용을 취소했습니다.');
       // Cache before changing the visible frame; a storage error leaves the current UI intact.
       write(CACHE,{current:release,previous:old?.release||previous});
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.2.2 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.3 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
@@ -135,7 +135,8 @@
     try{
       const commit=JSON.parse(await request(`https://api.github.com/repos/${REPO}/commits/main?check=${Date.now()}`));
       if(!/^[a-f0-9]{40}$/.test(commit.sha))throw Error('커밋 식별자가 올바르지 않습니다.');
-      if(commit.sha===active?.release.sha||commit.sha===prepared?.sha){if(force){tell('현재 확인된 최신 UI입니다. GitHub 게임 설정도 확인합니다.');if(active)send('sync-settings',null);}return;}
+      if(commit.sha===prepared?.sha){update.hidden=false;tell(`새 UI v${prepared.manifest.version} 다운로드 완료 · 현재 적용된 UI는 v${active?.release.manifest.version||'없음'}입니다. 업데이트 적용을 누르세요.`);return;}
+      if(commit.sha===active?.release.sha){if(force){tell('현재 확인된 최신 UI입니다. GitHub 게임 설정도 확인합니다.');if(active)send('sync-settings',null);}return;}
       const base=`https://raw.githubusercontent.com/${REPO}/${commit.sha}/integration/`;
       const manifest=JSON.parse(await request(base+'update-manifest.json'));
       if(active&&manifest.sha256===active.release.manifest.sha256&&manifest.assetDigest===active.release.manifest.assetDigest){if(force){tell('게임 UI 변경이 없습니다. 최신 GitHub 설정을 동기화합니다.');send('sync-settings',null);}return;}
