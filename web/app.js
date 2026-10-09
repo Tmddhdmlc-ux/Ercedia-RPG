@@ -1,4 +1,5 @@
 import {mountGameTime} from './game-time.js';
+import {mountVoiceAudio} from './voice-audio.js';
 import {mountBackgroundMusic} from './background-music.js';
 import {mountUIAudio} from './ui-audio.js';
 import {mountNPCArt} from './npc-art-ui.js';
@@ -67,7 +68,10 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
-const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.time||state.gameState?.time||''})});
+// Embedded storage writes whole saves. Keep audio preferences inside that save.
+const musicStorage={getItem:()=>JSON.stringify(state.uiPreferences?.music||{}),setItem:(key,value)=>{state.uiPreferences={...state.uiPreferences,music:JSON.parse(value)};saveGame();}};
+const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage:musicStorage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.game_state?.time||state.scene?.time||state.gameState?.time||''})});
+const voiceAudio=mountVoiceAudio(document.querySelector('.game'),{state,assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',persist:saveGame,getScene:()=>state.scene||{npc:{id:'serin',speaker:'세린',emotion:'base'},dialogue:dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}))},getIndex:()=>state.scene?state.sceneIndex:state.index});
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null,chatUI=null;
 const npcInfo=mountNPCInfo(state);
 const sceneCast=mountSceneCast(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,onSelect:(id,event)=>npcInfo.select(id,event)});
@@ -154,6 +158,7 @@ function renderLayout(){
   faceLayer.style.setProperty('--face-size',`${fit.size/1024*100}%`);
 }
 function renderDialogue(){
+  voiceAudio.sync();
   const list=state.scene?.dialogue||dialogues.map(([speaker,emotion,text])=>({speaker,emotion,text}));
   const index=state.scene?state.sceneIndex:state.index,d=list[index];
   $('speaker').textContent=d.speaker;$('speaker').dataset.voice=dialogueVoice(d.speaker);$('emotion').textContent=labels[d.emotion]||d.emotion||'';renderDialogueTerms($('line'),d.text,state.scene||{npc:{id:'serin',speaker:'세린'}});$('line').dataset.voice=dialogueVoice(d.speaker);
