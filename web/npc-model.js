@@ -4,7 +4,7 @@ import {normalizeNPCProfile} from './npc-profile.js';
 import {assertGrowthSnapshot} from './growth-model.js';
 import {growthRules} from './growth-data.js';
 export const npcCatalog=catalogData.npcs;
-export function npcRankLabel(p){const rank=p.rank||'미정';if(p.role==='monster')return '마수 등급 · '+rank;if(p.realm&&p.realm!=='none')return rank.includes('나이트')?rank:rank+' · '+({basic:'베이직',expert:'익스퍼트',hyper:'하이퍼',master:'마스터'})[p.realm]+' 나이트';return rank.includes('서클')?rank:rank+' · 전투 경지 미정';}
+export function npcRankLabel(p){const rank=p.rank||'미정';if(p.role==='monster')return '마수 등급 · '+rank;if(p.realm&&p.realm!=='none')return rank.includes('나이트')?rank:rank+' · '+({basic:'베이직',expert:'익스퍼트',hyper:'하이퍼',master:'마스터'})[p.realm]+' 나이트';if(p.circle>0)return rank.includes('서클')?rank:rank+' · '+p.circle+'서클 마법사';if(p.combatClass==='civilian')return rank+' · 생활인';if(p.combatClass==='cleric')return rank+' · 성직 계열';if(p.combatClass==='martial')return rank+' · 일반 무예';return rank.includes('서클')?rank:rank+' · 전투 경지 미정';}
 export function findNPC(id){return npcCatalog.find(p=>p.id===id||p.name===id)||null;}
 function knownOverrides(raw,base){
   const normalized=normalizeNPCProfile(raw||{});

@@ -1,0 +1,248 @@
+{
+  "license": "CC0-1.0",
+  "sources": [
+    {
+      "author": "rubberduck",
+      "page": "https://opengameart.org/node/86018",
+      "files": [
+        "spell_01.ogg",
+        "spell_02.ogg",
+        "blade_03.ogg",
+        "metal_01.ogg"
+      ]
+    },
+    {
+      "author": "JaggedStone",
+      "page": "https://opengameart.org/content/magic-spell-sfx",
+      "files": [
+        "magical_1.ogg",
+        "magical_2.ogg",
+        "magical_4.ogg",
+        "magical_7.ogg"
+      ]
+    },
+    {
+      "author": "StarNinjas",
+      "page": "https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes",
+      "files": [
+        "sword_1.ogg",
+        "sword_2.ogg",
+        "sword_3.ogg"
+      ]
+    },
+    {
+      "author": "Kenney",
+      "page": "https://kenney.nl/assets/rpg-audio",
+      "files": [
+        "knifeSlice.ogg",
+        "knifeSlice2.ogg"
+      ]
+    },
+    {
+      "author": "Kenney",
+      "page": "https://kenney.nl/assets/impact-sounds",
+      "files": [
+        "impactPunch_heavy_000.ogg",
+        "impactPunch_heavy_001.ogg"
+      ]
+    }
+  ],
+  "orchestration": {
+    "library": "VSCO 2 Community Edition",
+    "author": "Versilian Studios / Sam Gossner and contributors",
+    "license": "CC0-1.0",
+    "page": "https://versilian-studios.com/vsco-community/",
+    "commit": "440300901dfe9275fd84e0b7763af1f8443ae62e",
+    "samples": [
+      {
+        "id": "stringsD",
+        "path": "Strings/Violin Section/susVib/VlnEns_susVib_D3_v2.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Strings/Violin%20Section/susVib/VlnEns_susVib_D3_v2.wav",
+        "sha256": "77893dbf1ea1be8c40ad756d16b916298e6b1b0742495e9853e020375592357c"
+      },
+      {
+        "id": "timpani",
+        "path": "Percussion/Timpani/Timpani2_Hit_v3_rr1_Sum.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/Percussion/Timpani/Timpani2_Hit_v3_rr1_Sum.wav",
+        "sha256": "69e5d604effd3f29c86117d22ad2335f73e43f5d47868dc57d8fa593975ee241"
+      },
+      {
+        "id": "cymbal",
+        "path": "VSCO 1 Percussion/varMetal/Cymbals/clash/crash_hit_ff_loose.wav",
+        "url": "https://raw.githubusercontent.com/sgossner/VSCO-2-CE/440300901dfe9275fd84e0b7763af1f8443ae62e/VSCO%201%20Percussion/varMetal/Cymbals/clash/crash_hit_ff_loose.wav",
+        "sha256": "6df0292c3988665e9a4b35aabbc44699a9849d2df5bce8b835b0f1b2529381f9"
+      }
+    ]
+  },
+  "original_synthesis": "Inharmonic metal resonance, sub-bass descent and transient noise. No actual waterphone recording.",
+  "references": [
+    "https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/",
+    "https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/"
+  ],
+  "direction": "No charging riser in prepare/reveal/charge. Short unsheathing metal and static decaying blade resonance replace it; 120ms pre-strike silence remains.",
+  "polish": "Reduced saturated high partials and flutter, quicker high-frequency decay, denser softer stereo reflections, 28 Hz cleanup, mild 3.4 kHz harshness reduction and 15.5 kHz rolloff. Preserves the 120 ms pre-strike silence and attack timing.",
+  "processing": "Reversed risers, pitched and filtered external CC0 layers, timing offsets, echo tails, fades and peak limiting. No voice line or combat decision is generated.",
+  "recipes": {
+    "prepare": [
+      1.45,
+      [
+        [
+          "skills/metal_01.ogg",
+          0.5,
+          1.0,
+          0,
+          "highpass=f=450,lowpass=f=6500"
+        ],
+        [
+          "starninjas/sword_3.ogg",
+          0.12,
+          1.2,
+          0.025,
+          "highpass=f=1200"
+        ]
+      ]
+    ],
+    "face": [
+      0.65,
+      [
+        [
+          "kenney/knifeSlice2.ogg",
+          0.65,
+          1.2,
+          0,
+          "highpass=f=650"
+        ],
+        [
+          "starninjas/sword_3.ogg",
+          0.3,
+          1.65,
+          0.03,
+          "highpass=f=1700"
+        ]
+      ]
+    ],
+    "reveal": [
+      1.62,
+      [
+        [
+          "skills/magical_1.ogg",
+          0.52,
+          0.9,
+          0,
+          "highpass=f=350"
+        ],
+        [
+          "skills/spell_01.ogg",
+          0.26,
+          0.8,
+          0.08,
+          "lowpass=f=3200"
+        ],
+        [
+          "kenney/impactPunch_heavy_001.ogg",
+          0.18,
+          0.65,
+          0,
+          "lowpass=f=190"
+        ]
+      ]
+    ],
+    "charge": [
+      1.55,
+      [
+        [
+          "skills/metal_01.ogg",
+          0.38,
+          1.1,
+          0,
+          "highpass=f=700,lowpass=f=7200"
+        ],
+        [
+          "starninjas/sword_3.ogg",
+          0.1,
+          1.35,
+          0.025,
+          "highpass=f=1600"
+        ]
+      ]
+    ],
+    "anticipation": [
+      0.26,
+      [
+        [
+          "kenney/knifeSlice.ogg",
+          1.7,
+          0.75,
+          0,
+          "areverse,highpass=f=500"
+        ],
+        [
+          "skills/blade_03.ogg",
+          1.1,
+          0.7,
+          0,
+          "areverse,highpass=f=1400"
+        ]
+      ]
+    ],
+    "strike": [
+      1.55,
+      [
+        [
+          "starninjas/sword_1.ogg",
+          1.25,
+          1.25,
+          0,
+          "highpass=f=300"
+        ],
+        [
+          "starninjas/sword_2.ogg",
+          0.5,
+          0.9,
+          0.035,
+          "highpass=f=700"
+        ],
+        [
+          "kenney/knifeSlice2.ogg",
+          0.65,
+          1.6,
+          0,
+          "highpass=f=1000"
+        ],
+        [
+          "kenney/impactPunch_heavy_000.ogg",
+          0.32,
+          0.55,
+          0.035,
+          "lowpass=f=170"
+        ],
+        [
+          "skills/magical_7.ogg",
+          0.14,
+          1.6,
+          0.07,
+          "highpass=f=1800"
+        ]
+      ]
+    ],
+    "afterglow": [
+      1.1,
+      [
+        [
+          "skills/magical_2.ogg",
+          1.2,
+          0.7,
+          0,
+          "highpass=f=900,aecho=0.6:0.5:140|310:0.32|0.18"
+        ],
+        [
+          "starninjas/sword_1.ogg",
+          0.18,
+          0.65,
+          0,
+          "highpass=f=2200,aecho=0.7:0.5:130|290:0.3|0.16"
+        ]
+      ]
+    ]
+  }
+}

@@ -1,5 +1,7 @@
 import {mountAmbience} from './ambience.js';
 import {mountGameTime} from './game-time.js';
+import {mountAdventureUI} from './adventure-ui.js';
+import {mountSkillLoadout} from './skill-loadout-ui.js';
 import {mountVoiceAudio} from './voice-audio.js';
 import {mountBackgroundMusic} from './background-music.js';
 import {mountUIAudio} from './ui-audio.js';
@@ -256,8 +258,8 @@ window.addEventListener('ercedia:inventory-update',event=>{
   state.inventory=normalizeInventory(event.detail);inventoryUI.render();
   saveGame();
 });
-let remasterUI=null,worldUI=null,tradeUI=null;
-function renderAll(){ambience.sync();backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();timeUI.render();}
+let remasterUI=null,worldUI=null,tradeUI=null,adventureUI=null,skillLoadoutUI=null;
+function renderAll(){ambience.sync();backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();timeUI.render();adventureUI?.render();skillLoadoutUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 // Keep the full-scene background above the actual composer, including connection feedback.
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));
@@ -273,6 +275,8 @@ titleUI=mountTitleMenu(state,{newGame:introUI,render:renderAll,isPending:()=>cha
 worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 tradeUI=mountTradeUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,isPending:()=>chatUI.isPending(),submit:(...args)=>chatUI.submit(...args),render:renderAll,persistCandidate:candidate=>storage.setItem(KEY,JSON.stringify(candidate)),returnToStory:()=>{switchTo('story');renderAll();saveGame();}});
 remasterUI=mountRemasterUI(state);
+adventureUI=mountAdventureUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),switchTo});
+skillLoadoutUI=mountSkillLoadout(state,{persist:()=>{saveGame();playerUI.render();},isPending:()=>chatUI.isPending()});
 renderAll();
 
 const game=document.querySelector('.game');

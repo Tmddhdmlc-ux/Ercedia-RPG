@@ -1,6 +1,7 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
 import {validateLootRolls} from './loot-model.js';
 import {characterVisual,registeredNPCArt} from './character-art.js';
+import {equippedSkills} from './skill-loadout.js';
 import {resolveNPC,findNPC} from './npc-model.js';
 import {validateRealmReaction,currentCircle} from './growth-model.js';
 import {potentialMP,potentialDamage} from './combat-potentials.js';
@@ -136,7 +137,9 @@ export function validateBattleSettlement(scene,state){
   equal(p.realm,current.realm??'none','현재 기사 경지');
   if(p.circle!==undefined)equal(p.circle,currentCircle(state),'현재 주인공 서클');
   if(p.realmAbilities?.length)equal(JSON.stringify(p.realmAbilities),JSON.stringify(current.realmAbilities||[]),'현재 주인공 경지 능력');equal(p.level_hp_bonus,current.levelHpBonus??0,'현재 레벨 HP 기록');
-  for(const skill of p.skills)if(!current.skills.some(s=>s.enabled&&s.name===skill.name))fail('현재 주인공 기술 목록');
+  const legacyInProgress=!state.skill_loadout&&state.battlePlayback?.scene?.battle?.battle_id===b.battle_id;
+  const selectedSkills=legacyInProgress?current.skills.filter(s=>s.enabled!==false).map(s=>({...s,id:s.id||'legacy:'+s.name})):equippedSkills(state,'battle').filter(s=>s.skill_type!=='passive');
+  for(const skill of p.skills)if(!selectedSkills.some(s=>s.id===skill.id||s.id.startsWith('legacy:')&&s.name===skill.name)&&!current.skills.some(s=>s.ultimate&&s.enabled!==false&&(s.id===skill.id||s.name===skill.name)))fail('현재 주인공 장착 기술 목록');
   for(const skill of p.skills){const saved=current.skills.find(s=>s.id===skill.id||s.name===skill.name);if(skill.circle!==undefined)equal(skill.circle,saved?.circle,'저장된 주문 서클');if(skill.reflectable!==undefined)equal(skill.reflectable,saved?.reflectable,'저장된 반사 가능 여부');}
   if(state.engine){equal(JSON.stringify(p.potentials||{}),JSON.stringify(state.engine.bonuses.potentials||{}),'장착 잠재능력');for(const skill of p.skills){const learned=current.skills.find(s=>s.id===skill.id);if(learned){if(skill.circle!==undefined)equal(skill.circle,learned.circle,'저장된 주문 서클');if(skill.reflectable!==undefined)equal(skill.reflectable,learned.reflectable,'저장된 반사 가능 여부');}if(learned?.book_id){equal(skill.mp_cost,learned.mp_cost,'기술서 MP 비용');if(skill.kind==='physical')equal(skill.technique_bonus||0,learned.technique_bonus||0,'검술서 위력');if(skill.kind==='magic')equal(skill.power,learned.spell_base_power+(state.engine.bonuses.spell_power||0),'기술서·스태프 위력');}}}
   if(!scene.player||!scene.inventory||!scene.game_state)fail('종료 player/inventory/game_state 전체 스냅샷 필요');

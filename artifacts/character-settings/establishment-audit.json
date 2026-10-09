@@ -1,0 +1,2727 @@
+{
+  "characters": 163,
+  "counts": {
+    "knight": 37,
+    "mage": 23,
+    "cleric": 22,
+    "martial": 14,
+    "civilian": 47,
+    "monster": 20
+  },
+  "preserved_numeric_stat_records": 139,
+  "assigned_common_stat_records": 24,
+  "ultimate_designs": 60,
+  "previous": {
+    "ER-NPC-001": {
+      "rank": "익스퍼트 나이트",
+      "level": 30,
+      "stats": {
+        "strength": 41,
+        "agility": 38,
+        "intelligence": 17,
+        "constitution": 33,
+        "mana": 18,
+        "hp": 538,
+        "max_hp": 538,
+        "mp": 148,
+        "max_mp": 148
+      },
+      "appearance": "남32 검은 단발 진청 눈 은백 판금갑",
+      "location_id": "CW",
+      "affiliation": "청금사자 근위기사단"
+    },
+    "ER-NPC-002": {
+      "rank": "베이직 나이트",
+      "level": 22,
+      "stats": {
+        "strength": 31,
+        "agility": 31,
+        "intelligence": 13,
+        "constitution": 27,
+        "mana": 19,
+        "hp": 409,
+        "max_hp": 409,
+        "mp": 154,
+        "max_mp": 154
+      },
+      "appearance": "여23 적갈 땋은머리 호박 눈 청색 휘장",
+      "location_id": "CW",
+      "affiliation": "청금사자 근위기사단"
+    },
+    "ER-NPC-003": {
+      "rank": "익스퍼트 나이트",
+      "level": 44,
+      "stats": {
+        "strength": 59,
+        "agility": 53,
+        "intelligence": 21,
+        "constitution": 43,
+        "mana": 26,
+        "hp": 798,
+        "max_hp": 798,
+        "mp": 196,
+        "max_mp": 196
+      },
+      "appearance": "남38 회갈 단발 왼눈 흉터 적색 견장",
+      "location_id": "W4",
+      "affiliation": "적장미 선봉기사단"
+    },
+    "ER-NPC-004": {
+      "rank": "베이직 나이트",
+      "level": 15,
+      "stats": {
+        "strength": 22,
+        "agility": 21,
+        "intelligence": 12,
+        "constitution": 23,
+        "mana": 16,
+        "hp": 310,
+        "max_hp": 310,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "여26 금갈 단발 녹색 눈 경량 판금",
+      "location_id": "W4",
+      "affiliation": "적장미 선봉기사단"
+    },
+    "ER-NPC-005": {
+      "rank": "익스퍼트 나이트",
+      "level": 32,
+      "stats": {
+        "strength": 47,
+        "agility": 46,
+        "intelligence": 18,
+        "constitution": 36,
+        "mana": 22,
+        "hp": 611,
+        "max_hp": 611,
+        "mp": 172,
+        "max_mp": 172
+      },
+      "appearance": "남35 흑청 머리 회색 눈 청동 방패",
+      "location_id": "CE",
+      "affiliation": "청뢰성벽 기사단"
+    },
+    "ER-NPC-006": {
+      "rank": "베이직 나이트",
+      "level": 29,
+      "stats": {
+        "strength": 35,
+        "agility": 36,
+        "intelligence": 15,
+        "constitution": 34,
+        "mana": 17,
+        "hp": 519,
+        "max_hp": 519,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "여25 은갈 단발 청회 눈 룬 철갑",
+      "location_id": "CE",
+      "affiliation": "청뢰성벽 기사단"
+    },
+    "ER-NPC-007": {
+      "rank": "익스퍼트 나이트",
+      "level": 46,
+      "stats": {
+        "strength": 59,
+        "agility": 53,
+        "intelligence": 21,
+        "constitution": 47,
+        "mana": 23,
+        "hp": 844,
+        "max_hp": 844,
+        "mp": 178,
+        "max_mp": 178
+      },
+      "appearance": "여39 검은 단발 올리브 피부 탐지 고글",
+      "location_id": "E1",
+      "affiliation": "흑정찰 균열기사단"
+    },
+    "ER-NPC-008": {
+      "rank": "베이직 나이트",
+      "level": 22,
+      "stats": {
+        "strength": 28,
+        "agility": 26,
+        "intelligence": 13,
+        "constitution": 23,
+        "mana": 13,
+        "hp": 353,
+        "max_hp": 353,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "남21 잿빛 삭발 보라 눈 회흑 경갑",
+      "location_id": "E1",
+      "affiliation": "흑정찰 균열기사단"
+    },
+    "ER-NPC-009": {
+      "rank": "익스퍼트 나이트",
+      "level": 34,
+      "stats": {
+        "strength": 47,
+        "agility": 47,
+        "intelligence": 18,
+        "constitution": 40,
+        "mana": 25,
+        "hp": 657,
+        "max_hp": 657,
+        "mp": 190,
+        "max_mp": 190
+      },
+      "appearance": "남44 청흑 곱슬 갈색 눈 흰청 갑옷",
+      "location_id": "CS",
+      "affiliation": "백파도 친위기사단"
+    },
+    "ER-NPC-010": {
+      "rank": "베이직 나이트",
+      "level": 15,
+      "stats": {
+        "strength": 26,
+        "agility": 23,
+        "intelligence": 12,
+        "constitution": 19,
+        "mana": 17,
+        "hp": 287,
+        "max_hp": 287,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "여27 적갈 머리 녹청 눈 청백 제복",
+      "location_id": "CS",
+      "affiliation": "백파도 친위기사단"
+    },
+    "ER-NPC-011": {
+      "rank": "익스퍼트 나이트",
+      "level": 48,
+      "stats": {
+        "strength": 59,
+        "agility": 54,
+        "intelligence": 22,
+        "constitution": 50,
+        "mana": 26,
+        "hp": 880,
+        "max_hp": 880,
+        "mp": 196,
+        "max_mp": 196
+      },
+      "appearance": "남36 적갈 단발 검은 눈 해군 가죽갑",
+      "location_id": "S3",
+      "affiliation": "해풍수호 기사단"
+    },
+    "ER-NPC-012": {
+      "rank": "베이직 나이트",
+      "level": 29,
+      "stats": {
+        "strength": 39,
+        "agility": 38,
+        "intelligence": 15,
+        "constitution": 30,
+        "mana": 18,
+        "hp": 502,
+        "max_hp": 502,
+        "mp": 148,
+        "max_mp": 148
+      },
+      "appearance": "여22 백금 포니테일 푸른 눈 해군 제복",
+      "location_id": "S3",
+      "affiliation": "해풍수호 기사단"
+    },
+    "ER-NPC-013": {
+      "rank": "3서클",
+      "level": 36,
+      "stats": {
+        "strength": 14,
+        "agility": 19,
+        "intelligence": 53,
+        "constitution": 22,
+        "mana": 48,
+        "hp": 330,
+        "max_hp": 330,
+        "mp": 328,
+        "max_mp": 328
+      },
+      "appearance": "남31 밤갈 머리 은테 안경 갈색 로브",
+      "location_id": "W2",
+      "affiliation": "칠원기록탑"
+    },
+    "ER-NPC-014": {
+      "rank": "1서클",
+      "level": 19,
+      "stats": {
+        "strength": 15,
+        "agility": 14,
+        "intelligence": 31,
+        "constitution": 16,
+        "mana": 28,
+        "hp": 229,
+        "max_hp": 229,
+        "mp": 208,
+        "max_mp": 208
+      },
+      "appearance": "여19 검은 곱슬 녹색 눈 학생 로브",
+      "location_id": "W2",
+      "affiliation": "칠원기록탑"
+    },
+    "ER-NPC-015": {
+      "rank": "4서클",
+      "level": 57,
+      "stats": {
+        "strength": 14,
+        "agility": 17,
+        "intelligence": 69,
+        "constitution": 19,
+        "mana": 61,
+        "hp": 352,
+        "max_hp": 352,
+        "mp": 406,
+        "max_mp": 406
+      },
+      "appearance": "남37 자주빛 머리 번개 문신 금속 장갑",
+      "location_id": "E2",
+      "affiliation": "청동뇌명탑"
+    },
+    "ER-NPC-016": {
+      "rank": "2서클",
+      "level": 28,
+      "stats": {
+        "strength": 15,
+        "agility": 18,
+        "intelligence": 43,
+        "constitution": 19,
+        "mana": 44,
+        "hp": 286,
+        "max_hp": 286,
+        "mp": 304,
+        "max_mp": 304
+      },
+      "appearance": "여24 은청 숏컷 청록 눈 청동 소매",
+      "location_id": "E2",
+      "affiliation": "청동뇌명탑"
+    },
+    "ER-NPC-017": {
+      "rank": "4서클",
+      "level": 55,
+      "stats": {
+        "strength": 20,
+        "agility": 19,
+        "intelligence": 66,
+        "constitution": 20,
+        "mana": 64,
+        "hp": 392,
+        "max_hp": 392,
+        "mp": 424,
+        "max_mp": 424
+      },
+      "appearance": "여40 남청 머리 청색 눈 흰청 로브",
+      "location_id": "S3",
+      "affiliation": "청류융합탑"
+    },
+    "ER-NPC-018": {
+      "rank": "2서클",
+      "level": 26,
+      "stats": {
+        "strength": 13,
+        "agility": 14,
+        "intelligence": 41,
+        "constitution": 19,
+        "mana": 40,
+        "hp": 274,
+        "max_hp": 274,
+        "mp": 280,
+        "max_mp": 280
+      },
+      "appearance": "남28 모래 금발 초록 눈 바람 망토",
+      "location_id": "S3",
+      "affiliation": "청류융합탑"
+    },
+    "ER-NPC-019": {
+      "rank": "4서클",
+      "level": 53,
+      "stats": {
+        "strength": 19,
+        "agility": 22,
+        "intelligence": 65,
+        "constitution": 21,
+        "mana": 61,
+        "hp": 393,
+        "max_hp": 393,
+        "mp": 406,
+        "max_mp": 406
+      },
+      "appearance": "남33 백회 머리 이색 눈 회색 로브",
+      "location_id": "S4",
+      "affiliation": "황혼음영탑"
+    },
+    "ER-NPC-020": {
+      "rank": "2서클",
+      "level": 36,
+      "stats": {
+        "strength": 14,
+        "agility": 19,
+        "intelligence": 53,
+        "constitution": 22,
+        "mana": 48,
+        "hp": 330,
+        "max_hp": 330,
+        "mp": 328,
+        "max_mp": 328
+      },
+      "appearance": "여23 보라 흑발 회색 눈 검은 베일",
+      "location_id": "S4",
+      "affiliation": "황혼음영탑"
+    },
+    "ER-NPC-021": {
+      "rank": "4서클",
+      "level": 51,
+      "stats": {
+        "strength": 18,
+        "agility": 18,
+        "intelligence": 64,
+        "constitution": 22,
+        "mana": 58,
+        "hp": 394,
+        "max_hp": 394,
+        "mp": 388,
+        "max_mp": 388
+      },
+      "appearance": "남46 회색 수염 검은 눈 두꺼운 회청 로브",
+      "location_id": "E3",
+      "affiliation": "회색초석탑"
+    },
+    "ER-NPC-022": {
+      "rank": "2서클",
+      "level": 34,
+      "stats": {
+        "strength": 12,
+        "agility": 14,
+        "intelligence": 51,
+        "constitution": 16,
+        "mana": 46,
+        "hp": 249,
+        "max_hp": 249,
+        "mp": 316,
+        "max_mp": 316
+      },
+      "appearance": "여29 구리 갈발 녹색 눈 황동 렌즈",
+      "location_id": "E3",
+      "affiliation": "회색초석탑"
+    },
+    "ER-NPC-023": {
+      "rank": "중급 사제",
+      "level": 38,
+      "stats": {
+        "strength": 29,
+        "agility": 35,
+        "intelligence": 41,
+        "constitution": 32,
+        "mana": 32,
+        "hp": 507,
+        "max_hp": 507,
+        "mp": 232,
+        "max_mp": 232
+      },
+      "appearance": "여42 잿빛 땋은머리 갈색 눈 남청 기록복",
+      "location_id": "W2",
+      "affiliation": "영시기록원"
+    },
+    "ER-NPC-024": {
+      "rank": "하급 사제",
+      "level": 5,
+      "stats": {
+        "strength": 16,
+        "agility": 14,
+        "intelligence": 11,
+        "constitution": 11,
+        "mana": 15,
+        "hp": 140,
+        "max_hp": 140,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "남30 검은 단발 은청 눈 흰 여행복",
+      "location_id": "S2",
+      "affiliation": "천문의 길회"
+    },
+    "ER-NPC-025": {
+      "rank": "중급 사제",
+      "level": 12,
+      "stats": {
+        "strength": 15,
+        "agility": 16,
+        "intelligence": 18,
+        "constitution": 19,
+        "mana": 17,
+        "hp": 238,
+        "max_hp": 238,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "여35 밤갈 포니테일 녹색 눈 초록 성의",
+      "location_id": "W3",
+      "affiliation": "새벽샘 성회"
+    },
+    "ER-NPC-026": {
+      "rank": "중급 사제",
+      "level": 19,
+      "stats": {
+        "strength": 22,
+        "agility": 25,
+        "intelligence": 24,
+        "constitution": 20,
+        "mana": 19,
+        "hp": 294,
+        "max_hp": 294,
+        "mp": 154,
+        "max_mp": 154
+      },
+      "appearance": "남53 삭발 은회 눈 검은 예복 은종",
+      "location_id": "W1",
+      "affiliation": "종언의 안식원"
+    },
+    "ER-NPC-027": {
+      "rank": "하급 사제",
+      "level": 26,
+      "stats": {
+        "strength": 21,
+        "agility": 27,
+        "intelligence": 30,
+        "constitution": 28,
+        "mana": 22,
+        "hp": 388,
+        "max_hp": 388,
+        "mp": 172,
+        "max_mp": 172
+      },
+      "appearance": "여24 붉은 단발 금갈 눈 화로 앞치마",
+      "location_id": "W4",
+      "affiliation": "홍염의 화로단"
+    },
+    "ER-NPC-028": {
+      "rank": "중급 사제",
+      "level": 33,
+      "stats": {
+        "strength": 28,
+        "agility": 29,
+        "intelligence": 37,
+        "constitution": 28,
+        "mana": 24,
+        "hp": 446,
+        "max_hp": 446,
+        "mp": 184,
+        "max_mp": 184
+      },
+      "appearance": "남34 흑청 웨이브 청록 눈 진주 브로치",
+      "location_id": "S1",
+      "affiliation": "푸른 조수성당"
+    },
+    "ER-NPC-029": {
+      "rank": "하급 사제",
+      "level": 40,
+      "stats": {
+        "strength": 27,
+        "agility": 31,
+        "intelligence": 43,
+        "constitution": 29,
+        "mana": 27,
+        "hp": 468,
+        "max_hp": 468,
+        "mp": 202,
+        "max_mp": 202
+      },
+      "appearance": "여21 은회 단발 녹색 눈 흰 망토",
+      "location_id": "S3",
+      "affiliation": "순풍의 순례단"
+    },
+    "ER-NPC-030": {
+      "rank": "중급 사제",
+      "level": 7,
+      "stats": {
+        "strength": 14,
+        "agility": 17,
+        "intelligence": 13,
+        "constitution": 15,
+        "mana": 17,
+        "hp": 180,
+        "max_hp": 180,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "남48 갈색 삭발 청회 눈 청동 안경",
+      "location_id": "E2",
+      "affiliation": "천뢰공학회"
+    },
+    "ER-NPC-031": {
+      "rank": "중급 사제",
+      "level": 14,
+      "stats": {
+        "strength": 20,
+        "agility": 19,
+        "intelligence": 20,
+        "constitution": 16,
+        "mana": 19,
+        "hp": 229,
+        "max_hp": 229,
+        "mp": 154,
+        "max_mp": 154
+      },
+      "appearance": "여38 백금 단발 금갈 눈 흰금 제의",
+      "location_id": "W2",
+      "affiliation": "광휘대성당"
+    },
+    "ER-NPC-032": {
+      "rank": "하급 사제",
+      "level": 21,
+      "stats": {
+        "strength": 20,
+        "agility": 21,
+        "intelligence": 25,
+        "constitution": 24,
+        "mana": 22,
+        "hp": 330,
+        "max_hp": 330,
+        "mp": 172,
+        "max_mp": 172
+      },
+      "appearance": "남36 자주 흑수염 은색 눈 검은 망토",
+      "location_id": "E1",
+      "affiliation": "흑월의 성소"
+    },
+    "ER-NPC-033": {
+      "rank": "중급 사제",
+      "level": 28,
+      "stats": {
+        "strength": 26,
+        "agility": 30,
+        "intelligence": 32,
+        "constitution": 25,
+        "mana": 24,
+        "hp": 391,
+        "max_hp": 391,
+        "mp": 184,
+        "max_mp": 184
+      },
+      "appearance": "여45 은빛 곱슬 보라 눈 자주 문장띠",
+      "location_id": "S4",
+      "affiliation": "인연의 직조회"
+    },
+    "ER-NPC-034": {
+      "rank": "은패",
+      "level": 35,
+      "stats": {
+        "strength": 26,
+        "agility": 33,
+        "intelligence": 38,
+        "constitution": 32,
+        "mana": 26,
+        "hp": 480,
+        "max_hp": 480,
+        "mp": 196,
+        "max_mp": 196
+      },
+      "appearance": "남30 붉은 머리 청색 눈 여행 망토",
+      "location_id": "W5",
+      "affiliation": "대륙길잡이 길드"
+    },
+    "ER-NPC-035": {
+      "rank": "동패",
+      "level": 42,
+      "stats": {
+        "strength": 32,
+        "agility": 35,
+        "intelligence": 44,
+        "constitution": 33,
+        "mana": 29,
+        "hp": 548,
+        "max_hp": 548,
+        "mp": 214,
+        "max_mp": 214
+      },
+      "appearance": "여22 검은 단발 갈색 눈 두꺼운 부츠",
+      "location_id": "W5",
+      "affiliation": "대륙길잡이 길드"
+    },
+    "ER-NPC-036": {
+      "rank": "금패",
+      "level": 9,
+      "stats": {
+        "strength": 12,
+        "agility": 13,
+        "intelligence": 15,
+        "constitution": 12,
+        "mana": 12,
+        "hp": 146,
+        "max_hp": 146,
+        "mp": 112,
+        "max_mp": 112
+      },
+      "appearance": "여41 금발 녹색 눈 깃털 망토",
+      "location_id": "E4",
+      "affiliation": "대륙길잡이 길드"
+    },
+    "ER-NPC-037": {
+      "rank": "은패",
+      "level": 16,
+      "stats": {
+        "strength": 18,
+        "agility": 22,
+        "intelligence": 22,
+        "constitution": 20,
+        "mana": 21,
+        "hp": 269,
+        "max_hp": 269,
+        "mp": 166,
+        "max_mp": 166
+      },
+      "appearance": "남27 곱슬 흑발 청록 눈 흰 조끼",
+      "location_id": "S1",
+      "affiliation": "대륙길잡이 길드"
+    },
+    "ER-NPC-038": {
+      "rank": "숙련 용병",
+      "level": 23,
+      "stats": {
+        "strength": 25,
+        "agility": 24,
+        "intelligence": 27,
+        "constitution": 21,
+        "mana": 24,
+        "hp": 331,
+        "max_hp": 331,
+        "mp": 184,
+        "max_mp": 184
+      },
+      "appearance": "남34 큰 체격 회색 눈 쇠갑옷",
+      "location_id": "W4",
+      "affiliation": "쇠갈퀴 용병단"
+    },
+    "ER-NPC-039": {
+      "rank": "2서클",
+      "level": 35,
+      "stats": {
+        "strength": 15,
+        "agility": 15,
+        "intelligence": 52,
+        "constitution": 21,
+        "mana": 50,
+        "hp": 327,
+        "max_hp": 327,
+        "mp": 340,
+        "max_mp": 340
+      },
+      "appearance": "여29 밤색 땋은머리 갈색 눈 의료가방",
+      "location_id": "W4",
+      "affiliation": "쇠갈퀴 용병단"
+    },
+    "ER-NPC-040": {
+      "rank": "숙련 선원",
+      "level": 37,
+      "stats": {
+        "strength": 30,
+        "agility": 36,
+        "intelligence": 40,
+        "constitution": 30,
+        "mana": 28,
+        "hp": 489,
+        "max_hp": 489,
+        "mp": 208,
+        "max_mp": 208
+      },
+      "appearance": "남47 대머리 귀 흉터 청색 외투",
+      "location_id": "S3",
+      "affiliation": "백범선 해상호위조합"
+    },
+    "ER-NPC-041": {
+      "rank": "일반 전투원",
+      "level": 4,
+      "stats": {
+        "strength": 11,
+        "agility": 14,
+        "intelligence": 10,
+        "constitution": 16,
+        "mana": 11,
+        "hp": 171,
+        "max_hp": 171,
+        "mp": 106,
+        "max_mp": 106
+      },
+      "appearance": "여26 검은 곱슬 금갈 눈 경갑",
+      "location_id": "S3",
+      "affiliation": "백범선 해상호위조합"
+    },
+    "ER-NPC-042": {
+      "rank": "상단 간부",
+      "level": 11,
+      "stats": {
+        "strength": 17,
+        "agility": 16,
+        "intelligence": 17,
+        "constitution": 16,
+        "mana": 14,
+        "hp": 211,
+        "max_hp": 211,
+        "mp": 124,
+        "max_mp": 124
+      },
+      "appearance": "남52 은빛 단발 파란 눈 금실 비단",
+      "location_id": "S1",
+      "affiliation": "황금돛 상단연맹"
+    },
+    "ER-NPC-043": {
+      "rank": "상단 실무자",
+      "level": 18,
+      "stats": {
+        "strength": 17,
+        "agility": 18,
+        "intelligence": 23,
+        "constitution": 17,
+        "mana": 16,
+        "hp": 239,
+        "max_hp": 239,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "여33 붉은 땋은머리 갈색 눈 검은 정장",
+      "location_id": "S4",
+      "affiliation": "황금돛 상단연맹"
+    },
+    "ER-NPC-044": {
+      "rank": "상단 호위",
+      "level": 25,
+      "stats": {
+        "strength": 23,
+        "agility": 27,
+        "intelligence": 29,
+        "constitution": 25,
+        "mana": 26,
+        "hp": 367,
+        "max_hp": 367,
+        "mp": 196,
+        "max_mp": 196
+      },
+      "appearance": "남40 검은 수염 녹색 눈 모직옷",
+      "location_id": "E4",
+      "affiliation": "회색다리 대상단"
+    },
+    "ER-NPC-045": {
+      "rank": "상단 실무자",
+      "level": 32,
+      "stats": {
+        "strength": 29,
+        "agility": 30,
+        "intelligence": 35,
+        "constitution": 26,
+        "mana": 28,
+        "hp": 429,
+        "max_hp": 429,
+        "mp": 208,
+        "max_mp": 208
+      },
+      "appearance": "남26 은갈 머리 회청 눈 녹색 목도리",
+      "location_id": "W5",
+      "affiliation": "회색다리 대상단"
+    },
+    "ER-NPC-046": {
+      "rank": "농민 활동가",
+      "level": 39,
+      "stats": {
+        "strength": 28,
+        "agility": 32,
+        "intelligence": 42,
+        "constitution": 34,
+        "mana": 30,
+        "hp": 525,
+        "max_hp": 525,
+        "mp": 220,
+        "max_mp": 220
+      },
+      "appearance": "여31 검은 땋은머리 갈색 눈 작업복",
+      "location_id": "W3",
+      "affiliation": "새벽의 들불"
+    },
+    "ER-NPC-047": {
+      "rank": "곡물 배급원",
+      "level": 6,
+      "stats": {
+        "strength": 16,
+        "agility": 17,
+        "intelligence": 12,
+        "constitution": 13,
+        "mana": 13,
+        "hp": 163,
+        "max_hp": 163,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "남45 회갈 머리 갈색 눈 밀짚 모자",
+      "location_id": "W3",
+      "affiliation": "새벽의 들불"
+    },
+    "ER-NPC-048": {
+      "rank": "광부 안전감독",
+      "level": 13,
+      "stats": {
+        "strength": 15,
+        "agility": 19,
+        "intelligence": 19,
+        "constitution": 20,
+        "mana": 16,
+        "hp": 249,
+        "max_hp": 249,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "여34 진갈 머리 구릿빛 피부 황동 고글",
+      "location_id": "E2",
+      "affiliation": "청회 수정회"
+    },
+    "ER-NPC-049": {
+      "rank": "노동 협상단원",
+      "level": 20,
+      "stats": {
+        "strength": 21,
+        "agility": 22,
+        "intelligence": 25,
+        "constitution": 21,
+        "mana": 18,
+        "hp": 302,
+        "max_hp": 302,
+        "mp": 148,
+        "max_mp": 148
+      },
+      "appearance": "남42 검은 단발 푸른 눈 붉은 스카프",
+      "location_id": "E3",
+      "affiliation": "청회 수정회"
+    },
+    "ER-NPC-050": {
+      "rank": "어부 조합원",
+      "level": 27,
+      "stats": {
+        "strength": 21,
+        "agility": 24,
+        "intelligence": 31,
+        "constitution": 22,
+        "mana": 20,
+        "hp": 329,
+        "max_hp": 329,
+        "mp": 160,
+        "max_mp": 160
+      },
+      "appearance": "여37 검정 곱슬 갈색 피부 청록 작업복",
+      "location_id": "S3",
+      "affiliation": "흰물결 자치동맹"
+    },
+    "ER-NPC-051": {
+      "rank": "항만 징세감시",
+      "level": 34,
+      "stats": {
+        "strength": 27,
+        "agility": 33,
+        "intelligence": 37,
+        "constitution": 30,
+        "mana": 30,
+        "hp": 464,
+        "max_hp": 464,
+        "mp": 220,
+        "max_mp": 220
+      },
+      "appearance": "남50 은회 머리 청록 눈 앞치마",
+      "location_id": "S1",
+      "affiliation": "흰물결 자치동맹"
+    },
+    "ER-NPC-052": {
+      "rank": "전쟁고아 교사",
+      "level": 41,
+      "stats": {
+        "strength": 33,
+        "agility": 35,
+        "intelligence": 44,
+        "constitution": 31,
+        "mana": 32,
+        "hp": 533,
+        "max_hp": 533,
+        "mp": 232,
+        "max_mp": 232
+      },
+      "appearance": "여28 흑발 녹색 눈 회백 성의",
+      "location_id": "W3",
+      "affiliation": "전쟁유족 공동구호회"
+    },
+    "ER-NPC-053": {
+      "rank": "중재 서기관",
+      "level": 8,
+      "stats": {
+        "strength": 14,
+        "agility": 13,
+        "intelligence": 14,
+        "constitution": 17,
+        "mana": 15,
+        "hp": 203,
+        "max_hp": 203,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "남49 긴 회발 갈색 눈 남색 코트",
+      "location_id": "S2",
+      "affiliation": "세국 전쟁중재회"
+    },
+    "ER-NPC-054": {
+      "rank": "전시 번역관",
+      "level": 15,
+      "stats": {
+        "strength": 20,
+        "agility": 22,
+        "intelligence": 20,
+        "constitution": 18,
+        "mana": 18,
+        "hp": 252,
+        "max_hp": 252,
+        "mp": 148,
+        "max_mp": 148
+      },
+      "appearance": "여32 검은 웨이브 청회 눈 붉은 필기첩",
+      "location_id": "S2",
+      "affiliation": "세국 전쟁중재회"
+    },
+    "ER-NPC-055": {
+      "rank": "도서 상인",
+      "level": 22,
+      "stats": {
+        "strength": 19,
+        "agility": 25,
+        "intelligence": 27,
+        "constitution": 25,
+        "mana": 20,
+        "hp": 338,
+        "max_hp": 338,
+        "mp": 160,
+        "max_mp": 160
+      },
+      "appearance": "남36 백갈 단발 갈색 눈 보라 가방",
+      "location_id": "E4",
+      "affiliation": "고요한 부엉이"
+    },
+    "ER-NPC-056": {
+      "rank": "하급 관료",
+      "level": 29,
+      "stats": {
+        "strength": 26,
+        "agility": 27,
+        "intelligence": 33,
+        "constitution": 26,
+        "mana": 22,
+        "hp": 404,
+        "max_hp": 404,
+        "mp": 172,
+        "max_mp": 172
+      },
+      "appearance": "남43 금테 안경 백회 머리 청색 외투",
+      "location_id": "W2",
+      "affiliation": "발렌하르트 공작가"
+    },
+    "ER-NPC-057": {
+      "rank": "치료사",
+      "level": 36,
+      "stats": {
+        "strength": 25,
+        "agility": 29,
+        "intelligence": 39,
+        "constitution": 27,
+        "mana": 25,
+        "hp": 426,
+        "max_hp": 426,
+        "mp": 190,
+        "max_mp": 190
+      },
+      "appearance": "여38 밤갈 곱슬 황갈 눈 털망토",
+      "location_id": "W1",
+      "affiliation": "노르발트 변경백가"
+    },
+    "ER-NPC-058": {
+      "rank": "곡창 감독관",
+      "level": 43,
+      "stats": {
+        "strength": 31,
+        "agility": 38,
+        "intelligence": 46,
+        "constitution": 35,
+        "mana": 34,
+        "hp": 564,
+        "max_hp": 564,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "남29 금발 녹색 눈 장부가방",
+      "location_id": "W3",
+      "affiliation": "엘름베르크 백작가"
+    },
+    "ER-NPC-059": {
+      "rank": "장부 보조원",
+      "level": 10,
+      "stats": {
+        "strength": 19,
+        "agility": 16,
+        "intelligence": 16,
+        "constitution": 14,
+        "mana": 17,
+        "hp": 194,
+        "max_hp": 194,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "여25 은갈 머리 갈색 눈 흰 조끼",
+      "location_id": "S4",
+      "affiliation": "솔메리아 백작가"
+    },
+    "ER-NPC-060": {
+      "rank": "외교 서기관",
+      "level": 17,
+      "stats": {
+        "strength": 18,
+        "agility": 18,
+        "intelligence": 22,
+        "constitution": 22,
+        "mana": 20,
+        "hp": 292,
+        "max_hp": 292,
+        "mp": 160,
+        "max_mp": 160
+      },
+      "appearance": "남41 흑갈 장발 녹색 눈 남청 제복",
+      "location_id": "CS",
+      "affiliation": "루메린 왕실"
+    },
+    "ER-NPC-061": {
+      "rank": "공방 조달관",
+      "level": 24,
+      "stats": {
+        "strength": 24,
+        "agility": 28,
+        "intelligence": 29,
+        "constitution": 22,
+        "mana": 22,
+        "hp": 339,
+        "max_hp": 339,
+        "mp": 172,
+        "max_mp": 172
+      },
+      "appearance": "남46 회색 단발 빙청 눈 남색 코트",
+      "location_id": "CE",
+      "affiliation": "드라켄 왕실"
+    },
+    "ER-NPC-062": {
+      "rank": "선박 의사",
+      "level": 31,
+      "stats": {
+        "strength": 24,
+        "agility": 30,
+        "intelligence": 35,
+        "constitution": 30,
+        "mana": 24,
+        "hp": 438,
+        "max_hp": 438,
+        "mp": 184,
+        "max_mp": 184
+      },
+      "appearance": "여27 갈색 단발 녹색 눈 푸른 가방",
+      "location_id": "S3",
+      "affiliation": "아쿠아렌 주민"
+    },
+    "ER-NPC-063": {
+      "rank": "감시탑 목수",
+      "level": 38,
+      "stats": {
+        "strength": 30,
+        "agility": 32,
+        "intelligence": 41,
+        "constitution": 31,
+        "mana": 27,
+        "hp": 502,
+        "max_hp": 502,
+        "mp": 202,
+        "max_mp": 202
+      },
+      "appearance": "남56 백발 검은 눈 두꺼운 장갑",
+      "location_id": "E1",
+      "affiliation": "칼트하임 주민"
+    },
+    "ER-NPC-064": {
+      "rank": "약초 재배자",
+      "level": 5,
+      "stats": {
+        "strength": 10,
+        "agility": 11,
+        "intelligence": 11,
+        "constitution": 10,
+        "mana": 10,
+        "hp": 108,
+        "max_hp": 108,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "appearance": "여33 검은 땋은머리 회색 눈 올리브 작업복",
+      "location_id": "S2",
+      "affiliation": "세르반 주민"
+    },
+    "ER-NPC-065": {
+      "rank": "교량 통행인",
+      "level": 12,
+      "stats": {
+        "strength": 16,
+        "agility": 20,
+        "intelligence": 18,
+        "constitution": 18,
+        "mana": 19,
+        "hp": 231,
+        "max_hp": 231,
+        "mp": 154,
+        "max_mp": 154
+      },
+      "appearance": "남19 갈색 곱슬 녹색 눈 회색 후드",
+      "location_id": "E4",
+      "affiliation": "실베른 주민"
+    },
+    "ER-NPC-066": {
+      "rank": "도적 두목",
+      "level": 13,
+      "stats": {
+        "strength": 26,
+        "agility": 23,
+        "intelligence": 11,
+        "constitution": 16,
+        "mana": 15,
+        "hp": 250,
+        "max_hp": 250,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "남41 흉터난 코 검은 머리 갈색 갑옷",
+      "location_id": "W3",
+      "affiliation": "곡창길 약탈단"
+    },
+    "ER-NPC-067": {
+      "rank": "도적 궁수",
+      "level": 20,
+      "stats": {
+        "strength": 30,
+        "agility": 27,
+        "intelligence": 13,
+        "constitution": 24,
+        "mana": 15,
+        "hp": 367,
+        "max_hp": 367,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "남29 회갈 머리 금갈 눈 누더기 망토",
+      "location_id": "W5",
+      "affiliation": "관문길 도적단"
+    },
+    "ER-NPC-068": {
+      "rank": "매복 전투원",
+      "level": 27,
+      "stats": {
+        "strength": 40,
+        "agility": 39,
+        "intelligence": 15,
+        "constitution": 26,
+        "mana": 14,
+        "hp": 458,
+        "max_hp": 458,
+        "mp": 124,
+        "max_mp": 124
+      },
+      "appearance": "여32 흑발 뺨 흉터 검정 가죽갑",
+      "location_id": "E4",
+      "affiliation": "산길 약탈단"
+    },
+    "ER-NPC-069": {
+      "rank": "탈영병 전사",
+      "level": 34,
+      "stats": {
+        "strength": 43,
+        "agility": 45,
+        "intelligence": 16,
+        "constitution": 34,
+        "mana": 14,
+        "hp": 577,
+        "max_hp": 577,
+        "mp": 124,
+        "max_mp": 124
+      },
+      "appearance": "남38 삭발 탁한 푸른 눈 파손 철갑",
+      "location_id": "W4",
+      "affiliation": "전장 탈영병단"
+    },
+    "ER-NPC-070": {
+      "rank": "위조 계약인",
+      "level": 11,
+      "stats": {
+        "strength": 22,
+        "agility": 19,
+        "intelligence": 11,
+        "constitution": 17,
+        "mana": 11,
+        "hp": 238,
+        "max_hp": 238,
+        "mp": 106,
+        "max_mp": 106
+      },
+      "appearance": "여35 자색 머리 은색 눈 푸른 후드",
+      "location_id": "S1",
+      "affiliation": "항만 밀수단"
+    },
+    "ER-NPC-071": {
+      "rank": "해적 부선장",
+      "level": 18,
+      "stats": {
+        "strength": 26,
+        "agility": 25,
+        "intelligence": 12,
+        "constitution": 18,
+        "mana": 10,
+        "hp": 284,
+        "max_hp": 284,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "appearance": "남43 검은 수염 흰쪽 눈 붉은 허리띠",
+      "location_id": "S3",
+      "affiliation": "남동 해적단"
+    },
+    "ER-NPC-072": {
+      "rank": "해적 투척수",
+      "level": 25,
+      "stats": {
+        "strength": 36,
+        "agility": 37,
+        "intelligence": 14,
+        "constitution": 26,
+        "mana": 17,
+        "hp": 432,
+        "max_hp": 432,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "여24 잿빛 단발 갈색 눈 낡은 가죽조끼",
+      "location_id": "S3",
+      "affiliation": "남동 해적단"
+    },
+    "ER-NPC-073": {
+      "rank": "갱도 파괴자",
+      "level": 32,
+      "stats": {
+        "strength": 46,
+        "agility": 41,
+        "intelligence": 16,
+        "constitution": 28,
+        "mana": 17,
+        "hp": 529,
+        "max_hp": 529,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "남47 회색 수염 검은 눈 광부 헬멧",
+      "location_id": "E3",
+      "affiliation": "광맥 도굴단"
+    },
+    "ER-NPC-074": {
+      "rank": "기계 도둑",
+      "level": 9,
+      "stats": {
+        "strength": 18,
+        "agility": 17,
+        "intelligence": 10,
+        "constitution": 18,
+        "mana": 13,
+        "hp": 228,
+        "max_hp": 228,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "남21 적발 호박 눈 금속 도구띠",
+      "location_id": "E2",
+      "affiliation": "공방 절도단"
+    },
+    "ER-NPC-075": {
+      "rank": "사기 협상가",
+      "level": 16,
+      "stats": {
+        "strength": 28,
+        "agility": 29,
+        "intelligence": 12,
+        "constitution": 19,
+        "mana": 13,
+        "hp": 297,
+        "max_hp": 297,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "여34 금갈 장발 청록 눈 자주 예복",
+      "location_id": "W2",
+      "affiliation": "귀족 사칭단"
+    },
+    "ER-NPC-076": {
+      "rank": "마차 습격자",
+      "level": 23,
+      "stats": {
+        "strength": 32,
+        "agility": 33,
+        "intelligence": 14,
+        "constitution": 27,
+        "mana": 13,
+        "hp": 416,
+        "max_hp": 416,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "남36 흑갈 머리 녹색 눈 녹슨 창",
+      "location_id": "S2",
+      "affiliation": "전쟁 물자 도적단"
+    },
+    "ER-NPC-077": {
+      "rank": "불법 수렵꾼",
+      "level": 30,
+      "stats": {
+        "strength": 42,
+        "agility": 39,
+        "intelligence": 15,
+        "constitution": 28,
+        "mana": 13,
+        "hp": 499,
+        "max_hp": 499,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "여28 백발 은안 모피 외투",
+      "location_id": "W1",
+      "affiliation": "설산 밀렵단"
+    },
+    "ER-NPC-078": {
+      "rank": "유적 약탈자",
+      "level": 37,
+      "stats": {
+        "strength": 45,
+        "agility": 43,
+        "intelligence": 17,
+        "constitution": 30,
+        "mana": 13,
+        "hp": 557,
+        "max_hp": 557,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "남40 굵은 턱수염 흑안 황동 장비",
+      "location_id": "E1",
+      "affiliation": "위험지대 불법 탐사대"
+    },
+    "ER-NPC-079": {
+      "rank": "위조품 판매자",
+      "level": 14,
+      "stats": {
+        "strength": 24,
+        "agility": 26,
+        "intelligence": 11,
+        "constitution": 20,
+        "mana": 16,
+        "hp": 285,
+        "max_hp": 285,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "남50 은발 녹안 화려한 반지",
+      "location_id": "S4",
+      "affiliation": "가짜 경매단"
+    },
+    "ER-NPC-080": {
+      "rank": "거짓 검문관",
+      "level": 21,
+      "stats": {
+        "strength": 35,
+        "agility": 30,
+        "intelligence": 13,
+        "constitution": 21,
+        "mana": 16,
+        "hp": 365,
+        "max_hp": 365,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "여31 검청 단발 회안 가짜 휘장",
+      "location_id": "W4",
+      "affiliation": "전시 강도단"
+    },
+    "ER-NPC-081": {
+      "rank": "하급",
+      "level": 4,
+      "stats": {
+        "strength": 20,
+        "agility": 17,
+        "intelligence": 9,
+        "constitution": 21,
+        "mana": 15,
+        "hp": 249,
+        "max_hp": 249,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "은회 갈기와 눈송이 털 푸른 눈 네발 늑대",
+      "location_id": "W1",
+      "affiliation": "북방 야생 마수"
+    },
+    "ER-NPC-082": {
+      "rank": "중급",
+      "level": 21,
+      "stats": {
+        "strength": 35,
+        "agility": 31,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 16,
+        "hp": 413,
+        "max_hp": 413,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "하얀 거대 뿔과 푸른 맥동 문양 설산 사슴",
+      "location_id": "W1",
+      "affiliation": "북방 야생 마수"
+    },
+    "ER-NPC-083": {
+      "rank": "하급",
+      "level": 8,
+      "stats": {
+        "strength": 22,
+        "agility": 22,
+        "intelligence": 10,
+        "constitution": 23,
+        "mana": 12,
+        "hp": 288,
+        "max_hp": 288,
+        "mp": 112,
+        "max_mp": 112
+      },
+      "appearance": "먹색 판금 같은 등피 회색 엄니",
+      "location_id": "W3",
+      "affiliation": "평야 야생 마수"
+    },
+    "ER-NPC-084": {
+      "rank": "하급",
+      "level": 5,
+      "stats": {
+        "strength": 23,
+        "agility": 18,
+        "intelligence": 10,
+        "constitution": 19,
+        "mana": 11,
+        "hp": 242,
+        "max_hp": 242,
+        "mp": 106,
+        "max_mp": 106
+      },
+      "appearance": "검은 긴 꼬리 붉은 수염 번뜩이는 쥐",
+      "location_id": "W3",
+      "affiliation": "평야 야생 마수"
+    },
+    "ER-NPC-085": {
+      "rank": "중급",
+      "level": 26,
+      "stats": {
+        "strength": 34,
+        "agility": 27,
+        "intelligence": 12,
+        "constitution": 26,
+        "mana": 14,
+        "hp": 424,
+        "max_hp": 424,
+        "mp": 124,
+        "max_mp": 124
+      },
+      "appearance": "진홍 등가시 황금 세로 동공 도마뱀",
+      "location_id": "W4",
+      "affiliation": "전장 야생 마수"
+    },
+    "ER-NPC-086": {
+      "rank": "중급",
+      "level": 17,
+      "stats": {
+        "strength": 30,
+        "agility": 28,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 19,
+        "hp": 376,
+        "max_hp": 376,
+        "mp": 154,
+        "max_mp": 154
+      },
+      "appearance": "돌빛 날개 금빛 뿔발톱의 거대 독수리",
+      "location_id": "E4",
+      "affiliation": "협곡 야생 마수"
+    },
+    "ER-NPC-087": {
+      "rank": "하급",
+      "level": 6,
+      "stats": {
+        "strength": 26,
+        "agility": 20,
+        "intelligence": 10,
+        "constitution": 17,
+        "mana": 16,
+        "hp": 236,
+        "max_hp": 236,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "투명 수정 껍질 자줏빛 다리의 광충",
+      "location_id": "E3",
+      "affiliation": "광산 야생 마수"
+    },
+    "ER-NPC-088": {
+      "rank": "중급",
+      "level": 15,
+      "stats": {
+        "strength": 28,
+        "agility": 22,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 17,
+        "hp": 362,
+        "max_hp": 362,
+        "mp": 142,
+        "max_mp": 142
+      },
+      "appearance": "청보라 수정 등딱지 다리 여덟의 거미",
+      "location_id": "E2",
+      "affiliation": "광산 야생 마수"
+    },
+    "ER-NPC-089": {
+      "rank": "중급",
+      "level": 22,
+      "stats": {
+        "strength": 36,
+        "agility": 31,
+        "intelligence": 11,
+        "constitution": 27,
+        "mana": 16,
+        "hp": 431,
+        "max_hp": 431,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "청흑 뿔과 청백 전류 털의 산양",
+      "location_id": "E1",
+      "affiliation": "고원 야생 마수"
+    },
+    "ER-NPC-090": {
+      "rank": "하급",
+      "level": 7,
+      "stats": {
+        "strength": 21,
+        "agility": 21,
+        "intelligence": 9,
+        "constitution": 24,
+        "mana": 13,
+        "hp": 291,
+        "max_hp": 291,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "회색 반투명 막날개 흰 눈 박쥐",
+      "location_id": "E1",
+      "affiliation": "마나 이상지대 변두리"
+    },
+    "ER-NPC-091": {
+      "rank": "중급",
+      "level": 20,
+      "stats": {
+        "strength": 33,
+        "agility": 27,
+        "intelligence": 11,
+        "constitution": 26,
+        "mana": 13,
+        "hp": 400,
+        "max_hp": 400,
+        "mp": 118,
+        "max_mp": 118
+      },
+      "appearance": "청록 비늘 작은 지느러미날개 긴 뱀",
+      "location_id": "S3",
+      "affiliation": "연안 야생 마수"
+    },
+    "ER-NPC-092": {
+      "rank": "하급",
+      "level": 11,
+      "stats": {
+        "strength": 23,
+        "agility": 19,
+        "intelligence": 10,
+        "constitution": 18,
+        "mana": 10,
+        "hp": 250,
+        "max_hp": 250,
+        "mp": 100,
+        "max_mp": 100
+      },
+      "appearance": "산호빛 등갑 푸른 부리의 게",
+      "location_id": "S1",
+      "affiliation": "항만 야생 마수"
+    },
+    "ER-NPC-093": {
+      "rank": "상급",
+      "level": 34,
+      "stats": {
+        "strength": 42,
+        "agility": 37,
+        "intelligence": 12,
+        "constitution": 34,
+        "mana": 21,
+        "hp": 574,
+        "max_hp": 574,
+        "mp": 166,
+        "max_mp": 166
+      },
+      "appearance": "검은 광택 피부 백진주 이빨의 장어",
+      "location_id": "S1",
+      "affiliation": "심해 야생 마수"
+    },
+    "ER-NPC-094": {
+      "rank": "하급",
+      "level": 5,
+      "stats": {
+        "strength": 25,
+        "agility": 18,
+        "intelligence": 10,
+        "constitution": 17,
+        "mana": 16,
+        "hp": 229,
+        "max_hp": 229,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": "은청 비늘과 청록 지느러미의 수중어",
+      "location_id": "S3",
+      "affiliation": "연안 야생 마수"
+    },
+    "ER-NPC-095": {
+      "rank": "하급",
+      "level": 12,
+      "stats": {
+        "strength": 25,
+        "agility": 21,
+        "intelligence": 9,
+        "constitution": 24,
+        "mana": 15,
+        "hp": 322,
+        "max_hp": 322,
+        "mp": 130,
+        "max_mp": 130
+      },
+      "appearance": "황금 등불무늬 검푸른 커다란 나방",
+      "location_id": "S4",
+      "affiliation": "남부 야생 마수"
+    },
+    "ER-NPC-096": {
+      "rank": "하급",
+      "level": 9,
+      "stats": {
+        "strength": 27,
+        "agility": 24,
+        "intelligence": 9,
+        "constitution": 19,
+        "mana": 14,
+        "hp": 269,
+        "max_hp": 269,
+        "mp": 124,
+        "max_mp": 124
+      },
+      "appearance": "황토 털 네 꼬리 작은 여우",
+      "location_id": "S2",
+      "affiliation": "남부 들판 야생 마수"
+    },
+    "ER-NPC-097": {
+      "rank": "엘리트",
+      "level": 62,
+      "stats": {
+        "strength": 59,
+        "agility": 50,
+        "intelligence": 15,
+        "constitution": 51,
+        "mana": 21,
+        "hp": 956,
+        "max_hp": 956,
+        "mp": 166,
+        "max_mp": 166
+      },
+      "appearance": "움직이는 고목 몸통 녹빛 눈 깊은 뿌리다리",
+      "location_id": "B1",
+      "affiliation": "북중 원시림"
+    },
+    "ER-NPC-098": {
+      "rank": "상급",
+      "level": 49,
+      "stats": {
+        "strength": 52,
+        "agility": 41,
+        "intelligence": 14,
+        "constitution": 41,
+        "mana": 18,
+        "hp": 761,
+        "max_hp": 761,
+        "mp": 148,
+        "max_mp": 148
+      },
+      "appearance": "검은 뿔고리 붉은 눈 이끼털의 사슴",
+      "location_id": "B1",
+      "affiliation": "북중 원시림"
+    },
+    "ER-NPC-099": {
+      "rank": "미스틱",
+      "level": 76,
+      "stats": {
+        "strength": 68,
+        "agility": 55,
+        "intelligence": 17,
+        "constitution": 52,
+        "mana": 20,
+        "hp": 1092,
+        "max_hp": 1092,
+        "mp": 160,
+        "max_mp": 160
+      },
+      "appearance": "청백 균열무늬 검은 털 여섯발 사냥개",
+      "location_id": "A1",
+      "affiliation": "북동 마나 이상지대"
+    },
+    "ER-NPC-100": {
+      "rank": "엘리트",
+      "level": 63,
+      "stats": {
+        "strength": 62,
+        "agility": 52,
+        "intelligence": 15,
+        "constitution": 49,
+        "mana": 24,
+        "hp": 965,
+        "max_hp": 965,
+        "mp": 184,
+        "max_mp": 184
+      },
+      "appearance": "고대 문자 돌갑각 금빛 촉각의 거대 곤충",
+      "location_id": "D1",
+      "affiliation": "북서 고대 던전"
+    },
+    "ER-CORE-001": {
+      "rank": "국왕",
+      "level": 66,
+      "stats": {
+        "strength": 51,
+        "agility": 41,
+        "intelligence": 61,
+        "constitution": 43,
+        "mana": 38,
+        "hp": 848,
+        "max_hp": 848,
+        "mp": 268,
+        "max_mp": 268
+      },
+      "appearance": "남48, 짙은 금갈색 짧은 머리, 푸른 눈, 은백 갑옷·청금 망토",
+      "location_id": "CW",
+      "affiliation": "벨로아 왕실"
+    },
+    "ER-CORE-002": {
+      "rank": "국왕",
+      "level": 63,
+      "stats": {
+        "strength": 49,
+        "agility": 40,
+        "intelligence": 59,
+        "constitution": 42,
+        "mana": 37,
+        "hp": 813,
+        "max_hp": 813,
+        "mp": 262,
+        "max_mp": 262
+      },
+      "appearance": "남36, 검청색 중단발, 청회 눈, 남색 룬 예복",
+      "location_id": "CE",
+      "affiliation": "드라켄 왕실"
+    },
+    "ER-CORE-003": {
+      "rank": "여왕",
+      "level": 59,
+      "stats": {
+        "strength": 47,
+        "agility": 39,
+        "intelligence": 57,
+        "constitution": 40,
+        "mana": 35,
+        "hp": 766,
+        "max_hp": 766,
+        "mp": 250,
+        "max_mp": 250
+      },
+      "appearance": "여32, 꿀빛 금발 긴 웨이브, 청록 눈, 백청금 왕실 예복",
+      "location_id": "CS",
+      "affiliation": "루메린 왕실"
+    },
+    "ER-CORE-004": {
+      "rank": "영주",
+      "level": 55,
+      "stats": {
+        "strength": 46,
+        "agility": 42,
+        "intelligence": 47,
+        "constitution": 44,
+        "mana": 33,
+        "hp": 782,
+        "max_hp": 782,
+        "mp": 238,
+        "max_mp": 238
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "W1",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-005": {
+      "rank": "영주",
+      "level": 65,
+      "stats": {
+        "strength": 51,
+        "agility": 48,
+        "intelligence": 53,
+        "constitution": 50,
+        "mana": 37,
+        "hp": 915,
+        "max_hp": 915,
+        "mp": 262,
+        "max_mp": 262
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "W2",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-006": {
+      "rank": "영주",
+      "level": 47,
+      "stats": {
+        "strength": 40,
+        "agility": 38,
+        "intelligence": 42,
+        "constitution": 39,
+        "mana": 29,
+        "hp": 664,
+        "max_hp": 664,
+        "mp": 214,
+        "max_mp": 214
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "W3",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-007": {
+      "rank": "영주",
+      "level": 57,
+      "stats": {
+        "strength": 47,
+        "agility": 44,
+        "intelligence": 48,
+        "constitution": 45,
+        "mana": 34,
+        "hp": 806,
+        "max_hp": 806,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "W4",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-008": {
+      "rank": "영주",
+      "level": 49,
+      "stats": {
+        "strength": 42,
+        "agility": 39,
+        "intelligence": 43,
+        "constitution": 40,
+        "mana": 30,
+        "hp": 694,
+        "max_hp": 694,
+        "mp": 220,
+        "max_mp": 220
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "W5",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-009": {
+      "rank": "영주",
+      "level": 58,
+      "stats": {
+        "strength": 48,
+        "agility": 44,
+        "intelligence": 49,
+        "constitution": 46,
+        "mana": 34,
+        "hp": 826,
+        "max_hp": 826,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "E1",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-010": {
+      "rank": "영주",
+      "level": 61,
+      "stats": {
+        "strength": 50,
+        "agility": 46,
+        "intelligence": 51,
+        "constitution": 48,
+        "mana": 35,
+        "hp": 870,
+        "max_hp": 870,
+        "mp": 250,
+        "max_mp": 250
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "E2",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-011": {
+      "rank": "영주",
+      "level": 58,
+      "stats": {
+        "strength": 48,
+        "agility": 44,
+        "intelligence": 49,
+        "constitution": 46,
+        "mana": 34,
+        "hp": 826,
+        "max_hp": 826,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "E3",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-012": {
+      "rank": "영주",
+      "level": 41,
+      "stats": {
+        "strength": 36,
+        "agility": 34,
+        "intelligence": 38,
+        "constitution": 35,
+        "mana": 27,
+        "hp": 582,
+        "max_hp": 582,
+        "mp": 202,
+        "max_mp": 202
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "E4",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-013": {
+      "rank": "영주",
+      "level": 55,
+      "stats": {
+        "strength": 46,
+        "agility": 42,
+        "intelligence": 47,
+        "constitution": 44,
+        "mana": 33,
+        "hp": 782,
+        "max_hp": 782,
+        "mp": 238,
+        "max_mp": 238
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "S1",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-014": {
+      "rank": "영주",
+      "level": 61,
+      "stats": {
+        "strength": 50,
+        "agility": 46,
+        "intelligence": 51,
+        "constitution": 48,
+        "mana": 35,
+        "hp": 870,
+        "max_hp": 870,
+        "mp": 250,
+        "max_mp": 250
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "S2",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-015": {
+      "rank": "영주",
+      "level": 52,
+      "stats": {
+        "strength": 44,
+        "agility": 40,
+        "intelligence": 45,
+        "constitution": 42,
+        "mana": 32,
+        "hp": 738,
+        "max_hp": 738,
+        "mp": 232,
+        "max_mp": 232
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "S3",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-016": {
+      "rank": "영주",
+      "level": 60,
+      "stats": {
+        "strength": 49,
+        "agility": 45,
+        "intelligence": 51,
+        "constitution": 47,
+        "mana": 35,
+        "hp": 850,
+        "max_hp": 850,
+        "mp": 250,
+        "max_mp": 250
+      },
+      "appearance": "해당 전문 설정집 참조",
+      "location_id": "S4",
+      "affiliation": "영주 가문"
+    },
+    "ER-CORE-017": {
+      "rank": "성자/성녀",
+      "level": 64,
+      "stats": {
+        "strength": 24,
+        "agility": 30,
+        "intelligence": 64,
+        "constitution": 35,
+        "mana": 62,
+        "hp": 599,
+        "max_hp": 599,
+        "mp": 412,
+        "max_mp": 412
+      },
+      "appearance": "- **현직 성자:** **율렌 크라스** (남 66, 은회빛 대머리·금갈색 눈·끝이 닳은 청남색 외투).",
+      "location_id": "W2",
+      "affiliation": "테오르 교단"
+    },
+    "ER-CORE-018": {
+      "rank": "성자/성녀",
+      "level": 44,
+      "stats": {
+        "strength": 21,
+        "agility": 26,
+        "intelligence": 52,
+        "constitution": 29,
+        "mana": 50,
+        "hp": 456,
+        "max_hp": 456,
+        "mp": 340,
+        "max_mp": 340
+      },
+      "appearance": "- **현직 성녀:** **세아 메르** (여 24, 구릿빛 피부·검은 단발·은청 눈·흰 여행 코트).",
+      "location_id": "S2",
+      "affiliation": "아스텔리온 교단"
+    },
+    "ER-CORE-019": {
+      "rank": "성자/성녀",
+      "level": 37,
+      "stats": {
+        "strength": 19,
+        "agility": 23,
+        "intelligence": 46,
+        "constitution": 26,
+        "mana": 44,
+        "hp": 395,
+        "max_hp": 395,
+        "mp": 304,
+        "max_mp": 304
+      },
+      "appearance": "- **현직 성녀:** **로나 에일** (여 19, 갈색 곱슬머리·녹금 눈·수수한 회백 성의).",
+      "location_id": "W3",
+      "affiliation": "엘리시아 교단"
+    },
+    "ER-CORE-020": {
+      "rank": "성자/성녀",
+      "level": 51,
+      "stats": {
+        "strength": 22,
+        "agility": 27,
+        "intelligence": 56,
+        "constitution": 31,
+        "mana": 55,
+        "hp": 504,
+        "max_hp": 504,
+        "mp": 370,
+        "max_mp": 370
+      },
+      "appearance": "- **현직 성자:** **다미엔 솔** (남 37, 흑갈색 장발·창백한 피부·은색 테두리 검은 예복).",
+      "location_id": "W1",
+      "affiliation": "모르베인 교단"
+    },
+    "ER-CORE-021": {
+      "rank": "성자/성녀",
+      "level": 53,
+      "stats": {
+        "strength": 22,
+        "agility": 28,
+        "intelligence": 57,
+        "constitution": 32,
+        "mana": 56,
+        "hp": 520,
+        "max_hp": 520,
+        "mp": 376,
+        "max_mp": 376
+      },
+      "appearance": "- **현직 성녀:** **카르민 테라** (여 30, 붉은 짧은 머리·호박색 눈·구릿빛 근육·망치 장식).",
+      "location_id": "W4",
+      "affiliation": "이그나르 교단"
+    },
+    "ER-CORE-022": {
+      "rank": "성자/성녀",
+      "level": 56,
+      "stats": {
+        "strength": 22,
+        "agility": 28,
+        "intelligence": 59,
+        "constitution": 33,
+        "mana": 58,
+        "hp": 540,
+        "max_hp": 540,
+        "mp": 388,
+        "max_mp": 388
+      },
+      "appearance": "- **현직 성녀:** **이오나 베르** (여 41, 짙은 파랑 긴 땋은 머리·청록 눈·진주 장식).",
+      "location_id": "S1",
+      "affiliation": "네레이아 교단"
+    },
+    "ER-CORE-023": {
+      "rank": "성자/성녀",
+      "level": 39,
+      "stats": {
+        "strength": 19,
+        "agility": 24,
+        "intelligence": 48,
+        "constitution": 27,
+        "mana": 46,
+        "hp": 411,
+        "max_hp": 411,
+        "mp": 316,
+        "max_mp": 316
+      },
+      "appearance": "- **현직 성자:** **타빈 루오** (남 22, 옅은 백갈색 헝클어진 머리·녹안·여행자 망토).",
+      "location_id": "S3",
+      "affiliation": "실피레아 교단"
+    },
+    "ER-CORE-024": {
+      "rank": "성자/성녀",
+      "level": 51,
+      "stats": {
+        "strength": 22,
+        "agility": 27,
+        "intelligence": 56,
+        "constitution": 31,
+        "mana": 55,
+        "hp": 504,
+        "max_hp": 504,
+        "mp": 370,
+        "max_mp": 370
+      },
+      "appearance": "- **현직 성자:** **레이카스 룬** (남 28, 은자색 짧은 머리·청백 눈·고글과 남청 제복).",
+      "location_id": "E2",
+      "affiliation": "볼테리온 교단"
+    },
+    "ER-CORE-025": {
+      "rank": "성자/성녀",
+      "level": 58,
+      "stats": {
+        "strength": 23,
+        "agility": 29,
+        "intelligence": 60,
+        "constitution": 33,
+        "mana": 59,
+        "hp": 553,
+        "max_hp": 553,
+        "mp": 394,
+        "max_mp": 394
+      },
+      "appearance": "- **현직 성녀:** **에스텔 루나르** (여 26, 백금색 곧은 머리·황금 눈·흰금 성의).",
+      "location_id": "W2",
+      "affiliation": "루미아 교단"
+    },
+    "ER-CORE-026": {
+      "rank": "성자/성녀",
+      "level": 48,
+      "stats": {
+        "strength": 21,
+        "agility": 26,
+        "intelligence": 55,
+        "constitution": 30,
+        "mana": 53,
+        "hp": 478,
+        "max_hp": 478,
+        "mp": 358,
+        "max_mp": 358
+      },
+      "appearance": "- **현직 성자:** **니엘 마크** (남 33, 흑자색 짧은 곱슬머리·은회색 눈·검은 장갑).",
+      "location_id": "E1",
+      "affiliation": "녹테라 교단"
+    },
+    "ER-CORE-027": {
+      "rank": "성자/성녀",
+      "level": 55,
+      "stats": {
+        "strength": 22,
+        "agility": 28,
+        "intelligence": 59,
+        "constitution": 32,
+        "mana": 57,
+        "hp": 527,
+        "max_hp": 527,
+        "mp": 382,
+        "max_mp": 382
+      },
+      "appearance": "- **현직 성녀:** **베니아 사르** (여 46, 짧은 은갈색 머리·보라색 눈·회색-보라색 의복).",
+      "location_id": "S4",
+      "affiliation": "카이로스 교단"
+    },
+    "ER-CORE-028": {
+      "rank": "마스터 나이트",
+      "level": 89,
+      "stats": {
+        "strength": 120,
+        "agility": 105,
+        "intelligence": 42,
+        "constitution": 87,
+        "mana": 51,
+        "hp": 1904,
+        "max_hp": 1904,
+        "mp": 346,
+        "max_mp": 346
+      },
+      "appearance": "- **기사단장:** **로데릭 바란** (남 46, 밤금색 짧은 머리·남색 눈·넓은 어깨·깊은 턱 흉터). **경지:** 마스터 나이트.",
+      "location_id": "CW",
+      "affiliation": "청금사자 근위기사단"
+    },
+    "ER-CORE-029": {
+      "rank": "하이퍼 나이트",
+      "level": 71,
+      "stats": {
+        "strength": 88,
+        "agility": 78,
+        "intelligence": 30,
+        "constitution": 62,
+        "mana": 34,
+        "hp": 1302,
+        "max_hp": 1302,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "- **기사단장:** **리네트 로젠펠트** (여 33, 붉은 갈색 긴 땋은 머리·회청 눈·흉터 난 오른손). **경지:** 하이퍼 나이트.",
+      "location_id": "W4",
+      "affiliation": "적장미 선봉기사단"
+    },
+    "ER-CORE-030": {
+      "rank": "마스터 나이트",
+      "level": 87,
+      "stats": {
+        "strength": 119,
+        "agility": 104,
+        "intelligence": 42,
+        "constitution": 86,
+        "mana": 51,
+        "hp": 1875,
+        "max_hp": 1875,
+        "mp": 346,
+        "max_mp": 346
+      },
+      "appearance": "- **기사단장:** **카르스 에델** (남 42, 자색빛 흑발·얼음회안·가느다란 얼굴·청동 팔보호구). **경지:** 마스터 나이트.",
+      "location_id": "CE",
+      "affiliation": "청뢰성벽 기사단"
+    },
+    "ER-CORE-031": {
+      "rank": "하이퍼 나이트",
+      "level": 69,
+      "stats": {
+        "strength": 87,
+        "agility": 77,
+        "intelligence": 30,
+        "constitution": 61,
+        "mana": 34,
+        "hp": 1276,
+        "max_hp": 1276,
+        "mp": 244,
+        "max_mp": 244
+      },
+      "appearance": "- **기사단장:** **베라 칼트하임** (여 38, 백금색 짧은 머리·진청 눈·한쪽 볼에 화상). **경지:** 하이퍼 나이트.",
+      "location_id": "E1",
+      "affiliation": "흑정찰 균열기사단"
+    },
+    "ER-CORE-032": {
+      "rank": "마스터 나이트",
+      "level": 90,
+      "stats": {
+        "strength": 121,
+        "agility": 106,
+        "intelligence": 42,
+        "constitution": 87,
+        "mana": 51,
+        "hp": 1919,
+        "max_hp": 1919,
+        "mp": 346,
+        "max_mp": 346
+      },
+      "appearance": "- **기사단장:** **알렉시아 바레트** (여 40, 검푸른 단발·호박색 눈·갈색 피부·긴 코 흉터). **경지:** 마스터 나이트.",
+      "location_id": "CS",
+      "affiliation": "백파도 친위기사단"
+    },
+    "ER-CORE-033": {
+      "rank": "하이퍼 나이트",
+      "level": 66,
+      "stats": {
+        "strength": 85,
+        "agility": 76,
+        "intelligence": 29,
+        "constitution": 60,
+        "mana": 33,
+        "hp": 1233,
+        "max_hp": 1233,
+        "mp": 238,
+        "max_mp": 238
+      },
+      "appearance": "- **기사단장:** **루카 마리노** (남 35, 모래빛 웨이브 머리·녹청 눈·구릿빛 팔·짧은 수염). **경지:** 하이퍼 나이트.",
+      "location_id": "S3",
+      "affiliation": "해풍수호 기사단"
+    },
+    "ER-CORE-034": {
+      "rank": "6서클 마법사",
+      "level": 73,
+      "stats": {
+        "strength": 24,
+        "agility": 24,
+        "intelligence": 82,
+        "constitution": 31,
+        "mana": 62,
+        "hp": 588,
+        "max_hp": 588,
+        "mp": 412,
+        "max_mp": 412
+      },
+      "appearance": "- **탑주:** 오르델 비안 (남 61, 흰 짧은 곱슬머리·회청 눈·갈색 로브). **경지:** 6서클.",
+      "location_id": "W2",
+      "affiliation": "칠원기록탑"
+    },
+    "ER-CORE-035": {
+      "rank": "7서클 마법사",
+      "level": 91,
+      "stats": {
+        "strength": 27,
+        "agility": 27,
+        "intelligence": 95,
+        "constitution": 35,
+        "mana": 71,
+        "hp": 708,
+        "max_hp": 708,
+        "mp": 466,
+        "max_mp": 466
+      },
+      "appearance": "- **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클.",
+      "location_id": "E2",
+      "affiliation": "청동뇌명탑"
+    },
+    "ER-CORE-036": {
+      "rank": "6서클 마법사",
+      "level": 70,
+      "stats": {
+        "strength": 24,
+        "agility": 24,
+        "intelligence": 80,
+        "constitution": 30,
+        "mana": 60,
+        "hp": 569,
+        "max_hp": 569,
+        "mp": 400,
+        "max_mp": 400
+      },
+      "appearance": "- **탑주:** 마레나 에르노 (여 44, 남청색 포니테일·녹회색 눈·백청 망토). **경지:** 6서클.",
+      "location_id": "S3",
+      "affiliation": "청류융합탑"
+    },
+    "ER-CORE-037": {
+      "rank": "6서클 마법사",
+      "level": 75,
+      "stats": {
+        "strength": 25,
+        "agility": 24,
+        "intelligence": 84,
+        "constitution": 31,
+        "mana": 63,
+        "hp": 602,
+        "max_hp": 602,
+        "mp": 418,
+        "max_mp": 418
+      },
+      "appearance": "- **탑주:** 세드릭 바일 (남 52, 흑발에 은빛 가르마·서늘한 자안·회색 장포). **경지:** 6서클.",
+      "location_id": "S4",
+      "affiliation": "황혼음영탑"
+    },
+    "ER-CORE-038": {
+      "rank": "6서클 마법사",
+      "level": 72,
+      "stats": {
+        "strength": 24,
+        "agility": 24,
+        "intelligence": 82,
+        "constitution": 31,
+        "mana": 61,
+        "hp": 585,
+        "max_hp": 585,
+        "mp": 406,
+        "max_mp": 406
+      },
+      "appearance": "- **탑주:** 테레사 가른 (여 57, 붉은 회갈색 짧은 머리·검은 눈·두꺼운 작업복). **경지:** 6서클.",
+      "location_id": "E3",
+      "affiliation": "회색초석탑"
+    },
+    "ER-COM-001": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "182cm, 넓은 어깨와 굵은 팔, 거친 손과 오른쪽 눈썹의 작은 흉터.",
+      "location_id": "W1",
+      "affiliation": "영지 주민 · 독립 벌목 노동자"
+    },
+    "ER-COM-002": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "165cm, 튼튼한 체형, 햇볕에 그을린 피부와 양 볼의 옅은 주근깨.",
+      "location_id": "W3",
+      "affiliation": "영지 주민 · 곡물 재배 농가"
+    },
+    "ER-COM-003": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "176cm, 마른 근육형, 붉어진 코와 왼쪽 턱의 작은 점.",
+      "location_id": "W3",
+      "affiliation": "독립 운송 노동자"
+    },
+    "ER-COM-004": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "169cm, 탄탄한 팔과 둥근 턱, 볼에 작은 검댕 얼룩.",
+      "location_id": "W2",
+      "affiliation": "영지 민간 대장간의 작업 조수"
+    },
+    "ER-COM-005": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "173cm, 둥근 배와 두꺼운 손, 웃을 때 볼에 깊은 주름.",
+      "location_id": "W3",
+      "affiliation": "독립 빵집 운영자"
+    },
+    "ER-COM-006": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "162cm, 작고 날렵한 체형, 코 위의 옅은 주근깨.",
+      "location_id": "W5",
+      "affiliation": "영지 주민 · 소규모 양 사육 농가"
+    },
+    "ER-COM-007": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "174cm, 긴 팔과 날렵한 어깨, 왼쪽 볼의 옅은 긁힌 자국.",
+      "location_id": "W1",
+      "affiliation": "독립 사냥꾼"
+    },
+    "ER-COM-008": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "171cm, 마른 체형, 가는 입술과 긴 손가락.",
+      "location_id": "W4",
+      "affiliation": "로젠펠트 영지 징세 업무 보조"
+    },
+    "ER-COM-009": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "179cm, 두꺼운 목과 넓은 손, 눈 아래의 검은 먼지 흔적.",
+      "location_id": "E1",
+      "affiliation": "영지 민간 광산의 채굴 노동자"
+    },
+    "ER-COM-010": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "164cm, 가는 체형, 둥근 코와 햇볕 자국이 있는 손등.",
+      "location_id": "E4",
+      "affiliation": "독립 약초 채집·납품 노동자"
+    },
+    "ER-COM-011": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "170cm, 긴 다리와 날렵한 체형, 얼굴에 옅은 바람 자국.",
+      "location_id": "E3",
+      "affiliation": "영지 연락 업무를 맡는 민간 전령"
+    },
+    "ER-COM-012": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "175cm, 굽은 어깨와 굵은 허리, 오른쪽 볼의 작은 검버섯.",
+      "location_id": "E2",
+      "affiliation": "영지 민간 창고의 재고 관리 담당"
+    },
+    "ER-COM-013": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "168cm, 단단한 체형, 높은 광대와 오른쪽 눈 밑 작은 점.",
+      "location_id": "E2",
+      "affiliation": "독립 금속 잡화 상인"
+    },
+    "ER-COM-014": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "184cm, 탄탄한 체형, 왼쪽 입가의 오래된 흉터와 넓은 턱.",
+      "location_id": "E3",
+      "affiliation": "독립 고용 용병"
+    },
+    "ER-COM-015": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "167cm, 마른 체형, 왼쪽 귀의 작은 찢어진 흔적.",
+      "location_id": "E4",
+      "affiliation": "소속 미확정 · 단독으로 활동하는 도적"
+    },
+    "ER-COM-016": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "172cm, 넓은 어깨와 튼튼한 손목, 깊은 미간 주름.",
+      "location_id": "E2",
+      "affiliation": "영지 민간 광산의 선광 노동자"
+    },
+    "ER-COM-017": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "178cm, 넓은 가슴과 거친 손, 깊게 그을린 피부와 웃음 주름.",
+      "location_id": "S1",
+      "affiliation": "영지 주민 · 소규모 연안 어업 종사자"
+    },
+    "ER-COM-018": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "177cm, 날씬한 체형, 둥근 눈썹과 작은 콧수염.",
+      "location_id": "S2",
+      "affiliation": "독립 생활 잡화 상인"
+    },
+    "ER-COM-019": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "166cm, 유연하고 가벼운 체형, 오른쪽 볼의 작은 보조개.",
+      "location_id": "S4",
+      "affiliation": "독립 거리 악사"
+    },
+    "ER-COM-020": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "170cm, 가는 체형, 긴 손가락과 가늘고 정돈된 콧수염.",
+      "location_id": "S3",
+      "affiliation": "독립 의복 수선·제작 노동자"
+    },
+    "ER-COM-021": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "161cm, 작고 균형 잡힌 체형, 둥근 얼굴과 코 옆 작은 점.",
+      "location_id": "S4",
+      "affiliation": "영지 민간 여관의 접객 종업원"
+    },
+    "ER-COM-022": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "174cm, 다부진 체형, 짙게 그을린 얼굴과 굵은 손.",
+      "location_id": "S3",
+      "affiliation": "영지 주민 · 채소 재배 농가"
+    },
+    "ER-COM-023": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "169cm, 탄탄한 어깨와 팔, 햇볕에 바랜 피부와 짧은 손톱.",
+      "location_id": "S2",
+      "affiliation": "영지 주민 · 연안 어업과 그물 수선 종사자"
+    },
+    "ER-COM-024": {
+      "rank": null,
+      "level": null,
+      "stats": null,
+      "appearance": "175cm, 마르고 긴 체형, 오른쪽 턱의 작은 흉터와 좁은 입술.",
+      "location_id": "S1",
+      "affiliation": "소속 미확정 · 단독으로 활동하는 도적"
+    },
+    "serin": {
+      "rank": "베이직 나이트",
+      "level": 18,
+      "stats": {
+        "strength": 25,
+        "agility": 26,
+        "intelligence": 14,
+        "constitution": 22,
+        "mana": 16,
+        "hp": 330,
+        "max_hp": 330,
+        "mp": 136,
+        "max_mp": 136
+      },
+      "appearance": {
+        "hair": "금발 포니테일",
+        "eyes": "푸른 눈",
+        "default_outfit": "흰색·금색 기사 갑옷과 푸른 망토",
+        "art_reference": "existing Serin standing assets and face-fitting rules",
+        "expression_set": [
+          "base",
+          "smile",
+          "angry",
+          "surprised",
+          "sad",
+          "embarrassed",
+          "afraid",
+          "annoyed",
+          "love"
+        ]
+      },
+      "location_id": "W3",
+      "affiliation": "벨로아 왕국 엘름베르크 백작령 지방 경비조직 · 솔브린 마을 순찰"
+    }
+  },
+  "runtime_skill_grants": 0
+}

@@ -1,5 +1,6 @@
 import {normalizeAmbiencePreferences} from './ambience.js';
 import {normalizeLocalReputation} from './epic-model.js';
+import {normalizeLoadout} from './skill-loadout.js';
 import {normalizeVoicePreferences} from './voice-audio.js';
 import {bindWallet} from './wallet.js';
 import {normalizeScene} from './scene.js';
@@ -74,6 +75,7 @@ export function normalize(raw) {
   if(raw.battlePlayback){try{const b=raw.battlePlayback,scene=normalizeScene(b.scene);if(!scene.battle)throw Error('battle absent');s.battlePlayback={scene,index:num(b.index,0,scene.battle.events.length,0),speed:[.5,1,2].includes(b.speed)?b.speed:1,paused:b.paused===true,done:b.done===true,replay:b.replay===true,...(typeof b.manual==='boolean'?{manual:b.manual}:{})};}catch{}}
   const faction=factionLocations.find(p=>p.id===raw.mapFaction);
   if(faction&&faction.region===s.mapView&&faction.anchor_id===s.region)s.mapFaction=faction.id;
+  if(raw.skill_loadout)s.skill_loadout=normalizeLoadout(raw.skill_loadout,s);
   return s;
 }
 export function load(storage) {

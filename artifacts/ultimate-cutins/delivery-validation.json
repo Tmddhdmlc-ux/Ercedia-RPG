@@ -1,0 +1,37 @@
+{
+  "all_passed": true,
+  "count": 3,
+  "files": [
+    {
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/76e39b18f680b7cd9647f4e9d169da51ab0be70c/assets/characters/cutins/drafts/serin/expert_ultimate_v1.png",
+      "http_status": 200,
+      "passed": true,
+      "sha256": "ae255485bca94101d6eac2915297655fbf9838e70d9a8f84afed650e5c1aa494",
+      "size": [
+        1664,
+        936
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/76e39b18f680b7cd9647f4e9d169da51ab0be70c/assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+      "http_status": 200,
+      "passed": true,
+      "sha256": "c9fbbc27e699dc6dfd022ad71b07224e3f791c77989d6c2bda39c84fd106a4f2",
+      "size": [
+        1672,
+        941
+      ]
+    },
+    {
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/76e39b18f680b7cd9647f4e9d169da51ab0be70c/assets/characters/cutins/drafts/serin/hyper_face_v1.png",
+      "http_status": 200,
+      "passed": true,
+      "sha256": "232b41aa29ec90f50a87932227c75d9362f6ff4ee3803ba6061d494768b11e61",
+      "size": [
+        1664,
+        936
+      ]
+    }
+  ],
+  "scope": "HTTP load, PNG decode and exact local/remote hash; browser playback remains untested."
+}

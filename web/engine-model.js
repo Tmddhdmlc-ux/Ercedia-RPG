@@ -2,6 +2,7 @@ import {resolveNPC,assertNPCGrowth} from './npc-model.js';
 import {growthRules} from './growth-data.js';
 import {applyGrowthEvent,assertGrowthSnapshot,currentCircle} from './growth-model.js';
 import {engineData} from './engine-data.js';
+import {equippedSkills} from './skill-loadout.js';
 import {battleGrowth} from './battle-model.js';
 export const statKeys=['strength','dexterity','intelligence','constitution','manaStat'];
 export const statLabels={strength:'근력',dexterity:'민첩',intelligence:'지능',constitution:'체질',manaStat:'마나 친화력'};
@@ -62,7 +63,7 @@ export function learnBook(state,id,proof){
   check(!bookEligibility(state,id),bookEligibility(state,id));check(typeof proof==='string'&&proof.trim().length>0,'GM의 학습·연습 확인이 필요합니다.');const b=engineData.books.find(b=>b.id===id),e=ensureEngine(state);if(e.learned.includes(id))return state;
   check(state.player.skills.length<70,'기술 목록이 가득 찼습니다.');e.learned.push(id);state.player.skills.push({id:b.skill_id,name:b.skill_name,description:b.effect_summary,formula:b.category==='sword_manual'?`STR * 0.65 + DEX * 0.2 + ${10+b.physical_technique_bonus}`:'',enabled:true,mp_cost:b.base_mp_cost,spell_base_power:b.spell_base_power,technique_bonus:b.physical_technique_bonus,element:b.element,...(b.required_circle?{circle:b.required_circle}:{}),book_id:id});return state;
 }
-export function usableSkills(state){return state.player.skills.filter(s=>s.enabled&&(s.mp_cost||0)<=state.player.mp&&(!s.book_id||state.engine?.learned.includes(s.book_id)));}
+export function usableSkills(state){return equippedSkills(state,'battle').filter(s=>s.skill_type!=='passive'&&!s.starting&&(s.mp_cost||0)<=state.player.mp);}
 export function awardXP(state,amount){check(Number.isSafeInteger(amount)&&amount>=0,'경험치 수치 오류');check(Number.isInteger(state.player.level)&&Number.isInteger(state.player.xp),'주인공 성장 정보가 미정입니다.');const growth=battleGrowth(state.player,amount);state.player={...state.player,...growth,hp:Math.min(growth.maxHp,state.player.hp+growth.hpIncrease)};delete state.player.hpIncrease;return state;}
 export function validateEngineEvents(raw){if(raw===undefined)return [];check(Array.isArray(raw)&&raw.length<=30,'engine_events는 최대 30개');return raw.map(event=>{check(event&&typeof event==='object'&&/^[A-Za-z0-9_-]{1,100}$/.test(event.event_id||''),'엔진 사건 ID 오류');check(typeof event.kind==='string'&&event.kind.length<50,'엔진 사건 종류 오류');check(typeof event.reason==='string'&&event.reason.trim().length>0&&event.reason.length<=1000,'엔진 판정 사유 필요');return copyEngine(event);});}
 export function applyEngineEvent(state,event){

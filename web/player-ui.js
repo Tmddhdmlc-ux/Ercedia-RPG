@@ -1,4 +1,5 @@
 import {damageFormula} from './player.js';
+import {effectiveLoadout} from './skill-loadout.js';
 import {introData} from './intro-data.js';
 import {passiveLimits} from './intro-model.js';
 export function mountPlayer(state){
@@ -23,7 +24,8 @@ export function mountPlayer(state){
   function skillCount(){const count=state.player.skills.filter(s=>s.enabled).length;$('skill-count').textContent=String(count);$('skills-empty').hidden=count>0;}
   function updateSkill(skill,view){
     view.title.textContent=skill.name.trim()||'스킬 이름 미입력';view.description.textContent=skill.description.trim()||'설명 미입력';view.formula.textContent=skill.formula.trim()||'데미지 공식 미입력';
-    view.badge.textContent=skill.enabled?'사용 가능':'사용 불가';view.card.classList.toggle('unavailable',!skill.enabled);
+    const equipped=effectiveLoadout(state),id=skill.id||'legacy:'+skill.name,where=[equipped.battle.includes(id)?'전투 장착':'',equipped.dialogue.includes(id)?'대화·탐험 장착':''].filter(Boolean);
+    view.badge.textContent=skill.enabled?(skill.ultimate?'궁극기 · 별도 조건':where.join(' · ')||'습득 · 미장착'):'사용 불가';view.card.classList.toggle('unavailable',!skill.enabled);
     const result=damageFormula(skill.formula,state.player);view.damage.textContent=result.value===null?result.message:`공식 계산값 · ${result.value.toLocaleString('ko-KR')}`;view.damage.classList.toggle('formula-error',result.value===null&&!!skill.formula);
   }
   function appendSkill(skill){
