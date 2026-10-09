@@ -4,8 +4,8 @@ export const musicTracks=Object.fromEntries([
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
 ].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
-export function sceneMusic({battle=false,title=false,background='',place='',time=''}={}){
-  if(title)return 'title';
+export function sceneMusic({battle=false,title=false,intro=false,background='',place='',time=''}={}){
+  if(title||intro)return 'title';
   if(battle&&!title)return 'battle';
   if(!title){
     if(background==='IMG-SHARED-05'||/국경|검문소/.test(place))return 'border';
