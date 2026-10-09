@@ -5,7 +5,7 @@ import {publicLife} from './npc-life.js';
 import {calendarDay} from './quest-model.js';
 import {lootCatalog,catalogItem} from './item-catalog.js';
 export function actualPlace(state){return {region:state.gameState?.region||state.scene?.game_state?.region||null,place:state.gameState?.place||state.scene?.location||'위치 미확인'};}
-export function nearbyPeople(state){const {region,place}=actualPlace(state),present=state.scene?.cast||(state.scene?.npc?[state.scene.npc]:[]),ids=new Set(present.map(p=>p.id));
+export function nearbyPeople(state){const {region,place}=actualPlace(state),present=state.scene?.cast?.length?state.scene.cast:(state.scene?.npc?[state.scene.npc]:[]),ids=new Set(present.map(p=>p.id));
  for(const [id,p]of Object.entries(state.npc_life?.npcs||{}))if(p.known&&p.region===region&&(p.place===place||p.accompanying))ids.add(id);
  return [...ids].map(id=>{const npc=findNPC(id),life=publicLife(state,id),record=state.npc_life?.npcs?.[id];if(record?.location_confirmed&&!record.accompanying&&(record.region!==region||record.place!==place&&record.place!==region))return null;return npc?{id,name:npc.name,activity:life.activity,place:record?.place||place,accompanying:life.accompanying}:null;}).filter(Boolean);
 }
