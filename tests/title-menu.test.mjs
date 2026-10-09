@@ -25,3 +25,9 @@ test('title art uses the installed release asset base without changing game save
  const s=defaults(),before=structuredClone(s),base='https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/release-sha/';
  const h=harness(s,false,base);try{assert.equal(h.nodes['title-art'].src,base+'assets/title/title-ensemble-v1.png');assert.deepEqual(s,before);}finally{h.close();}
 });
+
+test('title opens the load window when only a manual slot remains',()=>{
+ const old=globalThis.document,nodes=Object.fromEntries(['title-art','title-screen','title-load-game','title-new-game','title-load-note','title-return'].map(id=>[id,{focus(){}}])),game={dataset:{},children:[nodes['title-screen']]};let opened=0;
+ globalThis.document={getElementById:id=>nodes[id],querySelector:()=>game,body:{classList:{toggle(){}}},addEventListener(){},dispatchEvent(){}};
+ try{mountTitleMenu(defaults(),{newGame:{},render(){},isPending:()=>false,hasSlots:()=>true,openLoad:()=>opened++});assert.equal(nodes['title-load-game'].disabled,false);nodes['title-load-game'].onclick();assert.equal(opened,1);assert.equal(game.dataset.title,'active');}finally{globalThis.document=old;}
+});

@@ -1,3 +1,4 @@
+import {normalizeSlots} from './save-slots.js';
 import {normalizeAmbiencePreferences} from './ambience.js';
 import {normalizeLocalReputation} from './epic-model.js';
 import {normalizeLoadout} from './skill-loadout.js';
@@ -26,6 +27,7 @@ const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFi
 export function normalize(raw) {
   const s=defaults();
   if (!raw || typeof raw !== 'object' || raw.version !== 1) return s;
+  if(Object.hasOwn(raw,'save_slots'))s.save_slots=normalizeSlots(raw.save_slots);
   if(raw.local_reputation)s.local_reputation=normalizeLocalReputation(raw.local_reputation);
   if(raw.npc_life)s.npc_life=normalizeLife(raw.npc_life);
   for (const [key,choices] of Object.entries({outfit:outfitKeys,expression:expressionKeys,region:regionKeys,page:['story','map','status','inventory','quests']})) if (choices.includes(raw[key])) s[key]=raw[key];
