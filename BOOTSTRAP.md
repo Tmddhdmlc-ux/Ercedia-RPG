@@ -1,5 +1,7 @@
 # 에르세디아 RPG — 새 채팅 시작 필독 (BOOTSTRAP)
 
+**인물·세력 관계:** [CHARACTER_RELATIONSHIPS.md](CHARACTER_RELATIONSHIPS.md)를 적용한다. 상세 원문 [CHARACTER_RELATIONSHIPS_GM.md](CHARACTER_RELATIONSHIPS_GM.md)와 characters/relationship_graph_gm.json은 GM용이며 속마음·미발견 관계를 일반 NPC·도감에 공개하지 않는다. 현재 플레이의 실제 기록이 초기 관계를 우선한다. 왕실 후계자 3명은 새 이름·관계 설정이고 전투 수치·원화·등록 장면 ID는 미정이다.
+
 **지역 던전 필수:** [DUNGEON_ENCOUNTERS.md](DUNGEON_ENCOUNTERS.md)의 26개 던전별 환경·탐색 대응과 보스·정예 52종을 적용한다. 최신 locations/dungeon_layouts.json의 encounter_profile 및 encounter_ids, locations/dungeon_encounters.json의 수치를 사용한다. 정예 역할은 마수 위협등급 ‘엘리트’와 별개다. 새 보스와 미지 구역의 중요한 선택은 요약 생략하지 않는다.
 
 **처치별 전리품·제작 필수:** [LOOT_ACQUISITION.md](LOOT_ACQUISITION.md)와 [CRAFTING_SYSTEM.md](CRAFTING_SYSTEM.md)를 읽는다. 새 마수 전투는 `outcome.loot_mode=per_kill_v1`을 사용한다. 전투 판정은 GM이, 한 마리 처치별 전리품 추첨은 UI가 담당한다. 종료 후 중앙 획득 팝업을 표시한다. 이 모드는 예전 던전 고정 재료·선택 장비 보상보다 우선하며 보스 전리품을 중복 지급하지 않는다. 대장간은 등록 제작법·실제 방문·장인·재료·비용·작업 완료를 확인한다.

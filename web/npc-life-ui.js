@@ -1,5 +1,6 @@
 import {publicLife,lifeRole} from './npc-life.js';
 import {findNPC} from './npc-model.js';
+import {publicRelations,relationshipEntity} from './relationship-model.js';
 export function mountNPCLifeUI(state,{submit,isPending,getNPC}){
   const $=id=>document.getElementById(id),info=document.createElement('section'),actions=document.createElement('div'),journal=document.createElement('details'),summary=document.createElement('summary');
   info.className='npc-life-info';info.setAttribute('aria-label','인물의 활동과 기억');$('npc-info-card').append(info);
@@ -11,6 +12,7 @@ export function mountNPCLifeUI(state,{submit,isPending,getNPC}){
       const last=document.createElement('p');last.textContent=p.last_meeting?`마지막 만남: ${p.last_meeting.date} · ${p.last_meeting.place}`:'이전 만남 기록 없음';info.append(last);
       const condition=document.createElement('p');condition.textContent=`피로: ${({rested:'휴식 충분',tired:'피곤함',exhausted:'탈진'})[p.fatigue]||'미확인'} · 부상: ${p.injuries.join(' · ')||'기록 없음'}`;info.append(condition);
       const quests=document.createElement('p');quests.textContent='관련 의뢰: '+(p.quests.map(id=>(state.quest_log||[]).find(q=>q.id===id)?.title||id).join(' · ')||'없음');info.append(quests);
+      const relations=publicRelations(state,id);if(relations.length){const details=document.createElement('details'),heading=document.createElement('summary');heading.textContent='알려진 관계';details.append(heading);for(const r of relations){const other=r.from===id?r.to:r.from,line=document.createElement('p');line.textContent=(relationshipEntity(other)?.name||findNPC(other)?.name||'상대 미확인')+' · '+r.relation+' — '+r.description;details.append(line);}info.append(details);}
       for(const m of p.memories){const line=document.createElement('p');line.textContent=`${m.date} · ${m.action}: ${m.result}`;info.append(line);}
       $('npc-interest-label').textContent=state.player.name+'에 대한 호감도';$('npc-info-interest').textContent=p.affection+' / 100';$('npc-info-interest-text').textContent='실제 사건으로 기록된 단일 호감도 · 요구 승낙을 보장하지 않습니다.';
       const main=['talk','news',role==='merchant'?'trade':'quest','goodbye'],more=document.createElement('details'),heading=document.createElement('summary');heading.textContent='추가 행동';more.append(heading);

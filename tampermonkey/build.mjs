@@ -15,6 +15,7 @@ import './voice-build.mjs';
 import './growth-build.mjs';
 import './loot-build.mjs';
 import './crafting-build.mjs';
+import './relationship-build.mjs';
 await import('./shop-build.mjs');
 // Run after the other registries finish updating the shared asset list.
 await import('./location-art-build.mjs');
