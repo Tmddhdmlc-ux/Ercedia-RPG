@@ -5,49 +5,97 @@
   "voice": "ja-JP-NanamiNeural",
   "language": "ja",
   "synthetic": true,
-  "revision": 1,
-  "direction": "Bright, light, cute adult character voice audition",
+  "revision": 2,
+  "direction": "Youthful, bright voice with phrase-by-phrase expressive prosody",
   "notes": "A new spoken voice candidate, not the same performer as existing reaction clips. Rate and pitch adjustments are not emotion-directed acting. Not connected to live dialogue or combat.",
   "processing": "85 Hz high-pass, gentle 220 Hz reduction and 3 kHz presence; loudness normalization to -18 LUFS, -1.5 dBTP; mono 48 kHz MP3.",
   "lines": [
     {
       "id": "greeting",
       "situation": "첫 만남",
-      "text": "セリンです。これからよろしくお願いしますね。",
+      "text": "セリンです！これからよろしくお願いしますね！",
       "voice": "ja-JP-NanamiNeural",
       "language": "ja",
       "korean_text": "세린입니다. 앞으로 잘 부탁드려요.",
-      "rate": "+4%",
-      "pitch": "+22Hz",
-      "intended_direction": "밝고 귀여운 인사",
+      "rate": "+10%",
+      "pitch": "+44Hz",
+      "intended_direction": "밝고 앳된 인사",
+      "segments": [
+        {
+          "text": "セリンです！",
+          "rate": "+12%",
+          "pitch": "+46Hz",
+          "gap_seconds": 0.16,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/greeting-1.mp3"
+        },
+        {
+          "text": "これからよろしくお願いしますね！",
+          "rate": "+7%",
+          "pitch": "+40Hz",
+          "gap_seconds": 0,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/greeting-2.mp3"
+        }
+      ],
       "path": "assets/audio/dialogue/serin-audition-ja/greeting.mp3",
-      "sha256": "c826da9beb5097bb036e05f7b489424b3f7fe7f1d99e1f59efa7121fb73ae84d"
+      "sha256": "71e8c94af9884212a684862ccee4b2446017fa9b2c0691d04b9997960309f6b9"
     },
     {
       "id": "concern",
       "situation": "걱정",
-      "text": "怪我はしていませんか？ちょっと見せてください。",
+      "text": "怪我はしていませんか？ちょっと見せてください！",
       "voice": "ja-JP-NanamiNeural",
       "language": "ja",
       "korean_text": "다치신 건 아니죠? 잠깐만 보여주세요.",
-      "rate": "+8%",
-      "pitch": "+24Hz",
-      "intended_direction": "가볍고 다급한 걱정",
+      "rate": "+14%",
+      "pitch": "+48Hz",
+      "intended_direction": "높고 다급한 질문 뒤 부드러운 걱정",
+      "segments": [
+        {
+          "text": "怪我はしていませんか？",
+          "rate": "+14%",
+          "pitch": "+48Hz",
+          "gap_seconds": 0.12,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/concern-1.mp3"
+        },
+        {
+          "text": "ちょっと見せてください！",
+          "rate": "+4%",
+          "pitch": "+38Hz",
+          "gap_seconds": 0,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/concern-2.mp3"
+        }
+      ],
       "path": "assets/audio/dialogue/serin-audition-ja/concern.mp3",
-      "sha256": "be1be1c7fa7806533d7f5045876e4839e4eae871274fb94d4e6df1451a9ea644"
+      "sha256": "bb02568f893a8248c58da3fef57547f1627f91e2513ba4a83924c537bcedf09a"
     },
     {
       "id": "battle",
       "situation": "전투 시작",
-      "text": "私の後ろにいてください。前は私が守ります。",
+      "text": "私の後ろにいてください！前は私が守ります。",
       "voice": "ja-JP-NanamiNeural",
       "language": "ja",
       "korean_text": "제 뒤에 계세요. 제가 앞을 맡겠습니다.",
-      "rate": "+4%",
-      "pitch": "+14Hz",
-      "intended_direction": "또렷한 결의",
+      "rate": "+8%",
+      "pitch": "+36Hz",
+      "intended_direction": "빠른 경고 뒤 단단한 약속",
+      "segments": [
+        {
+          "text": "私の後ろにいてください！",
+          "rate": "+11%",
+          "pitch": "+40Hz",
+          "gap_seconds": 0.2,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/battle-1.mp3"
+        },
+        {
+          "text": "前は私が守ります。",
+          "rate": "-2%",
+          "pitch": "+30Hz",
+          "gap_seconds": 0,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/battle-2.mp3"
+        }
+      ],
       "path": "assets/audio/dialogue/serin-audition-ja/battle.mp3",
-      "sha256": "4525ecbc12023df09b8076a00b0f4177e51622b9a091398f6b4fdcee9f46e352"
+      "sha256": "84e40d38c27ba889ff74e21dc8999fb8dc2b00ae5ca3b5aea665a57d30a4fee2"
     },
     {
       "id": "ultimate",
@@ -56,24 +104,63 @@
       "voice": "ja-JP-NanamiNeural",
       "language": "ja",
       "korean_text": "이곳은… 제가 지킵니다!",
-      "rate": "-4%",
-      "pitch": "+18Hz",
-      "intended_direction": "맑고 단단한 결의",
+      "rate": "-3%",
+      "pitch": "+38Hz",
+      "intended_direction": "짧게 멈춘 뒤 힘을 주는 결의",
+      "segments": [
+        {
+          "text": "ここは……",
+          "rate": "-9%",
+          "pitch": "+34Hz",
+          "gap_seconds": 0.34,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/ultimate-1.mp3"
+        },
+        {
+          "text": "私が守ります！",
+          "rate": "+4%",
+          "pitch": "+40Hz",
+          "gap_seconds": 0,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/ultimate-2.mp3"
+        }
+      ],
       "path": "assets/audio/dialogue/serin-audition-ja/ultimate.mp3",
-      "sha256": "47e00a3b85c6e2d810bd9d1f56d8c51fdc0c82bf1d44e2a4183651fd413227c7"
+      "sha256": "a7a600a7295bccd1caed3c8ac696640c66ee159b2e3cd25c3e04b03ff81494bc"
     },
     {
       "id": "victory",
       "situation": "승리",
-      "text": "終わりましたね……みんな無事で、よかったです。",
+      "text": "終わりましたね……みんな無事で、よかったです！",
       "voice": "ja-JP-NanamiNeural",
       "language": "ja",
       "korean_text": "끝났네요… 모두 무사해서 다행이에요.",
-      "rate": "-2%",
-      "pitch": "+22Hz",
-      "intended_direction": "밝고 가벼운 안도",
+      "rate": "+5%",
+      "pitch": "+44Hz",
+      "intended_direction": "안도에서 밝은 기쁨으로",
+      "segments": [
+        {
+          "text": "終わりましたね……",
+          "rate": "-8%",
+          "pitch": "+36Hz",
+          "gap_seconds": 0.23,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/victory-1.mp3"
+        },
+        {
+          "text": "みんな無事で、",
+          "rate": "+3%",
+          "pitch": "+40Hz",
+          "gap_seconds": 0.12,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/victory-2.mp3"
+        },
+        {
+          "text": "よかったです！",
+          "rate": "+10%",
+          "pitch": "+48Hz",
+          "gap_seconds": 0,
+          "source": "assets/audio/dialogue/serin-audition-ja/source/victory-3.mp3"
+        }
+      ],
       "path": "assets/audio/dialogue/serin-audition-ja/victory.mp3",
-      "sha256": "065af4f7b94da6bdaedfdf2813a75eacaab3e39a2f9dac9bccf39aea41544c8f"
+      "sha256": "127fc9eb2f2fa4f59168fb57d250b8e0a62417101331fc872cfaa074cd2d6b3b"
     }
   ]
 }

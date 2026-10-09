@@ -6,4 +6,8 @@
 
 재생성: `python tools/build-serin-lines.py --language ja`. Python edge-tts와 imageio-ffmpeg가 필요하며 대사 텍스트는 온라인 음성 생성 서비스로 전송한다. 도구 출처: https://github.com/rany2/edge-tts . 생성 음원은 CC0 외부 에셋으로 표기하지 않는다.
 
-비교 미리보기: tests/serin-dialogue-preview.html?language=ja&revision=3 . 한국어/일본어를 선택해서 같은 상황의 다섯 대사를 듣는다.
+비교 미리보기: tests/serin-dialogue-preview.html?language=ja&revision=4 . 한국어/일본어를 선택해서 같은 상황의 다섯 대사를 듣는다.
+
+## 두 번째 일본어 시안 · 앳된 목소리와 구절별 표현
+
+높이를 +30~48 Hz 범위로 올리고 구절마다 -9~+14% 속도, 120~340ms 쉼을 나눴다. 인사는 밝게, 걱정은 빠른 질문 뒤 부드럽게, 전투는 빠른 경고 뒤 단단하게, 궁극기는 잠깐 멈춘 뒤 결의, 승리는 낮은 안도에서 높은 기쁨으로 설계했다. 실제 감정 연기의 결과를 보장하지 않으며 여전히 합성음의 높이·속도·쉼 조절이다. 구절 원음과 합성 순서·설정은 source/ 및 lines.json에 기록한다. 한국어 시안과 게임 연결은 변경하지 않았다. 이전 일본어 음원은 Git 기록 5ea9cce에 보관한다.
