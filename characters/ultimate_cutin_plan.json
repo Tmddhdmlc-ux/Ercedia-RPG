@@ -11382,8 +11382,8 @@
       "versions": [
         {
           "tier": "expert",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "expert",
@@ -11391,12 +11391,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-030/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.62,
+            "y": 0,
+            "width": 0.25,
+            "height": 0.42
+          }
         },
         {
           "tier": "hyper",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "hyper",
@@ -11410,10 +11421,21 @@
               "status": "current_background_concept"
             }
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-030/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.31,
+            "y": 0.01,
+            "width": 0.2,
+            "height": 0.32
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "청뢰성벽 반격 · 결전식",
       "element": null,
       "composition": {
@@ -11474,8 +11496,8 @@
       "versions": [
         {
           "tier": "expert",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "expert",
@@ -11483,12 +11505,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-031/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.48,
+            "y": 0,
+            "width": 0.24,
+            "height": 0.37
+          }
         },
         {
           "tier": "hyper",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "hyper",
@@ -11502,10 +11535,21 @@
               "status": "current_background_concept"
             }
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-031/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.65,
+            "y": 0.01,
+            "width": 0.19,
+            "height": 0.3
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "균열 경계선 · 결전식",
       "element": null,
       "composition": {
@@ -11566,8 +11610,8 @@
       "versions": [
         {
           "tier": "expert",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "expert",
@@ -11575,12 +11619,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-032/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.63,
+            "y": 0,
+            "width": 0.26,
+            "height": 0.38
+          }
         },
         {
           "tier": "hyper",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "hyper",
@@ -11594,10 +11649,21 @@
               "status": "current_background_concept"
             }
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-032/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0.01,
+            "width": 0.2,
+            "height": 0.33
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "백파도 귀환검 · 결전식",
       "element": null,
       "composition": {
@@ -11658,8 +11724,8 @@
       "versions": [
         {
           "tier": "expert",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "expert",
@@ -11667,12 +11733,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-033/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0,
+            "width": 0.26,
+            "height": 0.37
+          }
         },
         {
           "tier": "hyper",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "hyper",
@@ -11686,10 +11763,21 @@
               "status": "current_background_concept"
             }
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-033/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.39,
+            "y": 0,
+            "width": 0.23,
+            "height": 0.33
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "해풍 쇄도 · 결전식",
       "element": null,
       "composition": {
@@ -11750,8 +11838,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -11759,12 +11847,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-034/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.46,
+            "y": 0,
+            "width": 0.26,
+            "height": 0.35
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -11772,10 +11871,21 @@
             "effect": "같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-034/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.64,
+            "y": 0.08,
+            "width": 0.17,
+            "height": 0.26
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "기록광 추출 · 결전식",
       "element": "빛",
       "composition": {
@@ -11836,8 +11946,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -11845,12 +11955,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-035/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0,
+            "width": 0.21,
+            "height": 0.37
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -11858,10 +11979,21 @@
             "effect": "같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-035/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.59,
+            "y": 0.03,
+            "width": 0.17,
+            "height": 0.32
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "뇌명 도체망 · 결전식",
       "element": "전기",
       "composition": {
@@ -11922,8 +12054,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -11931,12 +12063,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-036/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.61,
+            "y": 0,
+            "width": 0.25,
+            "height": 0.4
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -11944,10 +12087,21 @@
             "effect": "같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-036/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.28,
+            "y": 0.02,
+            "width": 0.24,
+            "height": 0.35
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "청류 구조환 · 결전식",
       "element": "물",
       "composition": {
@@ -12008,8 +12162,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -12017,12 +12171,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-037/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.55,
+            "y": 0,
+            "width": 0.25,
+            "height": 0.38
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -12030,10 +12195,21 @@
             "effect": "같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-037/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.62,
+            "y": 0.05,
+            "width": 0.2,
+            "height": 0.3
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "황혼 은폐막 · 결전식",
       "element": "암흑",
       "composition": {
@@ -12094,8 +12270,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -12103,12 +12279,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-038/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.65,
+            "y": 0.05,
+            "width": 0.2,
+            "height": 0.32
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -12116,10 +12303,21 @@
             "effect": "같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-CORE-038/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.59,
+            "y": 0.1,
+            "width": 0.23,
+            "height": 0.32
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "초석 응력막 · 결전식",
       "element": null,
       "composition": {
@@ -13280,8 +13478,8 @@
       "versions": [
         {
           "tier": "expert",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "expert",
@@ -13289,12 +13487,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-COM-014/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.55,
+            "y": 0,
+            "width": 0.22,
+            "height": 0.34
+          }
         },
         {
           "tier": "hyper",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "hyper",
@@ -13308,10 +13517,21 @@
               "status": "future_hypothetical_only"
             }
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-COM-014/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.3,
+            "y": 0.02,
+            "width": 0.22,
+            "height": 0.34
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "계약 방어 · 결전식",
       "element": null,
       "composition": {
@@ -14150,12 +14370,14 @@
     "roster_coverage": 163,
     "settings_established": 163,
     "art_design_ready": 60,
-    "art_pending_characters": 59,
-    "sample_characters": 1,
+    "art_pending_characters": 0,
+    "completed_two_tier_characters": 60,
     "deferred_non_ultimate_class": 103,
-    "new_full_images": 1,
-    "reused_full_images": 1,
-    "new_face_images": 1,
-    "runtime_assets_added": 0
+    "selected_full_images": 120,
+    "new_full_images": 118,
+    "reused_full_images": 2,
+    "new_face_images": 0,
+    "runtime_assets_added": 0,
+    "user_review_pending_new_images": 118
   }
 }

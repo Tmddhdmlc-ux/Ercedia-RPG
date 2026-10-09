@@ -1,0 +1,31 @@
+{
+  "selected_characters": 60,
+  "knights": 37,
+  "mages": 23,
+  "selected_full_images": 120,
+  "new_full_images": 118,
+  "preserved_serin_full_images": 2,
+  "new_image_resolution": [
+    1664,
+    936
+  ],
+  "preserved_reference_images": 120,
+  "checks": [
+    "all 163 roster IDs accounted for",
+    "two correct tiers for all 60 eligible characters",
+    "all selected PNGs decoded, opaque and unique",
+    "all new image SHA and metadata match",
+    "reference hashes unchanged",
+    "Serin selected images unchanged since source commit",
+    "normalized face crop bounds",
+    "no learned or equipped skill grant"
+  ],
+  "browser_playback_tested": false,
+  "runtime_assets_added": 0,
+  "visual_review_status": "drafts pending user review",
+  "review_attention": [
+    "ER-CORE-004 hyper: palm/aura action differs from sword counterattack; review",
+    "Mage images with added weapon/accessory details require review against reference",
+    "High-tier knight poses and low/high effect strength require final art review"
+  ]
+}

@@ -1,0 +1,86 @@
+{
+  "character_id": "ER-CORE-035",
+  "name": "이레나 솔브",
+  "versions": [
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "tier": "circle3",
+      "phase": "low",
+      "scope": "current_tier_concept",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-CORE-035\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-CORE-035\\base.png"
+      ],
+      "camera": "eye-level three-quarter left view, subject on right",
+      "action": "준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다",
+      "element": "전기",
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 이레나 솔브 / ER-CORE-035. Text setting: - **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클..\nApproved technique: 뇌명 도체망 · 결전식. Draw action: 준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.. Element: 전기. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 대공방과 마법탑·노동자 파업. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-795454fe-f7c5-48e8-93cc-176ce02213ce.png",
+      "face_crop": {
+        "x": 0.6,
+        "y": 0,
+        "width": 0.21,
+        "height": 0.37
+      },
+      "visual_notes": "원화의 얼굴·머리·복식과 문장을 비교함. 갑판 검격/고문서 빛 분석/도체 전류 분기 장면으로 설정 역할을 표현함. 저단계보다 고단계 효과가 넓으며 다른 인물 없음. 사용자 최종 검수 대기.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "f679ec81fa6377a1180f1d666781183e31b93b2ada53f91c7283d4f23026a980",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "tier": "circle6",
+      "phase": "high",
+      "scope": "current_tier_concept",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-CORE-035\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-CORE-035\\base.png"
+      ],
+      "camera": "slightly elevated diagonal view, subject on right",
+      "action": "준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": "전기",
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 이레나 솔브 / ER-CORE-035. Text setting: - **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클..\nApproved technique: 뇌명 도체망 · 결전식. Draw action: 준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 전기. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 대공방과 마법탑·노동자 파업. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-6611b6bb-6478-4fdd-83b9-2681fe95c515.png",
+      "face_crop": {
+        "x": 0.59,
+        "y": 0.03,
+        "width": 0.17,
+        "height": 0.32
+      },
+      "visual_notes": "원화의 얼굴·머리·복식과 문장을 비교함. 갑판 검격/고문서 빛 분석/도체 전류 분기 장면으로 설정 역할을 표현함. 저단계보다 고단계 효과가 넓으며 다른 인물 없음. 사용자 최종 검수 대기.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "250d9eea26e7b62bdd442acba6a40fe39954ab65c6558b42de7e5d32e3b147b1",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}

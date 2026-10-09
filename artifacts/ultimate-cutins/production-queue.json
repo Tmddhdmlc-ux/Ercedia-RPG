@@ -2274,7 +2274,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 카르스 에델 / ER-CORE-030. Text setting: - **기사단장:** **카르스 에델** (남 42, 자색빛 흑발·얼음회안·가느다란 얼굴·청동 팔보호구). **경지:** 마스터 나이트..\nApproved technique: 청뢰성벽 반격 · 결전식. Draw action: 받아낸 충격 뒤 검결을 정밀하게 방향 전환해 반격한다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
+      "sha256": "4f17a180181367d79447f7ea23f43a9533cb76b9e198ad2e5da6fcef2f4e2c36",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-030",
@@ -2291,7 +2297,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 카르스 에델 / ER-CORE-030. Text setting: - **기사단장:** **카르스 에델** (남 42, 자색빛 흑발·얼음회안·가느다란 얼굴·청동 팔보호구). **경지:** 마스터 나이트..\nApproved technique: 청뢰성벽 반격 · 결전식. Draw action: 받아낸 충격 뒤 검결을 정밀하게 방향 전환해 반격한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
+      "sha256": "9df067213d1ea0bce8b1b486ebc1ca3285f1ad5bc1d897912d87c077562a97b6",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-031",
@@ -2308,7 +2320,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 베라 칼트하임 / ER-CORE-031. Text setting: - **기사단장:** **베라 칼트하임** (여 38, 백금색 짧은 머리·진청 눈·한쪽 볼에 화상). **경지:** 하이퍼 나이트..\nApproved technique: 균열 경계선 · 결전식. Draw action: 검결의 짧은 잔향으로 근거리 움직임을 관측하고 반격한다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 산길 관문·오염 지역 접근 통제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
+      "sha256": "985bfd2de7eb2adf93fe0143f83c615bb2219f460f796eca0bf0f7c9a98174bd",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-031",
@@ -2325,7 +2343,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 베라 칼트하임 / ER-CORE-031. Text setting: - **기사단장:** **베라 칼트하임** (여 38, 백금색 짧은 머리·진청 눈·한쪽 볼에 화상). **경지:** 하이퍼 나이트..\nApproved technique: 균열 경계선 · 결전식. Draw action: 검결의 짧은 잔향으로 근거리 움직임을 관측하고 반격한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 산길 관문·오염 지역 접근 통제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
+      "sha256": "88950698c5abdef7bd0f7a8d3450e5386f176a62342f9eb1c0a76a15d1295a3f",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-032",
@@ -2342,7 +2366,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 알렉시아 바레트 / ER-CORE-032. Text setting: - **기사단장:** **알렉시아 바레트** (여 40, 검푸른 단발·호박색 눈·갈색 피부·긴 코 흉터). **경지:** 마스터 나이트..\nApproved technique: 백파도 귀환검 · 결전식. Draw action: 휘어진 검결을 통제해 동료를 비껴 위협의 무기 팔을 겨눈다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
+      "sha256": "db29c7f3000dc610b369ef4870026e283238e0d0b76bd3eb2ce1170df404505e",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-032",
@@ -2359,7 +2389,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 알렉시아 바레트 / ER-CORE-032. Text setting: - **기사단장:** **알렉시아 바레트** (여 40, 검푸른 단발·호박색 눈·갈색 피부·긴 코 흉터). **경지:** 마스터 나이트..\nApproved technique: 백파도 귀환검 · 결전식. Draw action: 휘어진 검결을 통제해 동료를 비껴 위협의 무기 팔을 겨눈다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
+      "sha256": "8212829c0e315d5a202be4aa9193045303809917fbbd4e9a8334e3ac0c6b2864",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-033",
@@ -2376,7 +2412,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 루카 마리노 / ER-CORE-033. Text setting: - **기사단장:** **루카 마리노** (남 35, 모래빛 웨이브 머리·녹청 눈·구릿빛 팔·짧은 수염). **경지:** 하이퍼 나이트..\nApproved technique: 해풍 쇄도 · 결전식. Draw action: 갑판의 움직임을 따라 검결을 좁은 궤적으로 방출한다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
+      "sha256": "f4fb4e0f450d85f5c74a179c25dd0964289bd8634c214c824dd4682a99eed963",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-033",
@@ -2393,7 +2435,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 루카 마리노 / ER-CORE-033. Text setting: - **기사단장:** **루카 마리노** (남 35, 모래빛 웨이브 머리·녹청 눈·구릿빛 팔·짧은 수염). **경지:** 하이퍼 나이트..\nApproved technique: 해풍 쇄도 · 결전식. Draw action: 갑판의 움직임을 따라 검결을 좁은 궤적으로 방출한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
+      "sha256": "01795c833777a9f0efd134a086deeda081c946e5eb440a923acae38be8f4d132",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-034",
@@ -2410,7 +2458,13 @@
       "element": "빛",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 오르델 비안 / ER-CORE-034. Text setting: - **탑주:** 오르델 비안 (남 61, 흰 짧은 곱슬머리·회청 눈·갈색 로브). **경지:** 6서클..\nApproved technique: 기록광 추출 · 결전식. Draw action: 빛으로 고문서의 마나 층을 분리해 기록 흔적을 읽는다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 빛 효과.. Element: 빛. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain 왕도 주변 산업·기사학교와 관료 파벌. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
+      "sha256": "4947f71bb3b764259ee7891e9c8890afe91c740389d9d1edf83c09f44c947dac",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-034",
@@ -2427,7 +2481,13 @@
       "element": "빛",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 오르델 비안 / ER-CORE-034. Text setting: - **탑주:** 오르델 비안 (남 61, 흰 짧은 곱슬머리·회청 눈·갈색 로브). **경지:** 6서클..\nApproved technique: 기록광 추출 · 결전식. Draw action: 빛으로 고문서의 마나 층을 분리해 기록 흔적을 읽는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 빛 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 빛. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain 왕도 주변 산업·기사학교와 관료 파벌. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
+      "sha256": "612d1844fbb09df20c1a6e91f27d2d4dd0df9fa24d38a7f98f610626eedadd1a",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-035",
@@ -2444,7 +2504,13 @@
       "element": "전기",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 이레나 솔브 / ER-CORE-035. Text setting: - **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클..\nApproved technique: 뇌명 도체망 · 결전식. Draw action: 준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 전기 효과.. Element: 전기. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 대공방과 마법탑·노동자 파업. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
+      "sha256": "f679ec81fa6377a1180f1d666781183e31b93b2ada53f91c7283d4f23026a980",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-035",
@@ -2461,7 +2527,13 @@
       "element": "전기",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 이레나 솔브 / ER-CORE-035. Text setting: - **탑주:** 이레나 솔브 (여 49, 자색 머리의 땋은 올림머리·청회 눈·청동 어깨장치). **경지:** 7서클..\nApproved technique: 뇌명 도체망 · 결전식. Draw action: 준비한 여러 도체를 연결해 전류를 분기하고 영역을 제어한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 전기 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 전기. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 대공방과 마법탑·노동자 파업. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
+      "sha256": "250d9eea26e7b62bdd442acba6a40fe39954ab65c6558b42de7e5d32e3b147b1",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-036",
@@ -2478,7 +2550,13 @@
       "element": "물",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 마레나 에르노 / ER-CORE-036. Text setting: - **탑주:** 마레나 에르노 (여 44, 남청색 포니테일·녹회색 눈·백청 망토). **경지:** 6서클..\nApproved technique: 청류 구조환 · 결전식. Draw action: 회전하는 물줄기로 주변의 잔해를 밀어 구조 통로를 확보한다. Skill category: support. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.. Element: 물. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
+      "sha256": "a3ebd397a3512c8dd6898b2a2883ec44f66f3339b581fb74205c024910b83cde",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-036",
@@ -2495,7 +2573,13 @@
       "element": "물",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 마레나 에르노 / ER-CORE-036. Text setting: - **탑주:** 마레나 에르노 (여 44, 남청색 포니테일·녹회색 눈·백청 망토). **경지:** 6서클..\nApproved technique: 청류 구조환 · 결전식. Draw action: 회전하는 물줄기로 주변의 잔해를 밀어 구조 통로를 확보한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: support. Effect: 같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 물. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
+      "sha256": "4a89f07e9d246a29de489a06302a607f4df6c2cf5e9ebe1e1ac8e274187bba45",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-037",
@@ -2512,7 +2596,13 @@
       "element": "암흑",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 세드릭 바일 / ER-CORE-037. Text setting: - **탑주:** 세드릭 바일 (남 52, 흑발에 은빛 가르마·서늘한 자안·회색 장포). **경지:** 6서클..\nApproved technique: 황혼 은폐막 · 결전식. Draw action: 주변 공간의 그늘을 정렬해 동료의 후퇴를 숨긴다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
+      "sha256": "81454bbe39af3253912d0295d845d7a505cc48db0a51808eabb61abd797c4234",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-037",
@@ -2529,7 +2619,13 @@
       "element": "암흑",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 세드릭 바일 / ER-CORE-037. Text setting: - **탑주:** 세드릭 바일 (남 52, 흑발에 은빛 가르마·서늘한 자안·회색 장포). **경지:** 6서클..\nApproved technique: 황혼 은폐막 · 결전식. Draw action: 주변 공간의 그늘을 정렬해 동료의 후퇴를 숨긴다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
+      "sha256": "6c12c306c8e0dfa52906ac102e7202b0811bc3901eda5fe37d71319d9dc3e61a",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-038",
@@ -2546,7 +2642,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 테레사 가른 / ER-CORE-038. Text setting: - **탑주:** 테레사 가른 (여 57, 붉은 회갈색 짧은 머리·검은 눈·두꺼운 작업복). **경지:** 6서클..\nApproved technique: 초석 응력막 · 결전식. Draw action: 여러 마나 방벽을 겹쳐 낙석 충격을 나누어 받는다. Skill category: defense. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
+      "sha256": "01c4728d13ce51bd959c8ee3a9fdfbea4e41bedd9e9a9d8c9c773ac0ae98bf17",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-CORE-038",
@@ -2563,7 +2665,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 테레사 가른 / ER-CORE-038. Text setting: - **탑주:** 테레사 가른 (여 57, 붉은 회갈색 짧은 머리·검은 눈·두꺼운 작업복). **경지:** 6서클..\nApproved technique: 초석 응력막 · 결전식. Draw action: 여러 마나 방벽을 겹쳐 낙석 충격을 나누어 받는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: defense. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
+      "sha256": "47a5b3158d87c3775e47e4dfdf0e70a64a7c31d934f0449d9924e61c5a61b461",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-COM-014",
@@ -2580,7 +2688,13 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 라덴 크로스 / ER-COM-014. Text setting: 184cm, 탄탄한 체형, 왼쪽 입가의 오래된 흉터와 넓은 턱..\nApproved technique: 계약 방어 · 결전식. Draw action: 고용 계약의 보호 대상을 확인하고 짧은 검으로 접근선을 막는다. Skill category: defense. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
+      "sha256": "6d3dbaedeeee0129d14b1d0c11eef56184565cba71171ee34d2926eba1438839",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-COM-014",
@@ -2597,8 +2711,14 @@
       "element": null,
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 라덴 크로스 / ER-COM-014. Text setting: 184cm, 탄탄한 체형, 왼쪽 입가의 오래된 흉터와 넓은 턱..\nApproved technique: 계약 방어 · 결전식. Draw action: 고용 계약의 보호 대상을 확인하고 짧은 검으로 접근선을 막는다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: defense. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
+      "sha256": "3af87a41fe7fba010f7b879b3cedf91423637cfc0f2e2915a5af0593496ca04c",
+      "size": [
+        1664,
+        936
+      ]
     }
   ],
-  "completed_new_full_images": 98
+  "completed_new_full_images": 118
 }
