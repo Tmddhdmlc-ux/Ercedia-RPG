@@ -1,0 +1,86 @@
+{
+  "character_id": "ER-CORE-029",
+  "name": "리네트 로젠펠트",
+  "versions": [
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "tier": "expert",
+      "phase": "low",
+      "scope": "current_tier_concept",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-CORE-029\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-CORE-029\\base.png"
+      ],
+      "camera": "eye-level three-quarter left view, subject on right",
+      "action": "전방의 좁은 공격선에 검결을 응축해 돌파한다",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 리네트 로젠펠트 / ER-CORE-029. Text setting: - **기사단장:** **리네트 로젠펠트** (여 33, 붉은 갈색 긴 땋은 머리·회청 눈·흉터 난 오른손). **경지:** 하이퍼 나이트..\nApproved technique: 적장미 관통 · 결전식. Draw action: 전방의 좁은 공격선에 검결을 응축해 돌파한다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain 요새 연쇄와 난민 유입, 군량 소모. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs.  The knight uses the sword through the configured main technique. SHOW ACTUAL SWORD ACTION, at high tier both gloved hands naturally grip the sword hilt and slash, thrust or hold a strong guard as specified. Never replace sword action with a generic open-palm magic casting pose. Different blade angle and body action from the low-tier image. No telekinetic levitation of rocks. Ambient dust must be a result of physical weapon impact. CHARACTER EQUIPMENT OVERRIDE: use her original long rose-ornamented SPEAR / polearm shown in reference, NOT a sword. Both hands grip the spear shaft well away from its blade. Depict concentrated forward spear thrust along a narrow line for low tier; higher tier a sweeping lateral spear action with larger controlled neutral aura. No replacement weapon.",
+      "destination": "assets/characters/cutins/drafts/ER-CORE-029/expert_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-8ab4ccff-465e-419f-919f-256eee8ccb01.png",
+      "face_crop": {
+        "x": 0.65,
+        "y": 0.04,
+        "width": 0.24,
+        "height": 0.35
+      },
+      "visual_notes": "원화 얼굴·흉터/수염·장미 갑옷을 비교함. 라파엘은 문서 빛 감식, 로데릭 검격, 리네트는 원화의 장미 장식 창을 유지함. 고단계 효과가 더 넓으며 다른 인물 없음. 사용자 검수 대기.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "cce1c54001a6d016a6ed0b283b318688dbd4a87394901515222e44c24f628263",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "tier": "hyper",
+      "phase": "high",
+      "scope": "current_tier_concept",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-CORE-029\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-CORE-029\\base.png"
+      ],
+      "camera": "slightly elevated diagonal view, subject on right",
+      "action": "전방의 좁은 공격선에 검결을 응축해 돌파한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 리네트 로젠펠트 / ER-CORE-029. Text setting: - **기사단장:** **리네트 로젠펠트** (여 33, 붉은 갈색 긴 땋은 머리·회청 눈·흉터 난 오른손). **경지:** 하이퍼 나이트..\nApproved technique: 적장미 관통 · 결전식. Draw action: 전방의 좁은 공격선에 검결을 응축해 돌파한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain 요새 연쇄와 난민 유입, 군량 소모. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs.  The knight uses the sword through the configured main technique. SHOW ACTUAL SWORD ACTION, at high tier both gloved hands naturally grip the sword hilt and slash, thrust or hold a strong guard as specified. Never replace sword action with a generic open-palm magic casting pose. Different blade angle and body action from the low-tier image. No telekinetic levitation of rocks. Ambient dust must be a result of physical weapon impact. CHARACTER EQUIPMENT OVERRIDE: use her original long rose-ornamented SPEAR / polearm shown in reference, NOT a sword. Both hands grip the spear shaft well away from its blade. Depict concentrated forward spear thrust along a narrow line for low tier; higher tier a sweeping lateral spear action with larger controlled neutral aura. No replacement weapon.",
+      "destination": "assets/characters/cutins/drafts/ER-CORE-029/hyper_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-57ca66d8-0758-4db4-9a03-6ff5ac0eb0c9.png",
+      "face_crop": {
+        "x": 0.74,
+        "y": 0.08,
+        "width": 0.17,
+        "height": 0.3
+      },
+      "visual_notes": "원화 얼굴·흉터/수염·장미 갑옷을 비교함. 라파엘은 문서 빛 감식, 로데릭 검격, 리네트는 원화의 장미 장식 창을 유지함. 고단계 효과가 더 넓으며 다른 인물 없음. 사용자 검수 대기.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "9a91ecb6e4c8d39b4675b2c1b819a430dee0e5d7ea2f46ce1df85176ab8e1757",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}
