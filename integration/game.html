@@ -4301,11 +4301,13 @@ function mountGameTime(state){const $=id=>document.getElementById(id),stage=$('s
 return {parseGameTime,gameTimeView,timeAtmosphere,mountGameTime};})();
 const module30=(()=>{
 const musicTracks=Object.fromEntries([
+  ['title','타이틀 · 에르세디아의 서막'],
   ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
 ].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
 function sceneMusic({battle=false,title=false,background='',place='',time=''}={}){
+  if(title)return 'title';
   if(battle&&!title)return 'battle';
   if(!title){
     if(background==='IMG-SHARED-05'||/국경|검문소/.test(place))return 'border';
