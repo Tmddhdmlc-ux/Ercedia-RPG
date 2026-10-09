@@ -1,0 +1,29 @@
+<!doctype html>
+<html lang="ko">
+<head>
+<meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>에르세디아 · 전투 이펙트 미리보기</title>
+<link rel="stylesheet" href="battle-effects-preview.css">
+</head>
+<body>
+<header><div><strong>전투 이펙트 미리보기</strong><p>적용 전 시안 · 수치와 기술명은 연출 예시입니다.</p></div><a href="battle-demo.html">현재 전투 화면</a></header>
+<main>
+<section id="stage" aria-label="전투 연출 미리보기">
+  <img class="background" src="../assets/locations/towns/sunny_village/town_day.png" alt="" id="background">
+  <div class="shade"></div>
+  <div class="hud"><article id="player-card"><strong>주인공 · 화면 밖</strong><span id="player-hp">HP 100 / 100</span><progress id="hp-player" max="100" value="100" aria-label="주인공 체력"></progress><span id="player-mp">MP 100 / 100</span><progress class="mp" id="mp-player" max="100" value="100" aria-label="주인공 마나"></progress><b id="player-number" class="number"></b></article><article><strong>세린 · 연출용 상대</strong><span id="enemy-hp">HP 100 / 100</span><progress id="hp-enemy" max="100" value="100" aria-label="상대 체력"></progress><span>MP 100 / 100</span><progress class="mp" max="100" value="100" aria-label="상대 마나"></progress></article></div>
+  <div id="enemy"><img src="../assets/characters/main/serin/standing/base.png" alt="세린의 기존 갑옷 스탠딩"><div id="target-fx" class="fx" aria-hidden="true"></div><b id="damage" class="number"></b></div>
+  <div id="projectile" aria-hidden="true"></div><div id="cast" aria-hidden="true">✧</div><div id="skill" hidden></div>
+  <div id="hud-fx" class="fx" aria-hidden="true"></div>
+  <div class="commentary"><div><strong id="speaker">전투 연출</strong><span id="phase">준비</span></div><p id="line" aria-live="polite">아래에서 이펙트를 골라 재생해보세요.</p></div>
+</section>
+<section class="controls">
+  <div class="effects" role="group" aria-label="이펙트 선택">
+    <button data-effect="slash" aria-pressed="true">검격</button><button data-effect="critical" aria-pressed="false">치명타</button><button data-effect="dodge" aria-pressed="false">회피</button><button data-effect="block" aria-pressed="false">방어</button><button data-effect="magic" aria-pressed="false">화염 마법</button><button data-effect="unique" aria-pressed="false">고유능력</button>
+  </div>
+  <div class="playback"><button id="play">▶ 다시 재생</button><button id="pause" disabled>일시정지</button><button id="next">다음 이펙트 →</button><label>속도 <select id="speed"><option value="0.5">0.5배</option><option value="1" selected>1배</option><option value="2">2배</option></select></label><label><input type="checkbox" id="autoplay"> 연속 재생</label><span id="status" role="status">검격 선택</span></div>
+  <p class="note">타격 순간에만 피해 숫자와 체력이 바뀝니다. 주인공이 맞으면 상단 체력 영역에 표시됩니다. 기존 게임·세이브는 변경하지 않습니다.</p>
+</section>
+</main>
+<script type="module" src="battle-effects-preview.js"></script>
+</body></html>
