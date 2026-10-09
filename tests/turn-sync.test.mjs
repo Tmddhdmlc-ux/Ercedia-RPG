@@ -1,6 +1,18 @@
 import test from 'node:test';import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
+
+test('acknowledged public rulings append without losing history; resets and mechanical turns carry full records',()=>{
+ const s=start(),sync=createTurnSync();s.gm_rulings=Array.from({length:20},(_,i)=>({id:'rule-'+i,topic:'기존 계약 '+i,decision:'보수와 수행 조건을 유지한다. '.repeat(10)}));
+ const initial=sync.prepare(s,'안부를 묻는다');assert.deepEqual(initial.payload.state.gm_rulings,s.gm_rulings);sync.acknowledge(initial);
+ const next={id:'followup',topic:'후속 확인',decision:'새 증언을 확인했다.'};s.gm_rulings.push(next);const before=JSON.stringify(s),p=sync.prepare(s,'안부를 묻는다');
+ assert.equal(p.payload.state.gm_rulings,undefined);assert.deepEqual(p.payload.appended.gm_rulings,[next]);assert.deepEqual([...initial.payload.state.gm_rulings,...p.payload.appended.gm_rulings],s.gm_rulings);assert.equal(JSON.stringify(s),before);
+ assert.ok(JSON.stringify(p.payload.appended).length<JSON.stringify(s.gm_rulings).length/10);assert.match(incrementalPrompt(s,'안부를 묻는다','request',p),/appended.gm_rulings/);
+ assert.deepEqual(sync.prepare(s,'안부를 묻는다').payload.appended.gm_rulings,[next]);
+ const combat=sync.prepare(s,'공격한다');assert.deepEqual(combat.payload.state.gm_rulings,s.gm_rulings);assert.equal(combat.payload.appended,undefined);
+ const forced=sync.prepare(s,'안부를 묻는다',null,true);assert.deepEqual(forced.payload.state.gm_rulings,s.gm_rulings);assert.equal(forced.payload.appended,undefined);
+ sync.acknowledge(p);s.gm_rulings=s.gm_rulings.slice(1);assert.deepEqual(sync.prepare(s,'안부를 묻는다').payload.state.gm_rulings,s.gm_rulings);sync.reset();assert.deepEqual(sync.prepare(s,'안부를 묻는다').payload.state.gm_rulings,s.gm_rulings);
+});
 test('only applied turns advance checkpoints; deltas include changes and explicit empty lists',()=>{const s=start(),before=JSON.stringify(s),sync=createTurnSync(),checkpoints=[];let firstSize,secondSize;
  for(let i=1;i<=21;i++){const p=sync.prepare(s,'안부를 묻는다.');if(p.checkpoint)checkpoints.push(i);if(i===1)firstSize=incrementalPrompt(s,'안부를 묻는다.','r',p).length;if(i===2){secondSize=incrementalPrompt(s,'안부를 묻는다.','r',p).length;assert.equal(p.payload.state.player,undefined);assert.equal(p.payload.state.inventory,undefined);}
  assert.equal(sync.acknowledge(p),true);assert.equal(sync.acknowledge(p),false);}
