@@ -1,5 +1,5 @@
 import {actualPlace,nearbyPeople,regionalCommonNPCs} from './adventure-model.js';
-import {findNPC} from './npc-model.js';
+import {npcPublicRole} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 // Public presence only. A regional placement is a search candidate, not a meeting.
 export function townPeople(state){
@@ -15,7 +15,7 @@ export function townPeople(state){
     const inScene=state.scene?.location===place&&(state.scene.cast?.length?state.scene.cast:[state.scene.npc]).some(n=>n?.id===p.id);
     const confirmed=inScene||record?.accompanying||record?.known&&record.place===place;
     if(!confirmed)continue;
-    people.set(p.id,{...p,job:findNPC(p.id)?.duty||'직업 미확인',confirmed:true});
+    people.set(p.id,{...p,job:npcPublicRole(p.id)||'직업 미확인',confirmed:true});
   }
   for(const p of regionalCommonNPCs(state))if(!people.has(p.id))people.set(p.id,{...p,activity:'활동 확인 필요',confirmed:p.presence_confirmed});
   return [...people.values()].map(p=>{

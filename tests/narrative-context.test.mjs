@@ -6,8 +6,20 @@ import {narrativeFocus} from '../web/narrative-context.js';
 import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';
 import {turnFacts} from '../web/turn-facts.js';
 import {actionPrompt,normalizeScene} from '../web/scene.js';
+import {npcContext} from '../web/npc-model.js';
+import {townPeople} from '../web/town-people.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
+
+test('registered cleric and healer roles survive missing duty without trusting runtime rank overrides',()=>{
+ const s=start();s.scene.location=s.gameState.place;s.scene.npc=actor('ER-NPC-026');s.scene.cast=[actor('ER-NPC-026'),actor('ER-NPC-057')];s.npcStates={'ER-NPC-026':{rank:'경비 지휘관',private_note:'비밀'}};
+ const before=JSON.stringify(s),focus=narrativeFocus(s);
+ assert.equal(focus.voices[0].public_role,'중급 사제');assert.equal(focus.voices[1].public_role,'치료사');assert.match(focus.role_rule,/경비 지휘권/);
+ const nearby=npcContext(s).nearby_npcs;assert.equal(nearby.find(n=>n.id==='ER-NPC-026').public_role,'중급 사제');assert.equal(nearby.find(n=>n.id==='ER-NPC-057').public_role,'치료사');
+ assert.ok(nearby.every(n=>!Object.hasOwn(n,'strength')&&!Object.hasOwn(n,'private_note')));
+ const people=townPeople(s);assert.equal(people.find(n=>n.id==='ER-NPC-026').job,'중급 사제');assert.equal(people.find(n=>n.id==='ER-NPC-057').job,'치료사');
+ const sync=createTurnSync(),first=sync.prepare(s,'로한에게 안부를 묻는다');sync.acknowledge(first);const delta=sync.prepare(s,'로한에게 이어서 묻는다');assert.equal(delta.payload.state.turn_facts.narrative_focus.voices[0].public_role,'중급 사제');assert.equal(JSON.stringify(s),before);
+});
 
 test('narrative voices project registered current actors without creating meetings or leaking whole profiles',()=>{
  const s=start();s.scene.npc=actor('ER-COM-001');s.scene.cast=[actor('ER-COM-001'),actor('ER-COM-007'),actor('ER-NPC-081'),actor('unknown')];s.npcStates={'ER-COM-001':{hp:5,strength:99,private_note:'공개 금지'}};
@@ -18,7 +30,7 @@ test('narrative voices project registered current actors without creating meetin
 test('pending threat focuses an existing response while a resolved threat advances to aftermath',()=>{
  const s=start(),threat={event_id:'danger',kind:'threat',description:'수레 아래 주민이 있다',protected:'주민'},resolve={event_id:'safe',kind:'resolve',threat_id:'danger',description:'주민을 보호했다',protected:'주민'};
  s.quest_log=[{id:'ongoing',title:'운송',status:'active',story_required:true,story:[threat]},{id:'done',title:'완료',status:'completed',story:[threat,resolve]},{id:'offer',title:'제안',status:'offered'}];
- let f=narrativeFocus(s);assert.equal(f.threads.length,1);assert.equal(f.threads[0].phase,'respond_to_existing_threat');assert.equal(f.threads[0].pending_threats[0].event_id,'danger');
+ let f=narrativeFocus(s);assert.equal(f.threads.length,1);assert.equal(f.threads[0].phase,'respond_to_existing_threat');assert.equal(f.threads[0].pending_threats[0].event_id,'danger');assert.match(f.pacing_rule,/한 턴/);assert.match(f.pacing_rule,/성공은 보장하지/);
  s.quest_log[0].story.push(resolve);f=narrativeFocus(s);assert.equal(f.threads[0].phase,'continue_work_or_aftermath');assert.equal(f.threads[0].pending_threats,undefined);
  s.quest_log[0].status='ready_to_report';assert.equal(narrativeFocus(s).threads[0].phase,'report_verified_result');assert.equal(s.quest_log[0].story.length,2);
 });
