@@ -6,7 +6,7 @@
 <link rel="stylesheet" href="battle-effects-preview.css">
 </head>
 <body>
-<header><div><strong>전투 이펙트 미리보기</strong><p>적용 전 시안 · 수치와 기술명은 연출 예시입니다.</p></div><a href="battle-demo.html">현재 전투 화면</a></header>
+<header><div><strong>70종 기술 이펙트 미리보기</strong><p>등록 기술의 이름·설명 사용 · 연출과 피해 수치는 적용 전 시안입니다.</p></div><a href="battle-demo.html">현재 전투 화면</a></header>
 <main>
 <section id="stage" aria-label="전투 연출 미리보기">
   <img class="background" src="../assets/locations/towns/sunny_village/town_day.png" alt="" id="background">
@@ -18,11 +18,13 @@
   <div class="commentary"><div><strong id="speaker">전투 연출</strong><span id="phase">준비</span></div><p id="line" aria-live="polite">아래에서 이펙트를 골라 재생해보세요.</p></div>
 </section>
 <section class="controls">
-  <div class="effects" role="group" aria-label="이펙트 선택">
-    <button data-effect="slash" aria-pressed="true">검격</button><button data-effect="critical" aria-pressed="false">치명타</button><button data-effect="dodge" aria-pressed="false">회피</button><button data-effect="block" aria-pressed="false">방어</button><button data-effect="magic" aria-pressed="false">화염 마법</button><button data-effect="unique" aria-pressed="false">고유능력</button>
+  <div class="effects" role="group" aria-label="대표 기술 비교">
+    <button data-skill="skill_swd_001">횡베기</button><button data-skill="skill_swd_002">찌르기</button><button data-skill="skill_swd_008">연속 두 번 베기</button><button data-skill="spell_001">화염탄</button><button data-skill="spell_031">진홍 폭우</button><button data-skill="spell_025">홍염 장벽</button>
   </div>
+  <div class="library"><label>분류 <select id="category"><option value="all">전체 70종</option><option value="sword_manual">검술 30종</option><option value="fire">불 7종</option><option value="water">물 7종</option><option value="wind">바람 7종</option><option value="electricity">전기 7종</option><option value="darkness">어둠 6종</option><option value="light">빛 6종</option></select></label><label>기술 <select id="skill-list" aria-label="재생할 기술"></select></label><span id="count"></span></div>
+  <div class="skill-detail"><strong id="selected-name"></strong><span id="source-summary"></span><p id="visual-summary"></p></div>
   <div class="playback"><button id="play">▶ 다시 재생</button><button id="pause" disabled>일시정지</button><button id="next">다음 이펙트 →</button><label>속도 <select id="speed"><option value="0.5">0.5배</option><option value="1" selected>1배</option><option value="2">2배</option></select></label><label><input type="checkbox" id="autoplay"> 연속 재생</label><span id="status" role="status">검격 선택</span></div>
-  <p class="note">타격 순간에만 피해 숫자와 체력이 바뀝니다. 주인공이 맞으면 상단 체력 영역에 표시됩니다. 기존 게임·세이브는 변경하지 않습니다.</p>
+  <p class="note">실제 원본 70종을 골라 재생합니다. 다단 궤적은 시각적 표현이며 실제 타수·데미지를 정하지 않습니다. 방어·기동·표식 시안은 피해를 표시하지 않습니다. 기존 게임·세이브는 변경하지 않습니다.</p>
 </section>
 </main>
 <script type="module" src="battle-effects-preview.js"></script>
