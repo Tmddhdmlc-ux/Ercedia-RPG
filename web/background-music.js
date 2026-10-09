@@ -1,6 +1,7 @@
 export const musicTracks=Object.fromEntries([
   ['title','타이틀 · 에르세디아의 서막'],
   ['norvalt','노르발트 · 노르발트의 설원'],
+  ['veloa','벨로아 · 벨로아의 황금들녘'],['draken','드라켄 · 드라켄의 푸른 광맥'],['lumerin','루메린 · 루메린의 바닷바람'],
   ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
   ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
   ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
@@ -16,7 +17,13 @@ export function sceneMusic({battle=false,title=false,intro=false,background='',r
     if(region==='W1'||background?.startsWith('IMG-W1-')||/노르발트/.test(place))return 'norvalt';
   }
   const hour=String(time).match(/(?:^|\s)(\d{1,2}):\d{2}/);
-  return /밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6))?'night':'village';
+  if(/밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6)))return 'night';
+  if(background==='sunny_village_day'||/솔브린/.test(place))return 'village';
+  const actualRegion=region||background?.match(/^IMG-([WES][1-5]|C[WES])(?:-|$)/)?.[1]||'';
+  if(/^(?:W[1-5]|CW|west)$/.test(actualRegion)||/벨로아|발렌하르트|엘름베르크|로젠펠트|아르덴슈타인/.test(place))return 'veloa';
+  if(/^(?:E[1-4]|CE|east)$/.test(actualRegion)||/드라켄|칼트하임|아이젠크로네|베르크슈타인|실베른/.test(place))return 'draken';
+  if(/^(?:S[1-4]|CS|south)$/.test(actualRegion)||/루메린|벨마리나|세르반|아쿠아렌|솔메리아/.test(place))return 'lumerin';
+  return 'village';
 }
 export function createBackgroundMusic({tracks=musicTracks,initialVolume=.22,assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url)}={}){
   let ctx,master,enabled=false,desired=Object.keys(tracks)[0],active=null,volume=initialVolume,error=false,loading=false,revision=0,activation=0;

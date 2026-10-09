@@ -120,5 +120,44 @@
     "key_hint": "G major",
     "requested_style": "Instrumental calm medieval fantasy snowbound frontier settlement music, quiet dignified reflective mood, slow 64 BPM, lyrical breathy wooden flute and soft clarinet above warm sustained strings, sparse felted piano and delicate harp arpeggios, very restrained low cello supporting an intimate memorable melody, spacious gentle acoustic reverb like an open snowy landscape, restrained dynamics suited beneath dialogue, contemplative peaceful winter morning with a hint of ancient history, no vocals, no choir, no bells, no sleigh bells, no Christmas melodies, no brass fanfare, no martial percussion, no aggressive drums, slowly recurring phrases and soft lingering ending suited to crossfade looping.",
     "sha256": "76def40cec1f4a5d5c3bf9319fe9770bdd767384ebc3955eef8735dd8ad7335b"
+  },
+  "veloa": {
+    "title": "벨로아의 황금들녘",
+    "path": "assets/audio/music/veloa_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 179,
+    "tempo_hint_bpm": 80,
+    "key_hint": "D minor",
+    "requested_style": "Instrumental medieval fantasy pastoral kingdom exploration music, warm dignified hopeful mood, golden wheat fields rolling hills and old stone towns, lyrical wooden flute and oboe theme above acoustic lute and harp, graceful string ensemble and very restrained warm horn responses, light hand percussion, 80 BPM flowing gentle triple meter, memorable noble melody without martial pomp, organic acoustic performance, soft dialogue-friendly dynamics, recurring phrases and sustained ending for crossfade looping, no vocals, no choir, no bells, no electronic instruments, no aggressive war drums.",
+    "sha256": "4bdf5618c2c90ce33a895c7c48f2a3985934edabf3e913c1011035709278c05c"
+  },
+  "draken": {
+    "title": "드라켄의 푸른 광맥",
+    "path": "assets/audio/music/draken_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 172,
+    "tempo_hint_bpm": 92,
+    "key_hint": "E minor",
+    "requested_style": "Instrumental medieval fantasy highland kingdom exploration music, contemplative mysterious scholarly atmosphere, vast rocky plateaus crystal caverns and ancient arcane towers, expressive bass clarinet and solo viola with spacious low strings, harp harmonics and delicate muted piano figures, subtle frame drum pulse at 72 BPM, modal harmony and a clear lyrical motif, restrained elegant magic without bright chimes, organic chamber orchestral sound with spacious acoustic reverb, soft dialogue-friendly dynamics, cyclical phrases and lingering gentle ending for crossfade looping, no vocals, no choir, no bells, no synthetic sound effects, no aggressive percussion.",
+    "sha256": "9e81c0d9de8ebf446c097272f8af369d856aa6d6839227e6a7b1fe5180765b29"
+  },
+  "lumerin": {
+    "title": "루메린의 바닷바람",
+    "path": "assets/audio/music/lumerin_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "generated",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 164,
+    "tempo_hint_bpm": 70,
+    "key_hint": "G major",
+    "requested_style": "Instrumental medieval fantasy maritime kingdom exploration music, breezy sunny graceful and welcoming harbor atmosphere, acoustic nylon string guitar and plucked lute carrying a lilting lyrical motif, wooden flute and soft violin counterpoint, warm cello bass and delicate brushed hand drum and shaker, 88 BPM relaxed 6/8 coastal sway, lively restrained merchant port feeling without pirate battle music, airy polished acoustic ensemble, memorable melodic phrases with clear gentle dynamics suited beneath dialogue, recurring theme and soft sustained ending for crossfade looping, no vocals, no choir, no bells, no heavy brass, no electronic beat.",
+    "sha256": "77bf2ad0b554645a4f9f9571bc8e413c3d74de46695c7c909c3aaca337a92653"
   }
 }
