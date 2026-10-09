@@ -1,0 +1,84 @@
+{
+  "character_id": "ER-NPC-002",
+  "name": "브리엘 노바",
+  "versions": [
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "tier": "expert",
+      "phase": "low",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-002\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-002\\base.png"
+      ],
+      "camera": "slightly elevated diagonal view, subject on right",
+      "action": "몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 브리엘 노바 / ER-NPC-002. Text setting: 여23 적갈 땋은머리 호박 눈 청색 휘장.\nApproved technique: 청색 엄호 · 결전식. Draw action: 몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다. Skill category: defense. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-002/expert_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-1e361845-f2b4-4e5f-89c9-4b7fd5dad7e4.png",
+      "face_crop": {
+        "x": 0.54,
+        "y": 0.01,
+        "width": 0.25,
+        "height": 0.42
+      },
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "cf120dd06773b621e729c5c93c01f676f114e9955f24c1040faca4e96c1cc830",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "tier": "hyper",
+      "phase": "high",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-002\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-002\\base.png"
+      ],
+      "camera": "close three-quarter from right, diagonal foreground perspective",
+      "action": "몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 브리엘 노바 / ER-NPC-002. Text setting: 여23 적갈 땋은머리 호박 눈 청색 휘장.\nApproved technique: 청색 엄호 · 결전식. Draw action: 몸을 낮추고 검을 비껴 세워 동료의 후퇴를 지킨다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: defense. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 벨로아, 농경·기병·기사 문화; terrain . Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-002/hyper_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-0e8d4ade-3c5b-4275-846a-0c7b41d2fd28.png",
+      "face_crop": {
+        "x": 0.55,
+        "y": 0.01,
+        "width": 0.24,
+        "height": 0.39
+      },
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "dad3a16ba011b88311043de97090bf5711bb24ed9568a04f2a8a945077242957",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}
