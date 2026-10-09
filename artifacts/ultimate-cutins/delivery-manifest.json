@@ -1,0 +1,2935 @@
+{
+  "summary": {
+    "selected_characters": 60,
+    "knights": 37,
+    "mages": 23,
+    "selected_full_images": 120,
+    "new_full_images": 118,
+    "preserved_serin_full_images": 2,
+    "new_image_resolution": [
+      1664,
+      936
+    ],
+    "preserved_reference_images": 120,
+    "checks": [
+      "all 163 roster IDs accounted for",
+      "two correct tiers for all 60 eligible characters",
+      "all selected PNGs decoded, opaque and unique",
+      "all new image SHA and metadata match",
+      "reference hashes unchanged",
+      "Serin selected images unchanged since source commit",
+      "normalized face crop bounds",
+      "no learned or equipped skill grant"
+    ],
+    "browser_playback_tested": false,
+    "runtime_assets_added": 0,
+    "visual_review_status": "drafts pending user review",
+    "review_attention": [
+      "ER-CORE-004 hyper: palm/aura action differs from sword counterattack; review",
+      "Mage images with added weapon/accessory details require review against reference",
+      "High-tier knight poses and low/high effect strength require final art review"
+    ]
+  },
+  "images": [
+    {
+      "id": "ER-NPC-001",
+      "name": "알윈 페르",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "왕문 수호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-001/expert_ultimate_v1.png",
+      "sha256": "8d35f502821dffa7bfd79101f0a52e1bdab3367cb4c0f2bac83e1fbfbdbd23f6",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-001/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-001/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-001",
+      "name": "알윈 페르",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "왕문 수호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-001/hyper_ultimate_v1.png",
+      "sha256": "18205c6ac2a61c472f1d88e3d24cb830a8313da7f8e4e0b42ac7a5d9e93c5cf2",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-001/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-001/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "청색 엄호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-002/expert_ultimate_v1.png",
+      "sha256": "cf120dd06773b621e729c5c93c01f676f114e9955f24c1040faca4e96c1cc830",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-002/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-002/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-002",
+      "name": "브리엘 노바",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "청색 엄호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-002/hyper_ultimate_v1.png",
+      "sha256": "dad3a16ba011b88311043de97090bf5711bb24ed9568a04f2a8a945077242957",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-002/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-002/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-003",
+      "name": "케른 토리스",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "장미 선봉 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-003/expert_ultimate_v1.png",
+      "sha256": "28e1a8f46707e73bf83d772b595941d7bd94c89e962e39148d0fc32aef66403f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-003/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-003/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-003",
+      "name": "케른 토리스",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "장미 선봉 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-003/hyper_ultimate_v1.png",
+      "sha256": "54c28fc1a5098dba817379b2a33039dc28050e1110e5f4e30a5b1869901eebbe",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-003/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-003/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-004",
+      "name": "미엘 타란",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "측면 돌파 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-004/expert_ultimate_v1.png",
+      "sha256": "b16cce29571c21e593de0d14bac16cd901c0e17876be77f24fed958f79747099",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-004/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-004/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-004",
+      "name": "미엘 타란",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "측면 돌파 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-004/hyper_ultimate_v1.png",
+      "sha256": "67a3b611289ce23b210a7e604a685ae35d0453b44c9baf8663193b0dce09ed38",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-004/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-004/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-005",
+      "name": "노아 벨크",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "성벽 되받기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-005/expert_ultimate_v1.png",
+      "sha256": "e7a3bf305334ac4821faaf46e6acf18a90f707765419844f5d922f3d79cee7bf",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-005/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-005/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-005",
+      "name": "노아 벨크",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "성벽 되받기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-005/hyper_ultimate_v1.png",
+      "sha256": "fac017b6ca35b9488be7f6dc82c710b104e23b7a2b2eb2bb388de842897c1b33",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-005/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-005/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-006",
+      "name": "헤리나 조스트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "철갑 버티기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-006/expert_ultimate_v1.png",
+      "sha256": "03245eea2e633800f903e0e981f9ef91dbff667c88d4d9c511f83cff92b53bb3",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-006/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-006/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-006",
+      "name": "헤리나 조스트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "철갑 버티기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-006/hyper_ultimate_v1.png",
+      "sha256": "a7c458421c97ea86d9b45925a43bbc5ff1e19ff5f206a612e1a5492d1eeef4e4",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-006/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-006/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-007",
+      "name": "페이 론델",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "균열 추적 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-007/expert_ultimate_v1.png",
+      "sha256": "10f07f92392d57556ea14c581257f6059bab991929d1c23e39a0cecde1419711",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-007/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-007/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-007",
+      "name": "페이 론델",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "균열 추적 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-007/hyper_ultimate_v2.png",
+      "sha256": "440a9472fe5c12b7261376f9e81791dc3b6581ccd8d1be0cddf16501c0608d5e",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-007/hyper_ultimate_v2.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-007/hyper_ultimate_v2.png"
+    },
+    {
+      "id": "ER-NPC-008",
+      "name": "마티스 렌",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "회흑 급습 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-008/expert_ultimate_v1.png",
+      "sha256": "b80cef28d08b6f27c721b4a3a8b919e9248b3542edcf3e7fec0d3030866a277f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-008/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-008/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-008",
+      "name": "마티스 렌",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "회흑 급습 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-008/hyper_ultimate_v1.png",
+      "sha256": "8b5202d16a50ab5f5fc6ced1ddd5d01cb66835732c723b1a0cfb1752ee9eb6be",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-008/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-008/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-009",
+      "name": "다리오 센",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "백파도 호위 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-009/expert_ultimate_v1.png",
+      "sha256": "ea03aed09adb9bc9a1bcb44f8ab4f88b0bceede334869f95ba97ae6230f501a6",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-009/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-009/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-009",
+      "name": "다리오 센",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "백파도 호위 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-009/hyper_ultimate_v1.png",
+      "sha256": "eb0b76f49043b33264af926a4131a6b6214df5658516a97f9f6aede12492dcbc",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-009/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-009/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-010",
+      "name": "라넬 에스타",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "선측 막기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-010/expert_ultimate_v1.png",
+      "sha256": "d2310f0d22bc8f343926101f9729348899a7c8885ae8bf3ebd0e7fe2ba8a2182",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-010/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-010/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-010",
+      "name": "라넬 에스타",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "선측 막기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-010/hyper_ultimate_v1.png",
+      "sha256": "ef00c413b9aded54d49dc59d88d461b1dc2ae8e02b983368edc235af074978a8",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-010/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-010/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-011",
+      "name": "요엘 하츠",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "해풍 가르기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-011/expert_ultimate_v1.png",
+      "sha256": "799ed533b2fa26c7306255af1fdd59304eb5bcf363f27a0a9694808084594e07",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-011/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-011/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-011",
+      "name": "요엘 하츠",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "해풍 가르기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-011/hyper_ultimate_v1.png",
+      "sha256": "ac39456ef2468eeaa2a976d3b12b14edd16d6ed43e218322d10507045059703e",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-011/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-011/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-012",
+      "name": "시나 브렌",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "갑판 균형 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-012/expert_ultimate_v1.png",
+      "sha256": "c00064b5c481a15c634620b664848201a3a6ec095e02b0149812beb334d5efa1",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-012/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-012/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-012",
+      "name": "시나 브렌",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "갑판 균형 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-012/hyper_ultimate_v1.png",
+      "sha256": "7a412d091d80a684f2b296fc48ec57e96602a2c619fffd3eec9c7113931686f6",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-012/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-012/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-013",
+      "name": "에르빈 루즈",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "문헌 투영 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-013/circle3_ultimate_v1.png",
+      "sha256": "d5b402ea64473cfecbe74b8e8a21e36b7a5042b912a22dbb2a69f9afd8b2fd5b",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-013/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-013/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-013",
+      "name": "에르빈 루즈",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "문헌 투영 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-013/circle6_ultimate_v1.png",
+      "sha256": "2b5fd3665ddb7600ef35d3589cced233fe2f855c03a615de859a4ae6c20e85c0",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-013/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-013/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-014",
+      "name": "리비아 오르",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "서고 등불 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-014/circle3_ultimate_v1.png",
+      "sha256": "73066077552953ae3a9bbe1f0ec77c379c334c54861ac282f6a8cdb505f994b0",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-014/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-014/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-014",
+      "name": "리비아 오르",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "서고 등불 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-014/circle6_ultimate_v1.png",
+      "sha256": "acb0506c31b4e8dae8d7cea9cec3d88729b68e83f2383c40600c55490646344f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-014/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-014/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-015",
+      "name": "티렐 루인",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "뇌명 분할 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-015/circle3_ultimate_v1.png",
+      "sha256": "b800ae018727216c106489e56191cb6e9fb627d2a182a53875cd9f4349d3890d",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-015/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-015/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-015",
+      "name": "티렐 루인",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "뇌명 분할 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-015/circle6_ultimate_v1.png",
+      "sha256": "03cbf73459c2045fdd564535e560da175b57f4c04512307c09d48c5433f8c444",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-015/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-015/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-016",
+      "name": "키아 멜즈",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "공방 도통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-016/circle3_ultimate_v1.png",
+      "sha256": "a7c74a6427222f93c4a64cfd4920e6336d63b905eb9fbf8bc81c4cbdad554bfd",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-016/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-016/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-016",
+      "name": "키아 멜즈",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "공방 도통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-016/circle6_ultimate_v1.png",
+      "sha256": "b8e38ea250ad84d587c051f4229ea2bd8c5f244480b9a81ff2596d2e2bd93253",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-016/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-016/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-017",
+      "name": "세디아 루브",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "청류 회환 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
+      "sha256": "573287fe070731044b141241b734bafcff2b033e6de90304ed8b20a4792f603f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-017",
+      "name": "세디아 루브",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "청류 회환 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
+      "sha256": "ade54246f0b3e54e3cc60988461325b2503f1aa55325396a65150dbdbf735b50",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-018",
+      "name": "모렌 시프",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "선상 순풍 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
+      "sha256": "f4f0376e11442a30b0682c246abbd3703f9042de26c10d72cafb36287723f44e",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-018",
+      "name": "모렌 시프",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "선상 순풍 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
+      "sha256": "e20ba21a6d9cf8931660a179a780833f4d5c8aa05443cd5558c1202b914a800c",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-019",
+      "name": "엘라스 로크",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "황혼 장막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
+      "sha256": "2450015ead5aeb3169f96e2dccc8c9349289859fdfc206b4b7f2b2c216709488",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-019",
+      "name": "엘라스 로크",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "황혼 장막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
+      "sha256": "455b41909c6e6c7a23e60721f13bc518aa10de818332082407cee19e84ee7815",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "음영 접기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-020/circle3_ultimate_v1.png",
+      "sha256": "5320cd504e942a428589084e2952dc83c09459a7278707664b09af2f9083607a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-020/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-020/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "음영 접기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-020/circle6_ultimate_v1.png",
+      "sha256": "90591761a4cedc3ed6bdc87b66b3b2755503a98905b831b5ced839dcd0c82706",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-020/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-020/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "초석 방벽 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-021/circle3_ultimate_v1.png",
+      "sha256": "1c3da5ef69a7879aeabb48cebadf87cad6ecad2fd08cb8e7494c3cadef492388",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-021/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-021/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "초석 방벽 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-021/circle6_ultimate_v1.png",
+      "sha256": "caa02b78bacf35dfb311cd37dca84cfa276612506b3143dbe7167ac359a21bf9",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-021/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-021/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-022",
+      "name": "에타 칼즈",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "광맥 점검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-022/circle3_ultimate_v1.png",
+      "sha256": "6ff1866f2a6ba24d923dc5cc07c60d5bd4a8da0ca17748093fbcf2352114e206",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-022/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-022/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-022",
+      "name": "에타 칼즈",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "광맥 점검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-022/circle6_ultimate_v1.png",
+      "sha256": "8d321d8657f825ba1165548f4869c0b1bb8962ee4c1c92b72707e31b0c32faf2",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-022/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-022/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-034",
+      "name": "나룬 베일",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "붉은길 추적 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-034/expert_ultimate_v1.png",
+      "sha256": "de504c75c6fd2486b43ac75abe2bb4c00c2d31f96fbb3d3a0831ffd9432b2f92",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-034/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-034/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-034",
+      "name": "나룬 베일",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "붉은길 추적 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-034/hyper_ultimate_v1.png",
+      "sha256": "4a418e547cd14903d36bf5cd9263eb7237a9d6a2b98c933d68318292b956eff4",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-034/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-034/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-035",
+      "name": "피아 로만",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "돌길 회피 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-035/expert_ultimate_v1.png",
+      "sha256": "27b47dd2dbbb66f2b2767dba1483d08bea8a6a9768cdc76f7732bad4c944f43c",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-035/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-035/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-035",
+      "name": "피아 로만",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "돌길 회피 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-035/hyper_ultimate_v1.png",
+      "sha256": "283ac72b72b249a4e51a5b619fbd153e0385d7d2478c95e8c8fa17f622365052",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-035/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-035/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-037",
+      "name": "가이언 리오",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "항로 호위 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-037/expert_ultimate_v1.png",
+      "sha256": "30467051d31961f3f7d403bdfee910a59b9dd777ea21bdb3e075d3a659f201a4",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-037/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-037/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-037",
+      "name": "가이언 리오",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "항로 호위 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-037/hyper_ultimate_v1.png",
+      "sha256": "42c931adba5403e99948ceb5893b348f779ad8f42d97be6b2941481be4367f34",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-037/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-037/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-038",
+      "name": "바라크 몬",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "쇠갈퀴 격파 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-038/expert_ultimate_v1.png",
+      "sha256": "2c24ce56de79ba9549ce48dd266c28e6c132359ed55f5ef089a87d72466a2a55",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-038/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-038/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-038",
+      "name": "바라크 몬",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "쇠갈퀴 격파 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-038/hyper_ultimate_v1.png",
+      "sha256": "be7d5735e14b955300b222c5f7ea63ef9a5f7b2727b17a69aa5d43619ab0e8ee",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-038/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-038/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-039",
+      "name": "델리카 포",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "의료 청수 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-039/circle3_ultimate_v1.png",
+      "sha256": "04e0827db8f9af6110dba16d5e6156d38458f0f79277b5b52003212410f0a7c3",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-039/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-039/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-039",
+      "name": "델리카 포",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "의료 청수 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-039/circle6_ultimate_v1.png",
+      "sha256": "5475e2b8c6e92e2bb8fd3ea8f4c26da4e6c9720934ecfa7025c9afc3f425ffa0",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-039/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-039/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "대상단 방어 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-044/expert_ultimate_v1.png",
+      "sha256": "6b42c7cbb989f30e9eac857baaa8c60ae04ac345940103ef7d5f84cfc5d2cf12",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-044/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-044/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "대상단 방어 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-044/hyper_ultimate_v1.png",
+      "sha256": "3e08c9da4590d5c05f7313ab986b5e3ac2e31b883491da770956ac67d462a640",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-044/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-044/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-066",
+      "name": "도릭 뤼프",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "곡창길 압박 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-066/expert_ultimate_v1.png",
+      "sha256": "01b44f5b6e2b0677e7b2c0bf7ebaa7c61f67ccd9522402971c77e3ec28904fec",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-066/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-066/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-066",
+      "name": "도릭 뤼프",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "곡창길 압박 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-066/hyper_ultimate_v1.png",
+      "sha256": "75a43dfe9aa4603fe420874041647d9170a2ad67bb85faf0f23edde91544c41a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-066/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-066/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-069",
+      "name": "프레트 곤",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "탈영병 반격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-069/expert_ultimate_v1.png",
+      "sha256": "186ff6900292f47eb21b8a82d5d22c45b670e0d5ee9cfbde473ad524c169e487",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-069/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-069/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-069",
+      "name": "프레트 곤",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "탈영병 반격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-069/hyper_ultimate_v1.png",
+      "sha256": "91f75aaf8d1f121f0a3921bc538d3399fc8a2aa7dc149a2dfb12fa8d1c7c501d",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-069/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-069/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-071",
+      "name": "아르고 폰",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "갑판 강습 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-071/expert_ultimate_v1.png",
+      "sha256": "0eeafd9ebfe8947301f75f08850c2172b9be5eca9eb03f43d2868cda4599658a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-071/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-071/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-NPC-071",
+      "name": "아르고 폰",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "갑판 강습 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-NPC-071/hyper_ultimate_v1.png",
+      "sha256": "a9480e215fe1b24b8dea52ff4977fdbb8295bc35abdf86e5eed2460dbf1b3ee8",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-NPC-071/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-NPC-071/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-001",
+      "name": "아르센 4세",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "왕관의 수호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-001/expert_ultimate_v1.png",
+      "sha256": "d5096145d549923d9dba0610cecb0fac36ccb621b0ebb7f9041009286e53493c",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-001/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-001/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-001",
+      "name": "아르센 4세",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "왕관의 수호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-001/hyper_ultimate_v1.png",
+      "sha256": "70ad85271e5e28d34dcbf024e8de5ab507f32afad3bda36497784dd8dfa67a23",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-001/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-001/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-002",
+      "name": "레오니스 2세",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "수정 관통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-002/circle3_ultimate_v1.png",
+      "sha256": "d050937db7883c5d9d214c2e5fb2052678685be69b2c5525c9ab7af86ac456a2",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-002/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-002/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-002",
+      "name": "레오니스 2세",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "수정 관통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-002/circle6_ultimate_v1.png",
+      "sha256": "136c77974178bfb30b8570e27a687c29571f668848799d1ad03d397f247b096e",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-002/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-002/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-003",
+      "name": "세레나 1세",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "해유리 굴절 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-003/circle3_ultimate_v1.png",
+      "sha256": "ea5ffc0fdb558b600831f502e0a28475080a75794b7250538c6a17a3c9372c06",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-003/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-003/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-003",
+      "name": "세레나 1세",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "해유리 굴절 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-003/circle6_ultimate_v1.png",
+      "sha256": "33fd1565e28e897d3365bb7b98921792373263e7c3a0eb4db1ed69476289caf2",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-003/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-003/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-004",
+      "name": "에드릭 노르발트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "북곰 버티기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-004/expert_ultimate_v1.png",
+      "sha256": "fa6ca35fc3e566f7a85410b5ffd556e0749bebad4d03e6be8f9b9b4bad5a7e83",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-004/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-004/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-004",
+      "name": "에드릭 노르발트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "북곰 버티기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-004/hyper_ultimate_v1.png",
+      "sha256": "9b0c76e04a4294f91b2a366c15f5cef3644fdcc575fccfd96243fec3833a113d",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-004/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-004/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-005",
+      "name": "카시안 발렌하르트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "사자 인장검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-005/expert_ultimate_v1.png",
+      "sha256": "15e3b3de39769795dfeaa030fbcd54276fdf8ffebd973e4e5152fd28c943b6a7",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-005/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-005/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-005",
+      "name": "카시안 발렌하르트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "사자 인장검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-005/hyper_ultimate_v1.png",
+      "sha256": "6acb0c3d8ee6ce48ff90c19be59358956210afd0ba4ae79e2e2253d00792dabe",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-005/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-005/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-006",
+      "name": "마르타 엘름베르크",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "곡창 수로 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-006/circle3_ultimate_v1.png",
+      "sha256": "6e3035cc3a9e4baacda45c3f082f245794050f9bbffcc1b375d4bc48e28bdc03",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-006/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-006/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-006",
+      "name": "마르타 엘름베르크",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "곡창 수로 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-006/circle6_ultimate_v1.png",
+      "sha256": "d7b2a461337f626d648ccb1f54c4f0695427c3a57b23bedcc2439972dc14d31c",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-006/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-006/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-007",
+      "name": "율리안 로젠펠트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "장미 쇄진 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-007/expert_ultimate_v1.png",
+      "sha256": "dd0c1b16c858c45019da46b320355dff2c70ba61fce58a352fb5008820ca18ed",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-007/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-007/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-007",
+      "name": "율리안 로젠펠트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "장미 쇄진 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-007/hyper_ultimate_v1.png",
+      "sha256": "665dca0a08d66b972355c361a37ed63e54eb95fa34c3bafb829dd58119aa004f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-007/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-007/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-008",
+      "name": "비올레트 아르덴슈타인",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "은매 비껴검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-008/expert_ultimate_v1.png",
+      "sha256": "1e83c0336cd9fcc11d1d8c7f7ccf46a53749c642c9ba70c79bf275e17b1a6a6f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-008/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-008/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-008",
+      "name": "비올레트 아르덴슈타인",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "은매 비껴검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-008/hyper_ultimate_v1.png",
+      "sha256": "60056786338c3774f298277bb4715595a5063fda1d67d12cf6ec9a6c018bd948",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-008/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-008/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-009",
+      "name": "하인리히 칼트하임",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "검은관문 수비 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-009/expert_ultimate_v1.png",
+      "sha256": "57dfcea33910202956d2546cbc27b21f532a1a0482a400623819fc43871521de",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-009/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-009/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-009",
+      "name": "하인리히 칼트하임",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "검은관문 수비 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-009/hyper_ultimate_v1.png",
+      "sha256": "6dfffa417ad27dc010eb4dc3838cc70e3bc181a0499b78ca7355ded7fc73aec7",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-009/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-009/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-010",
+      "name": "셀리아 아이젠크로네",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "수정 회로 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-010/circle3_ultimate_v1.png",
+      "sha256": "2b1439c190e74f48ebcea173cf96e89aa3dbd4c4df40e1ea6ba256fc1195b033",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-010/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-010/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-010",
+      "name": "셀리아 아이젠크로네",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "수정 회로 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-010/circle6_ultimate_v1.png",
+      "sha256": "138ee8c1fcad0adc7d02060567b333760bb69efa5c9111d5818e5de1c3801a8a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-010/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-010/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-011",
+      "name": "발터 베르크슈타인",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "철산 무너뜨리기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-011/expert_ultimate_v1.png",
+      "sha256": "398bc0694fbd4e1bf0c9ed172bcbb88399c8549fd0f26a29f91e4e656282703b",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-011/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-011/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-011",
+      "name": "발터 베르크슈타인",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "철산 무너뜨리기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-011/hyper_ultimate_v1.png",
+      "sha256": "520f10658e77fb315fe8bbb49d25341cd4a3b359a652497c5da5fbd1dee283a2",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-011/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-011/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-012",
+      "name": "에밀 실베른",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "은다리 엄호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-012/circle3_ultimate_v1.png",
+      "sha256": "29c0b3c093a901b561c75717e192b2420d8f83a195905a1cade1abb595443aff",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-012/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-012/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-012",
+      "name": "에밀 실베른",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "은다리 엄호 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-012/circle6_ultimate_v1.png",
+      "sha256": "9063a3d4f36916a48110bef7533bfb40bc8a24f631ccde7457eb920afe419674",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-012/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-012/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-013",
+      "name": "도미니크 벨마리나",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "황금돛 물막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-013/circle3_ultimate_v1.png",
+      "sha256": "5ad94e894edcc6dbbc6337885a81d0927da892dbe3a4d064c775a4327b7e4ce9",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-013/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-013/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-013",
+      "name": "도미니크 벨마리나",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "황금돛 물막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-013/circle6_ultimate_v1.png",
+      "sha256": "3d806a130de0aa60f6ce5ec89160eed1cba8c6681a71534a60ad5202509aecfe",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-013/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-013/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-014",
+      "name": "이사벨 세르반",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "백매 길열기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-014/expert_ultimate_v1.png",
+      "sha256": "6f4635b3622b3ab11e2233d88ec1ffbd8a55676288577d41dedbdc732caa0353",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-014/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-014/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-014",
+      "name": "이사벨 세르반",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "백매 길열기 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-014/hyper_ultimate_v1.png",
+      "sha256": "7cb5c594ec89529503153ee0dba30183b65ac2ad891379ba99e03958599b98a6",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-014/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-014/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-015",
+      "name": "티에라 아쿠아렌",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "쌍파도 연격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-015/expert_ultimate_v1.png",
+      "sha256": "1c3a05ae21b9cdd2d439899c988cacb73937fd8409f0e6a78104df29bf5e8497",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-015/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-015/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-015",
+      "name": "티에라 아쿠아렌",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "쌍파도 연격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-015/hyper_ultimate_v1.png",
+      "sha256": "a67e5399f96fc5aef0a10d70fd4d8a5d516a048ba14370806383b76046065915",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-015/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-015/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-016",
+      "name": "라파엘 솔메리아",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "future_hypothetical",
+      "ability_name": "금열쇠 조명 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-016/circle3_ultimate_v1.png",
+      "sha256": "6e45c0fce2b2271d7be037ab8f0dbc7f57941875e2b24e2fbca1db694055ea8b",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-016/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-016/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-016",
+      "name": "라파엘 솔메리아",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "future_hypothetical",
+      "ability_name": "금열쇠 조명 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-016/circle6_ultimate_v1.png",
+      "sha256": "8c97de7ae2c0bd38f57ec08a42f90174308781c173954a622ed3bb0829a22172",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-016/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-016/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-028",
+      "name": "로데릭 바란",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "청금사자 결계검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-028/expert_ultimate_v1.png",
+      "sha256": "df7138a832d484af9e43dbadf63c50c01515f315246f6e74a49161372fa0bdbc",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-028/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-028/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-028",
+      "name": "로데릭 바란",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "청금사자 결계검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-028/hyper_ultimate_v1.png",
+      "sha256": "627fba1a7f8f353a614132f1c64317f6de6035ee86a0d0afe5c71a4dae6faa39",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-028/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-028/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "적장미 관통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-029/expert_ultimate_v1.png",
+      "sha256": "cce1c54001a6d016a6ed0b283b318688dbd4a87394901515222e44c24f628263",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-029/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-029/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-029",
+      "name": "리네트 로젠펠트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "적장미 관통 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-029/hyper_ultimate_v1.png",
+      "sha256": "9a91ecb6e4c8d39b4675b2c1b819a430dee0e5d7ea2f46ce1df85176ab8e1757",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-029/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-029/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-030",
+      "name": "카르스 에델",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "청뢰성벽 반격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
+      "sha256": "4f17a180181367d79447f7ea23f43a9533cb76b9e198ad2e5da6fcef2f4e2c36",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-030",
+      "name": "카르스 에델",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "청뢰성벽 반격 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
+      "sha256": "9df067213d1ea0bce8b1b486ebc1ca3285f1ad5bc1d897912d87c077562a97b6",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-031",
+      "name": "베라 칼트하임",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "균열 경계선 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
+      "sha256": "985bfd2de7eb2adf93fe0143f83c615bb2219f460f796eca0bf0f7c9a98174bd",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-031",
+      "name": "베라 칼트하임",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "균열 경계선 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
+      "sha256": "88950698c5abdef7bd0f7a8d3450e5386f176a62342f9eb1c0a76a15d1295a3f",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-032",
+      "name": "알렉시아 바레트",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "백파도 귀환검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
+      "sha256": "db29c7f3000dc610b369ef4870026e283238e0d0b76bd3eb2ce1170df404505e",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-032",
+      "name": "알렉시아 바레트",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "백파도 귀환검 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
+      "sha256": "8212829c0e315d5a202be4aa9193045303809917fbbd4e9a8334e3ac0c6b2864",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-033",
+      "name": "루카 마리노",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "current_tier_concept",
+      "ability_name": "해풍 쇄도 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
+      "sha256": "f4fb4e0f450d85f5c74a179c25dd0964289bd8634c214c824dd4682a99eed963",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-033",
+      "name": "루카 마리노",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "current_tier_concept",
+      "ability_name": "해풍 쇄도 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
+      "sha256": "01795c833777a9f0efd134a086deeda081c946e5eb440a923acae38be8f4d132",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-034",
+      "name": "오르델 비안",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "기록광 추출 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
+      "sha256": "4947f71bb3b764259ee7891e9c8890afe91c740389d9d1edf83c09f44c947dac",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-034",
+      "name": "오르델 비안",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "current_tier_concept",
+      "ability_name": "기록광 추출 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
+      "sha256": "612d1844fbb09df20c1a6e91f27d2d4dd0df9fa24d38a7f98f610626eedadd1a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "뇌명 도체망 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
+      "sha256": "f679ec81fa6377a1180f1d666781183e31b93b2ada53f91c7283d4f23026a980",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-035",
+      "name": "이레나 솔브",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "current_tier_concept",
+      "ability_name": "뇌명 도체망 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
+      "sha256": "250d9eea26e7b62bdd442acba6a40fe39954ab65c6558b42de7e5d32e3b147b1",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-036",
+      "name": "마레나 에르노",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "청류 구조환 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
+      "sha256": "a3ebd397a3512c8dd6898b2a2883ec44f66f3339b581fb74205c024910b83cde",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-036",
+      "name": "마레나 에르노",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "current_tier_concept",
+      "ability_name": "청류 구조환 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
+      "sha256": "4a89f07e9d246a29de489a06302a607f4df6c2cf5e9ebe1e1ac8e274187bba45",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-037",
+      "name": "세드릭 바일",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "황혼 은폐막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
+      "sha256": "81454bbe39af3253912d0295d845d7a505cc48db0a51808eabb61abd797c4234",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-037",
+      "name": "세드릭 바일",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "current_tier_concept",
+      "ability_name": "황혼 은폐막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
+      "sha256": "6c12c306c8e0dfa52906ac102e7202b0811bc3901eda5fe37d71319d9dc3e61a",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-038",
+      "name": "테레사 가른",
+      "combat_class": "mage",
+      "tier": "circle3",
+      "scope": "current_tier_concept",
+      "ability_name": "초석 응력막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
+      "sha256": "01c4728d13ce51bd959c8ee3a9fdfbea4e41bedd9e9a9d8c9c773ac0ae98bf17",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png"
+    },
+    {
+      "id": "ER-CORE-038",
+      "name": "테레사 가른",
+      "combat_class": "mage",
+      "tier": "circle6",
+      "scope": "current_tier_concept",
+      "ability_name": "초석 응력막 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
+      "sha256": "47a5b3158d87c3775e47e4dfdf0e70a64a7c31d934f0449d9924e61c5a61b461",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png"
+    },
+    {
+      "id": "serin",
+      "name": "세린",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": null,
+      "ability_name": "결의의 일섬",
+      "image": "assets/characters/cutins/drafts/serin/expert_ultimate_v1.png",
+      "sha256": "ae255485bca94101d6eac2915297655fbf9838e70d9a8f84afed650e5c1aa494",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": false,
+      "status": "draft_pending_user_review",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/serin/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/serin/expert_ultimate_v1.png"
+    },
+    {
+      "id": "serin",
+      "name": "세린",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": null,
+      "ability_name": "결의의 일섬",
+      "image": "assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+      "sha256": "c9fbbc27e699dc6dfd022ad71b07224e3f791c77989d6c2bda39c84fd106a4f2",
+      "size": [
+        1672,
+        941
+      ],
+      "new_image": false,
+      "status": "approved_existing_full_art_new_face_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png"
+    },
+    {
+      "id": "ER-COM-014",
+      "name": "라덴 크로스",
+      "combat_class": "knight",
+      "tier": "expert",
+      "scope": "future_hypothetical",
+      "ability_name": "계약 방어 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
+      "sha256": "6d3dbaedeeee0129d14b1d0c11eef56184565cba71171ee34d2926eba1438839",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png"
+    },
+    {
+      "id": "ER-COM-014",
+      "name": "라덴 크로스",
+      "combat_class": "knight",
+      "tier": "hyper",
+      "scope": "future_hypothetical",
+      "ability_name": "계약 방어 · 결전식",
+      "image": "assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
+      "sha256": "3af87a41fe7fba010f7b879b3cedf91423637cfc0f2e2915a5af0593496ca04c",
+      "size": [
+        1664,
+        936
+      ],
+      "new_image": true,
+      "status": "generated_review_pending",
+      "user_approved": false,
+      "github_url": "https://github.com/Tmddhdmlc-ux/Ercedia-RPG/blob/main/assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
+      "cdn_url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/main/assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png"
+    }
+  ],
+  "deferred": [
+    {
+      "id": "ER-NPC-023",
+      "name": "레베카 노스",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-024",
+      "name": "단테 로에",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-025",
+      "name": "오리아 밈",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-026",
+      "name": "로한 베스크",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-027",
+      "name": "에린 델프",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-028",
+      "name": "세브 루아",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-029",
+      "name": "아델 핀",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-030",
+      "name": "티온 바르",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-031",
+      "name": "리아 노엘",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-032",
+      "name": "마레스 반",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-033",
+      "name": "엘피 세이",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-036",
+      "name": "카린 돌트",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-040",
+      "name": "베렌 케이",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-041",
+      "name": "모니카 페즈",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-042",
+      "name": "루도 산체",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-043",
+      "name": "밀라 안데르",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-045",
+      "name": "로나트 피스",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-046",
+      "name": "네아 페렌",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-047",
+      "name": "에브란 무르",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-048",
+      "name": "로키아 멘",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-049",
+      "name": "후고 벨라",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-050",
+      "name": "테아 미르",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-051",
+      "name": "카데오 넬",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-052",
+      "name": "유리아 크렌",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-053",
+      "name": "헨릭 도르",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-054",
+      "name": "다리아 셀",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-055",
+      "name": "베누아 루",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-056",
+      "name": "루카스 멜",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-057",
+      "name": "마야 로웬",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-058",
+      "name": "칼리오 벨",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-059",
+      "name": "에델 루마",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-060",
+      "name": "로미엘 드란",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-061",
+      "name": "핀 코르다",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-062",
+      "name": "에시아 르몬",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-063",
+      "name": "로칸 헤스",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-064",
+      "name": "미엔 카프",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-065",
+      "name": "오델 비프",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-067",
+      "name": "바센 모그",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-068",
+      "name": "카자 트른",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-070",
+      "name": "이셸 토브",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-072",
+      "name": "멘자 데크",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-073",
+      "name": "베르곤 헬",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-074",
+      "name": "나시르 젬",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-075",
+      "name": "페이라 록",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-076",
+      "name": "델로스 칼",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-077",
+      "name": "루쉬 엔",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-078",
+      "name": "코드란 얀",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-079",
+      "name": "가레트 보",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-080",
+      "name": "미라한 델",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-081",
+      "name": "서리갈기 늑대",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-082",
+      "name": "백각 설산사슴",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-083",
+      "name": "철가죽 멧돼지",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-084",
+      "name": "곡창 그림자쥐",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-085",
+      "name": "잿불 송곳도마뱀",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-086",
+      "name": "뿔돌 협곡독수리",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-087",
+      "name": "수정굴 광충",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-088",
+      "name": "공명 수정거미",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-089",
+      "name": "청전기 산양",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-090",
+      "name": "회안개 박쥐",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-091",
+      "name": "해풍 날개뱀",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-092",
+      "name": "암초 부리게",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-093",
+      "name": "흑진주 먹장어",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-094",
+      "name": "은비늘 물갈퀴어",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-095",
+      "name": "밤등불 나방",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-096",
+      "name": "사막색 모래여우",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-097",
+      "name": "유령나무 산책자",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-098",
+      "name": "심연고리 사슴",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-099",
+      "name": "푸른균열 사냥개",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-NPC-100",
+      "name": "고대석갑 파수충",
+      "combat_class": "monster",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-017",
+      "name": "율렌 크라스",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-018",
+      "name": "세아 메르",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-019",
+      "name": "로나 에일",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-020",
+      "name": "다미엔 솔",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-021",
+      "name": "카르민 테라",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-022",
+      "name": "이오나 베르",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-023",
+      "name": "타빈 루오",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-024",
+      "name": "레이카스 룬",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-025",
+      "name": "에스텔 루나르",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-026",
+      "name": "니엘 마크",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-CORE-027",
+      "name": "베니아 사르",
+      "combat_class": "cleric",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-001",
+      "name": "브란 오크펠",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-002",
+      "name": "마레나 펜",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-003",
+      "name": "토렌 바크",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-004",
+      "name": "에다 클라인",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-005",
+      "name": "오스벤 밀러",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-006",
+      "name": "리네트 모어",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-007",
+      "name": "시그나 론",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-008",
+      "name": "페릭 하웬",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-009",
+      "name": "도르만 켈",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-010",
+      "name": "베라 노트",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-011",
+      "name": "니카 펠트",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-012",
+      "name": "울브릭 타너",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-013",
+      "name": "멜리사 베크",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-015",
+      "name": "신원 미상의 행인",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-016",
+      "name": "그레타 슈멜",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-017",
+      "name": "헤르몬 솔트",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-018",
+      "name": "루치오 마렌",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-019",
+      "name": "이레나 비올",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-020",
+      "name": "테오 파르",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-021",
+      "name": "미라 엔델",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-022",
+      "name": "알데르 바인",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-023",
+      "name": "셀다 네트",
+      "combat_class": "civilian",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    },
+    {
+      "id": "ER-COM-024",
+      "name": "신원 미상의 행인",
+      "combat_class": "martial",
+      "reason": "생업·성직·일반 무예·마수 기술 계열로 정리. 기사/마법사 궁극기 규격을 강제로 적용하지 않음."
+    }
+  ]
+}

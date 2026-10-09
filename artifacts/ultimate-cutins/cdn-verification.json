@@ -1,0 +1,967 @@
+{
+  "asset_commit": "a46f7960b439efeea166f67e888f3bab1fbf1204",
+  "verified_count": 120,
+  "total": 120,
+  "images": [
+    {
+      "id": "ER-NPC-001",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-001/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "8d35f502821dffa7bfd79101f0a52e1bdab3367cb4c0f2bac83e1fbfbdbd23f6",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-001",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-001/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "18205c6ac2a61c472f1d88e3d24cb830a8313da7f8e4e0b42ac7a5d9e93c5cf2",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-002",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-002/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "cf120dd06773b621e729c5c93c01f676f114e9955f24c1040faca4e96c1cc830",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-002",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-002/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "dad3a16ba011b88311043de97090bf5711bb24ed9568a04f2a8a945077242957",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-003",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-003/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "28e1a8f46707e73bf83d772b595941d7bd94c89e962e39148d0fc32aef66403f",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-003",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-003/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "54c28fc1a5098dba817379b2a33039dc28050e1110e5f4e30a5b1869901eebbe",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-004",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-004/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "b16cce29571c21e593de0d14bac16cd901c0e17876be77f24fed958f79747099",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-004",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-004/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "67a3b611289ce23b210a7e604a685ae35d0453b44c9baf8663193b0dce09ed38",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-005",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-005/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "e7a3bf305334ac4821faaf46e6acf18a90f707765419844f5d922f3d79cee7bf",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-005",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-005/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "fac017b6ca35b9488be7f6dc82c710b104e23b7a2b2eb2bb388de842897c1b33",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-006",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-006/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "03245eea2e633800f903e0e981f9ef91dbff667c88d4d9c511f83cff92b53bb3",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-006",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-006/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "a7c458421c97ea86d9b45925a43bbc5ff1e19ff5f206a612e1a5492d1eeef4e4",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-007",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-007/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "10f07f92392d57556ea14c581257f6059bab991929d1c23e39a0cecde1419711",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-007",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-007/hyper_ultimate_v2.png",
+      "status": 200,
+      "sha256": "440a9472fe5c12b7261376f9e81791dc3b6581ccd8d1be0cddf16501c0608d5e",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-008",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-008/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "b80cef28d08b6f27c721b4a3a8b919e9248b3542edcf3e7fec0d3030866a277f",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-008",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-008/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "8b5202d16a50ab5f5fc6ced1ddd5d01cb66835732c723b1a0cfb1752ee9eb6be",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-009",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-009/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ea03aed09adb9bc9a1bcb44f8ab4f88b0bceede334869f95ba97ae6230f501a6",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-009",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-009/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "eb0b76f49043b33264af926a4131a6b6214df5658516a97f9f6aede12492dcbc",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-010",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-010/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "d2310f0d22bc8f343926101f9729348899a7c8885ae8bf3ebd0e7fe2ba8a2182",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-010",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-010/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ef00c413b9aded54d49dc59d88d461b1dc2ae8e02b983368edc235af074978a8",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-011",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-011/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "799ed533b2fa26c7306255af1fdd59304eb5bcf363f27a0a9694808084594e07",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-011",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-011/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ac39456ef2468eeaa2a976d3b12b14edd16d6ed43e218322d10507045059703e",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-012",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-012/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "c00064b5c481a15c634620b664848201a3a6ec095e02b0149812beb334d5efa1",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-012",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-012/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "7a412d091d80a684f2b296fc48ec57e96602a2c619fffd3eec9c7113931686f6",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-013",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-013/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "d5b402ea64473cfecbe74b8e8a21e36b7a5042b912a22dbb2a69f9afd8b2fd5b",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-013",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-013/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "2b5fd3665ddb7600ef35d3589cced233fe2f855c03a615de859a4ae6c20e85c0",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-014",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-014/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "73066077552953ae3a9bbe1f0ec77c379c334c54861ac282f6a8cdb505f994b0",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-014",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-014/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "acb0506c31b4e8dae8d7cea9cec3d88729b68e83f2383c40600c55490646344f",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-015",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-015/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "b800ae018727216c106489e56191cb6e9fb627d2a182a53875cd9f4349d3890d",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-015",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-015/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "03cbf73459c2045fdd564535e560da175b57f4c04512307c09d48c5433f8c444",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-016",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-016/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "a7c74a6427222f93c4a64cfd4920e6336d63b905eb9fbf8bc81c4cbdad554bfd",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-016",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-016/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "b8e38ea250ad84d587c051f4229ea2bd8c5f244480b9a81ff2596d2e2bd93253",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-017",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "573287fe070731044b141241b734bafcff2b033e6de90304ed8b20a4792f603f",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-017",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ade54246f0b3e54e3cc60988461325b2503f1aa55325396a65150dbdbf735b50",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-018",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "f4f0376e11442a30b0682c246abbd3703f9042de26c10d72cafb36287723f44e",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-018",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "e20ba21a6d9cf8931660a179a780833f4d5c8aa05443cd5558c1202b914a800c",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-019",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "2450015ead5aeb3169f96e2dccc8c9349289859fdfc206b4b7f2b2c216709488",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-019",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "455b41909c6e6c7a23e60721f13bc518aa10de818332082407cee19e84ee7815",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-020",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-020/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "5320cd504e942a428589084e2952dc83c09459a7278707664b09af2f9083607a",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-020",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-020/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "90591761a4cedc3ed6bdc87b66b3b2755503a98905b831b5ced839dcd0c82706",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-021",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-021/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "1c3da5ef69a7879aeabb48cebadf87cad6ecad2fd08cb8e7494c3cadef492388",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-021",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-021/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "caa02b78bacf35dfb311cd37dca84cfa276612506b3143dbe7167ac359a21bf9",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-022",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-022/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6ff1866f2a6ba24d923dc5cc07c60d5bd4a8da0ca17748093fbcf2352114e206",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-022",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-022/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "8d321d8657f825ba1165548f4869c0b1bb8962ee4c1c92b72707e31b0c32faf2",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-034",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-034/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "de504c75c6fd2486b43ac75abe2bb4c00c2d31f96fbb3d3a0831ffd9432b2f92",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-034",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-034/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "4a418e547cd14903d36bf5cd9263eb7237a9d6a2b98c933d68318292b956eff4",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-035",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-035/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "27b47dd2dbbb66f2b2767dba1483d08bea8a6a9768cdc76f7732bad4c944f43c",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-035",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-035/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "283ac72b72b249a4e51a5b619fbd153e0385d7d2478c95e8c8fa17f622365052",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-037",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-037/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "30467051d31961f3f7d403bdfee910a59b9dd777ea21bdb3e075d3a659f201a4",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-037",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-037/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "42c931adba5403e99948ceb5893b348f779ad8f42d97be6b2941481be4367f34",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-038",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-038/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "2c24ce56de79ba9549ce48dd266c28e6c132359ed55f5ef089a87d72466a2a55",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-038",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-038/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "be7d5735e14b955300b222c5f7ea63ef9a5f7b2727b17a69aa5d43619ab0e8ee",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-039",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-039/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "04e0827db8f9af6110dba16d5e6156d38458f0f79277b5b52003212410f0a7c3",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-039",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-039/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "5475e2b8c6e92e2bb8fd3ea8f4c26da4e6c9720934ecfa7025c9afc3f425ffa0",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-044",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-044/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6b42c7cbb989f30e9eac857baaa8c60ae04ac345940103ef7d5f84cfc5d2cf12",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-044",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-044/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "3e08c9da4590d5c05f7313ab986b5e3ac2e31b883491da770956ac67d462a640",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-066",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-066/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "01b44f5b6e2b0677e7b2c0bf7ebaa7c61f67ccd9522402971c77e3ec28904fec",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-066",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-066/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "75a43dfe9aa4603fe420874041647d9170a2ad67bb85faf0f23edde91544c41a",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-069",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-069/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "186ff6900292f47eb21b8a82d5d22c45b670e0d5ee9cfbde473ad524c169e487",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-069",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-069/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "91f75aaf8d1f121f0a3921bc538d3399fc8a2aa7dc149a2dfb12fa8d1c7c501d",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-071",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-071/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "0eeafd9ebfe8947301f75f08850c2172b9be5eca9eb03f43d2868cda4599658a",
+      "verified": true
+    },
+    {
+      "id": "ER-NPC-071",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-NPC-071/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "a9480e215fe1b24b8dea52ff4977fdbb8295bc35abdf86e5eed2460dbf1b3ee8",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-001",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-001/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "d5096145d549923d9dba0610cecb0fac36ccb621b0ebb7f9041009286e53493c",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-001",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-001/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "70ad85271e5e28d34dcbf024e8de5ab507f32afad3bda36497784dd8dfa67a23",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-002",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-002/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "d050937db7883c5d9d214c2e5fb2052678685be69b2c5525c9ab7af86ac456a2",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-002",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-002/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "136c77974178bfb30b8570e27a687c29571f668848799d1ad03d397f247b096e",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-003",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-003/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ea5ffc0fdb558b600831f502e0a28475080a75794b7250538c6a17a3c9372c06",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-003",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-003/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "33fd1565e28e897d3365bb7b98921792373263e7c3a0eb4db1ed69476289caf2",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-004",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-004/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "fa6ca35fc3e566f7a85410b5ffd556e0749bebad4d03e6be8f9b9b4bad5a7e83",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-004",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-004/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "9b0c76e04a4294f91b2a366c15f5cef3644fdcc575fccfd96243fec3833a113d",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-005",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-005/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "15e3b3de39769795dfeaa030fbcd54276fdf8ffebd973e4e5152fd28c943b6a7",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-005",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-005/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6acb0c3d8ee6ce48ff90c19be59358956210afd0ba4ae79e2e2253d00792dabe",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-006",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-006/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6e3035cc3a9e4baacda45c3f082f245794050f9bbffcc1b375d4bc48e28bdc03",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-006",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-006/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "d7b2a461337f626d648ccb1f54c4f0695427c3a57b23bedcc2439972dc14d31c",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-007",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-007/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "dd0c1b16c858c45019da46b320355dff2c70ba61fce58a352fb5008820ca18ed",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-007",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-007/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "665dca0a08d66b972355c361a37ed63e54eb95fa34c3bafb829dd58119aa004f",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-008",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-008/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "1e83c0336cd9fcc11d1d8c7f7ccf46a53749c642c9ba70c79bf275e17b1a6a6f",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-008",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-008/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "60056786338c3774f298277bb4715595a5063fda1d67d12cf6ec9a6c018bd948",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-009",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-009/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "57dfcea33910202956d2546cbc27b21f532a1a0482a400623819fc43871521de",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-009",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-009/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6dfffa417ad27dc010eb4dc3838cc70e3bc181a0499b78ca7355ded7fc73aec7",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-010",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-010/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "2b1439c190e74f48ebcea173cf96e89aa3dbd4c4df40e1ea6ba256fc1195b033",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-010",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-010/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "138ee8c1fcad0adc7d02060567b333760bb69efa5c9111d5818e5de1c3801a8a",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-011",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-011/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "398bc0694fbd4e1bf0c9ed172bcbb88399c8549fd0f26a29f91e4e656282703b",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-011",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-011/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "520f10658e77fb315fe8bbb49d25341cd4a3b359a652497c5da5fbd1dee283a2",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-012",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-012/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "29c0b3c093a901b561c75717e192b2420d8f83a195905a1cade1abb595443aff",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-012",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-012/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "9063a3d4f36916a48110bef7533bfb40bc8a24f631ccde7457eb920afe419674",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-013",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-013/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "5ad94e894edcc6dbbc6337885a81d0927da892dbe3a4d064c775a4327b7e4ce9",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-013",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-013/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "3d806a130de0aa60f6ce5ec89160eed1cba8c6681a71534a60ad5202509aecfe",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-014",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-014/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6f4635b3622b3ab11e2233d88ec1ffbd8a55676288577d41dedbdc732caa0353",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-014",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-014/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "7cb5c594ec89529503153ee0dba30183b65ac2ad891379ba99e03958599b98a6",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-015",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-015/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "1c3a05ae21b9cdd2d439899c988cacb73937fd8409f0e6a78104df29bf5e8497",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-015",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-015/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "a67e5399f96fc5aef0a10d70fd4d8a5d516a048ba14370806383b76046065915",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-016",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-016/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6e45c0fce2b2271d7be037ab8f0dbc7f57941875e2b24e2fbca1db694055ea8b",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-016",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-016/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "8c97de7ae2c0bd38f57ec08a42f90174308781c173954a622ed3bb0829a22172",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-028",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-028/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "df7138a832d484af9e43dbadf63c50c01515f315246f6e74a49161372fa0bdbc",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-028",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-028/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "627fba1a7f8f353a614132f1c64317f6de6035ee86a0d0afe5c71a4dae6faa39",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-029",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-029/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "cce1c54001a6d016a6ed0b283b318688dbd4a87394901515222e44c24f628263",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-029",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-029/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "9a91ecb6e4c8d39b4675b2c1b819a430dee0e5d7ea2f46ce1df85176ab8e1757",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-030",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-030/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "4f17a180181367d79447f7ea23f43a9533cb76b9e198ad2e5da6fcef2f4e2c36",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-030",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-030/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "9df067213d1ea0bce8b1b486ebc1ca3285f1ad5bc1d897912d87c077562a97b6",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-031",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-031/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "985bfd2de7eb2adf93fe0143f83c615bb2219f460f796eca0bf0f7c9a98174bd",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-031",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-031/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "88950698c5abdef7bd0f7a8d3450e5386f176a62342f9eb1c0a76a15d1295a3f",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-032",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-032/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "db29c7f3000dc610b369ef4870026e283238e0d0b76bd3eb2ce1170df404505e",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-032",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-032/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "8212829c0e315d5a202be4aa9193045303809917fbbd4e9a8334e3ac0c6b2864",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-033",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-033/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "f4fb4e0f450d85f5c74a179c25dd0964289bd8634c214c824dd4682a99eed963",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-033",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-033/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "01795c833777a9f0efd134a086deeda081c946e5eb440a923acae38be8f4d132",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-034",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-034/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "4947f71bb3b764259ee7891e9c8890afe91c740389d9d1edf83c09f44c947dac",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-034",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-034/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "612d1844fbb09df20c1a6e91f27d2d4dd0df9fa24d38a7f98f610626eedadd1a",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-035",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-035/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "f679ec81fa6377a1180f1d666781183e31b93b2ada53f91c7283d4f23026a980",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-035",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-035/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "250d9eea26e7b62bdd442acba6a40fe39954ab65c6558b42de7e5d32e3b147b1",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-036",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-036/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "a3ebd397a3512c8dd6898b2a2883ec44f66f3339b581fb74205c024910b83cde",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-036",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-036/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "4a89f07e9d246a29de489a06302a607f4df6c2cf5e9ebe1e1ac8e274187bba45",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-037",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-037/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "81454bbe39af3253912d0295d845d7a505cc48db0a51808eabb61abd797c4234",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-037",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-037/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6c12c306c8e0dfa52906ac102e7202b0811bc3901eda5fe37d71319d9dc3e61a",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-038",
+      "tier": "circle3",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-038/circle3_ultimate_v1.png",
+      "status": 200,
+      "sha256": "01c4728d13ce51bd959c8ee3a9fdfbea4e41bedd9e9a9d8c9c773ac0ae98bf17",
+      "verified": true
+    },
+    {
+      "id": "ER-CORE-038",
+      "tier": "circle6",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-CORE-038/circle6_ultimate_v1.png",
+      "status": 200,
+      "sha256": "47a5b3158d87c3775e47e4dfdf0e70a64a7c31d934f0449d9924e61c5a61b461",
+      "verified": true
+    },
+    {
+      "id": "serin",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/serin/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "ae255485bca94101d6eac2915297655fbf9838e70d9a8f84afed650e5c1aa494",
+      "verified": true
+    },
+    {
+      "id": "serin",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/main/serin/cutins/drafts/ultimate-flash-v1.png",
+      "status": 200,
+      "sha256": "c9fbbc27e699dc6dfd022ad71b07224e3f791c77989d6c2bda39c84fd106a4f2",
+      "verified": true
+    },
+    {
+      "id": "ER-COM-014",
+      "tier": "expert",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-COM-014/expert_ultimate_v1.png",
+      "status": 200,
+      "sha256": "6d3dbaedeeee0129d14b1d0c11eef56184565cba71171ee34d2926eba1438839",
+      "verified": true
+    },
+    {
+      "id": "ER-COM-014",
+      "tier": "hyper",
+      "url": "https://raw.githubusercontent.com/Tmddhdmlc-ux/Ercedia-RPG/a46f7960b439efeea166f67e888f3bab1fbf1204/assets/characters/cutins/drafts/ER-COM-014/hyper_ultimate_v1.png",
+      "status": 200,
+      "sha256": "3af87a41fe7fba010f7b879b3cedf91423637cfc0f2e2915a5af0593496ca04c",
+      "verified": true
+    }
+  ]
+}
