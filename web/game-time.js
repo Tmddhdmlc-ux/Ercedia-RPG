@@ -11,7 +11,7 @@ export function gameTimeView(state){const scene=state.scene,stored=parseGameTime
  // An explicit scene timestamp wins; old saves with only descriptive times remain valid.
  const value=scene?.game_state?.time||(display.clock?scene.time:display.phase!=='unknown'&&stored.phase!==display.phase?scene.time:state.gameState?.time||scene?.time);
  const time=parseGameTime(value),date=scene?.game_state?.date||state.gameState?.date||state.world_engine?.calendar?.date||'',known=calendarDay(date)!==null,m=known?date.split(/[-/.]/).map(Number):null;
- return {...time,date,dateLabel:m?`${m[0]}년 ${m[1]}월 ${m[2]}일`:date||'날짜 미정',campaign:state.campaign_id||''};
+ return {...time,date,dateLabel:m?`에르세디아력 ${m[0]}년 ${m[1]}월 ${m[2]}일`:date||'날짜 미정',campaign:state.campaign_id||''};
 }
 export function timeAtmosphere(phase,background){const art=backgroundArt(background);if(!art||phase==='unknown'||background==='IMG-SHARED-08'||/dungeon|interior|faction/.test(art.category))return 'neutral';return phase;}
 export function mountGameTime(state){const $=id=>document.getElementById(id),stage=$('stage'),image=$('background');let previous=null,timer=null;

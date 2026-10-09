@@ -15,14 +15,14 @@ function setup(step,extra={}){
 }
 test('name explains that no personal introduction is needed and empty names cannot advance',()=>{
   const t=setup('name',{name:''});try{
-    assert.match(t.h.get('intro-description').textContent,/자기소개는 필요하지/);
+    assert.match(t.h.get('intro-description').textContent,/긴 자기소개는 하지 않아도/);
     t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'name');
     t.h.get('intro-input').oninput({target:{value:'여행자'}});t.h.get('intro-next').onclick();
     assert.equal(t.state.introDraft.step,'gender');
   }finally{t.h.close();}
 });
 test('appearance is optional and preset or defer buttons require no free writing',()=>{
-  for(const [index,appearance]of [[0,'남성'],[1,'여성'],[2,'']]){
+  for(const [index,appearance]of [[0,'남성'],[1,'여성'],[2,'밝히지 않음']]){
     const t=setup('gender');try{
       assert.equal(t.h.get('intro-input').hidden,true);assert.equal(t.h.get('intro-next').hidden,true);
       t.h.get('intro-options').children[index].onclick();
@@ -30,26 +30,24 @@ test('appearance is optional and preset or defer buttons require no free writing
     }finally{t.h.close();}
   }
 });
-test('custom appearance remains optional, saved and available when returning to the step',()=>{
-  const t=setup('gender');try{
-    t.h.get('intro-options').children[3].onclick();assert.equal(t.h.get('intro-input').hidden,false);
-    t.h.get('intro-input').oninput({target:{value:'검은 머리의 여행자'}});
-    t.h.get('intro-next').onclick();t.h.get('intro-back').onclick();
-    assert.equal(t.h.get('intro-input').value,'검은 머리의 여행자');
+test('creation has no appearance editor, back or previous-game controls; legacy appearance survives',()=>{
+  const t=setup('gender',{appearance:'검은 머리의 여행자'});try{
+    assert.equal(t.h.get('intro-options').children.length,3);
+    assert.equal(t.h.get('intro-input').hidden,true);
+    for(const id of ['intro-back','intro-map-back','intro-cancel','intro-map-cancel','intro-skip','restore-previous-game'])assert.equal(t.h.get(id).hidden,true);
     assert.equal(normalize(t.state).introDraft.appearance,'검은 머리의 여행자');
-    t.h.get('intro-skip').onclick();assert.equal(t.state.introDraft.appearance,'');
   }finally{t.h.close();}
 });
 test('background and response require explicit selection and Next without altering passive rules',()=>{
   const t=setup('calling');try{
     t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'calling');
-    const option=t.h.get('intro-options').children[0];assert.match(option.children[1].textContent,/굳센 마음/);
+    const option=t.h.get('intro-options').children[0];assert.equal(option.children.length,1);assert.doesNotMatch(t.h.get('intro-description').textContent,/패시브|후보|효과/);
     option.onclick();assert.equal(t.state.introDraft.step,'calling');assert.equal(t.h.get('intro-next').disabled,false);
     t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'response');
     t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'response');
     t.h.get('intro-options').children[1].onclick();t.h.get('intro-next').onclick();
     assert.deepEqual(passiveCandidates(t.state.introDraft.answers),['steadfast','traveler']);
-    assert.equal(t.state.introDraft.passive,'');assert.equal(t.h.get('intro-next').disabled,true);
+    assert.equal(t.state.introDraft.passive,'');assert.equal(t.h.get('intro-next').disabled,true);assert.equal(t.h.get('intro-options').children[0].children[0].textContent,'굳센 마음');assert.ok(t.h.get('intro-options').children[0].children[1].textContent.length>0);
     t.h.get('intro-options').children[1].onclick();t.h.get('intro-next').onclick();
     assert.equal(t.state.introDraft.step,'kingdom');assert.equal(t.state.introDraft.passive,'traveler');
   }finally{t.h.close();}
