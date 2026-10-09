@@ -78,6 +78,7 @@
     "https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/",
     "https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/"
   ],
+  "polish": "Reduced saturated high partials and flutter, quicker high-frequency decay, denser softer stereo reflections, 28 Hz cleanup, mild 3.4 kHz harshness reduction and 15.5 kHz rolloff. Preserves the 120 ms pre-strike silence and attack timing.",
   "processing": "Reversed risers, pitched and filtered external CC0 layers, timing offsets, echo tails, fades and peak limiting. No voice line or combat decision is generated.",
   "recipes": {
     "prepare": [

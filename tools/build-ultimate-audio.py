@@ -26,8 +26,8 @@ def bed(name,duration):
   phase=2*np.pi*np.cumsum(base+rise*(t/duration)**2)/sr
   env=np.exp(-t/decay) if decay else (t/duration)**.8
   for c in range(2):
-   ring=sum(np.sin(phase*p*(1+c*.003)+.4*c)/(i+1)**.75 for i,p in enumerate([1,1.477,2.113,2.693,3.79]))
-   signal[:,c]+=np.tanh(ring*1.5)*gain*env*(.8+.2*np.sin(2*np.pi*17*t+c))
+   ring=sum(np.sin(phase*p*(1+c*.003)+.4*c)*np.exp(-t*i*(.8 if decay else .12))/(i+1)**1.05 for i,p in enumerate([1,1.477,2.113,2.693,3.79]))
+   signal[:,c]+=(.65*ring/1.4+.35*np.tanh(ring))*gain*env*(.94+.06*np.sin(2*np.pi*4.2*t+c))
  if name=='prepare':
   sample('stringsD',.09);metal(165,.13,rise=55)
   signal+=.16*np.sin(2*np.pi*61*t)[:,None]*np.exp(-t/.9)[:,None]
@@ -44,11 +44,11 @@ def bed(name,duration):
   sample('cymbal',.55,decay=.85);sample('timpani',.45,decay=.4);metal(2900,.33,decay=.18)
   phase=2*np.pi*np.cumsum(155*np.exp(-t/.06)+43)/sr
   signal+=.52*np.sin(phase)[:,None]*np.exp(-t/.55)[:,None]
-  noise=rng.normal(0,1,n);signal+=noise[:,None]*.24*np.exp(-t/.045)[:,None]
+  noise=rng.normal(0,1,n);signal+=noise[:,None]*.19*np.exp(-t/.045)[:,None]
  elif name=='afterglow':
   metal(1280,.15,decay=.45);sample('cymbal',.16,decay=.65)
  dry=signal.copy()
- for delay,gain in [(.063,.22),(.137,.19),(.251,.17),(.397,.13),(.571,.09)]:
+ for delay,gain in [(.043,.12),(.079,.13),(.113,.12),(.157,.10),(.211,.09),(.269,.08),(.337,.07),(.419,.055),(.521,.04),(.637,.03)]:
   d=int(delay*sr)
   if d<n:signal[d:,0]+=dry[:-d,1]*gain;signal[d:,1]+=dry[:-d,0]*gain
  signal*=np.minimum(1,t/.004)[:,None]*np.minimum(1,(duration-t)/.045)[:,None]
@@ -63,8 +63,8 @@ for name,(duration,layers) in recipes.items():
  for i,(path,gain,rate,delay,effects) in enumerate(layers):
   args+=['-i',str(root/'assets/audio'/path)];filters.append(f'[{i}:a]aresample=44100,aformat=channel_layouts=stereo,asetrate={44100*rate},aresample=44100,{effects},volume={gain},adelay={int(delay*1000)}:all=1,apad[a{i}]')
  i=len(layers);args+=['-i',str(bed_path)];filters.append(f'[{i}:a]volume=1[a{i}]')
- filters.append(''.join(f'[a{i}]' for i in range(len(layers)+1))+f'amix=inputs={len(layers)+1}:normalize=0,alimiter=limit=0.82:level=0:latency=1,afade=t=in:d=0.004,afade=t=out:st={duration-.06}:d=0.06[out]')
+ filters.append(''.join(f'[a{i}]' for i in range(len(layers)+1))+f'amix=inputs={len(layers)+1}:normalize=0,highpass=f=28,equalizer=f=3400:t=q:w=1.1:g=-2,lowpass=f=15500,alimiter=limit=0.82:level=0:latency=1,afade=t=in:d=0.004,afade=t=out:st={duration-.06}:d=0.06[out]')
  args+=['-filter_complex',';'.join(filters),'-map','[out]','-t',str(duration),'-c:a','libvorbis','-q:a','5',str(out/(name+'.ogg'))];subprocess.run(args,check=True);print(name)
-(out/'recipes.json').write_text(json.dumps({'license':'CC0-1.0','sources':[{'author':'rubberduck','page':'https://opengameart.org/node/86018','files':['spell_01.ogg','spell_02.ogg','blade_03.ogg']},{'author':'JaggedStone','page':'https://opengameart.org/content/magic-spell-sfx','files':['magical_1.ogg','magical_2.ogg','magical_4.ogg','magical_7.ogg']},{'author':'StarNinjas','page':'https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes','files':['sword_1.ogg','sword_2.ogg','sword_3.ogg']},{'author':'Kenney','page':'https://kenney.nl/assets/rpg-audio','files':['knifeSlice.ogg','knifeSlice2.ogg']},{'author':'Kenney','page':'https://kenney.nl/assets/impact-sounds','files':['impactPunch_heavy_000.ogg','impactPunch_heavy_001.ogg']}],'orchestration':json.loads((out/'source/instruments.json').read_text()),'original_synthesis':'Inharmonic metal resonance, sub-bass descent and transient noise. No actual waterphone recording.', 'references':['https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/','https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/'], 'processing':'Reversed risers, pitched and filtered external CC0 layers, timing offsets, echo tails, fades and peak limiting. No voice line or combat decision is generated.','recipes':recipes},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
+(out/'recipes.json').write_text(json.dumps({'license':'CC0-1.0','sources':[{'author':'rubberduck','page':'https://opengameart.org/node/86018','files':['spell_01.ogg','spell_02.ogg','blade_03.ogg']},{'author':'JaggedStone','page':'https://opengameart.org/content/magic-spell-sfx','files':['magical_1.ogg','magical_2.ogg','magical_4.ogg','magical_7.ogg']},{'author':'StarNinjas','page':'https://opengameart.org/content/20-sword-sound-effects-attacks-and-clashes','files':['sword_1.ogg','sword_2.ogg','sword_3.ogg']},{'author':'Kenney','page':'https://kenney.nl/assets/rpg-audio','files':['knifeSlice.ogg','knifeSlice2.ogg']},{'author':'Kenney','page':'https://kenney.nl/assets/impact-sounds','files':['impactPunch_heavy_000.ogg','impactPunch_heavy_001.ogg']}],'orchestration':json.loads((out/'source/instruments.json').read_text()),'original_synthesis':'Inharmonic metal resonance, sub-bass descent and transient noise. No actual waterphone recording.', 'references':['https://www.leagueoflegends.com/en-gb/news/dev/origins-pyke/','https://www.leagueoflegends.com/en-us/news/dev/champion-insights-gwen/'], 'polish':'Reduced saturated high partials and flutter, quicker high-frequency decay, denser softer stereo reflections, 28 Hz cleanup, mild 3.4 kHz harshness reduction and 15.5 kHz rolloff. Preserves the 120 ms pre-strike silence and attack timing.','processing':'Reversed risers, pitched and filtered external CC0 layers, timing offsets, echo tails, fades and peak limiting. No voice line or combat decision is generated.','recipes':recipes},ensure_ascii=False,indent=2)+'\n',encoding='utf-8')
 
 bed_temp.cleanup()

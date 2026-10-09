@@ -1,4 +1,4 @@
-# 결의의 일섬 · 비장한 금속 공명 버전 (revision 6)
+# 결의의 일섬 · 비장한 금속 공명 버전 (revision 7)
 
 확정된 5초 컷씬에 연결되는 7단계 효과음. 화려한 장조 금관 팡파르를 빼고, 저음 압력·불협화 금속 공명·역검풍·날카로운 검격을 중심으로 다시 설계했다.
 
@@ -16,4 +16,8 @@
 
 Python numpy와 imageio-ffmpeg를 설치한 뒤 저장소 루트에서 `python tools/build-ultimate-audio.py`로 재생성한다. 재생은 web/ultimate-audio.js와 tests/serin-ultimate-preview.js의 컷씬 시간으로 연결되며, 일시정지·음소거·건너뛰기·배속·재시작을 지원한다. 음높이는 배속에 따라 바뀌지 않는다.
 
-미리보기: /tests/serin-ultimate-preview.html?revision=6 . 실전 자동 발동과 최종 컷씬 자동 호출은 ULTIMATE_SYSTEM.md의 별도 엔진 연결 범위다. 기존 unique 이벤트나 세린의 습득 기록을 변경하지 않는다. 실제 ChatGPT/Tampermonkey 전투 플레이를 검증한 것으로 간주하지 않는다.
+미리보기: /tests/serin-ultimate-preview.html?revision=7 . 실전 자동 발동과 최종 컷씬 자동 호출은 ULTIMATE_SYSTEM.md의 별도 엔진 연결 범위다. 기존 unique 이벤트나 세린의 습득 기록을 변경하지 않는다. 실제 ChatGPT/Tampermonkey 전투 플레이를 검증한 것으로 간주하지 않는다.
+
+## 최종 음색 다듬기
+
+비장한 금속 공명과 120ms 정적은 유지한다. 강한 포화·빠른 떨림을 줄이고 높은 배음은 더 빨리 사라지도록 조절했다. 잔향은 큰 메아리 몇 개 대신 작고 촘촘한 반사음으로 정리했다. 28Hz 이하 불필요한 저역, 3.4kHz의 거친 부분, 15.5kHz 위 고역을 완만하게 정리했다. 저음 충격과 날카로운 첫 검격은 유지하며 컷씬·재생 모듈·발동 판정은 변경하지 않는다.
