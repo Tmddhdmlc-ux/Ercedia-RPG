@@ -275,7 +275,7 @@ titleUI=mountTitleMenu(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''
 worldUI=mountWorldUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});
 tradeUI=mountTradeUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,isPending:()=>chatUI.isPending(),submit:(...args)=>chatUI.submit(...args),render:renderAll,persistCandidate:candidate=>storage.setItem(KEY,JSON.stringify(candidate)),returnToStory:()=>{switchTo('story');renderAll();saveGame();}});
 remasterUI=mountRemasterUI(state);
-adventureUI=mountAdventureUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),switchTo});
+adventureUI=mountAdventureUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),switchTo});
 skillLoadoutUI=mountSkillLoadout(state,{persist:()=>{saveGame();playerUI.render();},isPending:()=>chatUI.isPending()});
 renderAll();
 

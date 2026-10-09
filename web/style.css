@@ -2971,3 +2971,5 @@ input[type=range] {
 @media(min-width:701px){
  :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) :is(.location,.scene-tag){top:calc(var(--story-header-height,190px) + 16px);}
 }
+
+.resident-card{display:flow-root}.resident-card img{float:left;width:100px;height:140px;object-fit:contain;margin:0 18px 10px 0}.resident-card h3{line-height:1.4}

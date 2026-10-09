@@ -3,7 +3,9 @@ import assert from 'node:assert/strict';
 import {npcCatalog,npcContext,resolveNPC,updateNPC} from '../web/npc-model.js';
 import {characterVisual,placementFor} from '../web/character-art.js';
 import {defaults,normalize} from '../web/state.js';
-import {normalizeScene} from '../web/scene.js';
+import {regionalCommonNPCs} from '../web/adventure-model.js';
+import {planNPCLife} from '../web/npc-life.js';
+import {normalizeScene,actionPrompt} from '../web/scene.js';
 import {normalizeQuest,settleQuests} from '../web/quest-model.js';
 import {epicSeeds,epicEligibility,planLocalReputation,validateEpicQuest} from '../web/epic-model.js';
 const state=()=>({...defaults(),gameState:{date:'1-1-1',region:'W1',place:'노르발트'},quest_log:[],quest_event_ids:[]});
@@ -51,4 +53,20 @@ test('village completions and community affection stay separate from the parent 
   assert.equal(epicEligibility(s,village).eligible,true);assert.equal(epicEligibility(s,parent).eligible,false);
   assert.throws(()=>planLocalReputation(s,{location:'다른 마을',locality_events:[{...event,event_id:'foreign'}]}),/실제 등록 마을/);
   assert.equal(epicEligibility(normalize(s),village).eligible,true);
+});
+
+test('resident encounters follow actual region, schedules, movements and public identity rather than map browsing',()=>{
+ const s={...defaults(),gameState:{date:'650-07-01',region:'W3',place:'솔브린 마을'},region:'E2'};
+ let candidates=regionalCommonNPCs(s);assert.ok(candidates.some(p=>p.id==='ER-COM-003'&&p.job==='수레꾼'));assert.ok(candidates.some(p=>p.id==='ER-COM-005'));assert.ok(candidates.every(p=>p.region==='W3'));
+ assert.match(actionPrompt(s,'수레꾼과 이야기한다','resident-request'),/토렌 바크/);assert.match(actionPrompt(s,'수레꾼과 이야기한다','resident-request'),/말이 빠르고/);
+ s.npc_life={npcs:{'ER-COM-003':{region:'W3',place:'다른 마을',location_confirmed:true}}};assert.ok(!regionalCommonNPCs(s).some(p=>p.id==='ER-COM-003'));
+ s.npc_life.npcs['ER-COM-005']={schedule:[{start:'650-07-01',end:'650-07-02',region:'E2',place:'다른 지역'}]};assert.ok(!regionalCommonNPCs(s).some(p=>p.id==='ER-COM-005'));
+ s.gameState.region='E4';assert.ok(!regionalCommonNPCs(s).some(p=>p.id==='ER-COM-015'));
+ s.world_engine={active_dungeon:'DUN-E4-01'};assert.deepEqual(regionalCommonNPCs(s),[]);
+});
+test('common cart driver becomes an actual scene speaker and first meeting survives reload without duplication',()=>{
+ const s={...defaults(),gameState:{date:'650-07-01',region:'W3',place:'솔브린 마을'}};
+ const scene=normalizeScene({schema_version:1,type:'ercedia_scene',scene_id:'cart-meeting',location:'솔브린 마을',time:'09:00',background_id:null,npc:{id:'ER-COM-003',speaker:'토렌 바크',outfit:'none',emotion:'base'},dialogue:[{speaker:'토렌 바크',text:'어디까지 가십니까? 짐 무게부터 확인해야겠군요.'}],choices:[],game_state:{...s.gameState}});
+ Object.assign(s,planNPCLife(s,scene));s.scene=scene;assert.equal(s.npc_life.npcs['ER-COM-003'].known,true);assert.equal(s.scene.npc.id,'ER-COM-003');
+ const restored=normalize(s);Object.assign(restored,planNPCLife(restored,{...scene,scene_id:'cart-reunion'}));assert.equal(restored.npc_life.memories.filter(m=>m.npc_id==='ER-COM-003'&&m.action==='첫 만남').length,1);
 });
