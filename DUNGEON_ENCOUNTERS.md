@@ -37,6 +37,6 @@
 
 보스 구역은 지정 보스 1개체의 실제 처치, 중간보스 구역은 지정 정예의 실제 처치가 필요하다. 일반 전투 구역에는 원본 종과 정예를 후보로 연결하며 모든 교전에 정예를 강제하지 않는다. 이름과 예고 동작은 실제 조사·조우 때 공개하고 숨겨진 방의 단서는 기존 규칙을 유지한다. 실제 지정 출현 구역 밖의 변종 전투는 거절한다. 기존 기록된 구형 전투의 정산은 호환 경로를 유지한다.
 
-참가자는 고유 instance id, dungeon_foe_id, base_monster_id를 catalog_id로 사용한다. 등록 name/rank/level/stats/hp/maxHp/mp/maxMp/speed/level_hp_bonus/creature_multiplier를 일치시키며 미등록 modifiers는 0이다. 원화와 마수 음성은 원본 종의 등록 자산을 사용한다. 새 전용 원화가 제작됐다고 주장하지 않는다.
+참가자는 고유 instance id, dungeon_foe_id, base_monster_id를 catalog_id로 사용한다. 등록 name/rank/level/stats/hp/maxHp/mp/maxMp/speed/level_hp_bonus/creature_multiplier를 일치시키며 미등록 modifiers는 0이다. 마수 음성은 원본 종의 등록 자산을 사용한다. 원화는 characters/dungeon_monster_art.json에 등록된 경우 UI가 dungeon_foe_id로 해당 개체의 전용 PNG를 선택한다. art.id와 catalog_id는 원본 종 ID를 그대로 유지한다. 등록 전용 원화가 없는 개체·일반 마수·구형 저장 전투는 기존 종의 원화를 사용한다. 제작 프롬프트·경로는 assets/characters/monsters/dungeon/production-plan.json, 원화 모음은 tests/dungeon-monster-gallery.html에서 확인한다.
 
 보스와 정예도 한 마리당 전리품 추첨 한 번이다. 확정 희귀 보상·재추첨·별도 보스 상자를 추가하지 않는다. 재료는 원본 종에서, 장비·기술서 후보와 등급 상한은 실제 던전 및 변종 위협등급에서 가져온다. 보스 전리품 정산 후 클리어 XP·기록을 별도 확인할 수 있으며 지급된 아이템을 다시 주지 않는다. 토벌 의뢰는 원본 종 또는 dungeon_foe_id를 지정할 수 있다. 실제 재출현 증거 없는 즉시 반복 파밍은 금지한다.

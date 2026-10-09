@@ -1,4 +1,5 @@
 import {dungeonEncounters} from './dungeon-encounter-data.js';
+import {dungeonMonsterArt} from './dungeon-monster-art-data.js';
 const check=(v,m)=>{if(!v)throw Error('던전 개체 검증: '+m);};
 export function dungeonFoe(id){return dungeonEncounters.profiles.find(p=>p.id===id)||null;}
 export function dungeonFoeSnapshot(id){const p=dungeonFoe(id);if(!p)return null;return {...p,maxHp:p.hp,maxMp:p.mp,strength:p.stats.strength,dexterity:p.stats.dexterity,intelligence:p.stats.intelligence,constitution:p.stats.constitution,manaStat:p.stats.manaStat,levelHpBonus:p.level_hp_bonus};}
@@ -20,4 +21,4 @@ export function validateDungeonZoneBattle(d,zone,battle){
   const actors=battle.participants.filter(p=>p.side==='enemy'&&p.dungeon_foe_id===required);
   check(actors.length===1&&battle.outcome.resources.some(r=>r.id===actors[0].id&&r.hp===0),'구역의 실제 지정 '+(zone.type==='boss'?'보스':'정예')+' 처치 필요');
 }
-export function dungeonEncounterContext(state){const id=state.world_engine?.active_dungeon,region=state.gameState?.region;return {source:'locations/dungeon_encounters.json',profiles:dungeonEncounters.profiles.filter(p=>id?p.dungeon_id===id:p.dungeon_id.startsWith('DUN-'+region+'-')),rule:'정예·보스는 dungeon_foe_id와 base_monster_id를 catalog_id로 기록하고 등록 수치로 전투한다. 예고 동작·지형·대응을 서술하며 자동 적중·자동 약점 성공을 금지. 새 보스와 미지 구역은 요약 생략 금지.'};}
+export function dungeonEncounterContext(state){const id=state.world_engine?.active_dungeon,region=state.gameState?.region;return {source:'locations/dungeon_encounters.json',profiles:dungeonEncounters.profiles.filter(p=>id?p.dungeon_id===id:p.dungeon_id.startsWith('DUN-'+region+'-')).map(p=>dungeonMonsterArt.characters[p.id]?{...p,art_policy:'등록 전용 원화를 dungeon_foe_id로 UI가 자동 선택; art.id와 catalog_id는 원본 종의 base_monster_id 유지'}:p),rule:'정예·보스는 dungeon_foe_id와 base_monster_id를 catalog_id로 기록하고 등록 수치로 전투한다. 예고 동작·지형·대응을 서술하며 자동 적중·자동 약점 성공을 금지. 새 보스와 미지 구역은 요약 생략 금지.'};}

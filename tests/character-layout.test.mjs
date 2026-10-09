@@ -14,7 +14,7 @@ const variants=[...Object.entries(registeredArt).flatMap(([id,a])=>a.expressions
 const epsilon=1e-6;
 test('every registered person, monster, expression and Serin outfit has measured original canvas dimensions',()=>{
   assert.equal(new Set(variants.map(v=>v.id)).size,163);
-  assert.equal(Object.keys(characterLayoutData.assets).length,582);
+  assert.equal(Object.keys(characterLayoutData.assets).length,634);
   for(const {id,art} of variants){const m=characterMetrics(id,art),png=readFileSync(art.path);assert.equal(m.width,png.readUInt32BE(16));assert.equal(m.height,png.readUInt32BE(20));assert.ok(m.bounds[2]>m.bounds[0]&&m.bounds[3]>m.bounds[1]);}
 });
 test('desktop, narrow, portrait and landscape frames keep every head and silhouette width inside each 1–3 person slot',()=>{

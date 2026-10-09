@@ -20,6 +20,7 @@ await import('./shop-build.mjs');
 await import('./character-layout-build.mjs');
 // Run after the other registries finish updating the shared asset list.
 await import('./location-art-build.mjs');
+await import('./dungeon-monster-art-build.mjs');
 const root=path.resolve(path.dirname(fileURLToPath(import.meta.url)),'..');
 // Small build-only linker for this repo's named-import ES modules. No eval or remote runtime imports.
 const modules=new Map(),output=[];

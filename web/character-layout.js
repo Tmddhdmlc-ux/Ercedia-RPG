@@ -3,7 +3,7 @@ export function characterMetrics(id,art){
   const asset=characterLayoutData.assets[art.path];
   if(!asset)throw Error('Unmeasured registered character: '+art.path);
   const portrait=art.path===art.portrait;
-  const normalized=portrait?characterLayoutData.groups[id].portraitBounds:asset.bounds.map((v,i)=>v/(i%2?asset.height:asset.width));
+  const normalized=portrait?characterLayoutData.groups[art.layoutId||id].portraitBounds:asset.bounds.map((v,i)=>v/(i%2?asset.height:asset.width));
   return {width:asset.width,height:asset.height,bounds:normalized.map((v,i)=>v*(i%2?asset.height:asset.width)),kind:art.kind,portrait};
 }
 // Uniform scale fits the actual silhouette, rather than the transparent canvas.
