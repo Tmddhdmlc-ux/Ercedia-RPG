@@ -1,9 +1,10 @@
 import {findNPC,npcCatalog} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 const clone=v=>JSON.parse(JSON.stringify(v));
+export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
 const present=scene=>scene.cast||(scene.npc?[scene.npc]:[]);
 const fail=m=>{throw Error('NPC 생활 검증 · '+m);};
-const text=(v,max=500)=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail('문자열 형식');return v;};
+const text=(v,max=500,key='')=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail((key?key+' ':'')+'문자열 형식');return v;};
 const npc=id=>{if(!findNPC(id)||findNPC(id).id!==id)fail('미등록 NPC');return id;};
 const region=id=>{if(!/^(W[1-5]|E[1-4]|S[1-4]|CW|CE|CS)$/.test(id))fail('미등록 생활 권역');return id;};
 const country=id=>({W:'west',E:'east',S:'south'})[id?.[0]]||({CW:'west',CE:'east',CS:'south'})[id];
@@ -22,7 +23,7 @@ function empty(){return {version:1,clock:null,npcs:{},applied:{},memories:[],rum
 export function validateLifeEvents(events){
   if(!Array.isArray(events)||events.length>32)fail('사건은 최대 32개');
   return events.map(raw=>{
-    const e={event_id:text(raw.event_id,100),kind:raw.kind,date:text(raw.date,80),source_id:text(raw.source_id,100),reason:text(raw.reason,1000)};day(e.date);
+    const e={event_id:text(raw.event_id,100,'event_id'),kind:raw.kind,date:text(raw.date,80,'date'),source_id:text(raw.source_id,100,'source_id'),reason:text(raw.reason,1000,'reason')};day(e.date);
     if(!/^[A-Za-z0-9:_-]+$/.test(e.event_id)||['__proto__','constructor','prototype'].includes(e.event_id))fail('사건 ID 형식');
     if(!['schedule','move','experience','companion','condition','rumor','relay','npc_relation','region_effect'].includes(e.kind))fail('사건 종류');
     if(['schedule','move','experience','companion','condition'].includes(e.kind))e.npc_id=npc(raw.npc_id);

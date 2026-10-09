@@ -1,3 +1,4 @@
+import {lifeEventInstruction} from './npc-life.js';
 import {resolveNPC,npcPublicRole} from './npc-model.js';
 
 // A public, read-only scene focus. It never adjudicates dialogue or creates world events.
@@ -29,6 +30,15 @@ export function narrativeFocus(state,action='',questId=null){
  const focus={...(voices.length?{voices}:{}),...(threads.length?{threads}:{}),...(consequences.length?{recorded_consequences:consequences}:{})};
  if(Object.keys(focus).length)focus.knowledge_rule='기록·주변 명부가 만남·목격·NPC 지식을 확정하지 않는다. selected가 이번 행동의 의뢰이고 background는 참고만 한다. 완료된 의뢰는 다시 수락·지급·위협 발생 단계로 되돌리지 않는다.';
  if(voices.length)focus.role_rule='public_role은 등록된 공개 직무다. 사제·치료사 등에게 상황만으로 경비 지휘권이나 다른 직업을 부여하지 않는다. 임시 도움은 실제 경위와 직무 범위에서 서술한다. 저장의 잘못된 직무 묘사는 설정을 대체하지 않는다.';
+ if(voices.length)focus.life_event_rule=lifeEventInstruction;
+ if(voices.length)focus.contribution_rule='칭찬·후일담은 확인된 실제 행동의 수행자별로 구분한다. 플레이어의 경고·전달·준비 지원을 다른 인물의 발견·구조·치료·고정 작업으로 바꾸지 않는다. 함께 한 일은 공동 기여로 말하고, 목표·희망만으로 성과나 성공을 보장하지 않는다.';
+ if(/일거리|새.*(?:일|의뢰|기회)|다른.*(?:일|의뢰|기회)|다음.*(?:일|의뢰|기회)/.test(action)){
+  const completed=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)).slice(-3);
+  if(completed.length){
+   focus.completed_work=completed.map(q=>({quest_id:q.id,title:q.title,type:q.type,...(q.repeatable===true?{repeatable:true}:{}),...(q.story?.filter(e=>e.kind==='resolve').length?{verified_result:q.story.filter(e=>e.kind==='resolve').at(-1).description}: {})}));
+   focus.opportunity_rule='새 기회는 completed_work와 현재 부상·장소·시간·현지 인물의 목적을 참고하여 기록 대조·검수 같은 방식만 연속 제안하지 않는다. 연락·동행·관찰·설득·현지 수련·제작 등 실제 가능한 다른 참여 방식을 섞되 부상과 조건을 무시하지 않는다. 이미 완료한 계약·위협·보상은 다시 열지 않는다. 직접 요청한 반복 의뢰는 조건 확인 후 가능하다. 새 의뢰의 실제 전투 또는 평화를 위협하는 돌발 사건 규칙은 유지하되 같은 습격·적재물 사고를 반복하지 않는다. 제안만으로 수락·성과·보상을 확정하지 않는다.';
+  }
+ }
  if(threads.some(t=>t.phase==='respond_to_existing_threat')){
   const dialogue=(state.scene?.dialogue||[]).slice(-3).map(d=>({speaker:d.speaker,text:d.text.slice(0,240)}));
   const choices=(state.scene?.choices||[]).slice(0,4).map(c=>c.text);

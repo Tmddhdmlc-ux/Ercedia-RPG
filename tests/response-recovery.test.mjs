@@ -88,3 +88,13 @@ test('world settlement failure leaves currency, inventory and event ledgers unch
     t.reply(t.actions()[1].requestId);assert.equal(t.saves(),1);
   }finally{t.h.close();}
 });
+
+
+test('malformed first-meeting life records repair with exact required evidence and automatic memory guidance',()=>{
+ const t=setup();try{
+  const npc={id:'ER-COM-007',speaker:'시그나 론',outfit:'none',emotion:'base'},game_state={region:'W1',place:'장터',date:'650-07-03',time:'10:15'},before=structuredClone(t.state),first=t.actions()[0];
+  t.reply(first.requestId,{npc,location:'장터',game_state,life_events:[{event_id:'bad-first',date:'650-07-03',npc_id:npc.id,action:'첫 만남',result:'관찰 일을 제안했다',location:'장터',affection_delta:0,player_witnessed:true}]});
+  assert.deepEqual(t.state,before);assert.equal(t.saves(),0);const repaired=t.actions()[1];assert.match(repaired.text,/source_id 문자열 형식/);assert.match(repaired.text,/NPC 생활 규격/);assert.match(repaired.text,/엔진이 자동 기억/);assert.match(repaired.text,/kind=experience/);assert.match(repaired.text,/event_id,kind,date,source_id,reason/);
+  t.reply(repaired.requestId,{npc,location:'장터',game_state});assert.equal(t.saves(),1);assert.equal(t.state.npc_life.memories.filter(m=>m.npc_id===npc.id&&m.action==='첫 만남').length,1);assert.equal(t.actions().length,2);
+ }finally{t.h.close();}
+});

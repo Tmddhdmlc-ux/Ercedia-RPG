@@ -8,7 +8,7 @@ import {turnFacts} from '../web/turn-facts.js';
 import {actionPrompt,normalizeScene} from '../web/scene.js';
 import {npcContext} from '../web/npc-model.js';
 import {townPeople} from '../web/town-people.js';
-import {planNPCLife} from '../web/npc-life.js';
+import {planNPCLife,validateLifeEvents} from '../web/npc-life.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
@@ -72,4 +72,20 @@ test('arrival scenes retain farewell context without moving its speaker or weake
  const p=createTurnSync().prepare(s,'마야에게 인사하고 쉬러 간다.');assert.ok(incrementalPrompt(s,'마야에게 인사하고 쉬러 간다.','farewell',p).includes('speaker_id는 npc 또는 cast에 포함'));
  const source=normalizeScene({...raw,scene_id:'at-gate',location:'초소',npc:cast[0],dialogue:[{speaker:'마야 로웬',speaker_id:'ER-NPC-057',text:'붕대는 그대로 두시고 쉬세요.'}],game_state:{date:'650-07-01',region:'W1',place:'초소'}});Object.assign(s,planNPCLife(s,source));s.scene=source;s.gameState={...s.gameState,...source.game_state};
  const arrival=normalizeScene({...raw,dialogue:[{speaker:'나레이션',text:'마야는 붕대를 그대로 두고 쉬라고 당부했다. 민하는 작별하고 휴식 공간으로 돌아왔다.'}],game_state:{date:'650-07-01',region:'W1',place:'휴식 공간'}});Object.assign(s,planNPCLife(s,arrival));s.scene=arrival;s.gameState={...s.gameState,...arrival.game_state};assert.equal(s.npc_life.npcs['ER-NPC-057'].place,'초소');assert.equal(s.npc_life.npcs['ER-NPC-057'].last_meeting.place,'초소');assert.equal(townPeople(s).some(n=>n.id==='ER-NPC-057'),false);assert.equal(s.npc_life.memories.filter(m=>m.npc_id==='ER-NPC-057'&&m.action==='첫 만남').length,1);
+});
+
+
+test('new opportunities use bounded completed local public work without reopening contracts or claiming NPC knowledge',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-001');s.quest_log=Array.from({length:5},(_,i)=>({id:'done-'+i,title:'대조 작업 '+i,type:'investigate',region_id:'W1',status:'completed',story:[{event_id:'resolved-'+i,kind:'resolve',description:'플레이어는 주민에게 경고했고 일꾼들이 목재를 고정했다.'}]}));s.quest_log.push({id:'private',title:'미공개 업무',status:'completed',visibility:'private',region_id:'W1'},{id:'remote',title:'다른 권역',status:'completed',region_id:'E1'},{id:'open',title:'아직 맡은 일',status:'active',region_id:'W1'});const before=JSON.stringify(s),a='다른 일거리를 알아본다',f=narrativeFocus(s,a);
+ assert.deepEqual(f.completed_work.map(q=>q.quest_id),['done-2','done-3','done-4']);assert.equal(f.completed_work[0].verified_result,s.quest_log[2].story[0].description);assert.match(f.opportunity_rule,/부상과 조건을 무시하지/);assert.match(f.opportunity_rule,/직접 요청한 반복 의뢰/);assert.match(f.contribution_rule,/발견·구조·치료·고정/);assert.match(f.knowledge_rule,/NPC 지식을 확정하지/);assert.equal(f.completed_work.some(q=>q.status==='offered'),false);assert.equal(JSON.stringify(s),before);
+ const sync=createTurnSync();sync.acknowledge(sync.prepare(s,'인사한다'));assert.deepEqual(sync.prepare(s,a).payload.state.turn_facts.narrative_focus.completed_work,f.completed_work);for(const compact of [true,false])assert.ok(actionPrompt(s,a,'new-work',{compact}).includes('opportunity_rule'));
+ assert.equal(narrativeFocus(s,'통로를 대피시킨다').completed_work,undefined);s.scene.npc=null;assert.equal(narrativeFocus(s,'혼자 쉰다').contribution_rule,undefined);
+});
+
+
+test('first meetings remain automatic and malformed life events identify missing common evidence fields',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');const f=narrativeFocus(s,'시그나를 직접 만난다');assert.match(f.life_event_rule,/엔진이 자동 기억/);assert.match(f.life_event_rule,/event_id,kind,date,source_id,reason/);assert.match(f.life_event_rule,/scene:<scene_id>/);
+ assert.throws(()=>validateLifeEvents([{event_id:'first',date:'650-07-03',npc_id:'ER-COM-007',action:'첫 만남',result:'관찰 일을 제안했다',location:'장터',affection_delta:0,player_witnessed:true}]),/source_id 문자열 형식/);
+ assert.throws(()=>validateLifeEvents([{event_id:'first',date:'650-07-03',source_id:'scene:meeting'}]),/reason 문자열 형식/);
+ const scene={...s.scene,scene_id:'meeting',location:'장터',game_state:{region:'W1',place:'장터',date:'650-07-03'}};delete scene.cast;Object.assign(s,planNPCLife(s,scene));const first=s.npc_life.memories.filter(m=>m.npc_id==='ER-COM-007'&&m.action==='첫 만남');assert.equal(first.length,1);Object.assign(s,planNPCLife(s,scene));assert.equal(s.npc_life.memories.filter(m=>m.action==='첫 만남').length,1);
 });
