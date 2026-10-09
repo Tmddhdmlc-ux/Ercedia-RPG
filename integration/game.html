@@ -3016,6 +3016,43 @@ input[type=range] {
  .stage:has(.quest-proposals:not([hidden])) .scene-action-overlay{left:auto;right:3%;top:64px;bottom:64px;width:35%;max-height:none}
  .stage .quest-proposals{left:3%;right:41%;top:64px;max-height:30%}
 }
+
+/* Approved concept 01: art first, full-width dialogue, compact actions above it. */
+@media(min-width:701px){
+ .game:not([data-battle=active]) #stage{--vn-dialog-height:clamp(120px,28%,190px)}
+ .game:not([data-battle=active]) #stage .dialog{box-sizing:border-box;left:4%;right:4%;bottom:54px;height:var(--vn-dialog-height);min-height:0;max-height:none;padding:18px 28px 24px;border:1px solid #B79A6480;border-radius:12px;background:linear-gradient(110deg,#101E29F2,#101C27E8);box-shadow:0 12px 30px #0005}
+ .game:not([data-battle=active]) #stage .dialog-heading{align-items:center;padding-bottom:6px;border-bottom:1px solid #C7A66A30}
+ .game:not([data-battle=active]) #stage .dialog-heading b{font-size:calc(21px + var(--text-step));letter-spacing:.04em}
+ .game:not([data-battle=active]) #stage .dialog p{font-size:calc(21px + var(--text-step));line-height:1.65;margin:10px 0 0}
+ .game:not([data-battle=active]) #stage .scene-action-overlay{left:auto;right:4%;top:auto;bottom:calc(var(--vn-dialog-height) + 72px);width:min(580px,44%);max-height:max(60px,calc(100% - var(--vn-dialog-height) - 140px));padding:0;overflow:auto;border:0;border-radius:0;background:none;box-shadow:none;scrollbar-width:thin}
+ .game:not([data-battle=active]) #stage .choice-heading{display:none}
+ .game:not([data-battle=active]) #stage .scene-choices{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px;margin:0}
+ .game:not([data-battle=active]) #stage .scene-choice{position:relative;box-sizing:border-box;min-height:72px;display:flex;flex-direction:column;justify-content:center;gap:5px;padding:12px 14px 12px 44px;border:1px solid #BDA37480;border-radius:9px;background:linear-gradient(115deg,#132430ED,#172B38ED);box-shadow:0 4px 16px #0003;transition:background .15s,border-color .15s}
+ .game:not([data-battle=active]) #stage .choice-kind{font-size:12px;color:#B5CADA}
+ .game:not([data-battle=active]) #stage .choice-kind::before{content:attr(data-icon);position:absolute;left:14px;top:50%;transform:translateY(-50%);font-size:22px;color:#E5C989}
+ .game:not([data-battle=active]) #stage .choice-title{display:-webkit-box;-webkit-box-orient:vertical;-webkit-line-clamp:2;overflow:hidden;font-size:calc(17px + var(--text-step));line-height:1.4;color:#F3EDE2}
+ .game:not([data-battle=active]) #stage .choice-detail{font-size:12px;line-height:1.3;color:#E5C989}
+ .game:not([data-battle=active]) #stage .scene-choice:is(:hover,:focus-visible){outline:2px solid #94D7F1;outline-offset:-2px;border-color:#94D7F1;background:#234354F2}
+ .game:not([data-battle=active]) #stage .scene-choice:disabled{opacity:.6;box-shadow:none}
+ .game:not([data-battle=active]) #stage .npc-standing:not(.npc-monster){height:125%;top:0;left:44%;transform:translateX(-50%)}
+ .game:not([data-battle=active]) #stage .cast-canvas:not([data-kind=monster]){height:125%;top:0}
+ .game:not([data-battle=active]) #stage .quest-proposals{left:4%;right:52%;top:64px;max-height:max(60px,calc(100% - var(--vn-dialog-height) - 140px))}
+ .game:not([data-battle=active]) #chat-runtime{padding:8px 4%;background:#101E29;border-top:1px solid #C7A66A30}
+ .game:not([data-battle=active]) #chat-runtime #action-label{position:absolute;width:1px;height:1px;overflow:hidden;clip-path:inset(50%)}
+ .game:not([data-battle=active]) #chat-runtime textarea#free-action{height:46px;min-height:46px;max-height:110px;resize:none;border-radius:8px;font-size:calc(16px + var(--text-step));transition:height .15s}
+ .game:not([data-battle=active]) #chat-runtime textarea#free-action:focus{height:74px}
+ .game:not([data-battle=active]) #chat-runtime #send-action{min-width:108px;border:1px solid #C5A66D;background:#172B38;color:#E6C98A;border-radius:8px}
+ .game:not([data-battle=active]) #chat-runtime .manual-scene{margin-top:4px;font-size:12px}
+ .game:not([data-battle=active]) #story .story-controls{background:#101C27A8;border:0}
+ #choice-preview{padding:14px 18px;font-size:16px;border-color:#BDA374;max-height:260px}
+}
+@media(min-width:701px) and (max-height:700px){
+ .game:not([data-battle=active]) #stage{--vn-dialog-height:clamp(100px,28%,140px)}
+ .game:not([data-battle=active]) #stage .dialog{padding:10px 20px 20px}
+ .game:not([data-battle=active]) #stage .scene-choice{min-height:56px;padding-top:8px;padding-bottom:8px}
+ .game:not([data-battle=active]) #stage .choice-kind{display:none}
+}
+@media(prefers-reduced-motion:reduce){#stage .scene-choice,#chat-runtime textarea#free-action{transition:none}}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -3092,7 +3129,7 @@ input[type=range] {
         <section id="name-setup" class="name-setup" role="dialog" aria-modal="true" aria-labelledby="name-setup-title" hidden><div class="name-setup-card"><button id="intro-new-from-name" type="button" class="primary">새 게임 프롤로그 시작</button><h2 id="name-setup-title">어떤 이름으로 모험할까요?</h2><p>정한 이름은 이 채팅의 게임에 저장됩니다.</p><label for="adventurer-name">주인공 이름</label><div class="free-action-row"><input id="adventurer-name" type="text" maxlength="40" autocomplete="off" placeholder="이름을 입력하세요"><button id="confirm-name" type="button" class="primary">이 이름으로 시작</button></div><p id="name-error" role="status"></p></div></section>
       <section id="chat-runtime" class="chat-runtime" aria-label="게임 행동 및 ChatGPT 연결" hidden>
 
-        <form id="free-action-form"><label id="action-label" for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="2" placeholder="대화하거나, 주변을 살펴보거나, 원하는 행동을 적어주세요."></textarea><button id="send-action" type="submit" class="primary">보내기</button></div><p class="input-hint">Enter 보내기 · Shift+Enter 줄바꿈</p></form>
+        <form id="free-action-form"><label id="action-label" for="free-action">자유 대화·행동</label><div class="free-action-row"><textarea id="free-action" maxlength="2000" rows="1" placeholder="하고 싶은 말이나 행동을 입력하세요"></textarea><button id="send-action" type="submit" class="primary">보내기</button></div><p class="input-hint">Enter 보내기 · Shift+Enter 줄바꿈</p></form>
         <div class="connection-row"><p id="connection-status" role="status">JSON 수동 적용으로 시작할 수 있습니다.</p><button id="retry-response" hidden>다시 요청</button><button id="cancel-wait" hidden>대기 해제</button></div>
         <details id="connection-tools" class="manual-scene"><summary>연결 도움</summary>
         <p id="connection-detail" class="connection-detail"></p>
@@ -7349,8 +7386,8 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
       const choice=choices[index],p=presentations[index];button.hidden=!choice;button.replaceChildren();button.disabled=!!pending||!last||naming||creating;button.onclick=()=>choose(index);
       if(!choice)return;
       button.className='scene-choice';button.dataset.kind=p.kind;button.setAttribute('aria-label',`${index+1}. ${p.label} · ${p.title} · ${choice.text}`);button.setAttribute('aria-describedby','choice-preview');
-      const badge=document.createElement('span'),title=document.createElement('strong'),detail=document.createElement('span');badge.className='choice-kind';badge.textContent=`${index+1} · ${p.label}${p.quest?' · '+(p.quest.rank||'미정')+'등급':''}`;title.className='choice-title';title.textContent=p.title;detail.className='choice-detail';detail.textContent=p.quest?`${p.reward} · ${choice.text}`:choice.title?choice.text:'';detail.hidden=!detail.textContent;button.append(badge,title,detail);
-      const show=()=>{if(button.disabled)return;choicePreview.textContent=p.preview;const rect=button.getBoundingClientRect(),width=window.innerWidth||1000,height=window.innerHeight||800;choicePreview.style.left=Math.max(12,Math.min(rect.left,width-452))+'px';choicePreview.style.top=Math.max(12,Math.min(rect.top-320,height-340))+'px';choicePreview.hidden=false;};
+      const badge=document.createElement('span'),title=document.createElement('strong'),detail=document.createElement('span');badge.className='choice-kind';badge.dataset.icon=({dialogue:'♧',travel:'⌖',quest:'◇',investigate:'⌕',trade:'♜',training:'⚔',action:'✦'})[p.kind]||'✦';badge.textContent=`${index+1} · ${p.label}${p.quest?' · '+(p.quest.rank||'미정')+'등급':''}`;title.className='choice-title';title.textContent=p.title;detail.className='choice-detail';detail.textContent=p.quest?p.reward:'';detail.hidden=!detail.textContent;button.append(badge,title,detail);
+      const show=()=>{if(button.disabled)return;choicePreview.textContent=p.quest?p.preview:(choice.description&&choice.description!==choice.text?choice.text+'\n\n'+choice.description:choice.text);const rect=button.getBoundingClientRect(),width=window.innerWidth||1000,height=window.innerHeight||800;choicePreview.style.left=Math.max(12,Math.min(rect.left,width-452))+'px';choicePreview.style.top=Math.max(12,Math.min(rect.top-320,height-340))+'px';choicePreview.hidden=false;};
       button.onpointerenter=button.onfocus=show;button.onpointerleave=button.onblur=()=>{choicePreview.hidden=true;};
     });
     $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;

@@ -32,3 +32,15 @@ test('quest choice displays a vertical titled reward row, hover/focus preview an
     const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,1);assert.ok(actions[0].payload.text.endsWith(choice.text));assert.equal(state.quest_log[0].status,'offered');assert.deepEqual(state.inventory,[]);
   }finally{h.close();}
 });
+
+test('compact action cards retain complete hover/focus text and exact original transmission for all four shortcuts',()=>{
+ for(let i=0;i<4;i++){
+  const h=uiHarness(),choices=['trade','investigate','dialogue','travel'].map((kind,n)=>({id:'compact-'+n,kind,title:['물품 거래','장터 일자리','운송 상담','노점 둘러보기'][n],text:'원본 행동 '+n+'의 전체 내용을 그대로 전송한다.',description:'선택 행동의 자세한 공개 설명 '+n}));
+  const state={...defaults(),player:{...defaults().player,name:'검증'},scene:{...scene(),choices}};
+  try{
+   mountChatUI(state,{render(){},persist(){},embedded:true});const button=h.get('scene-choices').children[i];button.getBoundingClientRect=()=>({left:900,top:400});assert.equal(button.children[1].textContent,choices[i].title);assert.equal(button.children[2].hidden,true);
+   button.onfocus();const preview=h.get('stage').children.at(-1);assert.equal(preview.hidden,false);assert.ok(preview.textContent.includes(choices[i].text));assert.ok(preview.textContent.includes(choices[i].description));
+   h.key(String(i+1));const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,1);assert.ok(actions[0].payload.text.endsWith(choices[i].text));assert.deepEqual(state.scene.choices,choices);
+  }finally{h.close();}
+ }
+});
