@@ -4,6 +4,7 @@ import {faceFit} from './face-fit.js';
 import {resolveBackground,backgroundURL} from './location-art.js';
 import {appendItemIcon} from './item-art-ui.js';
 import {battleCommentary} from './battle-presentation.js';
+import {renderDialogueTerms} from './dialogue-glossary.js';
 export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
@@ -33,7 +34,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
     art(slots[0],allied);art(slots[1],enemy);
     for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
     for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
-    $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);
+    $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),playback.scene);
     const skill=actor.skills.find(s=>s.id===e.skill_id);if(skill){$('battle-cutin').hidden=false;$('battle-cutin').textContent=skill.name;$('battle-cutin').dataset.kind=e.kind;animate($('battle-cutin'),[{opacity:0,transform:'translateY(10px) scale(.9)'},{opacity:1,transform:'translateY(0) scale(1)',offset:.15},{opacity:1,offset:.65},{opacity:0,transform:'translateY(-8px) scale(1.03)'}],duration(e)*.8);}
     $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
     const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
@@ -88,7 +89,7 @@ export function mountBattleUI(state,{render,persist,chat,assetBase,renderBackgro
       eventStart();lastTime=0;raf=requestAnimationFrame(tick);
     }else{
       // Other UI updates must not overwrite the one-line commentary.
-      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';$('line').textContent=battleCommentary(e.narration);}
+      const e=p.scene.battle.events[p.index];if(e){$('speaker').textContent=p.scene.battle.participants.find(a=>a.id===e.actor).name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),p.scene);}
     }
   }
   function next(){if(!battleIsActive(state))return;const p=state.battlePlayback;if(p.manual!==false&&!waiting)return;p.paused=false;$('battle-pause').textContent='일시정지';p.index++;save();eventStart();lastTime=0;}
