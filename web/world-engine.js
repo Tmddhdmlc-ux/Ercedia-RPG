@@ -1,3 +1,6 @@
+import {bindWallet,wallet} from './wallet.js';
+import {tradeItem,tradeCategory} from './economy.js';
+import {prepareEconomy,economyKinds,applyEconomyEvent,applyMarket} from './economy-engine.js';
 // GM adjudicates; this module validates and commits confirmed changes atomically.
 import {worldData} from './world-data.js';
 import {catalogItem,itemCategory,itemDescription,lootCatalog} from './item-catalog.js';
@@ -25,27 +28,29 @@ export function normalizeWorld(raw,state={}){
   check(Object.keys(w.applied).length<=10000&&w.party.length<=6&&new Set(w.party).size===w.party.length&&w.party.every(v=>findNPC(v)),'사건/동료 한도');
   for(const k of kingdoms)check(integer(w.kingdom_reputation[k],-100,100),'국가 명성');
   check(w.transactions.length<=1000&&w.entry_permits.length<=128&&Object.keys(w.annual_events).length<=5000,'세계 기록 한도');
+  prepareEconomy(w);
   if(w.calendar.date)day(w.calendar.date);
   return w;
 }
 export function validateSystemEvents(raw){
   if(raw===undefined)return [];
   check(Array.isArray(raw)&&raw.length<=32,'system_events 최대 32개');
-  const ids=new Set();return raw.map(e=>{check(e&&id(e.event_id)&&!ids.has(e.event_id)&&text(e.reason),'사건 ID/판정 근거');ids.add(e.event_id);check(['loot','discover_dungeon','enter_dungeon','enter_zone','resolve_zone','retreat','respawn','clear_dungeon','party','reputation','permit','wanted','border','offer','trade','service','auction','bid','auction_result','calendar_result'].includes(e.kind),'사건 종류');check(JSON.stringify(e).length<=16000,'사건 크기');return clone(e);});
+  const ids=new Set();return raw.map(e=>{check(e&&id(e.event_id)&&!ids.has(e.event_id)&&text(e.reason),'사건 ID/판정 근거');ids.add(e.event_id);check(['loot','discover_dungeon','enter_dungeon','enter_zone','resolve_zone','retreat','respawn','clear_dungeon','party','reputation','permit','wanted','border','offer','trade','service','auction','bid','auction_result','calendar_result','market','cash_receipt'].includes(e.kind),'사건 종류');check(JSON.stringify(e).length<=16000,'사건 크기');return clone(e);});
 }
 function quantity(bag,catalogId){return bag.filter(i=>(i.catalog_id||i.id)===catalogId).reduce((n,i)=>n+i.quantity,0);}
-function give(state,catalogId,amount){
-  const item=catalogItem(catalogId);check(item&&integer(amount,1),'등록 아이템/수량');
+function give(state,catalogId,amount,instanceId){
+  const item=tradeItem(catalogId);check(item&&integer(amount,1),'등록 아이템/수량');
   const existing=state.inventory.find(i=>(i.catalog_id||i.id)===catalogId);
   if(existing){check(existing.quantity+amount<=999999,'아이템 수량 한도');existing.quantity+=amount;}
-  else {check(state.inventory.length<32,'가방이 가득 찼습니다. 보상은 아직 지급하지 않았습니다.');state.inventory.push({id:item.id,name:item.name,quantity:amount,category:itemCategory(item),description:itemDescription(item),...(item.rarity?{rarity:item.rarity}:{})});}
+  else {check(state.inventory.length<32,'가방이 가득 찼습니다. 보상은 아직 지급하지 않았습니다.');state.inventory.push({id:item.id,name:item.name,quantity:amount,category:tradeCategory(item),description:itemDescription(item),...(item.rarity?{rarity:item.rarity}:{})});}
+  if(instanceId&&(item.slot||item.skill_id)){const engine=ensureEngine(state),owned=engine.instances.filter(i=>i.catalog_id===catalogId).at(-1);check(owned&&!engine.instances.some(i=>i.instance_id===instanceId),'경매 개체 중복');owned.instance_id=instanceId;}
+  else if(instanceId){const owned=state.inventory.find(i=>(i.catalog_id||i.id)===catalogId);owned.instance_ids=[...(owned.instance_ids||[]),instanceId];}
 }
-function take(state,catalogId,amount){
+function take(state,catalogId,amount,instanceId){
   check(integer(amount,1)&&quantity(state.inventory,catalogId)>=amount,'소유 아이템 부족');
-  const e=ensureEngine(state);check(!e.instances.some(i=>i.catalog_id===catalogId&&Object.values(e.equipped).includes(i.instance_id)),'장착한 물품은 먼저 해제하세요.');
-  let remaining=amount;for(const item of state.inventory)if((item.catalog_id||item.id)===catalogId){const n=Math.min(remaining,item.quantity);item.quantity-=n;remaining-=n;}state.inventory=state.inventory.filter(i=>i.quantity>0);
+  const e=ensureEngine(state);if(instanceId){const owned=e.instances.find(i=>i.instance_id===instanceId&&i.catalog_id===catalogId),stack=state.inventory.find(i=>(i.catalog_id||i.id)===catalogId&&i.instance_ids?.includes(instanceId));check(amount===1&&(owned||stack)&&!Object.values(e.equipped).includes(instanceId),'소유한 미장착 개체 필요');if(owned)e.instances=e.instances.filter(i=>i.instance_id!==instanceId);if(stack)stack.instance_ids=stack.instance_ids.filter(v=>v!==instanceId);}else check(!e.instances.some(i=>i.catalog_id===catalogId&&Object.values(e.equipped).includes(i.instance_id)),'장착한 물품은 먼저 해제하세요.');
+  let remaining=amount;for(const item of state.inventory)if((item.catalog_id||item.id)===catalogId){const n=Math.min(remaining,item.quantity);item.quantity-=n;remaining-=n;if(item.instance_ids)item.instance_ids=item.instance_ids.slice(0,item.quantity);}state.inventory=state.inventory.filter(i=>i.quantity>0);
 }
-function money(state,delta){check(integer(state.currency||0)&&integer(delta,-999999999,999999999)&&integer((state.currency||0)+delta,0,999999999),'재화 부족/한도');state.currency=(state.currency||0)+delta;}
 function resolvedBattle(state,scene,battleId){
   const battle=scene.battle?.battle_id===battleId?scene.battle:state.battlePlayback?.done&&state.battleApplied?.includes(battleId)&&state.battlePlayback.scene.battle.battle_id===battleId?state.battlePlayback.scene.battle:null;
   check(battle?.outcome.winner==='allied','실제 승리한 전투 필요');return battle;
@@ -82,7 +87,7 @@ export function planWorldScene(state,scene){
   const events=validateSystemEvents(scene.system_events),date=scene.game_state?.date||state.gameState?.date;
   if(!state.world_engine&&!events.length)return null;
   const next=clone(state);next.player={...next.player,...scene.player};next.inventory=clone(scene.inventory||next.inventory);next.gameState={...next.gameState,...scene.game_state};
-  const w=state.world_engine?normalizeWorld(state.world_engine,state):emptyWorld(state);next.world_engine=w;
+  const w=state.world_engine?normalizeWorld(state.world_engine,state):emptyWorld(state);next.world_engine=w;prepareEconomy(w);
   if(date)advanceCalendar(w,date);check(date||!events.length,'세계 사건의 현재 날짜 필요');
   const generated=[],originalBag=clone(next.inventory),originalPlayer=clone(next.player);let reward=false;
   for(const e of events){
@@ -153,40 +158,13 @@ export function planWorldScene(state,scene){
       }else check(to===from,'검문 미통과 상태에서 실제 국가 이동 금지');
       w.active_border_route=e.result==='passed'?null:e.route_id;w.border_crossing_history.push({event_id:e.event_id,route_id:e.route_id,from,to:e.to,date,result:e.result,reason:e.reason});
     }
-    else if(e.kind==='offer'){
-      const o=e.offer;check(id(o?.id)&&text(o.venue_id)&&text(o.venue_name)&&/^(W[1-5]|E[1-4]|S[1-4])$/.test(o.region_id)&&['shop','facility'].includes(o.type)&&day(o.valid_until)>=day(date),'현지 견적/기한');check(!w.offers[o.id],'동일 견적의 재작성 금지');
-      check(Array.isArray(o.items)&&o.items.length<=40,'견적 품목');for(const r of o.items)check(catalogItem(r.id)&&integer(r.stock)&&integer(r.buy_price)&&integer(r.sell_price)&&text(r.price_basis),'등록 물품/재고/GM 가격 근거');
-      if(o.type==='facility'){const f=worldData.facilities.find(f=>f.id===o.venue_id);check(f&&f.region_id===o.region_id&&Array.isArray(o.services),'등록 전문 시설');for(const s of o.services){check(id(s.id)&&f.service.includes(s.service)&&integer(s.cost)&&text(s.basis),'실제 시설의 승인 서비스 견적');for(const r of [...(s.inputs||[]),...(s.outputs||[])])check(catalogItem(r.id)&&integer(r.quantity,1),'제작 재료/산출물');for(const field of ['hp_restore','mp_restore'])if(s[field]!==undefined)check(integer(s[field])&&['healing','rest','mana_rest'].includes(s.service),'회복 서비스/자원');if(s.xp!==undefined)check(integer(s.xp)&&/train|training/.test(s.service),'훈련 서비스만 XP 지급');}}
-      check(Object.keys(w.offers).length<128,'견적 보존 한도');w.offers[o.id]=clone(o);
-    }
-    else if(e.kind==='trade'||e.kind==='service'){
-      const o=w.offers[e.offer_id];check(o,'실제 발행한 견적 필요');assertOfferLocation(w,o,scene,date);
-      check(!scene.inventory&&!scene.player&&!scene.quest_events?.some(v=>v.kind==='report'),'거래/서비스 보상 스냅샷 중복 금지');
-      if(o.type==='facility'){const f=worldData.facilities.find(f=>f.id===o.venue_id);if(f.exclusive_specialty&&f.kingdom==='드라켄')check(w.kingdom_reputation.east>=20&&text(e.education_approval),'드라켄 공인 서고의 명성/교육 등록 허가');}
-      if(e.kind==='trade'){
-        const r=o.items.find(r=>r.id===e.item_id);check(r&&integer(e.quantity,1)&&['buy','sell'].includes(e.direction),'거래 품목/방향');
-        if(e.direction==='buy'){check(r.stock>=e.quantity,'재고 부족');money(next,-r.buy_price*e.quantity);give(next,r.id,e.quantity);r.stock-=e.quantity;}
-        else {check(catalogItem(r.id).tradable!==false,'거래 불가 물품');take(next,r.id,e.quantity);money(next,r.sell_price*e.quantity);r.stock+=e.quantity;}
-      }else {
-        check(o.type==='facility','전문 시설 견적 필요');const s=o.services.find(s=>s.id===e.service_id);check(s,'시설 서비스');const f=worldData.facilities.find(f=>f.id===o.venue_id);
-        if(f.exclusive_specialty&&f.kingdom==='드라켄')check(w.kingdom_reputation.east>=20&&text(e.education_approval),'드라켄 공인 서고의 명성/교육 등록 허가');
-        money(next,-s.cost);for(const r of s.inputs||[])take(next,r.id,r.quantity);for(const r of s.outputs||[])give(next,r.id,r.quantity);if(s.hp_restore){check(next.player.hp>0,'전투불능 소생은 별도 실제 판정 필요');next.player.hp=Math.min(next.player.maxHp,next.player.hp+s.hp_restore);}if(s.mp_restore)next.player.mp=Math.min(next.player.maxMp,next.player.mp+s.mp_restore);if(s.xp){check(!scene.engine_events?.some(v=>v.kind==='xp'),'훈련 XP 중복');awardXP(next,s.xp);}check(w.facility_history.length<1000,'시설 기록 한도');w.facility_history.push({event_id:e.event_id,facility_id:f.id,service:s.service,date});
-      }
-      check(w.transactions.length<1000,'거래 보존 한도');w.transactions.push({event_id:e.event_id,kind:e.kind,offer_id:o.id,date});reward=true;
-    }
-    else if(e.kind==='auction'){
-      const a=e.auction;check(id(a?.id)&&!w.auctions[a.id]&&catalogItem(a.item_id)&&text(a.venue_id)&&text(a.venue_name)&&/^(W[1-5]|E[1-4]|S[1-4])$/.test(a.region_id)&&integer(a.reserve)&&day(a.closes_at)>=day(date)&&text(a.price_basis)&&a.eligible===true,'실제 경매 개설/참가 자격');w.auctions[a.id]={...clone(a),status:'open',bid:0,escrow:0};
-    }
-    else if(e.kind==='bid'||e.kind==='auction_result'){
-      const a=w.auctions[e.auction_id];check(a&&a.status==='open','진행 중 경매');
-      if(e.kind==='bid'){assertOfferLocation(w,{...a,valid_until:a.closes_at},scene,date);check(day(date)<day(a.closes_at)&&integer(e.amount,1)&&e.amount>=a.reserve&&e.amount>a.bid,'경매 기한/최저 입찰액');money(next,-(e.amount-a.escrow));a.bid=e.amount;a.escrow=e.amount;reward=true;}
-      else {check(day(date)>=day(a.closes_at)&&['won','lost','cancelled'].includes(e.result),'경매 종료 시점/승패');check(!scene.player&&!scene.inventory,'경매 지급 스냅샷 중복');if(e.result==='won'){check(a.escrow>0&&e.final_price===a.bid&&text(e.authenticity_proof),'입찰/낙찰가/진품 확인');give(next,a.item_id,1);}else money(next,a.escrow);a.escrow=0;a.status=e.result;reward=true;}
-    }
+    else if(economyKinds.includes(e.kind)){applyEconomyEvent(next,scene,e,date,{assertOfferLocation,give,take,awardXP,kingdomOf,facility:id=>worldData.facilities.find(f=>f.id===id)});reward=true;}
     else if(e.kind==='calendar_result'){
       const entry=w.annual_events[e.ref_id];check(entry&&['active','resolved','cancelled'].includes(e.status)&&!['resolved','cancelled'].includes(entry.status),'현재 연간 사건 판정');check(entry.year*360+(entry.month-1)*30<=day(date),'미래 사건 실행 금지');
       check(typeof e.known_to_player==='boolean'&&(!e.known_to_player||text(e.public_summary)),'공개 사건 설명');check(e.effects&&typeof e.effects==='object'&&!Array.isArray(e.effects),'지역 효과');
       for(const[k,v]of Object.entries(e.effects))check(['security','food','treasury','morale','tradeRisk','warRisk','monsterRisk','prices'].includes(k)&&Number.isFinite(v)&&Math.abs(v)<=999999,'누적 지역 효과');
       Object.assign(entry,{status:e.status,known_to_player:e.known_to_player,public_summary:e.known_to_player?e.public_summary:'',effects:e.status==='resolved'?clone(e.effects):{}});
+      if(e.market&&e.status==='resolved')applyMarket(next,scene,{...e.market,event_id:e.event_id,reason:e.reason},date);
       const month=w.monthly_world_state[entry.year+'-'+entry.month];if(month&&e.status==='resolved'&&entry.region_id){const changes=month.regional_changes[entry.region_id]??={};for(const[k,v]of Object.entries(e.effects))changes[k]=(changes[k]||0)+v;}
     }
     w.applied[e.event_id]=digest;
@@ -197,5 +175,5 @@ export function planWorldScene(state,scene){
   if(reward){ensureEngine(next);recalculateEquipment(next);}
   const effective={...scene};if(JSON.stringify(originalBag)!==JSON.stringify(next.inventory))effective.inventory=next.inventory;if(JSON.stringify(originalPlayer)!==JSON.stringify(next.player))effective.player=next.player;
   if(generated.length)effective.world_events=[...(scene.world_events||[]),...generated.filter(e=>!scene.world_events?.some(v=>v.event_id===e.event_id)).map(e=>({...e,location:scene.game_state?.place||scene.location}))];
-  normalizeWorld(w,next);return {scene:effective,world_engine:w,currency:next.currency||0};
+  normalizeWorld(w,next);return bindWallet({scene:effective,world_engine:w,wallet_copper:wallet(next),...(next.engine?{engine:next.engine}:{})});
 }

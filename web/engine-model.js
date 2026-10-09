@@ -14,7 +14,7 @@ export function ensureEngine(state){
   const e=state.engine||(state.engine={version:1,applied:[],equipped:{},instances:[],learned:[],bonuses:{},serial:0});
   const counts=new Map();
   for(const item of state.inventory){const id=item.catalog_id||item.id,cat=engineItem(id);if(!cat)continue;counts.set(id,(counts.get(id)||0)+item.quantity);}
-  for(const [id,count]of counts){const owned=e.instances.filter(i=>i.catalog_id===id);for(let n=owned.length;n<count;n++){e.serial=(e.serial||0)+1;e.instances.push({instance_id:'owned-'+e.serial,catalog_id:id});}}
+  for(const [id,count]of counts){const owned=e.instances.filter(i=>i.catalog_id===id);for(let n=owned.length;n<count;n++){do{e.serial=(e.serial||0)+1;}while(e.instances.some(i=>i.instance_id==='owned-'+e.serial));e.instances.push({instance_id:'owned-'+e.serial,catalog_id:id});}}
   const keep=new Map();e.instances=e.instances.filter(i=>{const n=keep.get(i.catalog_id)||0;keep.set(i.catalog_id,n+1);return n<(counts.get(i.catalog_id)||0);});
   for(const slot of ['weapon','armor','accessory'])if(!e.instances.some(i=>i.instance_id===e.equipped[slot]))delete e.equipped[slot];
   return e;

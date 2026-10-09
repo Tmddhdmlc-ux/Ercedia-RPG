@@ -79,6 +79,6 @@ test('shop and auction display the same canonical icons without changing quotes,
   state.gameState={region:'W1'};state.currency=1000;
   state.world_engine={offers:{quote:{region_id:'W1',venue_name:'검수 상점',id:'quote',valid_until:'미정',items:[{id:sword.id,stock:2,buy_price:100,sell_price:50}]}},auctions:{sale:{region_id:'W1',item_id:book.id,status:'closed',bid:0,escrow:0,closes_at:'미정'}}};
   const before=JSON.stringify(state);
-  try{mountWorldUI(state,{submit(){},isPending(){return false;},assetBase:'/'});const trade=h.get('inventory-panel').children[0];trade.open=true;trade.ontoggle();const icons=trade.children[1].children.filter(n=>n.className==='registered-item-icon');assert.equal(icons.length,2);assert.equal(icons[0].children[0].src,'/'+sword.icon_path);assert.equal(icons[1].children[0].src,'/'+book.icon_path);assert.equal(icons[1].style['--item-rarity-color'],'#E64444');assert.equal(JSON.stringify(state),before);
+  try{mountWorldUI(state,{submit(){},isPending(){return false;},assetBase:'/'});const trade=h.get('inventory-panel').children[0];trade.open=true;trade.ontoggle();const walk=n=>[n,...(n.children||[]).flatMap(walk)],icons=walk(trade.children[1]).filter(n=>n.className==='registered-item-icon');assert.equal(icons.length,2);assert.equal(icons[0].children[0].src,'/'+sword.icon_path);assert.equal(icons[1].children[0].src,'/'+book.icon_path);assert.equal(icons[1].style['--item-rarity-color'],'#E64444');assert.equal(JSON.stringify(state),before);
   }finally{h.close();}
 });

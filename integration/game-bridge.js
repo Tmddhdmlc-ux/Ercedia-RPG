@@ -1,3 +1,5 @@
+import {wallet,splitCopper} from '../web/wallet.js';
+import {currencyRules} from '../web/economy.js';
 import {normalizePlayer} from '../web/player.js';
 import {normalizeInventory} from '../web/inventory.js';
 import {battleIsActive} from '../web/battle-model.js';
@@ -10,6 +12,8 @@ import {locationArt} from '../web/location-art.js';
 export function createGameBridge(state,{apply,restore,render,persist}){
   return Object.freeze({
     version:1,
+    getWallet:()=>({wallet_copper:wallet(state),...splitCopper(wallet(state))}),
+    getEconomy:()=>JSON.parse(JSON.stringify({wallet_copper:wallet(state),rules:currencyRules,offers:state.world_engine?.offers||{},merchants:state.world_engine?.merchants||{},auctions:state.world_engine?.auctions||{},transactions:state.world_engine?.transactions||[],market_changes:state.world_engine?.market_changes||[]})),
     getBackgroundCatalog:()=>JSON.parse(JSON.stringify(locationArt.filter(a=>a.category!=='legacy'))),
     getBackground:id=>{const art=locationArt.find(a=>a.id===id);return art?JSON.parse(JSON.stringify(art)):null;},
     getWorldEngine:()=>JSON.parse(JSON.stringify(state.world_engine||null)),

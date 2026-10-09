@@ -4,6 +4,7 @@ import {fileURLToPath} from 'node:url';
 import {createHash} from 'node:crypto';
 import './map-factions-build.mjs';
 import './intro-build.mjs';
+import './economy-build.mjs';
 import './catalog-build.mjs';
 import './character-art-build.mjs';
 import './quest-build.mjs';

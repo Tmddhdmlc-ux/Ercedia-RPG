@@ -1,4 +1,5 @@
 import {mountNPCArt} from './npc-art-ui.js';
+import {mountWalletUI} from './wallet-ui.js';
 import {mountSceneCast} from './scene-cast.js';
 import {mountChatConnection} from './chat-connection-ui.js';
 import {mountWorldUI} from './world-ui.js';
@@ -62,6 +63,7 @@ let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI
 const npcInfo=mountNPCInfo(state);
 const sceneCast=mountSceneCast(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,onSelect:(id,event)=>npcInfo.select(id,event)});
 const playHUD=mountPlayHUD(state,{persist:saveGame});
+const walletUI=mountWalletUI(state);
 const factionUI=mountFactionMap(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,select(p){state.mapFaction=p.id;state.region=p.anchor_id;state.mapView=p.region;renderRegion();dirty();}});
 $('save-status').textContent=restored.message;
 const npcArt=mountNPCArt({assetBase:window.__ERCEDIA_CONFIG__?.assetBase,status:$('expression-status')});
@@ -237,7 +239,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
   saveGame();
 });
 let remasterUI=null,worldUI=null;
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();remasterUI?.render();}
+function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();remasterUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 // Keep the full-scene background above the actual composer, including connection feedback.
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));

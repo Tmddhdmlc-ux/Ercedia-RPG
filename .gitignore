@@ -1,3 +1,6 @@
 preview.log
 preview-error.log
 node_modules/
+artifacts/economy/preview-game.html
+artifacts/economy/preview-host.html
+artifacts/economy-test.log

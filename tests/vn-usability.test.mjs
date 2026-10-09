@@ -35,7 +35,7 @@ test('quest hover and keyboard focus show the offered description and rewards wi
     // The active list displays the same preview mechanism as offered cards.
     q.status='active';ui.render();const card=h.get('quest-list').children[0];card.getBoundingClientRect=()=>({right:400,top:150});
     const before=structuredClone(state);card.onpointerenter();assert.equal(h.get('quest-preview').hidden,false);
-    assert.match(h.get('quest-preview').textContent,/실제 길목/);assert.match(h.get('quest-preview').textContent,/EXP 25 · 재화 80/);
+    assert.match(h.get('quest-preview').textContent,/실제 길목/);assert.match(h.get('quest-preview').textContent,/EXP 25 · 동화 80/);
     card.onpointerleave();assert.equal(h.get('quest-preview').hidden,true);card.onfocus();assert.equal(h.get('quest-preview').hidden,false);
     assert.deepEqual(state,before);assert.equal(sent,0);assert.ok(questPreviewText(q).includes('단서 확인'));
   }finally{h.close();}

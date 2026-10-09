@@ -1,3 +1,4 @@
+import {wallet,formatCopper} from './wallet.js';
 import {questProgress,calendarDay,questMapPoint} from './quest-model.js';
 import {mapData} from './map-data.js';
 import {findNPC} from './npc-model.js';
@@ -5,7 +6,7 @@ import {questItems} from './quest-data.js';
 export const questLabels={offered:'수주 가능',accepted:'수락됨',active:'진행 중',ready_to_report:'보고 가능',completed:'완료',failed:'실패',expired:'기한 만료',abandoned:'포기',declined:'거절'};
 export function questPreviewText(q){
   const r=q.reward,items=[...r.item_ids.map(id=>questItems.find(i=>i.id===id)?.name||id),...r.materials.map(v=>`${questItems.find(i=>i.id===v.id)?.name||v.id} ×${v.quantity}`)];
-  return `${q.title}\n약속 보수: EXP ${r.xp} · 재화 ${r.currency}${items.length?'\n아이템: '+items.join(' · '):''}${r.affection_effects.length?'\n호감도: '+r.affection_effects.map(e=>`${findNPC(e.npc_id)?.name||e.npc_id} ${e.delta>=0?'+':''}${e.delta}`).join(' · '):''}\n\n${q.summary.slice(0,180)}${q.summary.length>180?'…':''}\n목표: ${q.objectives.map(o=>o.description).slice(0,3).join(' · ')}\n클릭하면 전체 내용과 수락 조건을 확인합니다.`;
+  return `${q.title}\n약속 보수: EXP ${r.xp} · ${formatCopper(r.currency)}${items.length?'\n아이템: '+items.join(' · '):''}${r.affection_effects.length?'\n호감도: '+r.affection_effects.map(e=>`${findNPC(e.npc_id)?.name||e.npc_id} ${e.delta>=0?'+':''}${e.delta}`).join(' · '):''}\n\n${q.summary.slice(0,180)}${q.summary.length>180?'…':''}\n목표: ${q.objectives.map(o=>o.description).slice(0,3).join(' · ')}\n클릭하면 전체 내용과 수락 조건을 확인합니다.`;
 }
 export function currentQuestRegion(state){
   if(/^(W[1-5]|E[1-4]|S[1-4])$/.test(state.gameState.region||''))return state.gameState.region;
@@ -22,7 +23,7 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
   function render(){
     $('quest-preview').hidden=true;
     const log=state.quest_log||[],nowRegion=currentQuestRegion(state),busy=chat.isPending()||!!state.introDraft;
-    $('quest-region').textContent=(nowRegion?regionName(nowRegion):'현재 영주령 미확인')+` · 보유 재화 ${state.currency||0}`;$('quest-board').disabled=busy||!nowRegion;
+    $('quest-region').textContent=(nowRegion?regionName(nowRegion):'현재 영주령 미확인')+` · 소지금 ${formatCopper(wallet(state))}`;$('quest-board').disabled=busy||!nowRegion;
     const groups={active:['accepted','active','ready_to_report'],available:['offered'],complete:['completed'],failed:['failed','expired','abandoned','declined']};
     document.querySelectorAll('[data-quest-filter]').forEach(el=>{el.setAttribute('aria-pressed',String(el.dataset.questFilter===filter));});
     const shown=log.filter(q=>groups[filter].includes(q.status)&&(filter!=='available'||q.origin!=='guild_board'||q.region_id===nowRegion));
@@ -34,7 +35,7 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
     const q=log.find(q=>q.id===selected),detail=$('quest-detail');detail.hidden=!q;detail.replaceChildren();
     if(q){const heading=document.createElement('h3'),description=document.createElement('p'),info=document.createElement('p');heading.textContent=q.title;description.textContent=q.summary;info.textContent=`발행자 ${issuer(q)} · ${regionName(q.region_id)} · ${deadline(q)}`;detail.append(heading,description,info);
       const goals=document.createElement('ul');for(const o of q.objectives){const li=document.createElement('li');li.textContent=`${o.current>=o.target?'✓':'○'} ${o.description} · ${o.current}/${o.target}`;goals.append(li);}detail.append(goals);
-      const reward=document.createElement('p');reward.textContent=`약속 보상: EXP ${q.reward.xp} · 재화 ${q.reward.currency} · 아이템 ${q.reward.item_ids.length+q.reward.materials.length}종 · 호감도 ${q.reward.affection_effects.length}명${q.claim_event_id?' · 지급 완료':''}`;detail.append(reward);
+      const reward=document.createElement('p');reward.textContent=`약속 보상: EXP ${q.reward.xp} · ${formatCopper(q.reward.currency)} · 아이템 ${q.reward.item_ids.length+q.reward.materials.length}종 · 호감도 ${q.reward.affection_effects.length}명${q.claim_event_id?' · 지급 완료':''}`;detail.append(reward);
       if(q.reward.item_ids.length||q.reward.materials.length){const items=document.createElement('p');items.textContent=[...q.reward.item_ids.map(id=>questItems.find(i=>i.id===id)?.name||id),...q.reward.materials.map(r=>`${questItems.find(i=>i.id===r.id)?.name||r.id} ×${r.quantity}`)].join(' · ');detail.append(items);}
       for(const effect of q.reward.affection_effects){const p=document.createElement('p');p.textContent=`${findNPC(effect.npc_id)?.name||effect.npc_id} 호감도 ${effect.delta>=0?'+':''}${effect.delta} · ${effect.reason}`;detail.append(p);}
       const journal=document.createElement('details'),summary=document.createElement('summary');summary.textContent='진행 기록';journal.append(summary);for(const entry of q.journal.slice(-20)){const p=document.createElement('p');p.textContent=entry;journal.append(p);}detail.append(journal);
