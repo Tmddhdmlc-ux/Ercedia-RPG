@@ -30,9 +30,16 @@ test('narrative voices project registered current actors without creating meetin
 test('pending threat focuses an existing response while a resolved threat advances to aftermath',()=>{
  const s=start(),threat={event_id:'danger',kind:'threat',description:'수레 아래 주민이 있다',protected:'주민'},resolve={event_id:'safe',kind:'resolve',threat_id:'danger',description:'주민을 보호했다',protected:'주민'};
  s.quest_log=[{id:'ongoing',title:'운송',status:'active',story_required:true,story:[threat]},{id:'done',title:'완료',status:'completed',story:[threat,resolve]},{id:'offer',title:'제안',status:'offered'}];
- let f=narrativeFocus(s);assert.equal(f.threads.length,1);assert.equal(f.threads[0].phase,'respond_to_existing_threat');assert.equal(f.threads[0].pending_threats[0].event_id,'danger');assert.match(f.pacing_rule,/한 턴/);assert.match(f.pacing_rule,/성공은 보장하지/);
- s.quest_log[0].story.push(resolve);f=narrativeFocus(s);assert.equal(f.threads[0].phase,'continue_work_or_aftermath');assert.equal(f.threads[0].pending_threats,undefined);
+ let f=narrativeFocus(s);assert.equal(f.threads.length,1);assert.equal(f.threads[0].phase,'respond_to_existing_threat');assert.equal(f.threads[0].completion_gate,'unresolved_threat');assert.match(f.report_rule,/해결을 날조하지/);assert.equal(f.threads[0].pending_threats[0].event_id,'danger');assert.match(f.pacing_rule,/한 턴/);assert.match(f.pacing_rule,/성공은 보장하지/);
+ s.quest_log[0].story.push(resolve);f=narrativeFocus(s);assert.equal(f.threads[0].phase,'continue_work_or_aftermath');assert.equal(f.threads[0].pending_threats,undefined);assert.equal(f.threads[0].completion_gate,undefined);assert.equal(f.report_rule,undefined);
  s.quest_log[0].status='ready_to_report';assert.equal(narrativeFocus(s).threads[0].phase,'report_verified_result');assert.equal(s.quest_log[0].story.length,2);
+});
+
+test('pending episodes retain the actual previous report and choices without adjudicating progress',()=>{
+ const s=start();s.quest_log=[{id:'search',title:'수색 지원',status:'active',story:[{event_id:'missing',kind:'threat',description:'작업자 행방 불명',protected:'작업자'}]}];
+ s.scene.dialogue=[{speaker:'로한',text:'바위 아래 흔적을 찾았지만 사람은 아직 못 찾았네.'}];s.scene.choices=[{id:'wait',text:'다음 수색 보고를 확인한다'}];
+ const before=JSON.stringify(s),focus=narrativeFocus(s);assert.deepEqual(focus.previous_beat,{dialogue:[{speaker:'로한',text:'바위 아래 흔적을 찾았지만 사람은 아직 못 찾았네.'}],choices:['다음 수색 보고를 확인한다']});assert.match(focus.pacing_rule,/표현만 바꿔 반복하지/);assert.match(focus.pacing_rule,/성공은 보장하지/);assert.equal(JSON.stringify(s),before);
+ s.quest_log[0].story.push({event_id:'found',kind:'resolve',threat_id:'missing',description:'실제 귀환 확인',protected:'작업자'});assert.equal(narrativeFocus(s).previous_beat,undefined);
 });
 test('delta requests preserve unchanged current voice and remove it when the actor leaves',()=>{
  const s=start(),sync=createTurnSync();s.scene.npc=actor('ER-COM-001');s.gameState.events=['확인한 왼팔 교상'];

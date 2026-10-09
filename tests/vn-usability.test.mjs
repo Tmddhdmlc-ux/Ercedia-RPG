@@ -8,6 +8,18 @@ import {mountNewGame} from '../web/new-game.js';
 import {automaticStartLordship} from '../web/start-regions.js';
 import {mountQuestUI,questPreviewText} from '../web/quest-ui.js';
 import {normalizeQuest} from '../web/quest-model.js';
+
+test('linked quest proposals keep details without duplicating scene decisions or accepting on inspection',()=>{
+ const h=uiHarness();document.querySelectorAll=()=>[];
+ try{
+  const q=normalizeQuest({id:'proposal',title:'통행 안내',summary:'주민을 안내한다',origin:'personal_npc',issuer_npc_id:'ER-NPC-026',region_id:'W1',status:'offered',type:'investigate',rank:'F',objectives:[{id:'shift',description:'안내',target:1,verification:{kind:'action',target_id:'shift'}}],reward:{xp:8,currency:30,item_ids:[],materials:[],affection_effects:[]}});
+  const state={...defaults(),quest_log:[q],gameState:{region:'W1'},scene:{npc:{id:'ER-NPC-026'},choices:[{id:'accept',quest_id:q.id,text:'맡는다'},{id:'decline',quest_id:q.id,text:'거절한다'}]}};
+  let busy=false,sent=0;const pages=[],ui=mountQuestUI(state,{chat:{isPending:()=>busy,controls(){},submit(){sent++;}},switchTo:p=>pages.push(p),persist(){},showMap(){}});
+  const before=JSON.stringify(state);ui.render();let actions=h.get('quest-proposals').children[0].children[2].children;assert.deepEqual(actions.map(b=>b.textContent),['의뢰 상세']);actions[0].onclick();assert.equal(sent,0);assert.equal(pages.at(-1),'quests');assert.equal(JSON.stringify(state),before);
+  busy=true;ui.render();actions=h.get('quest-proposals').children[0].children[2].children;assert.equal(actions[0].disabled,true);const count=pages.length;actions[0].onclick();assert.equal(pages.length,count);
+  busy=false;state.scene.choices=[{quest_id:'other'}];ui.render();actions=h.get('quest-proposals').children[0].children[2].children;assert.deepEqual(actions.map(b=>b.textContent),['수락','거절','의뢰 상세','조건 협상']);actions[0].onclick();assert.equal(sent,1);assert.equal(q.status,'offered');
+ }finally{h.close();}
+});
 test('three kingdom buttons explain each region, automatically assign an approved origin and preserve resumed origins',()=>{
   const h=uiHarness();document.querySelectorAll=()=>[];
   try{

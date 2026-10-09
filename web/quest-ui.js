@@ -52,7 +52,16 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
     }
     const offers=log.filter(q=>q.status==='offered'&&q.origin!=='guild_board'&&(!q.issuer_npc_id||q.issuer_npc_id===state.scene?.npc?.id));
     const proposal=$('quest-proposals');proposal.replaceChildren();proposal.hidden=!offers.length||!!state.introDraft;
-    for(const q of offers.slice(0,3)){const card=document.createElement('article'),title=document.createElement('strong'),body=document.createElement('p'),actions=document.createElement('div');title.textContent=`의뢰 제안 · ${q.title}`;body.textContent=`${q.rank||'미정'}등급 · ${issuer(q)} · ${q.summary}`;actions.className='quest-actions';actions.append(button('수락',()=>action(q,'accept')),button('거절',()=>action(q,'decline')),button('자세히 듣기',()=>{selected=q.id;filter='available';switchTo('quests');render();}),button('조건 협상',()=>{$('free-action').focus();}));card.append(title,body,actions);proposal.append(card);}
+    for(const q of offers.slice(0,3)){
+      const card=document.createElement('article'),title=document.createElement('strong'),body=document.createElement('p'),actions=document.createElement('div');
+      title.textContent=`의뢰 제안 · ${q.title}`;body.textContent=`${q.rank||'미정'}등급 · ${issuer(q)} · ${q.summary}`;actions.className='quest-actions';
+      const linked=state.scene?.choices?.some(c=>c.quest_id===q.id);
+      // Scene choices already express the player's decision. The card remains an information entry.
+      if(!linked)actions.append(button('수락',()=>action(q,'accept')),button('거절',()=>action(q,'decline')));
+      actions.append(button('의뢰 상세',()=>{if(chat.isPending())return;selected=q.id;filter='available';switchTo('quests');render();}));
+      if(!linked)actions.append(button('조건 협상',()=>{if(!chat.isPending())$('free-action').focus();}));
+      card.append(title,body,actions);proposal.append(card);
+    }
   }
   $('quests-tab').onclick=()=>{if(state.introDraft||state.battlePlayback&&!state.battlePlayback.done)return;switchTo('quests');render();persist();};
   document.querySelectorAll('[data-quest-filter]').forEach(el=>el.onclick=()=>{filter=el.dataset.questFilter;render();});
