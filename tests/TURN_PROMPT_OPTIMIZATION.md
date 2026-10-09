@@ -32,3 +32,21 @@ active-dungeon context, failed-response fallback, and the actual UI's switch to
 compact requests and reset after restoration. Existing response-repair and
 settings-confirmation tests remain applicable. Live ChatGPT response latency,
 Tampermonkey installation and a 20-turn play session were not measured here.
+
+## Further latency work — UI 2.1.71
+
+The counts above describe 2.1.69. Full bootstrap/recovery requests now also omit
+the UI-only global loot pools while retaining their full rules. This prevents
+restoring a save from reintroducing that large payload on the first action.
+
+Ordinary conversation requests ask for 1–3 short dialogue entries and two
+meaningful choices (or free input only), without repeated narration, optional
+choice descriptions or unchanged NPC profiles. Explicit detailed narration
+requests and mechanic turns do not use this guidance. Important developments
+can still expand and must retain required evidence. This is prompt guidance,
+not truncation of received dialogue or JSON.
+
+The host currently waits for generation to stop and then a stable JSON candidate
+for at least 1.2 seconds, scanning every second or after a 600ms debounce. This
+only explains about 1–2 seconds after generation, not the reported 20–30 seconds.
+No launcher timing was changed; actual model latency remains unmeasured.

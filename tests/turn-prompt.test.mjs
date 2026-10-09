@@ -35,6 +35,12 @@ test('ordinary resident dialogue retains personality and speech without the enti
   assert.deepEqual(context.adventure.regional_residents,[resident]);
   assert.ok(context.adventure.regional_residents[0].speech_style);
 });
+test('ordinary conversation requests brief output while detailed requests and mechanics remain unrestricted',()=>{
+  const state=saved();
+  assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/\[일상 대화 응답\]/);
+  assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/필수 사건 증빙은 생략하지/);
+  for(const action of ['자세하게 이야기를 듣는다.','긴 대사로 독백한다.','공격한다.','던전을 탐색한다.','의뢰를 보고한다.','수련한다.'])assert.ok(!actionPrompt(state,action,'r',{compact:true}).includes('[일상 대화 응답]'));
+});
 test('dungeon and combat turns retain rules without sending the global UI-only loot pools',()=>{
   const state=saved();state.world_engine={active_dungeon:'DUN-W1-01',dungeons:{'DUN-W1-01':{zone_id:'entrance'}}};
   const context=turnContext(state,turnDomains(state,'인사를 한다.'));
@@ -48,18 +54,18 @@ test('the actual UI switches after a valid turn and falls back after save restor
     const chat=mountChatUI(state,{embedded:true,render(){},persist(){}});
     const actions=()=>h.messages.filter(m=>m.type==='action').map(m=>m.payload);
     chat.submit('안부를 묻는다.','talk');const first=actions().at(-1);
-    assert.match(first.text,/"dungeon_pools"/);
+    assert.match(first.text,/\[대장간 제작\]/);assert.ok(!first.text.includes('"dungeon_pools"')); 
     h.reply('scene',JSON.stringify({...state.scene,scene_id:'next',reply_to:first.requestId}));
     assert.equal(chat.isPending(),false);
     chat.submit('안부를 묻는다.','talk');const second=actions().at(-1);
     assert.ok(second.text.length<first.text.length*.2);assert.ok(second.text.endsWith('안부를 묻는다.'));
-    chat.restore(saved());chat.submit('안부를 묻는다.','talk');assert.match(actions().at(-1).text,/"dungeon_pools"/);
+    chat.restore(saved());chat.submit('안부를 묻는다.','talk');assert.match(actions().at(-1).text,/\[대장간 제작\]/);
   }finally{h.close();}
 });
 test('failed responses never establish compact continuation context',()=>{
   const h=uiHarness(),state=saved();try{
     const chat=mountChatUI(state,{embedded:true,render(){},persist(){}});
     chat.submit('안부를 묻는다.');chat.apply('{"schema_version":99,"type":"ercedia_scene"}');chat.submit('안부를 묻는다.');
-    const actions=h.messages.filter(m=>m.type==='action');assert.match(actions.at(-1).payload.text,/"dungeon_pools"/);
+    const actions=h.messages.filter(m=>m.type==='action');assert.match(actions.at(-1).payload.text,/\[대장간 제작\]/);
   }finally{h.close();}
 });
