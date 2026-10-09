@@ -21,7 +21,7 @@ export function townPeople(state){
   return [...people.values()].map(p=>{
     const moving=state.npc_life?.npcs?.[p.id]?.activity==='이동 중';
     const canTalk=p.confirmed&&!moving;
-    return {...p,canTalk,unavailableReason:moving?'이동 중이라 지금 만날 수 없습니다.':p.confirmed?'':'현재 위치가 확인되지 않아 직접 만날 수 없습니다.'};
+    return {...p,canTalk,unavailableReason:moving?'이동 중이라 지금 만날 수 없습니다.':p.confirmed?'':'현재 위치가 확인되지 않아 직접 만남은 아직 확인되지 않았습니다.'};
   }).sort((a,b)=>Number(b.confirmed)-Number(a.confirmed));
 }
 export function townConversation(state,id){

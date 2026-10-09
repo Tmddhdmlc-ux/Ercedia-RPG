@@ -1,3 +1,4 @@
+import {mergeRulings} from './gm-rulings.js';
 import {bindWallet,wallet} from './wallet.js';
 import {choicePresentation} from './choice-presentation.js';
 import {parseScene,actionPrompt} from './scene.js';
@@ -140,11 +141,12 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(manual&&!pending?.settingsRefresh)requireSettingsConfirmation=false;
       if(campaignSettings&&(requireSettingsConfirmation||pending?.settingsRefresh)&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length))throw Error(`설정 읽기 확인 불일치: commit=${campaignSettings.sha}, file_count=${campaignSettings.paths.length} 확인이 필요합니다.`);
       if(pending?.setupOnly){
-        if(scene.npc||scene.cast?.length||scene.player||scene.inventory||scene.game_state||scene.battle||scene.engine_events?.length||scene.world_events?.length||scene.quest_events?.length||scene.quest_updates?.length||scene.locality_events?.length||scene.life_events?.length||scene.system_events?.length)throw Error('설정 준비 응답에 게임 진행 변경을 포함할 수 없습니다.');
+        if(scene.npc||scene.cast?.length||scene.player||scene.inventory||scene.game_state||scene.battle||scene.engine_events?.length||scene.world_events?.length||scene.quest_events?.length||scene.quest_updates?.length||scene.locality_events?.length||scene.life_events?.length||scene.system_events?.length||scene.gm_rulings?.length)throw Error('설정 준비 응답에 게임 진행 변경을 포함할 수 없습니다.');
         const refreshed=pending.settingsRefresh;loadedSettingsCommit=campaignSettings.sha;campaignSettings=null;cancel(refreshed?'최신 GitHub 설정 동기화 완료 · 현재 진행은 유지됩니다.':'세계관 설정 읽기 확인 완료 · 캐릭터 설정을 진행하세요.');$('sync-settings').title=`확인된 설정 ${loadedSettingsCommit.slice(0,7)}`;render();persist();notify('applied',{scene_id:scene.scene_id});return;
       }
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
+      const rulings=mergeRulings(state,scene);
       const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
       const marketOnly=scene.system_events?.length&&scene.system_events.every(e=>['shop_update','market'].includes(e.kind))&&!scene.player&&!scene.inventory&&!scene.battle&&!scene.engine_events?.length&&!scene.quest_events?.length&&!scene.life_events?.length&&scene.location===state.scene?.location&&scene.npc?.id===state.scene?.npc?.id&&['region','place','date','time'].every(k=>scene.game_state?.[k]===undefined||scene.game_state[k]===state.gameState[k]);
       const questBase=worldResult?{...state,wallet_copper:worldResult.wallet_copper,...(worldResult.engine?{engine:worldResult.engine}:{})}:state;
@@ -160,7 +162,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       const engineResult=planEngineScene(questBase,scene,questResult);
       const lifeResult=planNPCLife(state,scene,questResult);
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
-      mutationBegan=true;failedRequest=null;state.scene=scene;state.sceneIndex=0;
+      mutationBegan=true;failedRequest=null;if(scene.gm_rulings?.length)state.gm_rulings=rulings;state.scene=scene;state.sceneIndex=0;
       for(const [id,p] of Object.entries(scene.npc_updates||{}))updateNPC(state,id,p);
       if(scene.npc?.profile&&findNPC(scene.npc.id))updateNPC(state,scene.npc.id,scene.npc.profile);
       for(const npc of scene.cast||[])if(npc.profile&&findNPC(npc.id))updateNPC(state,npc.id,npc.profile);

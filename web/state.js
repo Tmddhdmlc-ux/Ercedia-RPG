@@ -22,6 +22,7 @@ export const outfitKeys = ['armor', 'casual', 'nightwear'];
 export const expressionKeys = ['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 export const regionKeys = ['village','world','west','east','south','wild','ruins',...mapViews.map(r=>r.id),...mapData.locations.map(p=>p.id)];
 export const defaultLayout = () => ({scale:260,x:50,y:-120});
+import {normalizeRulings} from './gm-rulings.js';
 export const defaults = () => ({version:1,outfit:'armor',expression:'base',layouts:Object.fromEntries(outfitKeys.map(k=>[k,defaultLayout()])),background:true,character:true,index:0,region:'village',mapView:'world',page:'story',player:newPlayer(),inventory:[],scene:null,sceneIndex:0,seenScenes:[],gameState:{}});
 const num = (value,min,max,fallback) => typeof value === 'number' && Number.isFinite(value) ? Math.min(max,Math.max(min,Math.round(value))) : fallback;
 export function normalize(raw) {
@@ -79,6 +80,7 @@ export function normalize(raw) {
   const faction=factionLocations.find(p=>p.id===raw.mapFaction);
   if(faction&&faction.region===s.mapView&&faction.anchor_id===s.region)s.mapFaction=faction.id;
   if(raw.skill_loadout)s.skill_loadout=normalizeLoadout(raw.skill_loadout,s);
+  if(raw.gm_rulings!==undefined)s.gm_rulings=normalizeRulings(raw.gm_rulings);
   return s;
 }
 export function load(storage) {
