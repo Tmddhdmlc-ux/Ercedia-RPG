@@ -28,16 +28,17 @@ export function narrativeFocus(state,action='',questId=null){
  });
  const consequences=(state.gameState?.events||[]).filter(e=>typeof e==='string').slice(-3);
  const focus={...(voices.length?{voices}:{}),...(threads.length?{threads}:{}),...(consequences.length?{recorded_consequences:consequences}:{})};
- if(Object.keys(focus).length)focus.knowledge_rule='기록·주변 명부가 만남·목격·NPC 지식을 확정하지 않는다. selected가 이번 행동의 의뢰이고 background는 참고만 한다. 완료된 의뢰는 다시 수락·지급·위협 발생 단계로 되돌리지 않는다.';
+ if(Object.keys(focus).length)focus.knowledge_rule='기록·주변 명부가 만남·목격·NPC 지식을 확정하지 않는다. 플레이어가 혼자 한 제작·수련·거래는 NPC가 현장에서 보거나 직접 전해 들은 기록이 없으면 대사에서 아는 사실로 말하지 않는다. selected가 이번 행동의 의뢰이고 background는 참고만 한다. 완료된 의뢰는 다시 수락·지급·위협 발생 단계로 되돌리지 않는다.';
  if(voices.length)focus.role_rule='public_role은 등록된 공개 직무다. 사제·치료사 등에게 상황만으로 경비 지휘권이나 다른 직업을 부여하지 않는다. 임시 도움은 실제 경위와 직무 범위에서 서술한다. 저장의 잘못된 직무 묘사는 설정을 대체하지 않는다.';
  if(voices.length)focus.life_event_rule=lifeEventInstruction;
  if(voices.length)focus.contribution_rule='칭찬·후일담은 확인된 실제 행동의 수행자별로 구분한다. 플레이어의 경고·전달·준비 지원을 다른 인물의 발견·구조·치료·고정 작업으로 바꾸지 않는다. 함께 한 일은 공동 기여로 말하고, 목표·희망만으로 성과나 성공을 보장하지 않는다.';
  if(threads.length||(state.quest_log||[]).some(q=>q.status==='offered'&&(selected(q)||present.has(q.issuer_npc_id||q.issuer_id))))focus.choice_rule='선택지는 행동 방식·보호 대상·감수하는 위험·얻으려는 정보 중 실제 차이가 있어야 한다. 같은 철수·경고·보고를 말만 바꿔 여러 칸으로 늘리지 말고 한 행동으로 묶는다. 선택 수를 채우려고 불필요한 확인이나 같은 일의 중간 단계를 만들지 않는다. 가능한 다른 대응·대화·철수·보류를 제시하되 위험한 행동을 강요하거나 미확인 결과·보상을 보장하지 않는다. 중요한 선택2~4개, 자유 입력만이면0개를 유지한다.';
- if(/일거리|새.*(?:일|의뢰|기회)|다른.*(?:일|의뢰|기회)|다음.*(?:일|의뢰|기회)/.test(action)){
-  const completed=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)).slice(-3);
+ if(/일거리|(?:할|맡을)\s*수\s*있는\s*일|새.*(?:일|의뢰|기회)|다른.*(?:일|의뢰|기회)|다음.*(?:일|의뢰|기회)/.test(action)){
+  const completed=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)).slice(-12);
   if(completed.length){
-   focus.completed_work=completed.map(q=>({quest_id:q.id,title:q.title,type:q.type,...(q.repeatable===true?{repeatable:true}:{}),...(q.story?.filter(e=>e.kind==='resolve').length?{verified_result:q.story.filter(e=>e.kind==='resolve').at(-1).description}: {})}));
-   focus.opportunity_rule='새 기회는 completed_work와 현재 부상·장소·시간·현지 인물의 목적을 참고하여 기록 대조·검수 같은 방식만 연속 제안하지 않는다. 연락·동행·관찰·설득·현지 수련·제작 등 실제 가능한 다른 참여 방식을 섞되 부상과 조건을 무시하지 않는다. 이미 완료한 계약·위협·보상은 다시 열지 않는다. 직접 요청한 반복 의뢰는 조건 확인 후 가능하다. 새 의뢰의 실제 전투 또는 평화를 위협하는 돌발 사건 규칙은 유지하되 같은 습격·적재물 사고를 반복하지 않는다. 제안만으로 수락·성과·보상을 확정하지 않는다.';
+   focus.completed_work_history=completed.map(q=>({quest_id:q.id,title:q.title,type:q.type}));
+   focus.completed_work=completed.slice(-3).map(q=>({quest_id:q.id,title:q.title,type:q.type,...(q.repeatable===true?{repeatable:true}:{}),...(q.story?.filter(e=>e.kind==='resolve').length?{verified_result:q.story.filter(e=>e.kind==='resolve').at(-1).description}: {})}));
+   focus.opportunity_rule='새 기회는 completed_work_history의 이전 작업 방식과 completed_work의 후일담, 현재 부상·장소·시간·현지 인물의 목적을 참고하여 기록 대조·검수 같은 방식만 연속 제안하지 않는다. 연락·동행·관찰·설득·현지 수련·제작 등 실제 가능한 다른 참여 방식을 섞되 부상과 조건을 무시하지 않는다. 이미 완료한 계약·위협·보상은 다시 열지 않는다. 직접 요청한 반복 의뢰는 조건 확인 후 가능하다. 새 의뢰의 실제 전투 또는 평화를 위협하는 돌발 사건 규칙은 유지하되 같은 습격·적재물 사고를 반복하지 않는다. 제안만으로 수락·성과·보상을 확정하지 않는다.';
   }
  }
  if(threads.some(t=>t.phase==='respond_to_existing_threat')){
