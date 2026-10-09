@@ -5,6 +5,6 @@ export function normalizeRulings(raw,max=256){
 }
 export function mergeRulings(state,scene){
  const records=normalizeRulings(state.gm_rulings||[]),incoming=normalizeRulings(scene.gm_rulings||[],8),byID=new Map(records.map(r=>[r.id,r]));
- for(const r of incoming){const prior=byID.get(r.id);if(prior&&JSON.stringify(prior)!==JSON.stringify(r))throw Error('기존 GM 판정을 임의로 바꿀 수 없습니다.');byID.set(r.id,r);}
+ for(const r of incoming){const prior=byID.get(r.id);if(prior&&JSON.stringify(prior)!==JSON.stringify(r))throw Error('기존 GM 판정을 임의로 바꿀 수 없습니다. 계약과 후속 결과는 서로 다른 새 id로 기록하세요. 기존 id는 내용이 동일할 때만 재사용합니다.');byID.set(r.id,r);}
  return normalizeRulings([...byID.values()]);
 }

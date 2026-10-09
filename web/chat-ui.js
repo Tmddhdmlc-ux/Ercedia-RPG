@@ -1,6 +1,7 @@
 import {rewardSnapshot,rewardMessages} from './reward-notice.js';
 import {createTurnSync,incrementalPrompt} from './turn-sync.js';
 import {mergeRulings} from './gm-rulings.js';
+import {validateTurnOutcome} from './turn-outcome.js';
 import {bindWallet,wallet} from './wallet.js';
 import {validateCraftingAttempt} from './crafting-policy.js';
 import {choicePresentation} from './choice-presentation.js';
@@ -152,19 +153,21 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
       if(pending&&!pending.setupOnly&&!commitBattle)validateCraftingAttempt(state,pending.action,scene);
+      if(pending&&!pending.setupOnly&&!commitBattle)for(const q of scene.quest_updates||[])if(!(state.quest_log||[]).some(old=>old.id===q.id))q.story_required=true;
+      if(!pending?.setupOnly&&!commitBattle)validateTurnOutcome(state,pending?.action||'',scene);
       const rulings=mergeRulings(state,scene);
       const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
       const marketOnly=scene.system_events?.length&&scene.system_events.every(e=>['shop_update','market'].includes(e.kind))&&!scene.player&&!scene.inventory&&!scene.battle&&!scene.engine_events?.length&&!scene.quest_events?.length&&!scene.life_events?.length&&scene.location===state.scene?.location&&scene.npc?.id===state.scene?.npc?.id&&['region','place','date','time'].every(k=>scene.game_state?.[k]===undefined||scene.game_state[k]===state.gameState[k]);
       const questBase=worldResult?{...state,wallet_copper:worldResult.wallet_copper,...(worldResult.engine?{engine:worldResult.engine}:{})}:state;
       if(scene.battle&&!commitBattle){
         if(state.battleApplied?.includes(scene.battle.battle_id))return status('이미 정산한 전투입니다. 다시보기로 관전하세요.');
-        if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events)settleQuests(questBase,scene);
+        if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events||scene.story_events)settleQuests(questBase,scene);
         planEngineScene(questBase,scene,null);
         planNPCLife(state,scene,null);
         validateBattleSettlement(scene,state);scene=prepareBattleLoot(state,scene);validateBattleSettlement(scene,state);planWorldScene(state,scene);mutationBegan=true;
         battlePacket={packet:pending?.syncPacket,battle_id:scene.battle.battle_id};getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
-      const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events)?settleQuests(questBase,scene):null;
+      const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events||scene.story_events)?settleQuests(questBase,scene):null;
       const engineResult=planEngineScene(questBase,scene,questResult);
       const lifeResult=planNPCLife(state,scene,questResult);
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};

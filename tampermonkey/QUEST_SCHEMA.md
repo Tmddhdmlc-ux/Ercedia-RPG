@@ -54,3 +54,10 @@ report 장면은 `player/inventory/npc_updates`를 생략한다. UI가 약속된
 quest_log/quest_event_ids/currency/relationships는 기존 저장 v1의 선택 확장이다. 기존 데이터가 없으면 UI는 빈 목록으로 읽으며 이전 저장 키를 임의 생성해 런처 복원 비교를 깨지 않는다. getQuestLog는 브리지 v1의 추가 읽기 기능. 의뢰 변경은 updateScene의 동일 검증 경로를 따른다. 기존 game_state.quests 문자열 로그는 별도로 보존한다.
 
 이전 런처 1.1.6에서도 일반 요청·의뢰 행동을 전송한다. 새 게임 전체 파일 자동 첨부는 1.1.7 기능이다. 1.1.6에서는 GitHub 고정 SHA 원문 링크와 시작 안내를 자동 전송하며, GPT가 모든 설정을 실제 열람했다고 가정하지 않는다.
+
+## 플레이테스트 수정 — UI 2.1.81
+일반 현지 의뢰의 ID·목표·금액은 GM이 실제 상황과 발주자 예산으로 구성할 수 있다. 미리 등록된 의뢰 ID가 없다는 이유로 조회를 거부하지 않는다. 노동 운반·정찰·복구는 실제 작업의 `action` 목표와 증거를 사용한다. 소지 화물의 인계일 때만 `delivery`와 등록 물품 감소를 사용한다. 수락과 작업이 같은 응답에 있으면 수락을 먼저 적용하고 그 이후 수행한 증거를 확인한다.
+
+새 게임 턴에서 제안한 신규 의뢰는 `story_required=true`로 저장한다. `story_events=[{event_id,quest_id,kind:"threat",description,protected}]`는 실제 수락한 의뢰의 돌발 위협과 보호 대상을 공개 기록하고 가능한 대응 선택지를 제시한다. 플레이어 대응 후 별도 장면에 `{event_id,quest_id,kind:"resolve",threat_id,description,protected}`로 해결·후일담을 기록한다. 같은 장면의 신규 위협을 자동 해결할 수 없다. 모든 위협이 해결되어야 report 보상을 정산한다. 실제 전투는 기존 battle 검증을 그대로 거치며 story_events 자체가 피해·승리·성장을 지급하지 않는다. 저장의 quest_log.story와 quest_event_ids에 기록하고 중복 적용을 거절한다. 기존 저장의 수락 계약·완료 보상은 소급 변경하지 않는다.
+
+의뢰 kind 선택지는 이번 quest_updates 또는 현재 quest_log의 quest_id를 연결한다. 단순 일거리 문의는 dialogue/action이다. 대사와 gm_rulings만으로 보상을 지급하지 않는다. 계약과 후속 결과 판정은 서로 다른 gm_rulings.id로 남긴다. 기술서·장비는 경제 기준가 키가 아니라 원본 물품 ID를 사용한다.

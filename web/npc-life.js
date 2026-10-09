@@ -8,7 +8,7 @@ const npc=id=>{if(!findNPC(id)||findNPC(id).id!==id)fail('미등록 NPC');return
 const region=id=>{if(!/^(W[1-5]|E[1-4]|S[1-4]|CW|CE|CS)$/.test(id))fail('미등록 생활 권역');return id;};
 const country=id=>({W:'west',E:'east',S:'south'})[id?.[0]]||({CW:'west',CE:'east',CS:'south'})[id];
 const day=d=>{const n=calendarDay(d);if(n===null)fail('360일 달력 날짜');return n;};
-export const roleActivities={knight:['순찰','수련','경비','휴식'],mage:['연구','마법서 학습','실험','휴식'],lord:['영지 운영','재정 관리','외교','휴식'],merchant:['재고 확보','거래','이동 준비','휴식'],priest:['의식','치유 준비','구호','휴식'],resident:['농업·생활','생활','휴식','생활'],bandit:['은신','약탈 준비','영역 경계','휴식'],monster:['먹이 활동','영역 경계','둥지 방어','휴식']};
+export const roleActivities={knight:['순찰','수련','경비','휴식'],mage:['연구','마법서 학습','실험','휴식'],lord:['영지 운영','재정 관리','외교','휴식'],merchant:['재고 확보','거래','이동 준비','휴식'],priest:['의식','치유 준비','구호','휴식'],resident:['생업·생활','생활','휴식','생활'],bandit:['은신','약탈 준비','영역 경계','휴식'],monster:['먹이 활동','영역 경계','둥지 방어','휴식']};
 export function lifeRole(id){const p=findNPC(id),s=(p?.rank||'')+' '+(p?.affiliation||'')+' '+(p?.duty||'');return p?.role==='monster'?'monster':/도적|약탈|해적/.test(s)?'bandit':/영주|공작|백작|후작|국왕|여왕/.test(p?.rank||'')?'lord':/나이트|기사/.test(s)?'knight':/서클|마법|연구/.test(s)?'mage':/상인|상단|무역/.test(s)?'merchant':/교단|성직|성자|성녀|사제/.test(s)?'priest':'resident';}
 export function normalizeLife(raw){
   if(!raw||raw.version!==1)fail('저장 버전');

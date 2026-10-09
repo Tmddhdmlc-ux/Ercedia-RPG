@@ -3211,3 +3211,6 @@ input[type=range] {
 .reward-notice[hidden]{display:none}.reward-notice p{margin:8px 0;font-size:clamp(18px,2vw,30px);font-weight:600;line-height:1.45;overflow-wrap:anywhere}
 @keyframes reward-notice-in{from{opacity:0;transform:translate(-50%,-40%)}to{opacity:1;transform:translate(-50%,-50%)}}
 @media(prefers-reduced-motion:reduce){.reward-notice{animation:none}}
+
+/* The standalone grid has no fixed-height flex parent; preserve its playable stage. */
+body:not(.embedded-game) .game:not(.is-expanded):not(:fullscreen)[data-page=story] #stage{flex:0 0 auto;min-height:560px}

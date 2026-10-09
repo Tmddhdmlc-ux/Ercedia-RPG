@@ -40,8 +40,8 @@ function participant(raw){
   if(raw.potentials){p.potentials={};for(const [key,value]of Object.entries(raw.potentials))p.potentials[key]=num(value,'잠재능력',0,100);}
   if(!Array.isArray(raw.skills)||raw.skills.length>70)fail('기술 목록');
   const ids=new Set();p.skills=raw.skills.map(s=>{
-    const skill={id:str(s.id,'기술 ID',80),name:str(s.name,'기술명',60),kind:s.kind,mp_cost:num(s.mp_cost,'기술 MP 비용')};
-    if(ids.has(skill.id)||!['physical','magic','unique','defend'].includes(skill.kind))fail('기술 ID/종류');ids.add(skill.id);
+    const skill={id:str(s.id,'기술 ID',80),name:str(s.name,'기술명',60),kind:s.kind,mp_cost:num(s.mp_cost,'참가자 '+p.id+' 기술 '+s.id+'의 mp_cost (0 이상의 정수 필수)')};
+    if(ids.has(skill.id)||!['physical','magic','unique','defend'].includes(skill.kind))fail('참가자 '+p.id+' 기술 '+skill.id+'의 중복 ID 또는 kind: physical/magic/unique/defend 필수');ids.add(skill.id);
     if(skill.kind==='physical'&&s.technique_bonus!==undefined)skill.technique_bonus=num(s.technique_bonus,'검술 기술 보정');
     if(skill.kind==='magic'||skill.kind==='unique'){skill.power=num(s.power,'기술 기본 위력');skill.int_coefficient=decimal(s.int_coefficient,'INT');skill.mana_coefficient=decimal(s.mana_coefficient,'MANA');skill.basis=str(s.basis,'승인 기술/고유능력 근거',1000);}
     if(s.circle!==undefined)skill.circle=num(s.circle,'주문 서클',1,9);
@@ -115,7 +115,7 @@ export function normalizeBattle(raw){
   });
   // Counter validation needs preceding normalized events; validate once the list exists.
   for(let i=0;i<b.events.length;i++)if(b.events[i].realm_reaction?.kind==='reflection'&&b.events[i].realm_reaction.success){const e=b.events[i],next=b.events[i+1];if(!next||next.reflection_source_event!==e.id)fail('반사 성공 뒤 되돌아가는 주문 사건 누락');}
-  for(let i=0;i<b.events.length;i++)if(b.events[i].kind==='counter'){const e=b.events[i],p=b.events[i-1];if(!p||p.target!==e.actor||p.actor!==e.target||p.result!=='block')fail('방어 직후 반격 순서');}
+  for(let i=0;i<b.events.length;i++)if(b.events[i].kind==='counter'){const e=b.events[i],p=b.events[i-1];if(!p||p.target!==e.actor||p.actor!==e.target||p.result!=='block')fail('counter '+e.id+'는 바로 앞 block 사건의 target이 actor에게 반격할 때만 가능. 피격 뒤 재공격은 attack으로 기록하세요');}
   b.initiative={actor_id:str(raw.initiative?.actor_id,'선공 ID',80),reason:typeof raw.initiative?.reason==='string'?raw.initiative.reason.slice(0,1000):''};
   equal(b.initiative.actor_id,b.events[0].actor,'선공/첫 행동');const first=byId.get(b.initiative.actor_id),opponents=b.participants.filter(p=>p.side!==first.side);
   if(opponents.some(p=>p.speed>=first.speed)&&!b.initiative.reason.trim())fail('동시 대응/기습/속도 역전 근거 필요');
@@ -123,7 +123,7 @@ export function normalizeBattle(raw){
   if(o.loot_mode!==undefined&&o.loot_mode!=='per_kill_v1')fail('전리품 판정 방식');
   b.outcome={...(o.loot_mode?{loot_mode:o.loot_mode}:{}),...(o.loot_rolls!==undefined?{loot_rolls:JSON.parse(JSON.stringify(o.loot_rolls))}:{}),winner:o.winner,termination:o.termination,reason:str(o.reason,'결과 근거',1000),xp_gain:num(o.xp_gain,'경험치 보상'),items_added:[],items_consumed:[],injuries:[],resources:[]};
   for(const key of ['items_added','items_consumed']){if(!Array.isArray(o[key])||o[key].length>32)fail('아이템 보상/소비');b.outcome[key]=o[key].map(item=>({name:str(item.name,'아이템 이름',60),quantity:num(item.quantity,'아이템 수량',1),...(typeof item.id==='string'?{id:str(item.id,'아이템 ID',100)}:{}),...(typeof item.rarity==='string'?{rarity:str(item.rarity,'아이템 등급',20)}:{})}));}
-  if(!Array.isArray(o.injuries)||o.injuries.length>20)fail('부상 목록');b.outcome.injuries=o.injuries.map(s=>str(s,'부상',500));
+  if(!Array.isArray(o.injuries)||o.injuries.length>20)fail('부상 목록');b.outcome.injuries=o.injuries.map(s=>str(s,'outcome.injuries 각 항목은 부상 설명 문자열 (객체 금지)',500));
   if(!Array.isArray(o.resources)||o.resources.length!==byId.size||new Set(o.resources.map(p=>p.id)).size!==byId.size)fail('최종 자원 목록');
   b.outcome.resources=o.resources.map(r=>{if(!live[r.id])fail('최종 자원 ID');equal(r.hp,live[r.id].hp,'최종 HP');equal(r.mp,live[r.id].mp,'최종 MP');return {id:r.id,hp:r.hp,mp:r.mp};});
   if(o.termination==='defeat'){if(!['allied','enemy'].includes(o.winner))fail('전멸 승패');const losers=b.participants.filter(p=>p.side!==o.winner),winners=b.participants.filter(p=>p.side===o.winner);if(losers.some(p=>live[p.id].hp>0)||!winners.some(p=>live[p.id].hp>0))fail('전멸 결과/생존자');}

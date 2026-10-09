@@ -1,3 +1,4 @@
+import {normalizeStoryEvents,applyQuestStory,assertQuestStory} from './quest-story.js';
 import {validateEpicQuest,planLocalReputation} from './epic-model.js';
 import {wallet,copper,addCopper,bindWallet} from './wallet.js';
 import {catalogData} from './catalog-data.js';
@@ -24,8 +25,9 @@ export function normalizeQuest(raw){
     if(!o?.id||ids.has(o.id)||!txt(o.description)||!Number.isInteger(o.target)||o.target<1||o.target>999999||!kinds.includes(o.verification?.kind)||!txt(o.verification.target_id,100))fail('구체적인 목표 ID와 검증 방식 필요');
     ids.add(o.id);return {id:txt(o.id,100),description:txt(o.description),current:Math.min(o.target,integer(o.current)),target:o.target,verification:{kind:o.verification.kind,target_id:txt(o.verification.target_id,100),...(o.verification.recipient_id?{recipient_id:txt(o.verification.recipient_id,100)}:{})},evidence_ids:Array.isArray(o.evidence_ids)?o.evidence_ids.filter(v=>typeof v==='string').slice(-1000):[]};
   });
+  if(raw.story!==undefined&&(!Array.isArray(raw.story)||raw.story.length>100))fail('의뢰 위협 기록은 최대100개');
   const reward=raw.reward||{};copper(reward.currency??0);if(reward.budget_copper!==undefined){copper(reward.budget_copper);if(reward.budget_copper<(reward.currency||0)||!txt(reward.budget_basis))fail('발주자 예산과 실제 근거 필요');}
-  return {...(raw.epic_id?{epic_id:txt(raw.epic_id,100)}:{}),...(raw.settlement_id?{settlement_id:txt(raw.settlement_id,100)}:{}),...(typeof raw.repeatable==='boolean'?{repeatable:raw.repeatable}:{}),id:txt(raw.id,100),title:txt(raw.title,160),summary:txt(raw.summary,3000),origin:raw.origin,type:raw.type,status:raw.status,rank:['F','E','D','C','B','EPIC'].includes(raw.rank)?raw.rank:null,region_id:raw.region_id,target_location_id:txt(raw.target_location_id,100)||null,issuer_npc_id:txt(raw.issuer_npc_id,100)||null,issuer_faction_id:txt(raw.issuer_faction_id,100)||null,issuer_name:txt(raw.issuer_name,160),accepted_at:txt(raw.accepted_at,80)||null,deadline_at:txt(raw.deadline_at,80)||null,claim_event_id:txt(raw.claim_event_id,100)||null,visibility:['public','revealed','private'].includes(raw.visibility)?raw.visibility:'revealed',objectives,reward:{xp:integer(reward.xp),currency:copper(reward.currency??0),...(reward.budget_copper!==undefined?{budget_copper:reward.budget_copper,budget_basis:txt(reward.budget_basis)}:{}),item_ids:Array.isArray(reward.item_ids)?reward.item_ids.filter(v=>typeof v==='string').slice(0,32):[],materials:Array.isArray(reward.materials)?reward.materials.slice(0,32).map(v=>({id:txt(v.id,100),quantity:integer(v.quantity)||1})):[],affection_effects:Array.isArray(reward.affection_effects)?reward.affection_effects.slice(0,16).map(v=>({npc_id:txt(v.npc_id,100),delta:Number.isInteger(v.delta)&&Math.abs(v.delta)<=200?v.delta:0,reason:txt(v.reason)})):[]},journal:Array.isArray(raw.journal)?raw.journal.filter(v=>typeof v==='string').slice(-100).map(v=>txt(v)):[]};
+  return {...(raw.story_required===true?{story_required:true}:{}),...(raw.story!==undefined?{story:raw.story.map(e=>({...normalizeStoryEvents([e])[0],scene_id:txt(e.scene_id,100)}))}:{}),...(raw.epic_id?{epic_id:txt(raw.epic_id,100)}:{}),...(raw.settlement_id?{settlement_id:txt(raw.settlement_id,100)}:{}),...(typeof raw.repeatable==='boolean'?{repeatable:raw.repeatable}:{}),id:txt(raw.id,100),title:txt(raw.title,160),summary:txt(raw.summary,3000),origin:raw.origin,type:raw.type,status:raw.status,rank:['F','E','D','C','B','EPIC'].includes(raw.rank)?raw.rank:null,region_id:raw.region_id,target_location_id:txt(raw.target_location_id,100)||null,issuer_npc_id:txt(raw.issuer_npc_id,100)||null,issuer_faction_id:txt(raw.issuer_faction_id,100)||null,issuer_name:txt(raw.issuer_name,160),accepted_at:txt(raw.accepted_at,80)||null,deadline_at:txt(raw.deadline_at,80)||null,claim_event_id:txt(raw.claim_event_id,100)||null,visibility:['public','revealed','private'].includes(raw.visibility)?raw.visibility:'revealed',objectives,reward:{xp:integer(reward.xp),currency:copper(reward.currency??0),...(reward.budget_copper!==undefined?{budget_copper:reward.budget_copper,budget_basis:txt(reward.budget_basis)}:{}),item_ids:Array.isArray(reward.item_ids)?reward.item_ids.filter(v=>typeof v==='string').slice(0,32):[],materials:Array.isArray(reward.materials)?reward.materials.slice(0,32).map(v=>({id:txt(v.id,100),quantity:integer(v.quantity)||1})):[],affection_effects:Array.isArray(reward.affection_effects)?reward.affection_effects.slice(0,16).map(v=>({npc_id:txt(v.npc_id,100),delta:Number.isInteger(v.delta)&&Math.abs(v.delta)<=200?v.delta:0,reason:txt(v.reason)})):[]},journal:Array.isArray(raw.journal)?raw.journal.filter(v=>typeof v==='string').slice(-100).map(v=>txt(v)):[]};
 }
 export function normalizeQuestLog(raw){const result=[];for(const q of Array.isArray(raw)?raw.slice(0,100):[]){try{const v=normalizeQuest(q);if(!result.some(p=>p.id===v.id))result.push(v);}catch{}}return result;}
 export function normalizeWorldEvents(raw){
@@ -43,9 +45,16 @@ export function settleQuests(state,scene){
   const reputation=planLocalReputation(state,scene),gateState={...state,local_reputation:reputation}; const updates=scene.quest_updates||[];
   for(const raw of updates){ validateEpicQuest(gateState,raw);
     const old=quests.find(q=>q.id===raw.id);
-    if(old){if(old.status!=='offered')fail('수락한 의뢰 조건은 임의 변경할 수 없습니다.');const q=normalizeQuest(raw);if(q.status!=='offered')fail('상태는 quest_events로 변경');Object.assign(old,q,{objectives:q.objectives.map(o=>({...o,current:0,evidence_ids:[]})),claim_event_id:null});}
-    else {if(quests.length>=100)fail('의뢰 기록은 최대 100개');const q=normalizeQuest(raw);if(q.status!=='offered')fail('새 의뢰는 offered');q.objectives=q.objectives.map(o=>({...o,current:0,evidence_ids:[]}));q.claim_event_id=null;quests.push(q);}
+    if(old){if(old.status!=='offered')fail('수락한 의뢰 조건은 임의 변경할 수 없습니다.');const q=normalizeQuest(raw);if(q.status!=='offered')fail('상태는 quest_events로 변경');Object.assign(old,q,{objectives:q.objectives.map(o=>({...o,current:0,evidence_ids:[]})),claim_event_id:null,story:[]});}
+    else {if(quests.length>=100)fail('의뢰 기록은 최대 100개');const q=normalizeQuest(raw);if(q.status!=='offered')fail('새 의뢰는 offered');q.objectives=q.objectives.map(o=>({...o,current:0,evidence_ids:[]}));q.claim_event_id=null;delete q.story;quests.push(q);}
   }
+  const acceptanceIds=new Set();
+  for(const e of scene.quest_events||[])if(e.kind==='accept'){
+    if(ledger.includes(e.event_id)||acceptanceIds.has(e.event_id))fail('이미 적용한 의뢰 사건입니다.');
+    const q=quests.find(q=>q.id===e.quest_id);if(!q||q.status!=='offered')fail('수락 가능한 의뢰가 아닙니다.');
+    q.status='accepted';q.accepted_at=scene.game_state?.date||state.gameState.date||null;q.journal.push(e.reason);ledger.push(e.event_id);acceptanceIds.add(e.event_id);
+  }
+  applyQuestStory(quests,scene,ledger);
   const events=[];
   if(scene.battle&&scene.battle.outcome.winner==='allied')for(const p of scene.battle.participants.filter(p=>p.side==='enemy'&&scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0)){events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}`,kind:'battle_win',target_id:p.catalog_id||p.id,location,proof:'확정된 전투 종료',quantity:1});if(p.dungeon_foe_id)events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}:foe`,kind:'battle_win',target_id:p.dungeon_foe_id,location,proof:'등록 던전 보스·정예의 실제 처치',quantity:1});}
   for(const e of scene.world_events||[]){
@@ -65,17 +74,19 @@ export function settleQuests(state,scene){
     for(const e of events){if(ledger.includes(e.event_id))continue;for(const o of q.objectives){if(o.verification.kind!==e.kind||o.verification.target_id!==e.target_id||o.evidence_ids.includes(e.event_id))continue;
       if(e.kind==='delivery'&&e.recipient_id!==(o.verification.recipient_id||q.issuer_npc_id))fail('의뢰 물자 수령인 불일치');
       o.current=Math.min(o.target,o.current+(e.quantity||1));o.evidence_ids.push(e.event_id);q.journal.push(`${o.description} · ${o.current}/${o.target}`);}}
-    q.status=q.objectives.every(o=>o.current>=o.target)?'ready_to_report':'active';
+    q.status=q.objectives.every(o=>o.current>=o.target)?'ready_to_report':q.status==='accepted'&&acceptanceIds.size>0&&!events.length?'accepted':'active';
   }
   for(const e of events)if(!ledger.includes(e.event_id))ledger.push(e.event_id);
   let player=structuredClone({...state.player,...scene.player}),inventory=structuredClone(bag),wallet_copper=wallet(state),relationships=structuredClone(state.relationships||{});
   for(const e of scene.quest_events||[]){
+    if(e.kind==='accept'&&acceptanceIds.has(e.event_id))continue;
     if(ledger.includes(e.event_id))fail('이미 적용한 의뢰 사건입니다. 보상 중복을 막았습니다.');
     const q=quests.find(q=>q.id===e.quest_id);if(!q)fail('등록되지 않은 의뢰 사건');
     if(e.kind==='accept'){if(q.status!=='offered')fail('수락 가능한 의뢰가 아닙니다.');q.status='accepted';q.accepted_at=scene.game_state?.date||state.gameState.date||null;}
     else if(e.kind==='decline'){if(q.status!=='offered')fail('제안 중인 의뢰만 거절 가능');q.status='declined';}
     else if(e.kind==='abandon'||e.kind==='fail'){if(!['accepted','active','ready_to_report'].includes(q.status))fail('진행 의뢰만 포기·실패 가능');q.status=e.kind==='fail'?'failed':'abandoned';}
     else if(e.kind==='report'){
+      assertQuestStory(q);
       if(q.status!=='ready_to_report'||q.claim_event_id)fail('실제 목표 확인과 미지급 보상 필요');
       if(q.issuer_npc_id?scene.npc?.id!==q.issuer_npc_id:region!==q.region_id)fail('발행자에게 실제 보고해야 합니다.');
       if(scene.player||scene.inventory||scene.npc_updates)fail('의뢰 보상은 UI가 한 번만 정산합니다. report 장면에 보상 스냅샷을 중복 포함하지 마세요.');

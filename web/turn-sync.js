@@ -1,3 +1,4 @@
+import {outcomeInstruction} from './turn-facts.js';
 import {questStoryInstruction,hasActiveQuestStory} from './quest-story.js';
 import {craftingAttemptInstruction,isCraftingAttempt} from './crafting-policy.js';
 import {turnContext,turnDomains} from './scene.js';
@@ -13,7 +14,9 @@ export function syncContext(state,action,choiceId){
  if(c.regional_epics){delete c.regional_epics.constraints;delete c.regional_epics.source;}
  if(c.npc_catalog)for(const k of ['sources','art_registry','placements','catalog_digest'])delete c.npc_catalog[k];
  if(c.economy)delete c.economy.rules;
- if(c.background_registry){delete c.background_registry.source;delete c.background_registry.registered;if(!domains.adventure&&!domains.dungeon)delete c.background_registry.available;}
+ if(c.growth&&!/돌파|경지|서클|마나 방어|반사/.test(action))c.growth={profile:c.growth.profile,next:c.growth.next,learned_abilities:c.growth.learned_abilities};
+ if(!domains.dungeon)delete c.dungeon_encounters;
+ if(c.background_registry){delete c.background_registry.source;delete c.background_registry.registered;if(!domains.adventure&&!domains.dungeon&&!domains.crafting&&!domains.trade&&!domains.growth)delete c.background_registry.available;}
  return {context:c,domains};
 }
 export function createTurnSync(){
@@ -23,10 +26,10 @@ export function createTurnSync(){
   const key=state.campaign_id||'legacy';if(campaign!==key){reset();campaign=key;}
   const {context,domains}=syncContext(state,action,choiceId),checkpoint=force||!baseline||completed%10===0;
   const removed=[];const changed=checkpoint?context:difference(context,baseline,removed)||{};
-  const required=new Set(['npc','cast']);
+  const required=new Set(['npc','cast','turn_facts']);
   if(domains.combat||domains.growth||domains.crafting)for(const k of ['player','engine','inventory','skill_loadout','npc_catalog','growth','loot','dungeon_encounters','gm_rulings'])required.add(k);
   if(domains.trade)for(const k of ['player','inventory','wallet_copper','shops','economy','trade_receipts','npc_catalog'])required.add(k);
-  if(domains.quest)for(const k of ['quest_log','quest_event_ids','regional_epics'])required.add(k);
+  if(domains.quest)for(const k of ['quest_log','quest_event_ids','regional_epics','wallet_copper'])required.add(k);
   if(domains.relationship)required.add('relationship_network');
   for(const k of required)if(Object.hasOwn(context,k))changed[k]=context[k];
   return {generation,campaign:key,completed,checkpoint,domains,snapshot:context,payload:{mode:checkpoint?'checkpoint':'delta',anchor:{campaign_id:state.campaign_id||null,scene_id:state.scene?.scene_id||null,region:state.gameState?.region||null,place:state.gameState?.place||state.scene?.location||null,date:state.gameState?.date||null,time:state.gameState?.time||state.scene?.time||null},state:changed,...(removed.length?{removed}:{})}};
@@ -45,9 +48,9 @@ export function incrementalPrompt(state,action,id,packet){
  if(packet.checkpoint||d.growth||d.crafting)rules+=learningRules;
  if(isCraftingAttempt(action))rules+=craftingAttemptInstruction;
  if(packet.checkpoint||d.quest||hasActiveQuestStory(state))rules+=questStoryInstruction;
- if(d.combat)rules+='전투는 BATTLE_SCHEMA의 참가자·현재 수치·장착 기술·행동별 계산·HP/MP·최종 결과 전체를 사전 판정하고 종료 player/inventory/game_state를 포함하세요. UI 정산·전리품 추첨과 중복 지급 금지. ';
+ if(d.combat)rules+='전투는 BATTLE_SCHEMA의 참가자·현재 수치·장착 기술·행동별 계산·HP/MP·최종 결과 전체를 사전 판정하고 일반 장면 생략 규칙의 예외로 종료 player/inventory/game_state 세 필드 전체를 반드시 포함하세요. 변경 없는 inventory도 생략하지 마세요. UI 정산·전리품 추첨과 중복 지급 금지. ';
  if(d.trade)rules+='거래는 SHOP_TRADE_SCHEMA/ECONOMY_SCHEMA의 실제 재고·가격·예산으로 확인하세요. 동화100=은화1, 은화100=금화1, wallet_copper는 엔진 원장입니다. UI 정산 거래를 스냅샷으로 재지급하지 마세요. ';
  if(d.growth||d.crafting)rules+='실제 수련·제작·학습 결과와 시간을 이번 턴에 판정하세요. 실제 연습 성과는 practice, 그 외 경험치는 engine_events xp, 학습은 learn_book/learn_custom_skill, 경지 승급은 실제 깨달음과 기존 최소 레벨을 확인하세요. ';
  if(d.quest)rules+='의뢰는 quest_updates/quest_events/world_events의 실제 증거로 처리하고 보고 보상은 UI에 맡기세요. ';
- return rules+'\n현재 상태:\n'+JSON.stringify(packet.payload)+'\n\n플레이어의 자유 행동(그대로 반영):\n'+action;
+ return rules+outcomeInstruction+'\n현재 상태:\n'+JSON.stringify(packet.payload)+'\n\n플레이어의 자유 행동(그대로 반영):\n'+action;
 }
