@@ -1,0 +1,86 @@
+{
+  "character_id": "ER-NPC-044",
+  "name": "에스코 린",
+  "versions": [
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "tier": "expert",
+      "phase": "low",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-044\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-044\\base.png"
+      ],
+      "camera": "eye-level three-quarter left view, subject on right",
+      "action": "모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 에스코 린 / ER-NPC-044. Text setting: 남40 검은 수염 녹색 눈 모직옷.\nApproved technique: 대상단 방어 · 결전식. Draw action: 모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다. Skill category: attack. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 험로·협곡 다리·상단 통제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-044/expert_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-9147496f-1109-4570-a8bd-0cb7ee813317.png",
+      "face_crop": {
+        "x": 0.56,
+        "y": 0.03,
+        "width": 0.19,
+        "height": 0.36
+      },
+      "visual_notes": "Identity, scars, faction equipment and support role reviewed; new tier composition.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "6b42c7cbb989f30e9eac857baaa8c60ae04ac345940103ef7d5f84cfc5d2cf12",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-NPC-044",
+      "name": "에스코 린",
+      "tier": "hyper",
+      "phase": "high",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-044\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-044\\base.png"
+      ],
+      "camera": "slightly elevated diagonal view, subject on right",
+      "action": "모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 에스코 린 / ER-NPC-044. Text setting: 남40 검은 수염 녹색 눈 모직옷.\nApproved technique: 대상단 방어 · 결전식. Draw action: 모직옷 아래 몸을 낮춰 수레 옆에서 공격을 받아 흘린다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: attack. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 시야·사거리·자세와 실제 지형에 제한되며 자동 적중·절대 방어가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 험로·협곡 다리·상단 통제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-044/hyper_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-1543953e-6f3b-471e-bcd9-d0bf4e9aea9e.png",
+      "face_crop": {
+        "x": 0.69,
+        "y": 0.04,
+        "width": 0.17,
+        "height": 0.31
+      },
+      "visual_notes": "Identity, scars, faction equipment and support role reviewed; new tier composition.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "3e08c9da4590d5c05f7313ab986b5e3ac2e31b883491da770956ac67d462a640",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}

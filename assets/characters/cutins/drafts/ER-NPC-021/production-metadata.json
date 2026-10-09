@@ -1,0 +1,86 @@
+{
+  "character_id": "ER-NPC-021",
+  "name": "하이몬 그란",
+  "versions": [
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "tier": "circle3",
+      "phase": "low",
+      "scope": "current_tier_concept",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-021\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-021\\base.png"
+      ],
+      "camera": "close three-quarter from right, diagonal foreground perspective",
+      "action": "회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 하이몬 그란 / ER-NPC-021. Text setting: 남46 회색 수염 검은 눈 두꺼운 회청 로브.\nApproved technique: 초석 방벽 · 결전식. Draw action: 회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다. Skill category: defense. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 마나 효과.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-021/circle3_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-2d803935-1dd5-4531-ad71-cfce9a159ca2.png",
+      "face_crop": {
+        "x": 0.38,
+        "y": 0.01,
+        "width": 0.2,
+        "height": 0.34
+      },
+      "visual_notes": "Darkness, barrier and mineral sensing retain setting identity; solo and distinct tier composition reviewed.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "1c3da5ef69a7879aeabb48cebadf87cad6ecad2fd08cb8e7494c3cadef492388",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-NPC-021",
+      "name": "하이몬 그란",
+      "tier": "circle6",
+      "phase": "high",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-021\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-021\\base.png"
+      ],
+      "camera": "eye-level three-quarter left view, subject on right",
+      "action": "회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": null,
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 하이몬 그란 / ER-NPC-021. Text setting: 남46 회색 수염 검은 눈 두꺼운 회청 로브.\nApproved technique: 초석 방벽 · 결전식. Draw action: 회청 로브 앞에 응축 마나 방벽을 세워 정면 타격을 완화한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: defense. Effect: 같은 정체성의 큰 비원소 마나 현상와 환경 반응. 얼굴과 동작은 유지한다.. Element: NONE: non-elemental physical/mana phenomenon; do not invent fire/lightning/holy magic. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 드라켄, 고원·마나 광맥·공방·요새; terrain 협곡의 장대 요새, 채굴민 임금 분쟁. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-021/circle6_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-264149e2-64a4-4291-b8e4-83f8ec56883a.png",
+      "face_crop": {
+        "x": 0.67,
+        "y": 0.07,
+        "width": 0.14,
+        "height": 0.25
+      },
+      "visual_notes": "Darkness, barrier and mineral sensing retain setting identity; solo and distinct tier composition reviewed.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "caa02b78bacf35dfb311cd37dca84cfa276612506b3143dbe7167ac359a21bf9",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}

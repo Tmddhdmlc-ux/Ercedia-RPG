@@ -1,0 +1,86 @@
+{
+  "character_id": "ER-NPC-020",
+  "name": "니비아 세르",
+  "versions": [
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "tier": "circle3",
+      "phase": "low",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-020\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-020\\base.png"
+      ],
+      "camera": "slightly elevated diagonal view, subject on right",
+      "action": "검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다",
+      "element": "암흑",
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 니비아 세르 / ER-NPC-020. Text setting: 여23 보라 흑발 회색 눈 검은 베일.\nApproved technique: 음영 접기 · 결전식. Draw action: 검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-020/circle3_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-96b3cbe8-f8c2-4b63-8e03-3120779ba1f1.png",
+      "face_crop": {
+        "x": 0.59,
+        "y": 0.01,
+        "width": 0.22,
+        "height": 0.4
+      },
+      "visual_notes": "Darkness, barrier and mineral sensing retain setting identity; solo and distinct tier composition reviewed.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "5320cd504e942a428589084e2952dc83c09459a7278707664b09af2f9083607a",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    },
+    {
+      "id": "ER-NPC-020",
+      "name": "니비아 세르",
+      "tier": "circle6",
+      "phase": "high",
+      "scope": "future_hypothetical",
+      "references": [
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\standings\\ER-NPC-020\\base.png",
+        "C:\\Users\\tmddh\\Documents\\Codex\\2026-10-08\\referenced-chatgpt-conversation-this-is-an\\work\\Ercedia-RPG\\assets\\characters\\portraits\\dialogue\\ER-NPC-020\\base.png"
+      ],
+      "camera": "close three-quarter from right, diagonal foreground perspective",
+      "action": "검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.",
+      "element": "암흑",
+      "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 니비아 세르 / ER-NPC-020. Text setting: 여23 보라 흑발 회색 눈 검은 베일.\nApproved technique: 음영 접기 · 결전식. Draw action: 검은 베일 가까이에 얇은 그늘을 드리워 시야를 줄인다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only. Absolutely SOLO character: no enemy bodies, hands, crowds, silhouettes, or extra figures. Do not draw an opponent, the threat remains outside the picture.  Make a distinctly different posture from low tier: torso rotated, more upright stance, effect expands from a new direction. No sword stabbing into the floor.  Weapon and equipment held naturally at the grip, no duplicate swords or extra limbs. ",
+      "destination": "assets/characters/cutins/drafts/ER-NPC-020/circle6_ultimate_v1.png",
+      "status": "generated_visual_reviewed",
+      "generated_path": "C:\\Users\\tmddh\\.codex\\generated_images\\01a11ad4-0da2-7003-94e3-9a1f35b44478\\exec-d1d1a984-00ad-4015-ba38-4e5f408a7c61.png",
+      "face_crop": {
+        "x": 0.46,
+        "y": 0.01,
+        "width": 0.18,
+        "height": 0.31
+      },
+      "visual_notes": "Darkness, barrier and mineral sensing retain setting identity; solo and distinct tier composition reviewed.",
+      "size": [
+        1664,
+        936
+      ],
+      "source_size": [
+        1672,
+        941
+      ],
+      "mode": "RGB",
+      "opaque": true,
+      "sha256": "90591761a4cedc3ed6bdc87b66b3b2755503a98905b831b5ced839dcd0c82706",
+      "processing": "minimal edge crop to exact 16:9; no resizing, no background removal",
+      "tool": "builtin_image_gen",
+      "user_approved": false,
+      "runtime_registered": false
+    }
+  ]
+}
