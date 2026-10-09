@@ -41,7 +41,10 @@ const version=JSON.parse(await readFile(path.join(root,'integration/version.json
 const assets=JSON.parse(await readFile(path.join(root,'integration/assets.json'),'utf8'));
 const assetHash=createHash('sha256');
 for(const asset of assets){if(!/^assets\/[a-zA-Z0-9_./-]+\.png$/.test(asset)||asset.includes('..'))throw Error('Invalid asset path');assetHash.update(asset);assetHash.update(await readFile(path.join(root,asset)));}
-await writeFile(path.join(root,'integration/update-manifest.json'),JSON.stringify({...version,assetDigest:assetHash.digest('hex'),entry:'integration/game.html',sha256:createHash('sha256').update(html).digest('hex')},null,2)+'\n');
+const audioAssets=JSON.parse(await readFile(path.join(root,'integration/audio-assets.json'),'utf8'));
+const audioHash=createHash('sha256');
+for(const asset of audioAssets){if(!/^assets\/audio\/[a-zA-Z0-9_./-]+\.ogg$/.test(asset)||asset.includes('..'))throw Error('Invalid audio path');audioHash.update(asset);audioHash.update(await readFile(path.join(root,asset)));}
+await writeFile(path.join(root,'integration/update-manifest.json'),JSON.stringify({...version,audioDigest:audioHash.digest('hex'),assetDigest:assetHash.digest('hex'),entry:'integration/game.html',sha256:createHash('sha256').update(html).digest('hex')},null,2)+'\n');
 const template=await readFile(path.join(root,'tampermonkey/host.template.js'),'utf8');
 const reader=(await readFile(path.join(root,'web/response-json.js'),'utf8')).replace(/export\s+(?=function)/g,'');
 const script=template.replace('/*__RESPONSE_READER__*/',()=>reader);
