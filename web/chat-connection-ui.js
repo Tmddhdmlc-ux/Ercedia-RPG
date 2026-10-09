@@ -9,12 +9,12 @@ export function mountChatConnection(state,{embedded,isPending,report}){
   const post=(type,id,payload)=>scope.postMessage({channel:'ercedia-handoff',type,id,payload},scope.location.origin);
   scope.addEventListener('message',event=>{
     const d=event.data;if(event.source!==scope||event.origin!==scope.location.origin||d?.channel!=='ercedia-handoff')return;
-    if(d.type==='ready'&&['1.2.1','1.2.2'].includes(d.payload?.version)){available=true;install.hidden=true;if(!waiting)message('런처 연결됨 · 새 게임을 누르면 설정을 읽고 바로 새 ChatGPT 채팅에 전송합니다.');}
+    if(d.type==='ready'&&['1.2.1','1.2.2'].includes(d.payload?.version)){available=true;install.hidden=true;if(!waiting)message('런처 연결됨 · 문답이 끝나면 준비한 설정과 완성된 캐릭터를 새 ChatGPT 채팅으로 전달합니다.');}
     if(d.id!==waiting)return;
     if(d.type==='opened'||d.type==='error'){waiting=null;busy=false;button.disabled=false;message(d.payload);}
   });
   for(const delay of [0,1000,3000])setTimeout(()=>post('probe',crypto.randomUUID()),delay);
-  message('새 게임을 누르면 설정 읽기와 ChatGPT 전송을 시작합니다. Chrome/Edge에서 연결 런처를 먼저 설치하세요.');
+  message('새 게임을 누르면 첫 문답부터 진행합니다. 문답이 끝나면 설정과 첫 장면 요청을 ChatGPT로 전달합니다. Chrome/Edge에서 연결 런처를 먼저 설치하세요.');
   async function connect(settings=null,setup=false){
     if(busy)return;
     if(!available){install.hidden=false;return message('이 브라우저에서 연결 런처가 감지되지 않았습니다. Chrome/Edge에 런처 1.2.2를 설치·업데이트하고 같은 게임 주소를 여세요.');}
@@ -29,5 +29,5 @@ export function mountChatConnection(state,{embedded,isPending,report}){
     }catch(error){busy=false;button.disabled=false;message(error.message);}
   }
   button.onclick=()=>connect(null,!!state.introDraft);
-  document.addEventListener('ercedia:new-game-started',event=>connect(event.detail?.settings,true));
+  document.addEventListener('ercedia:intro-completed',event=>connect(event.detail?.settings,false));
 }

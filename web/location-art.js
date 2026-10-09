@@ -28,6 +28,12 @@ export function backgroundContext(state){
   return {source:'assets/location_image_manifest.json',registered:261,current:state.scene?resolveBackground(state.scene,state):null,
     available:locationArt.filter(a=>a.id!=='IMG-SHARED-11'&&(!a.optional||a.zone_id===zone)&&(['legacy','shared_background'].includes(a.category)||a.region_id===region||a.region_anchor===region)).map(a=>({id:a.id,name:a.name}))};
 }
+// Old newly-created saves accidentally stored background:false. Render the current
+// registered scene normally unless the player explicitly chooses a visibility preference.
+export function sceneBackgroundVisible(state){
+  const explicit=state.uiPreferences?.sceneBackground;
+  return typeof explicit==='boolean'?explicit:state.intro_completed===true?true:state.background!==false;
+}
 export function mountBackground({image,status,assetBase}){
   let current=null;
   image.addEventListener('load',()=>{image.dataset.status='ready';image.classList.add('ready');});

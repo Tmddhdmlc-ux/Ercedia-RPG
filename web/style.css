@@ -2999,3 +2999,18 @@ input[type=range] {
  .game[data-battle=active] .game-navigation>.game-utility{display:block}
  .game[data-intro-phase=map]>.game-navigation>.tabs{justify-content:flex-end}
 }
+
+/* The world starts BELOW the header. No art or scene hit target extends into navigation. */
+@media(min-width:701px){
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) #story{position:relative;inset:auto;flex:1 1 0;min-height:260px;overflow:hidden}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .stage{height:auto;min-height:0;flex:1}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) :is(.location,.scene-tag){top:16px}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .chat-runtime{margin-top:0;flex-shrink:0;max-height:26%;position:relative;z-index:11}
+ .game-navigation,.game>.play-hud,.game>.adventure-toolbar{background:#101e28!important}
+ .stage .scene-action-overlay{left:auto;right:3%;top:64px;bottom:64px;width:35%;max-height:none;box-sizing:border-box;padding:12px}
+ .stage .scene-action-overlay .scene-choices{grid-template-columns:minmax(0,1fr);margin:0;gap:8px}
+ .stage .scene-action-overlay:has(.scene-choices[data-layout=list]){max-height:none}
+ .stage:has(.scene-action-overlay:not([hidden])) .dialog{left:3%;right:41%;max-height:40%;min-height:110px;padding:16px 20px 24px}
+ .stage:has(.quest-proposals:not([hidden])) .scene-action-overlay{left:auto;right:3%;top:64px;bottom:64px;width:35%;max-height:none}
+ .stage .quest-proposals{left:3%;right:41%;top:64px;max-height:30%}
+}

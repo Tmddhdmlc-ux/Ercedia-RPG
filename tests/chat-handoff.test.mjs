@@ -28,12 +28,12 @@ test('a transfer cannot overwrite an existing ChatGPT conversation and expires a
   const location={hostname:'chatgpt.com',pathname:'/',hash:'#ercedia-handoff='+id},record={...packet(),created:100};
   assert.ok(readChatHandoff(location,()=>record,200));assert.equal(readChatHandoff({...location,pathname:'/c/existing'},()=>record,200),null);assert.equal(readChatHandoff(location,()=>record,600101),null);assert.equal(readChatHandoff({...location,hostname:'bad.invalid'},()=>record,200),null);
 });
-test('new-game button flow automatically transfers the already-read settings without pressing another button',async()=>{
+test('completed prologue transfers the prepared settings and completed character without a setup turn',async()=>{
   let messageHandler,completed;const oldDocument=globalThis.document,oldWindow=globalThis.window,oldTimeout=globalThis.setTimeout;
   const nodes=new Map(),get=id=>{if(!nodes.has(id))nodes.set(id,{});return nodes.get(id);},sent=[];
-  globalThis.document={getElementById:get,addEventListener(type,fn){if(type==='ercedia:new-game-started')completed=fn;}};
+  globalThis.document={getElementById:get,addEventListener(type,fn){if(type==='ercedia:intro-completed')completed=fn;}};
   globalThis.window={location:{origin:'http://127.0.0.1:4184'},addEventListener(type,fn){messageHandler=fn;},postMessage:m=>sent.push(m)};globalThis.setTimeout=()=>0;
-  try{mountChatConnection(packet().state,{embedded:false,isPending:()=>false});messageHandler({source:window,origin:window.location.origin,data:{channel:'ercedia-handoff',type:'ready',payload:{version:'1.2.1'}}});completed({detail:{settings:settings()}});assert.equal(sent.length,1);assert.equal(sent[0].type,'start');assert.equal(sent[0].payload.settings.files['WORLD.md'],'공식 세계관 원문');assert.equal(sent[0].payload.stage,'setup');assert.equal(sent[0].payload.state.player.name,'');assert.equal(sent[0].payload.state.introDraft.step,'name');assert.ok(validateChatHandoff(sent[0].payload));assert.deepEqual(normalize(sent[0].payload.state),sent[0].payload.state);}finally{globalThis.document=oldDocument;globalThis.window=oldWindow;globalThis.setTimeout=oldTimeout;}
+  try{mountChatConnection(packet().state,{embedded:false,isPending:()=>false});messageHandler({source:window,origin:window.location.origin,data:{channel:'ercedia-handoff',type:'ready',payload:{version:'1.2.1'}}});completed({detail:{settings:settings()}});assert.equal(sent.length,1);assert.equal(sent[0].type,'start');assert.equal(sent[0].payload.settings.files['WORLD.md'],'공식 세계관 원문');assert.equal(sent[0].payload.stage,undefined);assert.equal(sent[0].payload.state.player.name,'검증');assert.equal(sent[0].payload.state.introDraft,undefined);assert.ok(validateChatHandoff(sent[0].payload));assert.deepEqual(normalize(sent[0].payload.state),sent[0].payload.state);}finally{globalThis.document=oldDocument;globalThis.window=oldWindow;globalThis.setTimeout=oldTimeout;}
 });
 test('ChatGPT frame handoff queues a real request with the full settings file and requires a reading confirmation',()=>{
   const h=uiHarness();try{
@@ -54,12 +54,12 @@ test('settings are sent before entering a name, and the acknowledgement cannot m
     const second=h.messages.filter(m=>m.type==='action').at(-1);assert.equal(second.payload.settingsFile,undefined);
   }finally{h.close();}
 });
-test('starting the new-game controller sends settings while the first name step is still empty',async()=>{
+test('new-game controller immediately opens the region question and never sends a separate setup request',async()=>{
   const h=uiHarness(),oldFetch=globalThis.fetch;try{
     const sha='b'.repeat(40),files={'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'시작 규칙','WORLD.md':'세계관','characters/player_default.json':'{}','characters/serin.json':'{}'},events=[],requests=[];
     globalThis.fetch=async url=>({ok:true,json:async()=>url.includes('/git/ref/')?{object:{sha}}:{tree:Object.keys(files).map(path=>({path,type:'blob'}))},text:async()=>files[url.split('/'+sha+'/')[1]]});
     document.dispatchEvent=event=>{events.push(event.type);return true;};const state=defaults();
     const controller=mountNewGame(state,{embedded:true,render(){},persist(){},chat:{controls(){},reportStatus(){},isPending:()=>false,sendSettings:s=>requests.push(s)}});
-    assert.equal(await controller.begin(),true);assert.equal(requests.length,1);assert.equal(requests[0].files['WORLD.md'],'세계관');assert.equal(state.introDraft.step,'name');assert.equal(state.player.name,'');assert.deepEqual(events,['ercedia:new-game-started']);
+    assert.equal(await controller.begin(),true);assert.equal(requests.length,0);assert.equal(state.introDraft.step,'origin');assert.equal(state.player.name,'');assert.deepEqual(events,['ercedia:new-game-started']);
   }finally{globalThis.fetch=oldFetch;h.close();}
 });

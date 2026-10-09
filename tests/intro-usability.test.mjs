@@ -56,3 +56,10 @@ test('background and response require explicit selection and Next without alteri
     t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'kingdom');
   }finally{t.h.close();}
 });
+
+test('origin is the first local question; selecting one kingdom assigns an approved lordship before identity',()=>{
+ for(const [index,kingdom]of [[0,'west'],[1,'east'],[2,'south']]){const t=setup('origin',{name:''});try{assert.equal(t.h.game.dataset.introPhase,'black');assert.match(t.h.get('intro-title').textContent,/어느 왕국/);assert.equal(t.h.get('intro-options').children.length,3);t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'origin');t.h.get('intro-options').children[index].onclick();assert.equal(t.state.introDraft.kingdom,kingdom);assert.ok(t.state.introDraft.lordship);t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'name');assert.equal(normalize(t.state).introDraft.kingdom,kingdom);}finally{t.h.close();}}
+});
+test('a selected kingdom skips the final map question while older unselected drafts still reach the map',()=>{
+ const t=setup('goal',{goal:'상인이 된다',kingdom:'south',lordship:'S1',answers:{calling:'guard',response:'protect'},passive:'steadfast'});try{t.h.get('intro-next').onclick();assert.equal(t.state.introDraft.step,'departure');assert.equal(t.h.game.dataset.introPhase,'black');assert.match(t.h.get('intro-description').textContent,/루메린/);assert.equal(t.h.get('intro-next').textContent,'여정을 시작한다');assert.equal(t.h.get('intro-options').children.length,4);assert.equal(normalize(t.state).introDraft.step,'departure');}finally{t.h.close();}
+});

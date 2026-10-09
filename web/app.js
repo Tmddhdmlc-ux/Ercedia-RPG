@@ -12,7 +12,7 @@ import {mountSceneCast} from './scene-cast.js';
 import {mountChatConnection} from './chat-connection-ui.js';
 import {mountTradeUI} from './trade-ui.js';
 import {mountWorldUI} from './world-ui.js';
-import {mountBackground,resolveBackground,backgroundArt} from './location-art.js';
+import {mountBackground,resolveBackground,backgroundArt,sceneBackgroundVisible} from './location-art.js';
 import {mountRemasterUI} from './remaster-ui.js';
 import {createGameBridge} from '../integration/game-bridge.js';
 import {mountChatUI} from './chat-ui.js';
@@ -123,7 +123,7 @@ for(const expression of Object.keys(labels)){
 const backgroundUI=mountBackground({image:$('background'),status:$('expression-status'),assetBase:window.__ERCEDIA_CONFIG__?.assetBase});
 function dirty(){ $('save-status').textContent='변경사항이 있습니다. 설정 저장을 눌러 보관하세요.';if(embedded||state.scene)saveGame(); }
 function renderAppearance(){
-  backgroundUI.render(resolveBackground(state.scene,state),state.background);
+  backgroundUI.render(resolveBackground(state.scene,state),sceneBackgroundVisible(state));
   if(state.scene?.cast){
     $('characters').hidden=true;sceneCast.render();
     document.querySelectorAll('[data-outfit]').forEach(b=>b.disabled=true);$('expression').disabled=true;npcInfo.refresh();return;
@@ -132,7 +132,7 @@ function renderAppearance(){
   const generic=state.scene?.npc&&state.scene.npc.id!=='serin';
   document.querySelectorAll('[data-outfit]').forEach(b=>b.disabled=!!generic);$('expression').disabled=!!generic;
   if(generic){for(const img of images.values())img.hidden=true;faceLayer.hidden=true;
-    npcArt.render(state.scene.npc,state.character);$('show-background').checked=state.background;$('show-character').checked=state.character;npcInfo.refresh();return;}
+    npcArt.render(state.scene.npc,state.character);$('show-background').checked=sceneBackgroundVisible(state);$('show-character').checked=state.character;npcInfo.refresh();return;}
   npcArt.hide();
   const key=state.outfit+':base';
   for (const [id,img] of images) img.hidden=id!==key || !state.character;
@@ -148,7 +148,7 @@ function renderAppearance(){
   $('expression-status').classList.toggle('asset-alert',error || face.dataset.status==='error' || $('background').dataset.status==='error');
   document.querySelectorAll('[data-outfit]').forEach(btn=>{const selected=btn.dataset.outfit===state.outfit;btn.classList.toggle('selected',selected);btn.setAttribute('aria-pressed',String(selected));});
   $('expression').value=state.expression;
-  $('show-background').checked=state.background;$('show-character').checked=state.character;
+  $('show-background').checked=sceneBackgroundVisible(state);$('show-character').checked=state.character;
   renderLayout();
   npcInfo.refresh();
 }
@@ -248,7 +248,7 @@ document.querySelectorAll('[data-outfit]').forEach(btn=>btn.onclick=()=>{state.o
 $('expression').onchange=e=>{state.expression=e.target.value;renderAppearance();dirty();};
 let frame=0;
 for(const k of ['scale','x','y']) $(k).oninput=e=>{state.layouts[state.outfit][k]=Number(e.target.value);$(k+'-value').textContent=e.target.value+(k==='y'?'px':'%');if(!frame) frame=requestAnimationFrame(()=>{frame=0;renderLayout();});dirty();};
-for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;renderAppearance();dirty();};
+for(const [id,key] of [['show-background','background'],['show-character','character']]) $(id).onchange=e=>{state[key]=e.target.checked;if(key==='background')state.uiPreferences={...state.uiPreferences,sceneBackground:e.target.checked};renderAppearance();dirty();};
 $('reset').onclick=()=>{state.layouts[state.outfit]=defaultLayout();renderLayout();dirty();};
 function saveGame(){try{storage.setItem(KEY,JSON.stringify(state));$('save-status').textContent='저장 완료 · 주인공 정보·스킬·화면 설정을 보관했습니다.';}catch{$('save-status').textContent='저장 실패 · 브라우저 저장 공간을 사용할 수 없습니다. 현재 화면은 유지됩니다.';}}
 $('save').onclick=saveGame;

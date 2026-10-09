@@ -2,7 +2,7 @@ import test from 'node:test';
 import assert from 'node:assert/strict';
 import {readFile} from 'node:fs/promises';
 import {createHash} from 'node:crypto';
-import {locationArt,backgroundArt,backgroundURL,resolveBackground,backgroundContext,mountBackground,regionBackground} from '../web/location-art.js';
+import {locationArt,backgroundArt,backgroundURL,resolveBackground,backgroundContext,mountBackground,regionBackground,sceneBackgroundVisible} from '../web/location-art.js';
 import {normalizeScene,actionPrompt} from '../web/scene.js';
 import {normalize,defaults} from '../web/state.js';
 import {uiHarness} from './ui-harness.mjs';
@@ -83,4 +83,10 @@ test('shop and auction display the same canonical icons without changing quotes,
   const before=JSON.stringify(state);
   try{mountWorldUI(state,{submit(){},isPending(){return false;},assetBase:'/'});const trade=h.get('inventory-panel').children[0];trade.open=true;trade.ontoggle();const walk=n=>[n,...(n.children||[]).flatMap(walk)],icons=walk(trade.children[1]).filter(n=>n.className==='registered-item-icon');assert.equal(icons.length,2);assert.equal(icons[0].children[0].src,'/'+sword.icon_path);assert.equal(icons[1].children[0].src,'/'+book.icon_path);assert.equal(icons[1].style['--item-rarity-color'],'#E64444');assert.equal(JSON.stringify(state),before);
   }finally{h.close();}
+});
+
+test('completed new-game saves display approved backgrounds without rewriting progress; explicit hiding survives',()=>{
+ const s={...defaults(),intro_completed:true,background:false},before=structuredClone(s);assert.equal(sceneBackgroundVisible(s),true);assert.deepEqual(s,before);
+ s.uiPreferences={sceneBackground:false};assert.equal(sceneBackgroundVisible(s),false);assert.equal(sceneBackgroundVisible(normalize({...defaults(),uiPreferences:s.uiPreferences})),false);
+ assert.equal(sceneBackgroundVisible({...defaults(),background:false}),false);
 });

@@ -3,12 +3,11 @@ export const introData = {
   "schema_version": 1,
   "flow": [
     "black_intro",
+    "kingdom_question",
     "identity_questions",
     "passive_result",
     "journey_goal",
-    "kingdom_selection",
-    "lordship_selection",
-    "confirmation",
+    "departure_confirmation",
     "first_scene"
   ],
   "visual": {
@@ -18,8 +17,28 @@ export const introData = {
   },
   "questions": [
     {
+      "id": "origin",
+      "text": "아르세디아 대륙에 어서 오거라! 어느 왕국에서 여정을 시작하겠느냐?",
+      "type": "choice",
+      "required": true,
+      "options": [
+        {
+          "id": "west",
+          "label": "벨로아 왕국"
+        },
+        {
+          "id": "east",
+          "label": "드라켄 왕국"
+        },
+        {
+          "id": "south",
+          "label": "루메린 왕국"
+        }
+      ]
+    },
+    {
       "id": "name",
-      "text": "아르세디아 대륙에 어서 오거라! 너의 이름은 무엇이냐?",
+      "text": "그럼, 이 여정에서 불릴 너의 이름은 무엇이냐?",
       "type": "text",
       "required": true
     },

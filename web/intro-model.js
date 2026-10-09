@@ -1,6 +1,6 @@
 import {introData,playerTemplate} from './intro-data.js';
 import {normalizePlayer} from './player.js';
-export const introSteps=['name','gender','calling','response','passive','goal','kingdom','lordship','confirmation'];
+export const introSteps=['origin','name','gender','calling','response','passive','goal','departure','kingdom','lordship','confirmation'];
 // Public limits approved in NEW_GAME_INTRO.md; never infer secret abilities.
 export const passiveLimits={steadfast:'데미지/HP 증가 아님, 전투당 첫 반응',traveler:'미개척 마나 이상지대 자동 탐지 불가',observant:'비밀 신원/마왕/진실 자동 탐지 불가',craftsman:'고급 제작·희귀 장비 무상 획득 불가'};
 export function passiveCandidates(answers){

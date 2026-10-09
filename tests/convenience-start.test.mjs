@@ -23,35 +23,35 @@ test('missing, old or incomplete convenience rules block loading and prompt gene
   }
 });
 
-test('new-game start downloads full v1.1 rules and sends them before character creation',async()=>{
-  const h=uiHarness(),oldFetch=globalThis.fetch;
-  try{
-    globalThis.fetch=source(base);document.dispatchEvent=()=>true;
-    window.__ERCEDIA_CONFIG__.features=['settings-attachment'];
-    const state=defaults(),chat=mountChatUI(state,{embedded:true,render(){},persist(){},storage:{}});
-    const game=mountNewGame(state,{embedded:true,render(){},persist(){},chat});
-    assert.equal(await game.begin(),true);
-    const action=h.messages.find(m=>m.type==='action').payload;
-    const content=action.settingsFile.content;
-    assert.ok(content.includes(`<<<GITHUB_SETTING ${path}>>>\n${rules}\n<<<END_GITHUB_SETTING>>>`));
-    assert.ok(content.indexOf('<<<GITHUB_SETTING BOOTSTRAP.md>>>')<content.indexOf(`<<<GITHUB_SETTING ${path}>>>`));
-    assert.ok(content.indexOf(`<<<GITHUB_SETTING ${path}>>>`)<content.indexOf('<<<GITHUB_SETTING WORLD.md>>>'));
-    for(const text of ['v1.1','예시에 없는 상황','선제적으로','이동·치료·귀환·휴식·반복 절차','중요한 선택','한 번만'])assert.ok(action.text.includes(text),text);
-    assert.equal(state.introDraft.step,'name');assert.equal(state.player.name,'');
-    assert.equal(chat.isPending(),true);
-    h.reply('scene',JSON.stringify({schema_version:1,type:'ercedia_scene',scene_id:'ready',reply_to:action.requestId,location:'준비',time:'시작 전',background_id:null,npc:null,dialogue:[{speaker:'시스템',text:'설정 읽기 완료'}],choices:[],settings_loaded:{commit:sha,file_count:Object.keys(base).length}}));
-    assert.equal(chat.isPending(),false);assert.equal(state.player.name,'');
-  }finally{globalThis.fetch=oldFetch;h.close();}
-});
 
-test('failed required rules preserve an existing game and never send a setup request',async()=>{
-  const h=uiHarness(),oldFetch=globalThis.fetch;
-  try{
-    const files={...base};delete files[path];globalThis.fetch=source(files);
-    const state=defaults();state.player.name='기존 인물';state.player.hp=32;
-    const before=structuredClone(state),sent=[];
-    const game=mountNewGame(state,{embedded:true,render(){},persist(){},chat:{controls(){},reportStatus(){},isPending:()=>false,sendSettings:s=>sent.push(s)}});
-    await assert.rejects(game.begin(),/필수 설정 누락/);
-    assert.deepEqual(state,before);assert.equal(sent.length,0);
-  }finally{globalThis.fetch=oldFetch;h.close();}
+const drain=()=>new Promise(resolve=>setImmediate(resolve));
+test('region question opens before downloads finish and full rules travel with the first playable scene',async()=>{
+ const h=uiHarness(),oldFetch=globalThis.fetch;
+ try{
+  let release;const gate=new Promise(resolve=>release=resolve);const fetcher=source(base);globalThis.fetch=async url=>{await gate;return fetcher(url);};document.dispatchEvent=()=>true;document.querySelectorAll=()=>[];
+  window.__ERCEDIA_CONFIG__.features=['settings-attachment'];let game;
+  const state=defaults(),chat=mountChatUI(state,{embedded:true,render(){game?.render();},persist(){},storage:{},getIntro:()=>game});
+  game=mountNewGame(state,{embedded:true,render(){game?.render();},persist(){},chat});
+  assert.equal(await game.begin(),true);assert.equal(state.introDraft.step,'origin');assert.equal(chat.isPending(),false);assert.ok(!h.messages.some(m=>m.type==='action'));
+  h.get('intro-options').children[2].onclick();h.get('intro-next').onclick();assert.equal(state.introDraft.step,'name');
+  h.get('intro-input').oninput({target:{value:'새 여행자'}});h.get('intro-next').onclick();
+  h.get('intro-options').children[0].onclick();assert.equal(state.introDraft.step,'calling');
+  h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();
+  assert.equal(state.introDraft.step,'passive');h.get('intro-options').children[0].onclick();h.get('intro-next').onclick();h.get('intro-goal').oninput({target:{value:'최고의 전사가 된다'}});h.get('intro-next').onclick();assert.equal(state.introDraft.step,'departure');
+  h.get('intro-next').onclick();assert.equal(state.player.name,'');release();await drain();await drain();
+  const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,1);const action=actions[0].payload;
+  assert.ok(action.settingsFile.content.includes(rules));assert.equal(action.setupOnly,undefined);assert.equal(state.player.name,'새 여행자');assert.equal(state.starting_kingdom,'루메린');assert.equal(state.player.hp,100);assert.equal(state.background,true);assert.equal(state.introDraft,undefined);assert.equal(chat.isPending(),true);
+  h.get('intro-next').onclick();assert.equal(h.messages.filter(m=>m.type==='action').length,1);
+ }finally{globalThis.fetch=oldFetch;h.close();}
+});
+test('failed required rules allow questions but block departure without replacing an existing game',async()=>{
+ const h=uiHarness(),oldFetch=globalThis.fetch;
+ try{
+  const files={...base};delete files[path];globalThis.fetch=source(files);document.dispatchEvent=()=>true;document.querySelectorAll=()=>[];
+  const state=defaults();state.player.name='기존 인물';state.player.hp=32;const before=structuredClone(state),sent=[];let game;
+  game=mountNewGame(state,{embedded:true,render(){game?.render();},persist(){},chat:{controls(){},reportStatus(){},isPending:()=>false,submit:s=>sent.push(s)}});
+  assert.equal(await game.begin(),true);await drain();assert.equal(state.introDraft.step,'origin');
+  Object.assign(state.introDraft,{step:'departure',name:'새 인물',kingdom:'south',lordship:'S1',answers:{calling:'guard',response:'protect'},passive:'steadfast',goal:'여행'});game.render();h.get('intro-next').onclick();await drain();
+  assert.match(h.get('intro-error').textContent,/필수 설정 누락/);assert.deepEqual(state.player,before.player);assert.deepEqual(state.scene,before.scene);assert.equal(sent.length,0);assert.equal(game.isStarting(),false);
+ }finally{globalThis.fetch=oldFetch;h.close();}
 });
