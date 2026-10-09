@@ -1,6 +1,17 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {createBackgroundMusic} from '../web/background-music.js';
+import {createBackgroundMusic,sceneMusic} from '../web/background-music.js';
+test('scene music prioritizes combat and actual places, with game-time night fallback',()=>{
+  assert.equal(sceneMusic({battle:true,place:'왕궁',time:'밤'}),'battle');
+  assert.equal(sceneMusic({background:'IMG-SHARED-05',time:'밤'}),'border');
+  assert.equal(sceneMusic({place:'국왕실'}),'royal');
+  assert.equal(sceneMusic({place:'극동 지역'}),'farEast');
+  assert.equal(sceneMusic({place:'북중 미개척 원시림'}),'unexplored');
+  for(const time of ['밤','심야','새벽','22:30','05:00'])assert.equal(sceneMusic({place:'솔브린 마을',time}),'night');
+  assert.equal(sceneMusic({time:'아침 08:30'}),'village');
+  assert.equal(sceneMusic({place:'묵은 왕가 납골묘'}),'village');
+  assert.equal(sceneMusic({battle:true,title:true}),'village');
+});
 function fixture(fetchAudio=async()=>({ok:true,arrayBuffer:async()=>new ArrayBuffer(8)})){
   const sources=[],param=()=>({value:0,cancelScheduledValues(){},setValueAtTime(v){this.value=v;},linearRampToValueAtTime(v){this.value=v;}});
   const ctx={currentTime:0,state:'suspended',destination:{},resume:async()=>{ctx.state='running';},createGain:()=>({gain:param(),connect(){},disconnect(){}}),decodeAudioData:async()=>({duration:10}),createBufferSource:()=>{const s={connect(){},disconnect(){},start(time){s.time=time;},stop(time){s.stopped=time;}};sources.push(s);return s;}};

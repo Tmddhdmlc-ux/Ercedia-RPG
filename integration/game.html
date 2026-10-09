@@ -3041,7 +3041,22 @@ input[type=range] {
 </main>
 <script>/*__ERCEDIA_BOOTSTRAP__*/
 const module2=(()=>{
-const musicTracks={village:{name:'마을 · 솔브린의 아침',path:'assets/audio/music/village_v1.mp3'},battle:{name:'전투 · 칼날의 공방',path:'assets/audio/music/battle_v1.mp3'}};
+const musicTracks=Object.fromEntries([
+  ['village','마을 · 솔브린의 아침'],['night','밤 · 솔브린의 달빛'],['battle','전투 · 칼날의 공방'],
+  ['border','국경 · 경계의 깃발'],['royal','왕실 · 황금의 알현'],['farEast','극동 · 먼 하늘의 잔향'],
+  ['unexplored','미탐색 · 지도 밖의 길'],['boss','보스 · 압도하는 왕좌']
+].map(([id,name])=>[id,{name,path:`assets/audio/music/${id}_v1.mp3`}]));
+function sceneMusic({battle=false,title=false,background='',place='',time=''}={}){
+  if(battle&&!title)return 'battle';
+  if(!title){
+    if(background==='IMG-SHARED-05'||/국경|검문소/.test(place))return 'border';
+    if(background==='IMG-SHARED-09'||/국왕실|왕실|왕궁|알현실/.test(place))return 'royal';
+    if(/극동/.test(place))return 'farEast';
+    if(/미탐색|미개척|미탐사/.test(place))return 'unexplored';
+  }
+  const hour=String(time).match(/(?:^|\s)(\d{1,2}):\d{2}/);
+  return /밤|심야|자정|새벽|night/i.test(time)||(hour&&(Number(hour[1])>=18||Number(hour[1])<6))?'night':'village';
+}
 function createBackgroundMusic({assetBase='',onStatus=()=>{},contextFactory=()=>new (window.AudioContext||window.webkitAudioContext)(),fetchAudio=url=>fetch(url)}={}){
   let ctx,master,enabled=false,desired='village',active=null,volume=.22,error=false,loading=false,revision=0,activation=0;
   const buffers=new Map(),loads=new Map(),voices=new Set();
@@ -3078,21 +3093,28 @@ function createBackgroundMusic({assetBase='',onStatus=()=>{},contextFactory=()=>
   function setVolume(value){volume=Math.max(0,Math.min(.7,Number(value)||0));if(master)master.gain.value=volume;report();}
   return {select,enable,pause,setVolume,status};
 }
-function mountBackgroundMusic(root,{assetBase=''}={}){
-  const controls=[];let mode='auto';
-  const music=createBackgroundMusic({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled?'BGM · '+(s.active==='battle'?'전투':'마을'):'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
-  function sync(){void music.select(mode==='auto'?(root.dataset.battle==='active'&&root.dataset.title!=='active'?'battle':'village'):mode);}
+function mountBackgroundMusic(root,{assetBase='',getScene=()=>({}),storage}={}){
+  const controls=[];let mode='auto',wanted=true,saved={};
+  try{saved=JSON.parse(storage?.getItem('ercedia.bgm.preferences')||'{}');}catch{}
+  if(saved.enabled===false)wanted=false;
+  if(saved.mode==='auto'||musicTracks[saved.mode])mode=saved.mode;
+  function persist(){try{storage?.setItem('ercedia.bgm.preferences',JSON.stringify({enabled:wanted,mode,volume:music.status().volume}));}catch{}}
+  const music=createBackgroundMusic({assetBase,onStatus:s=>{root.dataset.musicTrack=s.active||'';root.dataset.musicEnabled=String(s.enabled);for(const c of controls){c.summary.textContent=s.error?'BGM 다시 시도':s.loading?'BGM 준비 중':s.enabled?'BGM · '+musicTracks[s.active||s.desired].name.split(' · ')[0]:'BGM 끔';c.button.textContent=s.enabled?'BGM 끄기':'BGM 켜기';c.volume.value=String(Math.round(s.volume*100));c.select.value=mode;}}});
+  function sync(){void music.select(mode==='auto'?sceneMusic({...getScene(),battle:root.dataset.battle==='active',title:root.dataset.title==='active'}):mode);}
   for(const host of [root.querySelector('.title-content'),root.querySelector('.tabs')]){
     if(!host)continue;const details=document.createElement('details'),summary=document.createElement('summary'),panel=document.createElement('div'),button=document.createElement('button'),select=document.createElement('select'),volume=document.createElement('input');details.className='music-controls';panel.className='music-settings';summary.textContent='BGM 끔';button.type='button';button.textContent='BGM 켜기';
-    select.setAttribute('aria-label','BGM 선택');for(const [value,text] of [['auto','장면에 맞게 자동'],['village','마을 BGM'],['battle','전투 BGM']]){const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);}
+    select.setAttribute('aria-label','BGM 선택');for(const [value,text] of [['auto','장면에 맞게 자동'],...Object.entries(musicTracks).map(([id,t])=>[id,t.name])]){const option=document.createElement('option');option.value=value;option.textContent=text;select.append(option);}
     const label=document.createElement('label');label.textContent='BGM 음량 ';volume.type='range';volume.min='0';volume.max='70';volume.value='22';volume.step='2';volume.setAttribute('aria-label','BGM 음량');label.append(volume);
     panel.append(button,select,label);details.append(summary,panel);host.append(details);controls.push({summary,button,select,volume});
-    button.onclick=()=>{if(music.status().enabled)music.pause();else void music.enable();};select.onchange=()=>{mode=select.value;sync();};volume.oninput=()=>music.setVolume(Number(volume.value)/100);
+    button.onclick=()=>{wanted=!music.status().enabled;if(wanted)void music.enable();else music.pause();persist();};select.onchange=()=>{mode=select.value;sync();persist();};volume.oninput=()=>{music.setVolume(Number(volume.value)/100);persist();};
   }
-  new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['data-battle','data-title']});sync();return music;
+  if(Number.isFinite(saved.volume))music.setVolume(saved.volume);
+  function activate(event){if(!event.isTrusted)return;root.removeEventListener('pointerdown',activate);root.removeEventListener('keydown',activate);if(wanted&&!event.target.closest('.music-controls'))void music.enable();}
+  root.addEventListener('pointerdown',activate);root.addEventListener('keydown',activate);
+  new MutationObserver(sync).observe(root,{attributes:true,attributeFilter:['data-battle','data-title']});sync();return {...music,sync};
 }
 
-return {musicTracks,createBackgroundMusic,mountBackgroundMusic};})();
+return {musicTracks,sceneMusic,createBackgroundMusic,mountBackgroundMusic};})();
 const module3=(()=>{
 // Kenney Interface Sounds (CC0). Cosmetic feedback, independent of game saves.
 const uiSamples={hover:['interface/tick_001','interface/tick_002'],click:['interface/select_001','interface/select_002']};
@@ -7975,7 +7997,6 @@ const {mountEngineUI}=module79;
 const {mountNPCLifeUI}=module82;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module47;
 const $=id=>document.getElementById(id);
-mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
 mountDialogueGlossary($('line'));
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';
@@ -8010,6 +8031,7 @@ let storage;
 let restored;
 try {storage=window.__ERCEDIA_STORAGE__||window.localStorage;restored=load(storage);} catch {restored=load({getItem(){throw Error('unavailable');}});}
 const state=restored.state;
+const backgroundMusic=mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||'',storage,getScene:()=>({background:resolveBackground(state.scene,state),place:state.scene?.game_state?.place||state.scene?.location||state.gameState?.place||'',time:state.scene?.time||state.gameState?.time||''})});
 let introUI=null,battleUI=null,catalogUI=null,titleUI=null,questUI=null,engineUI=null,lifeUI=null,chatUI=null;
 const npcInfo=mountNPCInfo(state);
 const sceneCast=mountSceneCast(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,onSelect:(id,event)=>npcInfo.select(id,event)});
@@ -8191,7 +8213,7 @@ window.addEventListener('ercedia:inventory-update',event=>{
   saveGame();
 });
 let remasterUI=null,worldUI=null,tradeUI=null;
-function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();}
+function renderAll(){backgroundMusic.sync();renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();walletUI.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();tradeUI?.render();remasterUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
 // Keep the full-scene background above the actual composer, including connection feedback.
 if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));
