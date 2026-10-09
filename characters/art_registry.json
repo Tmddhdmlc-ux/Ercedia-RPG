@@ -1,7 +1,7 @@
 {
   "schema_version": 1,
   "approved_for_engine": "User requested all female NPCs five expression variants on 2026-10-09",
-  "asset_commit": "8fc71a6e06409af9110380a2457f65d113377e29",
+  "asset_commit": "f9cce72373a05f232f01bfcfa64ed518eb6329ce",
   "characters": {
     "ER-NPC-001": {
       "portrait": "assets/characters/portraits/dialogue/ER-NPC-001/base.png",
