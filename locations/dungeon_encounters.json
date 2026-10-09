@@ -1,0 +1,2041 @@
+{
+  "version": 1,
+  "profiles": [
+    {
+      "id": "DUN-W1-01-ELITE",
+      "dungeon_id": "DUN-W1-01",
+      "role": "elite",
+      "name": "빙설 추격자",
+      "base_monster_id": "ER-NPC-081",
+      "rank": "하급",
+      "level": 13,
+      "realm": "none",
+      "stats": {
+        "strength": 25,
+        "dexterity": 22,
+        "intelligence": 14,
+        "constitution": 26,
+        "manaStat": 20
+      },
+      "level_hp_bonus": 64,
+      "hp": 369,
+      "mp": 160,
+      "speed": 27,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 얼음 발판의 미끄러짐 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "옆의 암반으로 피하고 돌진 후 빈틈을 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W1-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W1-01-ELITE-SKILL",
+          "name": "정예 백숨 돌진",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W1-01-BOSS",
+      "dungeon_id": "DUN-W1-01",
+      "role": "boss",
+      "name": "백숨의 우두머리",
+      "base_monster_id": "ER-NPC-081",
+      "rank": "하급",
+      "level": 19,
+      "realm": "none",
+      "stats": {
+        "strength": 32,
+        "dexterity": 28,
+        "intelligence": 19,
+        "constitution": 33,
+        "manaStat": 26
+      },
+      "level_hp_bonus": 117,
+      "hp": 513,
+      "mp": 196,
+      "speed": 34,
+      "creature_multiplier": 1,
+      "telegraph": "갈기를 낮추고 숨을 들이킨 뒤 직선 돌진",
+      "counter": "옆의 암반으로 피하고 돌진 후 빈틈을 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W1-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W1-01-BOSS-SKILL",
+          "name": "백숨 돌진",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W1-02-ELITE",
+      "dungeon_id": "DUN-W1-02",
+      "role": "elite",
+      "name": "구혈 뿔지기",
+      "base_monster_id": "ER-NPC-082",
+      "rank": "중급",
+      "level": 17,
+      "realm": "none",
+      "stats": {
+        "strength": 33,
+        "dexterity": 29,
+        "intelligence": 9,
+        "constitution": 24,
+        "manaStat": 14
+      },
+      "level_hp_bonus": 76,
+      "hp": 385,
+      "mp": 124,
+      "speed": 35,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 눈처마와 좁은 굴목 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "넓은 안쪽 공간으로 유도하고 뿔의 방향을 벗어난다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W1-02-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W1-02-ELITE-SKILL",
+          "name": "정예 눈처마 뿔받기",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W1-02-BOSS",
+      "dungeon_id": "DUN-W1-02",
+      "role": "boss",
+      "name": "설벽의 백각왕",
+      "base_monster_id": "ER-NPC-082",
+      "rank": "중급",
+      "level": 19,
+      "realm": "none",
+      "stats": {
+        "strength": 38,
+        "dexterity": 33,
+        "intelligence": 11,
+        "constitution": 28,
+        "manaStat": 17
+      },
+      "level_hp_bonus": 117,
+      "hp": 481,
+      "mp": 142,
+      "speed": 40,
+      "creature_multiplier": 1.25,
+      "telegraph": "앞발로 눈을 긁은 뒤 뿔로 굴목을 봉쇄",
+      "counter": "넓은 안쪽 공간으로 유도하고 뿔의 방향을 벗어난다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W1-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W1-02-BOSS-SKILL",
+          "name": "눈처마 뿔받기",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W2-01-ELITE",
+      "dungeon_id": "DUN-W2-01",
+      "role": "elite",
+      "name": "납골 길잡이쥐",
+      "base_monster_id": "ER-NPC-084",
+      "rank": "하급",
+      "level": 20,
+      "realm": "none",
+      "stats": {
+        "strength": 31,
+        "dexterity": 26,
+        "intelligence": 18,
+        "constitution": 27,
+        "manaStat": 19
+      },
+      "level_hp_bonus": 85,
+      "hp": 418,
+      "mp": 154,
+      "speed": 32,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 석관 사이의 메아리 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "긁는 소리를 추적하고 좁은 틈의 퇴로를 막는다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W2-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W2-01-ELITE-SKILL",
+          "name": "정예 석관 메아리 습격",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W2-01-BOSS",
+      "dungeon_id": "DUN-W2-01",
+      "role": "boss",
+      "name": "석관을 갉는 회색어금니",
+      "base_monster_id": "ER-NPC-084",
+      "rank": "하급",
+      "level": 26,
+      "realm": "none",
+      "stats": {
+        "strength": 39,
+        "dexterity": 33,
+        "intelligence": 24,
+        "constitution": 34,
+        "manaStat": 25
+      },
+      "level_hp_bonus": 138,
+      "hp": 565,
+      "mp": 190,
+      "speed": 40,
+      "creature_multiplier": 1,
+      "telegraph": "벽을 긁어 울림을 만든 뒤 측면에서 달려든다",
+      "counter": "긁는 소리를 추적하고 좁은 틈의 퇴로를 막는다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W2-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W2-01-BOSS-SKILL",
+          "name": "석관 메아리 습격",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W2-02-ELITE",
+      "dungeon_id": "DUN-W2-02",
+      "role": "elite",
+      "name": "문장 철갑수",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "상급",
+      "level": 26,
+      "realm": "none",
+      "stats": {
+        "strength": 32,
+        "dexterity": 32,
+        "intelligence": 20,
+        "constitution": 33,
+        "manaStat": 22
+      },
+      "level_hp_bonus": 103,
+      "hp": 499,
+      "mp": 172,
+      "speed": 38,
+      "creature_multiplier": 1.55,
+      "telegraph": "길목에서 균형추와 꺼진 승강대 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "균형추 기둥을 사이에 두고 돌진 뒤 옆구리를 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W2-02-Z02",
+        "DUN-W2-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W2-02-ELITE-SKILL",
+          "name": "정예 사자문 분쇄",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W2-02-BOSS",
+      "dungeon_id": "DUN-W2-02",
+      "role": "boss",
+      "name": "사자문을 부수는 철엄니",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "상급",
+      "level": 31,
+      "realm": "none",
+      "stats": {
+        "strength": 39,
+        "dexterity": 39,
+        "intelligence": 25,
+        "constitution": 40,
+        "manaStat": 28
+      },
+      "level_hp_bonus": 153,
+      "hp": 640,
+      "mp": 208,
+      "speed": 46,
+      "creature_multiplier": 1.55,
+      "telegraph": "바닥을 두 번 구른 뒤 문짝처럼 몸을 세워 돌진",
+      "counter": "균형추 기둥을 사이에 두고 돌진 뒤 옆구리를 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W2-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W2-02-BOSS-SKILL",
+          "name": "사자문 분쇄",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-W3-01-ELITE",
+      "dungeon_id": "DUN-W3-01",
+      "role": "elite",
+      "name": "분진 잠복쥐",
+      "base_monster_id": "ER-NPC-084",
+      "rank": "하급",
+      "level": 8,
+      "realm": "none",
+      "stats": {
+        "strength": 25,
+        "dexterity": 20,
+        "intelligence": 12,
+        "constitution": 21,
+        "manaStat": 13
+      },
+      "level_hp_bonus": 49,
+      "hp": 304,
+      "mp": 118,
+      "speed": 25,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 곡물 분진과 무너진 선반 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "분진에서 물러나 바닥 진동으로 접근을 읽는다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W3-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W3-01-ELITE-SKILL",
+          "name": "정예 분진 잠복습격",
+          "kind": "physical",
+          "mp_cost": 6,
+          "technique_bonus": 3
+        }
+      ]
+    },
+    {
+      "id": "DUN-W3-01-BOSS",
+      "dungeon_id": "DUN-W3-01",
+      "role": "boss",
+      "name": "곡창의 잿꼬리",
+      "base_monster_id": "ER-NPC-084",
+      "rank": "하급",
+      "level": 14,
+      "realm": "none",
+      "stats": {
+        "strength": 31,
+        "dexterity": 26,
+        "intelligence": 17,
+        "constitution": 27,
+        "manaStat": 18
+      },
+      "level_hp_bonus": 102,
+      "hp": 435,
+      "mp": 148,
+      "speed": 32,
+      "creature_multiplier": 1,
+      "telegraph": "선반 위 곡물을 쏟은 뒤 시야 아래로 파고든다",
+      "counter": "분진에서 물러나 바닥 진동으로 접근을 읽는다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W3-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W3-01-BOSS-SKILL",
+          "name": "분진 잠복습격",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W3-02-ELITE",
+      "dungeon_id": "DUN-W3-02",
+      "role": "elite",
+      "name": "이삭길 돌격수",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "중급",
+      "level": 12,
+      "realm": "none",
+      "stats": {
+        "strength": 24,
+        "dexterity": 24,
+        "intelligence": 12,
+        "constitution": 25,
+        "manaStat": 14
+      },
+      "level_hp_bonus": 61,
+      "hp": 353,
+      "mp": 124,
+      "speed": 28,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 진흙 구덩이와 쓰러진 울타리 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "울타리를 정리하고 진흙 밖 단단한 발판에서 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W3-02-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W3-02-ELITE-SKILL",
+          "name": "정예 이삭길 울타리 돌파",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W3-02-BOSS",
+      "dungeon_id": "DUN-W3-02",
+      "role": "boss",
+      "name": "울타리 분쇄자",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "중급",
+      "level": 15,
+      "realm": "none",
+      "stats": {
+        "strength": 29,
+        "dexterity": 29,
+        "intelligence": 16,
+        "constitution": 30,
+        "manaStat": 18
+      },
+      "level_hp_bonus": 105,
+      "hp": 462,
+      "mp": 148,
+      "speed": 34,
+      "creature_multiplier": 1.25,
+      "telegraph": "울타리를 밀어 길을 좁힌 뒤 돌진",
+      "counter": "울타리를 정리하고 진흙 밖 단단한 발판에서 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W3-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W3-02-BOSS-SKILL",
+          "name": "이삭길 울타리 돌파",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W4-01-ELITE",
+      "dungeon_id": "DUN-W4-01",
+      "role": "elite",
+      "name": "참호 잿불사냥꾼",
+      "base_monster_id": "ER-NPC-085",
+      "rank": "중급",
+      "level": 29,
+      "realm": "none",
+      "stats": {
+        "strength": 36,
+        "dexterity": 29,
+        "intelligence": 14,
+        "constitution": 28,
+        "manaStat": 16
+      },
+      "level_hp_bonus": 112,
+      "hp": 470,
+      "mp": 136,
+      "speed": 36,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 사각의 잿더미와 불씨 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "잔불 밖으로 이동하고 달아오른 목을 식힐 시간을 만든다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W4-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W4-01-ELITE-SKILL",
+          "name": "정예 참호 잿불 휩쓸기",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W4-01-BOSS",
+      "dungeon_id": "DUN-W4-01",
+      "role": "boss",
+      "name": "붉은 참호의 열비늘",
+      "base_monster_id": "ER-NPC-085",
+      "rank": "중급",
+      "level": 35,
+      "realm": "none",
+      "stats": {
+        "strength": 44,
+        "dexterity": 36,
+        "intelligence": 19,
+        "constitution": 35,
+        "manaStat": 21
+      },
+      "level_hp_bonus": 165,
+      "hp": 617,
+      "mp": 166,
+      "speed": 44,
+      "creature_multiplier": 1.25,
+      "telegraph": "목 비늘이 붉어지며 잿더미를 향해 꼬리를 휘두른다",
+      "counter": "잔불 밖으로 이동하고 달아오른 목을 식힐 시간을 만든다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W4-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W4-01-BOSS-SKILL",
+          "name": "참호 잿불 휩쓸기",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-W4-02-ELITE",
+      "dungeon_id": "DUN-W4-02",
+      "role": "elite",
+      "name": "성문 철갑수",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "상급",
+      "level": 38,
+      "realm": "none",
+      "stats": {
+        "strength": 39,
+        "dexterity": 39,
+        "intelligence": 27,
+        "constitution": 40,
+        "manaStat": 29
+      },
+      "level_hp_bonus": 139,
+      "hp": 626,
+      "mp": 214,
+      "speed": 46,
+      "creature_multiplier": 1.55,
+      "telegraph": "길목에서 무너진 성문과 좁은 통로 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "통로 밖으로 유도하고 회전이 느린 후방을 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W4-02-Z02",
+        "DUN-W4-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W4-02-ELITE-SKILL",
+          "name": "정예 성문 공성돌격",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-W4-02-BOSS",
+      "dungeon_id": "DUN-W4-02",
+      "role": "boss",
+      "name": "잔해요새의 공성엄니",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "상급",
+      "level": 46,
+      "realm": "none",
+      "stats": {
+        "strength": 48,
+        "dexterity": 48,
+        "intelligence": 35,
+        "constitution": 49,
+        "manaStat": 37
+      },
+      "level_hp_bonus": 198,
+      "hp": 802,
+      "mp": 262,
+      "speed": 57,
+      "creature_multiplier": 1.55,
+      "telegraph": "철판을 긁으며 성문 통로에 몸을 맞춘다",
+      "counter": "통로 밖으로 유도하고 회전이 느린 후방을 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W4-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W4-02-BOSS-SKILL",
+          "name": "성문 공성돌격",
+          "kind": "physical",
+          "mp_cost": 12,
+          "technique_bonus": 7
+        }
+      ]
+    },
+    {
+      "id": "DUN-W5-01-ELITE",
+      "dungeon_id": "DUN-W5-01",
+      "role": "elite",
+      "name": "차축 파괴수",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "하급",
+      "level": 17,
+      "realm": "none",
+      "stats": {
+        "strength": 27,
+        "dexterity": 27,
+        "intelligence": 15,
+        "constitution": 28,
+        "manaStat": 17
+      },
+      "level_hp_bonus": 76,
+      "hp": 407,
+      "mp": 142,
+      "speed": 32,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 굴러가는 마차와 끊긴 밧줄 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "짐더미 아래를 피하고 고정한 마차로 접근을 제한한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W5-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W5-01-ELITE-SKILL",
+          "name": "정예 차축 붕괴",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-W5-01-BOSS",
+      "dungeon_id": "DUN-W5-01",
+      "role": "boss",
+      "name": "마차무덤의 검은엄니",
+      "base_monster_id": "ER-NPC-083",
+      "rank": "하급",
+      "level": 23,
+      "realm": "none",
+      "stats": {
+        "strength": 34,
+        "dexterity": 34,
+        "intelligence": 20,
+        "constitution": 35,
+        "manaStat": 23
+      },
+      "level_hp_bonus": 129,
+      "hp": 551,
+      "mp": 178,
+      "speed": 40,
+      "creature_multiplier": 1,
+      "telegraph": "차축을 들이받아 짐더미를 무너뜨린다",
+      "counter": "짐더미 아래를 피하고 고정한 마차로 접근을 제한한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W5-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W5-01-BOSS-SKILL",
+          "name": "차축 붕괴",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W5-02-ELITE",
+      "dungeon_id": "DUN-W5-02",
+      "role": "elite",
+      "name": "절벽 급강하수",
+      "base_monster_id": "ER-NPC-086",
+      "rank": "중급",
+      "level": 23,
+      "realm": "none",
+      "stats": {
+        "strength": 33,
+        "dexterity": 31,
+        "intelligence": 14,
+        "constitution": 29,
+        "manaStat": 22
+      },
+      "level_hp_bonus": 94,
+      "hp": 453,
+      "mp": 172,
+      "speed": 37,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 낙석과 상승기류 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "암벽에 붙어 급강하를 피하고 착지 직후를 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W5-02-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W5-02-ELITE-SKILL",
+          "name": "정예 돌문 급강하",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-W5-02-BOSS",
+      "dungeon_id": "DUN-W5-02",
+      "role": "boss",
+      "name": "돌문 위의 부리왕",
+      "base_monster_id": "ER-NPC-086",
+      "rank": "중급",
+      "level": 27,
+      "realm": "none",
+      "stats": {
+        "strength": 40,
+        "dexterity": 38,
+        "intelligence": 18,
+        "constitution": 35,
+        "manaStat": 27
+      },
+      "level_hp_bonus": 141,
+      "hp": 581,
+      "mp": 202,
+      "speed": 46,
+      "creature_multiplier": 1.25,
+      "telegraph": "날개를 접고 울음 뒤 절벽 그림자에서 급강하",
+      "counter": "암벽에 붙어 급강하를 피하고 착지 직후를 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-W5-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-W5-02-BOSS-SKILL",
+          "name": "돌문 급강하",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-E1-01-ELITE",
+      "dungeon_id": "DUN-E1-01",
+      "role": "elite",
+      "name": "안개 초소지기",
+      "base_monster_id": "ER-NPC-090",
+      "rank": "중급",
+      "level": 33,
+      "realm": "none",
+      "stats": {
+        "strength": 35,
+        "dexterity": 35,
+        "intelligence": 23,
+        "constitution": 38,
+        "manaStat": 27
+      },
+      "level_hp_bonus": 124,
+      "hp": 579,
+      "mp": 202,
+      "speed": 42,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 시야 단절과 울음 반향 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "울음 방향을 확인하며 엄폐하고 낮게 선회할 때 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E1-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E1-01-ELITE-SKILL",
+          "name": "정예 회안개 반향습격",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-E1-01-BOSS",
+      "dungeon_id": "DUN-E1-01",
+      "role": "boss",
+      "name": "회안개의 소리날개",
+      "base_monster_id": "ER-NPC-090",
+      "rank": "중급",
+      "level": 39,
+      "realm": "none",
+      "stats": {
+        "strength": 43,
+        "dexterity": 43,
+        "intelligence": 30,
+        "constitution": 47,
+        "manaStat": 34
+      },
+      "level_hp_bonus": 177,
+      "hp": 746,
+      "mp": 244,
+      "speed": 51,
+      "creature_multiplier": 1.25,
+      "telegraph": "매달린 몸을 펴고 높은 울음을 낸 뒤 날아든다",
+      "counter": "울음 방향을 확인하며 엄폐하고 낮게 선회할 때 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E1-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E1-01-BOSS-SKILL",
+          "name": "회안개 반향습격",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-E1-02-ELITE",
+      "dungeon_id": "DUN-E1-02",
+      "role": "elite",
+      "name": "균열 뇌각수",
+      "base_monster_id": "ER-NPC-089",
+      "rank": "엘리트",
+      "level": 52,
+      "realm": "none",
+      "stats": {
+        "strength": 53,
+        "dexterity": 48,
+        "intelligence": 28,
+        "constitution": 44,
+        "manaStat": 33
+      },
+      "level_hp_bonus": 181,
+      "hp": 750,
+      "mp": 238,
+      "speed": 58,
+      "creature_multiplier": 1.95,
+      "telegraph": "길목에서 간헐적인 마나 맥동 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "맥동이 멎는 구간으로 이동하고 충전 중 진로를 벗어난다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E1-02-Z02",
+        "DUN-E1-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E1-02-ELITE-SKILL",
+          "name": "정예 균열 뇌각돌진",
+          "kind": "physical",
+          "mp_cost": 13,
+          "technique_bonus": 8
+        }
+      ]
+    },
+    {
+      "id": "DUN-E1-02-BOSS",
+      "dungeon_id": "DUN-E1-02",
+      "role": "boss",
+      "name": "시린 균열의 뇌관왕",
+      "base_monster_id": "ER-NPC-089",
+      "rank": "엘리트",
+      "level": 62,
+      "realm": "none",
+      "stats": {
+        "strength": 65,
+        "dexterity": 59,
+        "intelligence": 37,
+        "constitution": 55,
+        "manaStat": 43
+      },
+      "level_hp_bonus": 246,
+      "hp": 961,
+      "mp": 298,
+      "speed": 72,
+      "creature_multiplier": 1.95,
+      "telegraph": "뿔 끝에 푸른 전기가 모인 뒤 좁은 길을 질주",
+      "counter": "맥동이 멎는 구간으로 이동하고 충전 중 진로를 벗어난다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E1-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E1-02-BOSS-SKILL",
+          "name": "균열 뇌각돌진",
+          "kind": "physical",
+          "mp_cost": 15,
+          "technique_bonus": 9
+        }
+      ]
+    },
+    {
+      "id": "DUN-E2-01-ELITE",
+      "dungeon_id": "DUN-E2-01",
+      "role": "elite",
+      "name": "도체 공명거미",
+      "base_monster_id": "ER-NPC-088",
+      "rank": "중급",
+      "level": 27,
+      "realm": "none",
+      "stats": {
+        "strength": 35,
+        "dexterity": 29,
+        "intelligence": 18,
+        "constitution": 33,
+        "manaStat": 24
+      },
+      "level_hp_bonus": 106,
+      "hp": 511,
+      "mp": 184,
+      "speed": 36,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 금속 바닥에 이어진 전류 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "실의 연결점을 끊고 금속 발판에서 떨어져 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E2-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E2-01-ELITE-SKILL",
+          "name": "정예 청동맥 공명직조",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-E2-01-BOSS",
+      "dungeon_id": "DUN-E2-01",
+      "role": "boss",
+      "name": "청동맥의 직조자",
+      "base_monster_id": "ER-NPC-088",
+      "rank": "중급",
+      "level": 33,
+      "realm": "none",
+      "stats": {
+        "strength": 42,
+        "dexterity": 36,
+        "intelligence": 23,
+        "constitution": 40,
+        "manaStat": 30
+      },
+      "level_hp_bonus": 159,
+      "hp": 655,
+      "mp": 220,
+      "speed": 44,
+      "creature_multiplier": 1.25,
+      "telegraph": "다리를 펼쳐 도체 사이에 공명 실을 당긴다",
+      "counter": "실의 연결점을 끊고 금속 발판에서 떨어져 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E2-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E2-01-BOSS-SKILL",
+          "name": "청동맥 공명직조",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-E2-02-ELITE",
+      "dungeon_id": "DUN-E2-02",
+      "role": "elite",
+      "name": "역류 광충",
+      "base_monster_id": "ER-NPC-087",
+      "rank": "엘리트",
+      "level": 58,
+      "realm": "none",
+      "stats": {
+        "strength": 55,
+        "dexterity": 49,
+        "intelligence": 39,
+        "constitution": 46,
+        "manaStat": 45
+      },
+      "level_hp_bonus": 199,
+      "hp": 794,
+      "mp": 310,
+      "speed": 60,
+      "creature_multiplier": 1.95,
+      "telegraph": "길목에서 차단기의 역류와 눈부신 결정 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "빛나는 순서를 읽고 결정의 조사 방향 밖으로 이동한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E2-02-Z02",
+        "DUN-E2-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E2-02-ELITE-SKILL",
+          "name": "정예 역류 섬광돌파",
+          "kind": "physical",
+          "mp_cost": 14,
+          "technique_bonus": 8
+        }
+      ]
+    },
+    {
+      "id": "DUN-E2-02-BOSS",
+      "dungeon_id": "DUN-E2-02",
+      "role": "boss",
+      "name": "폐전류의 섬광핵",
+      "base_monster_id": "ER-NPC-087",
+      "rank": "엘리트",
+      "level": 68,
+      "realm": "none",
+      "stats": {
+        "strength": 67,
+        "dexterity": 61,
+        "intelligence": 49,
+        "constitution": 57,
+        "manaStat": 56
+      },
+      "level_hp_bonus": 264,
+      "hp": 1005,
+      "mp": 376,
+      "speed": 74,
+      "creature_multiplier": 1.95,
+      "telegraph": "몸의 결정이 차례로 빛나며 한 방향을 겨눈다",
+      "counter": "빛나는 순서를 읽고 결정의 조사 방향 밖으로 이동한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E2-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E2-02-BOSS-SKILL",
+          "name": "역류 섬광돌파",
+          "kind": "physical",
+          "mp_cost": 16,
+          "technique_bonus": 9
+        }
+      ]
+    },
+    {
+      "id": "DUN-E3-01-ELITE",
+      "dungeon_id": "DUN-E3-01",
+      "role": "elite",
+      "name": "갱도 천공충",
+      "base_monster_id": "ER-NPC-087",
+      "rank": "중급",
+      "level": 31,
+      "realm": "none",
+      "stats": {
+        "strength": 40,
+        "dexterity": 34,
+        "intelligence": 24,
+        "constitution": 31,
+        "manaStat": 30
+      },
+      "level_hp_bonus": 118,
+      "hp": 518,
+      "mp": 220,
+      "speed": 42,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 낙석과 균열 확산 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "낙석을 피할 지주 사이 공간을 확보하고 굴착 후 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E3-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E3-01-ELITE-SKILL",
+          "name": "정예 수정턱 굴착",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-E3-01-BOSS",
+      "dungeon_id": "DUN-E3-01",
+      "role": "boss",
+      "name": "붕락의 수정턱",
+      "base_monster_id": "ER-NPC-087",
+      "rank": "중급",
+      "level": 37,
+      "realm": "none",
+      "stats": {
+        "strength": 48,
+        "dexterity": 41,
+        "intelligence": 30,
+        "constitution": 38,
+        "manaStat": 37
+      },
+      "level_hp_bonus": 171,
+      "hp": 665,
+      "mp": 262,
+      "speed": 50,
+      "creature_multiplier": 1.25,
+      "telegraph": "턱으로 천장을 긁어 낙석을 만든 뒤 파고든다",
+      "counter": "낙석을 피할 지주 사이 공간을 확보하고 굴착 후 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E3-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E3-01-BOSS-SKILL",
+          "name": "수정턱 굴착",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-E3-02-ELITE",
+      "dungeon_id": "DUN-E3-02",
+      "role": "elite",
+      "name": "방벽 연결거미",
+      "base_monster_id": "ER-NPC-088",
+      "rank": "상급",
+      "level": 44,
+      "realm": "none",
+      "stats": {
+        "strength": 44,
+        "dexterity": 38,
+        "intelligence": 27,
+        "constitution": 42,
+        "manaStat": 33
+      },
+      "level_hp_bonus": 157,
+      "hp": 679,
+      "mp": 238,
+      "speed": 46,
+      "creature_multiplier": 1.55,
+      "telegraph": "길목에서 방벽과 거미줄의 공명 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "연결 결정을 분리해 엄폐를 열고 줄이 풀릴 때 접근한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E3-02-Z02",
+        "DUN-E3-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E3-02-ELITE-SKILL",
+          "name": "정예 방벽 매듭조이기",
+          "kind": "physical",
+          "mp_cost": 12,
+          "technique_bonus": 7
+        }
+      ]
+    },
+    {
+      "id": "DUN-E3-02-BOSS",
+      "dungeon_id": "DUN-E3-02",
+      "role": "boss",
+      "name": "잿빛 방벽의 매듭왕",
+      "base_monster_id": "ER-NPC-088",
+      "rank": "상급",
+      "level": 54,
+      "realm": "none",
+      "stats": {
+        "strength": 55,
+        "dexterity": 49,
+        "intelligence": 36,
+        "constitution": 53,
+        "manaStat": 43
+      },
+      "level_hp_bonus": 222,
+      "hp": 887,
+      "mp": 298,
+      "speed": 60,
+      "creature_multiplier": 1.55,
+      "telegraph": "다리를 결정에 대고 줄을 팽팽히 당긴다",
+      "counter": "연결 결정을 분리해 엄폐를 열고 줄이 풀릴 때 접근한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E3-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E3-02-BOSS-SKILL",
+          "name": "방벽 매듭조이기",
+          "kind": "physical",
+          "mp_cost": 14,
+          "technique_bonus": 8
+        }
+      ]
+    },
+    {
+      "id": "DUN-E4-01-ELITE",
+      "dungeon_id": "DUN-E4-01",
+      "role": "elite",
+      "name": "교각 날개지기",
+      "base_monster_id": "ER-NPC-086",
+      "rank": "하급",
+      "level": 15,
+      "realm": "none",
+      "stats": {
+        "strength": 29,
+        "dexterity": 27,
+        "intelligence": 10,
+        "constitution": 25,
+        "manaStat": 18
+      },
+      "level_hp_bonus": 70,
+      "hp": 377,
+      "mp": 148,
+      "speed": 32,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 횡풍과 끊긴 발판 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "교각 뒤에서 바람을 피하고 회전 직후를 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E4-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E4-01-ELITE-SKILL",
+          "name": "정예 교각 횡풍강하",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-E4-01-BOSS",
+      "dungeon_id": "DUN-E4-01",
+      "role": "boss",
+      "name": "바람깎이 부리군주",
+      "base_monster_id": "ER-NPC-086",
+      "rank": "하급",
+      "level": 21,
+      "realm": "none",
+      "stats": {
+        "strength": 36,
+        "dexterity": 34,
+        "intelligence": 15,
+        "constitution": 32,
+        "manaStat": 24
+      },
+      "level_hp_bonus": 123,
+      "hp": 521,
+      "mp": 184,
+      "speed": 41,
+      "creature_multiplier": 1,
+      "telegraph": "교각에 앉아 날개를 크게 펼친 뒤 옆으로 쓸고 간다",
+      "counter": "교각 뒤에서 바람을 피하고 회전 직후를 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E4-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E4-01-BOSS-SKILL",
+          "name": "교각 횡풍강하",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-E4-02-ELITE",
+      "dungeon_id": "DUN-E4-02",
+      "role": "elite",
+      "name": "교각 뇌각수",
+      "base_monster_id": "ER-NPC-089",
+      "rank": "중급",
+      "level": 21,
+      "realm": "none",
+      "stats": {
+        "strength": 35,
+        "dexterity": 30,
+        "intelligence": 10,
+        "constitution": 26,
+        "manaStat": 15
+      },
+      "level_hp_bonus": 88,
+      "hp": 423,
+      "mp": 130,
+      "speed": 37,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 젖은 사다리와 좁은 교각 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "난간과 떨어져 넓은 점검실로 유도한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E4-02-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E4-02-ELITE-SKILL",
+          "name": "정예 폐통로 난간돌파",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-E4-02-BOSS",
+      "dungeon_id": "DUN-E4-02",
+      "role": "boss",
+      "name": "폐통로의 푸른뿔",
+      "base_monster_id": "ER-NPC-089",
+      "rank": "중급",
+      "level": 26,
+      "realm": "none",
+      "stats": {
+        "strength": 43,
+        "dexterity": 37,
+        "intelligence": 15,
+        "constitution": 33,
+        "manaStat": 20
+      },
+      "level_hp_bonus": 138,
+      "hp": 567,
+      "mp": 160,
+      "speed": 45,
+      "creature_multiplier": 1.25,
+      "telegraph": "뿔로 난간을 문지르며 통로 끝을 겨눈다",
+      "counter": "난간과 떨어져 넓은 점검실로 유도한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-E4-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-E4-02-BOSS-SKILL",
+          "name": "폐통로 난간돌파",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-S1-01-ELITE",
+      "dungeon_id": "DUN-S1-01",
+      "role": "elite",
+      "name": "수문 집게지기",
+      "base_monster_id": "ER-NPC-092",
+      "rank": "하급",
+      "level": 10,
+      "realm": "none",
+      "stats": {
+        "strength": 22,
+        "dexterity": 18,
+        "intelligence": 9,
+        "constitution": 17,
+        "manaStat": 9
+      },
+      "level_hp_bonus": 55,
+      "hp": 261,
+      "mp": 94,
+      "speed": 22,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 조수와 미끄러운 수로 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "수위를 낮춘 발판에서 큰 집게의 바깥쪽을 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S1-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S1-01-ELITE-SKILL",
+          "name": "정예 백각 수문압박",
+          "kind": "physical",
+          "mp_cost": 6,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-S1-01-BOSS",
+      "dungeon_id": "DUN-S1-01",
+      "role": "boss",
+      "name": "진주수로의 백각집게",
+      "base_monster_id": "ER-NPC-092",
+      "rank": "하급",
+      "level": 16,
+      "realm": "none",
+      "stats": {
+        "strength": 29,
+        "dexterity": 24,
+        "intelligence": 14,
+        "constitution": 23,
+        "manaStat": 14
+      },
+      "level_hp_bonus": 108,
+      "hp": 395,
+      "mp": 124,
+      "speed": 29,
+      "creature_multiplier": 1,
+      "telegraph": "집게로 수문을 두드린 뒤 좁은 통로를 막는다",
+      "counter": "수위를 낮춘 발판에서 큰 집게의 바깥쪽을 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S1-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S1-01-BOSS-SKILL",
+          "name": "백각 수문압박",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-S1-02-ELITE",
+      "dungeon_id": "DUN-S1-02",
+      "role": "elite",
+      "name": "화물 은비늘",
+      "base_monster_id": "ER-NPC-094",
+      "rank": "중급",
+      "level": 17,
+      "realm": "none",
+      "stats": {
+        "strength": 32,
+        "dexterity": 25,
+        "intelligence": 17,
+        "constitution": 24,
+        "manaStat": 23
+      },
+      "level_hp_bonus": 76,
+      "hp": 382,
+      "mp": 178,
+      "speed": 31,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 밀려오는 물과 떠다니는 화물 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "화물 위 발판에서 물결을 읽고 도약 후 착수를 노린다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S1-02-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S1-02-ELITE-SKILL",
+          "name": "정예 은물결 수면도약",
+          "kind": "physical",
+          "mp_cost": 7,
+          "technique_bonus": 4
+        }
+      ]
+    },
+    {
+      "id": "DUN-S1-02-BOSS",
+      "dungeon_id": "DUN-S1-02",
+      "role": "boss",
+      "name": "침몰창의 은물결",
+      "base_monster_id": "ER-NPC-094",
+      "rank": "중급",
+      "level": 22,
+      "realm": "none",
+      "stats": {
+        "strength": 38,
+        "dexterity": 31,
+        "intelligence": 22,
+        "constitution": 30,
+        "manaStat": 28
+      },
+      "level_hp_bonus": 126,
+      "hp": 510,
+      "mp": 208,
+      "speed": 38,
+      "creature_multiplier": 1.25,
+      "telegraph": "몸을 비틀며 물속 그림자를 바꾸고 수면으로 튀어 오른다",
+      "counter": "화물 위 발판에서 물결을 읽고 도약 후 착수를 노린다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S1-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S1-02-BOSS-SKILL",
+          "name": "은물결 수면도약",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-S2-01-ELITE",
+      "dungeon_id": "DUN-S2-01",
+      "role": "elite",
+      "name": "역참 모래추적자",
+      "base_monster_id": "ER-NPC-096",
+      "rank": "중급",
+      "level": 24,
+      "realm": "none",
+      "stats": {
+        "strength": 35,
+        "dexterity": 32,
+        "intelligence": 17,
+        "constitution": 27,
+        "manaStat": 22
+      },
+      "level_hp_bonus": 97,
+      "hp": 442,
+      "mp": 172,
+      "speed": 39,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 모래 덮인 표식과 미끼 흔적 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "흔적보다 실제 그림자와 바람을 확인해 측면을 지킨다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S2-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S2-01-ELITE-SKILL",
+          "name": "정예 거짓발자국 측면습격",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-S2-01-BOSS",
+      "dungeon_id": "DUN-S2-01",
+      "role": "boss",
+      "name": "황금길의 거짓발자국",
+      "base_monster_id": "ER-NPC-096",
+      "rank": "중급",
+      "level": 30,
+      "realm": "none",
+      "stats": {
+        "strength": 43,
+        "dexterity": 40,
+        "intelligence": 23,
+        "constitution": 34,
+        "manaStat": 29
+      },
+      "level_hp_bonus": 150,
+      "hp": 589,
+      "mp": 214,
+      "speed": 48,
+      "creature_multiplier": 1.25,
+      "telegraph": "모래를 차올리며 반대 방향으로 발자국을 만든다",
+      "counter": "흔적보다 실제 그림자와 바람을 확인해 측면을 지킨다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S2-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S2-01-BOSS-SKILL",
+          "name": "거짓발자국 측면습격",
+          "kind": "physical",
+          "mp_cost": 10,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-S2-02-ELITE",
+      "dungeon_id": "DUN-S2-02",
+      "role": "elite",
+      "name": "폐요새 열비늘",
+      "base_monster_id": "ER-NPC-085",
+      "rank": "상급",
+      "level": 39,
+      "realm": "none",
+      "stats": {
+        "strength": 41,
+        "dexterity": 34,
+        "intelligence": 19,
+        "constitution": 33,
+        "manaStat": 21
+      },
+      "level_hp_bonus": 142,
+      "hp": 565,
+      "mp": 166,
+      "speed": 42,
+      "creature_multiplier": 1.55,
+      "telegraph": "길목에서 건조한 적재물과 잔불 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "타는 적재물에서 떨어지고 열기가 잦아드는 동안 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S2-02-Z02",
+        "DUN-S2-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S2-02-ELITE-SKILL",
+          "name": "정예 잿불 적재물 휩쓸기",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-S2-02-BOSS",
+      "dungeon_id": "DUN-S2-02",
+      "role": "boss",
+      "name": "황금길의 잿불군주",
+      "base_monster_id": "ER-NPC-085",
+      "rank": "상급",
+      "level": 49,
+      "realm": "none",
+      "stats": {
+        "strength": 52,
+        "dexterity": 44,
+        "intelligence": 28,
+        "constitution": 43,
+        "manaStat": 30
+      },
+      "level_hp_bonus": 207,
+      "hp": 763,
+      "mp": 220,
+      "speed": 54,
+      "creature_multiplier": 1.55,
+      "telegraph": "달아오른 등을 보인 뒤 적재물 쪽으로 몸을 휘두른다",
+      "counter": "타는 적재물에서 떨어지고 열기가 잦아드는 동안 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S2-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S2-02-BOSS-SKILL",
+          "name": "잿불 적재물 휩쓸기",
+          "kind": "physical",
+          "mp_cost": 13,
+          "technique_bonus": 7
+        }
+      ]
+    },
+    {
+      "id": "DUN-S3-01-ELITE",
+      "dungeon_id": "DUN-S3-01",
+      "role": "elite",
+      "name": "암초 바람사냥꾼",
+      "base_monster_id": "ER-NPC-091",
+      "rank": "하급",
+      "level": 21,
+      "realm": "none",
+      "stats": {
+        "strength": 34,
+        "dexterity": 28,
+        "intelligence": 12,
+        "constitution": 27,
+        "manaStat": 14
+      },
+      "level_hp_bonus": 88,
+      "hp": 430,
+      "mp": 124,
+      "speed": 34,
+      "creature_multiplier": 1,
+      "telegraph": "길목에서 밀물과 젖은 암반 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "낮은 바람을 피할 바위를 택하고 날개가 펴지는 순간 대응한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S3-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S3-01-ELITE-SKILL",
+          "name": "정예 감긴날개 암초도약",
+          "kind": "physical",
+          "mp_cost": 8,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-S3-01-BOSS",
+      "dungeon_id": "DUN-S3-01",
+      "role": "boss",
+      "name": "해풍의 감긴날개",
+      "base_monster_id": "ER-NPC-091",
+      "rank": "하급",
+      "level": 27,
+      "realm": "none",
+      "stats": {
+        "strength": 41,
+        "dexterity": 35,
+        "intelligence": 17,
+        "constitution": 33,
+        "manaStat": 19
+      },
+      "level_hp_bonus": 141,
+      "hp": 564,
+      "mp": 154,
+      "speed": 43,
+      "creature_multiplier": 1,
+      "telegraph": "암초 위에서 몸을 말아 날개를 모은 뒤 도약",
+      "counter": "낮은 바람을 피할 바위를 택하고 날개가 펴지는 순간 대응한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S3-01-Z03"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S3-01-BOSS-SKILL",
+          "name": "감긴날개 암초도약",
+          "kind": "physical",
+          "mp_cost": 9,
+          "technique_bonus": 5
+        }
+      ]
+    },
+    {
+      "id": "DUN-S3-02-ELITE",
+      "dungeon_id": "DUN-S3-02",
+      "role": "elite",
+      "name": "배수 먹장어",
+      "base_monster_id": "ER-NPC-093",
+      "rank": "상급",
+      "level": 37,
+      "realm": "none",
+      "stats": {
+        "strength": 44,
+        "dexterity": 39,
+        "intelligence": 14,
+        "constitution": 36,
+        "manaStat": 23
+      },
+      "level_hp_bonus": 136,
+      "hp": 598,
+      "mp": 178,
+      "speed": 47,
+      "creature_multiplier": 1.55,
+      "telegraph": "길목에서 수압과 검은 물의 시야 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "물을 뺀 좁은 지점에서 진동을 읽고 옆으로 비켜선다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S3-02-Z02",
+        "DUN-S3-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S3-02-ELITE-SKILL",
+          "name": "정예 흑진주 수로습격",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-S3-02-BOSS",
+      "dungeon_id": "DUN-S3-02",
+      "role": "boss",
+      "name": "심해수로의 흑진주턱",
+      "base_monster_id": "ER-NPC-093",
+      "rank": "상급",
+      "level": 47,
+      "realm": "none",
+      "stats": {
+        "strength": 55,
+        "dexterity": 49,
+        "intelligence": 21,
+        "constitution": 46,
+        "manaStat": 32
+      },
+      "level_hp_bonus": 201,
+      "hp": 796,
+      "mp": 232,
+      "speed": 60,
+      "creature_multiplier": 1.55,
+      "telegraph": "물빛이 검어지고 수로 벽을 몸으로 울린다",
+      "counter": "물을 뺀 좁은 지점에서 진동을 읽고 옆으로 비켜선다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S3-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S3-02-BOSS-SKILL",
+          "name": "흑진주 수로습격",
+          "kind": "physical",
+          "mp_cost": 12,
+          "technique_bonus": 7
+        }
+      ]
+    },
+    {
+      "id": "DUN-S4-01-ELITE",
+      "dungeon_id": "DUN-S4-01",
+      "role": "elite",
+      "name": "금고 등불나방",
+      "base_monster_id": "ER-NPC-095",
+      "rank": "중급",
+      "level": 36,
+      "realm": "none",
+      "stats": {
+        "strength": 38,
+        "dexterity": 34,
+        "intelligence": 22,
+        "constitution": 37,
+        "manaStat": 28
+      },
+      "level_hp_bonus": 133,
+      "hp": 587,
+      "mp": 208,
+      "speed": 41,
+      "creature_multiplier": 1.25,
+      "telegraph": "길목에서 흑유리 반사와 밝은 미끼 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "반사면을 가리고 실제 날개의 그림자를 추적한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S4-01-Z02"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S4-01-ELITE-SKILL",
+          "name": "정예 흑유리 잔광습격",
+          "kind": "physical",
+          "mp_cost": 11,
+          "technique_bonus": 6
+        }
+      ]
+    },
+    {
+      "id": "DUN-S4-01-BOSS",
+      "dungeon_id": "DUN-S4-01",
+      "role": "boss",
+      "name": "흑유리의 거짓등불",
+      "base_monster_id": "ER-NPC-095",
+      "rank": "중급",
+      "level": 42,
+      "realm": "none",
+      "stats": {
+        "strength": 46,
+        "dexterity": 42,
+        "intelligence": 29,
+        "constitution": 45,
+        "manaStat": 35
+      },
+      "level_hp_bonus": 186,
+      "hp": 744,
+      "mp": 250,
+      "speed": 51,
+      "creature_multiplier": 1.25,
+      "telegraph": "날개를 펴 반사면에 여러 빛을 만든다",
+      "counter": "반사면을 가리고 실제 날개의 그림자를 추적한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S4-01-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S4-01-BOSS-SKILL",
+          "name": "흑유리 잔광습격",
+          "kind": "physical",
+          "mp_cost": 12,
+          "technique_bonus": 7
+        }
+      ]
+    },
+    {
+      "id": "DUN-S4-02-ELITE",
+      "dungeon_id": "DUN-S4-02",
+      "role": "elite",
+      "name": "달그림자 고리뿔",
+      "base_monster_id": "ER-NPC-098",
+      "rank": "엘리트",
+      "level": 56,
+      "realm": "none",
+      "stats": {
+        "strength": 56,
+        "dexterity": 45,
+        "intelligence": 18,
+        "constitution": 45,
+        "manaStat": 22
+      },
+      "level_hp_bonus": 193,
+      "hp": 781,
+      "mp": 172,
+      "speed": 56,
+      "creature_multiplier": 1.95,
+      "telegraph": "길목에서 움직이는 그림자와 갈라진 바닥 쪽으로 움직이며 공격할 방향을 드러낸다.",
+      "counter": "그림자보다 실제 발굽과 바닥 균열을 보고 진로를 피한다",
+      "behavior": "지역 지형을 활용해 길목을 지키며, 발각되면 엄폐·측면 이동을 시도한다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S4-02-Z02",
+        "DUN-S4-02-Z04"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S4-02-ELITE-SKILL",
+          "name": "정예 월흔 고리뿔돌진",
+          "kind": "physical",
+          "mp_cost": 14,
+          "technique_bonus": 8
+        }
+      ]
+    },
+    {
+      "id": "DUN-S4-02-BOSS",
+      "dungeon_id": "DUN-S4-02",
+      "role": "boss",
+      "name": "폐예배당의 월흔왕",
+      "base_monster_id": "ER-NPC-098",
+      "rank": "엘리트",
+      "level": 66,
+      "realm": "none",
+      "stats": {
+        "strength": 69,
+        "dexterity": 56,
+        "intelligence": 26,
+        "constitution": 56,
+        "manaStat": 31
+      },
+      "level_hp_bonus": 258,
+      "hp": 995,
+      "mp": 226,
+      "speed": 69,
+      "creature_multiplier": 1.95,
+      "telegraph": "고리뿔을 숙이고 달빛 속 그림자가 길게 늘어진다",
+      "counter": "그림자보다 실제 발굽과 바닥 균열을 보고 진로를 피한다",
+      "behavior": "핵심 구역을 지키며, 첫 접근이 막히면 지역 지형을 활용해 공격 경로를 바꾼다.",
+      "limits": "예고 동작은 관측 가능한 단서이며 명중·반격·약점 공략을 자동 성공시키지 않는다. 비용·피해·가드·상황 보정은 기존 전투 사건으로 GM이 판정한다.",
+      "art_policy": "기존 종의 등록 원화만 사용; 신규 전용 원화 없음",
+      "allowed_zone_ids": [
+        "DUN-S4-02-Z05"
+      ],
+      "skills": [
+        {
+          "id": "DUN-S4-02-BOSS-SKILL",
+          "name": "월흔 고리뿔돌진",
+          "kind": "physical",
+          "mp_cost": 16,
+          "technique_bonus": 9
+        }
+      ]
+    }
+  ]
+}

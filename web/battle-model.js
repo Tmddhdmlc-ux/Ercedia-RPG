@@ -1,5 +1,6 @@
 // Validation only. This module never rolls, chooses an action or adjudicates a battle.
 import {validateLootRolls} from './loot-model.js';
+import {dungeonFoe,validateDungeonFoe} from './dungeon-encounter-model.js';
 import {characterVisual,registeredNPCArt} from './character-art.js';
 import {equippedSkills} from './skill-loadout.js';
 import {resolveNPC,findNPC} from './npc-model.js';
@@ -30,7 +31,8 @@ function participant(raw){
   if(raw.catalog_id!==undefined){if(p.role!=='monster'||findNPC(raw.catalog_id)?.role!=='monster')fail('등록 마수 개체 원본');p.catalog_id=raw.catalog_id;}
   if(!Object.hasOwn(battleRealms,p.realm))fail('기사 경지 코드');
   if(p.role==='monster'&&p.realm!=='none')fail('마수에 기사 배율 적용 금지');
-  if(p.role==='monster'&&(findNPC(p.catalog_id||p.id)?.creatureMultiplier!==undefined||raw.creature_multiplier!==undefined)){p.creature_multiplier=decimal(raw.creature_multiplier??findNPC(p.id)?.creatureMultiplier,'마수 배율',.01,10);if(findNPC(p.catalog_id||p.id))equal(p.creature_multiplier,findNPC(p.catalog_id||p.id).creatureMultiplier,'등록 마수 배율');}
+  if(raw.dungeon_foe_id!==undefined){const foe=dungeonFoe(raw.dungeon_foe_id);if(!foe||p.role!=='monster'||p.catalog_id!==foe.base_monster_id)fail('등록 던전 개체 원본');p.dungeon_foe_id=foe.id;}
+  if(p.role==='monster'&&(findNPC(p.catalog_id||p.id)?.creatureMultiplier!==undefined||raw.creature_multiplier!==undefined)){const expected=p.dungeon_foe_id?dungeonFoe(p.dungeon_foe_id).creature_multiplier:findNPC(p.catalog_id||p.id)?.creatureMultiplier;p.creature_multiplier=decimal(raw.creature_multiplier??expected,'마수 배율',.01,10);if(expected!==undefined)equal(p.creature_multiplier,expected,'등록 마수 배율');}
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])p.stats[key]=num(raw.stats?.[key],key,1);
   for(const key of ['weapon_attack','technique_bonus','equipment_hp_bonus','status_hp_bonus','equipment_mp_bonus','status_mp_bonus','equipment_speed_bonus','status_speed_bonus'])p.modifiers[key]=num(raw.modifiers?.[key]??0,key,-999999);
   const maximum=battleMaximums(p);equal(p.maxHp,maximum.hp,'최대 HP 공식');equal(p.maxMp,maximum.mp,'최대 MP 공식');equal(p.speed,battleSpeed(p),'행동 속도');
@@ -131,7 +133,7 @@ export function normalizeBattle(raw){
 export function battleFrame(battle,count){const resources=Object.fromEntries(battle.participants.map(p=>[p.id,{hp:p.hp,mp:p.mp}]));for(const e of battle.events.slice(0,count)){resources[e.actor]={hp:e.actor_hp_after,mp:e.actor_mp_after};resources[e.target]={hp:e.target_hp_after,mp:e.target_mp_after};}return resources;}
 export function validateBattleSettlement(scene,state){
   const b=scene.battle,p=b.participants.find(p=>p.role==='player'),current=state.player;
-  for(const actor of b.participants.filter(a=>a.role!=='player')){const saved=resolveNPC(actor.catalog_id?{...state,npcStates:{}}:state,actor.catalog_id||actor.id,state.scene?.npc?.id===actor.id?state.scene.npc.profile||{}:{});if(saved&&saved.level!==null){for(const key of ['level','hp','maxHp','mp','maxMp','speed'])equal(actor[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(actor.stats[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);equal(actor.realm,saved.realm,'NPC 기사 경지');if(actor.circle!==undefined)equal(actor.circle,saved.circle||0,'NPC 서클');if(actor.realmAbilities?.length)equal(JSON.stringify(actor.realmAbilities),JSON.stringify(saved.realmAbilities||[]),'NPC 경지 능력');equal(actor.level_hp_bonus,saved.levelHpBonus,'NPC 레벨 HP 기록');}}
+  for(const actor of b.participants.filter(a=>a.role!=='player')){if(actor.dungeon_foe_id){validateDungeonFoe(actor,state);continue;}const saved=resolveNPC(actor.catalog_id?{...state,npcStates:{}}:state,actor.catalog_id||actor.id,state.scene?.npc?.id===actor.id?state.scene.npc.profile||{}:{});if(saved&&saved.level!==null){for(const key of ['level','hp','maxHp','mp','maxMp','speed'])equal(actor[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(actor.stats[key],saved[key],'GitHub/현재 NPC '+actor.name+' '+key);equal(actor.realm,saved.realm,'NPC 기사 경지');if(actor.circle!==undefined)equal(actor.circle,saved.circle||0,'NPC 서클');if(actor.realmAbilities?.length)equal(JSON.stringify(actor.realmAbilities),JSON.stringify(saved.realmAbilities||[]),'NPC 경지 능력');equal(actor.level_hp_bonus,saved.levelHpBonus,'NPC 레벨 HP 기록');}}
   for(const key of ['level','hp','maxHp','mp','maxMp'])equal(p[key],current[key],'현재 주인공 '+key);
   for(const key of ['strength','dexterity','intelligence','constitution','manaStat'])equal(p.stats[key],current[key],'현재 능력치 '+key);
   equal(p.realm,current.realm??'none','현재 기사 경지');

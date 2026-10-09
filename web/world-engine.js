@@ -1,3 +1,4 @@
+import {validateDungeonZoneBattle} from './dungeon-encounter-model.js';
 import {validateLootRolls} from './loot-model.js';
 import {bindWallet,wallet} from './wallet.js';
 import {registerShop,updateShop} from './trade-model.js';
@@ -131,7 +132,7 @@ export function planWorldScene(state,scene){
           }
           else if(e.kind==='resolve_zone'){
             const zone=d.zones.find(z=>z.id===e.zone_id);check(zone&&run.zone_id===zone.id&&!run.resolved.includes(zone.id),'현재 미해결 구역 필요');
-            if(['combat','boss','miniboss','midboss'].includes(zone.type)){resolvedBattle(state,scene,e.battle_id);check(!run.evidence.includes(e.battle_id),'같은 전투로 다른 구역을 중복 해결할 수 없습니다.');run.evidence.push(e.battle_id);if(zone.type==='boss')run.boss_battle_id=e.battle_id;}
+            if(['combat','boss','miniboss','midboss'].includes(zone.type)){const fought=resolvedBattle(state,scene,e.battle_id);validateDungeonZoneBattle(d,zone,fought);check(!run.evidence.includes(e.battle_id),'같은 전투로 다른 구역을 중복 해결할 수 없습니다.');run.evidence.push(e.battle_id);if(zone.type==='boss')run.boss_battle_id=e.battle_id;}
             else check(hasEvidence(scene,e.evidence_id,zone.id),'구역의 실제 행동/단서 증거 필요');run.resolved.push(zone.id);
           }
           else if(e.kind==='clear_dungeon'){
@@ -139,7 +140,7 @@ export function planWorldScene(state,scene){
             const table=lootCatalog.dungeon_rewards.find(t=>t.dungeon_id===d.id);check(!run.claimed||table.repeatable,'재클리어 불가');
             const pack=rewardPack(table,run,e,resolvedBattle(state,scene,e.battle_id).outcome.loot_mode==='per_kill_v1');check(!events.some(v=>v.kind==='loot'&&v.battle_id===e.battle_id),'보스 패키지와 개별 전리품 중복 금지');
             if(scene.battle){check(scene.battle.battle_id===e.battle_id&&pack.xp===scene.battle.outcome.xp_gain,'보스 최초 패키지 XP 정산 불일치');for(const r of pack.items)check(scene.battle.outcome.items_added.some(i=>i.name===catalogItem(r.id).name&&i.quantity===r.quantity),'보스 패키지 보상 불일치');}
-            else {const boss=resolvedBattle(state,scene,e.battle_id);check(!boss.outcome.xp_gain&&!boss.outcome.items_added.length,'보스 보상은 최초 클리어 패키지로 통합하세요.');check(!scene.player&&!scene.inventory&&!scene.engine_events?.some(v=>v.kind==='xp')&&!scene.quest_events?.some(v=>v.kind==='report'),'던전 보상 스냅샷/XP 중복 금지');awardXP(next,pack.xp);for(const r of pack.items)give(next,r.id,r.quantity);reward=true;}
+            else {const boss=resolvedBattle(state,scene,e.battle_id);check(!boss.outcome.xp_gain&&(boss.outcome.loot_mode==='per_kill_v1'||!boss.outcome.items_added.length),'보스 클리어 XP와 아이템 중복 정산 금지');check(!scene.player&&!scene.inventory&&!scene.engine_events?.some(v=>v.kind==='xp')&&!scene.quest_events?.some(v=>v.kind==='report'),'던전 보상 스냅샷/XP 중복 금지');awardXP(next,pack.xp);for(const r of pack.items)give(next,r.id,r.quantity);reward=true;}
             w.loot_claims[e.battle_id+':dungeon']={event_id:e.event_id,date};run.claimed=true;run.clears++;run.cleared_at=date;run.history.push({run_id:run.run_id,event_id:e.event_id,date,rewards:pack});w.active_dungeon=null;
             generated.push({event_id:e.event_id,kind:'dungeon_clear',target_id:d.id,location:d.id,proof:e.reason,quantity:1});
           }
