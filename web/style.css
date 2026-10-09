@@ -2885,6 +2885,25 @@ input[type=range] {
 .shop-product>.shop-product-name{font-size:14px;opacity:1;color:#e6d7b3}
 .trade-item > *{pointer-events:none}
 
+/* Read choices by purpose; compare real contract rewards before requesting them. */
+.scene-choices[data-layout=list]{grid-template-columns:minmax(0,1fr)}
+.scene-action-overlay:has(.scene-choices[data-layout=list]){max-height:48%;overflow:auto}
+.scene-action-overlay .scene-choice{display:grid;gap:4px;text-align:left;padding:12px 16px;border-left:4px solid #759ABD}
+.scene-choice .choice-kind{font-size:13px;font-weight:600;color:#A7C3DB;letter-spacing:.03em}
+.scene-choice .choice-title{font-size:calc(19px + var(--text-step));line-height:1.4;color:#F2ECE0}
+.scene-choice .choice-detail{font-size:calc(14px + var(--text-step));line-height:1.45;color:#BFCEDD}
+.scene-choice[data-kind=quest]{border-left-color:#D6B67C;background:#293A43}
+.scene-choice[data-kind=quest] .choice-kind,.scene-choice[data-kind=quest] .choice-detail{color:#E5C989}
+.scene-choice[data-kind=training]{border-left-color:#95BD8A}
+.scene-choice[data-kind=travel]{border-left-color:#8CACD2}
+.scene-choice:focus-visible{outline:2px solid #E5C989;outline-offset:2px}
+.choice-preview{position:fixed;z-index:1000;width:min(440px,calc(100vw - 24px));max-height:310px;overflow:auto;box-sizing:border-box;padding:18px;background:#0D1823F7;border:1px solid #D6B67C;border-radius:10px;box-shadow:0 12px 32px #0009;white-space:pre-line;text-align:left;font-size:17px;line-height:1.6;color:#F2ECE0;pointer-events:none}
+.choice-preview[hidden]{display:none}
+#quest-list{display:flex;flex-direction:column;gap:12px}
+#quest-list .quest-card{text-align:left;width:100%;padding:16px;border-left:4px solid #D6B67C}
+#quest-list .quest-card strong{font-size:22px;line-height:1.4}
+#quest-list .quest-card .quest-card-reward{font-size:18px;color:#E5C989;opacity:1}
+
 /* Battle presentation: named speakers, skill announcements and impact-only numbers. */
 #speaker[data-voice=character],#line[data-voice=character],.battle-participant>strong{color:#86C9FF}
 #speaker[data-voice=narration]{color:var(--gold)}

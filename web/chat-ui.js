@@ -1,4 +1,5 @@
 import {bindWallet} from './wallet.js';
+import {choicePresentation} from './choice-presentation.js';
 import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
 import {battleIsActive,validateBattleSettlement} from './battle-model.js';
@@ -28,6 +29,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   const retiredRequests=new Set();
   function retire(id){if(!id)return;retiredRequests.add(id);if(retiredRequests.size>100)retiredRequests.delete(retiredRequests.values().next().value);}
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
+  const choicePreview=document.createElement('aside');choicePreview.id='choice-preview';choicePreview.className='choice-preview';choicePreview.hidden=true;choicePreview.setAttribute('role','tooltip');$('stage').append(choicePreview);
   const status=message=>{
     $('connection-detail').textContent=message;
     const problem=/실패|못했|못한|못해|오류|시간.*지났|다른 요청|달라|초과|거절|전송 확인|네트워크|불일치|대기.*해제|원본.*확인|지정한 뒤|준비가 끝난|종료한 뒤/.test(message);
@@ -47,7 +49,18 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const choosing=!!choices.length&&last&&!naming&&!creating;
     $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
     $('scene-action-overlay').hidden=!choosing;
-    choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming||creating;button.onclick=()=>choose(index);});
+    choicePreview.hidden=true;
+    const presentations=choices.map(choice=>choicePresentation(choice,state));
+    $('scene-choices').dataset.layout=presentations.some(p=>p.kind==='quest')?'list':'cards';
+    $('choice-heading').textContent=presentations.some(p=>p.kind==='quest')?'일거리와 다음 행동 선택':'어떻게 할까요?';
+    choiceButtons.forEach((button,index)=>{
+      const choice=choices[index],p=presentations[index];button.hidden=!choice;button.replaceChildren();button.disabled=!!pending||!last||naming||creating;button.onclick=()=>choose(index);
+      if(!choice)return;
+      button.className='scene-choice';button.dataset.kind=p.kind;button.setAttribute('aria-label',`${index+1}. ${p.label} · ${p.title} · ${choice.text}`);button.setAttribute('aria-describedby','choice-preview');
+      const badge=document.createElement('span'),title=document.createElement('strong'),detail=document.createElement('span');badge.className='choice-kind';badge.textContent=`${index+1} · ${p.label}${p.quest?' · '+(p.quest.rank||'미정')+'등급':''}`;title.className='choice-title';title.textContent=p.title;detail.className='choice-detail';detail.textContent=p.quest?`${p.reward} · ${choice.text}`:choice.title?choice.text:'';detail.hidden=!detail.textContent;button.append(badge,title,detail);
+      const show=()=>{if(button.disabled)return;choicePreview.textContent=p.preview;const rect=button.getBoundingClientRect(),width=window.innerWidth||1000,height=window.innerHeight||800;choicePreview.style.left=Math.max(12,Math.min(rect.left,width-452))+'px';choicePreview.style.top=Math.max(12,Math.min(rect.top-320,height-340))+'px';choicePreview.hidden=false;};
+      button.onpointerenter=button.onfocus=show;button.onpointerleave=button.onblur=()=>{choicePreview.hidden=true;};
+    });
     $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;
     $('retry-response').hidden=!failedRequest||!!pending;$('retry-response').disabled=!!pending||creating||naming;
   }
