@@ -1,0 +1,26 @@
+{
+  "village": {
+    "title": "솔브린의 아침",
+    "path": "assets/audio/music/village_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 158,
+    "tempo_hint_bpm": 78,
+    "key_hint": "C major",
+    "requested_style": "Instrumental medieval fantasy village background music, warm peaceful welcoming mood, gently flowing acoustic lute and harp, lyrical wooden flute melody, light pizzicato strings, soft hand percussion, subtle chamber strings, 84 BPM, lilting 6/8 feel, memorable gentle melody, organic acoustic instruments, cozy sunlit pastoral atmosphere, moderate dynamics suitable beneath dialogue, no vocals, no abrupt stops, smooth recurring musical phrases and gently sustained ending suitable for looping."
+  },
+  "battle": {
+    "title": "칼날의 공방",
+    "path": "assets/audio/music/battle_v1.mp3",
+    "provider": "Background Music (Lyria)",
+    "source": "library",
+    "ai_generated": true,
+    "watermarked": true,
+    "duration_hint_seconds": 182,
+    "tempo_hint_bpm": 79,
+    "key_hint": "D minor",
+    "requested_style": "Instrumental high-energy medieval fantasy battle music, 146 BPM, urgent driving rhythm, aggressive rhythmic string ostinatos, bold French horn and low brass accents, powerful cinematic war drums and timpani, bright metallic percussion punctuating sword strikes, adventurous heroic melody over a tense minor-key harmony, clear rhythmic pulse, continuous momentum suitable for RPG combat, dynamic but controlled mix allowing short combat sound effects to cut through, no vocals, no long quiet breakdowns, no abrupt ending, cyclic motifs and a sustained rhythmic ending suitable for seamless game looping."
+  }
+}

@@ -1,3 +1,4 @@
+import {mountBackgroundMusic} from './background-music.js';
 import {mountUIAudio} from './ui-audio.js';
 import {mountNPCArt} from './npc-art-ui.js';
 import {mountWalletUI} from './wallet-ui.js';
@@ -31,6 +32,7 @@ import {mountEngineUI} from './engine-ui.js';
 import {mountNPCLifeUI} from './npc-life-ui.js';
 import {mapViews,regionFrame,cameraTransform,viewForSelection} from './map-camera.js';
 const $=id=>document.getElementById(id);
+mountBackgroundMusic(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
 mountDialogueGlossary($('line'));
 const CDN=window.__ERCEDIA_CONFIG__?.assetBase||'https://cdn.jsdelivr.net/gh/Tmddhdmlc-ux/Ercedia-RPG@2b8de39504ff4f3fdabcefa6f2b5a848babcd683/';

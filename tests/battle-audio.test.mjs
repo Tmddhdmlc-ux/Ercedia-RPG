@@ -30,6 +30,6 @@ test('sample failures remain nonfatal and can be retried; voice count is bounded
 });
 test('all registered samples are real Ogg assets and match the bundle audio list',async()=>{
   const paths=[...Object.values(impactSamples).flat(),...Object.values(uiSamples).flat()].map(n=>'assets/audio/'+n+'.ogg').sort();
-  assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))),paths);
+  assert.deepEqual(JSON.parse(await readFile(new URL('../integration/audio-assets.json',import.meta.url))).filter(p=>p.endsWith('.ogg')),paths);
   for(const path of paths){const bytes=await readFile(new URL('../'+path,import.meta.url));assert.equal(bytes.subarray(0,4).toString(),'OggS');assert.ok(bytes.length>1000);}
 });
