@@ -1,9 +1,9 @@
 {
-  "version": "2.1.0",
+  "version": "2.1.1",
   "bridgeVersion": 1,
   "stateVersion": 1,
   "sceneSchemaVersion": 1,
   "assetDigest": "adfe357307964dba4f9d6d8a5ef7b5ecbb8b03c4f93ed2414aa407b145de8ba3",
   "entry": "integration/game.html",
-  "sha256": "0c91531dfc2fe4c23ea13210fbafd0997d826da662542881130b8b6a394f2f62"
+  "sha256": "75ce47d79f2ca17ce076c1505cae5b3d0a95b6928bb412c8a34f2f9b644b25ad"
 }

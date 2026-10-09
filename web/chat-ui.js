@@ -1,6 +1,8 @@
 import {parseScene,actionPrompt} from './scene.js';
 import {normalize} from './state.js';
-import {battleIsActive} from './battle-model.js';
+import {battleIsActive,validateBattleSettlement} from './battle-model.js';
+import {extractSceneJSON} from './response-json.js';
+import {MAX_AUTO_REPAIRS,repairInstruction} from './response-recovery.js';
 import {updateNPC,findNPC} from './npc-model.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
 import {campaignSettingsAttachment,legacyCampaignPrompt} from './campaign-settings.js';
@@ -17,13 +19,16 @@ function newRequestId(){
 export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro}){
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
+  let failedRequest=null;
+  const retiredRequests=new Set();
+  function retire(id){if(!id)return;retiredRequests.add(id);if(retiredRequests.size>100)retiredRequests.delete(retiredRequests.values().next().value);}
   const choiceButtons=Array.from({length:4},()=>{const button=document.createElement('button');button.type='button';$('scene-choices').append(button);return button;});
   const status=message=>{
     $('connection-detail').textContent=message;
     const problem=/실패|못했|못한|못해|오류|시간.*지났|다른 요청|달라|초과|거절|전송 확인|네트워크|불일치|대기.*해제|원본.*확인|지정한 뒤|준비가 끝난|종료한 뒤/.test(message);
     const row=$('connection-status').parentElement;
     row.hidden=!pending&&!problem;row.dataset.phase=pending&&!problem?'waiting':problem?'error':'idle';
-    $('connection-status').textContent=pending&&!problem?'상대의 반응을 기다리는 중…':message;
+    $('connection-status').textContent=pending?.repairAttempt&&!problem?`응답 수정 중 (${pending.repairAttempt}/${MAX_AUTO_REPAIRS})…`:pending&&!problem?'상대의 반응을 기다리는 중…':message;
   };
   function notify(type,payload){if(embedded)parent.postMessage({channel:'ercedia',token:window.__ERCEDIA_CONFIG__.token,conversation,type,payload},'*');}
   const needsName=()=>!state.player.name.trim()||(!state.intro_completed&&/^(플레이어|주인공|player)$/i.test(state.player.name.trim()));
@@ -36,6 +41,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
     choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming||creating;button.onclick=()=>choose(index);});
     $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;
+    $('retry-response').hidden=!failedRequest||!!pending;$('retry-response').disabled=!!pending||creating||naming;
   }
   function choose(index){
     const button=choiceButtons[index],choice=state.scene?.choices?.[index];
@@ -61,9 +67,13 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   $('name-setup').addEventListener('keydown',event=>{if(event.key==='Tab'){const first=$('intro-new-from-name'),last=$('confirm-name');if(event.shiftKey&&document.activeElement===first){event.preventDefault();last.focus();}else if(!event.shiftKey&&document.activeElement===last){event.preventDefault();first.focus();}}});
   $('adventurer-name').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();chooseName();}});
   function cancel(message='대기를 해제했습니다. 재전송 전에 원본 채팅의 전송 여부를 확인하세요.'){
-    clearTimeout(timer);clearTimeout(ackTimer);pending=null;controls();status(message);notify('cancel',{});
+    clearTimeout(timer);clearTimeout(ackTimer);retire(pending?.requestId);pending=null;controls();status(message);notify('cancel',{});
   }
-  function submit(action,choiceId=null){
+  function transportFailed(message){
+    if(pending?.repairAttempt)failedRequest={...pending,error:message};
+    cancel(message);
+  }
+  function submit(action,choiceId=null,recovery=null){
     if(pending)return status('이전 요청의 응답을 기다리고 있습니다. 응답이 멈췄다면 대기 해제 후 다시 보내세요.');
     if(state.introDraft||getIntro?.()?.isStarting())return status('새 게임 준비가 끝난 뒤 보내주세요.');
     if(battleIsActive(state))return status('전투 결과를 확인하거나 즉시 종료한 뒤 보내주세요.');
@@ -73,25 +83,33 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     try{
     if(initializeNameOnlyPlayer(state)){render();persist();}
     const requestId=newRequestId(),settings=campaignSettings?campaignSettingsAttachment(campaignSettings):null;
+    const request={requestId,choiceId,action,rootRequestId:recovery?.rootRequestId||requestId,repairAttempt:recovery?.repairAttempt||0};
     const supportsAttachment=!embedded||window.__ERCEDIA_CONFIG__?.features?.includes('settings-attachment');
     requireSettingsConfirmation=!!settings&&supportsAttachment;
-    $('action-copy').value=actionPrompt(state,action,requestId)+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'');$('action-copy-area').hidden=false;
+    $('action-copy').value=actionPrompt(state,action,requestId)+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
     if(settings){if(settingsURL)URL.revokeObjectURL(settingsURL);settingsURL=URL.createObjectURL(new Blob([settings.file.content],{type:'text/plain;charset=utf-8'}));$('settings-download').href=settingsURL;$('settings-download').download=settings.file.name;$('settings-download').hidden=false;}
-    pending={requestId,choiceId};
+    failedRequest=null;pending=request;
     controls();status(embedded?(settings&&!supportsAttachment?'이전 런처로 요청을 전송합니다. GPT가 GitHub 원문을 직접 읽도록 요청했습니다. 전체 파일 자동 첨부는 런처 1.1.7에서 지원합니다.':'상대의 반응을 기다리는 중…'):'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
     notify('action',{text:$('action-copy').value,requestId,...(settings&&supportsAttachment?{settingsFile:settings.file}:{})});
-    if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)cancel('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
-    timer=setTimeout(()=>cancel('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.'),120000);
+    if(embedded)ackTimer=setTimeout(()=>{if(pending?.requestId===requestId&&!pending.acknowledged)transportFailed('게임 요청이 런처에 도착하지 않았습니다. Tampermonkey 런처를 최신 버전으로 업데이트하고 ChatGPT 페이지를 새로고침하세요.');},7000);
+    timer=setTimeout(()=>{if(pending?.requestId===requestId)transportFailed('응답 대기 시간이 지났습니다. 기존 장면은 유지됩니다. 원본 채팅 확인 또는 JSON 수동 적용을 이용하세요.');},120000);
     }catch(error){cancel(`요청 준비 실패 · ${error.message} · 입력은 유지됩니다. 다시 보내거나 원본 ChatGPT 입력창을 이용하세요.`);}
   }
   function apply(source,{commitBattle=false,fromHost=false,manual=false}={}){
+    let mutationBegan=false;
     try{
       if(battleIsActive(state)&&!commitBattle)return status('전투 재생 중에는 후속 장면을 시작할 수 없습니다.');
+      // Check identity before semantic validation: an obsolete invalid response must not repair the current turn.
+      let reply;try{reply=JSON.parse(extractSceneJSON(source)||source)?.reply_to;}catch{}
+      if(!reply&&typeof source==='string')reply=source.match(/"reply_to"\s*:\s*"([A-Za-z0-9_-]{1,100})"/)?.[1];
+      if(!manual&&!commitBattle&&reply&&retiredRequests.has(reply))return status('종료한 요청의 늦은 응답입니다. 적용하지 않았습니다.');
+      if(!manual&&pending&&reply&&reply!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
       let scene=parseScene(source);
       if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
-      if(campaignSettings&&state.campaign_id&&scene.player){const fresh=state.player;for(const key of ['name','level','xp','strength','dexterity','intelligence','constitution','manaStat','hp','maxHp','mp','maxMp'])if(scene.player[key]!==fresh[key]){cancel('새 게임 첫 응답에 이전 주인공 수치가 섞여 있습니다. Lv1 초기 상태를 유지합니다. 현재 시작 위치와 주인공으로 다시 요청하세요.');return;}}
+      if(fromHost&&pending&&scene.reply_to!==pending.requestId)throw Error('현재 요청의 reply_to가 누락되었습니다.');
+      if(campaignSettings&&state.campaign_id&&scene.player){const fresh=state.player;for(const key of ['name','level','xp','strength','dexterity','intelligence','constitution','manaStat','hp','maxHp','mp','maxMp'])if(scene.player[key]!==fresh[key])throw Error(`새 게임 첫 응답의 ${key} 불일치: 현재 ${fresh[key]}, 응답 ${scene.player[key]}. 현재 초기 주인공을 유지하세요.`);}
       if(manual)requireSettingsConfirmation=false;
-      if(campaignSettings&&requireSettingsConfirmation&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length)){cancel('GPT의 설정 읽기 확인이 누락되거나 다른 버전입니다. 연결 도움에서 원본 응답을 수정해 적용하거나 다시 요청하세요.');return;}
+      if(campaignSettings&&requireSettingsConfirmation&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length))throw Error(`설정 읽기 확인 불일치: commit=${campaignSettings.sha}, file_count=${campaignSettings.paths.length} 확인이 필요합니다.`);
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
       const worldResult=planWorldScene(state,scene);if(worldResult)scene=worldResult.scene;
@@ -101,13 +119,14 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
         if(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)settleQuests(questBase,scene);
         planEngineScene(state,scene,null);
         planNPCLife(state,scene,null);
+        validateBattleSettlement(scene,state);mutationBegan=true;
         getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
       const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events)?settleQuests(questBase,scene):null;
       const engineResult=planEngineScene(state,scene,questResult);
       const lifeResult=planNPCLife(state,scene,questResult);
       if(scene.npc&&state.scene?.npc?.id===scene.npc.id&&state.scene.npc.profile)scene.npc.profile={...state.scene.npc.profile,...scene.npc.profile};
-      state.scene=scene;state.sceneIndex=0;
+      mutationBegan=true;failedRequest=null;state.scene=scene;state.sceneIndex=0;
       for(const [id,p] of Object.entries(scene.npc_updates||{}))updateNPC(state,id,p);
       if(scene.npc?.profile&&findNPC(scene.npc.id))updateNPC(state,scene.npc.id,scene.npc.profile);
       if(commitBattle)for(const r of scene.battle.outcome.resources)if(findNPC(r.id))updateNPC(state,r.id,{hp:r.hp,mp:r.mp});
@@ -129,12 +148,26 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       state.page='story';render();controls();persist();notify('applied',{scene_id:scene.scene_id});
       requestAnimationFrame(()=>{const line=$('line');line.tabIndex=-1;line.focus({preventScroll:true});$('stage').scrollIntoView({block:'nearest',behavior:matchMedia('(prefers-reduced-motion: reduce)').matches?'instant':'smooth'});});
     }catch(error){
+      const rejected=pending;
+      if(!mutationBegan&&rejected&&fromHost&&!manual&&!commitBattle){
+        failedRequest={...rejected,error:error.message};
+        cancel('응답 검증 오류 · 기존 상태와 입력을 유지합니다.');
+        notify('parse-error',{message:error.message});
+        if(embedded&&rejected.repairAttempt<MAX_AUTO_REPAIRS){
+          const next={...failedRequest,repairAttempt:rejected.repairAttempt+1};
+          submit(next.action,next.choiceId,next);
+          return;
+        }
+        status(`응답 적용 실패 · 자동 수정 ${MAX_AUTO_REPAIRS}회 이후에도 오류가 남았습니다: ${error.message} · 다시 요청 또는 JSON 수동 적용을 이용하세요.`);
+        controls();return;
+      }
       const battleError=error.message.includes('전투 검증');
       if(battleError){cancel('전투 검증 오류 · 기존 상태를 유지합니다.');state.page='story';render();$('battle-recovery').hidden=false;$('battle-error').textContent=error.message;}
       else if(pending)cancel('응답 검증 오류 · 기존 상태와 입력을 유지합니다. 연결 도움에서 수정 응답을 적용하거나 다시 요청하세요.');
       status(`응답 적용 실패 · ${error.message} 기존 장면은 유지됩니다.`);notify('parse-error',{message:error.message});
     }
   }
+  $('retry-response').onclick=()=>{if(!pending&&failedRequest)submit(failedRequest.action,failedRequest.choiceId,{...failedRequest,repairAttempt:Math.max(MAX_AUTO_REPAIRS,failedRequest.repairAttempt)});};
   $('battle-retry').onclick=()=>{const reason=$('battle-error').textContent;$('battle-recovery').hidden=true;submit('직전 전투 JSON이 검증에서 거절되었습니다: '+reason+'. BATTLE_SYSTEM.md와 tampermonkey/BATTLE_SCHEMA.md를 읽고 현재 저장 상태를 기준으로 전투 전체 사건과 종료 스냅샷을 수정하여 다시 출력해주세요.');};
   $('battle-recover-close').onclick=()=>{$('battle-recovery').hidden=true;};
   $('free-action-form').onsubmit=event=>{event.preventDefault();submit($('free-action').value);};
@@ -143,10 +176,10 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   $('send-action').onclick=()=>submit($('free-action').value);
   $('free-action').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();submit(event.currentTarget.value);}});
   $('apply-scene').onclick=()=>apply($('scene-json').value,{manual:true});
-  $('cancel-wait').onclick=()=>{cancel();notify('cancel',{});};
+  $('cancel-wait').onclick=()=>{failedRequest=null;cancel();};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved){
-    cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,normalize(saved));
+    failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,normalize(saved));
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
     render();controls();status('이 채팅의 저장 상태를 불러왔습니다.');
@@ -163,7 +196,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     }
     if(data.conversation!==conversation)return;
     if(data.type==='action-ack'&&pending?.requestId===data.payload?.requestId){pending.acknowledged=true;clearTimeout(ackTimer);status('런처가 요청을 받았습니다. GPT 입력창으로 전달하는 중…');}
-    if(data.type==='action-error'){cancel(data.payload);$('connection-tools').open=true;}
+    if(data.type==='action-error'){transportFailed(data.payload);$('connection-tools').open=true;}
     if(data.type==='snapshot')notify('snapshot',{state:JSON.parse(JSON.stringify(state)),pending:!!pending||battleIsActive(state),requestId:data.requestId});
     if(data.type==='update-player')window.gameBridge.updatePlayer(data.payload);
     if(data.type==='update-inventory')window.gameBridge.updateInventory(data.payload);
