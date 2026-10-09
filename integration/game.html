@@ -2929,6 +2929,7 @@ input[type=range] {
 .battle-effect.strike.electric{background:radial-gradient(ellipse,#FFF,#C9A8FF99 25%,transparent 55%)}
 .battle-effect.strike.dark{background:radial-gradient(ellipse,#DAC5FF,#725BAE99 25%,transparent 55%)}
 .battle-effect.strike.light{background:radial-gradient(ellipse,#FFF,#FFEAAA99 25%,transparent 55%)}
+.battle-vfx-canvas{position:absolute;inset:0;width:100%;height:100%;z-index:5;pointer-events:none}.battle-vfx-vector{position:absolute;width:360px;height:400px;opacity:0;z-index:5;pointer-events:none;transform-origin:center}.battle-vfx-vector svg{width:100%;height:100%;overflow:visible;filter:drop-shadow(0 0 7px currentColor)}.battle-vfx-vector svg g{transform-box:view-box;transform-origin:50% 50%}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -7231,7 +7232,234 @@ function mountBattleAudio(controls,assetBase){
 }
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
+const module71=(()=>{
+// Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
+const elementalSamples=[
+ {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
+ {id:'spell_014',element:'water',form:'ice-spear',description:'상공에서 얼음창이 맺힌 뒤 사선으로 급강하하고 날카로운 결정 파편이 튑니다.',damage:24},
+ {id:'spell_001',element:'fire',form:'fire-orb',description:'상대 근처에서 응축된 불덩이가 곡선을 그리며 급가속 → 꽃잎 모양 화염 폭발.',damage:24},
+ {id:'spell_031',element:'fire',form:'fire-rain',description:'높이가 다른 불꽃들이 빠르게 낙하 → 지면에서 화염 기둥과 불티가 번집니다.',damage:24},
+ {id:'spell_015',element:'wind',form:'wind-arrow',description:'상대 주변 기류가 활처럼 휘어짐 → 날카로운 곡선 궤적이 빠르게 관통합니다.',damage:24},
+ {id:'spell_027',element:'wind',form:'wind-vortex',description:'지면의 먼지가 모이고 굵은 나선 기류가 급격히 솟아 상대를 둘러쌉니다.',damage:24},
+ {id:'spell_016',element:'electricity',form:'lightning-chain',description:'푸른 전류가 상대 주변에서 갈라져 이어지고 가는 전격이 남습니다.',damage:24},
+ {id:'spell_040',element:'electricity',form:'lightning-strike',description:'상공의 응축점에서 굵은 낙뢰가 내려오고 주변으로 전격 가지가 뻗습니다.',damage:24},
+ {id:'spell_012',element:'light',form:'light-burst',description:'짧게 압축되는 별빛 → 날카로운 섬광 → 잔광과 황금 파편이 오래 남습니다.',damage:0},
+ {id:'spell_036',element:'light',form:'light-beam',description:'상공의 빛이 가는 사선 광선으로 순간 관통하고 지면에 황금 빛이 번집니다.',damage:24},
+ {id:'spell_017',element:'darkness',form:'dark-mist',description:'짙은 검은 안개가 상대 주변을 감싸고 보라색 잔광이 흐릅니다.',damage:0},
+ {id:'spell_035',element:'darkness',form:'dark-moon',description:'화면 앞에 검은 달과 어둠의 고리가 펼쳐지고 보라색 입자가 회전합니다.',damage:0}
+];
+const palettes={water:['#60bfff','#a3edff','#e5fbff'],fire:['#ff5a20','#ffbc4a','#fff0b2'],wind:['#58d6b0','#b2ffdc','#ecfff7'],electricity:['#7974ff','#7ecfff','#f2f4ff'],light:['#ffbe43','#ffe89c','#fffdf0'],darkness:['#47236e','#9869d8','#d4a8fa']};
+const tau=Math.PI*2,clamp=(v,a=0,b=1)=>Math.max(a,Math.min(b,v));
+const revisedElements=new Set(['water','fire','wind','light']);
+function sampleTiming(sample,revised=true){return revised?(revisedElements.has(sample.element)?{duration:2600,impact:sample.form==='fire-rain'?.34:sample.form==='wind-vortex'?.32:.27,charge:.08}:{duration:sample.element==='electricity'?2200:2400,impact:sample.element==='electricity'?.25:.28,charge:.08}):{duration:3600,impact:.42,charge:.18};}
+function seeded(id){let seed=2166136261;for(const c of id)seed=Math.imul(seed^c.charCodeAt(0),16777619);return()=>{seed^=seed<<13;seed^=seed>>>17;seed^=seed<<5;return(seed>>>0)/4294967296;};}
+function createElementalRenderer(canvas,{createCanvas=()=>document.createElement('canvas')}={}){
+ const ctx=canvas.getContext('2d'),textures=new Map(),populations=new Map();let w=1000,h=600,ratio=1;
+ const particles=id=>{if(!populations.has(id)){const rand=seeded(id);populations.set(id,Array.from({length:96},()=>({angle:rand()*tau,speed:35+rand()*190,size:2+rand()*7,phase:rand()*tau,life:.55+rand()*.45,x:rand(),y:rand()})));}return populations.get(id);};
+ function texture(color){if(!textures.has(color)){const c=createCanvas();c.width=c.height=96;const s=c.getContext('2d'),g=s.createRadialGradient(48,48,0,48,48,48);g.addColorStop(0,color);g.addColorStop(.17,color);g.addColorStop(1,color+'00');s.fillStyle=g;s.fillRect(0,0,96,96);textures.set(color,c);}return textures.get(color);}
+ function dot(x,y,r,color,alpha=1,mode='lighter'){if(r<=0||alpha<=0)return;ctx.globalCompositeOperation=mode;ctx.globalAlpha=clamp(alpha);ctx.drawImage(texture(color),x-r,y-r,r*2,r*2);}
+ function line(points,color,width,alpha=1,glow=true){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=clamp(alpha);ctx.lineCap='round';ctx.lineJoin='round';ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));if(glow){ctx.strokeStyle=color;ctx.lineWidth=width*3;ctx.globalAlpha=clamp(alpha*.18);ctx.stroke();}ctx.strokeStyle=color;ctx.lineWidth=width;ctx.globalAlpha=clamp(alpha);ctx.stroke();}
+ function ring(x,y,rx,ry,color,alpha,width=2,rotation=0){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=clamp(alpha);ctx.strokeStyle=color;ctx.lineWidth=width;ctx.beginPath();ctx.ellipse(x,y,Math.max(1,rx),Math.max(1,ry),rotation,0,tau);ctx.stroke();}
+ function polygon(points,color,alpha){ctx.globalCompositeOperation='lighter';ctx.globalAlpha=clamp(alpha);ctx.fillStyle=color;ctx.beginPath();points.forEach(([x,y],i)=>i?ctx.lineTo(x,y):ctx.moveTo(x,y));ctx.closePath();ctx.fill();}
+ function bolt(x,y,endX,endY,seed,color,alpha,width){const points=[[x,y]];for(let i=1;i<13;i++){const u=i/12;points.push([x+(endX-x)*u+Math.sin(i*7+seed)*22*Math.sin(u*Math.PI),y+(endY-y)*u]);}line(points,color,width,alpha);line(points,'#ffffff',Math.max(1,width*.25),alpha*.8,false);return points;}
+ function resize(width,height,dpr=1){w=Math.max(1,width);h=Math.max(1,height);ratio=Math.min(1.5,Math.max(1,dpr));canvas.width=Math.round(w*ratio);canvas.height=Math.round(h*ratio);}
+ function clear(){ctx.setTransform(ratio,0,0,ratio,0,0);ctx.clearRect(0,0,w,h);}
+ function ribbon(points,width,color,alpha){const left=[],right=[];for(let i=0;i<points.length;i++){const before=points[Math.max(0,i-1)],after=points[Math.min(points.length-1,i+1)],dx=after[0]-before[0],dy=after[1]-before[1],len=Math.hypot(dx,dy)||1,thickness=width*Math.sin((i+.5)/points.length*Math.PI);left.push([points[i][0]-dy/len*thickness,points[i][1]+dx/len*thickness]);right.push([points[i][0]+dy/len*thickness,points[i][1]-dx/len*thickness]);}polygon([...left,...right.reverse()],color,alpha);}
+ function revisedEffect(sample,t,p,c,x,y,s){
+  const timing=sampleTiming(sample),hit=t>=timing.impact,pre=clamp((t-.06)/(timing.impact-.06)),u=pre**3,q=clamp((t-timing.impact)/(1-timing.impact)),expand=1-(1-q)**3,fade=clamp((1-t)/.26),form=sample.form,ground=y+130*s;
+  if(t<.06)return;
+  if(form==='water-orb'){
+   if(!hit){for(const a of p.slice(0,24)){const r=(150*(1-u)+14)*s,angle=a.angle+pre*3,px=x+Math.cos(angle)*r,py=y+Math.sin(angle)*r*.65;dot(px,py,(6+a.size)*s,c[1],.7);ring(px,py,5*s,7*s,c[2],.7,1);}dot(x,y,(15+pre*30)*s,c[0],.35);}
+   else{dot(x,y,115*s*(1-q),c[1],fade*.5);for(let i=0;i<14;i++){const angle=i*tau/14,dist=(45+expand*110)*s,points=[[x,y],[x+Math.cos(angle-.12)*dist*.7,y+Math.sin(angle-.12)*dist*.65],[x+Math.cos(angle)*dist,y+Math.sin(angle)*dist*.75-q*20*s],[x+Math.cos(angle+.12)*dist*.65,y+Math.sin(angle+.12)*dist*.65]];polygon(points,c[1],fade*(1-q)*.48);}for(const a of p.slice(0,72)){const dist=expand*a.speed*s,px=x+Math.cos(a.angle)*dist,py=y+Math.sin(a.angle)*dist*.65+q*q*110*s;dot(px,py,a.size*s*.6,c[2],fade*.8);if(a.size>6)ring(px,py,a.size*s,a.size*s*.7,c[1],fade*.7,1);}for(let i=0;i<3;i++)ring(x,ground,(55+expand*150+i*15)*s,(12+expand*26+i*3)*s,c[1],fade*.65,2);}
+  }
+  if(form==='ice-spear'){
+   if(!hit){const px=x+115*(1-u)*s,py=y-210*(1-u)*s,len=(50+pre*45)*s;polygon([[px-20*s,py-len],[px+27*s,py-15*s],[px,py+len],[px-12*s,py]],c[1],pre);line([[px-17*s,py-len],[px,py+len]],c[2],3*s,pre);line([[px+55*s,py-105*s],[px+18*s,py-35*s]],c[1],2*s,pre*.5);}
+   else{dot(x,y,85*s,c[1],fade*(1-q)*.5);for(const a of p.slice(0,48)){const dist=expand*a.speed*s,px=x+Math.cos(a.angle)*dist,py=y+Math.sin(a.angle)*dist*.65+q*q*110*s,r=(3+a.size)*s;polygon([[px-r,py-r*1.8],[px+r*.8,py],[px,py+r*2]],a.size>5?c[2]:c[1],fade*.7);}for(let i=0;i<7;i++){const angle=i*tau/7;line([[x,y],[x+Math.cos(angle)*85*s,y+Math.sin(angle)*60*s]],c[1],2,fade*(1-q));}}
+  }
+  if(form==='fire-orb'){
+   if(!hit){const px=x+(115*(1-u)+Math.sin(pre*Math.PI)*65)*s,py=y-(95*(1-u)+Math.sin(pre*Math.PI)*90)*s,r=(18+pre*20)*s;const trail=[];for(let i=0;i<16;i++){const v=clamp(pre-i*.018),e=v**3;trail.push([x+(115*(1-e)+Math.sin(v*Math.PI)*65)*s,y-(95*(1-e)+Math.sin(v*Math.PI)*90)*s]);}ribbon(trail,12*s,c[0],pre*.65);dot(px,py,r*2,c[0],.7);dot(px,py,r,c[1],.9);dot(px,py,r*.4,c[2],1);}
+   else{dot(x,y,(80+expand*75)*s,c[0],fade*(1-q)*.4);dot(x,y,55*s,c[2],fade*(1-q)*.8);for(let i=0;i<12;i++){const angle=i*tau/12,r=(65+expand*105)*s;polygon([[x,y],[x+Math.cos(angle-.18)*r*.5,y+Math.sin(angle-.18)*r*.5],[x+Math.cos(angle)*r,y+Math.sin(angle)*r-q*35*s],[x+Math.cos(angle+.2)*r*.55,y+Math.sin(angle+.2)*r*.55]],i%2?c[0]:c[1],fade*(1-q)*.6);}for(const a of p){const dist=expand*a.speed*s;dot(x+Math.cos(a.angle)*dist,y+Math.sin(a.angle)*dist-q*75*s,a.size*s*.6,c[1],fade*.75);}for(const a of p.slice(0,20))dot(x+(a.x-.5)*175*s,y-q*110*s+(a.y-.5)*75*s,(20+q*40)*s,'#302b32',fade*.15,'source-over');}
+  }
+  if(form==='fire-rain'){
+   for(const a of p.slice(0,18)){const birth=.09+a.x*.2,flight=clamp((t-birth)/.17),px=x+(a.x-.5)*310*s;if(t>=birth&&flight<1){const py=-80+(ground+80)*flight**2;line([[px+20*s,py-95*s],[px,py]],c[0],12*s,.6);line([[px+10*s,py-50*s],[px,py]],c[2],3*s,.9);dot(px,py,19*s,c[1],.8);}if(flight>=1){const age=clamp((t-birth-.17)/.45),f=(1-age)*fade,height=(55+Math.sin(age*Math.PI)*85)*s;polygon([[px-22*s,ground],[px-12*s,ground-height*.6],[px+4*s,ground-height],[px+18*s,ground-height*.3],[px+25*s,ground]],c[0],f*.55);dot(px,ground-20*s,25*s,c[1],f*.5);}}
+   if(hit){ring(x,ground,160*s,34*s,c[0],fade*.45,3);for(const a of p.slice(0,45))dot(x+(a.x-.5)*310*s,ground-expand*a.speed*s,3*s,c[1],fade*.65);}
+  }
+  if(form==='wind-arrow'){
+   const head=hit?1:u,points=[];for(let i=0;i<42;i++){const v=i/41*head;points.push([x+Math.sin(v*Math.PI)*145*s,y+(1-v)*95*s-Math.sin(v*Math.PI)*80*s]);}ribbon(points,13*s,c[1],fade*.45);line(points,c[2],2*s,fade*.7);if(!hit){const end=points.at(-1);dot(end[0],end[1],18*s,c[2],pre*.6);}
+   else{for(let k=0;k<3;k++){const arc=[];for(let i=0;i<35;i++){const a=-1.1+i/34*3.4;arc.push([x+Math.cos(a)*(90+expand*65+k*12)*s,y+Math.sin(a)*(50+expand*30)*s+k*12*s]);}ribbon(arc,(5-k)*s,c[k],fade*(1-q)*.55);}for(const a of p.slice(0,35))dot(x+Math.cos(a.angle)*expand*a.speed*s,y+Math.sin(a.angle)*expand*a.speed*s*.4,2*s,c[2],fade*.5);}
+  }
+  if(form==='wind-vortex'){
+   const power=clamp((t-.08)/.21)*fade,spin=t*26,base=ground+15*s;ring(x,base,(80+pre*50)*s,25*s,c[0],power*.4,3);for(let k=0;k<4;k++){const points=[];for(let i=0;i<80;i++){const v=i/79,angle=v*tau*2+spin+k*tau/4,r=(140-v*90)*s;points.push([x+Math.cos(angle)*r,base-v*275*s+Math.sin(angle)*r*.15]);}ribbon(points,7*s,c[k%3],power*.28);line(points,c[2],1*s,power*.3,false);}for(const a of p.slice(0,50)){const v=(a.y+t*.8)%1,angle=a.angle+spin,r=(145-v*75)*s;dot(x+Math.cos(angle)*r,base-v*255*s,3*s,c[1],power*.6);}
+  }
+  if(form==='light-burst'){
+   if(!hit){ring(x,y,(45-30*pre)*s,(45-30*pre)*s,c[1],pre*.7,2);line([[x-35*s,y],[x+35*s,y]],c[2],2*s,pre*.8);line([[x,y-35*s],[x,y+35*s]],c[2],2*s,pre*.8);}
+   else{const flash=clamp(1-q*7);dot(x,y,110*s,c[2],flash*.8);for(let i=0;i<8;i++){const a=i*tau/8,len=(55+expand*125)*(i%2?.55:1)*s;polygon([[x+Math.cos(a-.12)*9*s,y+Math.sin(a-.12)*9*s],[x+Math.cos(a)*len,y+Math.sin(a)*len],[x+Math.cos(a+.12)*9*s,y+Math.sin(a+.12)*9*s]],c[2],fade*(1-q)*.6);}ring(x,y,(30+expand*175)*s,(30+expand*175)*s,c[1],fade*.65,2);for(const a of p.slice(0,55)){const dist=expand*a.speed*s;dot(x+Math.cos(a.angle)*dist,y+Math.sin(a.angle)*dist,a.size*s*.5,c[1],fade*.5);}}
+  }
+  if(form==='light-beam'){
+   const source=[x-125*s,-30],alpha=hit?fade*clamp(1-q*2):pre*.2;line([source,[x,y]],c[0],18*s,alpha*.25);line([source,[x,y]],c[1],6*s,alpha);line([source,[x,y]],c[2],2*s,alpha);
+   if(hit){dot(x,y,65*s,c[1],fade*(1-q)*.5);ring(x,ground,(40+expand*105)*s,(10+expand*20)*s,c[1],fade*.6,2);line([[x-55*s,y-15*s],[x+55*s,y+15*s]],c[2],2*s,fade*(1-q));for(const a of p.slice(0,55)){const dist=expand*a.speed*s;dot(x+Math.cos(a.angle)*dist,y+Math.sin(a.angle)*dist+q*55*s,a.size*s*.5,c[1],fade*.6);}}
+  }
+ }
+ function draw(sample,t,{reducedMotion=false,revised=true,targetX=w*.5,targetY=h*.43,intensity=1}={}){
+  if(revised&&revisedElements.has(sample.element)){clear();if(t<=0||t>=1)return;revisedEffect(sample,t,particles(sample.id),palettes[sample.element],targetX,targetY,Math.min(w/1000,h/600)*intensity);ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';return;}
+  if(revised){const hit=sampleTiming(sample).impact;t=t<hit?t/hit*.42:.42+(t-hit)/(1-hit)*.58;}
+  clear();if(t<=0||t>=1)return;const p=particles(sample.id),c=palettes[sample.element],x=targetX,y=targetY,s=Math.min(w/1000,h/600)*intensity,impact=.42,q=clamp((t-impact)/.58),travel=clamp((t-.18)/.24),fade=clamp((1-t)/.25),hit=t>=impact,form=sample.form;
+  // All attacks originate on the camera's center axis, never on a left-side player slot.
+  const py=h*.73+(y-h*.73)*travel,r=(95-65*travel)*s;
+  if(t<impact){const charge=Math.sin(clamp(t/.22)*Math.PI)*.8;dot(x,h*.7,80*s,c[0],charge*.25);ring(x,h*.7,60*s,18*s,c[1],charge*.7,2);if(t<.18)return;}
+  const time=reducedMotion?0:t;
+  if(form==='fire-orb'||form==='fire-rain'){
+   if(!hit&&form==='fire-orb'){dot(x,py,r*1.8,c[0],.6);dot(x,py,r,c[1],.95);dot(x,py,r*.5,c[2],1);for(const a of p.slice(0,32)){const angle=a.angle+time*12;dot(x+Math.cos(angle)*r*.55,py+Math.sin(angle)*r*.7,r*.32,c[0],.7);}}
+   if(form==='fire-rain'){for(const a of p.slice(0,15)){const delay=a.x*.18,u=clamp((t-.18-delay)/.28),px=x+(a.x-.5)*290*s;if(u>0&&u<1){const yy=-60+(y+65*s)*u;line([[px,yy-65*s],[px,yy]],c[1],5*s,.8);dot(px,yy,21*s,c[0],.9);}}}
+   if(hit){dot(x,y,160*s*(.45+q),c[0],fade*(1-q)*.5);dot(x,y,65*s*(1+q),c[2],fade*(1-q));for(const a of p){const age=q*a.life,dist=age*a.speed*s;dot(x+Math.cos(a.angle)*dist,y+Math.sin(a.angle)*dist-age*55*s,a.size*s*(1-age),a.size>6?c[0]:c[1],fade*(1-age));}for(const a of p.slice(0,18))dot(x+(a.x-.5)*190*s,y-70*q*s+(a.y-.5)*65*s,(20+q*35)*s,'#302b32',fade*.12,'source-over');}
+  }
+  if(form==='water-orb'){
+   const xx=x,yy=hit?y:py,rr=hit?(50+q*100)*s:r;dot(xx,yy,rr*1.5,c[0],fade*.3);ring(xx,yy,rr,rr,c[1],fade*.9,3);dot(xx-rr*.2,yy-rr*.25,rr*.4,c[2],fade*.7);
+   if(hit){for(let i=0;i<4;i++)ring(x,y+45*s,(45+q*160+i*16)*s,(13+q*45+i*5)*s,c[1],fade*(1-i*.18),2);for(const a of p.slice(0,65)){const dist=q*a.speed*s;dot(x+Math.cos(a.angle)*dist,y+Math.sin(a.angle)*dist*.7+q*q*60*s,a.size*s,c[a.size>5?1:2],fade*.8);}}
+  }
+  if(form==='ice-spear'){
+   if(!hit){const yy=py,len=(125-70*travel)*s;polygon([[x,yy-len],[x+22*s,yy],[x,yy+len*.5],[x-22*s,yy]],c[1],.8);line([[x,yy-len],[x,yy+len*.5]],c[2],3*s);dot(x,yy,60*s,c[0],.2);}
+   if(hit){dot(x,y,105*s,c[0],fade*.35);for(const a of p.slice(0,38)){const dist=q*a.speed*s,px=x+Math.cos(a.angle)*dist,yy=y+Math.sin(a.angle)*dist+q*q*65*s,r=(4+a.size)*s;polygon([[px,yy-r*2],[px+r*.6,yy],[px-r*.4,yy+r]],a.size>5?c[2]:c[1],fade*.8);}ring(x,y,130*q*s,55*q*s,c[1],fade,2);}
+  }
+  if(form==='wind-arrow'||form==='wind-vortex'){
+   if(!hit&&form==='wind-arrow'){line([[x,py+80*s],[x,py-40*s]],c[2],4*s);line([[x-22*s,py+10*s],[x,py-40*s],[x+22*s,py+10*s]],c[1],3*s);for(let i=0;i<3;i++)ring(x,py+25*i*s,25*s,8*s,c[1],.5,2);}
+   if(hit||form==='wind-vortex'){const strength=form==='wind-vortex'?clamp((t-.2)/.18)*fade:fade,spread=form==='wind-vortex'?1:1+q*.6;dot(x,y,125*s,c[0],strength*.15);for(let i=0;i<7;i++){const points=[];for(let j=0;j<=45;j++){const angle=j/45*tau+time*10+i*.5,rx=(55+i*12)*s*spread;points.push([x+Math.cos(angle)*rx,y+(i-3)*19*s+Math.sin(angle)*rx*.28]);}line(points,c[i%3],i%2?1.5:3,strength*.5);}for(const a of p.slice(0,40)){const angle=a.angle+time*8;dot(x+Math.cos(angle)*125*s,y+Math.sin(angle)*55*s-(t-.4)*35*s,3*s,c[2],strength*.6);}}
+  }
+  if(form==='lightning-chain'||form==='lightning-strike'){
+   if(hit){const seed=Math.floor(time*10),alpha=fade*(.65+.25*Math.sin(q*Math.PI));dot(x,y,120*s,c[0],alpha*.22);if(form==='lightning-strike'){const main=bolt(x,-20,x,y,seed,c[1],alpha,7*s);for(let i=3;i<10;i+=2)bolt(main[i][0],main[i][1],x+(i%4===1?-1:1)*100*s,y+(i-6)*30*s,seed+i,c[0],alpha*.65,2*s);dot(x,y,38*s,c[2],alpha);}else{for(let i=0;i<4;i++){const angle=i*tau/4+time*2;bolt(x,y,x+Math.cos(angle)*135*s,y+Math.sin(angle)*110*s,seed+i,c[1],alpha,3*s);}ring(x,y,90*s,110*s,c[0],alpha*.6,2);}for(const a of p.slice(0,35))dot(x+Math.cos(a.angle)*q*a.speed*s,y+Math.sin(a.angle)*q*a.speed*s,3*s,c[2],fade*.7);}
+  }
+  if(form==='light-beam'||form==='light-burst'){
+   if(hit){if(form==='light-beam'){polygon([[x-55*s,h*.85],[x-8*s,y],[x+8*s,y],[x+55*s,h*.85]],c[0],fade*.3);polygon([[x-16*s,h*.85],[x-3*s,y],[x+3*s,y],[x+16*s,h*.85]],c[2],fade*.9);dot(x,y,90*s,c[1],fade*.55);}else{dot(x,y,100*s*(1-q),c[2],fade*.9);for(let i=0;i<4;i++)ring(x,y,(30+q*210+i*12)*s,(30+q*210+i*12)*s,c[i%3],fade*(1-i*.18),2);}
+   for(const a of p.slice(0,60)){const dist=q*a.speed*s,px=x+Math.cos(a.angle)*dist,yy=y+Math.sin(a.angle)*dist;dot(px,yy,a.size*s,c[1],fade*.65);if(a.size>6){line([[px-6*s,yy],[px+6*s,yy]],c[2],1,fade);line([[px,yy-6*s],[px,yy+6*s]],c[2],1,fade);}}}
+  }
+  if(form==='dark-mist'||form==='dark-moon'){
+   const strength=clamp((t-.18)/.25)*fade,yy=form==='dark-moon'?h*.52:y;
+   for(const a of p.slice(0,46)){const angle=a.angle+time*.6,rx=(40+a.x*130)*s,ry=(30+a.y*90)*s;dot(x+Math.cos(angle)*rx,yy+Math.sin(angle)*ry,55*s,'#100c1c',strength*.5,'source-over');dot(x+Math.cos(angle)*rx,yy+Math.sin(angle)*ry,32*s,c[0],strength*.08);}
+   if(form==='dark-moon'){ctx.globalCompositeOperation='source-over';ctx.globalAlpha=strength*.85;ctx.fillStyle='#080411';ctx.beginPath();ctx.arc(x,yy,92*s,0,tau);ctx.fill();ring(x,yy,98*s,98*s,c[1],strength,4);ring(x,yy,115*s,35*s,c[0],strength*.8,3,time*.7);}
+   for(const a of p.slice(0,48)){const angle=a.angle+time*2,rx=(80+a.x*90)*s;dot(x+Math.cos(angle)*rx,yy+Math.sin(angle)*rx*.65,3*s,c[1],strength*.65);}
+  }
+  ctx.globalAlpha=1;ctx.globalCompositeOperation='source-over';
+ }
+ return {resize,clear,draw,cacheStats:()=>({textures:textures.size,populations:populations.size})};
+}
+
+return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
+const module72=(()=>{
+// Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
+const sword=[
+ ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
+ ['shield',0,1,'낮은 위치의 작은 가드'],['shield',0,2,'겹쳐지는 두 겹 방어막'],
+ ['counter',-35,1,'방어 섬광 후 즉각 역베기'],['dash',-10,1,'낮은 발목 궤적과 짧은 스텝'],
+ ['parry',25,1,'칼끝에서 비껴가는 불꽃'],['slash',-28,2,'서로 반대 방향으로 두 번 교차'],
+ ['thrust',-12,1,'길게 뻗는 가는 검끝'],['focus',0,1,'가느다란 조준점 뒤 정밀 타격'],
+ ['slash',65,1,'위에서 아래로 떨어지는 굵은 검격'],['shield',20,3,'검이 맞물리는 각진 가드'],
+ ['thrust',18,2,'방패 외곽을 지나 틈으로 파고드는 궤적'],['counter',25,2,'뒤로 빠지는 잔상 뒤 반격'],
+ ['petal',-30,1,'붉은 꽃잎을 닮은 곡선 궤적'],['dash',25,2,'차가운 색의 부채꼴 발놀림'],
+ ['counter',150,3,'아래에서 위로 치솟는 역베기'],['dash',-45,3,'측면 잔상 뒤 사선 검격'],
+ ['slash',-25,3,'세 방향 검격이 차례로 교차'],['break',70,1,'무거운 내려치기와 퍼지는 균열'],
+ ['focus',15,2,'작은 빛점이 리듬을 타며 모임'],['thrust',-28,3,'별빛 꼬리를 남기는 강한 찌르기'],
+ ['shield',0,4,'넓게 둘러싸는 원형 보호 궤적'],['dash',-65,4,'은색 깃털 같은 잔상과 급접근'],
+ ['break',-20,2,'붉은 쐐기와 방사형 파열'],['slash',0,4,'화면을 빠르게 가로지르는 한 줄'],
+ ['counter',-75,4,'물결처럼 돌아 나오는 반격'],['slash',35,5,'방향을 바꾸며 이어지는 긴 검로'],
+ ['focus',-15,3,'큰 원이 좁혀진 뒤 한 점의 검광'],['star',-35,1,'별을 가르는 긴 검선과 별빛 파편']
+];
+const spells=[
+ ['orb',0,1,'작은 화염탄이 날아가 터짐'],['orb',0,2,'물구슬과 둥근 물방울 파문'],
+ ['veil',15,1,'얇고 흐르는 바람 장막'],['bolt',10,1,'손끝 크기의 짧은 전격'],
+ ['mist',-10,1,'시야를 가리는 얇은 그림자'],['mark',0,1,'대상 위에 남는 빛의 표식'],
+ ['ring',0,1,'작은 불꽃 고리가 퍼짐'],['shield',0,1,'투명한 수막이 자리 잡음'],
+ ['dash',-15,1,'발밑을 스치는 바람 잔상'],['ring',25,2,'전류가 원형으로 순환'],
+ ['mist',20,2,'윤곽이 겹쳐 보이는 그림자'],['burst',0,1,'짧게 피어나는 눈부신 빛'],
+ ['trail',-25,1,'휘어진 경로에 불꽃이 남음'],['spear',-25,1,'결정 모양 얼음창과 파편'],
+ ['spear',10,2,'가는 바람 화살과 회오리 꼬리'],['chain',20,1,'갈라지며 이어지는 푸른 전격'],
+ ['mist',-25,3,'넓고 짙은 먹빛 안개'],['shield',0,2,'금빛 테두리의 보호막'],
+ ['burst',20,2,'안에서 밖으로 터지는 화염'],['vortex',0,1,'회전하는 둥근 수막'],
+ ['cage',-15,1,'칼날 같은 기류가 영역을 둘러쌈'],['spear',-55,3,'번개 모양의 긴 관통 궤적'],
+ ['cage',0,2,'빛을 흡수하는 어두운 외곽'],['wave',0,1,'넓게 퍼지는 해돋이 파장'],
+ ['wall',0,1,'세로로 솟아오르는 붉은 방벽'],['mirror',0,1,'반사면과 굴절되는 물결'],
+ ['vortex',-25,2,'여러 겹이 감기는 폭풍 나선'],['burst',30,3,'넓은 전격 파열과 뻗는 가지'],
+ ['corridor',-15,1,'깊이 겹쳐지는 그림자 회랑'],['orb',0,3,'응축된 큰 광탄과 긴 꼬리'],
+ ['rain',-20,1,'위에서 차례로 떨어지는 붉은 불꽃'],['wave',15,2,'양옆에서 밀려드는 큰 물결'],
+ ['split',-30,1,'양쪽으로 갈라지는 기류'],['crystal',20,1,'전격 결정이 응축된 뒤 폭발'],
+ ['moon',0,1,'검은 달을 감싸는 그림자 장막'],['beam',0,1,'좁고 긴 직선 광선'],
+ ['ring',0,3,'여러 겹으로 넓어지는 고온 화염장'],['wall',0,2,'깊은 푸른빛의 두꺼운 방벽'],
+ ['eye',0,1,'회오리가 중심의 한 점으로 모임'],['bolt',0,4,'위에서 떨어지는 굵고 긴 낙뢰']
+];
+const nonDamage=new Set(['skill_swd_003','skill_swd_004','skill_swd_006','skill_swd_007','skill_swd_009','skill_swd_010','skill_swd_012','skill_swd_016','skill_swd_021','skill_swd_023','skill_swd_024','skill_swd_029','spell_003','spell_005','spell_006','spell_008','spell_009','spell_010','spell_011','spell_017','spell_018','spell_020','spell_021','spell_023','spell_025','spell_026','spell_029','spell_032','spell_035','spell_038','spell_039']);
+const effectProfiles=Object.fromEntries([...sword.map((v,i)=>['skill_swd_'+String(i+1).padStart(3,'0'),v]),...spells.map((v,i)=>['spell_'+String(i+1).padStart(3,'0'),v])].map(([id,[shape,angle,variant,description]])=>[id,{id,shape,angle,variant,description,illustrativeDamage:!nonDamage.has(id)}]));
+const elementColors={fire:'#ff965b',water:'#8adfff',wind:'#b0f7d5',electricity:'#beaaff',darkness:'#aa85d5',light:'#fff3b4'};
+function skillEffectSVG(p){
+ const v=p.variant,a=p.angle,stroke='stroke="currentColor" stroke-linecap="round" stroke-linejoin="round"',paths=[];
+ const path=(d,width=5,extra='')=>`<path d="${d}" ${stroke} stroke-width="${width}" fill="none" ${extra}/>`;
+ const circle=(r,extra='')=>`<circle cx="200" cy="250" r="${r}" ${stroke} stroke-width="4" fill="none" ${extra}/>`;
+ const slash=(angle,i=0)=>`<g transform="rotate(${angle} 200 250)" class="stroke-part" style="--order:${i}">${path('M35 310 Q170 150 360 180 Q190 200 75 330',12)}${path('M40 305 Q170 155 355 180',3,'stroke="#fff"')}</g>`;
+ switch(p.shape){
+ case 'slash': for(let i=0;i<(v===4?1:Math.min(v,4));i++)paths.push(slash(a+i*78,i));break;
+ case 'petal':paths.push(slash(a),...[-1,1].map(n=>path(`M200 270 Q${200+n*160} 90 ${200+n*110} 290 Q200 340 200 270`,6)));break;
+ case 'star':paths.push(slash(a),path('M200 140L218 215L285 250L218 270L200 345L182 270L115 250L182 215Z',3));break;
+ case 'thrust':case 'spear':paths.push(path(`M200 470V${180-v*12}L${175-v*4} 260 M200 ${180-v*12}L${225+v*4} 260`,12),path('M95 480L175 270 M305 480L225 270',3));if(p.shape==='spear')paths.push(path('M200 170L245 245L200 310L155 245Z',4));break;
+ case 'shield': paths.push(v===4?circle(165):path(`M200 ${140-v*8}L${295+v*6} 190V285Q290 345 200 390Q110 345 105 285V190Z`,6),circle(110+v*8),path('M200 195V335 M135 250H265',2));break;
+ case 'counter':paths.push(`<g class="guard-part">${circle(80+v*8)}</g>`,slash(a,1));break;
+ case 'parry':paths.push(path('M75 165L290 330 M115 345L315 150',7),path('M180 220L160 180 M230 260L290 270 M220 220L255 180',5));break;
+ case 'dash': for(let i=0;i<v+2;i++){const x=45+i*310/(v+1);paths.push(path(`M${x} 440Q${(x+200)/2} 330 200 ${230-i*10}`,4+i,'opacity=".65"'));}break;
+ case 'focus':paths.push(circle(140-v*12),circle(55+v*4),path('M200 120V200 M200 300V380 M70 250H150 M250 250H330',3));break;
+ case 'break':paths.push(slash(a),path(`M200 250L150 295L175 320L90 410 M200 250L265 310L250 340L330 420 M200 250L200 390`,4+v));break;
+ case 'orb':paths.push(`<circle cx="200" cy="250" r="${35+v*18}" fill="currentColor" opacity=".35"/>`,circle(35+v*18),circle(20),path('M100 430L170 315 M300 430L230 315',5));break;
+ case 'ring': for(let i=0;i<v+1;i++)paths.push(circle(60+i*34,`class="stroke-part" style="--order:${i}"`));break;
+ case 'veil':case 'wall':case 'mirror': for(let i=0;i<4+v;i++)paths.push(path(`M${80+i*42} 120Q${40+i*42} 240 ${90+i*42} 380`,p.shape==='wall'?12:4));if(p.shape==='mirror')paths.push(path('M105 140H305V360H105Z',5));break;
+ case 'bolt':case 'chain': paths.push(path(`M${160-v*8} 80L230 170L175 225L250 285L170 410`,4+v*3));if(p.shape==='chain'||v>2)paths.push(path('M210 200L295 160L270 250L350 295 M205 270L110 250L130 340L65 380',4));break;
+ case 'mist': for(let i=0;i<4+v;i++)paths.push(`<ellipse cx="${95+(i%3)*85}" cy="${190+Math.floor(i/3)*85}" rx="${65+v*8}" ry="55" fill="currentColor" opacity=".28"/>`);break;
+ case 'mark':paths.push(circle(65),path('M200 140V215 M200 285V360 M90 250H165 M235 250H310',5),path('M185 250L200 235L215 250L200 265Z',4));break;
+ case 'burst': paths.push(circle(55+v*15));for(let i=0;i<8+v*2;i++){const angle=i*360/(8+v*2);paths.push(`<g transform="rotate(${angle} 200 250)">${path(`M200 150V${95-v*8}`,5)}</g>`);}break;
+ case 'trail':paths.push(path('M200 480Q120 395 200 330T200 190',14),path('M220 480Q140 395 220 330T220 190',4));break;
+ case 'vortex':for(let i=0;i<3+v;i++)paths.push(`<g transform="rotate(${i*70} 200 250)">${path('M200 130Q365 160 300 325Q235 420 120 300Q70 200 190 210',5)}</g>`);break;
+ case 'cage':paths.push(circle(140),path(`M70 160L330 160L355 340L45 340Z`,5),path('M95 130V370 M150 100V400 M250 100V400 M305 130V370',3));break;
+ case 'wave':for(let i=0;i<3+v;i++)paths.push(path(`M35 ${180+i*44}Q110 ${105+i*44} 200 ${180+i*44}T365 ${180+i*44}`,5+i));break;
+ case 'corridor':for(let i=0;i<4;i++){const n=i*24;paths.push(path(`M${60+n} ${100+n}H${340-n}V${400-n}H${60+n}Z`,4));}break;
+ case 'rain':for(let i=0;i<7;i++)paths.push(`<g class="stroke-part" style="--order:${i%3}">${path(`M${75+i*42} ${80+(i%3)*30}L${35+i*42} ${240+(i%3)*60}`,8)}</g>`);break;
+ case 'split':paths.push(path('M180 110Q80 190 40 370 M220 110Q320 190 360 370',12),path('M170 120Q70 200 30 370 M230 120Q330 200 370 370',3));break;
+ case 'crystal':paths.push(path('M200 100L290 200L270 330L200 400L115 295L110 200Z',5),path('M200 100V400 M110 200L270 330 M290 200L115 295',3));break;
+ case 'moon':paths.push('<path d="M250 100A150 150 0 1 0 250 400A120 150 0 0 1 250 100" fill="currentColor" opacity=".5"/>',circle(160));break;
+ case 'beam':paths.push(path('M200 500V190',20),path('M200 500V190',5,'stroke="#fff"'),path('M90 500L180 190 M310 500L220 190',3));break;
+ case 'eye':paths.push(circle(135),circle(95),path('M45 250Q200 90 355 250Q200 410 45 250Z',5),circle(25));break;
+ }
+ return `<svg viewBox="0 0 400 500" aria-hidden="true"><g transform="rotate(${['slash','counter','star','petal','break'].includes(p.shape)?0:a} 200 250)">${paths.join('')}</g></svg>`;
+}
+
+return {effectProfiles,elementColors,skillEffectSVG};})();
 const module70=(()=>{
+const {createElementalRenderer,palettes,sampleTiming}=module71;
+const {effectProfiles,skillEffectSVG}=module72;
+const {engineData}=module22;
+// A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
+const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
+const aliases={electric:'electricity',dark:'darkness'},fallback={water:'water-orb',fire:'fire-orb',wind:'wind-arrow',electricity:'lightning-strike',darkness:'dark-mist',light:'light-beam'};
+function battleEffectProfile(event){const book=engineData.books.find(b=>b.skill_id===event.skill_id),profile=effectProfiles[event.skill_id],element=aliases[event.element]||event.element||book?.element;
+ const isMagic=event.kind==='magic'||book?.category==='spellbook';
+ if(isMagic&&palettes[element]){const n=Number((event.skill_id||'').replace('spell_',''));return {id:event.skill_id||'generic-'+element,element,form:book?magicFamilies[n-1]:fallback[element],shape:profile||effectProfiles.spell_001,intensity:book?.rarity==='에픽'?1.2:book?.rarity==='유니크'?1.1:.9,magic:true};}
+ return {id:event.skill_id||event.kind,shape:profile||effectProfiles[event.kind==='unique'?'skill_swd_030':event.kind==='defend'?'skill_swd_003':event.kind==='counter'?'skill_swd_005':'skill_swd_001'],magic:false};}
+function battleEffectTiming(event){const profile=battleEffectProfile(event);if(profile.magic)return sampleTiming(profile);return {duration:event.kind==='unique'?2200:event.skill_id?1500:event.result==='critical'?1300:1000,impact:.4,charge:.08};}
+function mountBattleVFX(stage){
+ const canvas=document.createElement('canvas'),vector=document.createElement('div');canvas.className='battle-vfx-canvas';vector.className='battle-vfx-vector';canvas.setAttribute('aria-hidden','true');vector.setAttribute('aria-hidden','true');stage.append(canvas,vector);
+ let renderer=null,profile=null,w=1000,h=600,x=500,y=258,event=null,target=null,foreground=false,signature='';
+ try{if(canvas.getContext?.('2d'))renderer=createElementalRenderer(canvas);}catch{/* Keep vector effects if Canvas is unavailable. */}
+ function resize(){const rect=stage.getBoundingClientRect?.();w=rect?.width||1000;h=rect?.height||600;const next=w+':'+h;if(next!==signature){signature=next;renderer?.resize(w,h,globalThis.devicePixelRatio||1);}
+  const r=target?.getBoundingClientRect?.();x=r&&rect?r.left-rect.left+r.width*.5:w*.5;y=r&&rect?r.top-rect.top+r.height*.43:h*(foreground ? .62 : .43);vector.style.left=(x-180)+'px';vector.style.top=(y-200)+'px';}
+ function clear(){renderer?.clear();vector.style.opacity=0;canvas.hidden=true;vector.hidden=true;}
+ function start(e,node,front=false){event=e;target=node;foreground=front;profile=battleEffectProfile(e);resize();const shape=e.result==='block'||e.kind==='defend'?effectProfiles.skill_swd_004:profile.shape;vector.innerHTML=skillEffectSVG(shape);vector.style.color=profile.magic?palettes[profile.element][1]:'#ffe0af';canvas.hidden=false;vector.hidden=false;vector.style.opacity=0;}
+ function draw(t){if(!profile)return;resize();const hit=battleEffectTiming(event).impact,reduced=matchMedia('(prefers-reduced-motion: reduce)').matches;
+  // A missed or fully blocked attack does not produce a successful elemental explosion.
+  const success=event.result!=='dodge'&&!(event.result==='block'&&event.damage===0);
+  if(profile.magic&&success)renderer?.draw(profile,reduced?(t<hit?0:t<.9?.6:0):t,{targetX:x,targetY:y,intensity:profile.intensity});else renderer?.clear();
+  const q=Math.max(0,(t-hit)/(1-hit)),visible=t>=hit&&t<.94;vector.style.opacity=visible?Math.min(1,q/.08,Math.max(0,(.94-t)/.25))*(profile.magic ? .55 : 1):0;
+  for(const part of vector.querySelectorAll?.('.stroke-part')||[]){const order=Number(part.style.getPropertyValue('--order')||0),u=q-order*.14;part.style.opacity=reduced?1:u<0?0:Math.min(1,u/.07,Math.max(0,(.5-u)/.2));}
+  vector.style.transform=reduced?'none':`scale(${.75+q*.45})`;if(event.result==='dodge')vector.style.opacity=0;
+ }
+ clear();return {start,draw,clear};
+}
+
+return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
+const module73=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -7240,7 +7468,7 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module71=(()=>{
+const module74=(()=>{
 const {mapData}=module6;
 const {lordships}=module60;
 const {factionLocations}=module47;
@@ -7324,21 +7552,23 @@ function mountDialogueGlossary(element){
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
 const module68=(()=>{
 const {mountBattleAudio}=module69;
+const {mountBattleVFX,battleEffectTiming}=module70;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module28;
 const {characterVisual,artBase}=module4;
 const {faceFit}=module10;
 const {resolveBackground,backgroundURL}=module38;
 const {appendItemIcon}=module49;
-const {battleCommentary}=module70;
-const {renderDialogueTerms}=module71;
+const {battleCommentary}=module73;
+const {renderDialogueTerms}=module74;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
+  const vfx=mountBattleVFX(stage);
   const overlay=document.createElement('img');overlay.className='battle-transition-overlay';overlay.alt='';overlay.hidden=true;stage.append(overlay);
   let identity=null,raf=0,lastTime=0,elapsed=0,impacted=false,waiting=false,animations=[],cards=new Map();
   const slots=['left','right'].map(side=>{const root=$('battle-'+side),visual=document.createElement('div'),missing=document.createElement('div'),number=document.createElement('span'),effect=document.createElement('div');visual.className='battle-visual';missing.className='battle-missing';number.className='battle-number';effect.className='battle-effect';root.append(visual,missing,effect,number);return {root,visual,missing,number,effect,body:null,face:null,id:null};});
-  const duration=e=>e.kind==='unique'?2200:e.skill_id?1600:e.result==='critical'?1300:1000;
-  function clearAnimation(){audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
+  const duration=e=>battleEffectTiming(e).duration;
+  function clearAnimation(){vfx.clear();audio.stop();for(const a of animations)a.cancel();animations=[];for(const s of slots){s.number.textContent='';s.effect.className='battle-effect';}for(const card of cards.values())card.number.textContent='';$('battle-cutin').hidden=true;}
   function stop(){cancelAnimationFrame(raf);raf=0;lastTime=0;clearAnimation();}
   function save(){persist();chat.controls();}
   function art(slot,p){
@@ -7359,14 +7589,14 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     clearAnimation();elapsed=0;impacted=false;waiting=false;$('battle-next').disabled=true;showResources(battleFrame(b,playback.index));
     const actor=b.participants.find(p=>p.id===e.actor),target=b.participants.find(p=>p.id===e.target),allied=actor.side==='allied'?actor:target.side==='allied'?target:b.participants.find(p=>p.side==='allied'),enemy=actor.side==='enemy'?actor:target.side==='enemy'?target:b.participants.find(p=>p.side==='enemy');
     art(slots[0],allied);art(slots[1],enemy);
+    const effectTarget=slots.find(s=>s.id===e.target);vfx.start(e,effectTarget?.root.hidden?null:effectTarget?.root,e.target==='player');
     for(const [id,card] of cards){card.root.dataset.acting=String(id===e.actor);card.root.dataset.target=String(id===e.target);}
     for(const s of slots)s.root.dataset.defeated=String(battleFrame(b,playback.index)[s.id].hp===0);
     $('speaker').textContent=actor.name;$('speaker').dataset.voice='character';$('emotion').textContent='전투 중계';$('line').dataset.voice='narration';renderDialogueTerms($('line'),battleCommentary(e.narration),playback.scene);
     const skill=actor.skills.find(s=>s.id===e.skill_id);if(skill){$('battle-cutin').hidden=false;$('battle-cutin').textContent=skill.name;$('battle-cutin').dataset.kind=e.kind;animate($('battle-cutin'),[{opacity:0,transform:'translateY(10px) scale(.9)'},{opacity:1,transform:'translateY(0) scale(1)',offset:.15},{opacity:1,offset:.65},{opacity:0,transform:'translateY(-8px) scale(1.03)'}],duration(e)*.8);}
     $('battle-progress').textContent=`${playback.replay?'다시보기 · ':''}${playback.index+1} / ${b.events.length}`;
-    const active=slots.find(s=>s.id===e.actor),direction=actor.side==='allied'?1:-1;
-    if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'translateX(0)'},{transform:`translateX(${direction*65}px)`,offset:.32},{transform:'translateX(0)'}],duration(e));
-    if(active&&e.kind==='magic'){active.effect.className='battle-effect casting '+e.element;animate(active.effect,[{opacity:0,transform:'scale(.5)'},{opacity:1,transform:'scale(1.15)'},{opacity:0}],duration(e));}
+    const active=slots.find(s=>s.id===e.actor);
+    if(active&&['attack','counter'].includes(e.kind))animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.06)',offset:.32},{transform:'scale(1)'}],duration(e));
     if(active&&e.kind==='unique'){animate(active.root,[{transform:'scale(1)'},{transform:'scale(1.18)',offset:.35},{transform:'scale(1)'}],duration(e));active.effect.className='battle-effect unique';}
     if(active&&e.kind==='defeat')animate(active.root,[{opacity:1,transform:'translateY(0)'},{opacity:0,transform:'translateY(140px)'}],duration(e));
   }
@@ -7376,7 +7606,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(target){const number=target.root.hidden?cards.get(e.target)?.number:target.number;number.textContent=e.result==='dodge'?'MISS':e.result==='block'&&e.damage===0?'BLOCK':e.damage?'-'+e.damage:'';number.dataset.critical=String(e.result==='critical');
       if(e.result==='dodge'){target.effect.className='battle-effect afterimage';animate(target.root,[{transform:'translateX(0)',opacity:1},{transform:`translateX(${target===slots[0]?-35:35}px)`,opacity:.45},{transform:'translateX(0)',opacity:1}],duration(e)*.55);}
       else if(e.result==='block'||e.kind==='defend'){target.effect.className='battle-effect barrier';animate(target.effect,[{opacity:0},{opacity:1},{opacity:0}],duration(e)*.55);}
-      else if(e.damage){animate(target.root,[{transform:'translateX(0)'},{transform:`translateX(${target===slots[0]?-20:20}px)`},{transform:'translateX(0)'}],duration(e)*.55);if(!target.root.hidden){target.effect.className='battle-effect strike '+(e.element||'physical');animate(target.effect,[{opacity:0,transform:'scale(.65) rotate(-12deg)'},{opacity:1,transform:'scale(1)',offset:.2},{opacity:0,transform:'scale(1.2) rotate(12deg)'}],400);}}
+      else if(e.damage){animate(target.root,[{transform:'scale(1)'},{transform:'scale(.97) translateY(5px)'},{transform:'scale(1)'}],duration(e)*.4);}
       if(number.textContent)animate(number,[{opacity:0,transform:'translateY(10px)'},{opacity:1,offset:.2},{opacity:0,transform:'translateY(-30px)'}],duration(e)*.55);
     }
     if(e.result==='critical')animate(stage,[{transform:'translateX(0)'},{transform:'translateX(-6px)'},{transform:'translateX(7px)'},{transform:'translateX(0)'}],300);
@@ -7385,7 +7615,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
     if(!battleIsActive(state)){stop();return;}
     if(document.hidden||document.querySelector('.game').dataset.title==='active'){audio.stop();lastTime=0;raf=requestAnimationFrame(tick);return;}
     const p=state.battlePlayback,e=p.scene.battle.events[p.index];if(!e)return finish();
-    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*.4)impact();if(elapsed>=duration(e)*.8)$('battle-cutin').hidden=true;if(elapsed>=duration(e)){if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
+    if(!p.paused&&!waiting){if(lastTime)elapsed+=(now-lastTime)*p.speed;if(!impacted&&elapsed>=duration(e)*battleEffectTiming(e).impact)impact();vfx.draw(Math.min(1,elapsed/duration(e)));if(elapsed>=duration(e)*(e.kind==='unique' ? .8 : battleEffectTiming(e).impact))$('battle-cutin').hidden=true;if(elapsed>=duration(e)){vfx.clear();if(p.manual!==false){waiting=true;$('battle-next').disabled=false;$('battle-next').textContent=p.index===p.scene.battle.events.length-1?'전투 결과 확인':'다음 턴 →';$('battle-progress').textContent=`${p.index+1} / ${p.scene.battle.events.length} · 읽은 뒤 다음 턴`;}else next();}}
     lastTime=now;if(battleIsActive(state))raf=requestAnimationFrame(tick);
   }
   function finish(){
@@ -7431,7 +7661,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module73=(()=>{
+const module76=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module4;
 const {findNPC}=module29;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -7460,8 +7690,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module72=(()=>{
-const {mountNPCLocations}=module73;
+const module75=(()=>{
+const {mountNPCLocations}=module76;
 const {registeredArt,artBase,placementLabel}=module4;
 const {catalogData}=module30;
 const {npcCatalog,resolveNPC,npcRankLabel}=module29;
@@ -7502,7 +7732,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module74=(()=>{
+const module77=(()=>{
 function hasGameSave(state){return !!(state.scene||state.introDraft||state.intro_completed||state.player?.name?.trim()||state.player?.level!=null);}
 function mountTitleMenu(state,{newGame,render,isPending}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),screen=$('title-screen');
@@ -7524,7 +7754,7 @@ function mountTitleMenu(state,{newGame,render,isPending}){
 }
 
 return {hasGameSave,mountTitleMenu};})();
-const module76=(()=>{
+const module79=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module21;
 const {applyItemRarity}=module34;
 const {appendItemIcon}=module49;
@@ -7558,7 +7788,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module77=(()=>{
+const module80=(()=>{
 const {engineItem}=module27;
 const {appendItemIcon}=module49;
 const {applyItemRarity}=module34;
@@ -7593,12 +7823,12 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module75=(()=>{
+const module78=(()=>{
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module27;
 const {applyItemRarity}=module34;
 const {appendItemIcon}=module49;
-const {mountItemLibrary}=module76;
-const {mountEquipmentSlots}=module77;
+const {mountItemLibrary}=module79;
+const {mountEquipmentSlots}=module80;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -7625,7 +7855,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module78=(()=>{
+const module81=(()=>{
 const {publicLife,lifeRole}=module45;
 const {findNPC}=module29;
 function mountNPCLifeUI(state,{submit,isPending,getNPC}){
@@ -7675,15 +7905,15 @@ const {mountNPCInfo}=module63;
 const {mountPlayHUD}=module64;
 const {mountNewGame}=module65;
 const {mountBattleUI}=module68;
-const {dialogueVoice}=module70;
-const {renderDialogueTerms,mountDialogueGlossary}=module71;
-const {mountCatalogUI}=module72;
+const {dialogueVoice}=module73;
+const {renderDialogueTerms,mountDialogueGlossary}=module74;
+const {mountCatalogUI}=module75;
 const {initializeNameOnlyPlayer}=module58;
 const {locationLabel:canonicalLocationLabel}=module41;
-const {mountTitleMenu}=module74;
+const {mountTitleMenu}=module77;
 const {mountQuestUI}=module56;
-const {mountEngineUI}=module75;
-const {mountNPCLifeUI}=module78;
+const {mountEngineUI}=module78;
+const {mountNPCLifeUI}=module81;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module46;
 const $=id=>document.getElementById(id);
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
