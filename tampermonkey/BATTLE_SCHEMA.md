@@ -86,4 +86,5 @@
 - NPC 숫자 원본이 미등록인 경우 캐릭터 정보를 먼저 확정한다. 숫자를 임의 생성하지 않는다. NPC의 종료 자원은 전투 종료 정산 시 npcStates에 기록되어 정보창과 다음 턴에 공유된다.
 
 ## 경지 반응 확장 (UI 2.1.35)
+RPG_ADVENTURE_LOOP.md의 스킬 장착을 확인한다. 주인공 skills는 `skill_loadout.battle`의 장착 액티브(최대 4칸에 패시브와 함께 선택) 및 실제 보유 궁극기만 선언한다. 기본 공격은 skill_id=null. 패시브는 장착 문맥과 승인 조건으로 판정하며 공격 기술로 선언하지 않는다.
 GROWTH_SCHEMA.md를 따른다. physical calculation의 선택 mana_component는 물리 피해와 별도 마나 추가 피해. 사건 realm_reaction=mana_guard/reflection의 학습·경지·MP·감소율·GM 난수를 검사한다. 방어자 MP도 같은 사건에서 줄어든다. 성공 반사는 원래 공격 피해0과 바로 다음 reflection_source_event 주문을 검증하고 다시 반사하지 않는다. 기존 확장 없는 전투는 기존 공식·재생 그대로 동작한다.

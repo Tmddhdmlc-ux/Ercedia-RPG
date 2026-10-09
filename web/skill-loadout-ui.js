@@ -1,0 +1,11 @@
+import {eligibleSkills,effectiveLoadout,equipSkill,learnedSkills} from './skill-loadout.js';
+export function mountSkillLoadout(state,{persist,isPending}){
+ const root=document.createElement('section');root.className='skill-loadout';root.setAttribute('aria-label','스킬 장착');document.getElementById('skill-list').before(root);
+ let message='';const busy=()=>isPending()||!!state.introDraft||!!state.battlePlayback&&!state.battlePlayback.done;
+ function render(){root.replaceChildren();const title=document.createElement('h3');title.textContent='스킬 장착 · 전투 4칸 / 대화·탐험 4칸';root.append(title);const note=document.createElement('p');note.textContent='배운 기술은 유지됩니다. 궁극기는 별도 조건으로 발동하며 전투 중에는 교체할 수 없습니다.';root.append(note);
+  const loadout=effectiveLoadout(state);for(const [mode,label]of [['battle','전투 · 액티브와 패시브 합계 4칸'],['dialogue','대화·탐험 · 패시브 4칸']]){const group=document.createElement('fieldset'),legend=document.createElement('legend');legend.textContent=label;group.append(legend);const skills=eligibleSkills(state,mode);
+   for(let slot=0;slot<4;slot++){const row=document.createElement('label'),text=document.createElement('span'),select=document.createElement('select');text.textContent=`${slot+1}번 칸`;const empty=document.createElement('option');empty.value='';empty.textContent='비워두기';select.append(empty);for(const s of skills){const option=document.createElement('option');option.value=s.id;option.textContent=`${s.name} · ${s.skill_type==='passive'?'패시브':'액티브'}`;select.append(option);}select.value=loadout[mode][slot]||'';select.disabled=busy();const selected=skills.find(s=>s.id===select.value);select.title=selected?.description||'습득한 기술만 장착할 수 있습니다.';select.onchange=()=>{try{if(busy())throw Error('진행 중인 응답·전투가 끝난 뒤 변경하세요.');equipSkill(state,mode,select.value||null,slot);persist();message='장착 설정을 저장했습니다.';}catch(e){message=e.message;}render();};row.append(text,select);group.append(row);}root.append(group);}
+  if(!learnedSkills(state).length){const empty=document.createElement('p');empty.textContent='아직 배운 기술이 없습니다. 기술서 학습이나 실제 수련으로 습득하면 장착할 수 있습니다.';root.append(empty);}if(message){const p=document.createElement('p');p.setAttribute('role','status');p.textContent=message;root.append(p);}
+ }
+ return {render};
+}
