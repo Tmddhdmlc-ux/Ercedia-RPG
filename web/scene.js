@@ -119,7 +119,7 @@ export function turnDomains(state,action,choiceId){
     dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스/.test(text),
     trade:kind==='trade'||isRecoveryAction(text)||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|경매|입찰|시설/.test(text),
     crafting:/제작|대장간|강화|분해|조합|단조|검.{0,15}(?:만들|만든)/.test(text),
-    growth:kind==='training'||/수련|단련|훈련|학습|배우|배운|연습|공부|단조|익히|익힌|연구|기술서|돌파|경지|서클|입문|직업|전직/.test(text),
+    growth:kind==='training'||/수련|단련|훈련|학습|배우|연습|공부|복습|단조|익히|연구|기술서|돌파|경지|서클|입문|직업|전직/.test(text),
     adventure:['travel','quest','investigate'].includes(kind)||/이동|여행|출발|귀환|조사|탐색|탐험|주민|일거리|운송|수레|의뢰|퀘스트|보고/.test(text),
     quest:kind==='quest'||!!choice?.quest_id||hasActiveQuestStory(state)||/의뢰|퀘스트|보고|수주|일거리|게시|보수|운송|운반|유급|순찰/.test(text),
     relationship:/관계|세력|조직|왕족|국왕|혼인|반란|배신|동료|동행/.test(text)

@@ -1,6 +1,13 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
+import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains} from '../web/scene.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
+
+test('remembered learning in thanks or rest is not training; actual practice and training choices keep mechanics',()=>{
+ const s=start(),sync=createTurnSync();s.gm_rulings=[{id:'lesson',topic:'수업',decision:'실습한 준비 절차를 기억한다'}];sync.acknowledge(sync.prepare(s,'인사한다'));
+ for(const action of ['오늘 배운 준비 방법에 감사하고 한 시간 쉰다','어제 익힌 순서를 이야기하고 휴식한다']){assert.equal(turnDomains(s,action).growth,false);assert.equal(sync.prepare(s,action).domains.growth,false);}
+ for(const action of ['오늘 배운 준비 방법을 복습한다','어제 익힌 순서를 다시 연습한다','붕대 준비를 배우고 싶다','지혈 방법을 익히고 실습한다']){const p=sync.prepare(s,action);assert.equal(p.domains.growth,true);assert.deepEqual(p.payload.state.gm_rulings,s.gm_rulings);assert.deepEqual(p.payload.state.player,s.player);}
+ s.scene.choices=[{id:'practice',kind:'training',text:'준비 순서를 다시 해본다'}];assert.equal(sync.prepare(s,'준비 순서를 다시 해본다','practice').domains.growth,true);
+});
 
 test('acknowledged public rulings append without losing history; resets and mechanical turns carry full records',()=>{
  const s=start(),sync=createTurnSync();s.gm_rulings=Array.from({length:20},(_,i)=>({id:'rule-'+i,topic:'기존 계약 '+i,decision:'보수와 수행 조건을 유지한다. '.repeat(10)}));
