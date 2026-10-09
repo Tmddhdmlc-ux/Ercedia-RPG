@@ -5,7 +5,7 @@ import {catalogItem as engineItem} from './item-catalog.js';
 export function mountAdventureUI(state,{submit,isPending,switchTo,assetBase=''}){
  const game=document.querySelector('.game'),toolbar=document.createElement('div'),open=document.createElement('button'),hint=document.createElement('span');
  toolbar.className='adventure-toolbar';open.type='button';open.textContent='마을·모험';toolbar.append(open,hint);document.getElementById('play-hud').after(toolbar);
- const headers=[document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
+ const headers=[document.querySelector('.game-navigation')||document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
  function measureHeader(){if(!game.getBoundingClientRect)return;const top=game.getBoundingClientRect().top,bottom=Math.max(top,...headers.map(el=>el.getBoundingClientRect().bottom));game.style.setProperty('--story-header-height',Math.ceil(bottom-top)+'px');}
  if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(measureHeader);for(const el of headers)observer.observe(el);}
  const panel=document.createElement('section');panel.className='adventure-modal';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','마을과 모험 행동');game.append(panel);

@@ -1,3 +1,4 @@
+import {mountNavigationLayout} from './navigation-layout.js';
 // Presentation only: reuse existing controls and keep all game state in its owners.
 export function mountRemasterUI(state){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -5,7 +6,7 @@ export function mountRemasterUI(state){
   const summary=document.createElement('summary');summary.textContent='메뉴';utility.append(summary);
   const actions=document.createElement('div');actions.className='utility-actions';
   actions.append($('title-return'),document.querySelector('.new-game-actions'));
-  utility.append(actions);game.prepend(utility);
+  utility.append(actions);mountNavigationLayout(game,document.querySelector('.tabs'),utility);
   const status=$('status-panel'),content=$('player-content')||status.querySelector('.player-content');
   const growth=$('engine-growth');content.insertBefore(growth,content.querySelector('.skill-heading'));
   const attributes=content.querySelector('.attributes');

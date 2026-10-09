@@ -2980,6 +2980,27 @@ input[type=range] {
 .save-window{width:min(940px,calc(100% - 40px));max-height:calc(100dvh - 60px);padding:24px;background:#10212bf7;color:#eaf2f6;border:1px solid #d3b57d;border-radius:14px;font-size:18px;box-shadow:0 24px 100px #000b;overflow:auto;overscroll-behavior:contain;visibility:visible!important}
 .save-window::backdrop{background:#030a13ba;backdrop-filter:blur(5px)}
 .save-window header{display:flex;justify-content:space-between;align-items:center;gap:20px}.save-window h2{font-size:28px;color:#f5d79b;margin:0}.save-window button{font:inherit;border:1px solid #536d7d;border-radius:8px;padding:12px 18px;background:#203644;color:#eef5fa;cursor:pointer}.save-window button:disabled{opacity:.45;cursor:default}.save-window button:focus-visible{outline:2px solid #f4d9a3;outline-offset:3px}.save-window-tabs{display:flex;gap:12px;margin:20px 0}.save-window-tabs button[aria-pressed=true]{color:#ffdf9e;border-color:#e2bd75}.save-window-hint{color:#bfd2df;line-height:1.6}.save-slot-list{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}.save-window .save-slot{display:flex;flex-direction:column;gap:9px;text-align:left;min-width:0;padding:18px}.save-slot[aria-pressed=true]{border-color:#e2bd75!important;background:#304650!important;box-shadow:inset 3px 0 #e2bd75}.save-slot strong{font-size:22px}.save-slot span{overflow-wrap:anywhere;line-height:1.4}.save-slot-label{color:#e5c487;font-size:17px}.save-slot small{font-size:16px;color:#a9c1d0}.save-window-message{min-height:26px;color:#f3d49a;line-height:1.6}.save-window .save-slot-confirm{width:100%;background:#d7b77c;color:#10212b;border-color:#d7b77c;font-weight:700}
+
+/* One header flow: nav, fullscreen and menu reserve their own space. */
+.game-navigation{display:contents}
+.utility-actions>.music-controls{display:block;width:100%;margin-top:8px}.utility-actions>.music-controls summary{white-space:normal;padding:10px 4px}.utility-actions>.music-controls .music-settings{position:static;width:100%;box-sizing:border-box;margin-top:6px;box-shadow:none}.utility-actions>.music-controls .music-settings button{text-align:center}
+@media(min-width:701px){
+ .game>.game-navigation{display:flex;align-items:center;gap:12px;flex-shrink:0;position:relative;z-index:40;min-width:0;background:#101820e8;border-bottom:1px solid var(--line);padding:8px 16px}
+ .game-navigation>.tabs{flex:1 1 0;min-width:0;min-height:48px;height:auto;padding:0;border:0;gap:6px;flex-wrap:wrap;background:transparent!important;position:relative!important;z-index:auto!important}
+ .game-navigation>.game-utility{position:relative;inset:auto;flex:0 0 auto;z-index:auto;align-self:flex-start;margin-top:2px}
+ .game-navigation>.game-utility>summary{display:flex;align-items:center;justify-content:center;min-height:44px;padding:8px 14px;box-sizing:border-box;font-size:17px;cursor:pointer}
+ .game-navigation .tabs #fullscreen{position:relative;flex:0 0 auto;min-height:44px;font-size:17px;margin-left:auto;padding:8px 14px;z-index:1;pointer-events:auto;border-color:#8b744d;background:#14252f}
+ .game-navigation .utility-actions{top:calc(100% + 10px);right:0;max-height:calc(100dvh - 130px);overflow:auto;z-index:1}
+ .game>.play-hud{min-width:0;flex-wrap:wrap;gap:10px 16px;position:relative;z-index:20}
+ .play-hud .hud-game-time{white-space:normal;max-width:100%;overflow-wrap:anywhere;line-height:1.4}
+ .play-hud .hud-location{margin-left:auto;max-width:210px;overflow-wrap:anywhere;line-height:1.4}
+ .play-hud .hud-date{display:none}
+ .play-hud label{flex-shrink:0}
+ .game>.adventure-toolbar{position:relative;z-index:10}
+ .game[data-battle=active]>.game-navigation{background:#101820e8}
+ .game[data-battle=active] .game-navigation>.game-utility{display:block}
+ .game[data-intro-phase=map]>.game-navigation>.tabs{justify-content:flex-end}
+}
 </style></head>
 <body class="title-screen-active">
 <main class="shell">
@@ -6565,7 +6586,7 @@ const {catalogItem:engineItem}=module20;
 function mountAdventureUI(state,{submit,isPending,switchTo,assetBase=''}){
  const game=document.querySelector('.game'),toolbar=document.createElement('div'),open=document.createElement('button'),hint=document.createElement('span');
  toolbar.className='adventure-toolbar';open.type='button';open.textContent='마을·모험';toolbar.append(open,hint);document.getElementById('play-hud').after(toolbar);
- const headers=[document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
+ const headers=[document.querySelector('.game-navigation')||document.querySelector('.tabs'),document.getElementById('play-hud'),toolbar];
  function measureHeader(){if(!game.getBoundingClientRect)return;const top=game.getBoundingClientRect().top,bottom=Math.max(top,...headers.map(el=>el.getBoundingClientRect().bottom));game.style.setProperty('--story-header-height',Math.ceil(bottom-top)+'px');}
  if(typeof ResizeObserver==='function'){const observer=new ResizeObserver(measureHeader);for(const el of headers)observer.observe(el);}
  const panel=document.createElement('section');panel.className='adventure-modal';panel.hidden=true;panel.setAttribute('role','dialog');panel.setAttribute('aria-modal','true');panel.setAttribute('aria-label','마을과 모험 행동');game.append(panel);
@@ -7010,7 +7031,19 @@ function mountWorldUI(state,{submit,isPending,assetBase}){
 }
 
 return {mountWorldUI};})();
+const module75=(()=>{
+// Keep navigation and its menu in the same flow; preserve existing event handlers.
+function mountNavigationLayout(game,tabs,utility){
+  const row=document.createElement('div');row.className='game-navigation';
+  tabs.before(row);row.append(tabs,utility);
+  const actions=utility.querySelector('.utility-actions');
+  for(const control of [...tabs.querySelectorAll('.music-controls')])actions.append(control);
+  return row;
+}
+
+return {mountNavigationLayout};})();
 const module74=(()=>{
+const {mountNavigationLayout}=module75;
 // Presentation only: reuse existing controls and keep all game state in its owners.
 function mountRemasterUI(state){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -7018,7 +7051,7 @@ function mountRemasterUI(state){
   const summary=document.createElement('summary');summary.textContent='메뉴';utility.append(summary);
   const actions=document.createElement('div');actions.className='utility-actions';
   actions.append($('title-return'),document.querySelector('.new-game-actions'));
-  utility.append(actions);game.prepend(utility);
+  utility.append(actions);mountNavigationLayout(game,document.querySelector('.tabs'),utility);
   const status=$('status-panel'),content=$('player-content')||status.querySelector('.player-content');
   const growth=$('engine-growth');content.insertBefore(growth,content.querySelector('.skill-heading'));
   const attributes=content.querySelector('.attributes');
@@ -7060,7 +7093,7 @@ function mountRemasterUI(state){
 }
 
 return {mountRemasterUI};})();
-const module75=(()=>{
+const module76=(()=>{
 const {growthContext,assertGrowthSnapshot}=module32;
 const {wallet,splitCopper}=module13;
 const {currencyRules}=module48;
@@ -7107,7 +7140,7 @@ function createGameBridge(state,{apply,restore,render,persist}){
 }
 
 return {createGameBridge};})();
-const module78=(()=>{
+const module79=(()=>{
 const {wallet,formatCopper}=module13;
 const {epicSeeds,epicEligibility}=module10;
 const {questProgress,calendarDay,questMapPoint}=module9;
@@ -7172,9 +7205,9 @@ function mountQuestUI(state,{chat,switchTo,persist,showMap}){
 }
 
 return {questLabels,questPreviewText,currentQuestRegion,mountQuestUI};})();
-const module77=(()=>{
+const module78=(()=>{
 const {formatCopper}=module13;
-const {questPreviewText}=module78;
+const {questPreviewText}=module79;
 const choiceKinds={dialogue:'대화',travel:'이동',quest:'의뢰',investigate:'조사',trade:'거래',training:'수련',action:'행동'};
 function choicePresentation(choice,state){
   const quests=[...new Map([...(state.scene?.quest_updates||[]),...(state.quest_log||[])].map(q=>[q.id,q])).values()];
@@ -7187,7 +7220,7 @@ function choicePresentation(choice,state){
 }
 
 return {choiceKinds,choicePresentation};})();
-const module79=(()=>{
+const module80=(()=>{
 // Repair requests repeat the same uncommitted action, never a new game turn.
 const MAX_AUTO_REPAIRS=2;
 function repairInstruction(request,error){
@@ -7196,7 +7229,7 @@ function repairInstruction(request,error){
 }
 
 return {MAX_AUTO_REPAIRS,repairInstruction};})();
-const module80=(()=>{
+const module81=(()=>{
 const {initialPlayer}=module59;
 // Only the old name-only start is eligible. Never reset a progressed or injured save.
 function initializeNameOnlyPlayer(state){
@@ -7209,16 +7242,16 @@ function initializeNameOnlyPlayer(state){
 }
 
 return {initializeNameOnlyPlayer};})();
-const module76=(()=>{
+const module77=(()=>{
 const {bindWallet,wallet}=module13;
-const {choicePresentation}=module77;
+const {choicePresentation}=module78;
 const {parseScene,actionPrompt}=module40;
 const {normalize}=module3;
 const {battleIsActive,validateBattleSettlement}=module15;
 const {extractSceneJSON}=module58;
-const {MAX_AUTO_REPAIRS,repairInstruction}=module79;
+const {MAX_AUTO_REPAIRS,repairInstruction}=module80;
 const {updateNPC,findNPC}=module30;
-const {initializeNameOnlyPlayer}=module80;
+const {initializeNameOnlyPlayer}=module81;
 const {campaignSettingsAttachment,legacyCampaignPrompt,loadCampaignSettings}=module69;
 const {settleQuests}=module9;
 const {prepareBattleLoot,makeLootPopup}=module16;
@@ -7473,7 +7506,7 @@ function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro})
 
 
 return {mountChatUI};})();
-const module82=(()=>{
+const module83=(()=>{
 // Public map facts generated from LORDSHIPS.md. Hidden ambitions, events and secrets are excluded.
 const lordships = {
   "W1": {
@@ -7661,9 +7694,9 @@ const lordships = {
 };
 
 return {lordships};})();
-const module81=(()=>{
+const module82=(()=>{
 const {mapData}=module27;
-const {lordships}=module82;
+const {lordships}=module83;
 const countries={west:'벨로아',east:'드라켄',south:'루메린'};
 function mapSelectionInfo(id){
   const p=mapData.locations.find(p=>p.id===id);
@@ -7682,7 +7715,7 @@ function mapSelectionInfo(id){
 }
 
 return {mapSelectionInfo};})();
-const module83=(()=>{
+const module84=(()=>{
 const {heraldry,artBase}=module25;
 const {factionLocations}=module61;
 const {mapData}=module27;
@@ -7740,7 +7773,7 @@ function mountFactionMap(state,{select,assetBase}){
 }
 
 return {factionTypes,visibleFactions,factionInfo,mountFactionMap};})();
-const module84=(()=>{
+const module85=(()=>{
 const {damageFormula}=module56;
 const {effectiveLoadout}=module28;
 const {introData}=module29;
@@ -7791,7 +7824,7 @@ function mountPlayer(state){
 }
 
 return {mountPlayer};})();
-const module85=(()=>{
+const module86=(()=>{
 const {resolveNPC,npcRankLabel}=module30;
 const {publicLife}=module47;
 function mountNPCInfo(state){
@@ -7860,7 +7893,7 @@ function mountNPCInfo(state){
 }
 
 return {mountNPCInfo};})();
-const module86=(()=>{
+const module87=(()=>{
 const {locationLabel}=module57;
 function mountPlayHUD(state,{persist}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
@@ -7894,7 +7927,7 @@ function mountPlayHUD(state,{persist}){
 }
 
 return {mountPlayHUD};})();
-const module88=(()=>{
+const module89=(()=>{
 const {introData}=module29;
 const {currencyRules}=module48;
 const {effectiveLoadout,normalizeLoadout}=module28;
@@ -7913,7 +7946,7 @@ function freshCampaign(state,draft,settings,campaignId){
 }
 
 return {freshCampaign};})();
-const module89=(()=>{
+const module90=(()=>{
 const {introData}=module29;
 // Public geography and economy from KINGDOMS.md. These are opportunities, not stat bonuses.
 const startRegionInfo={
@@ -7927,7 +7960,7 @@ function automaticStartLordship(kingdom,current){
 }
 
 return {startRegionInfo,automaticStartLordship};})();
-const module87=(()=>{
+const module88=(()=>{
 const {introData}=module29;
 const {regionBackground}=module6;
 const {introSteps,passiveCandidates,creationFields,initialPlayer,normalizeIntroDraft,passiveLimits}=module59;
@@ -7936,8 +7969,8 @@ const {mapData}=module27;
 const {factionLocations}=module61;
 const {loadCampaignSettings,campaignNPCStates}=module69;
 const {npcCatalog}=module30;
-const {freshCampaign}=module88;
-const {startRegionInfo,automaticStartLordship}=module89;
+const {freshCampaign}=module89;
+const {startRegionInfo,automaticStartLordship}=module90;
 function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -8080,7 +8113,7 @@ function mountNewGame(state,{render,persist,chat,embedded}){
 }
 
 return {mountNewGame};})();
-const module91=(()=>{
+const module92=(()=>{
 const {resolveItemArt,appendItemIcon}=module71;
 const {applyItemRarity}=module24;
 const {coinLootLabel}=module16;
@@ -8106,7 +8139,7 @@ function mountLootPopup(state,{persist,render=()=>{},assetBase}={}){
 }
 
 return {mountLootPopup};})();
-const module93=(()=>{
+const module94=(()=>{
 // External sample recipes matched to all registered skill names. Presentation only.
 const skillAudioProfiles={
   "skill_swd_001": {
@@ -10213,7 +10246,7 @@ const skillAudioProfiles={
 const skillSamplePaths=[...new Set(Object.values(skillAudioProfiles).flatMap(p=>[...p.cast,...p.impact].map(l=>l.path)))];
 
 return {skillAudioProfiles,skillSamplePaths};})();
-const module94=(()=>{
+const module95=(()=>{
 const {npcVoiceDefaults,voiceBanks}=module37;
 function monsterVoiceBank(participant){
   if(participant?.role!=='monster')return null;
@@ -10230,11 +10263,11 @@ function monsterBattleReactions(event,participants,phase){
 function monsterCombatPath(participant,phase){return voiceBanks[monsterVoiceBank(participant)]?.combat?.[phase]||null;}
 
 return {monsterVoiceBank,monsterBattleReactions,monsterCombatPath};})();
-const module92=(()=>{
+const module93=(()=>{
 // External licensed samples (CC0 / CC BY 4.0; see skills/CREDITS.md). Audio is presentation only and never changes combat data.
-const {skillAudioProfiles,skillSamplePaths}=module93;
+const {skillAudioProfiles,skillSamplePaths}=module94;
 const {monsterSamplePaths}=module37;
-const {monsterCombatPath}=module94;
+const {monsterCombatPath}=module95;
 const impactSamples={
   hit:['starninjas/sword_3','starninjas/sword_4','starninjas/sword_6'],
   critical:['starninjas/sword_1','starninjas/sword_2'],
@@ -10332,7 +10365,7 @@ function mountBattleAudio(controls,assetBase){
 }
 
 return {impactSamples,impactCue,createBattleAudio,mountBattleAudio};})();
-const module96=(()=>{
+const module97=(()=>{
 // Original target-local blade trails, inspired by real-time ribbon VFX. Visuals only.
 // The number of visual trails is not a new damage event or a combat hit calculation.
 const specs=[
@@ -10381,7 +10414,7 @@ function createSwordRenderer(canvas){const ctx=canvas.getContext('2d');let w=100
 }
 
 return {swordProfiles,swordTiming,swordFrame,swordFallbackSVG,createSwordRenderer};})();
-const module97=(()=>{
+const module98=(()=>{
 // Original code-created VFX, isolated from combat rules. Canvas sprites are cached, not generated each frame.
 const elementalSamples=[
  {id:'spell_002',element:'water',form:'water-orb',description:'상대 주변의 물방울이 응축 → 순간 압축 → 넓은 물보라와 거품이 터집니다.',damage:24},
@@ -10493,8 +10526,8 @@ function createElementalRenderer(canvas,{createCanvas=()=>document.createElement
 }
 
 return {elementalSamples,palettes,sampleTiming,createElementalRenderer};})();
-const module98=(()=>{
-const {swordProfiles,swordFallbackSVG}=module96;
+const module99=(()=>{
+const {swordProfiles,swordFallbackSVG}=module97;
 // Presentation proposals only. No hit counts, damage or skill rules are assigned by this file.
 const sword=[
  ['slash',-22,1,'낮고 넓은 횡베기'],['thrust',0,1,'한 점으로 모이는 직선 찌르기'],
@@ -10579,10 +10612,10 @@ function skillEffectSVG(p){
 }
 
 return {effectProfiles,elementColors,skillEffectSVG};})();
-const module95=(()=>{
-const {swordProfiles,swordTiming,createSwordRenderer}=module96;
-const {createElementalRenderer,palettes,sampleTiming}=module97;
-const {effectProfiles,skillEffectSVG}=module98;
+const module96=(()=>{
+const {swordProfiles,swordTiming,createSwordRenderer}=module97;
+const {createElementalRenderer,palettes,sampleTiming}=module98;
+const {effectProfiles,skillEffectSVG}=module99;
 const {engineData}=module21;
 // A visual family plus each skill's own contour, angle and variant. No mechanical adjudication.
 const magicFamilies=['fire-orb','water-orb','wind-vortex','lightning-chain','dark-mist','light-burst','fire-rain','water-orb','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','ice-spear','wind-arrow','lightning-chain','dark-mist','light-burst','fire-orb','water-orb','wind-vortex','lightning-strike','dark-mist','light-burst','fire-rain','water-orb','wind-vortex','lightning-chain','dark-mist','light-beam','fire-rain','water-orb','wind-vortex','lightning-strike','dark-moon','light-beam','fire-rain','ice-spear','wind-vortex','lightning-strike'];
@@ -10612,7 +10645,7 @@ function mountBattleVFX(stage){
 }
 
 return {battleEffectProfile,battleEffectTiming,mountBattleVFX};})();
-const module99=(()=>{
+const module100=(()=>{
 // Presentation only: the adjudicated damage and resource snapshots remain unchanged.
 function battleCommentary(text){
   const clauses=text.match(/[^\n.!?。！？]+[.!?。！？]*/g)||[];
@@ -10621,9 +10654,9 @@ function battleCommentary(text){
 function dialogueVoice(speaker){return /^(나레이션|내레이션|시스템|해설|전투 중계)$/.test(speaker)?'narration':'character';}
 
 return {battleCommentary,dialogueVoice};})();
-const module100=(()=>{
+const module101=(()=>{
 const {mapData}=module27;
-const {lordships}=module82;
+const {lordships}=module83;
 const {factionLocations}=module61;
 
 // Only public map facts and people explicitly present in the current scene.
@@ -10703,17 +10736,17 @@ function mountDialogueGlossary(element){
 }
 
 return {dialogueGlossary,splitDialogueTerms,renderDialogueTerms,mountDialogueGlossary};})();
-const module90=(()=>{
-const {mountLootPopup}=module91;
-const {mountBattleAudio}=module92;
-const {monsterBattleReactions}=module94;
-const {mountBattleVFX,battleEffectTiming}=module95;
+const module91=(()=>{
+const {mountLootPopup}=module92;
+const {mountBattleAudio}=module93;
+const {monsterBattleReactions}=module95;
+const {mountBattleVFX,battleEffectTiming}=module96;
 const {battleIsActive,battleFrame,validateBattleSettlement}=module15;
 const {characterVisual,artBase}=module25;
 const {faceFit}=module39;
 const {resolveBackground,backgroundURL}=module6;
-const {battleCommentary}=module99;
-const {renderDialogueTerms}=module100;
+const {battleCommentary}=module100;
+const {renderDialogueTerms}=module101;
 function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=>{}}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game'),stage=$('stage');
   const audio=mountBattleAudio($('battle-controls'),assetBase||'');
@@ -10817,7 +10850,7 @@ function mountBattleUI(state,{render,persist,chat,assetBase,renderBackground=()=
 }
 
 return {mountBattleUI};})();
-const module102=(()=>{
+const module103=(()=>{
 const {placedNPCs,placementLabel,registeredArt,artBase,heraldryPath}=module25;
 const {findNPC}=module30;
 function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
@@ -10846,8 +10879,8 @@ function mountNPCLocations(state,{request,isPending,assetBase,onSelect}){
 }
 
 return {mountNPCLocations};})();
-const module101=(()=>{
-const {mountNPCLocations}=module102;
+const module102=(()=>{
+const {mountNPCLocations}=module103;
 const {registeredArt,artBase,placementLabel}=module25;
 const {catalogData}=module14;
 const {npcCatalog,resolveNPC,npcRankLabel}=module30;
@@ -10888,7 +10921,7 @@ function mountCatalogUI(state,{request,isPending,assetBase,onShow=()=>{}}){
 }
 
 return {mountCatalogUI};})();
-const module104=(()=>{
+const module105=(()=>{
 const {itemCatalog,lootCatalog,itemCategory,itemDescription,itemDetails}=module20;
 const {applyItemRarity}=module24;
 const {appendItemIcon}=module71;
@@ -10922,7 +10955,7 @@ function mountItemLibrary(state,{assetBase}={}){
 }
 
 return {mountItemLibrary};})();
-const module105=(()=>{
+const module106=(()=>{
 const {engineItem}=module53;
 const {appendItemIcon}=module71;
 const {applyItemRarity}=module24;
@@ -10957,13 +10990,13 @@ function mountEquipmentSlots({assetBase,unequip,isBusy}){
 }
 
 return {mountEquipmentSlots};})();
-const module103=(()=>{
+const module104=(()=>{
 const {growthContext}=module32;
 const {engineItem,ensureEngine,copyEngine,investStat,equipItem,unequipItem,combatPreview,statKeys,statLabels,bookEligibility}=module53;
 const {applyItemRarity}=module24;
 const {appendItemIcon}=module71;
-const {mountItemLibrary}=module104;
-const {mountEquipmentSlots}=module105;
+const {mountItemLibrary}=module105;
+const {mountEquipmentSlots}=module106;
 function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
   const status=document.getElementById('status-panel'),bag=document.getElementById('inventory-panel');
   const growth=document.createElement('section'),gear=document.createElement('section');growth.className=gear.className='engine-card';growth.id='engine-growth';gear.id='engine-gear';status.append(growth);bag.append(gear);
@@ -10992,7 +11025,7 @@ function mountEngineUI(state,{render,persist,submit,isPending,assetBase}){
 }
 
 return {mountEngineUI};})();
-const module106=(()=>{
+const module107=(()=>{
 const {publicLife,lifeRole}=module47;
 const {findNPC}=module30;
 const {publicRelations,relationshipEntity}=module41;
@@ -11038,28 +11071,28 @@ const {mountTradeUI}=module70;
 const {mountWorldUI}=module72;
 const {mountBackground,resolveBackground,backgroundArt}=module6;
 const {mountRemasterUI}=module74;
-const {createGameBridge}=module75;
-const {mountChatUI}=module76;
+const {createGameBridge}=module76;
+const {mountChatUI}=module77;
 const {mountInventory,normalizeInventory}=module23;
 const {KEY,defaultLayout,load}=module3;
 const {faceFit}=module39;
 const {mapData}=module27;
-const {mapSelectionInfo}=module81;
-const {mountFactionMap,factionInfo}=module83;
-const {mountPlayer}=module84;
-const {mountNPCInfo}=module85;
-const {mountPlayHUD}=module86;
-const {mountNewGame}=module87;
-const {mountBattleUI}=module90;
-const {dialogueVoice}=module99;
-const {renderDialogueTerms,mountDialogueGlossary}=module100;
-const {mountCatalogUI}=module101;
-const {initializeNameOnlyPlayer}=module80;
+const {mapSelectionInfo}=module82;
+const {mountFactionMap,factionInfo}=module84;
+const {mountPlayer}=module85;
+const {mountNPCInfo}=module86;
+const {mountPlayHUD}=module87;
+const {mountNewGame}=module88;
+const {mountBattleUI}=module91;
+const {dialogueVoice}=module100;
+const {renderDialogueTerms,mountDialogueGlossary}=module101;
+const {mountCatalogUI}=module102;
+const {initializeNameOnlyPlayer}=module81;
 const {locationLabel:canonicalLocationLabel}=module57;
 const {mountTitleMenu}=module62;
-const {mountQuestUI}=module78;
-const {mountEngineUI}=module103;
-const {mountNPCLifeUI}=module106;
+const {mountQuestUI}=module79;
+const {mountEngineUI}=module104;
+const {mountNPCLifeUI}=module107;
 const {mapViews,regionFrame,cameraTransform,viewForSelection}=module60;
 const $=id=>document.getElementById(id);
 mountUIAudio(document.querySelector('.game'),{assetBase:window.__ERCEDIA_CONFIG__?.assetBase||''});
