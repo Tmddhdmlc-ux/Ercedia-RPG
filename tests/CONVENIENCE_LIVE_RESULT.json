@@ -1,0 +1,14 @@
+{
+  "verified_at": "2026-10-09T03:37:07.768Z",
+  "settings_commit": "d3f48cb3af4df75a2e7f40b4581710b7e13877b6",
+  "setting_files": 228,
+  "attachment_name": "ercedia-settings-d3f48cb3af4df75a2e7f40b4581710b7e13877b6.txt",
+  "attachment_characters": 1872730,
+  "required_rule": "GAMEPLAY_CONVENIENCE_RULES.md",
+  "version": "1.1",
+  "new_game_stage": "name",
+  "proactive_instruction": true,
+  "complete_rule_attached": true,
+  "matching_ack_accepted": true,
+  "gm_acknowledgement": "simulated; actual ChatGPT reading and play not verified"
+}
