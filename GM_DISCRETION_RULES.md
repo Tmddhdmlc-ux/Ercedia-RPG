@@ -23,3 +23,5 @@
 예: id=promotion_sword_path, topic=전직 시험, decision=현지 지도자가 제시한 호위 과업의 실제 수행과 보고 뒤 전직 자격을 검토한다. 기록은 공개된 캠페인 진행 방법이며 세계 전체의 새 법칙이나 성공 보장이 아니다.
 
 이 기록 자체는 경험치·능력치·직업·관계·아이템을 변경하지 않는다. 실제 성과는 기존 engine_events/system_events/life_events/quest_events와 전투 정산을 사용한다. 현재 엔진에 없는 고급 직업의 수치 효과를 구현됐다고 주장하지 않고, 가능한 기본 직업 사건과 서사적 전직 과업을 구분한다. 기존 보상 중복 방지·장비 조건·깨달음 규칙은 유지한다.
+
+실제 단조·공부·수련 성과로 배운 기술은 GM-SKILL ID와 engine_events learn_custom_skill로 생성할 수 있다. 기존 미등록 스킬 ID 금지는 등록 기술 위조에 적용하며, 승인된 창작 기술 사건을 금지하는 의미가 아니다. 세부 규격은 tampermonkey/ENGINE_SCHEMA.md를 따른다.

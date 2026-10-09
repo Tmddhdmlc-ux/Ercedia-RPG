@@ -27,7 +27,7 @@ export function townPeople(state){
 export function townConversation(state,id){
   const person=townPeople(state).find(p=>p.id===id);if(!person?.canTalk)return null;
   const {region,place}=actualPlace(state);
-  return `[현지 인물 방문] 실제 출발지 ${region} · ${place}. ${person.name}(${id})을 ${person.confirmed?'찾아가 대화를 시도한다':'현지에서 찾아 위치를 확인한 뒤 대화를 시도한다'}. 현재 위치·일정·직무·접근 경로·이동 시간과 만남 가능 여부를 확인한다. 다른 곳으로 이동했다면 소환하지 말고 부재와 확인 가능한 행방을 안내한다. 실제 만남이 성립할 때만 npc 또는 cast에 등록 ID=${id}, 등록 의상·표정을 넣고 해당 인물의 말투로 dialogue를 출력한다. 처음 만남과 재회는 기존 life_events와 기억을 따른다. 클릭만으로 위치·만남·호감도·의뢰·거래 성공이나 보상을 확정하지 않는다.`;
+  return `[현지 인물 방문] 실제 출발지 ${region} · ${place}. ${person.name}(${id})을 ${person.confirmed?'찾아가 대화를 시도한다':'현지에서 찾아 위치를 확인한 뒤 대화를 시도한다'}. 현재 위치·일정·직무·접근 경로·이동 시간과 만남 가능 여부를 확인한다. 다른 곳으로 이동했다면 소환하지 말고 부재와 확인 가능한 행방을 안내한다. 실제 만남이 성립할 때만 npc 또는 cast에 등록 ID=${id}, 등록 의상·표정을 넣고 해당 인물의 말투로 dialogue를 출력한다. 처음 만남과 재회는 기존 life_events와 기억을 따른다. 클릭만으로 위치·만남·호감도·성과나 보상을 확정하지 않는다.`;
 }
 export function mountTownPeople(state,{submit,isPending}){
   const panel=document.createElement('aside');panel.className='town-people';panel.setAttribute('aria-label','현지 인물 목록');document.getElementById('stage').append(panel);

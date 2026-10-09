@@ -1,8 +1,10 @@
+import {validatePractice,practiceReward} from './practice-reward.js';
+import {learnCustomSkill} from './custom-skills.js';
 import {resolveNPC,assertNPCGrowth} from './npc-model.js';
 import {growthRules} from './growth-data.js';
 import {applyGrowthEvent,assertGrowthSnapshot,currentCircle} from './growth-model.js';
 import {engineData} from './engine-data.js';
-import {equippedSkills} from './skill-loadout.js';
+import {equippedSkills,effectiveLoadout} from './skill-loadout.js';
 import {battleGrowth} from './battle-model.js';
 export const statKeys=['strength','dexterity','intelligence','constitution','manaStat'];
 export const statLabels={strength:'근력',dexterity:'민첩',intelligence:'지능',constitution:'체질',manaStat:'마나 친화력'};
@@ -85,11 +87,14 @@ export function applyEngineEvent(state,event){
       e.npc_growth_history=[...(e.npc_growth_history||[]),{event_id:event.event_id,npc_id:npc.id,reason:event.reason,enlightenment:event.enlightenment||null}];
     }else {applyGrowthEvent(state,event);recalculateEquipment(state);}
   }
+  else if(event.kind==='practice')awardXP(state,practiceReward(state,event));
+  else if(event.kind==='learn_custom_skill'){state.skill_loadout=state.skill_loadout||effectiveLoadout(state);learnCustomSkill(state,event);}
   else if(event.kind==='learn_book')learnBook(state,event.catalog_id,event.reason);
   else throw Error('지원하지 않는 엔진 사건: '+event.kind);
   e.applied.push(event.event_id);return true;
 }
 export function planEngineScene(state,scene,questResult){
+  validatePractice(state,scene);
   assertGrowthSnapshot(state,scene.player);
   for(const [id,profile] of Object.entries(scene.npc_updates||{}))assertNPCGrowth(state,id,profile);
   for(const npc of [scene.npc,...(scene.cast||[])])if(npc?.profile)assertNPCGrowth(state,npc.id,npc.profile);
@@ -101,5 +106,5 @@ export function planEngineScene(state,scene,questResult){
     for(const resource of scene.battle?.outcome?.resources||[]){const npc=resolveNPC(next,resource.id);if(npc)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),hp:resource.hp,mp:resource.mp}};}
   }
   for(const event of scene.engine_events||[]){check(!(event.kind==='xp'&&(scene.battle||scene.quest_events?.some(q=>q.kind==='report'))),'중복 경험치 정산 금지');applyEngineEvent(next,event);}
-  recalculateEquipment(next);return {engine:next.engine,player:next.player,inventory:next.inventory,...(scene.engine_events?.some(event=>event.npc_id&&['breakthrough','learn_realm_ability'].includes(event.kind))?{npcStates:next.npcStates}:{})};
+  recalculateEquipment(next);return {engine:next.engine,player:next.player,inventory:next.inventory,...(next.skill_loadout?{skill_loadout:next.skill_loadout}:{}),...(scene.engine_events?.some(event=>event.npc_id&&['breakthrough','learn_realm_ability'].includes(event.kind))?{npcStates:next.npcStates}:{})};
 }

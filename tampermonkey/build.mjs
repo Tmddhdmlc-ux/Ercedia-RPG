@@ -45,7 +45,7 @@ let html=await readFile(path.join(root,'index.html'),'utf8');
 html=html.replace('<link rel="stylesheet" href="web/style.css">',`<style>${css}</style>`).replace('<script type="module" src="web/app.js"></script>','');
 const script=await minify(output.join('\n'),{compress:false,mangle:true,format:{comments:false}});
 if(!script.code)throw Error('Game bundle could not be compiled');
-html=html.replace('</body>',`<script>/*__ERCEDIA_BOOTSTRAP__*/\n${script.code.replaceAll('</script','<\\/script')}</script></body>`);
+html=html.replace('</body>',()=>`<script>/*__ERCEDIA_BOOTSTRAP__*/\n${script.code.replaceAll('</script','<\\/script')}</script></body>`);
 html=html.replaceAll('\r\n','\n');
 if(html.length>2000000)throw Error('UI exceeds the installed launcher update limit');
 await writeFile(path.join(root,'integration/game.html'),html);

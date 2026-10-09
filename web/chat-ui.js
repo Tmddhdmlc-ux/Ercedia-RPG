@@ -1,3 +1,4 @@
+import {createTurnSync,incrementalPrompt} from './turn-sync.js';
 import {mergeRulings} from './gm-rulings.js';
 import {bindWallet,wallet} from './wallet.js';
 import {validateCraftingAttempt} from './crafting-policy.js';
@@ -24,7 +25,7 @@ function newRequestId(){
   return `action-${Date.now()}-${++requestSequence}`;
 }
 export function mountChatUI(state,{render,persist,storage,embedded,getBattle,getIntro,onRestore=()=>{},onStatus=()=>{}}){
-  let loadedSettingsCommit=null,hasTurnContext=false;
+  let loadedSettingsCommit=null,hasTurnContext=false;const turnSync=createTurnSync();let battlePacket=null;
   const $=id=>document.getElementById(id);
   let pending=null,timer=null,ackTimer=null,campaignSettings=null,requireSettingsConfirmation=false,settingsURL=null,conversation=window.__ERCEDIA_CONFIG__?.conversation||'preview';
   let failedRequest=null;
@@ -96,6 +97,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     clearTimeout(timer);clearTimeout(ackTimer);retire(pending?.requestId);pending=null;controls();status(message);notify('cancel',{});
   }
   function transportFailed(message){
+    turnSync.reset();
     if(pending?.repairAttempt)failedRequest={...pending,error:message};
     cancel(message);
   }
@@ -113,10 +115,11 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     if(!setupOnly)campaignSettings=null;
     if(!setupOnly&&initializeNameOnlyPlayer(state)){render();persist();}
     const requestId=newRequestId(),settings=setupOnly&&campaignSettings?campaignSettingsAttachment(campaignSettings):null;
-    const request={requestId,choiceId,action,...(setupOnly?{setupOnly:true}:{}),...(settingsRefresh?{settingsRefresh:true}:{}),rootRequestId:recovery?.rootRequestId||requestId,repairAttempt:recovery?.repairAttempt||0};
+    const syncPacket=setupOnly?null:turnSync.prepare(state,action,choiceId,!!recovery);
+    const request={requestId,choiceId,action,syncPacket,...(setupOnly?{setupOnly:true}:{}),...(settingsRefresh?{settingsRefresh:true}:{}),rootRequestId:recovery?.rootRequestId||requestId,repairAttempt:recovery?.repairAttempt||0};
     const supportsAttachment=!embedded||window.__ERCEDIA_CONFIG__?.features?.includes('settings-attachment');
     requireSettingsConfirmation=!!settings&&supportsAttachment;
-    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):actionPrompt(state,action,requestId,{compact:true,choiceId}))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
+    $('action-copy').value=(settingsRefresh?refreshSettingsPrompt(state,requestId):setupOnly?setupSettingsPrompt(requestId):incrementalPrompt(state,action,requestId,syncPacket))+(settings?'\n\n'+(supportsAttachment?settings.instruction:legacyCampaignPrompt(campaignSettings)):'')+(recovery?repairInstruction(request,recovery.error):'');$('action-copy-area').hidden=false;
     if(settings){if(settingsURL)URL.revokeObjectURL(settingsURL);settingsURL=URL.createObjectURL(new Blob([settings.file.content],{type:'text/plain;charset=utf-8'}));$('settings-download').href=settingsURL;$('settings-download').download=settings.file.name;$('settings-download').hidden=false;}
     failedRequest=null;pending=request;
     controls();status(embedded?(settings&&!supportsAttachment?'이전 런처로 요청을 전송합니다. GPT가 GitHub 원문을 직접 읽도록 요청했습니다. 전체 파일 자동 첨부는 런처 1.1.7에서 지원합니다.':'상대의 반응을 기다리는 중…'):'이 요청을 ChatGPT에 보내고 응답 JSON을 아래에 붙여넣으세요.');
@@ -143,7 +146,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(campaignSettings&&(requireSettingsConfirmation||pending?.settingsRefresh)&&(scene.settings_loaded?.commit!==campaignSettings.sha||scene.settings_loaded?.file_count!==campaignSettings.paths.length))throw Error(`설정 읽기 확인 불일치: commit=${campaignSettings.sha}, file_count=${campaignSettings.paths.length} 확인이 필요합니다.`);
       if(pending?.setupOnly){
         if(scene.npc||scene.cast?.length||scene.player||scene.inventory||scene.game_state||scene.battle||scene.engine_events?.length||scene.world_events?.length||scene.quest_events?.length||scene.quest_updates?.length||scene.locality_events?.length||scene.life_events?.length||scene.system_events?.length||scene.gm_rulings?.length)throw Error('설정 준비 응답에 게임 진행 변경을 포함할 수 없습니다.');
-        const refreshed=pending.settingsRefresh;loadedSettingsCommit=campaignSettings.sha;campaignSettings=null;cancel(refreshed?'최신 GitHub 설정 동기화 완료 · 현재 진행은 유지됩니다.':'세계관 설정 읽기 확인 완료 · 캐릭터 설정을 진행하세요.');$('sync-settings').title=`확인된 설정 ${loadedSettingsCommit.slice(0,7)}`;render();persist();notify('applied',{scene_id:scene.scene_id});return;
+        turnSync.reset();const refreshed=pending.settingsRefresh;loadedSettingsCommit=campaignSettings.sha;campaignSettings=null;cancel(refreshed?'최신 GitHub 설정 동기화 완료 · 현재 진행은 유지됩니다.':'세계관 설정 읽기 확인 완료 · 캐릭터 설정을 진행하세요.');$('sync-settings').title=`확인된 설정 ${loadedSettingsCommit.slice(0,7)}`;render();persist();notify('applied',{scene_id:scene.scene_id});return;
       }
       if(state.seenScenes.includes(scene.scene_id)){if(pending&&scene.reply_to===pending.requestId)cancel('이미 반영한 장면입니다. 새 scene_id로 다시 응답해야 합니다.');return status('이미 반영한 장면입니다. 중복 적용하지 않았습니다.');}
       if(pending&&scene.reply_to&&scene.reply_to!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
@@ -158,7 +161,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
         planEngineScene(questBase,scene,null);
         planNPCLife(state,scene,null);
         validateBattleSettlement(scene,state);scene=prepareBattleLoot(state,scene);validateBattleSettlement(scene,state);planWorldScene(state,scene);mutationBegan=true;
-        getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
+        battlePacket={packet:pending?.syncPacket,battle_id:scene.battle.battle_id};getBattle().start(scene);cancel('전투 관전을 시작합니다.');notify('applied',{scene_id:scene.scene_id});$('battle-recovery').hidden=true;return;
       }
       const questResult=(state.quest_log?.length||scene.quest_updates||scene.quest_events||scene.world_events||scene.locality_events)?settleQuests(questBase,scene):null;
       const engineResult=planEngineScene(questBase,scene,questResult);
@@ -183,6 +186,8 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(worldResult||questResult)bindWallet(state);
       if(state.chosenName)state.player.name=state.chosenName;
       if(commitBattle&&scene.battle)state.lootPopup=makeLootPopup(state,scene,lootBalanceBefore);
+      const acceptedPacket=commitBattle&&battlePacket?.battle_id===scene.battle?.battle_id?battlePacket.packet:pending?.syncPacket;
+      if(acceptedPacket)turnSync.acknowledge(acceptedPacket);else turnSync.reset();if(commitBattle)battlePacket=null;
       cancel('새 장면을 반영했습니다.');$('free-action').value='';$('action-copy-area').hidden=true;$('battle-recovery').hidden=true;
       campaignSettings=null;
       $('settings-download').hidden=true;if(settingsURL){URL.revokeObjectURL(settingsURL);settingsURL=null;}
@@ -217,7 +222,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
   $('send-action').onclick=()=>submit($('free-action').value);
   $('free-action').addEventListener('keydown',event=>{if(event.key==='Enter'&&!event.shiftKey&&!event.isComposing&&event.keyCode!==229){event.preventDefault();submit(event.currentTarget.value);}});
   $('apply-scene').onclick=()=>apply($('scene-json').value,{manual:true});
-  $('cancel-wait').onclick=()=>{failedRequest=null;cancel();};
+  $('cancel-wait').onclick=()=>{failedRequest=null;turnSync.reset();cancel();};
   $('copy-action').onclick=async()=>{try{await navigator.clipboard.writeText($('action-copy').value);status('요청을 복사했습니다. ChatGPT에 붙여넣어 전송하세요.');}catch{$('action-copy').focus();$('action-copy').select();status('요청 전체를 선택했습니다. Ctrl+C로 복사하세요.');}};
   function restore(saved,{prepared=false,deferRender=false}={}){
     // Validate before deleting the live state, including when saved aliases state.
@@ -225,7 +230,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const next=prepared?saved:normalize(saved);
     if(saved?.scene&&!next.scene||saved?.battlePlayback&&!next.battlePlayback)throw Error('저장된 장면을 읽지 못했습니다. 현재 여정을 유지합니다.');
     const candidate=next===state?JSON.parse(JSON.stringify(next)):next;
-    settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;hasTurnContext=false;
+    turnSync.reset();battlePacket=null;settingsEpoch++;campaignSettings=null;loadedSettingsCommit=null;hasTurnContext=false;
     failedRequest=null;cancel();for(const key of Object.keys(state))delete state[key];Object.assign(state,candidate);
     $('adventurer-name').value='';$('name-error').textContent='';$('connection-tools').open=false;
     window.__ERCEDIA_CONFIG__&&(window.__ERCEDIA_CONFIG__.saved=state);
@@ -248,7 +253,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       catch(error){status(error.message);notify('restored',{state:JSON.parse(JSON.stringify(state)),error:error.message,requestId:data.requestId});}return;
     }
     if(data.type==='conversation'){
-      conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
+      turnSync.reset();battlePacket=null;conversation=data.conversation;window.__ERCEDIA_CONFIG__.conversation=conversation;return;
     }
     if(data.conversation!==conversation)return;
     // Older installed launchers send this automatically after updates/version checks.

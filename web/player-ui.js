@@ -23,10 +23,10 @@ export function mountPlayer(state){
   }
   function skillCount(){const count=state.player.skills.filter(s=>s.enabled).length;$('skill-count').textContent=String(count);$('skills-empty').hidden=count>0;}
   function updateSkill(skill,view){
-    view.title.textContent=skill.name.trim()||'스킬 이름 미입력';view.description.textContent=skill.description.trim()||'설명 미입력';view.formula.textContent=skill.formula.trim()||'데미지 공식 미입력';
+    view.title.textContent=(skill.name.trim()||'스킬 이름 미입력')+(skill.source==='gm'?' · 창작 기술':'');view.description.textContent=skill.description.trim()||'설명 미입력';view.formula.textContent=skill.skill_type==='passive'?'패시브 · 설명에 명시된 조건에서 적용':skill.formula.trim()||'데미지 공식 미입력';
     const equipped=effectiveLoadout(state),id=skill.id||'legacy:'+skill.name,where=[equipped.battle.includes(id)?'전투 장착':'',equipped.dialogue.includes(id)?'대화·탐험 장착':''].filter(Boolean);
     view.badge.textContent=skill.enabled?(skill.ultimate?'궁극기 · 별도 조건':where.join(' · ')||'습득 · 미장착'):'사용 불가';view.card.classList.toggle('unavailable',!skill.enabled);
-    const result=damageFormula(skill.formula,state.player);view.damage.textContent=result.value===null?result.message:`공식 계산값 · ${result.value.toLocaleString('ko-KR')}`;view.damage.classList.toggle('formula-error',result.value===null&&!!skill.formula);
+    const result=damageFormula(skill.formula,state.player);view.damage.hidden=skill.skill_type==='passive';view.damage.textContent=result.value===null?result.message:`공식 계산값 · ${result.value.toLocaleString('ko-KR')}`;view.damage.classList.toggle('formula-error',result.value===null&&!!skill.formula);
   }
   function appendSkill(skill){
     const card=document.createElement('article');card.className='skill-card';
