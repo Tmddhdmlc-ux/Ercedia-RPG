@@ -1,0 +1,20 @@
+<!doctype html>
+<html lang="ko">
+<head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>세린 · 다섯 대사 목소리 시안</title>
+<style>
+*{box-sizing:border-box}body{margin:0;background:#101923;color:#eee9dd;font:16px system-ui;line-height:1.7}main{max-width:900px;margin:40px auto;padding:24px}small{color:#a9bbc8;letter-spacing:.14em}h1{color:#e4c993;font-size:34px}p{color:#bbc9d4}.controls{display:flex;gap:12px;flex-wrap:wrap}button,a{padding:10px 18px;border:1px solid #a58c65;border-radius:8px;background:#263b4c;color:#fff3d9;font:inherit;cursor:pointer}button:hover{background:#385064}button:disabled{opacity:.5;cursor:default}.lines{display:grid;grid-template-columns:1fr 1fr;gap:18px;margin:28px 0}article{padding:24px;background:linear-gradient(135deg,#273b4b,#18242f);border:1px solid #52616e;border-radius:14px}h2{font-size:19px;color:#ddc697;margin:0 0 12px}blockquote{font-size:21px;margin:0 0 16px;min-height:72px;color:#f5f0e5}article.playing{border-color:#ecd399;box-shadow:0 0 0 1px #ecd399}audio{width:100%;margin:20px 0}#status{color:#e4c993;min-height:28px}.note{font-size:14px;border-top:1px solid #425464;padding-top:22px}@media(max-width:650px){.lines{grid-template-columns:1fr}main{margin:8px auto}h1{font-size:28px}}
+</style></head>
+<body><main><small>SERIN · SPOKEN VOICE AUDITION 01</small><h1>세린의 다섯 대사</h1><p>부드러운 인사에서 전투의 결의까지. 같은 목소리 후보로 상황별 대사를 비교해보세요.</p>
+<div class="controls"><button id="all" disabled>다섯 대사 이어 듣기</button><button id="stop">정지</button></div><audio id="player" controls preload="none"></audio><p id="status" role="status">대사를 준비하는 중…</p><div class="lines" id="lines"></div>
+<p class="note">한국어 여성 합성음 시안입니다. 기존 세린 반응음과 동일한 성우는 아닙니다. 말속도·높이 조절은 감정 연기와 다르므로, 먼저 목소리와 말투를 확인하세요. 게임의 실제 대사·전투에는 아직 연결하지 않았습니다.</p>
+<p><a href="https://github.com/rany2/edge-tts">음성 제작 도구 · edge-tts</a></p></main>
+<script type="module">
+const player=document.getElementById('player'),status=document.getElementById('status'),all=document.getElementById('all'),container=document.getElementById('lines');
+let lines=[],index=0,sequence=false,revision=0;
+function highlight(){for(const card of container.children)card.classList.toggle('playing',card.dataset.id===lines[index]?.id&&!player.paused);}
+async function play(i){const ticket=++revision;index=i;player.pause();player.src='../'+lines[i].path;status.textContent=lines[i].situation+' · '+lines[i].text;try{await player.play();if(ticket===revision)highlight();}catch{if(ticket===revision)status.textContent='재생 버튼을 다시 눌러주세요.';}}
+function stop(){sequence=false;revision++;player.pause();player.currentTime=0;highlight();status.textContent='재생 정지';}
+document.getElementById('stop').onclick=stop;all.onclick=()=>{sequence=true;void play(0);};
+player.addEventListener('play',highlight);player.addEventListener('pause',highlight);player.addEventListener('ended',()=>{if(sequence&&index+1<lines.length)void play(index+1);else{sequence=false;highlight();status.textContent='재생 완료';}});player.addEventListener('error',()=>{sequence=false;status.textContent='음원을 불러오지 못했습니다. 다시 시도해주세요.';});
+try{const response=await fetch('../assets/audio/dialogue/serin-audition/lines.json');if(!response.ok)throw Error('metadata');lines=(await response.json()).lines;for(const [i,line] of lines.entries()){const card=document.createElement('article');card.dataset.id=line.id;const heading=document.createElement('h2'),quote=document.createElement('blockquote'),button=document.createElement('button');heading.textContent=String(i+1).padStart(2,'0')+' · '+line.situation;quote.textContent=line.text;button.textContent=line.situation+' 대사 듣기';button.onclick=()=>{sequence=false;void play(i);};card.append(heading,quote,button);container.append(card);}all.disabled=false;status.textContent='듣고 싶은 상황을 선택하세요.';}catch{status.textContent='대사를 불러오지 못했습니다.';}
+</script></body></html>

@@ -1,0 +1,66 @@
+{
+  "status": "audition_only",
+  "provider": "Microsoft Edge online TTS via edge-tts",
+  "tool_reference": "https://github.com/rany2/edge-tts",
+  "voice": "ko-KR-SunHiNeural",
+  "synthetic": true,
+  "notes": "A new spoken voice candidate, not the same performer as existing reaction clips. Rate and pitch adjustments are not emotion-directed acting. Not connected to live dialogue or combat.",
+  "processing": "65 Hz high-pass; loudness normalization to -18 LUFS, -1.5 dBTP; mono 48 kHz MP3.",
+  "lines": [
+    {
+      "id": "greeting",
+      "situation": "첫 만남",
+      "text": "세린입니다. 앞으로 잘 부탁드려요.",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "-4%",
+      "pitch": "+12Hz",
+      "intended_direction": "부드러운 인사",
+      "path": "assets/audio/dialogue/serin-audition/greeting.mp3",
+      "sha256": "4f1ea8eb7942f989660a7aa09430b81132b4b57c6bbda41a04e5fb73ef970ab5"
+    },
+    {
+      "id": "concern",
+      "situation": "걱정",
+      "text": "다치신 건 아니죠? 잠깐만 보여주세요.",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "+6%",
+      "pitch": "+12Hz",
+      "intended_direction": "걱정하며 빠르게 확인",
+      "path": "assets/audio/dialogue/serin-audition/concern.mp3",
+      "sha256": "417f6cee559fc6ad3f79578fe641a30d911683cb23ecbcca0ce9777d2f62b6eb"
+    },
+    {
+      "id": "battle",
+      "situation": "전투 시작",
+      "text": "제 뒤에 계세요. 제가 앞을 맡겠습니다.",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "+4%",
+      "pitch": "+8Hz",
+      "intended_direction": "또렷하고 단단한 선언",
+      "path": "assets/audio/dialogue/serin-audition/battle.mp3",
+      "sha256": "cafaf35545e3b4979b094a1c40c6ddfbfec226b45a5b28c21fcea5e100129d1a"
+    },
+    {
+      "id": "ultimate",
+      "situation": "궁극기",
+      "text": "이곳은… 제가 지킵니다!",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "-6%",
+      "pitch": "+4Hz",
+      "intended_direction": "침착한 결의",
+      "path": "assets/audio/dialogue/serin-audition/ultimate.mp3",
+      "sha256": "95e6a5f0734ca7306857a050644d0f08ad3f914a0561ad7945c68629a5714d32"
+    },
+    {
+      "id": "victory",
+      "situation": "승리",
+      "text": "끝났네요… 모두 무사해서 다행이에요.",
+      "voice": "ko-KR-SunHiNeural",
+      "rate": "-8%",
+      "pitch": "+10Hz",
+      "intended_direction": "안도하며 천천히",
+      "path": "assets/audio/dialogue/serin-audition/victory.mp3",
+      "sha256": "06eaf698e5dba36d6d447227504620926c0394c338fbb1e4bd51c2edd9e18860"
+    }
+  ]
+}
