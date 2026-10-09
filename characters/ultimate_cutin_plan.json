@@ -1826,8 +1826,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -1835,12 +1835,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-017/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.61,
+            "y": 0.01,
+            "width": 0.22,
+            "height": 0.37
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -1848,10 +1859,21 @@
             "effect": "같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-017/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.27,
+            "y": 0.01,
+            "width": 0.19,
+            "height": 0.32
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "청류 회환 · 결전식",
       "element": "물",
       "composition": {
@@ -1912,8 +1934,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -1921,12 +1943,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 바람 효과.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-018/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.47,
+            "y": 0.01,
+            "width": 0.22,
+            "height": 0.35
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -1934,10 +1967,21 @@
             "effect": "같은 정체성의 큰 바람 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-018/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0.04,
+            "width": 0.18,
+            "height": 0.3
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "선상 순풍 · 결전식",
       "element": "바람",
       "composition": {
@@ -1998,8 +2042,8 @@
       "versions": [
         {
           "tier": "circle3",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle3",
@@ -2007,12 +2051,23 @@
             "effect": "무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.",
             "scope": "current_tier_concept"
           },
-          "scope": "current_tier_concept"
+          "scope": "current_tier_concept",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-019/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.6,
+            "y": 0.01,
+            "width": 0.22,
+            "height": 0.35
+          }
         },
         {
           "tier": "circle6",
-          "status": "ready_to_produce",
-          "image": null,
+          "status": "generated_review_pending",
+          "image": "assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
           "user_approved": false,
           "design": {
             "tier": "circle6",
@@ -2020,10 +2075,21 @@
             "effect": "같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.",
             "scope": "future_hypothetical"
           },
-          "scope": "future_hypothetical"
+          "scope": "future_hypothetical",
+          "metadata": "assets/characters/cutins/drafts/ER-NPC-019/production-metadata.json",
+          "size": [
+            1664,
+            936
+          ],
+          "face_crop": {
+            "x": 0.67,
+            "y": 0.05,
+            "width": 0.2,
+            "height": 0.3
+          }
         }
       ],
-      "status": "settings_ready_art_pending",
+      "status": "two_tier_art_ready_review_pending",
       "ability_name": "황혼 장막 · 결전식",
       "element": "암흑",
       "composition": {

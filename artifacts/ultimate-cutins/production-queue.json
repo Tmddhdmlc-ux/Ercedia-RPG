@@ -756,7 +756,13 @@
       "element": "물",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 세디아 루브 / ER-NPC-017. Text setting: 여40 남청 머리 청색 눈 흰청 로브.\nApproved technique: 청류 회환 · 결전식. Draw action: 물줄기를 휘감아 국소 화재를 진압하거나 접근을 밀어낸다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 물 효과.. Element: 물. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-017/circle3_ultimate_v1.png",
+      "sha256": "573287fe070731044b141241b734bafcff2b033e6de90304ed8b20a4792f603f",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-017",
@@ -773,7 +779,13 @@
       "element": "물",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 세디아 루브 / ER-NPC-017. Text setting: 여40 남청 머리 청색 눈 흰청 로브.\nApproved technique: 청류 회환 · 결전식. Draw action: 물줄기를 휘감아 국소 화재를 진압하거나 접근을 밀어낸다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 물 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 물. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-017/circle6_ultimate_v1.png",
+      "sha256": "ade54246f0b3e54e3cc60988461325b2503f1aa55325396a65150dbdbf735b50",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-018",
@@ -790,7 +802,13 @@
       "element": "바람",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 모렌 시프 / ER-NPC-018. Text setting: 남28 모래 금발 초록 눈 바람 망토.\nApproved technique: 선상 순풍 · 결전식. Draw action: 망토 곁의 기류를 정돈해 작은 돛 하나를 보조한다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 바람 효과.. Element: 바람. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: close three-quarter from right, diagonal foreground perspective. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-018/circle3_ultimate_v1.png",
+      "sha256": "f4f0376e11442a30b0682c246abbd3703f9042de26c10d72cafb36287723f44e",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-018",
@@ -807,7 +825,13 @@
       "element": "바람",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 모렌 시프 / ER-NPC-018. Text setting: 남28 모래 금발 초록 눈 바람 망토.\nApproved technique: 선상 순풍 · 결전식. Draw action: 망토 곁의 기류를 정돈해 작은 돛 하나를 보조한다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 바람 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 바람. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 조선소와 항해 학교, 숙련 선원 부족. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-018/circle6_ultimate_v1.png",
+      "sha256": "e20ba21a6d9cf8931660a179a780833f4d5c8aa05443cd5558c1202b914a800c",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-019",
@@ -824,7 +848,13 @@
       "element": "암흑",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 엘라스 로크 / ER-NPC-019. Text setting: 남33 백회 머리 이색 눈 회색 로브.\nApproved technique: 황혼 장막 · 결전식. Draw action: 한 구역의 명암을 낮춰 후퇴하는 동료를 숨긴다. Skill category: spell. Effect: 무기·손·접점 한 곳에 힘을 응축한 단일 발동. 짧은 검광 또는 국소 암흑 효과.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nLOW restrained tier: a single narrow concentrated effect at hand/weapon/contact point. No full body aura, no enormous beams, no elemental storm. Proficient yet contained.\nCamera: eye-level three-quarter left view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-019/circle3_ultimate_v1.png",
+      "sha256": "2450015ead5aeb3169f96e2dccc8c9349289859fdfc206b4b7f2b2c216709488",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-019",
@@ -841,7 +871,13 @@
       "element": "암흑",
       "prompt": "Use case: stylized-concept. Asset type: Ercedia RPG cinematic ultimate art, ONE illustration.\nReference images are SAME character identity and outfit designs, not poses to copy. Preserve exact face, age, gender, eyes, hair, physique, clothing, faction emblems and equipment visible in references. Character 엘라스 로크 / ER-NPC-019. Text setting: 남33 백회 머리 이색 눈 회색 로브.\nApproved technique: 황혼 장막 · 결전식. Draw action: 한 구역의 명암을 낮춰 후퇴하는 동료를 숨긴다 발동 지점을 달리하고 주변의 힘 흐름을 정밀하게 제어한다.. Skill category: spell. Effect: 같은 정체성의 큰 암흑 효과와 환경 반응. 얼굴과 동작은 유지한다.. Element: 암흑. Limits: 준비된 도구·시야·거리와 마나 유지가 필요하며 국가 규모·무제한 효과가 아니다..\nRegional context: 루메린, 항해·교역·구호·항만; terrain 왕도 남쪽 상업·농경 혼합 지대, 고리대 문제. Background is an understated appropriate medieval fantasy environment supporting action, no extra named locations invented.\nHIGH powerful tier: commanding technique with much larger spatial effect and environment reaction, true new pose and camera, NOT a brightened copy of the low tier. Remain within the defined phenomenon; no godhood or continental destruction.\nCamera: slightly elevated diagonal view, subject on right. Dynamic weight shift matching technique, visible hands properly connected to weapon/tool; defense/support stays defense/support, never converted into destruction. Keep face prominent and readable for an eventual face crop (face width roughly 16-22% of entire canvas). Focused, character-appropriate emotion, not automatic smile. Not front-facing standing portrait.\nStyle: polished 2D anime/cartoon fantasy in SAME visual quality as references, clean linework, rich readable game colors and painterly cinematic lighting. Background and effects fully painted as OPAQUE image. Wide horizontal 16:9 PNG ideally 1920x1080 or larger. Safe edges for face and key weapon/gesture. No text, lettering, numbers, logos, UI, frames, watermark or split panels. ONE character only.",
       "destination": "assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
-      "status": "pending"
+      "status": "generated_visual_reviewed",
+      "image": "assets/characters/cutins/drafts/ER-NPC-019/circle6_ultimate_v1.png",
+      "sha256": "455b41909c6e6c7a23e60721f13bc518aa10de818332082407cee19e84ee7815",
+      "size": [
+        1664,
+        936
+      ]
     },
     {
       "id": "ER-NPC-020",
@@ -2204,5 +2240,5 @@
       "status": "pending"
     }
   ],
-  "completed_new_full_images": 32
+  "completed_new_full_images": 38
 }
