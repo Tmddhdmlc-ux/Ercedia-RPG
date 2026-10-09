@@ -1,7 +1,8 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {sameReleaseState} from '../web/release-state.js';
+import {sameReleaseState,releaseStateDifferences} from '../web/release-state.js';
 import {defaults,normalize} from '../web/state.js';
+import {emptyWorld} from '../web/world-engine.js';
 import {readFileSync} from 'node:fs';
 
 test('updating a legacy save permits zero wallet initialization and currency alias migration',()=>{
@@ -11,6 +12,30 @@ test('updating a legacy save permits zero wallet initialization and currency ali
   before.currency=12345;
   assert.notEqual(JSON.stringify(before),JSON.stringify(normalize(before)));
   assert.equal(sameReleaseState(before,JSON.parse(JSON.stringify(normalize(before)))),true);
+});
+test('2.1.8 world save migrates empty economic records and retains real reputation, party and calendar',()=>{
+  const before={...defaults(),currency:450,world_engine:emptyWorld()};
+  delete before.world_engine.shops;delete before.world_engine.trade_ids;
+  before.world_engine.calendar.date='1-1-2';before.world_engine.kingdom_reputation.west=25;
+  const after=JSON.parse(JSON.stringify(normalize(before)));
+  assert.equal(sameReleaseState(before,after),true);
+  for(const mutate of [s=>s.world_engine.kingdom_reputation.west++,s=>s.world_engine.shops.shop={stock:1},s=>s.world_engine.cash_sources.extra=500,s=>s.world_engine.market_changes.push({id:'extra'})]){
+    const changed=structuredClone(after);mutate(changed);assert.equal(sameReleaseState(before,changed),false);
+  }
+});
+test('legacy offer and escrow migrations preserve stocks, prices, funds and auction ownership',()=>{
+  const before={...defaults(),currency:450,world_engine:emptyWorld()};
+  delete before.world_engine.shops;delete before.world_engine.trade_ids;
+  before.world_engine.offers.old={id:'old',venue_id:'village',items:[{id:'ER-EQ-001',stock:2,buy_price:100,sell_price:20}]};
+  before.world_engine.auctions.old={id:'old',reserve:10,bid:30,escrow:30,status:'open'};
+  const after=JSON.parse(JSON.stringify(normalize(before)));
+  assert.equal(sameReleaseState(before,after),true);
+  for(const mutate of [s=>s.world_engine.offers.old.items[0].stock--,s=>s.world_engine.auctions.old.highest_escrow++,s=>s.world_engine.merchants['merchant:village'].wallet_copper=1]){
+    const changed=structuredClone(after);mutate(changed);assert.equal(sameReleaseState(before,changed),false);
+  }
+});
+test('migration errors expose paths without save values',()=>{
+  assert.equal(releaseStateDifferences({player:{hp:100,name:'비밀'}},{player:{hp:30,name:'숨김'}}),'player.hp, player.name');
 });
 test('launcher distinguishes downloaded and active releases without synchronizing an unapplied release',()=>{
   const source=readFileSync(new URL('../tampermonkey/host.template.js',import.meta.url),'utf8');

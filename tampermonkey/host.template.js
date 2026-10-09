@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.2.3
+// @version      1.2.4
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -116,13 +116,13 @@
       if(route!==conversation)throw Error('채팅이 전환되어 업데이트 적용을 취소했습니다.');
       if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=fresh.state;}
       const restored=await frameRequest(record,'restore',snapshot);
-      if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('상태 구조가 호환되지 않아 적용을 취소했습니다.');
+      if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('저장 항목 확인 필요: '+releaseStateDifferences(snapshot,restored.state)+' · 진행 기록을 유지하며 적용을 취소했습니다.');
       // Cache before changing the visible frame; a storage error leaves the current UI intact.
       write(CACHE,{current:release,previous:old?.release||previous});
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.2.3 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.4 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');

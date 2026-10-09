@@ -1,7 +1,7 @@
 // ==UserScript==
 // @name         에르세디아 RPG · 고정 런처
 // @namespace    https://github.com/Tmddhdmlc-ux/Ercedia-RPG
-// @version      1.2.3
+// @version      1.2.4
 // @description  GitHub 게임 UI 업데이트, 상태 복원 및 실험적 ChatGPT 연결
 // @match        https://chatgpt.com/*
 // @match        https://chat.openai.com/*
@@ -94,8 +94,7 @@ function installLocalHandoff({scope,write,openTab,now=Date.now}){
   });return true;
 }
 
-  // Only the documented currency alias migration is allowed. All other saved data
-// must match exactly before a replacement frame becomes visible.
+  // Allow documented additive economy defaults, never replace existing records.
 function sameReleaseState(before,after){
   function canonical(value){
     if(Array.isArray(value))return '['+value.map(canonical).join(',')+']';
@@ -110,7 +109,48 @@ function sameReleaseState(before,after){
     delete copy.currency;copy.wallet_copper=balance;
     return copy;
   }
-  try{return canonical(ledger(before))===canonical(ledger(after));}catch{return false;}
+  try{
+    const old=ledger(before),next=ledger(after);
+    if(old.world_engine&&next.world_engine){
+      next.world_engine=JSON.parse(JSON.stringify(next.world_engine));
+      const a=old.world_engine,b=next.world_engine;
+      for(const [key,empty]of Object.entries({shops:{},trade_ids:{},market_changes:[],npc_owned:{},cash_sources:{}})){
+        if(!Object.hasOwn(a,key)&&canonical(b[key])===canonical(empty))delete b[key];
+      }
+      const migratedMerchants={};
+      for(const [id,offer]of Object.entries(a.offers||{})){
+        const restored=b.offers?.[id];if(!restored)continue;
+        const merchant=offer.merchant_id??offer.merchant_npc_id??'merchant:'+offer.venue_id;
+        migratedMerchants[merchant]={wallet_copper:0,verified:false};
+        if(!Object.hasOwn(offer,'merchant_id')&&restored.merchant_id===merchant)delete restored.merchant_id;
+        if(!Object.hasOwn(offer,'buyable_types')&&Array.isArray(restored.buyable_types)&&new Set(restored.buyable_types).size===restored.buyable_types.length&&restored.buyable_types.every(v=>['equipment','book','material','consumable','misc'].includes(v)))delete restored.buyable_types;
+      }
+      for(const [id,auction]of Object.entries(a.auctions||{})){
+        const restored=b.auctions?.[id];if(!restored)continue;
+        const fields={seller_id:'seller:'+auction.id,instance_id:'lot:'+auction.id,min_increment:1,highest_bid:auction.bid,highest_bidder:auction.escrow>0?'player':null,highest_escrow:auction.escrow};
+        migratedMerchants[auction.seller_id??fields.seller_id]={wallet_copper:0,verified:false};
+        for(const [key,value]of Object.entries(fields))if(!Object.hasOwn(auction,key)&&canonical(restored[key])===canonical(value))delete restored[key];
+      }
+      if(b.merchants){
+        for(const [id,value]of Object.entries(migratedMerchants))if(!Object.hasOwn(a.merchants||{},id)&&canonical(b.merchants[id])===canonical(value))delete b.merchants[id];
+        if(!Object.hasOwn(a,'merchants')&&canonical(b.merchants)==='{}')delete b.merchants;
+      }
+    }
+    return canonical(old)===canonical(next);
+  }catch{return false;}
+}
+
+// Show field paths only, never secrets or save values, when a migration is refused.
+function releaseStateDifferences(before,after){
+  const paths=[];
+  function visit(a,b,path){
+    if(paths.length>=5)return;
+    if(JSON.stringify(a)===JSON.stringify(b))return;
+    if(a&&b&&typeof a==='object'&&typeof b==='object'&&!Array.isArray(a)&&!Array.isArray(b)){
+      for(const key of new Set([...Object.keys(a),...Object.keys(b)]))visit(a[key],b[key],path?path+'.'+key:key);
+    }else paths.push(path||'state');
+  }
+  visit(before,after,'');return paths.join(', ');
 }
 
   if(['127.0.0.1','localhost'].includes(location.hostname)){
@@ -203,13 +243,13 @@ function sameReleaseState(before,after){
       if(route!==conversation)throw Error('채팅이 전환되어 업데이트 적용을 취소했습니다.');
       if(old){const fresh=await frameRequest(old,'snapshot',null);if(fresh.pending||pending||generating())throw Error('검사 중 대화가 시작되어 적용을 보류했습니다.');snapshot=fresh.state;}
       const restored=await frameRequest(record,'restore',snapshot);
-      if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('상태 구조가 호환되지 않아 적용을 취소했습니다.');
+      if(snapshot&&!sameReleaseState(snapshot,restored.state))throw Error('저장 항목 확인 필요: '+releaseStateDifferences(snapshot,restored.state)+' · 진행 기록을 유지하며 적용을 취소했습니다.');
       // Cache before changing the visible frame; a storage error leaves the current UI intact.
       write(CACHE,{current:release,previous:old?.release||previous});
       write(storageKey(),restored.state);
       active=record;candidate=null;latestState=restored.state;previous=old?.release||previous;
       record.frame.classList.remove('stage-frame');loading.hidden=true;old?.frame.remove();
-      version.textContent=`런처 1.2.3 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
+      version.textContent=`런처 1.2.4 · UI ${release.manifest.version} · ${release.sha.slice(0,7)}`;
       prepared=null;update.hidden=true;rollback.disabled=!previous;
       if(!initial)send('sync-settings',null);
       tell(initial?(auto.checked?'게임 UI 연결됨 · GPT 자동 연결 준비':'게임 UI 연결됨 · GPT 수동 전송 모드'):'UI 업데이트 완료 · 장면과 게임 상태를 복원했습니다.');
