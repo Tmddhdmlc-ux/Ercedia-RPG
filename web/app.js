@@ -219,8 +219,8 @@ const mapResizeObserver=new ResizeObserver(updateMapCamera);mapResizeObserver.ob
 $('story-tab').onclick=()=>{switchTo('story');dirty();};$('map-tab').onclick=()=>{switchTo('map');dirty();};$('return').onclick=()=>{switchTo('story');$('story-tab').focus();dirty();};
 $('inventory-tab').onclick=()=>{switchTo('inventory');dirty();};
 $('status-tab').onclick=()=>{if(initializeNameOnlyPlayer(state)){playerUI.render();playHUD.render();saveGame();}switchTo('status');dirty();};
-$('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=()=>advance(1);
-$('stage').onkeydown=e=>{if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
+$('previous').onclick=()=>advance(-1);$('next').onclick=()=>advance(1);$('stage').onclick=e=>{if(!e.target.closest('button,input,textarea,select,a,[role="dialog"]'))advance(1);};
+$('stage').onkeydown=e=>{if(e.target!==$('stage'))return;if(e.key==='Enter'||e.key===' '){e.preventDefault();advance(1);}};
 document.querySelectorAll('[data-outfit]').forEach(btn=>btn.onclick=()=>{state.outfit=btn.dataset.outfit;renderAppearance();dirty();});
 $('expression').onchange=e=>{state.expression=e.target.value;renderAppearance();dirty();};
 let frame=0;
@@ -239,6 +239,8 @@ window.addEventListener('ercedia:inventory-update',event=>{
 let remasterUI=null,worldUI=null;
 function renderAll(){renderAppearance();renderDialogue();renderRegion();playerUI.render();inventoryUI.render();switchTo(state.page);playHUD.render();introUI?.render();battleUI?.render();catalogUI?.refresh();titleUI?.refresh();questUI?.render();engineUI?.render();lifeUI?.render();chatUI?.controls();worldUI?.render();remasterUI?.render();}
 chatUI=mountChatUI(state,{render:renderAll,persist:saveGame,storage,embedded,getBattle:()=>battleUI,getIntro:()=>introUI});
+// Keep the full-scene background above the actual composer, including connection feedback.
+if(typeof ResizeObserver==='function')new ResizeObserver(()=>document.querySelector('.game').style.setProperty('--composer-height',$('chat-runtime').offsetHeight+'px')).observe($('chat-runtime'));
 mountChatConnection(state,{embedded,isPending:()=>chatUI.isPending(),report:message=>chatUI.reportStatus(message)});
 lifeUI=mountNPCLifeUI(state,{submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending(),getNPC:()=>npcInfo.current()});
 engineUI=mountEngineUI(state,{assetBase:window.__ERCEDIA_CONFIG__?.assetBase,render:renderAll,persist:saveGame,submit:(...args)=>chatUI.submit(...args),isPending:()=>chatUI.isPending()});

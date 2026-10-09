@@ -7,6 +7,7 @@ import {factionLocations} from './faction-data.js';
 import {loadCampaignSettings,campaignNPCStates} from './campaign-settings.js';
 import {npcCatalog} from './npc-model.js';
 import {freshCampaign} from './new-game-state.js';
+import {startRegionInfo,automaticStartLordship} from './start-regions.js';
 export function mountNewGame(state,{render,persist,chat,embedded}){
   const $=id=>document.getElementById(id),game=document.querySelector('.game');
   const screen=$('intro-screen'),options=$('intro-options'),mapPanel=$('start-location-panel');
@@ -41,6 +42,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     save();render();
   }
   function back(){
+    if(['confirmation','lordship'].includes(state.introDraft.step)){go('kingdom');return;}
     const index=introSteps.indexOf(state.introDraft.step);if(index>0)go(introSteps[index-1]);
   }
   function next(){
@@ -54,9 +56,9 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
   function syncMap(){
     const draft=state.introDraft;if(!draft||!['kingdom','lordship','confirmation'].includes(draft.step))return;
     const kingdom=introData.start_regions.find(r=>r.id===state.mapView);if(!kingdom){if(state.mapView==='world'&&draft.kingdom){draft.kingdom='';draft.lordship='';draft.step='kingdom';save();refresh();}return;}
-    const id=kingdom.lordship_ids.includes(state.region)?state.region:'';
-    if(draft.kingdom!==kingdom.id||draft.lordship!==id){
-      draft.kingdom=kingdom.id;draft.lordship=id;draft.step='lordship';save();refresh();
+    const id=automaticStartLordship(kingdom.id,draft.kingdom===kingdom.id?draft.lordship:null);
+    if(draft.kingdom!==kingdom.id){
+      draft.kingdom=kingdom.id;draft.lordship=id;draft.step='confirmation';state.region=id;save();refresh();
     }
   }
   async function complete(){
@@ -83,23 +85,25 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
     $('new-game').disabled=chat.isPending();$('hud-player').disabled=!!draft;
     $('continue-game').hidden=!draft&&!state.player.name&&!state.scene;$('continue-game').textContent=draft?'이어하기 · 생성 계속':'이어하기';
     $('restore-previous-game').hidden=!state.previousGame;
-    const allowed=new Set(introData.start_regions.flatMap(r=>r.lordship_ids));
+    $('intro-cancel').hidden=$('intro-map-cancel').hidden=!state.player.name.trim()&&!state.scene;
+    const allowed=new Set();
     document.querySelectorAll('[data-region]').forEach(node=>{const eligible=allowed.has(node.dataset.region)||introData.start_regions.some(r=>r.id===node.dataset.region);node.dataset.startEligible=String(eligible);node.inert=!!isMap&&!eligible;});
     document.querySelectorAll('.map-detail-label').forEach(node=>node.dataset.startEligible=String(allowed.has(node.dataset.location)));
     document.querySelectorAll('.faction-pin').forEach(node=>node.inert=!!isMap);
     if(!draft){lastStep='';return;}
     $('intro-back').disabled=draft.step==='name';$('intro-error').textContent='';
     if(isMap){
-      $('intro-map-title').textContent=draft.step==='confirmation'?'시작 위치와 캐릭터 확인':draft.step==='kingdom'?'어느 왕국에서 시작할까요?':'시작할 영주령을 선택하세요';
+      if(draft.kingdom){draft.lordship=automaticStartLordship(draft.kingdom,draft.lordship);if(draft.step==='lordship')draft.step='confirmation';}
+      $('intro-map-title').textContent=draft.kingdom?'이 왕국에서 시작하시겠습니까?':'어느 왕국에서 시작할까요?';
+      const kingdomOptions=$('intro-kingdom-options');kingdomOptions.replaceChildren();
+      for(const r of introData.start_regions){const button=text('button',startRegionInfo[r.id].title,kingdomOptions);button.type='button';button.setAttribute('aria-pressed',String(draft.kingdom===r.id));button.onclick=()=>{draft.kingdom=r.id;draft.lordship=automaticStartLordship(r.id,draft.kingdom===r.id?draft.lordship:null);go('confirmation');};}
       const place=mapData.locations.find(p=>p.id===draft.lordship),region=introData.start_regions.find(r=>r.id===draft.kingdom),passive=introData.passives.find(p=>p.id===draft.passive);
       if(region){$('map-detail-title').textContent=region.kingdom+' · 시작 가능한 영주령';$('map-detail-count').textContent=region.lordship_ids.length+'곳';}
       $('intro-map-summary').replaceChildren();
-      if(draft.step==='confirmation'){
-        for(const value of [`이름: ${draft.name}`,`모습: ${draft.appearance||'나중에 정하기'}`,`삶: ${introData.questions.find(q=>q.id==='calling').options.find(o=>o.id===draft.answers.calling)?.label}`,`위험 앞 행동: ${introData.questions.find(q=>q.id==='response').options.find(o=>o.id===draft.answers.response)?.label}`,`패시브: ${passive?.name}`,`${region?.kingdom} · ${place?.label}`, 'Lv.1 · HP 100/100 · MP 100/100', '근력·민첩·지능·체력·마나 능력치 각각 10','첫 장면은 이 영주령 안의 임시 안전 정착지에서 시작합니다.'])text('p',value,$('intro-map-summary'));
-      }else text('p',place?`${region.kingdom} · ${place.label} 선택됨`:'왕국 버튼과 지도 표식 또는 지역 목록을 이용하세요. 일반 Lv.1 시작은 13개 영주령만 선택할 수 있습니다.',$('intro-map-summary'));
-      if(place){const sites=factionLocations.filter(p=>p.anchor_id===place.id);text('p','등록된 공개 세력 거점: '+(sites.length?sites.map(p=>p.name).join(' · '):'이 영주령에 배정된 거점 정보 없음'),$('intro-map-summary'));}
-      text('p','시작 조건: 전선·미개척지는 제외하고, 영주령 안의 안전한 정착지에서 시작합니다.',$('intro-map-summary'));
-      $('intro-map-next').disabled=!place;$('intro-map-next').textContent=draft.step==='confirmation'?'이 위치에서 새 게임 시작':'선택 결과 확인';
+      if(region){const info=startRegionInfo[region.id];text('h3',info.title,$('intro-map-summary'));for(const value of [info.description,info.opportunity,'왕국 선택에 따른 추가 능력치·장비 보너스는 없습니다.',`시작 영주령 자동 배정: ${place?.label}`,`${draft.name} · ${passive?.name} · Lv.1 · HP/MP 100`])text('p',value,$('intro-map-summary'));}
+      else text('p','위의 왕국 세 곳 중 하나를 눌러 풍경과 특징을 비교하세요. 시작 영주령은 자동으로 배정합니다.',$('intro-map-summary'));
+      text('p','전선과 미개척지를 피해 등록된 영주령 안의 안전 정착지에서 시작합니다.',$('intro-map-summary'));
+      $('intro-map-next').disabled=!place;$('intro-map-next').textContent=region?`${region.kingdom}에서 시작`:'왕국을 선택해주세요';
       return;
     }
     const question=introData.questions.find(q=>q.id===draft.step),candidates=passiveCandidates(draft.answers);
@@ -141,7 +145,7 @@ export function mountNewGame(state,{render,persist,chat,embedded}){
   $('intro-next').onclick=next;$('intro-skip').onclick=()=>{state.introDraft.appearance='';next();};
   $('intro-input').oninput=event=>{const d=state.introDraft;if(!d)return;if(d.step==='name')d.name=event.target.value;else if(d.step==='gender')d.appearance=event.target.value;save();};
   $('intro-input').onkeydown=event=>{if(event.key==='Enter'&&!event.isComposing&&event.keyCode!==229){event.preventDefault();next();}};
-  $('intro-map-next').onclick=()=>state.introDraft.step==='confirmation'?complete():go('confirmation');
+  $('intro-map-next').onclick=()=>state.introDraft.kingdom&&state.introDraft.lordship?complete():go('confirmation');
   $('restore-previous-game').onclick=()=>{if(chat.isPending()||!state.previousGame)return;const previous=normalize(state.previousGame);for(const key of Object.keys(state))delete state[key];Object.assign(state,previous);save();render();};
   return {render:refresh,syncMap,begin,isStarting:()=>starting,setSettings:snapshot=>{settings=snapshot;}};
 }

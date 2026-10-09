@@ -3,6 +3,10 @@ import {mapData} from './map-data.js';
 import {findNPC} from './npc-model.js';
 import {questItems} from './quest-data.js';
 export const questLabels={offered:'수주 가능',accepted:'수락됨',active:'진행 중',ready_to_report:'보고 가능',completed:'완료',failed:'실패',expired:'기한 만료',abandoned:'포기',declined:'거절'};
+export function questPreviewText(q){
+  const r=q.reward,items=[...r.item_ids.map(id=>questItems.find(i=>i.id===id)?.name||id),...r.materials.map(v=>`${questItems.find(i=>i.id===v.id)?.name||v.id} ×${v.quantity}`)];
+  return `${q.title}\n약속 보수: EXP ${r.xp} · 재화 ${r.currency}${items.length?'\n아이템: '+items.join(' · '):''}${r.affection_effects.length?'\n호감도: '+r.affection_effects.map(e=>`${findNPC(e.npc_id)?.name||e.npc_id} ${e.delta>=0?'+':''}${e.delta}`).join(' · '):''}\n\n${q.summary.slice(0,180)}${q.summary.length>180?'…':''}\n목표: ${q.objectives.map(o=>o.description).slice(0,3).join(' · ')}\n클릭하면 전체 내용과 수락 조건을 확인합니다.`;
+}
 export function currentQuestRegion(state){
   if(/^(W[1-5]|E[1-4]|S[1-4])$/.test(state.gameState.region||''))return state.gameState.region;
   const place=state.gameState.place||state.scene?.location||'';
@@ -16,6 +20,7 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
   function action(q,kind){if(chat.isPending())return;switchTo('story');chat.controls();chat.submit(`의뢰 [${q.id}] 「${q.title}」에 대해 ${({accept:'수락하고 싶습니다. 발행자의 실제 조건과 호감도·성격·상황을 확인해 수락 여부를 판정해주세요',decline:'정중하게 거절합니다',detail:'목표와 보상, 조건을 자세히 듣고 싶습니다',abandon:'포기 의사를 전하고 실제 결과를 판정받겠습니다',report:'실제 목표 증거를 제출하고 발행자에게 완료 보고합니다. 검증 뒤 quest_events report로 한 번만 정산해주세요'})[kind]}. 제 행동만으로 성공이나 완료를 확정하지 마세요.`);}
   function button(label,fn){const el=document.createElement('button');el.type='button';el.textContent=label;el.disabled=chat.isPending();el.onclick=fn;return el;}
   function render(){
+    $('quest-preview').hidden=true;
     const log=state.quest_log||[],nowRegion=currentQuestRegion(state),busy=chat.isPending()||!!state.introDraft;
     $('quest-region').textContent=(nowRegion?regionName(nowRegion):'현재 영주령 미확인')+` · 보유 재화 ${state.currency||0}`;$('quest-board').disabled=busy||!nowRegion;
     const groups={active:['accepted','active','ready_to_report'],available:['offered'],complete:['completed'],failed:['failed','expired','abandoned','declined']};
@@ -24,7 +29,8 @@ export function mountQuestUI(state,{chat,switchTo,persist,showMap}){
     if(selected&&!shown.some(q=>q.id===selected))selected=null;
     const list=$('quest-list');list.replaceChildren();$('quest-empty').hidden=!!shown.length;
     $('quest-empty').textContent=filter==='available'?'현재 알려진 의뢰가 없습니다. 현지 게시 창구를 조회하거나 NPC와 대화해보세요.':'이 분류에 기록된 의뢰가 없습니다.';
-    for(const q of shown){const card=document.createElement('button');card.type='button';card.className='quest-card';card.dataset.status=q.status;card.setAttribute('aria-pressed',String(selected===q.id));const title=document.createElement('strong'),meta=document.createElement('span'),issuerLine=document.createElement('span'),bar=document.createElement('progress'),footer=document.createElement('span');title.textContent=q.title;meta.textContent=`${q.rank||'미정'}등급 · ${questLabels[q.status]}`;issuerLine.textContent=`${issuer(q)} · ${regionName(q.region_id)}`;bar.max=100;bar.value=questProgress(q);bar.setAttribute('aria-label',q.title+' 진행률');footer.textContent=`진행 ${bar.value}% · ${deadline(q)}`;card.append(title,meta,issuerLine,bar,footer);card.onclick=()=>{selected=q.id;render();};list.append(card);}
+    for(const q of shown){const card=document.createElement('button');card.type='button';card.className='quest-card';card.dataset.status=q.status;card.dataset.questId=q.id;card.setAttribute('aria-pressed',String(selected===q.id));const title=document.createElement('strong'),meta=document.createElement('span'),issuerLine=document.createElement('span'),bar=document.createElement('progress'),footer=document.createElement('span');title.textContent=q.title;meta.textContent=`${q.rank||'미정'}등급 · ${questLabels[q.status]}`;issuerLine.textContent=`${issuer(q)} · ${regionName(q.region_id)}`;bar.max=100;bar.value=questProgress(q);bar.setAttribute('aria-label',q.title+' 진행률');footer.textContent=`진행 ${bar.value}% · ${deadline(q)}`;card.append(title,meta,issuerLine,bar,footer);card.onclick=()=>{selected=q.id;render();};list.append(card);}
+    for(const card of list.children){const q=shown.find(q=>q.id===card.dataset.questId);card.setAttribute('aria-describedby','quest-preview');const show=()=>{const preview=$('quest-preview'),rect=card.getBoundingClientRect();preview.textContent=questPreviewText(q);preview.style.left=Math.max(12,Math.min(rect.right+12,(window.innerWidth||1000)-392))+'px';preview.style.top=Math.max(12,Math.min(rect.top,(window.innerHeight||800)-320))+'px';preview.hidden=false;};card.onpointerenter=card.onfocus=show;card.onpointerleave=card.onblur=()=>{$('quest-preview').hidden=true;};}
     const q=log.find(q=>q.id===selected),detail=$('quest-detail');detail.hidden=!q;detail.replaceChildren();
     if(q){const heading=document.createElement('h3'),description=document.createElement('p'),info=document.createElement('p');heading.textContent=q.title;description.textContent=q.summary;info.textContent=`발행자 ${issuer(q)} · ${regionName(q.region_id)} · ${deadline(q)}`;detail.append(heading,description,info);
       const goals=document.createElement('ul');for(const o of q.objectives){const li=document.createElement('li');li.textContent=`${o.current>=o.target?'✓':'○'} ${o.description} · ${o.current}/${o.target}`;goals.append(li);}detail.append(goals);

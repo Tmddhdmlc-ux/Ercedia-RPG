@@ -2835,3 +2835,33 @@ input[type=range] {
 
 /* Equipped slots share the inventory icon and rarity treatment. */
 .status-equipment{margin:20px 0;padding:18px;border:1px solid var(--line);border-radius:10px;background:#10182055}.status-equipment h3{margin:0 0 14px}.equipment-slots{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:18px;max-width:460px}.equipment-slot-wrap{min-width:0;display:grid;justify-items:center;gap:9px;text-align:center}.equipment-slot-wrap>span{font-size:16px;color:var(--gold)}.equipment-slot-wrap small{font-size:13px;line-height:1.45;overflow-wrap:anywhere}.equipment-slot{width:100%;max-width:120px;aspect-ratio:1;display:grid;place-items:center}.equipment-slot .registered-item-icon{position:absolute;inset:8%;width:84%;height:84%;display:grid;place-items:center;border:0!important;box-shadow:none!important;background:transparent}.equipment-slot .registered-item-icon img{width:100%;height:100%;object-fit:contain}.equipment-empty-symbol{font-size:clamp(24px,6vw,40px);color:var(--muted);opacity:.55}.equipment-detail{margin-top:16px;padding:16px;border:1px solid var(--line);border-radius:8px;background:#101820}.equipment-detail h4{margin:8px 0;color:var(--gold);font-size:18px}.equipment-detail p{white-space:pre-line;margin:10px 0;font-size:15px;line-height:1.6}.equipment-detail button{margin-right:10px;min-height:44px}.equipment-detail>span{font-size:13px;color:var(--muted)}@media(max-width:480px){.equipment-slots{gap:10px}.status-equipment{padding:12px}.equipment-slot-wrap small{font-size:12px}}
+
+/* VN desktop composition: original art keeps its ratio, menus sit over the scene. */
+.scene-action-overlay{position:absolute;z-index:8;left:12%;right:12%;top:33%;max-height:32%;overflow:auto;padding:14px;border:1px solid #C9A66B88;border-radius:12px;background:#101820E8;box-shadow:0 10px 35px #0005;cursor:default}
+.scene-action-overlay .choice-heading{display:flex;gap:12px;color:var(--gold)}
+.scene-action-overlay .scene-choices{margin:8px 0 0}
+.scene-action-overlay .scene-choices button{min-height:52px;font-size:calc(18px + var(--text-step));line-height:1.5}
+.intro-kingdom-options{display:grid;gap:10px;margin:18px 0}
+.intro-kingdom-options button{font-size:20px;text-align:left;padding:16px}
+.intro-kingdom-options button[aria-pressed=true]{border-color:var(--gold);background:#3B3325;color:var(--gold)}
+.game[data-intro-phase=map] :is(.map-regions,.map-guide,.map-navigation,#map-detail-panel,#map-detail-list,#map-list-tabs,.map-list-tabs,.map-selection-summary){display:none}
+.start-location-panel h3{color:var(--gold);font-size:24px}
+.quest-card{position:relative}
+.quest-preview{position:fixed;z-index:100;width:380px;max-width:calc(100vw - 24px);max-height:300px;overflow:hidden;padding:20px;border:1px solid var(--gold);border-radius:10px;background:#101820FA;box-shadow:0 12px 36px #0008;white-space:pre-line;font-size:17px;line-height:1.6;pointer-events:none}
+@media(min-width:701px){
+ .background[data-art-fit=contain]{object-fit:cover}
+ .game:fullscreen{width:100vw;height:100dvh;max-height:none;border:0;border-radius:0}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) #story{position:absolute;inset:0 0 var(--composer-height,150px);min-height:0}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .stage{height:100%;min-height:0;flex:1}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) :is(.new-game-actions,.tabs,.play-hud){position:relative;z-index:10;background:#101820C9;border-color:#FFFFFF18}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .chat-runtime{position:relative;margin-top:auto;z-index:11;max-height:30%;background:#101820F5}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .story-controls{position:absolute;bottom:0;left:0;right:0;height:44px;background:#101820AA;z-index:9}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .dialog{bottom:64px;left:8%;right:8%}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) :is(.location,.scene-tag){top:190px}
+ :is(.embedded-game .game,.game.is-expanded,.game:fullscreen)[data-page=story][data-intro-phase=none]:not([data-battle=active]) .game-foot{display:none}
+}
+@media(min-width:701px){
+ .stage .quest-proposals{position:absolute;top:28%;left:6%;right:52%;z-index:8;max-height:38%;overflow:auto;background:#101820EC;padding:12px;border-radius:10px}
+ .stage:has(.quest-proposals:not([hidden])) .scene-action-overlay{left:52%;right:6%;top:28%;max-height:38%}
+ .stage:has(.quest-proposals:not([hidden])) .scene-choices{grid-template-columns:1fr}
+}

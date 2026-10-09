@@ -45,6 +45,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
     const choices=state.scene?.choices||[],last=!state.scene||state.sceneIndex===state.scene.dialogue.length-1;
     const choosing=!!choices.length&&last&&!naming&&!creating;
     $('scene-choices').hidden=!choosing;$('choice-heading').hidden=!choosing;
+    $('scene-action-overlay').hidden=!choosing;
     choiceButtons.forEach((button,index)=>{const choice=choices[index];button.hidden=!choice;button.textContent=choice?`${index+1}. ${choice.text}`:'';button.disabled=!!pending||!last||naming||creating;button.onclick=()=>choose(index);});
     $('free-action').disabled=!!pending||naming||creating;$('send-action').disabled=!!pending||naming||creating;$('cancel-wait').hidden=!pending;
     $('retry-response').hidden=!failedRequest||!!pending;$('retry-response').disabled=!!pending||creating||naming;
