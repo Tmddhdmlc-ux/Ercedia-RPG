@@ -115,5 +115,5 @@ test('distribution totals, everyday descriptions and reserved hybrids reach GM r
   for(const group of [growthRules.knights,growthRules.circles])assert.ok(Math.abs(group.reduce((sum,r)=>sum+r.population_percent,0)-100)<.00001);
   const g=growthContext(fixture());assert.equal(g.next.min_level,20);assert.match(g.rules.circles[1].social_description,/전투에 능하지/);
   assert.ok(g.rules.hidden_classes.every(c=>c.status==='reserved'&&c.unlock_conditions===null));
-  assert.match(actionPrompt(fixture(),'마을에서 일을 구한다','growth-request'),/전투 밖에서도/);
+  assert.match(actionPrompt(fixture(),'육체 수련을 한다','growth-request'),/전투 밖에서도/);
 });

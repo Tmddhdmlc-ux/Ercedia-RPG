@@ -1,3 +1,4 @@
+import {operatingRules} from './gm-turn-policy.js';
 import {narrativeFocus} from './narrative-context.js';
 import {isRecoveryAction,recoveryFacts} from './recovery-context.js';
 import {itemCatalog,catalogItem} from './item-catalog.js';
@@ -41,7 +42,7 @@ export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
  if(domains.trade)facts.price_baselines=currencyRules.baseline_prices.filter(p=>/sword|staff|armor|bread|simple_meal/.test(p.id));
  return facts;
 }
-export const outcomeInstruction='[실제 기록] 대사·gm_rulings는 지급/의뢰 완료/전투의 대체 기록이 아니다. 새 현지 일반 의뢰의 ID·목표·보수는 GM이 구성할 수 있으며 사전 등록된 의뢰 ID가 없다는 이유로 조회를 반복하지 않는다. quest_updates에 offered 제안을 기록하고 실제 동의는 quest_events accept, 실제 수행 증거는 world_events, 발행자 보고는 quest_events report로 기록한다. 의뢰 선택지는 quest_id를 반드시 연결한다. 지급 숫자·원장·카탈로그 조회 지시를 NPC 대사나 선택지로 떠넘기지 않는다. 계약과 후속 판정은 서로 다른 gm_rulings.id를 쓴다. 기존 판정 내용은 수정하지 않는다. 일반 결과는 1~3개의 짧은 대사로 묶고 중요한 새 위험은 대응 선택 전에 자동 해결하지 않는다. ';
+export const outcomeInstruction=operatingRules;
 export function questWireFacts(state){
  return {source:'tampermonkey/QUEST_SCHEMA.md',new_quest:{id:'이번 캠페인의 고유 ID',title:'의뢰 제목',summary:'공개 조건',origin:'personal_npc 또는 guild_board 또는 dynamic_event',type:'repair/escort/investigate/delivery 등',status:'offered',rank:'F/E/D/C/B 또는 null',region_id:state.gameState?.region,issuer_npc_id:'현재 실제 발행자 등록 NPC ID',issuer_name:'등록 이름',story_required:true,objectives:[{id:'목표 고유 ID',description:'실제 수행',target:1,verification:{kind:'action 또는 clue 또는 escort 또는 실제 물품 delivery',target_id:'이번 계약의 구체적인 작업/단서 ID'}}],reward:{xp:'실제 난도에 맞게 GM 판정',currency:'발주자 예산 근거가 있는 동화 정수',item_ids:[],materials:[],affection_effects:[]}},quest_events:'[{event_id,quest_id,kind:accept/decline/abandon/fail/report,reason}]',world_events:'[{event_id,kind:action/clue/escort, target_id:목표 verification.target_id,location:실제 scene.location/place,proof:이번 행동의 구체적 결과,subject_alive:호위이면true}]',ordering:'수락한 뒤 수행한 증거만 유효하다. report는 목표 증거·위협 대응 완료 후 실제 발행자 앞에서. 보상 player/inventory/engine_events xp를 함께 출력하지 않는다. 화물 인벤토리 아닌 노동 운반·정찰·복구는 action 증거로 기록한다. delivery는 등록 소지품 감소와 recipient_id가 필요하다.',story_events:'[{event_id,quest_id,kind:threat,description:공개된 돌발 위협,protected:실제 보호 대상}]를 발견 턴에 기록하고 선택지를 제시한다. 플레이어가 대응한 후 다음 턴에 {event_id,quest_id,kind:resolve,threat_id:발견 사건ID,description:실제 대응과 후일담,protected:보호 대상}로 해결한다. 신규 위협 발견과 해결을 같은 응답에서 건너뛰지 않는다.'};
 }

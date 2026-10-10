@@ -25,7 +25,7 @@ test('GM motives, private contacts and concealed civilian identities never enter
 test('current scene context is focused and actual links retain direction without new numeric axes',()=>{
  const s=economyState();s.relationships={'ER-NPC-001':{affection:12}};s.scene={npc:{id:'ER-NPC-001'},dialogue:[]};s.npc_life={npcs:{},memories:[],rumors:[],traces:[],links:[{event_id:'current',from_npc:'ER-NPC-001',to_npc:'ER-CORE-028',relation:'보고를 두고 갈등',player_known:false}]};
  const c=relationshipContext(s);assert.ok(c.baseline.some(e=>e.from==='ER-CORE-028'&&e.to==='ER-NPC-001'));assert.equal(c.actual_links[0].from_npc,'ER-NPC-001');assert.ok(c.baseline.length<=60);assert.ok(c.baseline.length<relationshipGraph.edges.length);
- assert.equal(contextSummary(s).relationship_network.actual_links[0].relation,'보고를 두고 갈등');assert.ok(actionPrompt(s,'대화','request').includes('[인물·세력 관계]'));assert.deepEqual(s.relationships,{'ER-NPC-001':{affection:12}});
+ assert.equal(contextSummary(s).relationship_network.actual_links[0].relation,'보고를 두고 갈등');assert.ok(actionPrompt(s,'세력 관계를 묻는다','request').includes('[인물·세력 관계]'));assert.deepEqual(s.relationships,{'ER-NPC-001':{affection:12}});
 });
 test('public relationship facts respect known NPCs, witnessed changes and hidden later updates',()=>{
  const s=economyState();s.scene={npc:{id:'ER-CORE-028'},dialogue:[]};s.npc_life={npcs:{'ER-CORE-028':{known:true},'ER-NPC-001':{known:true}},links:[]};

@@ -69,14 +69,14 @@ export async function loadCampaignSettings({fetcher=globalThis.fetch,onProgress=
 }
 export function campaignSettingsPrompt(snapshot){
   validateConvenienceRules(snapshot.files);
-  const priority=['BOOTSTRAP.md',conveniencePath,'WORLD.md','NARRATION_RULES.md','AUTONOMOUS_WORLD_RULES.md'].filter(p=>snapshot.paths.includes(p));
+  const priority=['BOOTSTRAP.md','GM_OPERATING_RULES.md',conveniencePath,'WORLD.md','NARRATION_RULES.md','AUTONOMOUS_WORLD_RULES.md'].filter(p=>snapshot.paths.includes(p));
   const ordered=[...priority,...snapshot.paths.filter(p=>!priority.includes(p))];
   const coverage=snapshot.repository_index?`저장소 전체 파일 목록을 탐색했습니다. ${snapshot.repository_index.length}개 중 게임 설정 ${snapshot.paths.length}개는 아래에 원문을 수록했습니다. 이미지·소스·개발 자료는 목록으로 식별했으며 바이너리/코드까지 읽었다고 주장하지 마세요. 먼저 BOOTSTRAP과 참조 규칙을 읽고 아래 모든 설정을 확인하세요. 문맥 한계나 첨부 접근 문제로 일부를 읽지 못했다면 settings_loaded를 출력하지 말고 누락 경로를 알리세요. 개발 자료는 게임 설정을 덮어쓰는 규칙이 아닙니다.\n저장소 전체 목록:\n${JSON.stringify(snapshot.repository_index)}\n\n`:'';
   return coverage+convenienceInstruction+'\n\n'+`GitHub 설정 원문 전체 스냅샷입니다. 저장소 ${REPO}, 고정 커밋 ${snapshot.sha}, ${ordered.length}개 게임 설정 파일을 UI가 실제로 읽었습니다. 이 채팅의 GM은 아래 문서와 데이터를 읽고 세계관, 인물, 능력치, 성장, 전투, 장비, 기술서, 던전, 전리품, 관계 규칙을 적용하세요. 전문 문서와 최신 승인 설정을 우선하고, 시안은 승인 설정으로 확정하지 마세요. *_SECRET.md 및 BOOTSTRAP의 내부 설정은 GM 판단 전용이며 일반 대사, NPC 지식, 선택지, 지도, 도감, 정보창에 누설하지 마세요. UI 소스/이미지 바이너리는 세계관 원문에 포함하지 않았습니다. 코드나 README의 과거 구현 상태를 게임 규칙으로 취급하지 마세요. 저장 상태의 주인공 이름·시작 위치·패시브·현재 자원과 실제 진행 기록을 유지하세요. 설정 동기화는 새 게임을 만들거나 진행을 초기화하는 행동이 아닙니다. 설정을 읽은 뒤 별도 요약문이나 확인 인사 대신 앞서 요청한 준비 확인 또는 장면을 ercedia_scene JSON 하나로 출력하세요. 설정 읽기만 요청했다면 게임을 진행하지 마세요.\n\n${ordered.map(path=>`<<<GITHUB_SETTING ${path}>>>\n${snapshot.files[path]}\n<<<END_GITHUB_SETTING>>>`).join('\n\n')}`;
 }
 export function legacyCampaignPrompt(snapshot){
   validateConvenienceRules(snapshot.files);
-  const paths=['BOOTSTRAP.md',conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md',...snapshot.paths.filter(p=>!['BOOTSTRAP.md',conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md'].includes(p))];
+  const paths=['BOOTSTRAP.md',...(snapshot.paths.includes('GM_OPERATING_RULES.md')?['GM_OPERATING_RULES.md']:[]),conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md',...snapshot.paths.filter(p=>!['BOOTSTRAP.md','GM_OPERATING_RULES.md',conveniencePath,'WORLD.md','QUEST_SYSTEM.md','COMBAT_GROWTH.md','PROGRESSION.md'].includes(p))];
   return convenienceInstruction+'\n\n'+`이 채팅에 에르세디아 설정을 등록합니다. 기존 캠페인과 진행이 있다면 유지합니다. 현재 런처는 파일 자동 첨부를 지원하지 않으므로 첨부 파일이 있다고 가정하지 마세요. UI가 확인한 최신 main 커밋은 ${snapshot.sha}입니다. 아래 GitHub 원문을 실제로 읽어 설정을 사용하세요. 열람할 수 없다면 설정을 모두 읽었다고 주장하지 말고 dialogue에서 접근에 필요한 사항을 알려주세요. settings_loaded는 실제로 전부 읽은 경우에만 기록하며 필수는 아닙니다.\n\n설정 원문의 공통 경로: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/\n필수 시작 문서: https://raw.githubusercontent.com/${REPO}/${snapshot.sha}/BOOTSTRAP.md\n전체 상대 경로 목록(공통 경로 뒤에 붙여 열람):\n${paths.join('\n')}\n\n이미 UI가 읽은 시작 안내 원문:\n${snapshot.files['BOOTSTRAP.md']||''}`;
 }
 export function campaignNPCStates(snapshot,knownIds){

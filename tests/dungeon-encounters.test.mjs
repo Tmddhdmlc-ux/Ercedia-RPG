@@ -41,9 +41,9 @@ test('boss and elite loot keep one roll per corpse and use their registered thre
  const f=fixture('DUN-E2-02-BOSS'),sc=normalizeScene(f.raw);assert.ok(lootPool(f.p.base_monster_id,f.d.id,'epic',f.p.id).length);
  const values=[7971,1,1],next=prepareBattleLoot(f.s,sc,{roll:()=>values.shift()});assert.equal(next.battle.outcome.loot_rolls.length,1);assert.equal(next.battle.outcome.loot_rolls[0].dungeon_foe_id,f.p.id);assert.equal(next.battle.outcome.items_added.length,1);validateBattleSettlement(next,f.s);
 });
-test('local GM context includes only regional foes and sends dungeon, loot and crafting instructions',()=>{
+test('local GM context includes only regional foes and sends relevant dungeon and loot instructions',()=>{
  const s=economyState(),ctx=contextSummary(s);assert.equal(ctx.dungeon_encounters.profiles.length,4);assert.ok(ctx.dungeon_encounters.profiles.every(p=>p.dungeon_id.startsWith('DUN-W5-')));
- const prompt=actionPrompt(s,'던전 탐색','request');for(const term of ['[지역 던전]','[처치별 전리품]','[대장간 제작]'])assert.ok(prompt.includes(term));
+ const prompt=actionPrompt(s,'던전 탐색','request');for(const term of ['[지역 던전]','[처치별 전리품]'])assert.ok(prompt.includes(term));
 });
 test('an invented boss technique or changed cost cannot enter a registered encounter',()=>{
  const f=fixture('DUN-W1-01-BOSS'),sc=normalizeScene(f.raw);sc.battle.participants[1].skills[0].mp_cost++;assert.throws(()=>validateBattleSettlement(sc,f.s),/고유 기술/);

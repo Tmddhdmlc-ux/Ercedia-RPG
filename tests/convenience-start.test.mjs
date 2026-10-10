@@ -12,7 +12,7 @@ const base={'BOOTSTRAP.md':'Start rules','WORLD.md':'World','characters/player_d
 const source=files=>async url=>({ok:true,json:async()=>url.includes('/git/ref/')?{object:{sha}}:{tree:Object.keys(files).map(path=>({path,type:'blob'}))},text:async()=>files[decodeURIComponent(url.split(sha+'/')[1])]});
 
 test('missing, old or incomplete convenience rules block loading and prompt generation',async()=>{
-  for(const content of [undefined,rules.replace('v1.1','v1.0'),'# 에르세디아 RPG — 게임적 허용·자동 후처리 운영 규칙 v1.1']){
+  for(const content of [undefined,rules.replace(/v\d+\.\d+/, 'v1.0'),'# 에르세디아 RPG — 게임적 허용·자동 후처리 운영 규칙 v1.1']){
     const files={...base,[path]:content};if(content===undefined)delete files[path];
     const progress=[];
     await assert.rejects(loadCampaignSettings({fetcher:source(files),onProgress:p=>progress.push(p)}),/GAMEPLAY_CONVENIENCE_RULES.md/);

@@ -1,1 +1,2 @@
-export const gameplayPacingInstruction="[플레이 속도·게임적 성사 우선] 조건이 없어도 GM이 흔한 재료·도구·독학·대체 방법을 마련해 같은 응답에서 성사시키세요. 하급 검 등 기본 제작은 한 응답에서 완성·획득까지 처리하세요. 준비 질문·턴 연쇄는 금지합니다. 과정은 1~3문장, 시간은 게임 속에서 한 번에 정산하고 현실의 플레이 대기시간으로 바꾸지 마세요. 단독 의도를 유지하고 실제 보상은 한 번 기록하세요. 무변화 보고와 보상 숫자·기술 등록·엔진 정산 설명은 dialogue에 반복하지 마세요. 획득 알림은 UI가 실제 정산 후 중앙에 표시합니다. 대화는 행동 결과와 인물 반응을 보여주되 실행 불가·실패·비용·위험처럼 다음 선택에 필요한 제한은 이유를 안내하세요. 실제 판정과 구조화 사건은 유지하세요. ";
+import {operatingRules} from './gm-turn-policy.js';
+export const gameplayPacingInstruction=operatingRules;

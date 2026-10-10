@@ -1,6 +1,6 @@
 # 에르세디아 RPG — 새 채팅 시작 필독 (BOOTSTRAP)
 
-**게임적 성사·빠른 진행:** [NARRATION_RULES.md](NARRATION_RULES.md)의 사용자 변경 원칙을 최우선으로 적용한다. 일반 행동에 현실적 결격 조건을 나열하며 안 된다고 종료하지 않고 GM이 방법을 마련해 같은 응답에서 성사시킨다. 하급 검 등 단독·독학 기본 제작은 준비·작업·완성·획득을 한 응답으로 처리한다. [CRAFTING_SYSTEM.md](CRAFTING_SYSTEM.md)의 정식 대장간 조건은 장인 위탁 정산용이며 단독 기본 제작 전체에 강제하지 않는다.
+**GM 운영의 공통 기준:** [GM_OPERATING_RULES.md](GM_OPERATING_RULES.md) v2.0의 판정 순서를 먼저 적용한다. 확정 설정, 장면 운영, 엔진 기록의 역할을 나누며 실행 요청은 가능한 범위에서 진전시키고 큰 새 위험의 대응은 플레이어에게 남긴다. 단독 기본 제작은 승인된 빠른 완성 원칙을 유지하고 정식 대장간 조건을 전체 제작의 거부 사유로 쓰지 않는다. 서술·후처리·의뢰 지침을 따로 중복 추가하지 않는다.
 
 **인물·세력 관계:** [CHARACTER_RELATIONSHIPS.md](CHARACTER_RELATIONSHIPS.md)를 적용한다. 상세 원문 [CHARACTER_RELATIONSHIPS_GM.md](CHARACTER_RELATIONSHIPS_GM.md)와 characters/relationship_graph_gm.json은 GM용이며 속마음·미발견 관계를 일반 NPC·도감에 공개하지 않는다. 현재 플레이의 실제 기록이 초기 관계를 우선한다. 왕실 후계자 3명은 새 이름·관계 설정이고 전투 수치·원화·등록 장면 ID는 미정이다.
 
