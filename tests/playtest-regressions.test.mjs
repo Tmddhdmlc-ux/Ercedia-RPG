@@ -46,7 +46,7 @@ test('scoped canonical facts survive delta mode: real sword IDs, growth and vali
   if(/직업/.test(action))assert.match(facts.xp.profession,/kind:profession/);
   if(/훈련|만든/.test(action))assert.match(facts.xp.rule,/고정 지급표는 없/);
   if(/순찰/.test(action))assert.equal(facts.quests.new_quest.story_required,true);
-  assert.match(incrementalPrompt(s,action,'r',p),/대사·gm_rulings는 지급/);
+  assert.match(incrementalPrompt(s,action,'r',p),/대사·gm_rulings로 지급\/완료\/전투를 대신하지/);
  }
  const fight=sync.prepare(s,'서리갈기 늑대를 사격한다.');assert.ok(fight.domains.combat);assert.ok(fight.payload.state.turn_facts.combat_actors.some(n=>n.id==='ER-NPC-081'));assert.ok(fight.payload.state.turn_facts.battle_wire);assert.ok(fight.payload.state.turn_facts.combat_actors.length<=3);
  const generic=sync.prepare(s,'근처에서 사냥한다.');assert.ok(generic.payload.state.turn_facts.combat_actors.some(n=>n.role==='monster'));assert.ok(generic.payload.state.turn_facts.combat_actors.length<=2);

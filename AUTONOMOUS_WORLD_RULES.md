@@ -22,7 +22,7 @@
 - QUEST_SYSTEM.md: 의뢰의 기한, 실패 및 후속 변화
 - BORDER_REPUTATION.md: 전쟁에 따른 검문·명성 변화
 - RELATIONSHIP_SYSTEM.md: NPC의 기억과 호감도 반응
-- NARRATION_RULES.md: 대화 60% / 상황 묘사 40%
+- NARRATION_RULES.md: 인물 중심 인터랙티브 소설, 고정 비율 없이 장면별 호흡 적용
 - BATTLE_SYSTEM.md: 기존 스탠딩 자동전투 재생
 - PROGRESSION.md: 경지 돌파는 수치가 아닌 깨달음만으로 결정
 

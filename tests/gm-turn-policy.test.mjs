@@ -4,9 +4,22 @@ import {defaults} from '../web/state.js';
 import {actionPrompt} from '../web/scene.js';
 import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';
 import {operatingRules} from '../web/gm-turn-policy.js';
+import {narrationStyle} from '../web/narration-style.js';
 
 function fixture(){const s=defaults();s.campaign_id='policy-test';s.gameState={region:'W1',place:'목재 운송길',date:'650-07-01',time:'10:00',events:['브란에게 위험을 알렸다.']};s.scene={scene_id:'threat-scene',location:'목재 운송길',time:'10:00',npc:{id:'ER-COM-001',speaker:'브란 오크펠',outfit:'none',emotion:'base'},dialogue:[{speaker:'브란 오크펠',text:'길 아래에 사람이 있어!'}],choices:[{id:'protect',kind:'action',quest_id:'timber',text:'아래쪽 주민을 대피시킨다.'}]};s.quest_log=[{id:'timber',title:'목재 운송',status:'accepted',issuer_npc_id:'ER-COM-001',story_required:true,story:[{event_id:'rolling-load',kind:'threat',description:'기울어진 목재가 주민의 통행로를 위협한다.',protected:'통행 중인 주민'}]}];return s;}
 function head(prompt){return JSON.parse(prompt.split('[현재 장면과 행동]\n')[1].split('\n\n')[0]);}
+
+test('all request paths share the novel policy without legacy quotas or a brevity override',()=>{
+ const s=fixture(),sync=createTurnSync(),p=sync.prepare(s,'브란에게 소감을 묻는다');
+ for(const prompt of [actionPrompt(s,'브란에게 소감을 묻는다','r'),actionPrompt(s,'브란에게 소감을 묻는다','r',{compact:true}),incrementalPrompt(s,'브란에게 소감을 묻는다','r',p)]){
+  assert.equal(prompt.split(narrationStyle).length-1,1);
+  assert.ok(!/대화60%|묘사40%|1~3개 짧은 대사|짧게 답하/.test(prompt));
+  assert.match(prompt,/비율·개수는 고정하지/);assert.match(prompt,/교훈·재요약·선택 질문 대신/);
+  assert.match(prompt,/전지적 비밀 독백·플레이어 대리 반응/);
+  assert.match(prompt,/결과를 먼저 정하거나 모두 같은 결말로 합치지/);
+  assert.match(prompt,/life_events experience.affection_delta/);
+ }
+});
 
 test('full, compact and incremental requests share one operating policy and lead with the same actual conflict',()=>{
  const s=fixture(),before=structuredClone(s),action=s.scene.choices[0].text;

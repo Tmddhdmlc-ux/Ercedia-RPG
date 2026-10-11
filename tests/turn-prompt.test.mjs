@@ -35,10 +35,10 @@ test('ordinary resident dialogue retains personality and speech without the enti
   assert.deepEqual(context.adventure.regional_residents,[resident]);
   assert.ok(context.adventure.regional_residents[0].speech_style);
 });
-test('ordinary conversation requests brief output while detailed requests and mechanics remain unrestricted',()=>{
+test('ordinary conversation preserves scene texture without forcing brevity or new danger',()=>{
   const state=saved();
   assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/\[일상 대화 응답\]/);
-  assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/필수 사건 증빙은 생략하지/);
+  assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/필수 사건 증빙은 유지/);
   for(const action of ['자세하게 이야기를 듣는다.','긴 대사로 독백한다.','공격한다.','던전을 탐색한다.','의뢰를 보고한다.','수련한다.'])assert.ok(!actionPrompt(state,action,'r',{compact:true}).includes('[일상 대화 응답]'));
 });
 test('dungeon and combat turns retain rules without sending the global UI-only loot pools',()=>{
@@ -72,6 +72,6 @@ test('failed responses do not cause automatic settings retransmission',()=>{
 
 
 test('execution requests delegate routine timing and outcomes while preserving information-only and progression safeguards',()=>{
- const s=saved();for(const compact of [true,false]){const prompt=actionPrompt(s,'개인 기초 단련 1회를 실행한다.','training-r',{compact});assert.match(prompt,/통상적인 소요 시간/);assert.match(prompt,/이번 응답에서 사건과 시각/);assert.match(prompt,/정보 문의는 실행 동의가 아니며/);assert.match(prompt,/큰 위험/);assert.match(prompt,/같은 날짜·분야 반복/);assert.match(prompt,/능력치 포인트 배분/);assert.match(prompt,/경지 돌파는 자동 확정하지/);}
+ const s=saved();for(const compact of [true,false]){const prompt=actionPrompt(s,'개인 기초 단련 1회를 실행한다.','training-r',{compact});assert.match(prompt,/실행의 통상 시간·결과/);assert.match(prompt,/이번 사건·시각에 반영/);assert.match(prompt,/정보 문의는 실행 동의가 아닙니다/);assert.match(prompt,/큰 위험/);assert.match(prompt,/같은 날짜·분야 반복/);assert.match(prompt,/능력치 포인트 배분/);assert.match(prompt,/경지 돌파는 자동 확정하지/);}
  const compact=actionPrompt(s,'안부를 묻는다.','r',{compact:true});assert.match(compact,/kind는 dialogue\/travel\/quest\/investigate\/trade\/training\/action/);
 });
