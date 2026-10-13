@@ -114,3 +114,15 @@ test('named local reunion candidates carry public voice and witnessed memories w
  const sync=createTurnSync();sync.acknowledge(sync.prepare(s,'혼자 쉰다'));assert.deepEqual(sync.prepare(s,action).payload.state.turn_facts.narrative_focus.requested_people,f.requested_people);for(const compact of [true,false])assert.ok(actionPrompt(s,action,'reunion',{compact}).includes('requested_people'));
  s.scene.npc=actor('ER-COM-007');assert.equal(narrativeFocus(s,action).requested_people,undefined);assert.equal(narrativeFocus(s,'세린을 만나러 간다').requested_people,undefined);
 });
+
+test('durable public conversational boundaries survive actor changes without automatic relationship or knowledge sharing',()=>{
+ const s=start();s.scene.npc=actor('ER-NPC-057');const original=JSON.stringify(s);
+ const f=narrativeFocus(s,'손을 잡는 인사보다 말로 인사가 편하다고 직접 말한다');
+ assert.match(f.memory_recording_rule,/affection_delta=0/);assert.match(f.memory_recording_rule,/다른 인물에게 자동 공유하지 않는다/);assert.equal(JSON.stringify(s),original);
+ const scene={...s.scene,cast:[s.scene.npc],scene_id:'boundary',location:s.gameState.place,life_events:[{event_id:'maya-boundary',kind:'experience',date:'650-07-01',source_id:'scene:boundary',reason:'실제 대화에서 인사 선호를 말했고 마야가 받아들였다.',npc_id:'ER-NPC-057',action:'인사 선호 전달',result:'손잡는 인사보다 말로 인사가 편하다는 요청을 듣고 존중하기로 답했다.',location:s.gameState.place,affection_delta:0,player_witnessed:true,participants:[]}]};
+ Object.assign(s,planNPCLife(s,scene));s.scene={...scene,npc:actor('ER-COM-001'),cast:[],life_events:undefined};
+ assert.ok(!narrativeFocus(s).shared_memories?.some(m=>m.npc_id==='ER-NPC-057'));
+ const reunion=narrativeFocus(s,'마야에게 돌아간다');assert.equal(reunion.requested_people.shared_memories.find(m=>m.action==='인사 선호 전달').npc_id,'ER-NPC-057');
+ s.scene={...scene,life_events:undefined};assert.ok(narrativeFocus(s).shared_memories.some(m=>m.action==='인사 선호 전달'));assert.deepEqual(s.relationships,{});
+});
+

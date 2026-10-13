@@ -75,5 +75,7 @@ export function narrativeFocus(state,action='',questId=null){
   focus.resolution_rule='resolve는 기록된 보호 대상의 실제 피해 위험이 해소됐는지 판정한다. 해체·범인 규명만 유일한 해결로 삼지 않는다. 접촉·피해 경로의 물리적 차단, 담당자의 지속 관리 인계, 보호 대상의 노출 해소가 실제 확인되면 그 범위의 해결 근거와 남은 제한을 기록할 수 있다. 표지·임시 상자·막연한 인계만으로 해결하지 않는다. 통제 실패·피해 경로가 남으면 구체적으로 밝히고 위험을 유지한다. 원래 계약이 장치 해체·범인 규명을 요구했다면 그 목표를 생략하지 않는다.';
   focus.report_rule='completion_gate=unresolved_threat이면 근무 인계·중간 보고와 의뢰 완료를 구분한다. 목표 수행만으로 report/보상·완료 보고 선택지를 내거나 미해결 사건을 별건으로 떼어 완료하지 않는다. 남은 위협에 실제 대응하고 검증된 해결·후일담을 기록한 뒤 완료 보고한다. 검증 통과를 위해 해결을 날조하지 않는다.';
  }
+ if(voices.length||requested.length)focus.memory_recording_rule='실제 대화에서 새로 공유한 이름·호칭·접촉 경계·지속될 약속·선호가 다음 만남의 반응에 필요하면 기존 life_events kind=experience로 그 인물의 직접 들은 내용과 실제 응답을 기록한다. source_id=scene:<이번 scene_id>, npc_id=실제 현장 등록 인물, date/location=이번 실제 시공간, action/result와 reason은 관측된 내용만, player_witnessed=true. 호감 변화의 별도 사건 근거가 없으면 affection_delta=0, participants=[]이며 다른 인물에게 자동 공유하지 않는다. 질문·제안·희망을 수락·계약·능력·성공으로 기록하지 않고 모호한 말의 진의나 사적 속마음을 추측하지 않는다. 현재 작업 진행이나 일상 설명만 확인한 대화는 지속될 새 약속·경계·자기소개가 아니므로 별도 experience를 만들지 않는다. 이미 저장한 같은 내용·일반 맞장구·반복 설명은 매 턴 새 기억으로 쌓지 않는다. 첫 만남은 자동 기록되지만 새 자기소개나 경계를 보존하는 기록을 대신하지 않는다.';
  return focus;
 }
+
