@@ -193,3 +193,4 @@
 - 의존성 준비/최종 통합 빌드/UI2.1.112/NARRATION3.7/설정365개·3983359자/v1 호환/자산·음향digest 유지. 공통 및 인물 지침이 전체·간략·증분 요청에 같게 전달되는 검사를 보강했다. canon 재판정·보상·성장·NPC 이동 검사를 완화하지 않았다.
 - 미해결: 반복 몸짓·대사/지문 교대, 일부 반응 뒤 관계·말투 해설, 다른 역할의 실제 인물 목소리 비교, 방한 물품·야외 활동/복합 진행, 장기 저장·자동 브리지. 일반 장면을 일괄 짧게 만드는 대신 다른 등록 인물과 구체적 상황 변화에서 검증한다. 다음은 다른 현지 인물에게 화제를 전환하여 역할·말투 차이를 실제 비교한다.
 - 비공개 재개: 회차13 reunion-knowledge-evidence.json(9단락 baseline), banter-quiet-before-evidence.json(초기 조용한 기다림), banter-intermediate-evidence.json(부분 개선), banter-final-evidence.json(최종 실제 농담/저장), banter-final-seed.json(14:19/440동/물자 보관 장소), banter-proof.png, banter-check.html. 원본 QA/이미지는 설정 패키지에 넣지 않았다.
+- 배포48b9b94(main): 원격 ref/고정 커밋 raw version·manifest2.1.112/sha256/음향·자산digest/bridge1/state1 일치 확인. 추적 작업 트리 깨끗함. 후속 커밋은 배포 확인 기록만 포함한다.
