@@ -25,3 +25,10 @@ test('full, compact and delta requests keep the same public conversational ancho
 test('solo scenes do not manufacture interlocutors or shared memories',()=>{
  const s=state();s.scene.npc=null;const f=narrativeFocus(s,'잠시 쉰다');assert.equal(f.voices,undefined);assert.equal(f.shared_memories,undefined);assert.equal(f.interaction_rule,undefined);assert.equal(f.scene_entry_rule,undefined);
 });
+test('acknowledgment and repeated questions keep evidence rather than classifying intent by keywords',()=>{
+ const s=state();s.scene.dialogue=[{speaker:'브란 오크펠',speaker_id:'ER-COM-001',text:'갈라진 목재는 기둥에 쓰지 않네. 상태를 살펴야 해.'}];
+ const before=structuredClone(s),a=narrativeFocus(s,'알겠어요. 기둥에는 쓰지 않을게요.'),q=narrativeFocus(s,'알겠어요. 그래도 왜 위험한지 다시 설명해 주세요.');
+ assert.deepEqual(a.previous_beat,q.previous_beat);assert.equal(a.interaction_rule,q.interaction_rule);
+ assert.match(a.interaction_rule,/새 질문·오해·상황 변화가 없으면/);assert.match(a.interaction_rule,/위험·비용의 필요한 고지는 유지/);
+ assert.equal(a.voices[0].id,'ER-COM-001');assert.deepEqual(s,before);
+});

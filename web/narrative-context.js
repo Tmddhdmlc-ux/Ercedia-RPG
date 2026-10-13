@@ -39,7 +39,7 @@ export function narrativeFocus(state,action='',questId=null){
   const memories=voices.flatMap(v=>shared.filter(m=>m.npc_id===v.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})})));
   if(memories.length)focus.shared_memories=memories;
   focus.scene_entry_rule='이번 입력을 첫 지문에서 다시 요약하지 말고 상대의 직접 답이나 달라진 현장 반응부터 잇는다. previous_beat의 몸짓·감각은 태도나 상황 변화에 필요할 때만 이어 쓴다. 단어를 금지하거나 새 몸짓으로 매번 대체하지 않는다. voices의 공개 말투·직무와 실제 제안·거절에 맞춰 반응하며 없는 성격·사정을 만들지 않는다.';
-  focus.interaction_rule='직전 제안·질문·접촉 시도에 이번 말·행동으로 반응한다. 짧은 답·거절·침묵을 새 의뢰로 바꾸지 않는다. 제안은 수락이 아니며 동의 없는 접촉·감정은 확정하지 않는다. 공유 기억은 해당 인물의 실제 경험이고 매번 설명·칭찬으로 재생하지 않는다.';
+  focus.interaction_rule='직전 제안·질문·접촉 시도에 이번 말·행동으로 반응한다. 이미 이해·동의한 설명은 새 질문·오해·상황 변화가 없으면 다시 가르치지 않는다. 화제를 바꾸거나 작별하면 그 의도를 받되 위험·비용의 필요한 고지는 유지한다. 짧은 답·거절·침묵을 새 의뢰로 바꾸지 않는다. 제안은 수락이 아니며 동의 없는 접촉·감정은 확정하지 않는다. 공유 기억은 해당 인물의 실제 경험이고 매번 설명·칭찬으로 재생하지 않는다.';
  }
  if(Object.keys(focus).length)focus.knowledge_rule='기록·주변 명부가 만남·목격·NPC 지식을 확정하지 않는다. 플레이어가 혼자 한 제작·수련·거래는 NPC가 현장에서 보거나 직접 전해 들은 기록이 없으면 대사에서 아는 사실로 말하지 않는다. selected가 이번 행동의 의뢰이고 background는 참고만 한다. 완료된 의뢰는 다시 수락·지급·위협 발생 단계로 되돌리지 않는다.';
  if(voices.length)focus.role_rule='public_role은 등록된 공개 직무다. 사제·치료사 등에게 상황만으로 경비 지휘권이나 다른 직업을 부여하지 않는다. 임시 도움은 실제 경위와 직무 범위에서 서술한다. 저장의 잘못된 직무 묘사는 설정을 대체하지 않는다.';
