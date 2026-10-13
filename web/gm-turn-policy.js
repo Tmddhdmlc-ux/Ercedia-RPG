@@ -13,13 +13,13 @@ const relationshipInstruction='[인물·세력 관계] CHARACTER_RELATIONSHIPS.m
 const engineInstruction='실제 변경은 ENGINE_SCHEMA/WORLD_ENGINE_SCHEMA/NPC_LIFE_SCHEMA의 기존 사건으로 기록하며 turn_facts의 원본·수치·증빙 형식을 지킵니다. 기술 학습·장착·MP·서클 조건을 확인하고 XP·전리품·보너스를 중복 적용하지 않습니다. 월간 planned는 실제 발생이 아니라 후보입니다. ';
 
 export const operatingRules=`[판정 순서]
-확인한 BOOTSTRAP.md, WORLD.md와 승인 설정을 지키고 현재 campaign_id의 실제 기록만 사용합니다. journey_goal은 동기이며 능력·직업·보상·성공의 근거가 아닙니다. 미정 방법은 GM이 구성하되 등록 조건은 유지합니다.
+확인한 BOOTSTRAP.md, WORLD.md와 승인 설정을 지키고 현재 campaign_id의 실제 기록만 사용합니다. journey_goal은 동기이며 능력·직업·보상·성공의 근거가 아닙니다. 미정 방법은 GM이 정하되 등록 조건을 지킵니다.
 1. 플레이어의 명시한 행동과 직전 실제 결과에서 이어갑니다. 정보 문의는 실행 동의가 아닙니다. 실행의 통상 시간·결과는 이번 사건·시각에 반영합니다. 이미 결정한 준비·조건 확인을 반복하지 마세요. [플레이 속도·게임적 성사 우선] 흔한 도구·접근 방법은 마련합니다. 하급 검 등 기본 제작은 한 응답에서 완성·획득까지 처리하되 전투·유료 지출·새 계약의 성공을 보장하지 않습니다. 큰 위험·미승인 비용·되돌릴 수 없는 중요 선택에 도달하면 그 지점에서 멈춥니다. 게임 시간을 현실의 플레이 대기시간으로 바꾸지 않습니다.
-2. 플레이어가 직접 쓰지 않은 대사·감정·핵심 대응은 대신 만들지 않습니다. 명시한 행동은 간접 묘사로 진행합니다. 현장 인물의 목적·직무·성격·말투·감정을 반영하고 관측 가능한 위험을 보여줍니다. 실행 뒤 상황을 바꾸고 다른 대응은 비용·위험·보호 대상·관계·후속 상황에 반영하세요. 결과를 먼저 정하거나 모두 같은 결말로 합치지 마세요.
+2. 플레이어가 직접 쓰지 않은 대사·감정·핵심 대응은 대신 만들지 않습니다. 명시한 행동은 간접 묘사로 진행합니다. 인물의 목적·직무·성격·말투·감정을 반영하고 관측 가능한 위험을 보여줍니다. 실행·대응의 차이는 비용·위험·보호 대상·관계·후속 상황에 반영하세요. 결과를 먼저 정하거나 모두 같은 결말로 합치지 마세요.
 3. 보호·손실·다음 만남을 잇되 감동·호감은 강요하지 않습니다. 의뢰는 아래 사건 규칙을 따릅니다.
-4. NPC는 목격·전달·도착한 소문만 압니다. 명부는 만남·증언이 아닙니다. 비밀·속마음·미발견 사건 누설, 카탈로그·ID·정산 설명, 직무 밖 능력·지식 부여는 금지합니다.
-5. 아래 소설 서술을 따르고 HUD·정산 반복은 피합니다. 이동 장면의 npc/cast는 도착지 화자만; 출발지 인물을 npc/cast에 넣지 않습니다. 출발지 작별은 간접화법으로 남깁니다. speaker_id는 npc 또는 cast에 포함합니다.
-6. 서술 후 실제 변경을 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스는 중복 적용하지 않고 관계는 life_events experience.affection_delta, 이동은 국경 증빙을 포함한 life_events move로 기록합니다. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 미정 절차의 공개 판정은 gm_rulings=[{id,topic,decision}]로 기록하며 기존 판정 ID 수정 금지. 한 턴 최대8개, id100자/topic120자/decision800자 이내, 캠페인 최대256개.
+4. NPC는 목격·전달·도착한 소문만 압니다. 명부는 만남·증언이 아님. 비밀·속마음·미발견 사건 누설, 카탈로그·ID·정산 설명, 직무 밖 능력·지식 부여는 금지합니다.
+5. 소설 서술을 따르고 HUD·정산 반복 금지. 이동 장면의 npc/cast는 도착지 화자만; 출발지 인물을 npc/cast에 넣지 않습니다. 출발지 작별은 간접화법으로 남깁니다. speaker_id는 npc 또는 cast에 포함합니다.
+6. 실제 변경은 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스 중복 금지. 관계는 life_events experience.affection_delta, 이동은 국경 증빙과 life_events move로 기록합니다. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 새 미정 진행 방법 확정 때만 gm_rulings=[{id,topic,decision}]. 일반 대화·기존 절차·불변 수치 재확인은 생략. decision은 새 방법·조건·한계만, 기존 ID 수정 금지. 최대8개, id100/topic120/decision800자, 캠페인256개.
 `+actionTimeInstruction+narrationStyle;
 
 const learningRules=`실제 단련·공부·단조 연습의 완료 성과는 engine_events practice={event_id,kind:practice,reason,activity:physical/mental/craft/exploration,completed:true,xp_gain:양의 정수}와 실제 경과 시각으로 기록합니다. 레벨 필요 XP의20% 회당 상한과 같은 날짜·분야 반복 1/(횟수+1) 감소를 지킵니다. 전투·의뢰·xp와 이중 지급하지 마세요. 실제 새 기술 학습은 learn_custom_skill={event_id,kind,reason,skill:{id:GM-SKILL-고유값,name,description,skill_type:active/passive,usage:battle/dialogue/both,formula?,mp_cost?,technique_bonus?,spell_base_power?,element?}}. 생활 기술은 passive/dialogue가 기본, 현재 레벨·경지에 맞는 실제 효과·한계를 기록하며 기존 기술을 덮어쓰지 마세요. `;

@@ -12,6 +12,7 @@ import {extractSceneJSON} from './response-json.js';
 import {MAX_AUTO_REPAIRS,repairInstruction} from './response-recovery.js';
 import {updateNPC,findNPC} from './npc-model.js';
 import {initializeNameOnlyPlayer} from './legacy-player.js';
+import {validateSceneClock} from './scene-clock.js';
 import {campaignSettingsAttachment,legacyCampaignPrompt,loadCampaignSettings} from './campaign-settings.js';
 import {settleQuests} from './quest-model.js';
 import {prepareBattleLoot,makeLootPopup} from './loot-model.js';
@@ -139,7 +140,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
       if(!reply&&typeof source==='string')reply=source.match(/"reply_to"\s*:\s*"([A-Za-z0-9_-]{1,100})"/)?.[1];
       if(!manual&&!commitBattle&&reply&&retiredRequests.has(reply))return status('종료한 요청의 늦은 응답입니다. 적용하지 않았습니다.');
       if(!manual&&pending&&reply&&reply!==pending.requestId)return status('다른 요청의 응답입니다. 현재 장면을 유지합니다.');
-      let scene=parseScene(source);const lootBalanceBefore=wallet(state),rewardBefore=rewardSnapshot(state);
+      let scene=parseScene(source);validateSceneClock(state,scene);const lootBalanceBefore=wallet(state),rewardBefore=rewardSnapshot(state);
       if(!commitBattle&&scene.battle?.outcome.loot_rolls!==undefined)throw Error('처치별 전리품 난수는 UI 엔진이 생성합니다. GM 응답에는 loot_rolls를 넣지 마세요.');
       if(fromHost&&state.campaign_id&&!pending&&!commitBattle)return status('새 게임에서 요청하지 않은 이전 채팅 응답입니다. 기존 데이터는 적용하지 않았습니다.');
       if(fromHost&&pending&&scene.reply_to!==pending.requestId)throw Error('현재 요청의 reply_to가 누락되었습니다.');

@@ -5,9 +5,18 @@ import {actionPrompt} from '../web/scene.js';
 import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';
 import {operatingRules} from '../web/gm-turn-policy.js';
 import {narrationStyle} from '../web/narration-style.js';
+import {mergeRulings} from '../web/gm-rulings.js';
 
 function fixture(){const s=defaults();s.campaign_id='policy-test';s.gameState={region:'W1',place:'목재 운송길',date:'650-07-01',time:'10:00',events:['브란에게 위험을 알렸다.']};s.scene={scene_id:'threat-scene',location:'목재 운송길',time:'10:00',npc:{id:'ER-COM-001',speaker:'브란 오크펠',outfit:'none',emotion:'base'},dialogue:[{speaker:'브란 오크펠',text:'길 아래에 사람이 있어!'}],choices:[{id:'protect',kind:'action',quest_id:'timber',text:'아래쪽 주민을 대피시킨다.'}]};s.quest_log=[{id:'timber',title:'목재 운송',status:'accepted',issuer_npc_id:'ER-COM-001',story_required:true,story:[{event_id:'rolling-load',kind:'threat',description:'기울어진 목재가 주민의 통행로를 위협한다.',protected:'통행 중인 주민'}]}];return s;}
 function head(prompt){return JSON.parse(prompt.split('[현재 장면과 행동]\n')[1].split('\n\n')[0]);}
+
+test('routine responses can omit new rulings while existing decisions remain immutable and new methods append',()=>{
+ const s=fixture(),prior={id:'teaching',topic:'기초 목공 수업',decision:'브란의 동의와 공개된 작업 조건으로 수업을 진행한다.'};s.gm_rulings=[prior];const before=structuredClone(s);
+ assert.deepEqual(mergeRulings(s,{}),[prior]);assert.deepEqual(mergeRulings(s,{gm_rulings:[]}),[prior]);
+ const next={id:'advanced-class',topic:'추가 수업 방법',decision:'추가 재료와 장인의 동의가 필요하다.'};assert.deepEqual(mergeRulings(s,{gm_rulings:[next]}),[prior,next]);assert.throws(()=>mergeRulings(s,{gm_rulings:[{...prior,decision:'자동 성공'}]}),/임의로/);assert.deepEqual(s,before);
+ const sync=createTurnSync(),p=sync.prepare(s,'조용히 쉰다');
+ for(const prompt of [actionPrompt(s,'조용히 쉰다','r'),actionPrompt(s,'조용히 쉰다','r',{compact:true}),incrementalPrompt(s,'조용히 쉰다','r',p)]){assert.match(prompt,/새 미정 진행 방법 확정 때만 gm_rulings/);assert.match(prompt,/일반 대화·기존 절차·불변 수치 재확인은 생략/);assert.match(prompt,/대사·gm_rulings로 지급\/완료\/전투를 대신하지/);}
+});
 
 test('all request paths share the novel policy without legacy quotas or a brevity override',()=>{
  const s=fixture(),sync=createTurnSync(),p=sync.prepare(s,'브란에게 소감을 묻는다');
