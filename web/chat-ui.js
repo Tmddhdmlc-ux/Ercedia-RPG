@@ -1,6 +1,7 @@
 import {rewardSnapshot,rewardMessages} from './reward-notice.js';
 import {createTurnSync,incrementalPrompt} from './turn-sync.js';
 import {mergeRulings} from './gm-rulings.js';
+import {mergeGameState} from './game-state-update.js';
 import {validateTurnOutcome} from './turn-outcome.js';
 import {bindWallet,wallet} from './wallet.js';
 import {validateCraftingAttempt} from './crafting-policy.js';
@@ -183,7 +184,7 @@ export function mountChatUI(state,{render,persist,storage,embedded,getBattle,get
         state.player={...scene.player,...retained,...(state.chosenName?{name:state.chosenName}:{})};
       }
       if(scene.inventory)state.inventory=scene.inventory;
-      if(scene.game_state)Object.assign(state.gameState,scene.game_state);
+      if(scene.game_state)Object.assign(state.gameState,mergeGameState(state.gameState,scene.game_state));
       if(worldResult)Object.assign(state,{world_engine:worldResult.world_engine,wallet_copper:worldResult.wallet_copper});
       if(questResult)Object.assign(state,questResult);
       if(engineResult)Object.assign(state,engineResult);

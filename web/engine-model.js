@@ -1,4 +1,5 @@
 import {validatePractice,practiceReward} from './practice-reward.js';
+import {mergeGameState} from './game-state-update.js';
 import {learnCustomSkill} from './custom-skills.js';
 import {resolveNPC,assertNPCGrowth} from './npc-model.js';
 import {growthRules} from './growth-data.js';
@@ -99,7 +100,7 @@ export function planEngineScene(state,scene,questResult){
   for(const [id,profile] of Object.entries(scene.npc_updates||{}))assertNPCGrowth(state,id,profile);
   for(const npc of [scene.npc,...(scene.cast||[])])if(npc?.profile)assertNPCGrowth(state,npc.id,npc.profile);
   if(!state.engine&&!scene.engine_events?.length)return null;
-  const next=copyEngine(state);if(scene.player)next.player={...next.player,...scene.player};if(scene.inventory)next.inventory=copyEngine(scene.inventory);if(scene.game_state)Object.assign(next.gameState,scene.game_state);if(questResult)Object.assign(next,questResult);
+  const next=copyEngine(state);if(scene.player)next.player={...next.player,...scene.player};if(scene.inventory)next.inventory=copyEngine(scene.inventory);if(scene.game_state)Object.assign(next.gameState,mergeGameState(next.gameState,scene.game_state));if(questResult)Object.assign(next,questResult);
   if(scene.engine_events?.some(event=>event.npc_id&&['breakthrough','learn_realm_ability'].includes(event.kind))){
     for(const [id,profile] of Object.entries(scene.npc_updates||{})){const npc=resolveNPC(next,id);if(npc)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),...profile}};}
     for(const npc of [scene.npc,...(scene.cast||[])])if(npc?.profile)next.npcStates={...(next.npcStates||{}),[npc.id]:{...(next.npcStates?.[npc.id]||{}),...npc.profile}};

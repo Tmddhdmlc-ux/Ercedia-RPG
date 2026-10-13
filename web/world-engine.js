@@ -1,4 +1,5 @@
 import {validateDungeonZoneBattle} from './dungeon-encounter-model.js';
+import {mergeGameState} from './game-state-update.js';
 import {validateLootRolls} from './loot-model.js';
 import {bindWallet,wallet} from './wallet.js';
 import {registerShop,updateShop} from './trade-model.js';
@@ -90,7 +91,7 @@ export function advanceCalendar(w,date){
 export function planWorldScene(state,scene){
   const events=validateSystemEvents(scene.system_events),date=scene.game_state?.date||state.gameState?.date;
   if(!state.world_engine&&!events.length&&!scene.battle?.outcome.loot_rolls)return null;
-  const next=clone(state);next.player={...next.player,...scene.player};next.inventory=clone(scene.inventory||next.inventory);next.gameState={...next.gameState,...scene.game_state};
+  const next=clone(state);next.player={...next.player,...scene.player};next.inventory=clone(scene.inventory||next.inventory);next.gameState=mergeGameState(next.gameState,scene.game_state);
   const w=state.world_engine?normalizeWorld(state.world_engine,state):emptyWorld(state);next.world_engine=w;prepareEconomy(w);
   if(date)advanceCalendar(w,date);check(date||!events.length,'세계 사건의 현재 날짜 필요');
   if(scene.battle?.outcome.loot_rolls){
