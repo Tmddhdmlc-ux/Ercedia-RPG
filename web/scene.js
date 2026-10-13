@@ -117,8 +117,9 @@ export function turnDomains(state,action,choiceId){
   // Routing only: an emergency treatment or a remembered attack is not a new combat command.
   let combatText=text.replace(/(?:응급|유료|약초|의료|상처|붕대|진료|치료)\s*처치/g,'치료').replace(/처치비/g,'치료비');
   if(isRecoveryAction(text))combatText=combatText.replace(/(?:특별한|추가|전문)\s*처치(?=\s*(?:가\s*필요|를\s*받|비용))/g,'치료');
+  const huntingAction=combatText.trim()==='사냥'||/사냥(?:한다|하러|하겠|하자|할래|해(?:보|볼|야|요|라)?|을?\s*(?:시작|진행|시도|나서|나선|나가|떠나|간다))/.test(combatText);
   return {
-    combat:/전투(?!불능|\s*(?:이후|후|뒤))|공격(?!력|받|당|을\s*받)|싸우|싸움|토벌|처치|사냥(?!꾼)|궁극기|사격|견제|베어|베기|찌른|쏜다|쏘아|쏘겠|발사|타격|방어(?!구)|가드/.test(combatText),
+    combat:huntingAction||/전투(?!불능|\s*(?:이후|후|뒤))|공격(?!력|받|당|을\s*받)|싸우|싸움|토벌|처치|궁극기|사격|견제|베어|베기|찌른|쏜다|쏘아|쏘겠|발사|타격|방어(?!구)|가드/.test(combatText),
     dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스/.test(text),
     trade:kind==='trade'||isRecoveryAction(text)||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|경매|입찰|시설/.test(text),
     crafting:/제작|대장간|강화|분해|조합|단조|검.{0,15}(?:만들|만든)/.test(text),

@@ -25,3 +25,9 @@ test('aftercare request omits a battle calculation while preserving treatment an
  const care=createTurnSync().prepare(s,careAction),attack=createTurnSync().prepare(s,attackAction),carePrompt=incrementalPrompt(s,careAction,'r',care),attackPrompt=incrementalPrompt(s,attackAction,'r',attack);
  assert.ok(carePrompt.length<attackPrompt.length);assert.deepEqual(care.payload.state.turn_facts.narrative_focus.recorded_consequences,['확인한 왼팔 교상']);assert.ok(!carePrompt.includes('battle_wire'));assert.ok(carePrompt.includes('shop_wire'));assert.equal(s.player.hp,69);
 });
+test('hunting inquiries omit combat payloads while explicit hunting and mixed attacks retain them',()=>{
+ const s=start(),before=structuredClone(s);
+ for(const action of ['사냥은 처음이에요. 무리한 사냥 말고 도울 일거리가 있을까요?','어제 사냥 이야기를 한다.','사냥 방법을 묻는다.','사냥을 배워 보고 싶다고 말한다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.combat,false,action);assert.equal(p.payload.state.turn_facts.battle_wire,undefined);}
+ for(const action of ['마수를 사냥한다.','사냥을 시작한다.','사냥하러 간다.','사냥을 시도한다.','사냥','사냥 방법을 묻고 늑대를 공격한다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.combat,true,action);assert.ok(p.payload.state.turn_facts.battle_wire);}
+ assert.deepEqual(s,before);
+});

@@ -1,10 +1,10 @@
 {
-  "version": "2.1.104",
+  "version": "2.1.105",
   "bridgeVersion": 1,
   "stateVersion": 1,
   "sceneSchemaVersion": 1,
   "audioDigest": "03c7119c516f86ae964d4665b25142cd5d1a2bf718f4977aba48a692c501adc1",
   "assetDigest": "0431304c4d45560bd6472665cf2c3ebec96dded5932f1ffab3fa3ad499ff8855",
   "entry": "integration/game.html",
-  "sha256": "9705a17882afafbb2144a0b2a37816a91f4e7a4fe36e64db923278d472295cee"
+  "sha256": "84b8d37ad8693eccb3fa1a3273ac7fcb65aa18e69dbc27f006e7c6977b89f6d0"
 }
