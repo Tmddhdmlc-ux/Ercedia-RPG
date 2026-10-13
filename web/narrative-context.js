@@ -38,6 +38,8 @@ export function narrativeFocus(state,action='',questId=null){
   const shared=(state.npc_life?.memories||[]).filter(m=>present.has(m.npc_id)&&m.player_witnessed===true);
   const memories=voices.flatMap(v=>shared.filter(m=>m.npc_id===v.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})})));
   if(memories.length)focus.shared_memories=memories;
+  const reported=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.claim_event_id&&q.visibility!=='private'&&present.has(q.issuer_npc_id)).slice(-2).flatMap(q=>(q.story||[]).filter(e=>e.kind==='resolve').slice(-1).map(e=>({npc_id:q.issuer_npc_id,quest_id:q.id,title:q.title,knowledge_basis:'final_report_to_issuer',event_id:e.event_id,result:e.description.slice(0,600)})));
+  if(reported.length){focus.reported_outcomes=reported;focus.recall_rule='reported_outcomes는 해당 발행자에게 최종 보고된 공개 결과다. 직접 목격·타인의 지식으로 바꾸지 않고 실제 기여와 남은 제한을 유지한다. 매번 칭찬·완료 요약으로 재생하지 않는다.';}
   focus.scene_entry_rule='이번 입력을 첫 지문에서 다시 요약하지 말고 상대의 직접 답이나 달라진 현장 반응부터 잇는다. previous_beat의 몸짓·감각은 태도나 상황 변화에 필요할 때만 이어 쓴다. 단어를 금지하거나 새 몸짓으로 매번 대체하지 않는다. voices의 공개 말투·직무와 실제 제안·거절에 맞춰 반응하며 없는 성격·사정을 만들지 않는다.';
   focus.interaction_rule='직전 제안·질문·접촉 시도에 이번 말·행동으로 반응한다. 이미 이해·동의한 설명은 새 질문·오해·상황 변화가 없으면 다시 가르치지 않는다. 화제를 바꾸거나 작별하면 그 의도를 받되 위험·비용의 필요한 고지는 유지한다. 짧은 답·거절·침묵을 새 의뢰로 바꾸지 않는다. 제안은 수락이 아니며 동의 없는 접촉·감정은 확정하지 않는다. 공유 기억은 해당 인물의 실제 경험이고 매번 설명·칭찬으로 재생하지 않는다.';
  }

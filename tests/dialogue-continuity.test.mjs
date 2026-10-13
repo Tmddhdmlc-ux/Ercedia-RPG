@@ -25,6 +25,11 @@ test('full, compact and delta requests keep the same public conversational ancho
 test('solo scenes do not manufacture interlocutors or shared memories',()=>{
  const s=state();s.scene.npc=null;const f=narrativeFocus(s,'잠시 쉰다');assert.equal(f.voices,undefined);assert.equal(f.shared_memories,undefined);assert.equal(f.interaction_rule,undefined);assert.equal(f.scene_entry_rule,undefined);
 });
+test('completed public results stay with the actual report recipient and never reopen contracts',()=>{
+ const s=state(),q=(id,extra={})=>({id,title:id,status:'completed',claim_event_id:'paid-'+id,issuer_npc_id:'ER-COM-001',story:[{event_id:'safe-'+id,kind:'resolve',description:'공개 결과'.repeat(250)}],...extra});
+ s.quest_log=[q('one'),q('two'),q('three'),q('private',{visibility:'private'}),q('absent',{issuer_npc_id:'ER-COM-007'}),q('unpaid',{claim_event_id:null}),q('active',{status:'active'})];const before=structuredClone(s),f=narrativeFocus(s,'그때 일');
+ assert.deepEqual(f.reported_outcomes.map(r=>r.quest_id),['two','three']);assert.equal(f.reported_outcomes[0].result.length,600);assert.equal(f.reported_outcomes[0].knowledge_basis,'final_report_to_issuer');assert.ok(!f.threads.some(t=>['one','two','three'].includes(t.quest_id)));assert.deepEqual(s,before);
+});
 test('acknowledgment and repeated questions keep evidence rather than classifying intent by keywords',()=>{
  const s=state();s.scene.dialogue=[{speaker:'브란 오크펠',speaker_id:'ER-COM-001',text:'갈라진 목재는 기둥에 쓰지 않네. 상태를 살펴야 해.'}];
  const before=structuredClone(s),a=narrativeFocus(s,'알겠어요. 기둥에는 쓰지 않을게요.'),q=narrativeFocus(s,'알겠어요. 그래도 왜 위험한지 다시 설명해 주세요.');
