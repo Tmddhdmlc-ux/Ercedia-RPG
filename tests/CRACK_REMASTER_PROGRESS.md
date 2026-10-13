@@ -286,3 +286,4 @@
 - 해결 확인: 새 GM 동일 농담에서 같은 태도 반복 지문 감소/받아치기 발화 연결, 같은 고백에서 지식 규칙 해설 제거·모르는 사고 결과 질문, 실제 감정 장면의 길이와 직접 공유 기억/0호감 보존. 구현 정리만: 과거 시연4개와 현재 서술 규칙의 문서 구분/BOOTSTRAP 최신본 참조는 명확해졌지만 해당 문장 수정만의 단독 인과 효과는 미검증이다.
 - 미해결: 긴 기존 GM의 반복 형식, 장기 재회/새 GM에서 더 긴 기억·거절, 다른 직무·왕족 실제 개성, 부상·구매/제작·장착/휴식 복합 루프, 큰 요청·초기 설정 로딩, 자동 브리지. 문체 새 규칙이 모든 NPC/상황에 보장되는 것은 아니다. 다음은 새 GM과 현행 엔진을 이어 마야에게 실제 대피 결과를 전하고 사제 로한 등 다른 현지 역할의 만남을 확인한다. NPC가 이미 결과를 안다고 되돌리지 않는다.
 - 비공개 재개: fresh-gm-settings.txt(실제 전달 원문)/prepare-fresh-gm.mjs, fresh-gm-before-evidence.json, fresh-gm-after-evidence.json(동일 농담), fresh-gm-fear-before-evidence.json, fresh-gm-fear-after-evidence.json(같은 고백), fresh-gm-final-seed.json(15:01/440동/마야 직접 고백 기억0호감), fresh-gm-proof.png, fresh-gm-check.html. QA는 설정 패키지에서 제외했다. 새 GM URL은 원본 evidence의 gmUrl에 남겼다.
+- 배포8cc9f5f(main): 원격 ref와 고정 커밋 raw version/manifest2.1.117, sha256·음향/자산digest·v1 및 설정 pack365개 원문/sha 모두 로컬과 일치 확인. 추적 작업 트리 깨끗함. 후속 커밋은 배포 확인 기록만 포함한다.
