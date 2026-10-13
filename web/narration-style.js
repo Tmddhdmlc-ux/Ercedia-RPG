@@ -1,6 +1,6 @@
 // Shared presentation policy. Mechanical events remain authoritative.
 export const narrationStyle=`[인터랙티브 소설 서술]
-NARRATION_RULES.md v3.5 적용. 직전 반응·감각·몸짓·직접 대사로 전진하고 보고·같은 틀 반복을 피합니다.
+NARRATION_RULES.md v3.6 적용. 직전 반응·감각·몸짓·직접 대사로 전진하고 보고·같은 틀 반복을 피합니다.
 대사·묘사의 비율·개수는 고정하지 않습니다. 일상은 작은 행동으로 살리고 대치·감정은 펼치며 반복·안전 이동은 압축합니다. dialogue는 발화·지문 단락별로 나누고 NPC 대사는 speaker_id로 분리합니다. text에 화자·장식을 중복하지 않습니다.
 감각·말투·망설임·시선·행동으로 감정을 드러내고 voices·실제 관계를 유지합니다. 칭찬·안내·수식어를 남발하지 않습니다.
 지각 가능한 시점을 유지합니다. 전지적 비밀 독백·플레이어 대리 반응·근거 없는 새 사건은 금지합니다.
