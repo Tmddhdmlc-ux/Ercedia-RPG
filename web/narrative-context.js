@@ -29,6 +29,17 @@ export function narrativeFocus(state,action='',questId=null){
  });
  const consequences=(state.gameState?.events||[]).filter(e=>typeof e==='string').slice(-3);
  const focus={...(voices.length?{voices}:{}),...(threads.length?{threads}:{}),...(consequences.length?{recorded_consequences:consequences}:{})};
+ // Anchor ordinary short replies as well as danger responses. This is context,
+ // not an inferred promise, accepted contact or new relationship state.
+ if(voices.length){
+  const dialogue=(state.scene?.dialogue||[]).slice(-6).map(d=>({speaker:d.speaker,...(d.speaker_id?{speaker_id:d.speaker_id}:{}),text:d.text.slice(0,240)}));
+  const choices=(state.scene?.choices||[]).slice(0,4).map(c=>c.text);
+  if(dialogue.length||choices.length)focus.previous_beat={dialogue,choices};
+  const shared=(state.npc_life?.memories||[]).filter(m=>present.has(m.npc_id)&&m.player_witnessed===true);
+  const memories=voices.flatMap(v=>shared.filter(m=>m.npc_id===v.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})})));
+  if(memories.length)focus.shared_memories=memories;
+  focus.interaction_rule='직전 제안·질문·접촉 시도에 이번 말·행동으로 반응한다. 짧은 답·거절·침묵을 새 의뢰로 바꾸지 않는다. 제안은 수락이 아니며 동의 없는 접촉·감정은 확정하지 않는다. 공유 기억은 해당 인물의 실제 경험이고 매번 설명·칭찬으로 재생하지 않는다.';
+ }
  if(Object.keys(focus).length)focus.knowledge_rule='기록·주변 명부가 만남·목격·NPC 지식을 확정하지 않는다. 플레이어가 혼자 한 제작·수련·거래는 NPC가 현장에서 보거나 직접 전해 들은 기록이 없으면 대사에서 아는 사실로 말하지 않는다. selected가 이번 행동의 의뢰이고 background는 참고만 한다. 완료된 의뢰는 다시 수락·지급·위협 발생 단계로 되돌리지 않는다.';
  if(voices.length)focus.role_rule='public_role은 등록된 공개 직무다. 사제·치료사 등에게 상황만으로 경비 지휘권이나 다른 직업을 부여하지 않는다. 임시 도움은 실제 경위와 직무 범위에서 서술한다. 저장의 잘못된 직무 묘사는 설정을 대체하지 않는다.';
  if(voices.length)focus.life_event_rule=lifeEventInstruction;
@@ -45,7 +56,7 @@ export function narrativeFocus(state,action='',questId=null){
  if(threads.some(t=>t.phase==='respond_to_existing_threat')){
   const dialogue=(state.scene?.dialogue||[]).slice(-3).map(d=>({speaker:d.speaker,text:d.text.slice(0,240)}));
   const choices=(state.scene?.choices||[]).slice(0,4).map(c=>c.text);
-  if(dialogue.length||choices.length)focus.previous_beat={dialogue,choices};
+  if(!focus.previous_beat&&(dialogue.length||choices.length))focus.previous_beat={dialogue,choices};
   focus.pacing_rule='명시한 조사·전달·후속 확인은 가능한 범위에서 한 턴에 연결한다. previous_beat의 보고·선택을 표현만 바꿔 반복하지 않는다. 이미 대응·지원한 뒤 게임 시간이 흘렀다면 NPC의 진행 결과나 구체적인 장애·위기 변화·새 결정으로 이어간다. 흔적만 조금 추가하고 같은 대기·추가 진술을 반복하지 않는다. 접근 불가·증거 부족은 구체적 이유와 다른 대응을 제시하며 발견·구조·성공은 보장하지 않는다. 핵심 위험 대응은 플레이어에게 남긴다.';
   focus.report_rule='completion_gate=unresolved_threat이면 근무 인계·중간 보고와 의뢰 완료를 구분한다. 목표 수행만으로 report/보상·완료 보고 선택지를 내거나 미해결 사건을 별건으로 떼어 완료하지 않는다. 남은 위협에 실제 대응하고 검증된 해결·후일담을 기록한 뒤 완료 보고한다. 검증 통과를 위해 해결을 날조하지 않는다.';
  }
