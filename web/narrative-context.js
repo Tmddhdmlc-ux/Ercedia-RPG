@@ -1,6 +1,6 @@
 import {operatingRules} from './gm-turn-policy.js';
 import {lifeEventInstruction} from './npc-life.js';
-import {resolveNPC,npcPublicRole} from './npc-model.js';
+import {resolveNPC,npcPublicRole,npcCatalog} from './npc-model.js';
 
 // A public, read-only scene focus. It never adjudicates dialogue or creates world events.
 export const narrativeInstruction=operatingRules;
@@ -29,6 +29,13 @@ export function narrativeFocus(state,action='',questId=null){
  });
  const consequences=(state.gameState?.events||[]).filter(e=>typeof e==='string').slice(-3);
  const focus={...(voices.length?{voices}:{}),...(threads.length?{threads}:{}),...(consequences.length?{recorded_consequences:consequences}:{})};
+ // A named reunion target is context, not an actor already present at the destination.
+ const requested=npcCatalog.filter(n=>!present.has(n.id)&&n.role!=='monster'&&resolveNPC(state,n.id)?.location_id===state.gameState?.region&&[n.id,n.name,n.name?.split(' ')[0]].some(name=>typeof name==='string'&&name.length>=2&&action.includes(name))).slice(0,3);
+ if(requested.length){
+  const ids=new Set(requested.map(n=>n.id));
+  const shared=(state.npc_life?.memories||[]).filter(m=>ids.has(m.npc_id)&&m.player_witnessed===true);
+  focus.requested_people={voices:requested.map(n=>({id:n.id,name:n.name,...(npcPublicRole(n.id)?{public_role:npcPublicRole(n.id)}:{}),...Object.fromEntries(['duty','personality','speech_style'].filter(k=>typeof n[k]==='string'&&n[k]).map(k=>[k,n[k]]))})),shared_memories:requested.flatMap(n=>shared.filter(m=>m.npc_id===n.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{})}))),knowledge_rule:'requested_people는 이번 입력에서 찾거나 언급한 현지 등록 인물 후보다. 현장 존재·만남·동행·현재 표정은 확정하지 않는다. 실제 만나면 해당 공개 말투와 공유 기억을 잇는다. 플레이어가 따로 한 수선·거래·수련의 과정·가격·성능은 직접 보여주거나 전달한 범위만 안다. 이전 점검을 권했다는 이유로 나중에 확인한 손상을 전에 직접 보았다고 말하지 않는다. 목격·공유되지 않은 기억과 다른 인물의 결과는 공개하지 않는다.'};
+ }
  // Anchor ordinary short replies as well as danger responses. This is context,
  // not an inferred promise, accepted contact or new relationship state.
  if(voices.length){
