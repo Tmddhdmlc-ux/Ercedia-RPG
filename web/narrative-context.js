@@ -78,6 +78,7 @@ export function narrativeFocus(state,action='',questId=null){
   focus.report_rule='completion_gate=unresolved_threat이면 근무 인계·중간 보고와 의뢰 완료를 구분한다. 목표 수행만으로 report/보상·완료 보고 선택지를 내거나 미해결 사건을 별건으로 떼어 완료하지 않는다. 남은 위협에 실제 대응하고 검증된 해결·후일담을 기록한 뒤 완료 보고한다. 검증 통과를 위해 해결을 날조하지 않는다.';
  }
  if(voices.length||requested.length)focus.memory_recording_rule='실제 대화에서 새로 공유한 이름·호칭·접촉 경계·지속될 약속·선호가 다음 만남의 반응에 필요하면 기존 life_events kind=experience로 그 인물의 직접 들은 내용과 실제 응답을 기록한다. source_id=scene:<이번 scene_id>, npc_id=실제 현장 등록 인물, date/location=이번 실제 시공간, action/result와 reason은 관측된 내용만, player_witnessed=true. 호감 변화의 별도 사건 근거가 없으면 affection_delta=0, participants=[]이며 다른 인물에게 자동 공유하지 않는다. 질문·제안·희망을 수락·계약·능력·성공으로 기록하지 않고 모호한 말의 진의나 사적 속마음을 추측하지 않는다. 현재 작업 진행이나 일상 설명만 확인한 대화는 지속될 새 약속·경계·자기소개가 아니므로 별도 experience를 만들지 않는다. 이미 저장한 같은 내용·일반 맞장구·반복 설명은 매 턴 새 기억으로 쌓지 않는다. 첫 만남은 자동 기록되지만 새 자기소개나 경계를 보존하는 기록을 대신하지 않는다.';
+ if(requested.length)focus.arrival_memory_rule='이번 응답에서 실제로 새 인물을 만나 자기소개를 직접 주고받았다면, 이동 전 voices에 없던 도착지 인물도 그 대화를 직접 들은 현장 인물이다. 첫 만남 자동 기록은 만났다는 사실만 남기므로 직접 공유한 이름·호칭은 그 인물의 experience/action/result에 기록한다. 실제 만남과 발화가 성립한 뒤에만 memory_recording_rule의 현재 장면 출처·날짜·장소·호감0 원칙을 적용한다. 찾기 요청·명부·이동 계획만으로 만남이나 지식을 만들지 않는다. 플레이어 프로필의 이름을 읽었거나 NPC가 이름을 부른 것만으로 자기소개를 추정하지 않는다.';
  return focus;
 }
 
