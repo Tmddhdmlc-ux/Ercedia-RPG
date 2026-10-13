@@ -12,6 +12,19 @@ import {planNPCLife,validateLifeEvents} from '../web/npc-life.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
+test('older public introductions and boundaries reach present and destination actors without leaking private memories',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');
+ const memory=(id,action,result,player_witnessed=true)=>({npc_id:id,date:'650-07-01',action,result,player_witnessed});
+ s.npc_life={npcs:{},memories:[memory('ER-NPC-057','민하의 자기소개','민하라는 이름을 직접 들었다.'),memory('ER-NPC-057','인사 선호 전달','손잡는 인사 대신 말로 인사를 나누기로 했다.'),...Array.from({length:6},(_,i)=>memory('ER-NPC-057','작업 소식 '+i,'공개 결과 '+i)),memory('ER-NPC-057','자기소개','비공개 별명',false),memory('ER-COM-001','인사 선호 전달','다른 사람의 경계')]};
+ const before=JSON.stringify(s),destination=narrativeFocus(s,'마야에게 돌아간다').requested_people.shared_memories;
+ assert.equal(destination.length,4);assert.ok(destination.some(m=>m.result.includes('민하라는 이름')));assert.ok(destination.some(m=>m.result.includes('말로 인사')));assert.ok(!JSON.stringify(destination).includes('비공개 별명'));assert.ok(!JSON.stringify(destination).includes('다른 사람의 경계'));
+ s.scene.npc=actor('ER-NPC-057');assert.deepEqual(narrativeFocus(s).shared_memories,destination);
+ s.scene.npc=actor('ER-COM-007');assert.equal(JSON.stringify(s),before);
+ s.npc_life.memories.push(memory('ER-NPC-057','인사 선호 전달','이후 직접 변경한 인사 선호'));
+ const updated=narrativeFocus(s,'마야에게 돌아간다').requested_people.shared_memories;
+ assert.ok(updated.some(m=>m.result==='이후 직접 변경한 인사 선호'));assert.ok(!updated.some(m=>m.result.includes('손잡는 인사 대신')));assert.ok(updated.length<=4);
+});
+
 test('registered cleric and healer roles survive missing duty without trusting runtime rank overrides',()=>{
  const s=start();s.scene.location=s.gameState.place;s.scene.npc=actor('ER-NPC-026');s.scene.cast=[actor('ER-NPC-026'),actor('ER-NPC-057')];s.npcStates={'ER-NPC-026':{rank:'경비 지휘관',private_note:'비밀'}};
  const before=JSON.stringify(s),focus=narrativeFocus(s);

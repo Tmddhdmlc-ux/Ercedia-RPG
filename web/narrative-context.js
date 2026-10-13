@@ -5,6 +5,15 @@ import {resolveNPC,npcPublicRole,npcCatalog} from './npc-model.js';
 // A public, read-only scene focus. It never adjudicates dialogue or creates world events.
 export const narrativeInstruction=operatingRules;
 
+// Retrieval hints from recorded action labels, never inferred dialogue facts.
+function conversationMemories(memories){
+ const introduction=m=>/자기소개|이름.*소개|호칭/.test(m.action||'');
+ const boundary=m=>/악수.*거절|접촉.*경계|인사.*선호|참여.*보류|선호|약속/.test(m.action||'')||Boolean(m.follow_up&&m.action!=='첫 만남');
+ const anchors=[memories.filter(introduction).at(-1),memories.filter(boundary).at(-1)].filter(Boolean);
+ const selected=new Set([...anchors,...memories.slice(-2)]);
+ return memories.filter(m=>selected.has(m)).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})}));
+}
+
 export function narrativeFocus(state,action='',questId=null){
  const speakers=[state.scene?.npc,...(state.scene?.cast||[])].filter(Boolean),seen=new Set(),voices=[];
  for(const actor of speakers){
@@ -34,7 +43,7 @@ export function narrativeFocus(state,action='',questId=null){
  if(requested.length){
   const ids=new Set(requested.map(n=>n.id));
   const shared=(state.npc_life?.memories||[]).filter(m=>ids.has(m.npc_id)&&m.player_witnessed===true);
-  focus.requested_people={voices:requested.map(n=>({id:n.id,name:n.name,...(npcPublicRole(n.id)?{public_role:npcPublicRole(n.id)}:{}),...Object.fromEntries(['duty','personality','speech_style'].filter(k=>typeof n[k]==='string'&&n[k]).map(k=>[k,n[k]]))})),shared_memories:requested.flatMap(n=>shared.filter(m=>m.npc_id===n.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{})}))),knowledge_rule:'requested_people는 이번 입력에서 찾거나 언급한 현지 등록 인물 후보다. 현장 존재·만남·동행·현재 표정은 확정하지 않는다. 실제 만나면 해당 공개 말투와 공유 기억을 잇는다. 플레이어가 따로 한 수선·거래·수련의 과정·가격·성능은 직접 보여주거나 전달한 범위만 안다. 이전 점검을 권했다는 이유로 나중에 확인한 손상을 전에 직접 보았다고 말하지 않는다. 목격·공유되지 않은 기억과 다른 인물의 결과는 공개하지 않는다.'};
+  focus.requested_people={voices:requested.map(n=>({id:n.id,name:n.name,...(npcPublicRole(n.id)?{public_role:npcPublicRole(n.id)}:{}),...Object.fromEntries(['duty','personality','speech_style'].filter(k=>typeof n[k]==='string'&&n[k]).map(k=>[k,n[k]]))})),shared_memories:requested.flatMap(n=>conversationMemories(shared.filter(m=>m.npc_id===n.id))),knowledge_rule:'requested_people는 이번 입력에서 찾거나 언급한 현지 등록 인물 후보다. 현장 존재·만남·동행·현재 표정은 확정하지 않는다. 실제 만나면 해당 공개 말투와 공유 기억을 잇는다. 플레이어가 따로 한 수선·거래·수련의 과정·가격·성능은 직접 보여주거나 전달한 범위만 안다. 이전 점검을 권했다는 이유로 나중에 확인한 손상을 전에 직접 보았다고 말하지 않는다. 목격·공유되지 않은 기억과 다른 인물의 결과는 공개하지 않는다.'};
  }
  // Anchor ordinary short replies as well as danger responses. This is context,
  // not an inferred promise, accepted contact or new relationship state.
@@ -43,7 +52,7 @@ export function narrativeFocus(state,action='',questId=null){
   const choices=(state.scene?.choices||[]).slice(0,4).map(c=>c.text);
   if(dialogue.length||choices.length)focus.previous_beat={dialogue,choices};
   const shared=(state.npc_life?.memories||[]).filter(m=>present.has(m.npc_id)&&m.player_witnessed===true);
-  const memories=voices.flatMap(v=>shared.filter(m=>m.npc_id===v.id).slice(-2).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})})));
+  const memories=voices.flatMap(v=>conversationMemories(shared.filter(m=>m.npc_id===v.id)));
   if(memories.length)focus.shared_memories=memories;
   const reported=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.claim_event_id&&q.visibility!=='private'&&present.has(q.issuer_npc_id)).slice(-2).flatMap(q=>(q.story||[]).filter(e=>e.kind==='resolve').slice(-1).map(e=>({npc_id:q.issuer_npc_id,quest_id:q.id,title:q.title,knowledge_basis:'final_report_to_issuer',event_id:e.event_id,result:e.description.slice(0,600)})));
   if(reported.length){focus.reported_outcomes=reported;focus.recall_rule='reported_outcomes는 해당 발행자에게 최종 보고된 공개 결과다. 직접 목격·타인의 지식으로 바꾸지 않고 실제 기여와 남은 제한을 유지한다. 매번 칭찬·완료 요약으로 재생하지 않는다.';}
