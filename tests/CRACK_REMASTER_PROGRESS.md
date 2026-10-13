@@ -268,3 +268,4 @@
 - 미해결/다음: 반복 몸짓·대사/지문 교대는 이번 실험으로 해결하지 못했다. 긴 기존 ChatGPT 기록의 반복 형식과 새 요청 지침의 영향은 분리하지 않았으므로 어느 하나만 원인으로 단정하지 않는다. 다음은 동일 공개 설정/실제 저장을 확인 가능한 새 GM 대화에 전달해 오래된 형식의 영향을 분리하고 실제 목소리·호흡을 비교한다. 새로운 GM의 설정 로딩 범위를 명시하고 승인 설정을 생략한 응답을 완전 검증으로 보고하지 않는다. 다른 역할/긴 재회/부상·복합 루프/자동 연결도 여전히 미완료.
 - 비공개 증거: pacing-before-evidence.json, pacing-intermediate-evidence.json, pacing-final-evidence.json(요청/실제GM원문/저장), pacing-experiment.patch(배포하지 않은 문체 실험), pacing-experiment-proof.png, pacing-final-seed.json(실제 농담 이후15:01), pacing-check.html. private QA는 세계관 설정에 넣지 않는다.
 - 복원 최종: 의존성 준비된 상태에서 현행2.1.116/3.7 재빌드, 설정365개·3983557자·이전sha256 5439d18123071f82475de19a9ce8357d994a6b5efda3b79c3e204c1dd657d272 완전 일치/음향·자산digest/v1 유지. 복원537/537 통과. 추적 변경은 이번 진행 기록 하나뿐이다.
+- 기록6be56fb 원격 main 확인/고정 커밋 raw version·manifest2.1.116 및 sha256·음향/자산digest·v1 일치. 재빌드 설정 pack의 JSON 내용 차이는 없고 줄바꿈만 원본으로 맞췄다. 추적 작업 트리 깨끗함. 테스트 페이지도 현행2.1.116로 다시 열어 실제 최종 농담 저장을 복원했다. 다음 회차 공개 배포가 실험3.8이라고 오인하지 않는다.
