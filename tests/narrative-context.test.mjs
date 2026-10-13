@@ -60,6 +60,7 @@ test('fourth chosen quest precedes unrelated threats in full, compact and delta 
 test('handoff guidance preserves the actual threat and contract without declaring resolution',()=>{
  const s=start();s.quest_log=[{id:'gear',title:'장비 정리',status:'active',story_required:true,reward:{currency:30},story:[{event_id:'hook',kind:'threat',description:'팽팽한 금속선과 갈고리',protected:'작업자'}]}];const before=structuredClone(s);
  const f=narrativeFocus(s,'담당자의 처리를 기다린다');assert.equal(f.threads[0].completion_gate,'unresolved_threat');assert.equal(f.threads[0].pending_threats[0].event_id,'hook');assert.match(f.handoff_rule,/실제 증빙 없이 resolve하지/);assert.match(f.handoff_rule,/새 완료 조건으로 덧붙이지/);assert.deepEqual(s,before);
+ assert.match(f.resolution_rule,/피해 경로의 물리적 차단/);assert.match(f.resolution_rule,/원래 계약이/);assert.match(f.resolution_rule,/위험을 유지/);
  s.quest_log[0].story.push({event_id:'safe',kind:'resolve',threat_id:'hook',description:'안전하게 처리했다.'});assert.equal(narrativeFocus(s).handoff_rule,undefined);
 });
 
