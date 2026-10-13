@@ -1,6 +1,7 @@
 import {craftingAttemptInstruction,isCraftingAttempt} from './crafting-policy.js';
 import {questStoryInstruction,hasActiveQuestStory} from './quest-story.js';
 import {narrationStyle} from './narration-style.js';
+import {actionTimeInstruction} from './action-time-policy.js';
 const shopInstruction='상점은 SHOP_TRADE_SCHEMA.md의 shop_open/shop_update 또는 검증된 offer로 실제 NPC·재고·시장 견적·유한 자금을 제시합니다. 양방향 상점 UI가 실물과 wallet_copper를 원자 정산하므로 GM은 거래 반응만 서술하고 이미 정산한 거래를 trade 또는 inventory 스냅샷으로 반복 지급하지 마세요. ';
 const currencyInstruction='[화폐 경제] CURRENCY_ECONOMY.md, economy/currency_rules.json, tampermonkey/ECONOMY_SCHEMA.md를 읽으세요. 모든 가격과 보상은 동화 정수, 동화100=은화1, 은화100=금화1입니다. wallet_copper는 엔진 원장이고 새 게임 500동화는 이미 지급했습니다. 대사와 화폐 스냅샷으로 잔액을 바꾸지 마세요. 등록 상인·한정 재고·매입 예산·명성·교육허가·가격 근거를 실제 견적에 포함하세요. 경매는 판매자와 실제 개체·증가액·마감·예치/낙찰을 기록하세요. 마수는 기본 동전 없이 재료만, 신물11개는 일반 거래 불가입니다. 실제 전쟁·습격·흉작·국경 사건의 가격/재고 변화는 기간과 증거를 market으로 기록합니다. ';
 const craftingInstruction=craftingAttemptInstruction+'[대장간 제작] 정식 위탁으로 장인에게 등록 장비 제작을 맡길 때는 items/crafting_recipes.json과 CRAFTING_SYSTEM.md의 등록 제작법을 사용하세요. 실제 smithing 시설 방문 뒤 offer.services에 recipe_id, 등록 inputs/outputs/cost, craftsman 및 craftsman_proof/base_stock_proof, 희귀 제작법이면 recipe_proof, 스태프·악세사리이면 artificer_proof를 넣어 견적을 제시하세요. 사용자 제작 요청 후 실제 작업 시간을 진행하고 service 사건에 work_minutes/work_proof를 기록합니다. 재료와 제작비는 엔진이 소모하고 결과 장비는 1개 지급하므로 inventory/player 보상 스냅샷을 넣지 마세요. 제작은 별도 실패 확률을 추가하지 않습니다. 이 위탁 정산 조건을 단독 시도 전체의 거부 사유로 사용하지 마세요. ';
@@ -15,11 +16,11 @@ export const operatingRules=`[판정 순서]
 확인한 BOOTSTRAP.md, WORLD.md와 승인 설정을 지키고 현재 campaign_id의 실제 기록만 사용합니다. journey_goal은 동기이며 능력·직업·보상·성공의 근거가 아닙니다. 미정 방법은 GM이 구성하되 등록 조건은 유지합니다.
 1. 플레이어의 명시한 행동과 직전 실제 결과에서 이어갑니다. 정보 문의는 실행 동의가 아닙니다. 실행의 통상 시간·결과는 이번 사건·시각에 반영합니다. 이미 결정한 준비·조건 확인을 반복하지 마세요. [플레이 속도·게임적 성사 우선] 흔한 도구·접근 방법은 마련합니다. 하급 검 등 기본 제작은 한 응답에서 완성·획득까지 처리하되 전투·유료 지출·새 계약의 성공을 보장하지 않습니다. 큰 위험·미승인 비용·되돌릴 수 없는 중요 선택에 도달하면 그 지점에서 멈춥니다. 게임 시간을 현실의 플레이 대기시간으로 바꾸지 않습니다.
 2. 플레이어가 직접 쓰지 않은 대사·감정·핵심 대응은 대신 만들지 않습니다. 명시한 행동은 간접 묘사로 진행합니다. 현장 인물의 목적·직무·성격·말투·감정을 반영하고 관측 가능한 위험을 보여줍니다. 실행 뒤 상황을 바꾸고 다른 대응은 비용·위험·보호 대상·관계·후속 상황에 반영하세요. 결과를 먼저 정하거나 모두 같은 결말로 합치지 마세요.
-3. 실제 보호·손실·다음 만남을 잇고 감동·호감 상승을 강요하지 않습니다. 의뢰는 아래 사건 규칙을 따릅니다.
-4. NPC는 직접 본 일·전달받은 말·도착한 소문만 압니다. 후보 명부는 첫 만남이나 증언이 아닙니다. 비밀·타인의 속마음·미발견 사건을 누설하지 마세요. 대사에서 카탈로그·ID·엔진 정산을 설명하지 않습니다. 직무 밖 능력·지식을 부여하지 마세요.
+3. 보호·손실·다음 만남을 잇되 감동·호감은 강요하지 않습니다. 의뢰는 아래 사건 규칙을 따릅니다.
+4. NPC는 목격·전달·도착한 소문만 압니다. 명부는 만남·증언이 아닙니다. 비밀·속마음·미발견 사건 누설, 카탈로그·ID·정산 설명, 직무 밖 능력·지식 부여는 금지합니다.
 5. 아래 소설 서술을 따르고 HUD·정산 반복은 피합니다. 이동 장면의 npc/cast는 도착지 화자만; 출발지 인물을 npc/cast에 넣지 않습니다. 출발지 작별은 간접화법으로 남깁니다. speaker_id는 npc 또는 cast에 포함합니다.
-6. 서술 후 실제 변경을 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스는 중복 적용하지 않고 관계는 life_events experience.affection_delta, 이동은 국경 증빙을 포함한 life_events move로 기록합니다. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 미정 절차의 공개 판정은 gm_rulings=[{id,topic,decision}]로 기록하며 기존 판정 ID를 수정하지 않습니다. 한 턴 최대8개, id100자/topic120자/decision800자 이내, 캠페인 최대256개.
-`+narrationStyle;
+6. 서술 후 실제 변경을 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스는 중복 적용하지 않고 관계는 life_events experience.affection_delta, 이동은 국경 증빙을 포함한 life_events move로 기록합니다. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 미정 절차의 공개 판정은 gm_rulings=[{id,topic,decision}]로 기록하며 기존 판정 ID 수정 금지. 한 턴 최대8개, id100자/topic120자/decision800자 이내, 캠페인 최대256개.
+`+actionTimeInstruction+narrationStyle;
 
 const learningRules=`실제 단련·공부·단조 연습의 완료 성과는 engine_events practice={event_id,kind:practice,reason,activity:physical/mental/craft/exploration,completed:true,xp_gain:양의 정수}와 실제 경과 시각으로 기록합니다. 레벨 필요 XP의20% 회당 상한과 같은 날짜·분야 반복 1/(횟수+1) 감소를 지킵니다. 전투·의뢰·xp와 이중 지급하지 마세요. 실제 새 기술 학습은 learn_custom_skill={event_id,kind,reason,skill:{id:GM-SKILL-고유값,name,description,skill_type:active/passive,usage:battle/dialogue/both,formula?,mp_cost?,technique_bonus?,spell_base_power?,element?}}. 생활 기술은 passive/dialogue가 기본, 현재 레벨·경지에 맞는 실제 효과·한계를 기록하며 기존 기술을 덮어쓰지 마세요. `;
 
@@ -39,6 +40,6 @@ export function buildTurnPrompt({state,action,id,domains,payload,focus,increment
  const withoutFocus=c=>{const {narrative_focus,...rest}=c;if(rest.turn_facts){const {narrative_focus,...facts}=rest.turn_facts;rest.turn_facts=facts;}return rest;};
  const wirePayload=incremental?{...payload,state:withoutFocus(payload.state)}:withoutFocus(payload);
  const syncRule=incremental?'생략된 상태는 이전 값을 유지합니다. delta 객체는 제공 필드만 병합, 배열은 전체 대체. appended.gm_rulings는 기존 기록에 덧붙이는 참고 자료이며 응답의 새 판정은 최상위 gm_rulings입니다. removed 경로는 제거. checkpoint는 최신 진행 요약이며 엔진의 최신 상태가 대화 기억보다 우선합니다. 전체 설정을 다시 읽거나 요청하지 마세요.\n':'';
- const brief=!Object.values(domains).some(Boolean)&&!hasActiveQuestStory(state)&&!/자세|상세|길게|긴 대사|연출|독백/.test(action)?'[일상 대화 응답] 일상도 인물과 대화의 결을 살립니다. 억지 위기·분량 제한 없이 필수 사건 증빙은 유지합니다.\n':'';
+ const brief=!Object.values(domains).some(Boolean)&&!hasActiveQuestStory(state)&&!/자세|상세|길게|긴 대사|연출|독백/.test(action)?'[일상 대화 응답] 필수 사건 증빙은 유지합니다.\n':'';
  return '[현재 장면과 행동]\n'+JSON.stringify(briefing)+'\n\n'+operatingRules+questStoryInstruction+responseContract(id)+brief+domainRules(domains,action)+(life_event_rule||'')+syncRule+'\n현재 상태:\n'+JSON.stringify(wirePayload)+'\n\n플레이어의 자유 행동(그대로 반영):\n'+action;
 }
