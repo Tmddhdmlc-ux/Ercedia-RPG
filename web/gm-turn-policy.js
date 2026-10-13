@@ -19,7 +19,7 @@ export const operatingRules=`[판정 순서]
 3. 보호·손실·다음 만남을 잇되 감동·호감은 강요하지 않습니다. 의뢰는 아래 사건 규칙을 따릅니다.
 4. NPC는 목격·전달·도착한 소문만 압니다. 명부는 만남·증언이 아님. 비밀·속마음·미발견 사건 누설, 카탈로그·ID·정산 설명, 직무 밖 능력·지식 부여는 금지합니다.
 5. 소설 서술을 따르고 HUD·정산 반복 금지. 이동 장면의 npc/cast는 도착지 화자만; 출발지 인물을 npc/cast에 넣지 않습니다. 출발지 작별은 간접화법으로 남깁니다. speaker_id는 npc 또는 cast에 포함합니다.
-6. 실제 변경은 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스 중복 금지. 관계는 life_events experience.affection_delta, 이동은 국경 증빙과 life_events move로 기록합니다. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 새 미정 진행 방법 확정 때만 gm_rulings=[{id,topic,decision}]. 일반 대화·기존 절차·불변 수치 재확인은 생략. decision은 새 방법·조건·한계만, 기존 ID 수정 금지. 최대8개, id100/topic120/decision800자, 캠페인256개.
+6. 변경은 기존 사건으로 기록합니다. 대사·gm_rulings로 지급/완료/전투를 대신하지 않습니다. 보상·장비 보너스 중복 금지. 관계는 life_events experience.affection_delta, NPC 이동은 국경 증빙과 life_events move로 기록. 능력치 포인트 배분·장비 선택·경지 돌파는 자동 확정하지 마세요. 새 미정 진행 방법 확정 때만 gm_rulings=[{id,topic,decision}]. 일반 대화·기존 절차·불변 수치 재확인은 생략. decision은 새 방법·조건·한계만, 기존 ID 수정 금지. 최대8개, id100/topic120/decision800자, 캠페인256개.
 `+actionTimeInstruction+narrationStyle;
 
 const learningRules=`실제 단련·공부·단조 연습의 완료 성과는 engine_events practice={event_id,kind:practice,reason,activity:physical/mental/craft/exploration,completed:true,xp_gain:양의 정수}와 실제 경과 시각으로 기록합니다. 레벨 필요 XP의20% 회당 상한과 같은 날짜·분야 반복 1/(횟수+1) 감소를 지킵니다. 전투·의뢰·xp와 이중 지급하지 마세요. 실제 새 기술 학습은 learn_custom_skill={event_id,kind,reason,skill:{id:GM-SKILL-고유값,name,description,skill_type:active/passive,usage:battle/dialogue/both,formula?,mp_cost?,technique_bonus?,spell_base_power?,element?}}. 생활 기술은 passive/dialogue가 기본, 현재 레벨·경지에 맞는 실제 효과·한계를 기록하며 기존 기술을 덮어쓰지 마세요. `;

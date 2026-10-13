@@ -4,6 +4,8 @@
 
 모든 사건의 공통 필드: `event_id`(영문/숫자/:/_/- 최대100자), `kind`, `date`(360일 달력 YYYY-M-D), `source_id`, `reason`. source_id는 현재 `scene:<scene_id>`, 확정 전투 `battle:<battle_id>`, 실제 의뢰 사건 ID, world_events ID 또는 이미 적용한 생활 사건 ID다. 미래 사건·시간 역행·동일 ID 내용 변경은 거절한다. 같은 원인 사건으로 한 NPC의 호감도를 두 번 지급할 수 없다.
 
+플레이어의 이동은 이 NPC 생활 사건에 기록하지 않는다. game_state.region/place/date/time과 scene.location/time으로 실제 위치·시간을 기록하고 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player 또는 npc_id=player로 move를 생성하지 않는다.
+
 ## 사건 종류
 
 - `schedule`: npc_id, entries=[{start,end,region,place,activity}]. 날짜가 겹치지 않는 최대16개 일정. 외국 일정 자체는 통행 허가가 아니다. 먼저 move 사건으로 실제 통과해야 한다.

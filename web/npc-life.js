@@ -1,7 +1,7 @@
 import {findNPC,npcCatalog} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 const clone=v=>JSON.parse(JSON.stringify(v));
-export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
+export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. life_events move는 등록 NPC의 이동만 기록한다. 플레이어 이동은 game_state의 실제 region/place/date/time과 scene.location/time으로 기록하며 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player나 npc_id=player를 life_events에 넣지 않는다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
 const present=scene=>scene.cast||(scene.npc?[scene.npc]:[]);
 const fail=m=>{throw Error('NPC 생활 검증 · '+m);};
 const text=(v,max=500,key='')=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail((key?key+' ':'')+'문자열 형식');return v;};
@@ -26,6 +26,7 @@ export function validateLifeEvents(events){
     const e={event_id:text(raw.event_id,100,'event_id'),kind:raw.kind,date:text(raw.date,80,'date'),source_id:text(raw.source_id,100,'source_id'),reason:text(raw.reason,1000,'reason')};day(e.date);
     if(!/^[A-Za-z0-9:_-]+$/.test(e.event_id)||['__proto__','constructor','prototype'].includes(e.event_id))fail('사건 ID 형식');
     if(!['schedule','move','experience','companion','condition','rumor','relay','npc_relation','region_effect'].includes(e.kind))fail('사건 종류');
+    if(e.kind==='move'&&(raw.actor_id==='player'||raw.npc_id==='player'))fail('플레이어 이동은 life_events move가 아니라 game_state region/place/date/time과 scene.location/time으로 기록하세요. 국가 변경의 system_events border 증빙은 유지하세요.');
     if(['schedule','move','experience','companion','condition'].includes(e.kind))e.npc_id=npc(raw.npc_id);
     if(e.kind==='condition'){if(!Array.isArray(raw.injuries)||raw.injuries.length>10||!['rested','tired','exhausted'].includes(raw.fatigue))fail('부상·피로 형식');e.injuries=raw.injuries.map(v=>text(v,160));e.fatigue=raw.fatigue;e.major_event=raw.major_event===null?null:text(raw.major_event,100);}
     if(e.kind==='schedule'){
