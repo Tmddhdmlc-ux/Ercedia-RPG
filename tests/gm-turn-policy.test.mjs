@@ -34,7 +34,7 @@ test('full, compact and incremental requests share one operating policy and lead
  const s=fixture(),before=structuredClone(s),action=s.scene.choices[0].text;
  const prompts=[actionPrompt(s,action,'r',{choiceId:'protect'}),actionPrompt(s,action,'r',{compact:true,choiceId:'protect'}),incrementalPrompt(s,action,'r',createTurnSync().prepare(s,action,'protect'))];
  for(const prompt of prompts){assert.equal(prompt.split(operatingRules).length,2);assert.ok(prompt.indexOf('rolling-load')<prompt.indexOf('[판정 순서]'));assert.match(prompt,/reply_to="r"/);assert.equal(head(prompt).threads[0].completion_gate,'unresolved_threat');assert.equal(head(prompt).declared_action,action);assert.match(prompt,/큰 위험/);assert.match(prompt,/모두 같은 결말로 합치지/);}
- assert.match(head(prompts[0]).reply_pacing_rule,/농담·맞장구/);assert.match(head(prompts[0]).reply_pacing_rule,/새 질문·오해·변화/);assert.deepEqual(head(prompts[0]),head(prompts[1]));assert.deepEqual(head(prompts[1]),head(prompts[2]));assert.deepEqual(s,before);
+ assert.match(head(prompts[0]).scene_image_rule,/실내 장면/);assert.match(head(prompts[0]).scene_image_rule,/없으면 null/);assert.match(head(prompts[0]).reply_pacing_rule,/농담·맞장구/);assert.match(head(prompts[0]).reply_pacing_rule,/새 질문·오해·변화/);assert.deepEqual(head(prompts[0]),head(prompts[1]));assert.deepEqual(head(prompts[1]),head(prompts[2]));assert.deepEqual(s,before);
 });
 
 test('verified resolution replaces the pending threat in the next briefing without restarting the contract',()=>{

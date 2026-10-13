@@ -130,6 +130,11 @@ export function turnDomains(state,action,choiceId){
     relationship:/관계|세력|조직|왕족|국왕|혼인|반란|배신|동료|동행/.test(text)
   };
 }
+function mentionsPublicRole(action,role){
+ if(typeof role!=='string'||role.length<2||['활동 미확인','미정'].includes(role))return false;
+ const term=role.trim().split(/\s+/).at(-1);
+ return action.includes(role)||term.length>=2&&!['미확인','미정'].includes(term)&&action.includes(term);
+}
 export function turnContext(state,domains,action='',choiceId=null){
   const context=requestContext(state);
   context.turn_facts=turnFacts(state,domains,action,context.npc_catalog.nearby_npcs,state.scene?.choices?.find(c=>c.id===choiceId)?.quest_id||null);
@@ -137,8 +142,8 @@ export function turnContext(state,domains,action='',choiceId=null){
   const involved=new Set([state.scene?.npc?.id,...(state.scene?.cast||[]).map(n=>n.id),...(state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id||q.issuer_id)].filter(Boolean));
   for(const id of Object.keys(context.npc_life?.npcs||{}))involved.add(id);
   // Role inquiries need local candidates too; this does not establish a meeting.
-  for(const npc of context.npc_catalog.nearby_npcs)if(action.includes(npc.name)||typeof npc.duty==='string'&&npc.duty.length>=2&&npc.duty!=='활동 미확인'&&action.includes(npc.duty))involved.add(npc.id);
-  for(const npc of context.adventure.regional_residents)if(action.includes(npc.name)||typeof npc.job==='string'&&npc.job.length>=2&&action.includes(npc.job))involved.add(npc.id);
+  for(const npc of context.npc_catalog.nearby_npcs)if(action.includes(npc.name)||mentionsPublicRole(action,npc.public_role||npc.duty))involved.add(npc.id);
+  for(const npc of context.adventure.regional_residents)if(action.includes(npc.name)||mentionsPublicRole(action,npc.job))involved.add(npc.id);
   context.cast=state.scene?.cast||[];context.npc=state.scene?.npc||null;
   context.npc_catalog.npc_changes=Object.fromEntries(Object.entries(context.npc_catalog.npc_changes||{}).filter(([id])=>involved.has(id)));
   if(!domains.adventure&&!domains.trade&&!domains.relationship)context.npc_catalog.nearby_npcs=context.npc_catalog.nearby_npcs.filter(n=>involved.has(n.id));

@@ -94,3 +94,10 @@ test('execution requests delegate routine timing and outcomes while preserving i
  const s=saved();for(const compact of [true,false]){const prompt=actionPrompt(s,'개인 기초 단련 1회를 실행한다.','training-r',{compact});assert.match(prompt,/실행의 통상 시간·결과/);assert.match(prompt,/이번 사건·시각에 반영/);assert.match(prompt,/정보 문의는 실행 동의가 아닙니다/);assert.match(prompt,/큰 위험/);assert.match(prompt,/같은 날짜·분야 반복/);assert.match(prompt,/능력치 포인트 배분/);assert.match(prompt,/경지 돌파는 자동 확정하지/);}
  const compact=actionPrompt(s,'안부를 묻는다.','r',{compact:true});assert.match(compact,/kind는 dialogue\/travel\/quest\/investigate\/trade\/training\/action/);
 });
+
+test('public qualified roles survive a role inquiry when duty is missing without summoning or leaking stats',()=>{
+ const s=saved(),before=structuredClone(s),action='정착지의 사제는 누구인지 묻는다.',context=turnContext(s,turnDomains(s,action),action),priest=context.npc_catalog.nearby_npcs.find(n=>n.id==='ER-NPC-026');
+ assert.ok(priest);assert.equal(priest.public_role,'중급 사제');assert.ok(!('strength' in priest)&&!('hp' in priest));assert.equal(context.npc,null);assert.deepEqual(s,before);
+ assert.ok(!turnContext(s,turnDomains(s,'바람 소리를 듣는다'),'바람 소리를 듣는다').npc_catalog.nearby_npcs.some(n=>n.id==='ER-NPC-026'));
+ s.gameState.region='W3';assert.ok(!turnContext(s,turnDomains(s,action),action).npc_catalog.nearby_npcs.some(n=>n.id==='ER-NPC-026'));
+});
