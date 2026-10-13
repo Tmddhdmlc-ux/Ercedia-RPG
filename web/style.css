@@ -3001,6 +3001,9 @@ input[type=range] {
 }
 
 /* Approved concept 01: art first, full-width dialogue, compact actions above it. */
+/* A story stage clips art, but must not scroll when its composer receives focus.
+   Lists and dialogue keep their own scrolling; battle retains its existing layout. */
+.game:not([data-battle=active]) #stage{overflow:clip}
 @media(min-width:701px){
  .game:not([data-battle=active]) #stage{--vn-dialog-height:clamp(120px,28%,190px)}
  .game:not([data-battle=active]) #stage .dialog{box-sizing:border-box;left:4%;right:4%;bottom:54px;height:var(--vn-dialog-height);min-height:0;max-height:none;padding:18px 28px 24px;border:1px solid #B79A6480;border-radius:12px;background:linear-gradient(110deg,#101E29F2,#101C27E8);box-shadow:0 12px 30px #0005}
