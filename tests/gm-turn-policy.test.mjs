@@ -21,7 +21,7 @@ test('routine responses can omit new rulings while existing decisions remain imm
 test('all request paths share the novel policy without legacy quotas or a brevity override',()=>{
  const s=fixture(),sync=createTurnSync(),p=sync.prepare(s,'브란에게 소감을 묻는다');
  for(const prompt of [actionPrompt(s,'브란에게 소감을 묻는다','r'),actionPrompt(s,'브란에게 소감을 묻는다','r',{compact:true}),incrementalPrompt(s,'브란에게 소감을 묻는다','r',p)]){
-  assert.equal(prompt.split(narrationStyle).length-1,1);
+  assert.equal(prompt.split(narrationStyle).length-1,1);assert.match(prompt,/짧은 농담·맞장구·이미 이해한 답/);assert.match(prompt,/새 질문·오해·상황 변화가 없으면/);
   assert.ok(!/대화60%|묘사40%|1~3개 짧은 대사|짧게 답하/.test(prompt));
   assert.match(prompt,/비율·개수는 고정하지/);assert.match(prompt,/교훈·재요약·선택 질문 대신/);
   assert.match(prompt,/전지적 비밀 독백·플레이어 대리 반응/);
@@ -34,7 +34,7 @@ test('full, compact and incremental requests share one operating policy and lead
  const s=fixture(),before=structuredClone(s),action=s.scene.choices[0].text;
  const prompts=[actionPrompt(s,action,'r',{choiceId:'protect'}),actionPrompt(s,action,'r',{compact:true,choiceId:'protect'}),incrementalPrompt(s,action,'r',createTurnSync().prepare(s,action,'protect'))];
  for(const prompt of prompts){assert.equal(prompt.split(operatingRules).length,2);assert.ok(prompt.indexOf('rolling-load')<prompt.indexOf('[판정 순서]'));assert.match(prompt,/reply_to="r"/);assert.equal(head(prompt).threads[0].completion_gate,'unresolved_threat');assert.equal(head(prompt).declared_action,action);assert.match(prompt,/큰 위험/);assert.match(prompt,/모두 같은 결말로 합치지/);}
- assert.deepEqual(head(prompts[0]),head(prompts[1]));assert.deepEqual(head(prompts[1]),head(prompts[2]));assert.deepEqual(s,before);
+ assert.match(head(prompts[0]).reply_pacing_rule,/농담·맞장구/);assert.match(head(prompts[0]).reply_pacing_rule,/새 질문·오해·변화/);assert.deepEqual(head(prompts[0]),head(prompts[1]));assert.deepEqual(head(prompts[1]),head(prompts[2]));assert.deepEqual(s,before);
 });
 
 test('verified resolution replaces the pending threat in the next briefing without restarting the contract',()=>{
