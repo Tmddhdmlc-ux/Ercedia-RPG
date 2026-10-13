@@ -19,9 +19,9 @@ test('full, compact and delta requests keep the same public conversational ancho
  const s=state(),sync=createTurnSync();sync.acknowledge(sync.prepare(s,'인사한다'));const p=sync.prepare(s,'정중히 거절한다');
  const head=p=>JSON.parse(p.split('[현재 장면과 행동]\n')[1].split('\n\n')[0]);
  const prompts=[actionPrompt(s,'정중히 거절한다','r'),actionPrompt(s,'정중히 거절한다','r',{compact:true}),incrementalPrompt(s,'정중히 거절한다','r',p)];
- for(const prompt of prompts){const f=head(prompt);assert.deepEqual(f.previous_beat,narrativeFocus(s).previous_beat);assert.equal(f.last_dialogue,undefined);assert.match(prompt,/직전 제안·질문·접촉 시도/);}
+ for(const prompt of prompts){const f=head(prompt);assert.deepEqual(f.previous_beat,narrativeFocus(s).previous_beat);assert.equal(f.last_dialogue,undefined);assert.equal(f.scene_entry_rule,narrativeFocus(s).scene_entry_rule);assert.match(prompt,/직전 제안·질문·접촉 시도/);}
  const wire=JSON.parse(prompts[2].split('현재 상태:\n')[1].split('\n\n플레이어')[0]);assert.equal(wire.state.turn_facts.narrative_focus,undefined);assert.equal(p.payload.state.turn_facts.narrative_focus.previous_beat.dialogue.length,5);
 });
 test('solo scenes do not manufacture interlocutors or shared memories',()=>{
- const s=state();s.scene.npc=null;const f=narrativeFocus(s,'잠시 쉰다');assert.equal(f.voices,undefined);assert.equal(f.shared_memories,undefined);assert.equal(f.interaction_rule,undefined);
+ const s=state();s.scene.npc=null;const f=narrativeFocus(s,'잠시 쉰다');assert.equal(f.voices,undefined);assert.equal(f.shared_memories,undefined);assert.equal(f.interaction_rule,undefined);assert.equal(f.scene_entry_rule,undefined);
 });
