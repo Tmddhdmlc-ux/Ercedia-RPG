@@ -35,6 +35,13 @@ test('ordinary resident dialogue retains personality and speech without the enti
   assert.deepEqual(context.adventure.regional_residents,[resident]);
   assert.ok(context.adventure.regional_residents[0].speech_style);
 });
+test('local role inquiry retains unconfirmed candidates without creating meetings',()=>{
+ const state=saved(),before=structuredClone(state),action='작업대의 사람에게 사냥꾼인지 묻는다.',context=turnContext(state,turnDomains(state,action),action);
+ const hunter=context.adventure.regional_residents.find(n=>n.id==='ER-COM-007');
+ assert.ok(hunter);assert.equal(hunter.known,false);assert.equal(hunter.presence_confirmed,false);assert.ok(hunter.speech_style);
+ assert.equal(context.npc,null);assert.deepEqual(state,before);
+ const ordinary=turnContext(state,turnDomains(state,'바람 소리를 듣는다.'),'바람 소리를 듣는다.');assert.ok(!ordinary.adventure?.regional_residents.some(n=>n.id===hunter.id));
+});
 test('ordinary conversation preserves scene texture without forcing brevity or new danger',()=>{
   const state=saved();
   assert.match(actionPrompt(state,'안부를 묻는다.','r',{compact:true}),/\[일상 대화 응답\]/);

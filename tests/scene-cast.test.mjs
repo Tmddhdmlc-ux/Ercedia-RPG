@@ -15,10 +15,18 @@ test('three registered cast members and speaker IDs roundtrip while legacy singl
   assert.equal(Object.hasOwn(normalizeScene(legacy),'cast'),false);
 });
 test('unknown, duplicate and fourth participants or nonparticipant speaker IDs are rejected',()=>{
-  assert.throws(()=>normalizeScene({...scene(),cast:[...cast,cast[0]]}),/1~3/);
+  assert.throws(()=>normalizeScene({...scene(),cast:[...cast,cast[0]]}),/0~3/);
   assert.throws(()=>normalizeScene({...scene(),cast:[cast[0],cast[0]]}),/중복/);
   assert.throws(()=>normalizeScene({...scene(),cast:[{...cast[0],id:'missing'}]}),/인물/);
   assert.throws(()=>normalizeScene({...scene(),dialogue:[{speaker:'외부 인물',speaker_id:'missing',text:'안녕'}]}),/참가자/);
+});
+test('empty optional cast matches omission without admitting unregistered speakers',()=>{
+ const raw=scene();delete raw.cast;raw.dialogue=raw.dialogue.slice(0,1);
+ assert.deepEqual(normalizeScene({...raw,cast:[]}),normalizeScene(raw));
+ const solo={...raw,npc:null,dialogue:[{speaker:'나레이션',text:'작업장에 도착했다.'}]};
+ assert.deepEqual(normalizeScene({...solo,cast:[]}),normalizeScene(solo));
+ assert.throws(()=>normalizeScene({...solo,cast:[],dialogue:[{speaker:'외부',speaker_id:'missing',text:'안녕'}]}),/참가자/);
+ assert.throws(()=>normalizeScene({...solo,cast:null}),/0~3/);
 });
 test('emotion changes belong to their speaker, backward navigation recomputes them and narration highlights nobody',()=>{
   const s=normalizeScene(scene());let f=castFrame(s,1);assert.equal(f[0].emotion,'smile');assert.equal(f[1].emotion,'base');assert.equal(f[1].active,true);

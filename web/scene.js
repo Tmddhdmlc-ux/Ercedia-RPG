@@ -49,13 +49,16 @@ export function normalizeScene(raw){
     if(npc.profile!==undefined)scene.npc.profile=normalizeNPCProfile(npc.profile);
   }
   if(raw.cast!==undefined){
-    if(!Array.isArray(raw.cast)||raw.cast.length<1||raw.cast.length>3)throw Error('cast는 1~3명이어야 합니다.');
+    if(!Array.isArray(raw.cast)||raw.cast.length>3)throw Error('cast는 0~3명이어야 합니다.');
+    // An empty optional cast means no additional participants, like omission.
+    if(raw.cast.length){
     const ids=new Set();scene.cast=raw.cast.map(npc=>{
       const config=characterRegistry[npc?.id];
       if(!config||!config.outfits.includes(npc.outfit)||!config.emotions.includes(npc.emotion)||ids.has(npc.id))throw Error('cast의 인물·복장·표정 또는 중복 ID를 확인하세요.');
       ids.add(npc.id);return {id:npc.id,outfit:npc.outfit,emotion:emotion(npc.emotion),speaker:text(npc.speaker,'cast.speaker',60),...(npc.profile!==undefined?{profile:normalizeNPCProfile(npc.profile)}:{})};
     });
     if(scene.npc&&!ids.has(scene.npc.id))throw Error('주 대화 상대 npc는 cast에 포함되어야 합니다.');
+    }
   }
   if(!Array.isArray(raw.dialogue)||!raw.dialogue.length||raw.dialogue.length>60)throw Error('dialogue는 1~60개여야 합니다.');
   scene.dialogue=raw.dialogue.map(line=>{
@@ -131,7 +134,9 @@ export function turnContext(state,domains,action='',choiceId=null){
   if(domains.quest)context.turn_facts.quests=questWireFacts(state);
   const involved=new Set([state.scene?.npc?.id,...(state.scene?.cast||[]).map(n=>n.id),...(state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id||q.issuer_id)].filter(Boolean));
   for(const id of Object.keys(context.npc_life?.npcs||{}))involved.add(id);
-  for(const npc of context.npc_catalog.nearby_npcs)if(action.includes(npc.name))involved.add(npc.id);
+  // Role inquiries need local candidates too; this does not establish a meeting.
+  for(const npc of context.npc_catalog.nearby_npcs)if(action.includes(npc.name)||typeof npc.duty==='string'&&npc.duty.length>=2&&npc.duty!=='활동 미확인'&&action.includes(npc.duty))involved.add(npc.id);
+  for(const npc of context.adventure.regional_residents)if(action.includes(npc.name)||typeof npc.job==='string'&&npc.job.length>=2&&action.includes(npc.job))involved.add(npc.id);
   context.cast=state.scene?.cast||[];context.npc=state.scene?.npc||null;
   context.npc_catalog.npc_changes=Object.fromEntries(Object.entries(context.npc_catalog.npc_changes||{}).filter(([id])=>involved.has(id)));
   if(!domains.adventure&&!domains.trade&&!domains.relationship)context.npc_catalog.nearby_npcs=context.npc_catalog.nearby_npcs.filter(n=>involved.has(n.id));
