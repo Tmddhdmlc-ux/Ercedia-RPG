@@ -2,7 +2,11 @@ import {worldData} from './world-data.js';
 import {currencyRules} from './economy.js';
 
 // Select request facts only; this never heals, spends money, or clears an injury.
-export const isRecoveryAction=action=>/치료|진료|(?:응급|유료|약초|의료|상처|붕대)\s*처치|처치비|휴식|숙박|여관|하룻밤|잠을|잠든|잠잔다|쉰다|쉬겠|쉬어|쉬고/.test(String(action));
+export const isRecoveryAction=action=>{
+ const text=String(action);
+ // A profession mention is not a request for care. Keep actual care and fee inquiries.
+ return /치료(?!사)|진료|(?:응급|유료|약초|의료|상처|붕대)\s*처치|처치비|휴식|숙박|여관|하룻밤|잠을|잠든|잠잔다|쉰다|쉬겠|쉬어|쉬고/.test(text)||/치료사/.test(text)&&/처치|치유|검사|상처|부상|통증|비용|요금|가격|견적/.test(text);
+};
 export function recoveryFacts(state){
  const region=state.gameState?.region;
  return {

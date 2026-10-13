@@ -36,3 +36,10 @@ test('clinic service needs its actual venue and a corrected scene settles atomic
  const corrected=scene(s,events,{location:o.venue_name,game_state:{...s.gameState,place:o.venue_name}});apply(s,corrected);assert.equal(s.player.hp,89);assert.equal(s.wallet_copper,420);assert.equal(s.world_engine.transactions.length,1);
  const p=createTurnSync().prepare(s,'상처를 치료받는다.');assert.ok(p.payload.state.turn_facts.recovery_wire.completion.includes('game_state.place와 scene.location은 offer.venue_name 또는 venue_id와 정확히 일치'));
 });
+
+test('healer profession mentions keep social and candidate context without care protocols while mixed care and fees retain them',()=>{
+ const s=economyState();s.gameState.region='W1';s.scene={scene_id:'social',npc:{id:'ER-NPC-057',speaker:'마야 로웬',outfit:'none',emotion:'base'},cast:[],dialogue:[],choices:[]};const before=structuredClone(s);
+ for(const action of ['치료사가 누구인지 묻는다.','치료사분들은 조용할 때 쉴 틈이 있나요?','치료사의 이름을 물으며 인사한다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.trade,false,action);assert.equal(p.payload.state.turn_facts.recovery_wire,undefined);assert.ok(p.payload.state.npc_catalog.nearby_npcs.some(n=>n.id==='ER-NPC-057'));assert.ok(actionPrompt(s,action,'social',{compact:true}).includes('voices'));}
+ for(const action of ['치료사에게 팔의 상처를 치료받는다.','치료사에게 진료를 요청한다.','치료사 비용을 물어본다.','치료사에게 처치를 받는다.','치료소를 찾는다.']){const p=createTurnSync().prepare(s,action);assert.ok(p.payload.state.turn_facts.recovery_wire,action);assert.equal(p.domains.combat,false,action);}
+ assert.deepEqual(s,before);
+});
