@@ -1,9 +1,10 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';
-import {actionPrompt,turnContext,turnDomains,contextSummary} from '../web/scene.js';
+import {actionPrompt,turnContext,turnDomains,contextSummary,normalizeScene} from '../web/scene.js';
 import {mountChatUI} from '../web/chat-ui.js';
 import {uiHarness} from './ui-harness.mjs';
+import {catalogItem} from '../web/item-catalog.js';
 
 function saved(){
   const state=defaults();state.player.name='시험 모험가';state.campaign_id='prompt-test';
@@ -34,6 +35,17 @@ test('ordinary resident dialogue retains personality and speech without the enti
   const context=turnContext(state,turnDomains(state,'안부를 묻는다.'));
   assert.deepEqual(context.adventure.regional_residents,[resident]);
   assert.ok(context.adventure.regional_residents[0].speech_style);
+});
+test('repair and winter-material inquiries receive bounded local originals instead of default swords',()=>{
+ const s=saved(),before=structuredClone(s),action='재료상에 신발 수선용 가죽과 방한 재료의 가격을 묻는다.',f=turnContext(s,turnDomains(s,action),action).turn_facts;
+ assert.ok(f.items.length>0&&f.items.length<=6);for(const item of f.items){assert.equal(item.region_id,'W1');assert.equal(item.slot,undefined);assert.deepEqual(item,catalogItem(item.id));}
+ assert.match(f.item_rule,/현지 재고·보유품이 아니다/);assert.match(f.item_rule,/NPC 대사나 지문에서 설명하지/);assert.ok(f.material_facilities.some(v=>v.id==='FAC-W1-02'&&v.service.includes('repair')));assert.ok(f.material_facilities.every(v=>v.id.startsWith('FAC-W1-')));assert.match(f.facility_wire,/없으면 생략/);assert.match(f.facility_wire,/system_events/);assert.match(f.facility_wire,/kind:service,offer_id/);assert.match(f.facility_wire,/실제 서비스가 끝나면/);assert.match(f.facility_wire,/game_state.place=실제 방문한 venue_id/);assert.ok(!f.facility_wire.includes('economy_events'));assert.deepEqual(s,before);
+ const blade='철검 가격을 묻는다.',weapons=turnContext(s,turnDomains(s,blade),blade).turn_facts.items;assert.ok(weapons.some(i=>i.subtype==='sword'));
+});
+test('misnamed economy events are rejected instead of silently losing the financial evidence',()=>{
+ const raw={schema_version:1,type:'ercedia_scene',scene_id:'wrong-economic-field',location:'상점',time:'오후',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'견적을 제시했다.'}],choices:[],economy_events:[{event_id:'quote',kind:'offer',reason:'실제 견적'}]};
+ assert.throws(()=>normalizeScene(raw),/system_events/);
+ const canonical={...raw};delete canonical.economy_events;canonical.system_events=raw.economy_events;assert.equal(normalizeScene(canonical).system_events[0].event_id,'quote');
 });
 test('local role inquiry retains unconfirmed candidates without creating meetings',()=>{
  const state=saved(),before=structuredClone(state),action='작업대의 사람에게 사냥꾼인지 묻는다.',context=turnContext(state,turnDomains(state,action),action);

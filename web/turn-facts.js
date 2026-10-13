@@ -4,6 +4,7 @@ import {isRecoveryAction,recoveryFacts} from './recovery-context.js';
 import {itemCatalog,catalogItem} from './item-catalog.js';
 import {currencyRules} from './economy.js';
 import {npcSnapshot} from './npc-model.js';
+import {worldData} from './world-data.js';
 
 // Send the small, relevant canonical records themselves, not only file names/counts.
 export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
@@ -14,9 +15,15 @@ export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
   const owned=new Set((state.inventory||[]).map(i=>i.catalog_id||i.id));
   const named=itemCatalog.filter(i=>action.includes(i.id)||action.includes(i.name));
   const type=/스태프|지팡이/.test(action)?'staff':/갑옷|방어구/.test(action)?'armor':/악세|장신구/.test(action)?'accessory':'sword';
-  const starters=itemCatalog.filter(i=>i.slot&&(i.subtype===type||i.slot===type)&&i.rarity==='하급').slice(0,3);
+  const materialTrade=domains.trade&&/수선|수리|재료|가죽|방한|천|모피/.test(action);
+  const starters=materialTrade?itemCatalog.filter(i=>!i.slot&&!i.skill_id&&i.region_id===state.gameState?.region).slice(0,6):itemCatalog.filter(i=>i.slot&&(i.subtype===type||i.slot===type)&&i.rarity==='하급').slice(0,3);
   facts.items=[...new Map([...named,...itemCatalog.filter(i=>owned.has(i.id)),...starters].map(i=>[i.id,i])).values()].slice(0,12);
   facts.item_rule='위 항목은 실제 원본이다. id/catalog_id와 quantity를 사용한다. basic_sword 등 경제 기준가 키는 물품 ID가 아니다. 기본 제작 결과는 등록 하급 장비로 기록한다. 가격·입수와 직업·장착 조건은 별개이며 제작했다고 직업을 자동 부여하지 않는다. 기존 미등록 장비를 확인할 때 원본 조회를 플레이어에게 떠넘기거나 다시 제작비를 청구하지 않는다.';
+  if(materialTrade){
+   facts.item_rule+=' 재료 후보는 현지 재고·보유품이 아니다. 현지 취급·재고·견적을 확인해 원본과 연결하고 미등록 물품·상인 ID·효과를 발명하지 않는다. 등록 여부·카탈로그·엔진 제약을 NPC 대사나 지문에서 설명하지 않는다.';
+   facts.material_facilities=worldData.facilities.filter(f=>f.region_id===state.gameState?.region).map(({id,name,service})=>({id,name,service}));
+   facts.facility_wire='실제 방문 시설의 견적은 system_events [{event_id,kind:offer,reason,offer:{id,type:facility,venue_id:등록시설ID,venue_name,region_id,valid_until:360일날짜,items:[{id:등록물품ID,stock,buy_price,sell_price,price_basis}],services:[{id,service:등록시설service,cost:동화,basis,inputs:[],outputs:[]}]}}]로 연결한다. merchant_npc_id는 실제 등록 상인이 확인된 경우만 넣고 없으면 생략한다. 원본 시설은 영업·재고·수선 가능성을 보장하지 않는다. 견적은 지출·완료가 아니며 미확인 효과는 보장하지 않는다. 플레이어가 비용에 명시적으로 동의하고 실제 서비스가 끝나면 system_events [{event_id,kind:service,offer_id:실제견적ID,service_id:견적서비스ID,reason:실제완료근거}]로 한 번 정산한다. facility_service는 사건 종류가 아니다. 비용은 견적에서 계산하므로 지갑·물품 스냅샷으로 중복 지급하지 않는다. 실제 시설 이용 장면은 game_state.region=견적 region_id, game_state.place=실제 방문한 venue_id 또는 정확한 venue_name으로 기록하고 scene.location은 공개 장소 설명으로 쓸 수 있다. 미방문 시설로 이동을 발명하지 않는다. 경과 game_state.date/time과 scene.time을 일치시킨다.';
+  }
  }
  if(domains.growth||domains.crafting||domains.adventure||domains.quest){
   facts.xp={source:'PROGRESSION.md §2',rule:'위험 전투·실제 수련 성과·탐험·연구·의뢰·어려운 문제 해결은 경험을 얻을 수 있다. 활동별 고정 지급표는 없으므로 GM이 실제 성과로 양을 판정한다. 쉬운 반복은 감소하며 경지는 XP로 돌파하지 않는다.',profession:'검사/마법사 입문은 실제 학습·선택 후 engine_events {event_id,kind:profession,job:검사 또는 마법사,reason}. 기사 경지와 서클을 자동 부여하지 않는다.',event:{event_id:'고유_ID',kind:'xp',amount:'0 이상의 정수',reason:'이번 실제 학습·발견 근거'},practice:'실제 연습 완료는 engine_events practice: activity=physical/mental/craft/exploration,completed=true,xp_gain=양의 정수,reason 및 경과 game_state.date/time. 회당 레벨 필요 XP의20% 상한·같은 날 반복 감소. 전투·의뢰 보고·xp와 중복하지 않는다.'};

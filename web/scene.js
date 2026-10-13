@@ -39,6 +39,7 @@ function text(value,key,max=2000,required=true){
 function emotion(value){if(!emotions.includes(value))throw Error('등록되지 않은 표정입니다.');return value;}
 export function normalizeScene(raw){
   if(!raw||typeof raw!=='object'||raw.schema_version!==1||raw.type!=='ercedia_scene')throw Error('ercedia_scene / schema_version 1 데이터가 필요합니다.');
+  if(raw.economy_events!==undefined)throw Error('경제 사건은 economy_events가 아니라 system_events로 기록하세요. 견적·거래·서비스 사건을 생략하지 말고 기존 검증 형식으로 다시 보내주세요.');
   if(Object.hasOwn(raw,'wallet_copper')||Object.hasOwn(raw,'currency')||raw.player&&('wallet_copper' in raw.player||'currency' in raw.player)||raw.game_state&&('wallet_copper' in raw.game_state||'currency' in raw.game_state))throw Error('화폐 스냅샷은 금지합니다. 경제 사건으로 정산하세요.');
   const scene={schema_version:1,type:'ercedia_scene',scene_id:text(raw.scene_id,'scene_id',100),location:text(raw.location,'location',120),time:text(raw.time,'time',80),background_id:raw.background_id,npc:null,dialogue:[],choices:[]};
   if(raw.background_id!==null&&!backgroundArt(raw.background_id))throw Error('등록되지 않은 배경입니다. 원화 없는 장면은 null을 사용하세요.');
