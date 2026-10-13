@@ -57,6 +57,11 @@ test('fourth chosen quest precedes unrelated threats in full, compact and delta 
  for(const compact of [true,false]){const prompt=actionPrompt(s,'주민을 끌어올린다.','request',{compact,choiceId:'respond-fourth'});assert.ok(prompt.includes('"quest_id":"contract-3","title":"계약 3","scope":"selected"'));}
  assert.equal(JSON.stringify(s),before);
 });
+test('handoff guidance preserves the actual threat and contract without declaring resolution',()=>{
+ const s=start();s.quest_log=[{id:'gear',title:'장비 정리',status:'active',story_required:true,reward:{currency:30},story:[{event_id:'hook',kind:'threat',description:'팽팽한 금속선과 갈고리',protected:'작업자'}]}];const before=structuredClone(s);
+ const f=narrativeFocus(s,'담당자의 처리를 기다린다');assert.equal(f.threads[0].completion_gate,'unresolved_threat');assert.equal(f.threads[0].pending_threats[0].event_id,'hook');assert.match(f.handoff_rule,/실제 증빙 없이 resolve하지/);assert.match(f.handoff_rule,/새 완료 조건으로 덧붙이지/);assert.deepEqual(s,before);
+ s.quest_log[0].story.push({event_id:'safe',kind:'resolve',threat_id:'hook',description:'안전하게 처리했다.'});assert.equal(narrativeFocus(s).handoff_rule,undefined);
+});
 
 test('resolved response remains available and explicitly revisited completed quests cannot reopen their episode',()=>{
  const s=start(),story=[{event_id:'threat',kind:'threat',description:'수레가 무너진다',protected:'주민'},{event_id:'rescue',kind:'resolve',threat_id:'threat',description:'주민을 끌어올렸고 수레는 손상됐다',protected:'주민'}];s.quest_log=[{id:'rescue-job',title:'수레 복구',status:'completed',story_required:true,story}];
