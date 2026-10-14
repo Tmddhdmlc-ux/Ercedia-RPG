@@ -183,3 +183,8 @@ test('accepting a local offer carries prior threat mechanisms without reopening 
  const f=narrativeFocus(s,'맡을게요. 배급소부터 갑니다');assert.deepEqual(f.previous_episode_threats,[{quest_id:'old',title:'목재 운송',threat:'얼음에 걸린 바퀴와 느슨한 밧줄로 사람에게 목재가 기운다'}]);assert.ok(f.new_episode_rule);assert.equal(f.threads,undefined);assert.deepEqual(s,before);
  assert.deepEqual(narrativeFocus(s,'심부름을 진행한다','new').previous_episode_threats,f.previous_episode_threats);assert.equal(narrativeFocus(s,'마야에게 안부를 묻는다').previous_episode_threats,undefined);s.quest_log.at(-1).status='active';assert.equal(narrativeFocus(s,'수락한다').previous_episode_threats,undefined);
 });
+
+test('explicit departure carries final-location speaker guidance without treating thanks or a question as movement',()=>{
+ const s=start();s.scene.npc={id:'ER-COM-001',speaker:'브란 오크펠',outfit:'none',emotion:'base'};const before=structuredClone(s),action='브란에게 인사하고 방책 작업장 밖으로 나온다.';const p=createTurnSync().prepare(s,action);assert.ok(p.snapshot.turn_facts.narrative_focus.departure_scene_rule);assert.match(actionPrompt(s,action,'r'),/departure_scene_rule/);assert.match(actionPrompt(s,action,'r',{compact:true}),/departure_scene_rule/);
+ for(const a of ['가르쳐주셔서 고마워요.','밖으로 나가도 될까요?'])assert.equal(narrativeFocus(s,a).departure_scene_rule,undefined);assert.deepEqual(s,before);
+});
