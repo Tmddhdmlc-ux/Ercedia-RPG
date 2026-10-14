@@ -19,6 +19,13 @@ test('first encounter, affection and reunion retain structured memories; duplica
 test('confirmed movement prevents appearance at the previous place and preserves the original state on failure',()=>{
   const s=start();apply(s,make(1,{npc:null,life_events:[event('move',{npc_id:'serin',region:'W3',place:'마을 경비초소',activity:'경비'})]}));const snapshot=JSON.stringify(s);assert.throws(()=>apply(s,make(2)),/이전 장소/);assert.equal(JSON.stringify(s),snapshot);apply(s,make(3,{location:'마을 경비초소',game_state:{date:'1-1-1',region:'W3',place:'마을 경비초소'}}));
 });
+
+test('revisiting an unchanged confirmed facility accepts its exact name without inventing NPC movement',()=>{
+ const s=start();s.gameState={date:'1-1-1',region:'W1',place:'보관소 앞 마당'};
+ const scene=make('revisit',{npc:{id:'ER-COM-001',speaker:'브란 오크펠',outfit:'none',emotion:'base'},location:'방책 작업장',dialogue:[{speaker:'브란 오크펠',speaker_id:'ER-COM-001',text:'안쪽 작업대에 그대로 있다.'}],game_state:{date:'1-1-1',region:'W1',place:'방책 작업장'}});
+ s.npc_life=planNPCLife(s,normalizeScene(scene)).npc_life;s.npc_life.npcs['ER-COM-001'].location_confirmed=true;const before=structuredClone(s);const expanded={...scene,location:'방책 작업장 내부',game_state:{...scene.game_state,place:'방책 작업장 내부'}};assert.throws(()=>planNPCLife(s,normalizeScene(expanded)),/이동한 NPC가 이전 장소/);assert.deepEqual(s,before);
+ const result=planNPCLife(s,normalizeScene(scene));assert.equal(result.npc_life.npcs['ER-COM-001'].place,'방책 작업장');assert.equal(result.npc_life.npcs['ER-COM-001'].region,'W1');assert.equal(scene.life_events,undefined);assert.deepEqual(s,before);
+});
 test('game days update important NPC schedules only; readings do not advance time',()=>{
   const s=start();apply(s,make(1,{life_events:[event('schedule',{npc_id:'serin',entries:[{start:'1-1-3',end:'1-1-5',region:'W3',place:'순찰길',activity:'순찰'}]})]}));assert.equal(s.npc_life.npcs.serin.destination,'순찰길');apply(s,make(2,{npc:null,game_state:{date:'1-1-3',region:'W3',place:'솔브린 마을'}}),{quest_log:[{id:'q',issuer_npc_id:'serin',status:'active',title:'순찰 지원'}],relationships:{},quest_event_ids:[]});assert.equal(s.npc_life.npcs.serin.place,'순찰길');assert.equal(Object.keys(s.npc_life.npcs).length,1);assert.throws(()=>apply(s,make(3)),/시간 역행/);
 });
