@@ -5,6 +5,17 @@ import {actionPrompt} from '../web/scene.js';
 import {worldData} from '../web/world-data.js';
 import {economyState,scene,event,offer,apply} from './economy-fixtures.js';
 
+test('explicitly declined care with advice only omits medical commerce facts without changing action or resources',()=>{
+ const s=economyState();s.player.hp=69;const before=structuredClone(s);
+ for(const action of ['지금 진료를 받겠다는 건 아니고, 조언이 궁금해요.','치료는 받지 않고 이야기만 하고 싶어요.','진료를 안 받고 대화만 한다.']){
+  const p=createTurnSync().prepare(s,action);assert.equal(p.domains.trade,false,action);assert.equal(p.payload.state.turn_facts.recovery_wire,undefined);assert.equal(p.payload.state.economy,undefined);assert.ok(actionPrompt(s,action,'advice',{compact:true}).includes(action));assert.ok(!actionPrompt(s,action,'advice',{compact:true}).includes('recovery_wire'));
+ }
+ assert.deepEqual(s,before);
+});
+test('declining care does not suppress a later treatment, medical quote, rest, or conditional inquiry',()=>{
+ const s=economyState();for(const action of ['진료를 받겠다는 건 아니고 치료비만 묻는다.','진료를 받겠다는 건 아니고 붕대 처치를 요청한다.','진료를 안 받고 여관에서 쉰다.','진료를 안 받으면 위험한지 묻는다.','치료를 받지 않으면 어떻게 되나요?']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.trade,true,action);assert.ok(p.payload.state.turn_facts.recovery_wire,action);}
+});
+
 test('treatment, emergency care and explicit rest preserve real resources and provide service records without combat',()=>{
  const s=economyState();s.player.hp=69;s.gameState.events=['왼팔 교상'];const before=JSON.stringify(s);
  for(const action of ['늑대에게 물린 팔을 치료받는다.','응급 처치를 받는다.','여관에서 쉰다.','오늘은 휴식한다.','여관에서 하룻밤 묵는다.','치료비를 문의한다.']){
