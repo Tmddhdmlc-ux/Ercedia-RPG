@@ -169,7 +169,7 @@ export function planWorldScene(state,scene){
     }
     else if(e.kind==='shop_open'){registerShop(next,e.shop);}
     else if(e.kind==='shop_update'){updateShop(next,e);}
-    else if(economyKinds.includes(e.kind)){applyEconomyEvent(next,scene,e,date,{assertOfferLocation,give,take,awardXP,kingdomOf,facility:id=>worldData.facilities.find(f=>f.id===id)});reward=true;}
+    else if(economyKinds.includes(e.kind)){applyEconomyEvent(next,scene,e,date,{startDate:state.gameState?.date,assertOfferLocation,give,take,awardXP,kingdomOf,facility:id=>worldData.facilities.find(f=>f.id===id)});reward=true;}
     else if(e.kind==='calendar_result'){
       const entry=w.annual_events[e.ref_id];check(entry&&['active','resolved','cancelled'].includes(e.status)&&!['resolved','cancelled'].includes(entry.status),'현재 연간 사건 판정');check(entry.year*360+(entry.month-1)*30<=day(date),'미래 사건 실행 금지');
       check(typeof e.known_to_player==='boolean'&&(!e.known_to_player||text(e.public_summary)),'공개 사건 설명');check(e.effects&&typeof e.effects==='object'&&!Array.isArray(e.effects),'지역 효과');

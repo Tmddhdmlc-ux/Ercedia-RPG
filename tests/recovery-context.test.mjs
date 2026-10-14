@@ -52,3 +52,13 @@ test('ordinary meal quotes and consumed meals settle once without inventory or r
  invalid.services[0].hp_restore=undefined;invalid.services[0].outputs=[{id:'ER-SUP-WARM-CLOTH',quantity:1}];assert.throws(()=>apply(s,scene(s,[event('offer',{offer:invalid})])),/소비 식사 물품 이전 금지/);assert.deepEqual(s,unchanged);
  const p=createTurnSync().prepare(before,'여관에서 저녁 식사 가격을 묻는다');assert.ok(p.payload.state.turn_facts.recovery_wire.price_baselines.some(x=>x.id==='simple_meal'));assert.deepEqual(before.player.hp,69);
 });
+
+test('a night begun within the quote deadline settles next morning but cannot backdate expired admission or ordinary trades',()=>{
+ const s=economyState();s.gameState.date='650-07-30';s.gameState.time='18:00';const o=offer();o.items=[];o.valid_until='650-07-30';apply(s,scene(s,[event('offer',{offer:o})]));const before=structuredClone(s);
+ const nextDay={...s.gameState,date:'650-08-01',time:'07:00'};
+ assert.throws(()=>apply(s,scene(s,[event('service',{offer_id:o.id,service_id:'inn'})],{game_state:nextDay,time:'07:00'})),/견적 기한/);assert.deepEqual(s,before);
+ const overnight=scene(s,[event('service',{offer_id:o.id,service_id:'inn',started_on:'650-07-30'})],{game_state:nextDay,time:'07:00'});apply(s,overnight);assert.equal(s.wallet_copper,400);assert.equal(s.world_engine.transactions.at(-1).started_on,'650-07-30');const done=structuredClone(s);apply(s,overnight);assert.deepEqual(s,done);
+ assert.throws(()=>apply(s,scene(s,[event('service',{offer_id:o.id,service_id:'inn',started_on:'650-07-30'})])),/숙박 시작일/);assert.deepEqual(s,done);
+ assert.throws(()=>apply(s,scene(s,[event('trade',{offer_id:o.id,item_id:'bread',quantity:1,direction:'buy',started_on:s.gameState.date})])),/숙박 시작일/);assert.deepEqual(s,done);
+ const p=createTurnSync().prepare(before,'여관 개인실에서 다음 날 아침까지 잠을 잔다');assert.ok(p.payload.state.turn_facts.recovery_wire.completion.includes('service.started_on'));assert.deepEqual(before.gameState.date,'650-07-30');
+});
