@@ -5,6 +5,15 @@ import {actionPrompt} from '../web/scene.js';
 import {worldData} from '../web/world-data.js';
 import {economyState,scene,event,offer,apply} from './economy-fixtures.js';
 
+test('asking about ongoing NPC rest keeps dialogue instead of lodging and recovery facts',()=>{
+ const s=economyState(),before=structuredClone(s);
+ for(const action of ['그 직원은 아직 쉬고 있겠죠? 손목 상태를 살펴보고 싶다고 하셨잖아요.','마야는 지금 쉬고 있나요?','그분이 쉬고 계신가요?','브란이 쉬고 있는지 묻는다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.trade,false,action);assert.equal(p.payload.state.turn_facts.recovery_wire,undefined);assert.equal(p.payload.state.economy,undefined);assert.ok(actionPrompt(s,action,'rest-question',{compact:true}).includes(action));}
+ assert.deepEqual(s,before);
+});
+test('NPC rest questions do not suppress a separate player rest, treatment, or inn quote',()=>{
+ const s=economyState();for(const action of ['그 직원은 쉬고 있나요? 나는 한 시간 쉰다.','마야가 쉬고 계신가요? 팔을 치료받고 싶다.','브란이 쉬고 있는지 확인하고 여관 숙박 가격을 묻는다.','여관에서 쉬고 싶어요.','잠을 잔다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.trade,true,action);assert.ok(p.payload.state.turn_facts.recovery_wire,action);}
+});
+
 test('explicitly declined care with advice only omits medical commerce facts without changing action or resources',()=>{
  const s=economyState();s.player.hp=69;const before=structuredClone(s);
  for(const action of ['지금 진료를 받겠다는 건 아니고, 조언이 궁금해요.','치료는 받지 않고 이야기만 하고 싶어요.','진료를 안 받고 대화만 한다.']){

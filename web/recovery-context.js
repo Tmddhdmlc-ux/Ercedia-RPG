@@ -6,7 +6,9 @@ export const isRecoveryAction=action=>{
  const original=String(action);
  // Route explicit refusal clauses only; keep the player's original words in the GM request.
  // Do not erase a later care request, fee inquiry, or conditional question.
- const text=original.replace(/(?:치료(?!사)|진료)(?:를|는|도)?\s*(?:받(?:겠다는|으려는|는)\s*(?:건|것은|게|것이)?\s*아니(?:고|라|에요|야|다)|받지\s*않고|안\s*받고)/g,'');
+ const text=original.replace(/(?:치료(?!사)|진료)(?:를|는|도)?\s*(?:받(?:겠다는|으려는|는)\s*(?:건|것은|게|것이)?\s*아니(?:고|라|에요|야|다)|받지\s*않고|안\s*받고)/g,'')
+  // Asking about ongoing rest is not choosing a new rest action. Keep other clauses.
+  .replace(/쉬고\s*(?:있(?:나요|는지|겠죠|을까요|습니까|던가요)|계(?:신가요|시는지|실까요|시나요|시겠죠|십니까))/g,'');
  const careFee=/치료(?!사)|진료/.test(original)&&/비용|요금|가격|견적|치료비|진료비/.test(original);
  // A profession mention is not a request for care. Keep actual care and fee inquiries.
  return careFee||/치료(?!사)|진료|(?:응급|유료|약초|의료|상처|붕대)\s*처치|처치비|휴식|숙박|여관|하룻밤|잠을|잠든|잠잔다|쉰다|쉬겠|쉬어|쉬고/.test(text)||/치료사/.test(text)&&/처치|치유|검사|상처|부상|통증|비용|요금|가격|견적/.test(text);
