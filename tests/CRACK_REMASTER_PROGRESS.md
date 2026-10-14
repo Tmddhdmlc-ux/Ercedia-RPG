@@ -413,3 +413,15 @@
 - 남은 문제: 퇴장 후 현지 목록에는 시그나의 대화 가능 표시가 남아 있어 시설 안/밖의 접근·현재 위치·NPC life move 기록 연동을 별도로 확인해야 한다. 이번 패치가 그 표시를 검증·수정했다고 주장하지 않는다. 배경null의 빈 마당 화면, 긴 환경 지문/종료 평가, mentor의 오래된 공유 기억/새 GM 회상, 등록 방한 물품의 실제 구매·제작·장착, 전투/철수/치료·부상 및 자동 연결은 미완료. 식별되지 않은 목소리나 offscreen 인물 등 다른 참가자 구성도 일반화 검증 대상이다.
 - private QA: signa-post-practice-joke/refusal-evidence.json,departing-speaker-before-evidence.json(실패 원문/오류/복구 원문/만료 후 저장),departing-speaker-after-evidence.json(수정후 실제적용),departing-speaker-final-seed.json,departing-speaker-check.html,departing-speaker-proof.png,departing-speaker-full-test.txt. 다음은tab76/GM57/16:45 휴식 완료부터 계속하며 실패079/미적용복구 가지를 병합하지 않는다. QA는 사용자 저장/canon pack과 분리했다.
 - 배포 확인: 구현 커밋6a1181060e837c0b6780140d1eac37b055f7e348의 원격 main 일치. 고정 raw 원격 UI2.1.126/manifest 전체 필드/engine 원본 바이트 해시 일치, 원격 설정pack365개 전체 content·sha 로컬 일치. 자동화 계속, NPC 퇴장 이후 목록/위치 연동과 긴 기억·자동 연결 검증은 남았다.
+
+## 회차30 — NPC 퇴장의 서술과 실제 위치·접근 목록 연결
+
+- d1bc4b2/UI2.1.126에서 계속. 시작 사용 가능/9%/원래 resetsAt1792506969 유지. 지시서·진행 기록과 이전 실제 QA를 읽고 sources·사용자 저장·다른 변경 보존. 자동화 계속.
+- 실제 이전081: 시그나가 '보관소 안으로 돌아갔다'고 서술하고 npc=null인데 마당 현지 목록에는 시그나 '대화 가능'이 남았다. NPC life에는 이전 마당 위치가 그대로였다. nearbyPeople/townPeople는 확인된 현재 위치를 비교하고 있고 GM이 move 기록을 보내지 않은 것이 이번 원인이다. 최종 npc/cast에 없다고 모든 NPC를 이동·제거할 수는 없으므로 엔진의 위치 검증이나 화자 검증을 완화하지 않았다.
+- 수정: 기존 interaction_rule/서술 규칙의 퇴장 지침에 직접 본 이동과 확인된 목적지만 life_events move의 region/place/activity 및 실제 날짜·현재 scene 출처로 기록하도록 연결했다. 행방 미확인은 추정하지 않는다. 새로운 자동 위치 추론·익명 인물 생성·대사 금칙어·지침 별도 필드 추가는 없다. UI2.1.127/NARRATION3.8.
+- 같은 실제078 원본/같은10분 휴식 입력을 별도 QA에 복원해 실제 GM으로 재플레이082. 후에는 보관소 작업대에 가방을 내려놓는 것을 직접 관측한 서술과 ER-COM-007의 W1/물자 보관 장소 move가 함께 반환됐다. 엔진 최초 적용 성공, 마당 목록에서 시그나가 사라지고 브란은 기존대로 위치 미확인/대화 불가. 실제 npc_life의 목적지와 location_confirmed=true 확인. 플레이어는 계속 마당16:45/사건24/440동/HP·MP100/XP28/기술0/빈가방이다. 관측 근거 없는 다른 인물의 위치는 바꾸지 않았다.
+- 후속 실제 재방문083: 보관소 안으로 들어가 인사만 하고 새 수련·의뢰를 요청하지 않았다. 실제 GM은16:46/물자 보관 장소/시그나 none·base와 등록 직접 화자로 응답했다. 시그나는 '고맙다, 민하. 밖은 점점 추워지니 너무 늦게까지 돌아다니진 마'라고 받아주고 정리 작업을 계속했다. 엔진 최초 적용 성공, 같은 내부 위치에서 시그나 '위치 확인/대화 가능'을 확인했다. 이전 마당에서의 잘못된 접근과 실제 내부 재회를 구분하는 결과다. 사건25/440동/HP·MP100/XP28/추가 기술·의뢰·거래·보상 없음.
+- 검증: 의존성 준비·통합 빌드/전체540검사 통과·실패0/diff 통과. UI2.1.127/scene·state·bridge1,pack365/3985858자,audio·asset digest 유지,manifest SHA256075b447867db894115afcb5b47470a3bfed8d88c18619723458184faf252d1fa. 기존 NPC life move와 townPeople 접근 검사를 유지했고 원문을 수정하거나 강제로 적용하지 않았다.
+- 실제 시간/연결: UTC00:49경~01:00경 조사·수정·검사·실제2턴 확인, 순수10분 플레이라고 보고하지 않는다.082 완료 관측 상한74.666초,083은 sentAt2026-10-14T00:58:53.411Z부터 완료 관측까지의 기록을 private evidence에 남겼다. 정밀 모델 생성 시간/전체 응답 속도 개선은 주장하지 않는다. 수동 GM 전달·컴파일 엔진 실제 적용이며 Tampermonkey 자동 연결/독립 새 GM/모바일 검증은 아니다. 같은 GM에 이전 시도 기록이 있어 독립 성공률을 증명하지 않는다.
+- 미해결: 행방을 모르는 퇴장/시야 밖 음성/공용 지역명 변형과 장기·새 GM 회상, 긴 환경 지문·종료 평가·반복 몸짓, 등록 방한 장비 구매·제작·장착, 전투·철수·치료·부상 및 자동 연결. 이번은 직접 관측한 실내 이동→실제 재회 한 사례를 확인한 것이며 전체 지시서 완료가 아니다.
+- private QA: npc-departure-location-after-evidence.json/reentry-evidence.json/final-seed.json/check.html/proof.png/full-test.txt. 다음은tab77/GM57/650-07-01 16:46 보관소 내부 재회부터. 이전081/새082를 같은 분기에 중복 병합하지 않고 별도 원본078에서 이어갔다.
