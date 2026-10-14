@@ -47,7 +47,7 @@ export function narrativeFocus(state,action='',questId=null,choiceKind=null){
  if(requested.length){
   const ids=new Set(requested.map(n=>n.id));
   const shared=(state.npc_life?.memories||[]).filter(m=>ids.has(m.npc_id)&&m.player_witnessed===true);
-  focus.requested_people={voices:requested.map(n=>({id:n.id,name:n.name,...(npcPublicRole(n.id)?{public_role:npcPublicRole(n.id)}:{}),...Object.fromEntries(['duty','personality','speech_style'].filter(k=>typeof n[k]==='string'&&n[k]).map(k=>[k,n[k]]))})),shared_memories:requested.flatMap(n=>conversationMemories(shared.filter(m=>m.npc_id===n.id))),knowledge_rule:'requested_people는 이번 입력에서 찾거나 언급한 현지 등록 인물 후보다. 현장 존재·만남·동행·현재 표정은 확정하지 않는다. 실제 만나면 해당 공개 말투와 공유 기억을 잇는다. 플레이어가 따로 한 수선·거래·수련의 과정·가격·성능은 직접 보여주거나 전달한 범위만 안다. 이전 점검을 권했다는 이유로 나중에 확인한 손상을 전에 직접 보았다고 말하지 않는다. 목격·공유되지 않은 기억과 다른 인물의 결과는 공개하지 않는다.'};
+  focus.requested_people={voices:requested.map(n=>({id:n.id,name:n.name,...(npcPublicRole(n.id)?{public_role:npcPublicRole(n.id)}:{}),...Object.fromEntries(['duty','personality','speech_style'].filter(k=>typeof n[k]==='string'&&n[k]).map(k=>[k,n[k]]))})),shared_memories:requested.flatMap(n=>conversationMemories(shared.filter(m=>m.npc_id===n.id))),knowledge_rule:'requested_people는 이번 입력에서 찾거나 언급한 현지 등록 인물 후보다. 현장 존재·만남·동행·현재 표정은 확정하지 않는다. 이미 확인된 장소의 NPC를 찾아간 것은 NPC 이동이 아니다. 같은 장소는 npc_life의 확인된 place 명칭을 유지하며 내부·외부 묘사만으로 이동을 만들지 않는다. 실제 구역 이동은 정식 move로 기록한다. 실제 만나면 해당 공개 말투와 공유 기억을 잇는다. 플레이어가 따로 한 수선·거래·수련의 과정·가격·성능은 직접 보여주거나 전달한 범위만 안다. 이전 점검을 권했다는 이유로 나중에 확인한 손상을 전에 직접 보았다고 말하지 않는다. 목격·공유되지 않은 기억과 다른 인물의 결과는 공개하지 않는다.'};
  }
  // Anchor ordinary short replies as well as danger responses. This is context,
  // not an inferred promise, accepted contact or new relationship state.

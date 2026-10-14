@@ -2,6 +2,15 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene,actionPrompt} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
+test('checking a practice wood prop does not start learning and keeps the original inquiry and state',()=>{
+ const s=start(),before=structuredClone(s);for(const action of ['아까 두고 간 연습 나무는 그대로 있나요?','아까 남긴 연습용 목재는 아직 있나요?','연습용 조각은 어디에 보관했어요?']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.growth,false,action);assert.equal(p.snapshot.growth,undefined);assert.equal(p.snapshot.turn_facts.xp,undefined);assert.equal(p.snapshot.turn_facts.narrative_focus?.practice_interaction_rule,undefined);assert.ok(incrementalPrompt(s,action,'r',p).includes(action));}assert.deepEqual(s,before);
+});
+
+test('practice prop inquiries mixed with work, learning, review or a training choice retain growth',()=>{
+ const s=start(),before=structuredClone(s);for(const action of ['연습용 나무를 깎는다','연습 나무로 다시 해보자','연습 나무는 그대로 있나요? 그걸 다시 다듬어본다.','연습 나무는 그대로 있나요? 목공을 배워보고 싶어요.','연습 나무는 그대로 있나요? 나뭇결 보는 법을 복습한다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.growth,true,action);assert.ok(p.snapshot.growth,action);assert.deepEqual(p.payload.state.player,s.player);}assert.deepEqual(s,before);
+ s.scene.choices=[{id:'wood',kind:'training',text:'연습 나무는 그대로 있나요?'}];const p=createTurnSync().prepare(s,s.scene.choices[0].text,'wood');assert.equal(p.domains.growth,true);assert.ok(p.snapshot.turn_facts.narrative_focus.practice_interaction_rule);
+});
+
 test('declared 배워보고 and 배울 forms carry learning mechanics and interactive practice without granting progress',()=>{
  const s=start(),before=structuredClone(s);for(const action of ['목공 기초를 배워보고 싶어요.','나뭇결 보는 법을 배워보겠어요.','지금 배울 수 있나요?']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.growth,true,action);assert.deepEqual(p.payload.state.player,s.player);assert.deepEqual(p.payload.state.inventory,s.inventory);assert.ok(p.snapshot.turn_facts.narrative_focus.practice_interaction_rule,action);}assert.deepEqual(s,before);
 });
