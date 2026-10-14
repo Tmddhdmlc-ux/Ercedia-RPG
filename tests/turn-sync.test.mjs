@@ -2,6 +2,13 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
+test('declared 배워보고 and 배울 forms carry learning mechanics and interactive practice without granting progress',()=>{
+ const s=start(),before=structuredClone(s);for(const action of ['목공 기초를 배워보고 싶어요.','나뭇결 보는 법을 배워보겠어요.','지금 배울 수 있나요?']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.growth,true,action);assert.deepEqual(p.payload.state.player,s.player);assert.deepEqual(p.payload.state.inventory,s.inventory);assert.ok(p.snapshot.turn_facts.narrative_focus.practice_interaction_rule,action);}assert.deepEqual(s,before);
+});
+test('remembering 배웠 or thanking someone for 배워준 does not start learning or practice',()=>{
+ const s=start();for(const action of ['어제 배웠던 이야기가 기억나요.','배워준 이야기에 고마워요.','어제 배워본 순서가 기억나요.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.growth,false,action);assert.equal(p.snapshot.turn_facts.narrative_focus?.practice_interaction_rule,undefined,action);}
+});
+
 test('보고 embedded in looking or trying verbs does not add quest and adventure protocols to ordinary dialogue',()=>{
  const s=start(),before=structuredClone(s);for(const action of ['손목 상태를 살펴보고 싶다고 하셨잖아요.','마야를 바라보고 웃는다.','창밖을 지켜보고 있다.','마야에게 물어보고 싶다.','그분을 보고 싶어요.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.quest,false,action);assert.equal(p.domains.adventure,false,action);assert.equal(p.payload.state.turn_facts.quests,undefined);assert.ok(incrementalPrompt(s,action,'r',p).includes(action));}assert.deepEqual(s,before);
 });
