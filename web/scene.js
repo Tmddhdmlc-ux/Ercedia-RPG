@@ -121,14 +121,18 @@ export function turnDomains(state,action,choiceId){
   if(isRecoveryAction(text))combatText=combatText.replace(/(?:특별한|추가|전문)\s*처치(?=\s*(?:가\s*필요|를\s*받|비용))/g,'치료');
   if(/치료사/.test(text)&&isRecoveryAction(text))combatText=combatText.replace(/처치(?=\s*(?:를\s*)?받)/g,'치료');
   const huntingAction=combatText.trim()==='사냥'||/사냥(?:한다|하러|하겠|하자|할래|해(?:보|볼|야|요|라)?|을?\s*(?:시작|진행|시도|나서|나선|나가|떠나|간다))/.test(combatText);
+  // 보고 inside 살펴보고/물어보고 is a verb ending, not a quest report.
+  // Keep explicit report words, common report compounds, choices and active quests.
+  const reportText=text.replace(/보고\s+싶/g,'보고싶');
+  const reportMention=/(?:^|[^가-힣A-Za-z0-9_])(?:(?:결과|완료|중간|최종|조사|경과|상황|정보)\s*)?보고(?=$|[^가-힣A-Za-z0-9_]|서|하|한|할|했|합|해|드|받|되|됐|를|는|가|에|만|도|와|과|로|의|부터|까지|제출|내용)/.test(reportText);
   return {
     combat:huntingAction||/전투(?!불능|\s*(?:이후|후|뒤))|공격(?!력|받|당|을\s*받)|싸우|싸움|토벌|처치|궁극기|사격|견제|베어|베기|찌른|쏜다|쏘아|쏘겠|발사|타격|방어(?!구)|가드/.test(combatText),
     dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스/.test(text),
     trade:kind==='trade'||isRecoveryAction(text)||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|살\s*수\s*있|사(?:려고|러|고\s*싶)|빌(?:릴|리|려)|대여|보증금|경매|입찰|시설/.test(text),
     crafting:/제작|대장간|강화|분해|조합|단조|검.{0,15}(?:만들|만든)/.test(text),
     growth:kind==='training'||/수련|단련|훈련|학습|배우|연습|공부|복습|단조|익히|연구|기술서|돌파|경지|서클|입문|직업|전직/.test(text),
-    adventure:['travel','quest','investigate'].includes(kind)||/이동|여행|출발|귀환|조사|탐색|탐험|조우|주민|일거리|운송|수레|의뢰|퀘스트|보고/.test(text),
-    quest:kind==='quest'||!!choice?.quest_id||hasActiveQuestStory(state)||/의뢰|퀘스트|보고|수주|일거리|게시|보수|운송|운반|유급|순찰/.test(text),
+    adventure:['travel','quest','investigate'].includes(kind)||reportMention||/이동|여행|출발|귀환|조사|탐색|탐험|조우|주민|일거리|운송|수레|의뢰|퀘스트/.test(text),
+    quest:kind==='quest'||!!choice?.quest_id||hasActiveQuestStory(state)||reportMention||/의뢰|퀘스트|수주|일거리|게시|보수|운송|운반|유급|순찰/.test(text),
     relationship:/관계|세력|조직|왕족|국왕|혼인|반란|배신|동료|동행/.test(text)
   };
 }

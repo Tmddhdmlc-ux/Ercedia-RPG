@@ -2,6 +2,15 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
+test('보고 embedded in looking or trying verbs does not add quest and adventure protocols to ordinary dialogue',()=>{
+ const s=start(),before=structuredClone(s);for(const action of ['손목 상태를 살펴보고 싶다고 하셨잖아요.','마야를 바라보고 웃는다.','창밖을 지켜보고 있다.','마야에게 물어보고 싶다.','그분을 보고 싶어요.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.quest,false,action);assert.equal(p.domains.adventure,false,action);assert.equal(p.payload.state.turn_facts.quests,undefined);assert.ok(incrementalPrompt(s,action,'r',p).includes(action));}assert.deepEqual(s,before);
+});
+test('explicit and compound reports, quest choices and active stories still carry complete quest evidence',()=>{
+ const s=start();for(const action of ['보고','마야에게 결과를 보고한다.','완료보고를 한다.','중간보고서를 확인한다.','상황보고 내용이 궁금하다.','한번 물어보고 마야에게 보고한다.']){const p=createTurnSync().prepare(s,action);assert.equal(p.domains.quest,true,action);assert.equal(p.domains.adventure,true,action);assert.ok(p.payload.state.turn_facts.quests,action);}
+ s.scene.choices=[{id:'handoff',kind:'quest',quest_id:'q',text:'결과를 전한다'}];assert.equal(createTurnSync().prepare(s,'결과를 전한다','handoff').domains.quest,true);
+ s.quest_log=[{id:'q',status:'active',story_required:true,story:[]}];assert.equal(createTurnSync().prepare(s,'마야에게 물어보고 싶다').domains.quest,true);
+});
+
 test('ordinary checkpoints omit terminal audit duplication but retain outcomes, contracts, rewards and memory without mutating saves',()=>{
  const s=start();s.quest_event_ids=['accepted','proof','claim'];s.quest_log=[{id:'done',title:'천 확인',status:'completed',claim_event_id:'claim',reward:{currency:40,xp:10},story:[{kind:'resolve',description:'직원 휴식과 명부 오류 정정'}],objectives:[{id:'cloth',current:1,target:1,verification:{kind:'clue',target_id:'cloth'},evidence_ids:['proof']}],journal:['검증 원장 '.repeat(100)]},{id:'offered',title:'새 제안',status:'offered',objectives:[],journal:['아직 미수락']}];
  const before=structuredClone(s),sync=createTurnSync(),p=sync.prepare(s,'안부를 묻는다');const done=p.payload.state.quest_log[0];
