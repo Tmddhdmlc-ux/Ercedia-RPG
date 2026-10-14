@@ -1,7 +1,7 @@
 import {findNPC,npcCatalog} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 const clone=v=>JSON.parse(JSON.stringify(v));
-export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. life_events move는 등록 NPC의 이동만 기록한다. 플레이어 이동은 game_state의 실제 region/place/date/time과 scene.location/time으로 기록하며 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player나 npc_id=player를 life_events에 넣지 않는다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
+export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. life_events move는 등록 NPC의 이동만 기록한다. 실제 NPC 이동의 도착이 이번 응답에서 확인되면 {event_id,kind:move,npc_id:등록ID,date:도착 게임날짜,source_id:scene:<이번 scene_id>,reason:실제 이동 경위,region:도착 권역ID,place:실제 도착 장소,activity:도착 뒤 실제 활동}을 기록한다. 플레이어와 함께 이동한 NPC도 포함한다. 계획·찾기 요청만으로 이동을 만들지 않으며 다른 국가로 건너가면 NPC_LIFE_SCHEMA의 border 증빙도 필요하다. 플레이어 이동은 game_state의 실제 region/place/date/time과 scene.location/time으로 기록하며 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player나 npc_id=player를 life_events에 넣지 않는다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
 const present=scene=>scene.cast||(scene.npc?[scene.npc]:[]);
 const fail=m=>{throw Error('NPC 생활 검증 · '+m);};
 const text=(v,max=500,key='')=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail((key?key+' ':'')+'문자열 형식');return v;};
