@@ -139,3 +139,18 @@ test('durable public conversational boundaries survive actor changes without aut
  s.scene={...scene,life_events:undefined};assert.ok(narrativeFocus(s).shared_memories.some(m=>m.action==='인사 선호 전달'));assert.deepEqual(s.relationships,{});
 });
 
+
+test('confirmed public corrections survive later chatter without leaking other actors or overwriting boundaries',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');
+ const m=(action,result,npc_id='ER-COM-007',player_witnessed=true)=>({npc_id,date:'650-07-01',action,result,player_witnessed});
+ s.npc_life={npcs:{},memories:[m('자기소개','공개 이름'),m('인사 선호 전달','악수는 거절'),m('공유 사실 정정','이전 잘못된 회상'),m('공유 사실 정정','실제 첫 판단은 단정하지 않았다고 확인'),...Array.from({length:5},(_,i)=>m('일상 '+i,'잡담 '+i)),m('공유 사실 정정','PRIVATE',undefined,false),m('공유 사실 정정','OTHER','ER-COM-001')]};
+ const before=structuredClone(s),f=narrativeFocus(s,'지난 판단을 묻는다');
+ assert.equal(f.shared_memories.length,5);
+ assert.ok(f.shared_memories.some(m=>m.result==='실제 첫 판단은 단정하지 않았다고 확인'));
+ assert.ok(f.shared_memories.some(m=>m.result==='악수는 거절'));
+ assert.ok(f.shared_memories.some(m=>m.result==='공개 이름'));
+ assert.ok(!JSON.stringify(f.shared_memories).includes('이전 잘못된 회상'));
+ assert.ok(!JSON.stringify(f.shared_memories).includes('PRIVATE'));
+ assert.ok(!JSON.stringify(f.shared_memories).includes('OTHER'));
+ assert.deepEqual(s,before);
+});
