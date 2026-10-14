@@ -1,4 +1,4 @@
-import {hasLearningIntent} from './learning-intent.js';
+import {hasLearningIntent,learningRoutingText} from './learning-intent.js';
 import {operatingRules} from './gm-turn-policy.js';
 import {lifeEventInstruction} from './npc-life.js';
 import {resolveNPC,npcPublicRole,npcCatalog} from './npc-model.js';
@@ -18,6 +18,7 @@ function conversationMemories(memories){
 }
 
 export function narrativeFocus(state,action='',questId=null,choiceKind=null){
+ const learningText=learningRoutingText(action);
  const speakers=[state.scene?.npc,...(state.scene?.cast||[])].filter(Boolean),seen=new Set(),voices=[];
  for(const actor of speakers){
   if(seen.has(actor.id))continue;seen.add(actor.id);
@@ -101,7 +102,7 @@ export function narrativeFocus(state,action='',questId=null,choiceKind=null){
  if(requested.length)focus.arrival_memory_rule='이번 응답에서 실제로 새 인물을 만나 자기소개를 직접 주고받았다면, 이동 전 voices에 없던 도착지 인물도 그 대화를 직접 들은 현장 인물이다. 첫 만남 자동 기록은 만났다는 사실만 남기므로 직접 공유한 이름·호칭은 그 인물의 experience/action/result에 기록한다. 실제 만남과 발화가 성립한 뒤에만 memory_recording_rule의 현재 장면 출처·날짜·장소·호감0 원칙을 적용한다. 찾기 요청·명부·이동 계획만으로 만남이나 지식을 만들지 않는다. 플레이어 프로필의 이름을 읽었거나 NPC가 이름을 부른 것만으로 자기소개를 추정하지 않는다.';
  if(/재료상|상점|점원|가게|접수대|배급소|대장간|서점|여관|시설/.test(action+' '+(state.scene?.location||'')))focus.speaker_registration_rule='이번 행동 종료 장소에서 실제 만난 등록 인물만 직접 대사의 speaker/speaker_id와 npc/cast로 사용한다. 출발지 인물을 도착지 화자로 옮기지 않는다. 시설 담당자의 등록 신원이 확인되지 않으면 npc=null로 두고 업무 안내·견적은 나레이션의 간접화법으로 전달한다. 점원·담당자 같은 임의 화자 이름이나 그 인물의 ID·원화·표정·능력치를 만들지 않는다. 실제 등록 생활형 인물을 만나면 그 인물의 말투로 대화하며 일반 대화를 무조건 간접화법으로 바꾸지 않는다.';
  if(voices.length&&/밖으로\s*(?:나온다|나간다|나선다)|(?:작별|인사하고)[^.!?\n]*(?:떠난다|돌아간다)/.test(action))focus.departure_scene_rule='명시한 퇴장은 이번 턴에 진행한다. 입력한 인사말을 다시 요약하며 시작하지 않고 상대의 실제 반응부터 잇는다. 출발지 인물의 인사·반응은 이동 전 실제 주고받은 내용으로 나레이션 간접 서술에 남긴다. 최종 도착지에 함께 오지 않은 인물은 직접 dialogue 화자와 npc/cast에 넣지 않는다. npc=null인 장면에 speaker_id 없는 옛 화자 대사를 붙여 우회하지 않는다. 실제 동행한 인물은 등록 ID로 유지하되 계획만으로 동행·이동을 확정하지 않는다. 작별을 새 수업·의뢰·보상으로 바꾸거나 다음 장소의 만남을 미리 확정하지 않는다.';
- if(choiceKind==='training'||hasLearningIntent(action)||/연습|실습|수련|훈련|지도|배우/.test(action))focus.practice_interaction_rule='연습 시작은 아직 플레이어가 관찰 문제에 답하거나 새로운 방법을 선택한 것이 아니다. 처음 배우는 판단을 NPC가 시범 보인 뒤에는 실제 보이는 단서와 해볼 과제를 제시하고 플레이어의 첫 판단·방법 선택을 남긴다. 플레이어가 했을 오답·정답·생각을 대신 쓰며 수업 완료와 성과까지 넘기지 않는다. 이전 발화로 이미 구별한 원리를 새로 틀린 생각으로 되돌려 교정 장면을 만들지 않는다. 실패는 이번 실제 수행의 구체적 근거로 판정하며 과거 오답을 발명하지 않는다. 이미 답한 문제·확인한 방법을 다시 묻거나 준비 허락을 반복하지 않는다. 시간·횟수를 정해 끝까지 반복하겠다는 명시 요청이나 이미 선택한 단순 반복은 압축 진행할 수 있다. 모든 동작을 퀴즈로 나누지 않으며 완료 경험치는 실제 수행과 완료가 확인된 뒤 정산한다.';
+ if(choiceKind==='training'||hasLearningIntent(learningText)||/연습|실습|수련|훈련|지도|배우/.test(learningText))focus.practice_interaction_rule='연습 시작은 아직 플레이어가 관찰 문제에 답하거나 새로운 방법을 선택한 것이 아니다. 처음 배우는 판단을 NPC가 시범 보인 뒤에는 실제 보이는 단서와 해볼 과제를 제시하고 플레이어의 첫 판단·방법 선택을 남긴다. 플레이어가 했을 오답·정답·생각을 대신 쓰며 수업 완료와 성과까지 넘기지 않는다. 이전 발화로 이미 구별한 원리를 새로 틀린 생각으로 되돌려 교정 장면을 만들지 않는다. 실패는 이번 실제 수행의 구체적 근거로 판정하며 과거 오답을 발명하지 않는다. 이미 답한 문제·확인한 방법을 다시 묻거나 준비 허락을 반복하지 않는다. 시간·횟수를 정해 끝까지 반복하겠다는 명시 요청이나 이미 선택한 단순 반복은 압축 진행할 수 있다. 모든 동작을 퀴즈로 나누지 않으며 완료 경험치는 실제 수행과 완료가 확인된 뒤 정산한다.';
  return focus;
 }
 
