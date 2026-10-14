@@ -2,6 +2,17 @@ import test from 'node:test';import assert from 'node:assert/strict';
 import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
+test('ordinary checkpoints omit terminal audit duplication but retain outcomes, contracts, rewards and memory without mutating saves',()=>{
+ const s=start();s.quest_event_ids=['accepted','proof','claim'];s.quest_log=[{id:'done',title:'천 확인',status:'completed',claim_event_id:'claim',reward:{currency:40,xp:10},story:[{kind:'resolve',description:'직원 휴식과 명부 오류 정정'}],objectives:[{id:'cloth',current:1,target:1,verification:{kind:'clue',target_id:'cloth'},evidence_ids:['proof']}],journal:['검증 원장 '.repeat(100)]},{id:'offered',title:'새 제안',status:'offered',objectives:[],journal:['아직 미수락']}];
+ const before=structuredClone(s),sync=createTurnSync(),p=sync.prepare(s,'안부를 묻는다');const done=p.payload.state.quest_log[0];
+ assert.equal(p.checkpoint,true);assert.equal(done.journal,undefined);assert.equal(done.objectives[0].evidence_ids,undefined);assert.equal(done.claim_event_id,'claim');assert.deepEqual(done.reward,s.quest_log[0].reward);assert.deepEqual(done.story,s.quest_log[0].story);assert.equal(done.objectives[0].current,1);assert.deepEqual(p.payload.state.quest_event_ids,s.quest_event_ids);assert.deepEqual(p.payload.state.quest_log[1],s.quest_log[1]);assert.deepEqual(p.payload.state.game_state,s.gameState);assert.deepEqual(s,before);
+ sync.acknowledge(p);const mechanical=sync.prepare(s,'의뢰 결과를 보고한다');assert.deepEqual(mechanical.payload.state.quest_log,s.quest_log);assert.deepEqual(s,before);
+});
+test('named terminal contracts and mechanical request domains retain complete audit evidence',()=>{
+ const s=start();s.quest_log=[{id:'done',title:'천 확인',status:'completed',objectives:[{evidence_ids:['proof']}],journal:['완료 증거']}];
+ for(const action of ['천 확인은 어떻게 끝났지?','의뢰 기록을 묻는다','검을 구매한다','훈련한다','공격한다'])assert.deepEqual(createTurnSync().prepare(s,action).payload.state.quest_log,s.quest_log,action);
+});
+
 test('remembered learning in thanks or rest is not training; actual practice and training choices keep mechanics',()=>{
  const s=start(),sync=createTurnSync();s.gm_rulings=[{id:'lesson',topic:'수업',decision:'실습한 준비 절차를 기억한다'}];sync.acknowledge(sync.prepare(s,'인사한다'));
  for(const action of ['오늘 배운 준비 방법에 감사하고 한 시간 쉰다','어제 익힌 순서를 이야기하고 휴식한다']){assert.equal(turnDomains(s,action).growth,false);assert.equal(sync.prepare(s,action).domains.growth,false);}

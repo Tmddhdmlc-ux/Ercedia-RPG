@@ -166,7 +166,15 @@ export function turnContext(state,domains,action='',choiceId=null){
   if(!domains.quest)delete context.regional_epics;
   if(!domains.trade){delete context.shops;delete context.economy;delete context.trade_receipts;}
   if(!domains.dungeon&&!domains.combat)delete context.item_registry.region_rewards;
-  // Preserve live equipment/resources, quests, memories and the clock in full.
+  // Ordinary conversation needs terminal results, not duplicate mechanical audit logs.
+  // This is a request projection; never edit the stored contracts or reward tombstones.
+  if(!Object.values(domains).some(Boolean))context.quest_log=context.quest_log.map(q=>{
+    const named=[q.id,q.title].some(v=>typeof v==='string'&&v.length>=2&&action.includes(v));
+    if(named||!['completed','failed','expired','abandoned','declined'].includes(q.status))return q;
+    const {journal,...result}=q;
+    return {...result,objectives:q.objectives?.map(({evidence_ids,...o})=>o)};
+  });
+  // Preserve live equipment/resources, contract conditions, memories and the clock.
   return context;
 }
 export function requestContext(state){
