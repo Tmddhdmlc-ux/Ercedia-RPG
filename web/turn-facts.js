@@ -7,8 +7,8 @@ import {npcSnapshot} from './npc-model.js';
 import {worldData} from './world-data.js';
 
 // Send the small, relevant canonical records themselves, not only file names/counts.
-export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
- const facts={},focus=narrativeFocus(state,action,questId);
+export function turnFacts(state,domains,action='',nearbyActors=[],questId=null,choiceKind=null){
+ const facts={},focus=narrativeFocus(state,action,questId,choiceKind);
  if(Object.keys(focus).length)facts.narrative_focus=focus;
  if(isRecoveryAction(action))facts.recovery_wire=recoveryFacts(state);
  if(domains.crafting||domains.trade||/장비|무기|검|스태프|기술서|카탈로그/.test(action)){

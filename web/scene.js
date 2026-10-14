@@ -144,7 +144,7 @@ function mentionsPublicRole(action,role){
 }
 export function turnContext(state,domains,action='',choiceId=null){
   const context=requestContext(state);
-  context.turn_facts=turnFacts(state,domains,action,context.npc_catalog.nearby_npcs,state.scene?.choices?.find(c=>c.id===choiceId)?.quest_id||null);
+  context.turn_facts=turnFacts(state,domains,action,context.npc_catalog.nearby_npcs,state.scene?.choices?.find(c=>c.id===choiceId)?.quest_id||null,state.scene?.choices?.find(c=>c.id===choiceId)?.kind||null);
   if(domains.quest)context.turn_facts.quests=questWireFacts(state);
   const involved=new Set([state.scene?.npc?.id,...(state.scene?.cast||[]).map(n=>n.id),...(state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id||q.issuer_id)].filter(Boolean));
   for(const id of Object.keys(context.npc_life?.npcs||{}))involved.add(id);
@@ -191,7 +191,7 @@ export function requestContext(state){
 }
 export function actionPrompt(state,action,requestId,{compact=false,choiceId=null}={}){
  action=String(action);const domains=turnDomains(state,action,choiceId);
- const focus=narrativeFocus(state,action,state.scene?.choices?.find(c=>c.id===choiceId)?.quest_id||null);
+ const focus=narrativeFocus(state,action,state.scene?.choices?.find(c=>c.id===choiceId)?.quest_id||null,state.scene?.choices?.find(c=>c.id===choiceId)?.kind||null);
  const context=compact?turnContext(state,domains,action,choiceId):requestContext(state);
  return buildTurnPrompt({state,action,id:requestId,domains,focus,payload:{...context,narrative_focus:focus,...(isRecoveryAction(action)?{recovery_wire:recoveryFacts(state)}:{})}});
 }

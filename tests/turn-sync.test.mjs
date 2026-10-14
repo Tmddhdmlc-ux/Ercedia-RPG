@@ -1,5 +1,5 @@
 import test from 'node:test';import assert from 'node:assert/strict';
-import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
+import {defaults} from '../web/state.js';import {initialPlayer} from '../web/intro-model.js';import {createTurnSync,incrementalPrompt} from '../web/turn-sync.js';import {turnDomains,normalizeScene,actionPrompt} from '../web/scene.js';import {mergeRulings} from '../web/gm-rulings.js';import {mountChatUI} from '../web/chat-ui.js';import {uiHarness} from './ui-harness.mjs';
 const start=()=>({...defaults(),campaign_id:'sync-test',player:initialPlayer('시험'),gameState:{region:'W1',place:'마을',date:'650-07-01',time:'09:00'},scene:{schema_version:1,type:'ercedia_scene',scene_id:'start',location:'마을',time:'09:00',background_id:null,npc:null,dialogue:[{speaker:'나레이션',text:'출발'}],choices:[]}});
 
 test('declared 배워보고 and 배울 forms carry learning mechanics and interactive practice without granting progress',()=>{
@@ -82,4 +82,10 @@ test('medical treatment requests omit combat facts without suppressing a real en
 
 test('incremental requests retain required registered actor fields and never silently invent a missing name',()=>{
  const s=start(),p=createTurnSync().prepare(s,'마야에게 안부를 묻는다');const prompt=incrementalPrompt(s,'마야에게 안부를 묻는다','r',p);assert.match(prompt,/npc\/cast=\{id,speaker,outfit,emotion\}/);assert.throws(()=>normalizeScene({...s.scene,npc:{id:'ER-NPC-057',outfit:'none',emotion:'base'}},s),/npc.speaker/);assert.equal(s.scene.npc,null);
+});
+
+test('training choice metadata retains first-method safeguards for keyword-free practice in both request paths',()=>{
+ const s=start();s.scene.choices=[{id:'sand',kind:'training',text:'갈라진 끝을 피하고 나머지 모서리를 천천히 둥글게 다듬는다'},{id:'look',kind:'investigate',text:'갈라진 부분을 살펴본다'}];const before=structuredClone(s),action=s.scene.choices[0].text;
+ const p=createTurnSync().prepare(s,action,'sand');assert.equal(p.domains.growth,true);assert.ok(p.snapshot.turn_facts.narrative_focus.practice_interaction_rule);assert.deepEqual(p.payload.state.player,s.player);assert.match(actionPrompt(s,action,'r',{choiceId:'sand'}),/practice_interaction_rule/);assert.match(actionPrompt(s,action,'r',{compact:true,choiceId:'sand'}),/practice_interaction_rule/);
+ assert.equal(createTurnSync().prepare(s,action).snapshot.turn_facts.narrative_focus?.practice_interaction_rule,undefined);assert.equal(createTurnSync().prepare(s,s.scene.choices[1].text,'look').snapshot.turn_facts.narrative_focus?.practice_interaction_rule,undefined);assert.deepEqual(s,before);
 });
