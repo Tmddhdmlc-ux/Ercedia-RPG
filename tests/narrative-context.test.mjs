@@ -12,6 +12,32 @@ import {planNPCLife,validateLifeEvents} from '../web/npc-life.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
+test('mentioning Bran in a conversation with Signa does not give Bran that memory; only delivered rumors reach his life context',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-001');
+ const own={npc_id:'ER-COM-001',date:'650-07-01',action:'인사 선호 전달',result:'손잡는 인사 대신 말로 인사한다.',player_witnessed:true};
+ const other={npc_id:'ER-COM-007',date:'650-07-01',action:'목공 경험을 직접 전달',result:'민하는 시그나에게 브란 오크펠에게 목공을 배웠고 나무 조각을 작업장에 두고 왔다고 말했다.',player_witnessed:true};
+ const rumor={id:'pending-road-news',from_npc:'ER-COM-007',to_npc:'ER-COM-001',message:'민하가 나무 조각을 두고 왔다고 말했다.',delivered:false};
+ s.npc_life={npcs:{},memories:[own,other],rumors:[rumor],traces:[],links:[]};
+ s.gameState.events=[other.result];const before=structuredClone(s),action='브란에게 나무 조각은 그 자리에 두라고 말한다.';
+ const p=createTurnSync().prepare(s,action),f=p.snapshot.turn_facts.narrative_focus;
+ assert.deepEqual(f.shared_memories.map(m=>m.npc_id),['ER-COM-001']);
+ assert.ok(!JSON.stringify(f.shared_memories).includes(other.result));
+ assert.deepEqual(p.snapshot.npc_life.memories,[own]);
+ assert.deepEqual(p.snapshot.npc_life.rumors,[]);
+ assert.deepEqual(p.snapshot.game_state.events,[other.result]);
+ assert.match(p.snapshot.npc_life.constraints,/다른 NPC 기록·플레이어 일지·미도착 소문/);
+ assert.deepEqual(s,before);
+ // Delivery exposes received information, not the sender's private/full memory or affection.
+ s.npc_life.rumors[0].delivered=true;const deliveredBefore=structuredClone(s);
+ const received=createTurnSync().prepare(s,action).snapshot;
+ assert.deepEqual(received.npc_life.rumors,[{...rumor,delivered:true}]);
+ assert.deepEqual(received.npc_life.memories,[own]);
+ assert.deepEqual(received.turn_facts.narrative_focus.shared_memories,f.shared_memories);
+ assert.deepEqual(s,deliveredBefore);
+ s.scene.npc=actor('ER-COM-007');
+ assert.equal(narrativeFocus(s,'그 목공 이야기를 계속한다.').shared_memories[0].result,other.result);
+});
+
 test('known destination guidance preserves confirmed location names without inventing NPC movement or a meeting',()=>{
  const s=start();s.scene.npc=actor('ER-COM-007');s.npc_life={npcs:{'ER-COM-001':{region:'W1',place:'방책 작업장',known:true,location_confirmed:true}},memories:[]};const before=structuredClone(s),f=narrativeFocus(s,'브란이 실제 있으면 작업장에 찾아가 두고 간 나무를 묻는다');
  assert.equal(f.requested_people.voices[0].id,'ER-COM-001');assert.match(f.requested_people.knowledge_rule,/찾아간 것은 NPC 이동이 아니다/);assert.match(f.requested_people.knowledge_rule,/확인된 place 명칭/);assert.match(f.requested_people.knowledge_rule,/실제 구역 이동은 정식 move/);assert.match(f.requested_people.knowledge_rule,/현장 존재·만남·동행·현재 표정은 확정하지/);assert.ok(f.life_event_rule);assert.deepEqual(s,before);
