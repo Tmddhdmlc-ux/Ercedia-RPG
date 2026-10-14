@@ -1,7 +1,7 @@
 import {findNPC,npcCatalog} from './npc-model.js';
 import {calendarDay} from './quest-model.js';
 const clone=v=>JSON.parse(JSON.stringify(v));
-export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. life_events move는 등록 NPC의 이동만 기록한다. 실제 NPC 이동의 도착이 이번 응답에서 확인되면 {event_id,kind:move,npc_id:등록ID,date:도착 게임날짜,source_id:scene:<이번 scene_id>,reason:실제 이동 경위,region:도착 권역ID,place:실제 도착 장소,activity:도착 뒤 실제 활동}을 기록한다. 플레이어와 함께 이동한 NPC도 포함한다. 계획·찾기 요청만으로 이동을 만들지 않으며 다른 국가로 건너가면 NPC_LIFE_SCHEMA의 border 증빙도 필요하다. 플레이어 이동은 game_state의 실제 region/place/date/time과 scene.location/time으로 기록하며 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player나 npc_id=player를 life_events에 넣지 않는다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
+export const lifeEventInstruction='npc/cast의 실제 첫 만남은 엔진이 자동 기억하므로 별도 첫 만남 life_events는 필요 없다. 같은 장소에서 이번 현장 NPC의 작업·휴식이 실제 바뀌었으면 {event_id,kind:activity,npc_id,date,source_id:scene:<이번 scene_id>,reason,region,place,activity}로 현재 활동만 갱신한다. 계획·시간 경과만으로 완료·휴식을 확정하거나 미목격 인물의 활동을 갱신하지 않는다. activity는 이동·부상·피로·호감 변경을 대신하지 않으며 기존 장소와 다르면 먼저 정식 move가 필요하다. life_events move는 등록 NPC의 이동만 기록한다. 실제 NPC 이동의 도착이 이번 응답에서 확인되면 {event_id,kind:move,npc_id:등록ID,date:도착 게임날짜,source_id:scene:<이번 scene_id>,reason:실제 이동 경위,region:도착 권역ID,place:실제 도착 장소,activity:도착 뒤 실제 활동}을 기록한다. 플레이어와 함께 이동한 NPC도 포함한다. 계획·찾기 요청만으로 이동을 만들지 않으며 다른 국가로 건너가면 NPC_LIFE_SCHEMA의 border 증빙도 필요하다. 플레이어 이동은 game_state의 실제 region/place/date/time과 scene.location/time으로 기록하며 국가 변경 시 기존 system_events border 증빙을 유지한다. actor_id=player나 npc_id=player를 life_events에 넣지 않는다. 추가 생활 사건은 event_id,kind,date,source_id,reason 필수. 직접 경험은 kind=experience,npc_id,action,result,location,affection_delta,player_witnessed 필수이며 source_id는 이번 scene:<scene_id> 또는 실제 선행 사건 ID다. 관계 변화는 실제 사건 근거가 있을 때만 기록한다.';
 const present=scene=>scene.cast||(scene.npc?[scene.npc]:[]);
 const fail=m=>{throw Error('NPC 생활 검증 · '+m);};
 const text=(v,max=500,key='')=>{if(typeof v!=='string'||!v.trim()||v.length>max)fail((key?key+' ':'')+'문자열 형식');return v;};
@@ -25,9 +25,9 @@ export function validateLifeEvents(events){
   return events.map(raw=>{
     const e={event_id:text(raw.event_id,100,'event_id'),kind:raw.kind,date:text(raw.date,80,'date'),source_id:text(raw.source_id,100,'source_id'),reason:text(raw.reason,1000,'reason')};day(e.date);
     if(!/^[A-Za-z0-9:_-]+$/.test(e.event_id)||['__proto__','constructor','prototype'].includes(e.event_id))fail('사건 ID 형식');
-    if(!['schedule','move','experience','companion','condition','rumor','relay','npc_relation','region_effect'].includes(e.kind))fail('사건 종류');
+    if(!['schedule','move','activity','experience','companion','condition','rumor','relay','npc_relation','region_effect'].includes(e.kind))fail('사건 종류');
     if(e.kind==='move'&&(raw.actor_id==='player'||raw.npc_id==='player'))fail('플레이어 이동은 life_events move가 아니라 game_state region/place/date/time과 scene.location/time으로 기록하세요. 국가 변경의 system_events border 증빙은 유지하세요.');
-    if(['schedule','move','experience','companion','condition'].includes(e.kind))e.npc_id=npc(raw.npc_id);
+    if(['schedule','move','activity','experience','companion','condition'].includes(e.kind))e.npc_id=npc(raw.npc_id);
     if(e.kind==='condition'){if(!Array.isArray(raw.injuries)||raw.injuries.length>10||!['rested','tired','exhausted'].includes(raw.fatigue))fail('부상·피로 형식');e.injuries=raw.injuries.map(v=>text(v,160));e.fatigue=raw.fatigue;e.major_event=raw.major_event===null?null:text(raw.major_event,100);}
     if(e.kind==='schedule'){
       if(!Array.isArray(raw.entries)||raw.entries.length>16)fail('일정 한도');
@@ -35,6 +35,7 @@ export function validateLifeEvents(events){
       const sorted=[...e.entries].sort((a,b)=>day(a.start)-day(b.start));for(let i=1;i<sorted.length;i++)if(day(sorted[i].start)<=day(sorted[i-1].end))fail('일정 중복');
     }
     if(e.kind==='move'){e.region=region(raw.region);e.place=text(raw.place,160);e.activity=text(raw.activity,100);if(raw.border!==undefined)e.border=clone(raw.border);}
+    if(e.kind==='activity'){e.region=region(raw.region);e.place=text(raw.place,160);e.activity=text(raw.activity,100);}
     if(e.kind==='companion'){if(typeof raw.accompanying!=='boolean')fail('동행 여부');e.accompanying=raw.accompanying;}
     if(e.kind==='experience'){
       e.action=text(raw.action,160);e.result=text(raw.result,500);e.location=text(raw.location,160);e.follow_up=typeof raw.follow_up==='string'?raw.follow_up.slice(0,500):'';
@@ -80,7 +81,13 @@ export function planNPCLife(state,scene,questResult=null){
     if(Object.keys(life.applied).length>=10000)fail('중복 방지 기록 한도');
     if(e.npc_id)get(e.npc_id);
     if(e.kind==='schedule'){get(e.npc_id).schedule=e.entries;get(e.npc_id).schedule_source=e.event_id;}
-    if(e.kind==='move'){const p=get(e.npc_id);crossBorder(p.region,e.region,e.border,e.date);Object.assign(p,{region:e.region,place:e.place,activity:e.activity,destination:null,updated_at:e.date,location_confirmed:true});}
+    if(e.kind==='move'){const p=get(e.npc_id);crossBorder(p.region,e.region,e.border,e.date);Object.assign(p,{region:e.region,place:e.place,activity:e.activity,destination:null,updated_at:e.date,location_confirmed:true});delete p.activity_observation;}
+    if(e.kind==='activity'){
+      const p=get(e.npc_id),area=scene.game_state?.region||state.gameState?.region,place=scene.game_state?.place||scene.location;
+      if(e.source_id!=='scene:'+scene.scene_id||day(e.date)!==now||!present(scene).some(n=>n.id===e.npc_id))fail('활동 변경은 이번 현장에서 직접 확인한 인물과 현재 장면 출처 필요');
+      if(e.region!==area||e.place!==place||p.region&&p.region!==e.region||p.location_confirmed&&p.place!==e.place&&p.place!==p.region)fail('활동 변경은 이동을 대신하지 못함');
+      Object.assign(p,{activity:e.activity,updated_at:date,activity_observation:{source_id:e.source_id,date,time:scene.game_state?.time||scene.time}});
+    }
     if(e.kind==='companion'){const p=get(e.npc_id);if(e.accompanying&&!present(scene).some(n=>n.id===e.npc_id))fail('만나지 않은 인물 동행');p.accompanying=e.accompanying;}
     if(e.kind==='condition')Object.assign(get(e.npc_id),{injuries:e.injuries,fatigue:e.fatigue,major_event:e.major_event});
     if(e.kind==='experience'){
@@ -107,18 +114,18 @@ export function planNPCLife(state,scene,questResult=null){
     life.applied[e.event_id]=digest;
   }
   const priority=new Set([...present(scene).map(n=>n.id),...Object.keys(life.npcs).filter(id=>life.npcs[id].accompanying||life.npcs[id].major_event),...(questResult?.quest_log||state.quest_log||[]).filter(q=>['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.issuer_npc_id)].filter(id=>findNPC(id)));
-  for(const id of priority){const p=get(id);if(!p.accompanying&&now!==null&&p.updated_at!==date){const scheduled=p.schedule.find(s=>day(s.start)<=now&&day(s.end)>=now);if(scheduled){crossBorder(p.region,scheduled.region,null,date);Object.assign(p,{region:scheduled.region,place:scheduled.place,activity:scheduled.activity,location_confirmed:true});}else if(!p.schedule.length&&(!p.updated_at||now>day(p.updated_at)))p.activity=roleActivities[lifeRole(id)][now%4];p.updated_at=date;p.destination=p.schedule.find(s=>day(s.start)>now)?.place||null;}
+  for(const id of priority){const p=get(id);if(!p.accompanying&&now!==null&&p.updated_at!==date){const scheduled=p.schedule.find(s=>day(s.start)<=now&&day(s.end)>=now);if(scheduled){crossBorder(p.region,scheduled.region,null,date);Object.assign(p,{region:scheduled.region,place:scheduled.place,activity:scheduled.activity,location_confirmed:true});delete p.activity_observation;}else if(!p.schedule.length&&(!p.updated_at||now>day(p.updated_at))){p.activity=roleActivities[lifeRole(id)][now%4];delete p.activity_observation;}p.updated_at=date;p.destination=p.schedule.find(s=>day(s.start)>now)?.place||null;}
     p.quests=(questResult?.quest_log||state.quest_log||[]).filter(q=>q.issuer_npc_id===id&&['accepted','active','ready_to_report'].includes(q.status)).map(q=>q.id);
-    const stats=state.npcStates?.[id];if(stats?.hp===0)p.activity='전투불능';
+    const stats=state.npcStates?.[id];if(stats?.hp===0){p.activity='전투불능';delete p.activity_observation;}
   }
-  for(const [id,p] of Object.entries(life.npcs)){if(p.accompanying&&p.region===state.gameState?.region&&p.place===state.gameState?.place){const area=scene.game_state?.region||state.gameState.region,place=scene.game_state?.place||scene.location;if(country(p.region)===country(area))Object.assign(p,{region:area,place,activity:'동행',updated_at:date||p.updated_at});}}
+  for(const [id,p] of Object.entries(life.npcs)){if(p.accompanying&&p.region===state.gameState?.region&&p.place===state.gameState?.place){const area=scene.game_state?.region||state.gameState.region,place=scene.game_state?.place||scene.location;if(country(p.region)===country(area)){Object.assign(p,{region:area,place,activity:'동행',updated_at:date||p.updated_at});delete p.activity_observation;}}}
   for(const npc of present(scene)){const p=get(npc.id),place=scene.game_state?.place||scene.location,area=scene.game_state?.region||state.gameState?.region;
     if(p.region&&area&&country(p.region)!==country(area))fail('이동하지 않은 NPC가 다른 왕국에서 등장');
     if(p.location_confirmed&&p.place!==place&&p.place!==p.region&&!p.accompanying)fail('이동한 NPC가 이전 장소에서 등장');
     p.place=place;p.known=true;p.last_meeting={date:date||'날짜 미확인',place};
     const id='first-meeting:'+npc.id;if(!life.applied[id]){remember({event_id:id,npc_id:npc.id,date:date||'날짜 미확인',location:place,action:'첫 만남',result:'처음 대화를 나눴다.',affection_delta:0,follow_up:'재회 시 첫 만남을 기억한다.',player_witnessed:true,participants:[]});life.applied[id]='first';}
   }
-  if(scene.battle){for(const p of scene.battle.participants.filter(p=>findNPC(p.id))){const id='battle-memory:'+scene.battle.battle_id+':'+p.id;if(life.applied[id])continue;if(scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0)get(p.id).activity='전투불능';remember({event_id:id,npc_id:p.id,date:date||'날짜 미확인',location:scene.location,action:'함께한 전투',result:scene.battle.outcome.winner,affection_delta:0,follow_up:'',player_witnessed:true,participants:[]});life.applied[id]='battle';}}
+  if(scene.battle){for(const p of scene.battle.participants.filter(p=>findNPC(p.id))){const id='battle-memory:'+scene.battle.battle_id+':'+p.id;if(life.applied[id])continue;if(scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0){const actor=get(p.id);actor.activity='전투불능';delete actor.activity_observation;}remember({event_id:id,npc_id:p.id,date:date||'날짜 미확인',location:scene.location,action:'함께한 전투',result:scene.battle.outcome.winner,affection_delta:0,follow_up:'',player_witnessed:true,participants:[]});life.applied[id]='battle';}}
   for(const q of questResult?.quest_log||[]){const old=(state.quest_log||[]).find(p=>p.id===q.id);if(old?.status===q.status||!findNPC(q.issuer_npc_id))continue;const id='quest-memory:'+q.id+':'+q.status;if(life.applied[id])continue;remember({event_id:id,npc_id:q.issuer_npc_id,date:date||'날짜 미확인',location:scene.location,action:'의뢰 '+({offered:'제안',accepted:'수락',active:'진행',ready_to_report:'보고 가능',completed:'완료',failed:'실패',expired:'기한 만료',abandoned:'포기',declined:'거절'})[q.status],result:q.title,affection_delta:0,follow_up:'',player_witnessed:true,participants:[]});life.applied[id]='quest';}
   if(now!==null){for(const r of life.rumors)if(!r.delivered&&day(r.arrives_at)<=now){r.delivered=true;get(r.to_npc);}life.clock=date;}
   normalizeLife(life);return {npc_life:life,relationships};

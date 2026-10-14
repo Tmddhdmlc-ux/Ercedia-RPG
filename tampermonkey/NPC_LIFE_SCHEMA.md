@@ -9,6 +9,7 @@
 ## 사건 종류
 
 - `schedule`: npc_id, entries=[{start,end,region,place,activity}]. 날짜가 겹치지 않는 최대16개 일정. 외국 일정 자체는 통행 허가가 아니다. 먼저 move 사건으로 실제 통과해야 한다.
+- `activity`: npc_id, region, place, activity. 같은 장소의 현장 등록 인물이 작업을 마치거나 휴식을 시작한 등 직접 관측한 현재 활동 변경만 기록한다. source_id는 이번 scene, date는 이번 게임 날짜이며 npc/cast에 실제 등장해야 한다. region/place는 최종 장면 및 기존 확정 위치와 일치해야 한다. 장소 변경은 정식 move를 먼저 기록하며 activity로 국경/이동 증빙을 우회하지 않는다. 활동 문자열과 엔진이 남기는 activity_observation(출처·날짜·시각)만 갱신하고 능력치·부상·피로·호감도·보상을 만들지 않는다. 계획이나 단순 시간 경과는 관측된 결과가 아니다. 기존 v1 저장은 그대로 읽으며 이 선택 사건을 보내지 않는 구형 장면도 유지한다.
 - `move`: npc_id, region, place, activity. region은 W1~W5/E1~E4/S1~S4/CW/CE/CS. 외국 이동에는 border={route,open:true,approved:true,permit_id,issuer_id,authority,purpose,valid_until} 필요. route는 BORDER-WE-01/WS-01/ES-01이고 왕국 쌍이 일치해야 한다. GM은 실제 발급 권한·명성·신원·임무·폐쇄 여부를 BORDER_REPUTATION.md에 따라 확인해야 한다. 엔진은 명시적 증빙과 유효기간을 검사하며 미완성 PATCH3의 법률 판정 전체를 대체하지 않는다.
 - `condition`: npc_id, injuries=[공개 부상 문자열 최대10개], fatigue=rested/tired/exhausted, major_event=사건ID 또는 null. 능력치·HP는 기존 npc_updates/전투 정산 사용. 전투 outcome.injuries는 플레이어 부상이므로 전체 NPC에 복제하지 않는다.
 - `companion`: npc_id, accompanying=true/false. 시작은 실제 대면 중인 NPC만 가능. GM이 일정·계약·본인 의사를 판정하며 높은 호감도만으로 허용하지 않는다.

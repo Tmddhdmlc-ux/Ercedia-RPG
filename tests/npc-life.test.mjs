@@ -1,6 +1,6 @@
 import test from 'node:test';
 import assert from 'node:assert/strict';
-import {planNPCLife,publicLife,lifeContext,lifeRole,regionImpact} from '../web/npc-life.js';
+import {planNPCLife,normalizeLife,publicLife,lifeContext,lifeRole,regionImpact} from '../web/npc-life.js';
 import {battleFixture} from './battle-fixtures.js';
 import {mountChatUI} from '../web/chat-ui.js';
 import {uiHarness} from './ui-harness.mjs';
@@ -48,4 +48,14 @@ test('player movement is rejected as an NPC event with actionable guidance while
  for(const field of [{actor_id:'player'},{npc_id:'player'}])assert.throws(()=>planNPCLife(s,normalizeScene(make(2,{life_events:[event('move',{source_id:'scene:life-2',...field})]}))),/플레이어 이동.*game_state/);
  assert.deepEqual(s,before);apply(s,make(2,{npc:null,game_state:{date:'1-1-1',region:'W3',place:'마을 광장'}}));assert.equal(s.gameState.place,'마을 광장');assert.equal(s.npc_life.npcs.serin.place,before.npc_life.npcs.serin.place);
  const prompt=actionPrompt(before,'세린에게 작별하고 마을 광장으로 이동한다','travel-test',{compact:true});assert.match(prompt,/NPC 이동은/);assert.match(prompt,/플레이어 이동은 game_state/);assert.match(prompt,/system_events border/);
+});
+
+test('observed activity changes at the same location persist without movement, rewards or duplicate memories',()=>{
+ const s=start();apply(s,make(1,{life_events:[event('move',{npc_id:'serin',region:'W3',place:'솔브린 마을',activity:'순찰 장비 정리'})]}));const resources=structuredClone({player:s.player,inventory:s.inventory,relationships:s.relationships}),memories=s.npc_life.memories.length;
+ const e=event('activity',{event_id:'activity-2',source_id:'scene:life-2',npc_id:'serin',region:'W3',place:'솔브린 마을',activity:'장비 정리를 마치고 휴식'}),x=make(2,{time:'09:11',life_events:[e]});apply(s,x);apply(s,x);assert.equal(publicLife(s,'serin').activity,e.activity);assert.equal(lifeContext(s).npcs.serin.place,'솔브린 마을');assert.deepEqual(normalizeLife(s.npc_life).npcs.serin.activity_observation,{source_id:'scene:life-2',date:'1-1-1',time:'09:11'});assert.equal(s.npc_life.memories.length,memories);assert.deepEqual({player:s.player,inventory:s.inventory,relationships:s.relationships},resources);assert.ok(s.npc_life.applied['activity-2']);apply(s,make(3,{location:'마을 경비초소',game_state:{date:'1-1-1',region:'W3',place:'마을 경비초소'},life_events:[event('move',{event_id:'move-3',source_id:'scene:life-3',npc_id:'serin',region:'W3',place:'마을 경비초소',activity:'경비'})]}));assert.equal(s.npc_life.npcs.serin.activity_observation,undefined);
+});
+test('activity receipts cannot teleport an NPC, cite an old scene or observe an absent person',()=>{
+ const s=start();apply(s,make(1,{life_events:[event('move',{npc_id:'serin',region:'W3',place:'솔브린 마을',activity:'순찰'})]}));const before=JSON.stringify(s),e=event('activity',{event_id:'activity-2',source_id:'scene:life-2',npc_id:'serin',region:'W3',place:'솔브린 마을',activity:'휴식'});
+ for(const x of [make(2,{npc:null,life_events:[e]}),make(2,{life_events:[{...e,source_id:'scene:life-1'}]}),make(2,{life_events:[{...e,region:'E3'}]}),make(2,{location:'다른 초소',game_state:{date:'1-1-1',region:'W3',place:'다른 초소'},life_events:[{...e,place:'다른 초소'}]}),make(2,{game_state:{date:'1-1-2',region:'W3',place:'솔브린 마을'},life_events:[e]})]){assert.throws(()=>apply(s,x),/활동 변경/);assert.equal(JSON.stringify(s),before);}
+ assert.throws(()=>apply(s,make(2,{life_events:[{...e,activity:''}]})),/문자열/);assert.equal(JSON.stringify(s),before);
 });
