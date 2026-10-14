@@ -13,10 +13,12 @@ export function turnFacts(state,domains,action='',nearbyActors=[],questId=null){
  if(isRecoveryAction(action))facts.recovery_wire=recoveryFacts(state);
  if(domains.crafting||domains.trade||/장비|무기|검|스태프|기술서|카탈로그/.test(action)){
   const owned=new Set((state.inventory||[]).map(i=>i.catalog_id||i.id));
-  const named=itemCatalog.filter(i=>action.includes(i.id)||action.includes(i.name));
+  const lookup=action.replace(/\s+/g,"");
+  const named=itemCatalog.filter(i=>[i.id,i.name,...(i.aliases||[])].some(n=>typeof n==="string"&&n&&lookup.includes(n.replace(/\s+/g,""))));
   const type=/스태프|지팡이/.test(action)?'staff':/갑옷|방어구/.test(action)?'armor':/악세|장신구/.test(action)?'accessory':'sword';
   const materialTrade=domains.trade&&/수선|수리|재료|가죽|방한|천|모피/.test(action);
-  const starters=materialTrade?itemCatalog.filter(i=>!i.slot&&!i.skill_id&&i.region_id===state.gameState?.region).slice(0,6):itemCatalog.filter(i=>i.slot&&(i.subtype===type||i.slot===type)&&i.rarity==='하급').slice(0,3);
+  const supplyTrade=domains.trade&&named.some(i=>i.type==="supply")&&!/검|스태프|지팡이|갑옷|방어구|장신구|악세|수선|수리|제작|재료/.test(action);
+  const starters=supplyTrade?[]:materialTrade?itemCatalog.filter(i=>!i.slot&&!i.skill_id&&i.region_id===state.gameState?.region).slice(0,6):itemCatalog.filter(i=>i.slot&&(i.subtype===type||i.slot===type)&&i.rarity==='하급').slice(0,3);
   facts.items=[...new Map([...named,...itemCatalog.filter(i=>owned.has(i.id)),...starters].map(i=>[i.id,i])).values()].slice(0,12);
   facts.item_rule='위 항목은 실제 원본이다. id/catalog_id와 quantity를 사용한다. basic_sword 등 경제 기준가 키는 물품 ID가 아니다. 기본 제작 결과는 등록 하급 장비로 기록한다. 가격·입수와 직업·장착 조건은 별개이며 제작했다고 직업을 자동 부여하지 않는다. 기존 미등록 장비를 확인할 때 원본 조회를 플레이어에게 떠넘기거나 다시 제작비를 청구하지 않는다.';
   if(materialTrade){

@@ -123,7 +123,7 @@ export function turnDomains(state,action,choiceId){
   return {
     combat:huntingAction||/전투(?!불능|\s*(?:이후|후|뒤))|공격(?!력|받|당|을\s*받)|싸우|싸움|토벌|처치|궁극기|사격|견제|베어|베기|찌른|쏜다|쏘아|쏘겠|발사|타격|방어(?!구)|가드/.test(combatText),
     dungeon:!!state.world_engine?.active_dungeon||/던전|미궁|보스/.test(text),
-    trade:kind==='trade'||isRecoveryAction(text)||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|경매|입찰|시설/.test(text),
+    trade:kind==='trade'||isRecoveryAction(text)||/상점|상인|행상|장터|거래|구매|구입|판매|견적|가격|재고|살.{0,8}검|살\s*수\s*있|사(?:려고|러|고\s*싶)|빌(?:릴|리|려)|대여|보증금|경매|입찰|시설/.test(text),
     crafting:/제작|대장간|강화|분해|조합|단조|검.{0,15}(?:만들|만든)/.test(text),
     growth:kind==='training'||/수련|단련|훈련|학습|배우|연습|공부|복습|단조|익히|연구|기술서|돌파|경지|서클|입문|직업|전직/.test(text),
     adventure:['travel','quest','investigate'].includes(kind)||/이동|여행|출발|귀환|조사|탐색|탐험|조우|주민|일거리|운송|수레|의뢰|퀘스트|보고/.test(text),
