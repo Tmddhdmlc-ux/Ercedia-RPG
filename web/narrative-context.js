@@ -10,7 +10,8 @@ function conversationMemories(memories){
  const introduction=m=>/자기소개|이름.*소개|호칭/.test(m.action||'');
  const boundary=m=>/악수.*거절|접촉.*경계|인사.*선호|참여.*보류|선호|약속/.test(m.action||'')||Boolean(m.follow_up&&m.action!=='첫 만남');
  const correction=m=>/공유 사실 정정|수행 판단 정정/.test(m.action||'');
- const anchors=[memories.filter(introduction).at(-1),memories.filter(boundary).at(-1),memories.filter(correction).at(-1)].filter(Boolean);
+ const commitment=m=>/약속/.test(m.action||'')||/앞으로[^.!?\\n]{0,180}(?:하겠|않겠|할게|약속)/.test(m.result||'');
+ const anchors=[memories.filter(introduction).at(-1),memories.filter(boundary).at(-1),memories.filter(correction).at(-1),memories.filter(commitment).at(-1)].filter(Boolean);
  const selected=new Set([...anchors,...memories.slice(-2)]);
  return memories.filter(m=>selected.has(m)).map(m=>({npc_id:m.npc_id,date:m.date,action:m.action,...(typeof m.result==='string'?{result:m.result.slice(0,180)}:{}),...(typeof m.follow_up==='string'&&m.follow_up?{follow_up:m.follow_up.slice(0,120)}:{})}));
 }

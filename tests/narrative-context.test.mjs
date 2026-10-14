@@ -170,3 +170,10 @@ test('interior art guidance reaches solo room arrivals without fabricating actor
  assert.ok(room.scene_image_rule);assert.equal(room.voices,undefined);assert.equal(room.requested_people,undefined);assert.deepEqual(s,before);
  s.scene.location='들판 길목';assert.equal(turnFacts(s,{},'창고 실내로 간다').narrative_focus.scene_image_rule,room.scene_image_rule);assert.equal(turnFacts(s,{},'길을 걷는다').narrative_focus,undefined);
 });
+
+test('an explicit future statement in a witnessed result survives later chatter without becoming proof of fulfillment',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');const m=(action,result,player_witnessed=true,npc_id='ER-COM-007')=>({npc_id,date:'650-07-02',action,result,player_witnessed});
+ s.npc_life={npcs:{},memories:[m('사과 뒤 아직 감정이 풀리지 않았다고 전했다','시그나는 앞으로 불확실한 기억을 사실처럼 단정하지 않겠다고 말했다. 화해 여부는 미정이다.'),...Array.from({length:4},(_,i)=>m('일상 대화 '+i,'잡담 '+i)),m('다른 약속','앞으로 PRIVATE 하지 않겠다고 말했다',false),m('다른 인물','앞으로 OTHER 하지 않겠다고 말했다',true,'ER-COM-001')]};
+ const before=structuredClone(s),focus=narrativeFocus(s,'지난번 네가 한 말을 기억해?');assert.ok(focus.shared_memories.some(m=>m.result.includes('화해 여부는 미정')));assert.equal(focus.shared_memories.length,3);assert.ok(!JSON.stringify(focus.shared_memories).includes('PRIVATE'));assert.ok(!JSON.stringify(focus.shared_memories).includes('OTHER'));assert.deepEqual(s,before);
+ s.scene.npc=null;const arrival=narrativeFocus(s,'시그나에게 돌아간다');assert.deepEqual(arrival.requested_people.shared_memories,focus.shared_memories);assert.deepEqual(s.npc_life,before.npc_life);
+});
