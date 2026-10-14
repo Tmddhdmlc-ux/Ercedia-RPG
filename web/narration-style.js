@@ -1,6 +1,6 @@
 // Shared presentation policy. Mechanical events remain authoritative.
 export const narrationStyle=`[인터랙티브 소설 서술]
-NARRATION_RULES.md v3.8 적용. 직전 반응을 잇고 보고 반복을 피한다.
+NARRATION_RULES.md v3.9 적용. 직전 반응을 잇고 보고 반복을 피한다.
 일상·감정·대치는 살리고 반복 노동·안전 이동은 압축한다. dialogue는 발화·지문별, NPC 대사는 speaker_id로 분리한다. 화자·장식 중복 금지.
 voices·관계·말투로 감정을 드러내고 지문은 필요한 변화에 쓴다. 칭찬·수식 남발 금지.
 짧은 농담·맞장구·이미 이해한 답은 반응으로 받는다. 새 질문·오해·상황 변화가 없으면 원리·주의·교훈 복습과 같은 반응의 지문 반복을 피한다. 발화는 잇고 지문은 다른 의미의 행동에 쓴다. 감정·대치·상세 요청은 펼치고 비율·개수는 고정하지 않는다.

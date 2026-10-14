@@ -154,3 +154,12 @@ test('confirmed public corrections survive later chatter without leaking other a
  assert.ok(!JSON.stringify(f.shared_memories).includes('OTHER'));
  assert.deepEqual(s,before);
 });
+
+test('arrival of a named registered person receives the same conversational pacing without fabricating presence',()=>{
+ const s=start();s.scene.npc=null;s.scene.cast=[];const before=structuredClone(s);
+ const arrival=narrativeFocus(s,'브란이 실제 있으면 작업이 마무리됐는지 묻는다');
+ assert.equal(arrival.voices,undefined);assert.equal(arrival.requested_people.voices[0].id,'ER-COM-001');
+ s.scene.npc=actor('ER-COM-001');const present=narrativeFocus(s,'작업이 마무리됐는지 묻는다');
+ assert.equal(arrival.scene_entry_rule,present.scene_entry_rule);assert.equal(arrival.reply_pacing_rule,present.reply_pacing_rule);assert.equal(arrival.prose_knowledge_rule,present.prose_knowledge_rule);
+ s.scene.npc=null;assert.deepEqual(s,before);assert.equal(narrativeFocus(s,'모르는 점원에게 묻는다').scene_entry_rule,undefined);
+});
