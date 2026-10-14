@@ -43,3 +43,12 @@ test('healer profession mentions keep social and candidate context without care 
  for(const action of ['치료사에게 팔의 상처를 치료받는다.','치료사에게 진료를 요청한다.','치료사 비용을 물어본다.','치료사에게 처치를 받는다.','치료소를 찾는다.']){const p=createTurnSync().prepare(s,action);assert.ok(p.payload.state.turn_facts.recovery_wire,action);assert.equal(p.domains.combat,false,action);}
  assert.deepEqual(s,before);
 });
+
+test('ordinary meal quotes and consumed meals settle once without inventory or recovery and reject unapproved healing',()=>{
+ const s=economyState();s.player.hp=69;const before=structuredClone(s),o=offer();o.items=[];o.services=[{id:'dinner',service:'simple_meal',cost:20,basis:'현장 수프와 빵 제공 견적',inputs:[],outputs:[]}];
+ const quote=scene(s,[event('offer',{offer:o})]);apply(s,quote);assert.equal(s.wallet_copper,500);assert.equal(s.player.hp,69);assert.deepEqual(s.inventory,before.inventory);
+ const meal=scene(s,[event('service',{offer_id:o.id,service_id:'dinner'})]);apply(s,meal);assert.equal(s.wallet_copper,480);assert.equal(s.player.hp,69);assert.deepEqual(s.inventory,before.inventory);const done=structuredClone(s);apply(s,meal);assert.deepEqual(s,done);
+ const invalid=structuredClone(o);invalid.id='invalid-meal';invalid.services[0].hp_restore=10;const unchanged=structuredClone(s);assert.throws(()=>apply(s,scene(s,[event('offer',{offer:invalid})])),/회복 서비스 제한/);assert.deepEqual(s,unchanged);
+ invalid.services[0].hp_restore=undefined;invalid.services[0].outputs=[{id:'ER-SUP-WARM-CLOTH',quantity:1}];assert.throws(()=>apply(s,scene(s,[event('offer',{offer:invalid})])),/소비 식사 물품 이전 금지/);assert.deepEqual(s,unchanged);
+ const p=createTurnSync().prepare(before,'여관에서 저녁 식사 가격을 묻는다');assert.ok(p.payload.state.turn_facts.recovery_wire.price_baselines.some(x=>x.id==='simple_meal'));assert.deepEqual(before.player.hp,69);
+});
