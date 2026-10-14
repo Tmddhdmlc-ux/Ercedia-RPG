@@ -36,3 +36,15 @@ test('invalid null wallet is not converted to zero and books/material auction in
   for(const id of ['ER-BK-001','MAT-001-1']){const cat=itemCatalog.find(i=>i.id===id)||itemCatalog.find(i=>i.skill_id),s=economyState();shop(s);const a={...auction(),item_id:cat.id,instance_id:'owned-2'};apply(s,scene(s,[event('auction',{auction:a}),event('bid',{auction_id:a.id,amount:80})]));s.gameState.date='1-1-2';apply(s,scene(s,[event('auction_result',{auction_id:a.id,result:'won',final_price:80,authenticity_proof:'실제 위탁 물품'})]));const loaded=normalize(JSON.parse(JSON.stringify(s)));if(cat.skill_id){assert.ok(loaded.engine.instances.some(i=>i.instance_id==='owned-2'));loaded.inventory.push({id:'ER-EQ-001',name:tradeItem('ER-EQ-001').name,quantity:1});const engine=ensureEngine(loaded);assert.equal(new Set(engine.instances.map(i=>i.instance_id)).size,engine.instances.length);}else assert.deepEqual(loaded.inventory[0].instance_ids,['owned-2']);}
 });
 test('cash receipts require actual finite sources and generic monsters cannot give currency',()=>{const s=economyState(),e=event('cash_receipt',{source:'dungeon_treasure',source_id:'treasure-chest',evidence_id:'treasure-proof',amount:50,available_copper:50}),proof={event_id:'treasure-proof',kind:'clue',target_id:'treasure-chest',location:s.gameState.place,proof:'상자에 실제 동화50개 확인'};apply(s,scene(s,[e],{world_events:[proof]}));assert.equal(s.wallet_copper,550);const before=structuredClone(s);assert.throws(()=>apply(s,scene(s,[{...e,event_id:'second-chest'}],{world_events:[proof]})));assert.deepEqual(s,before);assert.throws(()=>apply(s,scene(s,[event('cash_receipt',{source:'bandit',source_id:'ER-NPC-081',evidence_id:'monster-proof',amount:50,available_copper:50})],{world_events:[{...proof,event_id:'monster-proof',target_id:'ER-NPC-081'}]})),/인간/);assert.deepEqual(s,before);});
+
+test('winter supplies can be quoted, purchased and restored without granting combat equipment or protection',()=>{
+ const s=economyState(),o=offer();delete o.merchant_npc_id;delete o.merchant_buy_budget;delete o.buyable_types;
+ o.items=[{id:'ER-SUP-WINTER-GLOVES',stock:1,buy_price:60,sell_price:0,price_basis:'현장 장갑 견적'},{id:'ER-SUP-WARM-CLOTH',stock:2,buy_price:35,sell_price:0,price_basis:'현장 천 견적'}];
+ apply(s,scene(s));const before=structuredClone(s.player);apply(s,scene(s,[event('offer',{offer:o})]));
+ assert.equal(s.inventory.length,0);assert.equal(s.wallet_copper,500);
+ apply(s,trade(s,'ER-SUP-WARM-CLOTH'));assert.equal(s.wallet_copper,465);
+ assert.equal(s.inventory.find(i=>i.id==='ER-SUP-WARM-CLOTH')?.quantity,1);
+ const {battleModifiers,...after}=s.player;assert.deepEqual(after,before);assert.ok(Object.values(battleModifiers).every(v=>v===0));assert.equal(tradeItem('ER-SUP-WARM-CLOTH').slot,undefined);
+ const restored=load({getItem:k=>k===KEY?JSON.stringify(s):null}).state;
+ assert.equal(restored.inventory.find(i=>i.id==='ER-SUP-WARM-CLOTH')?.quantity,1);assert.equal(restored.wallet_copper,465);
+});

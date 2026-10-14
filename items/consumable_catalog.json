@@ -156,6 +156,40 @@
       ],
       "price_policy": "GM의 실제 지역 견적 필요; 고정 가격 없음",
       "ui_symbol": "🛠"
+    },
+    {
+      "id": "ER-SUP-WINTER-GLOVES",
+      "name": "겨울용 장갑",
+      "description": "일상적인 추위를 막기 위해 착용하는 장갑 한 켤레. 소재와 상태는 현지 명세로 확인한다.",
+      "ui_symbol": "🧤",
+      "category": "misc",
+      "type": "supply",
+      "tradable": true,
+      "allowed_shops": [
+        "general",
+        "materials",
+        "trading_house",
+        "junk"
+      ],
+      "price_policy": "GM의 실제 지역 견적 필요; 고정 가격 없음",
+      "effect": "착용한 부위의 일상적인 추위를 덜어 주는 생활용품입니다. 젖음·소재·기온에 따라 보온 정도가 달라지며, 전투 능력치 보너스나 극한 환경 보호를 보장하지 않습니다."
+    },
+    {
+      "id": "ER-SUP-WARM-CLOTH",
+      "name": "방한 천",
+      "description": "목 등에 둘러 사용하는 방한용 천 한 장. 소재와 상태는 현지 명세로 확인한다.",
+      "ui_symbol": "🧣",
+      "category": "misc",
+      "type": "supply",
+      "tradable": true,
+      "allowed_shops": [
+        "general",
+        "materials",
+        "trading_house",
+        "junk"
+      ],
+      "price_policy": "GM의 실제 지역 견적 필요; 고정 가격 없음",
+      "effect": "착용한 부위의 일상적인 추위를 덜어 주는 생활용품입니다. 젖음·소재·기온에 따라 보온 정도가 달라지며, 전투 능력치 보너스나 극한 환경 보호를 보장하지 않습니다."
     }
   ]
 }
