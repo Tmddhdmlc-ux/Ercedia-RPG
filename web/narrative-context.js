@@ -76,6 +76,8 @@ export function narrativeFocus(state,action='',questId=null){
  if(voices.length)focus.life_event_rule=lifeEventInstruction;
  if(voices.length)focus.contribution_rule='칭찬·회상은 실제 화자·수행자별로 구분한다. NPC 설명을 플레이어의 첫 답으로 옮기지 않는다. 경고·전달·준비 지원을 발견·구조·치료·고정 작업으로 바꾸지 않는다. 공동 기여를 유지하며 목표·희망만으로 성공을 보장하지 않는다.';
  if(threads.length||(state.quest_log||[]).some(q=>q.status==='offered'&&(selected(q)||present.has(q.issuer_npc_id||q.issuer_id))))focus.choice_rule='선택지는 행동 방식·보호 대상·감수하는 위험·얻으려는 정보 중 실제 차이가 있어야 한다. 같은 철수·경고·보고를 말만 바꿔 여러 칸으로 늘리지 말고 한 행동으로 묶는다. 선택 수를 채우려고 불필요한 확인이나 같은 일의 중간 단계를 만들지 않는다. 가능한 다른 대응·대화·철수·보류를 제시하되 위험한 행동을 강요하거나 미확인 결과·보상을 보장하지 않는다. 중요한 선택2~4개, 자유 입력만이면0개를 유지한다.';
+ const acceptingOffer=(state.quest_log||[]).some(q=>q.status==='offered'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)&&(q.id===questId||/맡을|맡겠|수락/.test(action)));
+ if(acceptingOffer){focus.previous_episode_threats=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)).slice(-3).flatMap(q=>(q.story||[]).filter(e=>e.kind==='threat').slice(-1).map(e=>({quest_id:q.id,title:q.title,threat:e.description.slice(0,360)})));focus.new_episode_rule='새 의뢰의 실제 전투 또는 평화 위협은 유지하되 previous_episode_threats의 원인·피해 경로를 물건·피해자 이름만 바꿔 재연하지 않는다. 현지 목적·장소·직무에서 다른 원인과 대응을 구성한다. 이전 완료 사건은 재개하지 않고 새 위협은 발견 후 플레이어 대응 전에 해결하지 않는다. 현재 수락 조건·보상은 유지한다.';}
  if(/일거리|(?:할|맡을)\s*수\s*있는\s*일|새.*(?:일|의뢰|기회)|다른.*(?:일|의뢰|기회)|다음.*(?:일|의뢰|기회)/.test(action)){
   const completed=(state.quest_log||[]).filter(q=>q.status==='completed'&&q.visibility!=='private'&&(!q.region_id||q.region_id===state.gameState?.region)).slice(-12);
   if(completed.length){

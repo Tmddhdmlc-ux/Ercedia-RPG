@@ -177,3 +177,9 @@ test('an explicit future statement in a witnessed result survives later chatter 
  const before=structuredClone(s),focus=narrativeFocus(s,'지난번 네가 한 말을 기억해?');assert.ok(focus.shared_memories.some(m=>m.result.includes('화해 여부는 미정')));assert.equal(focus.shared_memories.length,3);assert.ok(!JSON.stringify(focus.shared_memories).includes('PRIVATE'));assert.ok(!JSON.stringify(focus.shared_memories).includes('OTHER'));assert.deepEqual(s,before);
  s.scene.npc=null;const arrival=narrativeFocus(s,'시그나에게 돌아간다');assert.deepEqual(arrival.requested_people.shared_memories,focus.shared_memories);assert.deepEqual(s.npc_life,before.npc_life);
 });
+
+test('accepting a local offer carries prior threat mechanisms without reopening completed or private episodes',()=>{
+ const s=start();s.scene.npc=actor('ER-NPC-057');s.quest_log=[{id:'old',title:'목재 운송',status:'completed',region_id:s.gameState.region,story:[{kind:'threat',description:'얼음에 걸린 바퀴와 느슨한 밧줄로 사람에게 목재가 기운다'}]},{id:'private',status:'completed',visibility:'private',story:[{kind:'threat',description:'PRIVATE'}]},{id:'remote',status:'completed',region_id:'E2',story:[{kind:'threat',description:'REMOTE'}]},{id:'new',status:'offered',region_id:s.gameState.region,title:'연락 심부름',reward:{xp:10,currency:40}}];const before=structuredClone(s);
+ const f=narrativeFocus(s,'맡을게요. 배급소부터 갑니다');assert.deepEqual(f.previous_episode_threats,[{quest_id:'old',title:'목재 운송',threat:'얼음에 걸린 바퀴와 느슨한 밧줄로 사람에게 목재가 기운다'}]);assert.ok(f.new_episode_rule);assert.equal(f.threads,undefined);assert.deepEqual(s,before);
+ assert.deepEqual(narrativeFocus(s,'심부름을 진행한다','new').previous_episode_threats,f.previous_episode_threats);assert.equal(narrativeFocus(s,'마야에게 안부를 묻는다').previous_episode_threats,undefined);s.quest_log.at(-1).status='active';assert.equal(narrativeFocus(s,'수락한다').previous_episode_threats,undefined);
+});
