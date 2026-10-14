@@ -12,3 +12,37 @@ test('Enter sends and Shift+Enter/Korean composition never sends',()=>{const {h}
 test('ordinary legacy launcher actions do not resend deferred campaign settings',()=>{const {h,chat}=setup();try{chat.setCampaignSettings({sha:'a'.repeat(40),paths:['BOOTSTRAP.md','GAMEPLAY_CONVENIENCE_RULES.md','WORLD.md'],files:{'GAMEPLAY_CONVENIENCE_RULES.md':convenienceRules,'BOOTSTRAP.md':'설정 시작 안내','WORLD.md':'공식 세계관'}});chat.submit('안녕');const action=h.messages.find(m=>m.type==='action');assert.ok(action);assert.equal(action.payload.settingsFile,undefined);assert.ok(!action.payload.text.includes("파일 자동 첨부를 지원하지"));assert.ok(!action.payload.text.includes("설정 읽기"));assert.equal(chat.isPending(),true);h.reply('action-error','테스트 종료');}finally{h.close();}});
 test('invalid GPT scene immediately releases pending controls instead of silently blocking future messages',()=>{const {h,chat}=setup();try{chat.submit('안녕');assert.equal(chat.isPending(),true);chat.apply('{"type":"ercedia_scene","schema_version":99}');assert.equal(chat.isPending(),false);assert.equal(h.get('send-action').disabled,false);assert.match(h.get('connection-detail').textContent,/응답 적용 실패/);}finally{h.close();}});
 test('all four number choices send their current text once after state refresh, and failures permit retries',()=>{const {h,state,chat}=setup();try{state.scene.choices=[1,2,3,4].map(i=>({id:'choice-'+i,text:'선택 '+i}));for(let i=1;i<=4;i++){chat.controls();h.key(String(i));const actions=h.messages.filter(m=>m.type==='action');assert.equal(actions.length,i);assert.ok(actions.at(-1).payload.text.endsWith('선택 '+i));h.reply('action-error','검증 종료');assert.equal(h.get('scene-choices').children[i-1].disabled,false);}}finally{h.close();}});
+
+test('delivery acknowledgement does not restart the response deadline; expired replies cannot repair or cancel a new turn',()=>{
+  const {h,state,chat}=setup(),timers=new Map();let now=0,nextTimer=0;
+  globalThis.setTimeout=(fn,delay)=>{const id=++nextTimer;timers.set(id,{fn,at:now+delay});return id;};
+  globalThis.clearTimeout=id=>timers.delete(id);
+  const advance=ms=>{const end=now+ms;while(true){const due=[...timers].filter(([,t])=>t.at<=end).sort((a,b)=>a[1].at-b[1].at)[0];if(!due)break;now=due[1].at;timers.delete(due[0]);due[1].fn();}now=end;};
+  try{
+    const before=JSON.stringify(state),action='물건은 그 자리에 두세요. 확인만 하러 왔어요.';
+    h.get('free-action').value=action;chat.submit(action);
+    const request=h.messages.find(m=>m.type==='action').payload.requestId;
+    advance(6000);h.reply('action-ack',{requestId:request});
+    advance(113999);assert.equal(chat.isPending(),true);
+    advance(1);assert.equal(chat.isPending(),false);
+    assert.match(h.get('connection-detail').textContent,/응답 대기 시간이 지났/);
+    assert.equal(h.get('free-action').value,action);assert.equal(JSON.stringify(state),before);
+    // Invalid content with the retired ID must be rejected before parsing/repair.
+    const expired=JSON.stringify({schema_version:99,type:'ercedia_scene',reply_to:request,scene_id:'expired-response'});
+    h.reply('scene',expired);
+    assert.match(h.get('connection-detail').textContent,/종료한 요청의 늦은 응답/);
+    assert.equal(h.messages.filter(m=>m.type==='action').length,1);
+    assert.equal(h.messages.filter(m=>m.type==='parse-error').length,0);
+    assert.equal(JSON.stringify(state),before);
+    chat.submit(action);
+    const current=h.messages.filter(m=>m.type==='action').at(-1).payload.requestId;
+    assert.notEqual(current,request);h.reply('action-ack',{requestId:current});
+    h.reply('scene',expired);
+    assert.equal(chat.isPending(),true);assert.equal(h.get('send-action').disabled,true);
+    assert.equal(h.messages.filter(m=>m.type==='action').length,2);
+    assert.equal(h.messages.filter(m=>m.type==='parse-error').length,0);
+    assert.equal(JSON.stringify(state),before);
+    advance(120000);assert.equal(chat.isPending(),false);
+    assert.equal(JSON.stringify(state),before);
+  }finally{h.close();}
+});
