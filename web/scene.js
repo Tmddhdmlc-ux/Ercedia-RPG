@@ -28,7 +28,7 @@ import {introData} from './intro-data.js';
 import {passiveLimits} from './intro-model.js';
 import {normalizeBattle} from './battle-model.js';
 import {npcCatalog,findNPC,npcContext} from './npc-model.js';
-import {normalizeQuest,normalizeWorldEvents} from './quest-model.js';
+import {normalizeQuest,normalizeWorldEvents,normalizeQuestVisits} from './quest-model.js';
 import {validateLifeEvents,lifeContext} from './npc-life.js';
 export const emotions=['base','smile','angry','surprised','sad','embarrassed','afraid','annoyed','love'];
 export const characterRegistry=Object.fromEntries(npcCatalog.map(p=>[p.id,{outfits:p.id==='serin'?['armor','casual','nightwear']:['none'],emotions:p.id==='serin'?emotions:registeredArt[p.id]?.expressions||['base']}]));
@@ -90,6 +90,7 @@ export function normalizeScene(raw){
   if(raw.quest_updates!==undefined){if(!Array.isArray(raw.quest_updates)||raw.quest_updates.length>20)throw Error('quest_updates는 최대 20개');scene.quest_updates=raw.quest_updates.map(normalizeQuest);}
   if(raw.story_events!==undefined)scene.story_events=normalizeStoryEvents(raw.story_events);
   if(raw.world_events!==undefined)scene.world_events=normalizeWorldEvents(raw.world_events);
+  if(raw.quest_visits!==undefined)scene.quest_visits=normalizeQuestVisits(raw.quest_visits);
   if(raw.quest_events!==undefined){if(!Array.isArray(raw.quest_events)||raw.quest_events.length>20)throw Error('quest_events는 최대 20개');scene.quest_events=raw.quest_events.map(e=>{if(!['accept','decline','abandon','fail','report'].includes(e?.kind))throw Error('의뢰 사건 종류 오류');return {event_id:text(e.event_id,'event_id',100),quest_id:text(e.quest_id,'quest_id',100),kind:e.kind,reason:text(e.reason,'reason',1000)};});}
   if(raw.npc_updates!==undefined){if(!raw.npc_updates||typeof raw.npc_updates!=='object'||Array.isArray(raw.npc_updates)||Object.keys(raw.npc_updates).length>16)throw Error('npc_updates는 최대 16명의 공개 변경값입니다.');scene.npc_updates={};for(const [id,p] of Object.entries(raw.npc_updates)){if(!findNPC(id))throw Error('미등록 인물 변경');scene.npc_updates[id]=normalizeNPCProfile(p);}}
   if(raw.engine_events!==undefined)scene.engine_events=validateEngineEvents(raw.engine_events);

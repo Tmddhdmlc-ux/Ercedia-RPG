@@ -34,12 +34,28 @@ export function normalizeWorldEvents(raw){
   if(!Array.isArray(raw)||raw.length>50)fail('world_events는 최대 50개');
   const ids=new Set();return raw.map(e=>{
     if(!txt(e?.event_id,100)||ids.has(e.event_id)||!kinds.includes(e.kind)||!txt(e.target_id,100)||!txt(e.location,160)||!txt(e.proof))fail('실제 사건 ID·종류·장소·증거 필요');ids.add(e.event_id);
-    return {event_id:txt(e.event_id,100),kind:e.kind,target_id:txt(e.target_id,100),location:txt(e.location,160),proof:txt(e.proof),recipient_id:txt(e.recipient_id,100),subject_alive:e.subject_alive===true,item_name:txt(e.item_name,60),quantity:integer(e.quantity)||1};
+    return {event_id:txt(e.event_id,100),kind:e.kind,target_id:txt(e.target_id,100),location:txt(e.location,160),proof:txt(e.proof),...(e.visit_id!==undefined?{visit_id:txt(e.visit_id,100)}:{}),recipient_id:txt(e.recipient_id,100),subject_alive:e.subject_alive===true,item_name:txt(e.item_name,60),quantity:integer(e.quantity)||1};
   });
+}
+export function normalizeQuestVisits(raw){
+  if(!Array.isArray(raw)||raw.length>8)fail('quest_visits는 최대 8개');
+  const ids=new Set();return raw.map(v=>{
+    if(!txt(v?.id,100)||ids.has(v.id)||!txt(v.location,160)||!txt(v.proof)||! /^(W[1-5]|E[1-4]|S[1-4])$/.test(v.region_id||'')||calendarDay(v.date)===null||!/^([01]\d|2[0-3]):[0-5]\d$/.test(v.time||''))fail('실제 방문 ID·지역·장소·날짜·시각·결과 필요');
+    ids.add(v.id);return {id:txt(v.id,100),region_id:v.region_id,location:txt(v.location,160),date:v.date,time:v.time,proof:txt(v.proof)};
+  });
+}
+const visitMinute=(date,time)=>{const day=calendarDay(date);return day!==null&&/^([01]\d|2[0-3]):[0-5]\d$/.test(time||'')?day*1440+(+time.slice(0,2))*60+(+time.slice(3)):null;};
+function questVisits(state,scene){
+  const visits=normalizeQuestVisits(scene.quest_visits||[]);if(!visits.length)return new Map();
+  const start=visitMinute(state.gameState?.date,state.gameState?.time),end=visitMinute(scene.game_state?.date||state.gameState?.date,scene.game_state?.time||state.gameState?.time),region=state.gameState?.region;
+  if(start===null||end===null||end<=start||(scene.game_state?.region||region)!==region)fail('방문 기록은 확정된 같은 지역의 실제 경과 시간 필요');
+  let previous=start;for(const v of visits){const at=visitMinute(v.date,v.time);if(v.region_id!==region||at<previous||at>end)fail('방문 지역·시간 순서·이번 행동 범위 불일치');previous=at;}
+  return new Map(visits.map(v=>[v.id,v]));
 }
 const itemById=id=>questItems.find(i=>i.id===id);
 const quantity=(bag,name)=>bag.filter(i=>i.name===name).reduce((n,i)=>n+i.quantity,0);
 export function settleQuests(state,scene){
+  const visits=questVisits(state,scene);
   const quests=normalizeQuestLog(state.quest_log),ledger=[...(state.quest_event_ids||[])],before=state.inventory,bag=scene.inventory||before;
   const now=calendarDay(scene.game_state?.date||state.gameState.date),location=scene.game_state?.place||scene.location,region=scene.game_state?.region||state.gameState.region;
   const reputation=planLocalReputation(state,scene),gateState={...state,local_reputation:reputation}; const updates=scene.quest_updates||[];
@@ -59,7 +75,10 @@ export function settleQuests(state,scene){
   if(scene.battle&&scene.battle.outcome.winner==='allied')for(const p of scene.battle.participants.filter(p=>p.side==='enemy'&&scene.battle.outcome.resources.find(r=>r.id===p.id)?.hp===0)){events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}`,kind:'battle_win',target_id:p.catalog_id||p.id,location,proof:'확정된 전투 종료',quantity:1});if(p.dungeon_foe_id)events.push({event_id:`battle:${scene.battle.battle_id}:${p.id}:foe`,kind:'battle_win',target_id:p.dungeon_foe_id,location,proof:'등록 던전 보스·정예의 실제 처치',quantity:1});}
   for(const e of scene.world_events||[]){
     if(e.kind==='battle_win')fail('토벌 증거는 전투 정산에서만 생성');
-    if(e.location!==location&&e.location!==scene.location)fail('사건 장소와 실제 위치 불일치');
+    const visit=e.visit_id?visits.get(e.visit_id):null;
+    if(e.visit_id&&(!visit||visit.location!==e.location||!['action','clue','escort'].includes(e.kind)))fail('사건과 실제 방문 증빙 불일치');
+    if(e.location!==location&&e.location!==scene.location&&!visit)fail('사건 장소와 실제 위치 불일치');
+    if(visit&&!normalizeQuestLog(state.quest_log).some(q=>['accepted','active','ready_to_report'].includes(q.status)&&q.region_id===region&&q.objectives.some(o=>o.verification.kind===e.kind&&o.verification.target_id===e.target_id)))fail('방문 증거는 이전 턴에 수락한 현지 의뢰 목표만 확인');
     if(['dungeon_enter','dungeon_clear'].includes(e.kind)&&(!catalogData.regional.dungeons.some(d=>d.id===e.target_id)||![e.target_id,catalogData.regional.dungeons.find(d=>d.id===e.target_id)?.name].includes(location)))fail('실제 등록 던전 진입·클리어 위치 필요');
     if(e.kind==='gather'){const item=itemById(e.target_id);if(!item||quantity(bag,item.name)-quantity(before,item.name)<e.quantity)fail('실제 재료 획득 확인 실패');}
     if(e.kind==='delivery'){const item=itemById(e.target_id);if(!item||!e.recipient_id||quantity(before,item.name)-quantity(bag,item.name)<e.quantity)fail('수령인과 실제 물자 인계 필요');}
@@ -73,7 +92,7 @@ export function settleQuests(state,scene){
     if(!['accepted','active','ready_to_report'].includes(q.status))continue;
     for(const e of events){if(ledger.includes(e.event_id))continue;for(const o of q.objectives){if(o.verification.kind!==e.kind||o.verification.target_id!==e.target_id||o.evidence_ids.includes(e.event_id))continue;
       if(e.kind==='delivery'&&e.recipient_id!==(o.verification.recipient_id||q.issuer_npc_id))fail('의뢰 물자 수령인 불일치');
-      o.current=Math.min(o.target,o.current+(e.quantity||1));o.evidence_ids.push(e.event_id);q.journal.push(`${o.description} · ${o.current}/${o.target}`);}}
+      o.current=Math.min(o.target,o.current+(e.quantity||1));o.evidence_ids.push(e.event_id);q.journal.push(`${o.description} · ${o.current}/${o.target}`);if(e.visit_id){const v=visits.get(e.visit_id);q.journal.push(txt(`${v.date} ${v.time} · ${v.location} · ${e.proof}`));}}}
     q.status=q.objectives.every(o=>o.current>=o.target)?'ready_to_report':q.status==='accepted'&&acceptanceIds.size>0&&!events.length?'accepted':'active';
   }
   for(const e of events)if(!ledger.includes(e.event_id))ledger.push(e.event_id);
