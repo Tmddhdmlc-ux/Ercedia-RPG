@@ -29,6 +29,18 @@ test('named terminal contracts and mechanical request domains retain complete au
  for(const action of ['천 확인은 어떻게 끝났지?','의뢰 기록을 묻는다','검을 구매한다','훈련한다','공격한다'])assert.deepEqual(createTurnSync().prepare(s,action).payload.state.quest_log,s.quest_log,action);
 });
 
+test('relationship-only conversation projects terminal audits while preserving public relationships and contract outcomes',()=>{
+ const s=start();s.relationships={'ER-COM-007':{affection:0}};s.quest_event_ids=['proof','claim'];s.quest_log=[{id:'done',title:'천 확인',status:'completed',claim_event_id:'claim',reward:{currency:40},story:[{kind:'resolve',description:'명부 오류 정정'}],objectives:[{id:'cloth',current:1,target:1,evidence_ids:['proof']}],journal:['완료 증거 '.repeat(100)]},{id:'offered',status:'offered',journal:['제안 조건']}];
+ const before=structuredClone(s),sync=createTurnSync(),p=sync.prepare(s,'동행해 줘서 고마워요. 잠깐 쉬는 건 자주 해요?');assert.equal(p.domains.relationship,true);assert.equal(p.domains.quest,false);const q=p.payload.state.quest_log[0];assert.equal(q.journal,undefined);assert.equal(q.objectives[0].evidence_ids,undefined);assert.equal(q.claim_event_id,'claim');assert.deepEqual(q.reward,s.quest_log[0].reward);assert.deepEqual(q.story,s.quest_log[0].story);assert.deepEqual(p.payload.state.quest_log[1],s.quest_log[1]);assert.deepEqual(p.payload.state.quest_event_ids,s.quest_event_ids);assert.ok(p.payload.state.relationship_network);assert.deepEqual(p.payload.state.relationships,s.relationships);assert.deepEqual(s,before);
+ sync.acknowledge(p);const named=sync.prepare(s,'동행하면서 천 확인이 어떻게 끝났는지 묻는다');assert.deepEqual(named.snapshot.quest_log,s.quest_log);assert.deepEqual(s,before);
+});
+
+test('relationship mixed with mechanics or active contracts retains full terminal audit evidence',()=>{
+ const s=start();s.quest_log=[{id:'done',title:'천 확인',status:'completed',objectives:[{evidence_ids:['proof']}],journal:['완료 증거']}];const before=structuredClone(s);
+ for(const action of ['동행하며 검을 구매한다','동료와 훈련한다','동료와 공격한다','동행하며 이동한다','동료와 제작한다','동료와 던전에 간다','동행하며 의뢰 기록을 묻는다'])assert.deepEqual(createTurnSync().prepare(s,action).payload.state.quest_log,s.quest_log,action);
+ s.quest_log.push({id:'active',status:'active',story_required:true,story:[],journal:['진행 증거']});assert.deepEqual(createTurnSync().prepare(s,'동행해 줘서 고마워요').payload.state.quest_log,s.quest_log);s.quest_log.pop();assert.deepEqual(s,before);
+});
+
 test('remembered learning in thanks or rest is not training; actual practice and training choices keep mechanics',()=>{
  const s=start(),sync=createTurnSync();s.gm_rulings=[{id:'lesson',topic:'수업',decision:'실습한 준비 절차를 기억한다'}];sync.acknowledge(sync.prepare(s,'인사한다'));
  for(const action of ['오늘 배운 준비 방법에 감사하고 한 시간 쉰다','어제 익힌 순서를 이야기하고 휴식한다']){assert.equal(turnDomains(s,action).growth,false);assert.equal(sync.prepare(s,action).domains.growth,false);}

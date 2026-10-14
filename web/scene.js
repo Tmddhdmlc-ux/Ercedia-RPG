@@ -174,7 +174,7 @@ export function turnContext(state,domains,action='',choiceId=null){
   if(!domains.dungeon&&!domains.combat)delete context.item_registry.region_rewards;
   // Ordinary conversation needs terminal results, not duplicate mechanical audit logs.
   // This is a request projection; never edit the stored contracts or reward tombstones.
-  if(!Object.values(domains).some(Boolean))context.quest_log=context.quest_log.map(q=>{
+  if(!Object.entries(domains).some(([domain,enabled])=>domain!=='relationship'&&enabled))context.quest_log=context.quest_log.map(q=>{
     const named=[q.id,q.title].some(v=>typeof v==='string'&&v.length>=2&&action.includes(v));
     if(named||!['completed','failed','expired','abandoned','declined'].includes(q.status))return q;
     const {journal,...result}=q;
