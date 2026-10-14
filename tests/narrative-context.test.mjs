@@ -12,6 +12,11 @@ import {planNPCLife,validateLifeEvents} from '../web/npc-life.js';
 const start=()=>({...defaults(),campaign_id:'narrative-fixture',player:initialPlayer('시험'),gameState:{region:'W1',place:'검증 장소',date:'650-07-01',time:'17:22',events:[]},scene:{scene_id:'fixture',npc:null,cast:[],dialogue:[],choices:[]}});
 const actor=id=>({id,speaker:'화자 표시',outfit:'none',emotion:'base'});
 
+test('opinions retain registered concise voices and genuine risk guidance without assigning player agreement',()=>{
+ const s=start();s.scene.npc=actor('ER-COM-007');s.scene.dialogue=[{speaker:'시그나 론',speaker_id:'ER-COM-007',text:'햇볕은 좋지만 바람이 차갑군요.'}];const before=structuredClone(s),f=narrativeFocus(s,'첫 사냥에서 큰 짐승을 잡으면 어떨까요?');
+ assert.match(f.voices[0].personality,/말수가 적다/);assert.match(f.voices[0].speech_style,/간결하게/);assert.match(f.reply_pacing_rule,/의견·경고도 voices의 말수·말투/);assert.match(f.reply_pacing_rule,/같은 판단을 격언·직무 일반론으로 반복하지/);assert.match(f.reply_pacing_rule,/실제 긴급 위험/);assert.match(f.reply_pacing_rule,/감정·대치·상세 요청은 펼친다/);assert.match(f.prose_knowledge_rule,/질문·가정·조건 확인/);assert.deepEqual(f.previous_beat.dialogue,s.scene.dialogue);assert.deepEqual(s,before);
+});
+
 test('older public introductions and boundaries reach present and destination actors without leaking private memories',()=>{
  const s=start();s.scene.npc=actor('ER-COM-007');
  const memory=(id,action,result,player_witnessed=true)=>({npc_id:id,date:'650-07-01',action,result,player_witnessed});
