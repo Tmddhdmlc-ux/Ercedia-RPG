@@ -163,3 +163,10 @@ test('arrival of a named registered person receives the same conversational paci
  assert.equal(arrival.scene_entry_rule,present.scene_entry_rule);assert.equal(arrival.reply_pacing_rule,present.reply_pacing_rule);assert.equal(arrival.prose_knowledge_rule,present.prose_knowledge_rule);
  s.scene.npc=null;assert.deepEqual(s,before);assert.equal(narrativeFocus(s,'모르는 점원에게 묻는다').scene_entry_rule,undefined);
 });
+
+test('interior art guidance reaches solo room arrivals without fabricating actors or changing ordinary empty contexts',()=>{
+ const s=start();s.scene.npc=null;s.scene.cast=[];s.scene.location='여관 식당';const before=structuredClone(s);
+ const room=turnFacts(s,{},'개인실에 들어가 문을 잠근다').narrative_focus;
+ assert.ok(room.scene_image_rule);assert.equal(room.voices,undefined);assert.equal(room.requested_people,undefined);assert.deepEqual(s,before);
+ s.scene.location='들판 길목';assert.equal(turnFacts(s,{},'창고 실내로 간다').narrative_focus.scene_image_rule,room.scene_image_rule);assert.equal(turnFacts(s,{},'길을 걷는다').narrative_focus,undefined);
+});
